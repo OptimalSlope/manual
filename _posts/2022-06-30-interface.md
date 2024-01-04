@@ -25,7 +25,13 @@ layout: post
 |Item|Action|Tip|
 |:-:|:-:|:-:|
 |![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/fit-to-screen.png)|Fit visualiser's content to screen||
-|1| Dynamic zooming|> Press the left mouse button, then move the pointer to left or right.|
+|![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/loupe-custom.png)| Dynamic zooming| Press the left mouse button, then move the pointer to left or right.|
+|![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/pan-custom.png)| Dynamic panning| Press the left mouse button, then move the pointer.|
+
+
+ 
+
+
 
 
 </div>
