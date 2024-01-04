@@ -1,5 +1,5 @@
 ---
-title: Interface
+title: Creating Project
 author: Tao He
 date: 2010-06-30
 category: Jekyll
@@ -13,17 +13,15 @@ layout: post
 
 <div class="table-wrapper" markdown="block">
 
-|Item|Action|
+|Symbol|Action|
 |:-:|:-:|
 ![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/create-project.png)| Creates an empty project.|
-
-
 
 
 ### Cross-Section
 <div class="table-wrapper" markdown="block">
 
-|Item|Action|
+|Symbol|Action|
 |:-:|:-:|
 ![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/content-cut-custom.png)| Opens a slicing tool for making cross-sections.|
 
@@ -42,19 +40,18 @@ layout: post
 
 <div class="table-wrapper" markdown="block">
 
-|Item|Action|
+|Symbol|Action|
 |:-:|:-:|
 |![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/eye-off-custom.png)| Hide selected shape on the visualiser| 
 |![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/delete-custom.png)| Delete selected item from a project| 
 
-##
 </div>
 
 **Shape Position**
 
 <div class="table-wrapper" markdown="block">
 
-|Item|Action|On the Visualiser|
+|Symbol|Action|On the Visualiser|
 |:-:|:-:|:-:|
 |![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/fit-to-screen.png)|Fit visualiser's content to screen||
 |![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/loupe-custom.png)| Dynamic zooming| Press the left mouse button, then move the pointer to left or right.|
@@ -75,7 +72,7 @@ layout: post
 
 <div class="table-wrapper" markdown="block">
 
-|Item|Action|On the Visualiser|
+|Symbol|Action|On the Visualiser|
 |:-:|:-:|:-:|
 |![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/panorama-fisheye-custom.png)|Display selected as wireframe||
 |![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/circle-custom.png)| Display selected with shading||
