@@ -10,11 +10,21 @@ layout: post
 ### Toolbar Controls
 
 
-> ##### Creating Project
+> ##### Creating a project
 >
 > ![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/create-project.png)
 {: .block-tip }
 > Creates an empty project.
+
+> ##### Cross-Section
+>
+> ![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/content-cut-custom.png)
+{: .block-tip }
+> Opens a slicing tool for making cross-sections.
+> ##### WARNING
+>
+> Be sure that a 3d shape is selected in order to use the slicing tool.
+{: .block-warning }
 
 
 **Delete/hide items (slices, 3d models)**
