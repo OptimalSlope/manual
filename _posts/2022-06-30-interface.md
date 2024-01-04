@@ -1,8 +1,8 @@
 ---
 title: Interface
-author: Dainius Jenkus
+author: Tao He
 date: 2010-06-30
-category: Controls
+category: Jekyll
 layout: post
 ---
 
@@ -14,18 +14,17 @@ layout: post
 >
 > ![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/create-project.png)
 {: .block-tip }
+> Creates an empty project.
 
 
-**Shape Style**
+**Delete/hide items (slices, 3d models)**
 
 <div class="table-wrapper" markdown="block">
 
 |Item|Action|
 |:-:|:-:|
-
 |![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/eye-off-custom.png)| Hide selected shape on the visualiser| 
-
-|![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/delete-custom.png)| Delete selected item| 
+|![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/delete-custom.png)| Delete selected item from a project| 
 
 
 </div>
