@@ -17,4 +17,4 @@ layout: post
 |:-:|:-:|
 ![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/create-project.png)| Creates an empty project.|
 
-
+</div>
