@@ -7,23 +7,32 @@ layout: post
 ---
 
 
-### Toolbar Controls
+## Toolbar Controls
+
+### Creating a project
+
+<div class="table-wrapper" markdown="block">
+
+|Item|Action|
+|:-:|:-:|
+![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/create-project.png)| Creates an empty project.|
 
 
-> ##### Creating a project
->
-> ![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/create-project.png)
-> - Creates an empty project.
-{: .block-tip }
 
 
-> ##### Cross-Section
->
-> ![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/content-cut-custom.png)
-> - Opens a slicing tool for making cross-sections.
-{: .block-tip }
+### Cross-Section
+<div class="table-wrapper" markdown="block">
 
-> ##### WARNING
+|Item|Action|
+|:-:|:-:|
+![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/content-cut-custom.png)| Opens a slicing tool for making cross-sections.|
+
+
+</div>
+
+ 
+
+> ##### TIP
 >
 > Be sure that a 3d shape is selected in order to use the slicing tool.
 {: .block-warning }
@@ -38,7 +47,7 @@ layout: post
 |![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/eye-off-custom.png)| Hide selected shape on the visualiser| 
 |![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/delete-custom.png)| Delete selected item from a project| 
 
-
+##
 </div>
 
 **Shape Position**
