@@ -20,8 +20,9 @@ layout: post
 > ##### Cross-Section
 >
 > ![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/content-cut-custom.png)
+> - Opens a slicing tool for making cross-sections.
 {: .block-tip }
-> Opens a slicing tool for making cross-sections.
+
 > ##### WARNING
 >
 > Be sure that a 3d shape is selected in order to use the slicing tool.
