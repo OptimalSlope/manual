@@ -7,16 +7,28 @@ layout: post
 ---
 
 
-### Controls
+### Toolbar Controls
 
-**Creating Project**
 
 > ##### Creating Project
 >
 > ![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/create-project.png)
+{: .block-tip }
 
 
+**Shape Style**
 
+<div class="table-wrapper" markdown="block">
+
+|Item|Action|
+|:-:|:-:|
+
+|![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/eye-off-custom.png)| Hide selected shape on the visualiser| 
+
+|![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/delete-custom.png)| Delete selected item| 
+
+
+</div>
 
 **Shape Position**
 
@@ -47,7 +59,7 @@ layout: post
 |:-:|:-:|:-:|
 |![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/panorama-fisheye-custom.png)|Display selected as wireframe||
 |![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/circle-custom.png)| Display selected with shading||
-|![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/palette-custom.png)| Change color| Press the left mouse button, then move the pointer.|
+|![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/palette-custom.png)| Change color| |
 |![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/texture-box-custom.png)| Change transparency| |
 |![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/eye-off-custom.png)| Hide selected shape| |
 |![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/delete-custom.png)| Delete selected item| |
