@@ -9,7 +9,7 @@ description: >
 version:          1.0
 gitbook_version:  3.2.3
 
-url:              'https://optimalslope.github.io'
+url:              'https://OptimalSlope.github.io'
 baseurl:          '/manual'
 rss:              RSS
 
