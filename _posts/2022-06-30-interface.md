@@ -7,7 +7,7 @@ layout: post
 ---
 
 
-## Toolbar Controls
+
 
 ### Creating a project
 
@@ -31,7 +31,7 @@ layout: post
 </div>
 
  
-
+### Shape Controls
 > ##### TIP
 >
 > Be sure that a 3d shape is selected in order to use the slicing tool.
