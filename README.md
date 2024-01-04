@@ -3,8 +3,8 @@ layout: home
 title: Jekyll Gitbook Theme
 permalink: /
 ---
+![](https://optimalslope.com/images/path9338.png)
 
-Make Jelly site have a GitBook look!
 
 ## Demo
 
