@@ -1,8 +1,8 @@
 ---
 title: Interface
-author: Tao He
+author: Dainius Jenkus
 date: 2010-06-30
-category: Jekyll
+category: Controls
 layout: post
 ---
 
