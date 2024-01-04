@@ -9,18 +9,23 @@ layout: post
 
 ### Controls
 
+**Creating Project**
+
+> ##### Creating Project
+>
+> ![enter image description here](/assets/control-icons/create-project.png)
+
+
+
+
+**Altering Shape View**
+
 <div class="table-wrapper" markdown="block">
 
-|Icon|Action|
-|:-:|:-:|
-|1|Create new project|
-|1|Fit visualiser's content to screen|
-|1|Dynamic zooming 
-> ##### TIP
->
-> This guide is last tested with @napi-rs/canvas^0.1.20, so make sure you have
-> this or a similar version after installation.
-{: .block-tip }|
+|Icon|Action|Tip|
+|:-:|:-:|:-:|
+|![enter image description here](/assets/control-icons/fit-to-screen.png)|Fit visualiser's content to screen||
+|1| Dynamic zooming||
 
 
 </div>
