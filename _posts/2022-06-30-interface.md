@@ -15,12 +15,7 @@ layout: post
 |:-:|:-:|
 |1|Create new project|
 |1|Fit visualiser's content to screen|
-|1|Dynamic zooming 
-> ##### TIP
->
-> This guide is last tested with @napi-rs/canvas^0.1.20, so make sure you have
-> this or a similar version after installation.
-{: .block-tip }|
+|1||
 
 
 </div>
