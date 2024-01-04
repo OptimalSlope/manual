@@ -1,16 +1,16 @@
 # Configurations
-title:            Jekyll Gitbook
-longtitle:        Jekyll Gitbook
-author:           HE Tao
+title:            OptimalSlope Manual
+longtitle:        OptimalSlope Manual
+author:           Dainius Jenkus
 email:            sighingnow@gmail.com
 description: >
-  Build Jekyll site with the GitBook style.
+  OptimalSlope user manual.
 
 version:          1.0
 gitbook_version:  3.2.3
 
-url:              'https://sighingnow.github.io'
-baseurl:          '/jekyll-gitbook'
+url:              'https://optimalslope.github.io'
+baseurl:          '/manual'
 rss:              RSS
 
 # bootstrap: use the remote theme for the site itself
