@@ -22,10 +22,10 @@ layout: post
 
 <div class="table-wrapper" markdown="block">
 
-|Icon|Action|Tip|
+|Item|Action|Tip|
 |:-:|:-:|:-:|
 |![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/fit-to-screen.png)|Fit visualiser's content to screen||
-|1| Dynamic zooming||
+|1| Dynamic zooming|> Press the left mouse button, then move the pointer to left or right.|
 
 
 </div>
