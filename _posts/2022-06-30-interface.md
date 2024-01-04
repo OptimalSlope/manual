@@ -13,7 +13,7 @@ layout: post
 
 > ##### Creating Project
 >
-> ![enter image description here](/assets/control-icons/create-project.png)
+> ![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/create-project.png)
 
 
 
@@ -24,7 +24,7 @@ layout: post
 
 |Icon|Action|Tip|
 |:-:|:-:|:-:|
-|![enter image description here](/assets/control-icons/fit-to-screen.png)|Fit visualiser's content to screen||
+|![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/fit-to-screen.png)|Fit visualiser's content to screen||
 |1| Dynamic zooming||
 
 
