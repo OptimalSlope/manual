@@ -54,7 +54,7 @@ This section describes importing and exporting options of 2D/3D shapes.
 |STEP| Exchange format for engineering models |.step|
 
 **Exporting 2D/3D models**
----
+
  Selected shapes on the visualiser can be exported by clicking ***Export*** in the file menu.
 
  *Supported file formats:*
