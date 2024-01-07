@@ -1,16 +1,15 @@
 ---
 layout: home
-title: Jekyll Gitbook Theme
+title: Optimal Slope User Manual
 permalink: /
 ---
 ![](https://optimalslope.com/images/path9338.png)
 
 
-## Demo
+## Workflow Overview
 
-Live demo on Github Pages: [https://sighingnow.github.io/jekyll-gitbook](https://sighingnow.github.io/jekyll-gitbook)
+{% include workflow-example.html %}
 
-[![Jekyll Themes](https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg)](https://jekyll-themes.com/jekyll-gitbook/)
 
 ## Why Jekyll with GitBook
 
