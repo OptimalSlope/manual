@@ -34,7 +34,7 @@ An empty project is created using the following methods:
 OptimalSlope project data is stored in a binary format (***.cbf**).
 
 
-### Importing/Exporting models 
+### Importing/exporting models 
 ---
 This section describes importing and exporting options of 2D/3D shapes.
 
@@ -69,7 +69,7 @@ This section describes importing and exporting options of 2D/3D shapes.
 |VRML| VRML Web 3D format|.vrml |
 |IMAGE| Image format |.bmp|
  
-### Exporting Cross-section Data
+### Exporting cross-section data
 ---
   
 Project can contain multiple cross-sections. Each cross-section can be considered as an individual simulation project, which contains required properties for simulation.
@@ -79,7 +79,7 @@ Properties describing invidual slice and its layers can be exported as ***JSON**
 2. Within a ***Property View*** panel, select ***Export*** option under tools section.
  
  
- 
+--- 
 
 
 

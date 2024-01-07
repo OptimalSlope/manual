@@ -9,7 +9,7 @@ layout: post
 
 
  
-### Shape Controls
+### Visualization Controls
 
 
 **Delete/hide items (slices, 3d models)**
@@ -23,7 +23,7 @@ layout: post
 
 </div>
 
-**Shape Position**
+**Visualization Position**
 
 <div class="table-wrapper" markdown="block">
 
@@ -44,7 +44,7 @@ layout: post
 </div>
 
 
-**Shape Style**
+**Visualization Style**
 
 <div class="table-wrapper" markdown="block">
 
