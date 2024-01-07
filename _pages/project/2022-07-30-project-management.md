@@ -33,8 +33,9 @@ An empty project is created using the following methods:
 
 OptimalSlope project data is stored in a binary format (***.cbf**).
 
----
+
 ### Importing/Exporting models 
+---
 This section describes importing and exporting options of 2D/3D shapes.
 
 **Importing 2D/3D models to a project**
@@ -43,34 +44,39 @@ This section describes importing and exporting options of 2D/3D shapes.
 **Importing water surface to a project**
 * Select ***Import Phreatic Surface> required file format*** in the file menu.
 
-Supported file formats:
+*Supported file formats:*
 
-| Format | Description | Extension|
+| Format | Description | File extension |
 |:-:|:-:|:-:|
-|DXF|Autodesk drawing exchange format|.dxf|
-|BREP|	OpenCasCade native format|.brep|
-|IGES|Older solid-based format|iges|
-|STEP|Older solid-based format|.step|
----
-**Exporting 2D/3D models**
+|DXF| Autodesk drawing exchange format |.dxf|
+|BREP|	OpenCasCade native format |.brep |
+|IGES| Older solid-based format |iges |
+|STEP| Exchange format for engineering models |.step|
 
+**Exporting 2D/3D models**
+---
  Selected shapes on the visualiser can be exported by clicking ***Export*** in the file menu.
 
- Supported file formats:
+ *Supported file formats:*
 
-| Format | Description | Extension|
+| Format | Description | File extension |
 |:-:|:-:|:-:|
 |DXF|Autodesk drawing exchange format |.dxf|
 |BREP|	OpenCasCade native format |.brep|
 |IGES| Older solid-based format |iges|
-|STEP| Older solid-based format |.step|
+|STEP| Exchange format for engineering models |.step|
 |STL| Stereolithography mesh |.stl|
 |VRML| VRML Web 3D format|.vrml |
 |IMAGE| Image format |.bmp|
  
+### Exporting Cross-section Data
 ---
-### Exporting Cross-section 
   
+Project can contain multiple cross-sections. Each cross-section can be considered as an individual simulation project, which contains required properties for simulation.
+
+Properties describing invidual slice and its layers can be exported as ***JSON*** format:
+1. Select a cross-section.
+2. Within a ***Property View*** panel, select ***Export*** option under tools section.
  
  
  
