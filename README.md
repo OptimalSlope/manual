@@ -1,12 +1,19 @@
 ---
 layout: home
-title: Optimal Slope User Manual
+title: Overview
 permalink: /
 ---
 ![](https://optimalslope.com/images/path9338.png)
 
+## Introduction
+---
+This is the user manual of [OptimalSlope](https://optimalslope.com/) CAD graphical interface.
 
-## Workflow Overview
+## Workflow
+A diagram shows the workflow consisting of three stages:
+1. Input stage (importing of 3D rock models, phreatic surface).
+2. Definition of a problem (property description, generation of cross-sections)
+3. Simulation and output generation, i.e., optimal slopes.
 
 {% include workflow-example.html %}
 
