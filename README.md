@@ -17,7 +17,7 @@ A diagram shows the workflow consisting of three stages:
 
 {% include workflow-example.html %}
 
-
+---
 <!-- ## Why Jekyll with GitBook
 
 GitBook is an amazing frontend style to present and organize contents (such as book chapters
