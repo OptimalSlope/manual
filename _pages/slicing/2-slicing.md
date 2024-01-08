@@ -1,5 +1,5 @@
 ---
-title: Slicing
+title: Cross-section Generation
 author: Dainius Jenkus
 date: 2010-06-30
 category: Slicing
