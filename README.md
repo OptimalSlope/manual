@@ -15,10 +15,6 @@ A diagram shows the workflow consisting of three stages:
 2. Definition of a problem (property description, generation of cross-sections)
 3. Simulation and output generation, i.e., optimal slopes.
 
-**Slicing tool**
-{% include workflow-example.html %}
-
-**Cross-section example**
 {% include workflow-example.html %}
 
 ---

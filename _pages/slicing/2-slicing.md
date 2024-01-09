@@ -25,6 +25,11 @@ The Slicing tool creates cross-sections through selected shape(s) using cutting 
 5. If required, provide the azimuth (**when working with vertical planes**).
 6. Click `Slice` button.
  
+
+**Slicing tool**
 {% include slicing.html %}
+
+**Cross-section example**
+{% include slice.html %}
 
  ---
