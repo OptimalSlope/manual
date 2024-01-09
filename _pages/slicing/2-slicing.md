@@ -28,8 +28,7 @@ The Slicing tool creates cross-sections through selected shape(s) using cutting 
 
 **Slicing tool**
 {% include slicing.html %}
-
- 
+<p>&nbsp;</p>
 **Cross-section example**
 {% include slice.html %}
 
