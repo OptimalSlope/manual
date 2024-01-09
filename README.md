@@ -12,7 +12,7 @@ This is the user manual of [OptimalSlope](https://optimalslope.com/) CAD graphic
 ## Workflow
 A diagram shows the workflow consisting of three stages:
 1. Input stage (importing of 3D rock models, phreatic surface).
-2. Definition of a problem (property description, generation of cross-sections)
+2. Definition of a problem (property description, generation of cross-sections).
 3. Simulation and output generation, i.e., optimal slopes.
 
 {% include workflow-example.html %}

@@ -72,7 +72,7 @@ This section describes importing and exporting options of 2D/3D shapes.
 ### Exporting cross-section data
 ---
   
-Project can contain multiple cross-sections. Each cross-section can be considered as an individual simulation project, which contains required properties for simulation.
+Project can contain multiple cross-sections. Each cross-section can be considered as an individual simulation project, which contains required properties for the simulation.
 
 Properties describing invidual slice and its layers can be exported as ***JSON*** format:
 1. Select a cross-section.
