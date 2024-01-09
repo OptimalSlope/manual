@@ -26,5 +26,5 @@ The Slicing tool creates cross-sections through selected shape(s) using cutting 
 6. Click `Slice` button.
  
  ![](https://OptimalSlope.github.io/manual/assets/slicing/example1.png)
-![Alt text](slicing.drawio.png)
+![Alt text](https://OptimalSlope.github.io/manual/assets/slicing/slicing.drawio.png)
  
