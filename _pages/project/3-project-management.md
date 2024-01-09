@@ -1,5 +1,5 @@
 ---
-title: File management 
+title: Project management 
 author: Dainius Jenkus
 date: 2010-06-30
 category: Project-management
