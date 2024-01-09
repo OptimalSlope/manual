@@ -34,11 +34,11 @@ An empty project is created using the following methods:
 OptimalSlope project data is stored in a binary format (***.cbf**).
 
 
-### Importing/exporting models 
+### Importing/exporting 
 ---
 This section describes importing and exporting options of 2D/3D shapes.
 
-**Importing 2D/3D models to a project**
+**Importing 2D/3D shapes to a project**
 * Select ***Import > required file format*** in the file menu.
 
 **Importing water surface to a project**
@@ -53,7 +53,7 @@ This section describes importing and exporting options of 2D/3D shapes.
 |IGES| Older solid-based format |iges |
 |STEP| Exchange format for engineering models |.step|
 
-**Exporting 2D/3D models**
+**Exporting 2D/3D shapes**
 
  Selected shapes on the visualiser can be exported by clicking ***Export*** in the file menu.
 
