@@ -16,6 +16,14 @@ The Slicing tool creates cross-sections through selected shape(s) using cutting 
 |:-:|:-:|
 ![enter image description here](https://OptimalSlope.github.io/manual/assets/control-icons/content-cut-custom.png)| Opens a slicing tool for making cross-sections.|
 
+
+> ##### TIP
+>
+> * Cross-sections automatically inherit properties from their 3D parent stratigraphy. If not entered, properties can be later entered manually either at 3D model or individual slice level.
+> * It is advised to define bench properties and strength model before producing cross-sections.
+>
+{: .block-tip }
+
 **Usage**
 
 1. Select a shape or multiple shapes.
