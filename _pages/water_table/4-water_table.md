@@ -10,6 +10,18 @@ layout: post
 
 The water table (piezometric line) can be defined for a given cross-section under **Cross-section > Optional properties > Water table**.
 
+**Interface**
+
+{% include watertableUI.html %}
+
+|Column|Description|
+|:-:|:-:|
+|Index| Point indexes starting from 1 (slope toe) to N (last boundary point).|
+|Vertical position (Z)|Z coordinate of a corresponding bench line, where the point lies (*fixed to bench Z position*).| 
+|X| Horizontal coordinate of a point (*editable*).| 
+
+*Desciption of water table elements in the UI.*
+
 **Usage**
 
 1. Click on **Draw** button.
