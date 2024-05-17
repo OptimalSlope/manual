@@ -13,6 +13,7 @@ The water table (piezometric line) can be defined for a given cross-section unde
 
 {% include watertableUI.html %}
 *Displayed as a blue polyline.*
+
 **Interface**
 
 |Column|Description|
