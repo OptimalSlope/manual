@@ -35,9 +35,7 @@ The water table (piezometric line) can be defined for a given cross-section unde
 * The first point at the toe is automatically assigned.
 * A single point is allowed per bench.
 
- 
 
-{% include watertable.html %}
 <p>&nbsp;</p>
 
  ---
