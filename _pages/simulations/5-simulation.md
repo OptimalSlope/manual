@@ -30,8 +30,6 @@ After the problem of simulation is formulated with required inputs, the simulati
 **Note**
 * When running the same simulation more than once, e.g., with different parameters, select **Yes** to overwrite the existing input data.
 
-
-
-<p>&nbsp;</p>
+ 
 
  ---
