@@ -34,15 +34,39 @@ An empty project is created using the following methods:
 OptimalSlope project data is stored in a binary format (***.cbf**).
 
 
-### Importing/exporting 
+### Importing Stratighraphy
 ---
-This section describes importing and exporting options of 2D/3D shapes.
 
-**Importing 2D/3D shapes to a project**
-* Select ***Import > required file format*** in the file menu.
+Importing 3D stratigraphies to the project:
 
-**Importing water surface to a project**
-* Select ***Import Phreatic Surface> required file format*** in the file menu.
+* In the file menu, select ***Import Stratigraphy > required file format***.
+
+### Importing Section
+---
+ 
+Sections generated using a 3rd party can be directly imported without requiring to generate then through our sclicing tool.
+
+* In the file menu, select ***Import Section > required file format***.
+ 
+### Importing Water Surface
+---
+
+Water surface can be imported and used to generate a water table boundary when making a section. It can be used as a reference boundary in order to draw the water table.
+
+* In the file menu,  ***Import Surface > Phreatic > required file format***.
+
+### Importing Boundary Surface
+---
+
+A pit boundary surface can be imported and used to generate a trimmed version of section in order to reflect an existing pushback of an open pit mine.
+
+* In the file menu,  ***Import Surface > Boundary > required file format***.
+
+> 
+>##### TIP
+> * Set colors and names of layers before importing. Otherwise, naming and coloring can be manually applied in the OptimalSlope GUI.
+>
+
 
 *Supported file formats:*
 
