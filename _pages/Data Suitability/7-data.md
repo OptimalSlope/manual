@@ -46,16 +46,15 @@ Good quality section wires are essential as key inputs for simulations, ensuring
 * When generating cross-sections using tools like Leapfrog, AutoCAD, Rhino, or other reputable CAD software, the likelihood of encountering poor-quality sections significantly diminishes if tDhe 3D model adheres to high-quality standards. These advanced tools are designed with robust algorithms that handle precise data extraction, ensuring that sections reflect the integrity of the source model. 
 * However, the reliability of these sections largely depends on the initial 3D model's quality. A well-constructed model featuring properly aligned vertices, closed and manifold surfaces, and consistent geometry helps avoid common issues such as gaps, overlaps, or distorted profiles in the generated sections. By maintaining stringent quality control over the 3D model, users can maximize the effectiveness of these software tools, resulting in cleaner, more accurate cross-sections that are suitable for analysis, visualization, and further design work.
 
-
  
-### Model Organisation: Naming and Colouring
+### Model Organisation
 ---
-* Use layers in the DXF file to separate different model components or regions. This makes it easier to control visibility and extract sections accurately.
+* Use layers and set their names when generating DXF files to separate different model components or regions. This makes it easier to control visibility and extract sections accurately.
 * Name layers descriptively to aid in managing model elements during cross-section extraction.
 
 
 
 
-
+---
 
  

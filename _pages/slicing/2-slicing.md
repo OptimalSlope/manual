@@ -1,5 +1,5 @@
 ---
-title: Cross-section generation
+title: Section generation
 author: Dainius Jenkus
 date: 2010-06-30
 category: Slicing
@@ -39,5 +39,10 @@ The Slicing tool creates cross-sections through selected shape(s) using cutting 
 <p>&nbsp;</p>
 **Cross-section example**
 {% include slice.html %}
+
+
+ 
+
+
 
  ---
