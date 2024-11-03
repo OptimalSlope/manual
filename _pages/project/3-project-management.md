@@ -62,11 +62,12 @@ A pit boundary surface can be imported and used to generate a trimmed version of
 
 * In the file menu,  ***Import Surface > Boundary > required file format***.
 
-> 
->##### TIP
-> * Set colors and names of layers before importing. Otherwise, naming and coloring can be manually applied in the OptimalSlope GUI.
+ 
+> ##### TIP
 >
-
+> * It is advised to define names and colors of layers while generating model files. Otherwise, naming and coloring of model layers can be manually set in the OptimalSlope GUI. 
+>
+{: .block-tip }
 
 *Supported file formats:*
 
