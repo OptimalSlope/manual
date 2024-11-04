@@ -20,6 +20,11 @@ The following describes tips and examples which can be followed to prepare e.g.,
 
 * **Gaps in 3D models**: Models should form solid bodies. A solid body with shared layer boundaries that are not closely aligned and form gaps can present significant challenges in analysis during the optimisation. When boundaries meant to connect are not properly closed, they create voids that can compromise the structural integrity and visual coherence of the model. To mitigate these problems, it is crucial to ensure that adjacent layers are well-aligned and that shared boundaries are seamlessly joined without any gaps. Proper modeling practices, including thorough verification and the use of quality control tools, can help maintain the integrity of shared boundaries and create robust, gap-free solid bodies.
 * **Closed Solids**: Each 3D object should be a closed solid (manifold), meaning every edge must be shared by exactly two adjacent faces. Non-manifold edges or vertices can lead to inaccuracies while producing sections.
+
+{% include open_solids.drawio.html %}
+
+The example below shows an open solid, which should be fixed in order to avoid distruptions and open wires when generating sections.
+
 * **3D Solids over Meshes**: Where possible, export as 3D solids rather than meshes (polylines) in DXF, as slicing tools generally can more robustly handle solids when generating cross-sections.
 
 **Precision and Tolerance Settings**
