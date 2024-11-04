@@ -43,7 +43,7 @@ The Slicing tool creates cross-sections through selected shape(s) using cutting 
 **Cross-section example**
 {% include slice.html %}
 
-### Trimming Sections To Boundary Surface
+### Trim To Boundary Surface
 ---
 
 ***Boundary Surface***
