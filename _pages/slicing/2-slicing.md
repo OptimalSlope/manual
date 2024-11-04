@@ -46,6 +46,10 @@ The Slicing tool creates cross-sections through selected shape(s) using cutting 
 ### Trimming Sections To Boundary Surface
 ---
 
+***Boundary Surface***
+
+A boundary surface refers to a defined, closed, and continuous surface that acts as a constraint or delimiter within a 3D model.In geological or mining contexts, a boundary surface often represents real-world features like the edge of an open pit, fault planes, or the extents of excavation.
+
 Boundary surfaces are imported and utilized to create a trimmed version of a section, accurately reflecting the existing pushback of an open pit mine. This process is particularly valuable when only the original model of stratigraphy is available, as it allows for adjustments that align with the current state of the mine. Applying trimming at the section level enables faster operations by reducing the need for complex modifications to the entire 3D model. This targeted approach ensures that cross-sections more precisely represent real-world conditions, facilitating better planning, analysis, and decision-making for ongoing mining activities.
 
 **Usage**
