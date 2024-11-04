@@ -54,7 +54,7 @@ Boundary surfaces are imported and utilized to create a trimmed version of a sec
 
 ***Example***
 {% include boundary_surface.drawio.html %}
-<p>&nbsp;</p>
+ 
 
 **Usage**
 
@@ -62,5 +62,12 @@ Boundary surfaces are imported and utilized to create a trimmed version of a sec
 2. Make sure boundary surface is already imported to your project.
 3. In the right-panel menu find and click `Trim Slice` button.
 
+***Before Trimming***
+{% include before_trimming.drawio.html %}
+This example shows a section made from the original stratigraphy model.
+
+***After Trimming***
+{% include after_trimming.drawio.html %}
+The resulting section after the extents of excavation are updated using the boundary surface. 
 
  ---
