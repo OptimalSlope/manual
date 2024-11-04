@@ -42,7 +42,7 @@ Good quality section wires are essential as key inputs for simulations, ensuring
 
 * **Overlapping Layers**: Ensure that sections used for simulations do not have layers that are overlapping each other.
 
-{% include voids.drawio.html %}
+{% include overlapping.drawio.html %}
 
 * **Remove Duplicate Vertices or Edges**: Duplicate vertices or edges can cause self-intersecting surfaces or wires, so ensure that vertices are unique and shared only when appropriate. Shared vertices connecting neighbouring egdges are acceptable, but duplicate edges should be removed within a wire. 
 * **Ensure Sequential Edge Ordering**: Importedd shapes are visualised in 3D and this may not be visible when displayed. However, out-of-order edges or vertex points can lead to inaccurate shape representations when working in a local coordinate system in the 2D.
