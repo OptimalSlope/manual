@@ -7,7 +7,7 @@ layout: post
 ---
 
 
-## OptimalSlope Simulation Workflow Tutorial
+## OptimalSlope Simulation Workflow
 
 Follow these steps to configure properties for a cross-section in OptimalSlope to run a simulation:
 ### 1. Import or Generate Section.
@@ -75,11 +75,18 @@ After the input data is defined, simualations can be started in the simulation w
 
 {% include input_output.drawio.html %}
 
+#### An example of 2D output slope profile
+
+{% include output_2d.drawio.html %}
+
+
 ### 4. Exporting Output Profile to DXF
  
 The obtained results of a simulation are shown in 2D plot window and also displayed in the form of logs. The estimated shape of slope profile can be exported to DXF and later imported to other software.
 
-![Example Image](https://OptimalSlope.github.io/manual/tutorial/export.png "Export output")
+![Example Image](https://OptimalSlope.github.io/manual/assets/tutorial/export.png "Export output")
+
+![Example Image](https://OptimalSlope.github.io/manual/assets/tutorial/output_ex1.png "Export output")
 
 
 - Navigate to tools section in the simulation window (`Export output profile to DXF`).
