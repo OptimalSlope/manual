@@ -9,7 +9,7 @@ layout: post
 
 ## OptimalSlope Simulation Workflow
 
-Follow these steps to configure properties for a cross-section in OptimalSlope to run a simulation:
+Follow these steps to configure properties for a selected section in OptimalSlope to run a simulation:
 ### 1. Import or Generate Section.
 
 It is recommended to directly import sections, if you already have them defined in DXF files. This method is straightforward and speeds-up the process without a need to import often large 3D models files to make sections.
@@ -42,7 +42,7 @@ Choose between Hoek-Brown and Mohr-Coulomb models and set properties like:
 - **Friction parameters**.
 
 <p align="center">
-  <img src="https://OptimalSlope.github.io/manual/assets/tutorial/layer_properties_.png" alt="Alt text" title="Optional title"/>
+  <img src="https://OptimalSlope.github.io/manual/assets/tutorial/layer_properties.png" alt="Alt text" title="Layer properties"/>
 </p>
 
 Section rock properties are set for each section layer separately. Alternatively, if 3D models are used to generate sections, properties can be provided at the 3D level initially. When making a section using our slicing tool, they are automatically inherited from parent 3D models. 
