@@ -43,7 +43,7 @@ Choose between Hoek-Brown and Mohr-Coulomb models and set properties like:
 - **Friction parameters**.
 
 <p align="center">
-  <img src="https://OptimalSlope.github.io/manual/assets/tutorial/layer_properties.png" alt="Alt text" title="Layer properties"/>
+  <img src="https://OptimalSlope.github.io/manual/assets/tutorial/layer_properties.png" alt="Altt" title="Layer properties"/>
 </p>
 
 Section rock properties are set for each section layer separately. Alternatively, if 3D models are used to generate sections, properties can be provided at the 3D level initially. When making a section using our slicing tool, they are automatically inherited from parent 3D models. 
@@ -120,7 +120,7 @@ The obtained results of a simulation are shown in 2D plot window and also displa
 
 Since results from OptimalSlope may be used in RS2 for stability analysis, this step explains how to import output from our software. There are several steps required to import output profile DXF file into RS2. 
 ##### Step 1: Export output profile to DXF from our software
- - Export output profile as DXF (as explained in step 4) using `Local XY` export method. This is required as RS2 expects 2D section, so coordinates are flattened to have horizontal section on XY plane.
+ - **Export output profile as DXF** (as explained in step 4) using `Local XY` export method. This is required as RS2 expects 2D section, so coordinates are flattened to have horizontal section on XY plane.
 ##### Step 2: Modify the DXF File in AutoCAD
 - **Open the DXF file in AutoCAD.**
 - **Convert Block References**: Use the `EXPLODE` command to convert all block references into simpler entities. This is crucial as RS2 cannot handle block references in the DXF.
