@@ -10,19 +10,20 @@ layout: post
 ## OptimalSlope Simulation Workflow
 
 Follow these steps to configure properties for a selected section in OptimalSlope to run a simulation:
-### 1. Import or Generate Section.
+### 1. Importing or Generating Sections
 
 It is recommended to directly import sections, if you already have them defined in DXF files. This method is straightforward and speeds-up the process without a need to import often large 3D models files to make sections.
 
 In OptimalSlope, you have two methods available for defining cross-sections:
 
 #### Importing 3D Solid/Wireframe and Making Sections
-You can import a 3D solid or wireframe (`File -> Import Stratigraphy -> DXF`) and then use our slice tool to create a section. 
+You can import a 3D solid or wireframe (`File -> Import Stratigraphy -> DXF`) and then use our slice tool to create a section. For more information on slicing , refer to the [Slicing](https://optimalslope.github.io/manual/pages/slicing/2-slicing/).
+
 
 #### Directly Importing DXF Section File
 Alternatively, you can directly import a DXF section file using the pathway: `File -> Import Section -> DXF`. 
 #### Use Quality Input Data
-Ensure your DXF model data meets general quality standards to ensure the best simulation results. For guidelines on data preparation and ensuring quality, refer to the [OptimalSlope Manual on Data Preparation](https://optimalslope.github.io/manual/pages/Data%20Suitability/7-data/).
+Ensure your DXF model data meets general quality standards to ensure the best simulation results. For guidelines on data preparation and ensuring quality, refer to the [Data Preparation](https://optimalslope.github.io/manual/pages/Data%20Suitability/7-data/).
 
 ---
 ### 2. Define Section Properties
