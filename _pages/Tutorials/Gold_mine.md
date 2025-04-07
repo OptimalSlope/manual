@@ -10,8 +10,11 @@ layout: post
 ## OptimalSlope Simulation Setup Tutorial
 
 Follow these steps to configure properties for a cross-section in OptimalSlope to run a simulation:
-
-### 1. Define Bench Properties
+### 1. Import or generate cross-section.
+---
+### 2. Define Section Properties
+---
+#### Define Bench Properties
 Specify properties for benches if your cross-section includes them:
 - **Unit Weight**: Weight of material per cubic meter.
 - **Bench Face Angle**: Inclination angle of bench faces.
@@ -19,12 +22,12 @@ Specify properties for benches if your cross-section includes them:
 - **Number of Benches**: Total benches count.
 - **Bench Height**: Height of each bench.
 
-### 2. Set Rock Properties
+#### Set Rock Properties
 Choose between Hoek-Brown and Mohr-Coulomb models and set properties like:
 - Strength characteristics.
 - Friction parameters.
 
-### 3. General Section Properties
+#### General Section Properties
 Set general properties for the section:
 - **Horizontal Crest Position**: Position of the crest relative to section origin.
 - **Slope Height**: Total height of the slope.
