@@ -64,5 +64,7 @@ The properties below are set at a level of selected section.
 | Road Vertical Position (Z)                      | m                  | Road Z position coordinate                                                                       |
 
 ***Notes***
+
 * Bench properties and rock properties can be set for individual 3D stratigraphy. If sections are generated using our slicing tool, sections automatically inherit these properties. If sections are imported directly, properties can be set for each layer manually for a particular section.
+
 ---
