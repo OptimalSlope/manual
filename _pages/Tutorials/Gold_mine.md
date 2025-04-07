@@ -79,6 +79,9 @@ After the input data is defined, simualations can be started in the simulation w
  
 The obtained results of a simulation are shown in 2D plot window and also displayed in the form of logs. The estimated shape of slope profile can be exported to DXF and later imported to other software.
 
+![Example Image](https://OptimalSlope.github.io/manual/tutorial/export.png "Export output")
+
+
 - Navigate to tools section in the simulation window (`Export output profile to DXF`).
 - Select one of export configurations:
     - `Global` - exported coordinates of profile are in the original global coordinate system. Useful when the result is visualised with respect to original section or 3D models.
