@@ -41,6 +41,10 @@ Choose between Hoek-Brown and Mohr-Coulomb models and set properties like:
 - **Strength characteristics**.
 - **Friction parameters**.
 
+<p align="center">
+  <img src="https://OptimalSlope.github.io/manual/assets/tutorial/layer_properties_.png" alt="Alt text" title="Optional title"/>
+</p>
+
 Section rock properties are set for each section layer separately. Alternatively, if 3D models are used to generate sections, properties can be provided at the 3D level initially. When making a section using our slicing tool, they are automatically inherited from parent 3D models. 
 
 #### General Section Properties
@@ -48,8 +52,12 @@ Set general properties for the section:
 - **Horizontal Crest Position**: Position of the crest relative to section origin.
 - **Slope Height**: Total height of the slope.
 - **Target FoS (Factor of Safety)**.
-- **Surcharge**: Additional loads like magnitude and inclination.
  
+<p align="center">
+  <img src="https://OptimalSlope.github.io/manual/assets/tutorial/general_properties.png" alt="Alt text" title="Optional title"/>
+</p>
+
+
 The above properties (bench, rock and general properties) must be provided to run simulations. Optional properties below can be added if needed.
 
 ### Optional Properties
@@ -70,6 +78,12 @@ After the input data is defined, simualations can be started in the simulation w
 1. **Select a section of interest**. Any section with pre-scribed properties.
 2. **Set a simulation folder.** This informs where to write simulation results and logs.
 3. **Make sure user's profile is configured**. When running a simulation for the first time, go to `Tools -> Settings -> Account` and enter provided credential information, click `Configure`. This ensures that your simulation can run on the cloud.
+ 
+<p align="center">
+  <img src="https://OptimalSlope.github.io/manual/assets/tutorial/profile_setup.png" alt="Alt text" title="Optional title"/>
+</p>
+
+
 
 #### An example of input and output slope profile
 
@@ -84,9 +98,11 @@ After the input data is defined, simualations can be started in the simulation w
  
 The obtained results of a simulation are shown in 2D plot window and also displayed in the form of logs. The estimated shape of slope profile can be exported to DXF and later imported to other software.
 
-![Example Image](https://OptimalSlope.github.io/manual/assets/tutorial/export.png "Export output")
+ 
+<p align="center">
+  <img src="https://OptimalSlope.github.io/manual/assets/tutorial/export.png" alt="Alt text" title="Optional title"/>
+</p>
 
-![Example Image](https://OptimalSlope.github.io/manual/assets/tutorial/output_ex1.png "Export output")
 
 
 - Navigate to tools section in the simulation window (`Export output profile to DXF`).
