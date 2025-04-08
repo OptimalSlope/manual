@@ -88,9 +88,12 @@ After the input data is defined, simulations can be started in the simulation wi
 
 {% include output_2d.drawio.html %}
 
+- **Note:** results in the 2D plot is always shown as slope is on the right side (mirrored if it is on the left side). When exporting output profile to DXF or visualising in 3D, a produced slope profile is shown in the original position.
+
 ### 4. Exporting Output Profile to DXF
 
 The obtained results of a simulation are shown in 2D plot window and also displayed in the form of logs. The estimated shape of the slope profile can be exported to DXF and later imported to other software.
+
 
 <p align="center">
   <img src="https://OptimalSlope.github.io/manual/assets/tutorial/export.png" alt="Export output"/>
