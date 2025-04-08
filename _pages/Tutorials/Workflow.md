@@ -6,7 +6,7 @@ category: Tutorials
 layout: post
 ---
 
-## OptimalSlope Simulation Workflow
+## Simulation Workflow
 
 Follow these steps to configure properties for a selected section in OptimalSlope to run a simulation:
 
