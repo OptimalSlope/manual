@@ -27,6 +27,7 @@ After the problem of simulation is formulated with required inputs, the simulati
 * OptimalSlope returns results in a form a plot, which displays estimated optimal profile of a slope.
 * The estimated angles and profile coordinates and angles are displayed in the logs.
 * The results folder also contains plots and obtained optimal profile data.
+
 **Note**
 * When running the same simulation more than once, e.g., with different parameters, select **Yes** to overwrite the existing input data.
 
