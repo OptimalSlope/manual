@@ -86,13 +86,13 @@ When in doubt, position the crest point slightly further inside the section boun
 
 ---
 
-<!-- **Correct Example:**  
+**Correct Example:**  
 The crest is positioned well within the terrain boundary, ensuring the slope intersects only solid material.  
 ![Correct Crest Position](169dda39-0876-4b14-bf01-99cd0bab88ab.bmp)
 {% include crest_example.html %}
 **Incorrect Example:**  
 The crest is placed too close to the edge, resulting in part of the slope extending into open space.  
-![Incorrect Crest Position](incorrect_crest.bmp) -->
+![Incorrect Crest Position](incorrect_crest.bmp)
 
 
 #### What is bench-compatible slope height?
