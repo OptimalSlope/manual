@@ -6,9 +6,7 @@ category: Faults
 layout: post
 ---
 
- 
-### Faults
----
+
 Faults represent discontinuities or fractures within the geological model that can influence rock mass behavior, stability, and stress distribution. In the software, faults are defined as open polylines and can be imported into a section in two different ways:
 
 #### 1. Assigning Faults in an Imported Section
@@ -34,4 +32,6 @@ If your faults are stored in a dedicated DXF file:
 |----------------|------------------|-----------------------------------------------------------------------------|
 | Friction Angle | Degrees          | The angle of shearing resistance (also known as internal friction) of the rock mass. |
 | Cohesion       | kPa              | The cohesive strength of the rock mass, measured in kilopascals.            |
+
 ---
+
