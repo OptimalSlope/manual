@@ -7,7 +7,7 @@ permalink: /
 
 ## Introduction
 ---
-This is the user manual of [OptimalSlope](https://optimalslope.com/) CAD graphical interface.
+This is the user manual of [Slope Optimiser](https://optimalslope.com/files/OptimalSlope_Latest.zip/) CAD graphical interface.
 
 ## Workflow
 A diagram shows the workflow consisting of three stages:
