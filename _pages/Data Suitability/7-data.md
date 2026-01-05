@@ -10,6 +10,20 @@ layout: post
 
 The quality of simuation results are highly correlated to the provided 3D stratigraphy or section data. Ensuring that used models are both topologically and geometrically consistant and correct allows to make more accurate estimations during the simulation.
 
+### Exporting DXF from Leapfrog
+
+**DXF Export Recommendation**
+
+When exporting 3D meshes or model surfaces from Leapfrog, always use Polyfaces by selecting
+***"DXF Polyface Files (11/12 [AC1009]) (.dxf)"***.
+
+This option exports geometry as a connected polyface mesh, preserving mesh connectivity and providing the most reliable results for downstream processing and cross-section generation. Using polyfaces minimises the need for post-processing and is the recommended export method.
+
+**Note on Using 3D Faces**
+
+DXF files exported using 3D Faces via ***"DXF Files (11/12 [AC1009]) (.dxf)"*** are currently supported. However, this export method represents geometry as individual, unconnected faces, which requires additional processing before the data can be reliably used for cross-section generation.
+
+Due to additional processing overhead, cleaner geometry, exporting DXF files as Polyfaces is strongly recommended whenever possible.
 
 ### Stratighraphy Preparation
 ---
@@ -18,14 +32,14 @@ The following describes tips and examples which can be followed to prepare e.g.,
 **Model Integrity and Clean Geometry**
 
 
-* **Gaps in 3D models**: Models should form solid bodies. A solid body with shared layer boundaries that are not closely aligned and form gaps can present significant challenges in analysis during the optimisation. When boundaries meant to connect are not properly closed, they create voids that can compromise the structural integrity and visual coherence of the model. To mitigate these problems, it is crucial to ensure that adjacent layers are well-aligned and that shared boundaries are seamlessly joined without any gaps. Proper modeling practices, including thorough verification and the use of quality control tools, can help maintain the integrity of shared boundaries and create robust, gap-free solid bodies.
-* **Closed Solids**: Each 3D object should be a closed solid (manifold), meaning every edge must be shared by exactly two adjacent faces. Non-manifold edges or vertices can lead to inaccuracies while producing sections.
+* **Gaps in 3D models**: Models should form closed meshes. A mesh with shared layer boundaries that are not closely aligned and form gaps can present significant challenges during optimisation. When boundaries that are intended to connect are not properly closed, they create holes or discontinuities that can compromise the structural consistency and visual coherence of the model. To mitigate these problems, it is crucial to ensure that adjacent layers are well aligned and that shared boundaries are seamlessly joined without any gaps. Proper modelling practices, including thorough verification and the use of quality control tools, can help maintain the integrity of shared boundaries and create robust, gap-free meshes.
+
+* **Closed Meshes**: Each 3D object should be a closed (manifold) mesh, meaning every edge must be shared by exactly two adjacent faces. Non-manifold edges or vertices can lead to inaccuracies when generating sections.
 
 {% include open_solids.drawio.html %}
 
 The example below shows an open solid, which should be fixed in order to avoid distruptions and open wires when generating sections.
-
-* **3D Solids over Meshes**: Where possible, export as 3D solids rather than meshes (polylines) in DXF, as slicing tools generally can more robustly handle solids when generating cross-sections.
+ 
 
 **Precision and Tolerance Settings**
 * High Tolerance: Set a reasonable tolerance typically around 0.001-0.01 mm to avoid tiny gaps that can lead to misalignments.
