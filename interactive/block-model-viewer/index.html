@@ -11,10 +11,7 @@
       font-family: Arial, sans-serif;
       background: #06164d;
     }
-    #viewer {
-      width: 100%;
-      height: 100%;
-    }
+    #viewer { width: 100%; height: 100%; }
     #toolbar {
       position: absolute;
       top: 12px;
@@ -25,7 +22,7 @@
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.18);
       font-size: 14px;
-      max-width: 460px;
+      max-width: 480px;
     }
     #toolbar button {
       margin: 4px 4px 4px 0;
@@ -38,11 +35,7 @@
       color: #333;
       line-height: 1.4;
     }
-    .legend-item {
-      display: inline-block;
-      margin-right: 10px;
-      white-space: nowrap;
-    }
+    .legend-row { margin-top: 2px; }
     .swatch {
       display: inline-block;
       width: 12px;
@@ -67,6 +60,7 @@
     <button id="resetView">Reset view</button>
     <label><input type="checkbox" id="toggleGrid"> Grid</label>
     <label><input type="checkbox" id="toggleAxes" checked> Axes</label>
+    <label><input type="checkbox" id="toggleEdges" checked> Edges</label>
     <div id="status">Loading block model...</div>
     <div id="legend"></div>
   </div>

@@ -12,16 +12,12 @@ const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(container.clientWidth, container.clientHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
 container.appendChild(renderer.domElement);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.screenSpacePanning = true;
-
-scene.add(new THREE.AmbientLight(0xffffff, 1.8));
-const light = new THREE.DirectionalLight(0xffffff, 1.8);
-light.position.set(1000, -1000, 1800);
-scene.add(light);
 
 const grid = new THREE.GridHelper(3000, 30, 0x00ff66, 0x006633);
 grid.visible = false;
@@ -31,18 +27,15 @@ const axes = new THREE.AxesHelper(700);
 scene.add(axes);
 
 let blockMesh = null;
+let wireMesh = null;
 let modelSize = new THREE.Vector3(1000, 1000, 1000);
 
-/*
-  Edit these Z bands to match your slope-angle schedule.
-  worldZ uses the original Z values from the CSV.
-  Current defaults are based on the uploaded model and the example screenshot.
-*/
+// Edit these Z bands to match your model's slope-angle schedule.
 const slopeBands = [
-  { zMin: 1780, zMax: Infinity, angle: 55, label: "55 deg", color: 0xff4040 },
-  { zMin: 1420, zMax: 1780, angle: 45, label: "45 deg", color: 0x38f2ff },
-  { zMin: 1300, zMax: 1420, angle: 35, label: "35 deg", color: 0x66cc33 },
-  { zMin: -Infinity, zMax: 1300, angle: 25, label: "25 deg", color: 0x8b55ff }
+  { zMin: 1780, zMax: Infinity, angle: 55, label: "55°", color: 0xff4040 },
+  { zMin: 1420, zMax: 1780, angle: 45, label: "45°", color: 0x38f2ff },
+  { zMin: 1300, zMax: 1420, angle: 35, label: "35°", color: 0x66cc33 },
+  { zMin: -Infinity, zMax: 1300, angle: 25, label: "25°", color: 0x8b55ff }
 ];
 
 function getBandForZ(worldZ) {
@@ -53,46 +46,61 @@ function getBandForZ(worldZ) {
 }
 
 function updateLegend() {
-  legend.innerHTML =
-    "<strong>Slope angle colours (derived from Z bands)</strong><br>" +
+  legend.innerHTML = "<strong>Slope angle colours (derived from Z bands)</strong>" +
     slopeBands.map(band => {
       const hex = "#" + band.color.toString(16).padStart(6, "0");
-      const rangeText = `${band.zMin === -Infinity ? "-inf" : band.zMin} to ${band.zMax === Infinity ? "inf" : band.zMax}`;
-      return `<span class="legend-item"><span class="swatch" style="background:${hex}"></span>${band.label} (Z ${rangeText})</span>`;
-    }).join("<br>");
+      const rangeText = `${band.zMin === -Infinity ? "-∞" : band.zMin} to ${band.zMax === Infinity ? "∞" : band.zMax}`;
+      return `<div class="legend-row"><span class="swatch" style="background:${hex}"></span>${band.label} (Z ${rangeText})</div>`;
+    }).join("");
 }
 
 async function loadBlocks() {
   const response = await fetch("./data/blocks_coarse.json");
   if (!response.ok) throw new Error(`Failed to load JSON: ${response.status}`);
+
   const data = await response.json();
   const blocks = data.blocks;
   updateLegend();
 
-  status.textContent = `Rendering ${blocks.length.toLocaleString()} filled blocks from ${data.totalRows.toLocaleString()} original blocks...`;
+  status.textContent = `Rendering ${blocks.length.toLocaleString()} filled blocks...`;
 
   const geometry = new THREE.BoxGeometry(1, 1, 1);
-  const material = new THREE.MeshLambertMaterial({
+  const fillMaterial = new THREE.MeshBasicMaterial({
     vertexColors: true,
-    transparent: false
+    toneMapped: false
+  });
+  const wireMaterial = new THREE.MeshBasicMaterial({
+    color: 0x111111,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.30,
+    toneMapped: false
   });
 
-  blockMesh = new THREE.InstancedMesh(geometry, material, blocks.length);
-  blockMesh.instanceMatrix.setUsage(THREE.StaticDrawUsage);
+  blockMesh = new THREE.InstancedMesh(geometry, fillMaterial, blocks.length);
+  wireMesh = new THREE.InstancedMesh(geometry, wireMaterial, blocks.length);
 
-  const matrix = new THREE.Matrix4();
+  const matrixFill = new THREE.Matrix4();
+  const matrixWire = new THREE.Matrix4();
   const position = new THREE.Vector3();
   const scale = new THREE.Vector3();
+  const scaleWire = new THREE.Vector3();
   const quaternion = new THREE.Quaternion();
+
   const min = new THREE.Vector3(Infinity, Infinity, Infinity);
   const max = new THREE.Vector3(-Infinity, -Infinity, -Infinity);
 
   blocks.forEach((b, i) => {
     position.set(b.x, b.y, b.z);
     scale.set(b.dx, b.dy, b.dz);
-    matrix.compose(position, quaternion, scale);
+    scaleWire.set(b.dx * 1.002, b.dy * 1.002, b.dz * 1.002);
 
-    blockMesh.setMatrixAt(i, matrix);
+    matrixFill.compose(position, quaternion, scale);
+    matrixWire.compose(position, quaternion, scaleWire);
+
+    blockMesh.setMatrixAt(i, matrixFill);
+    wireMesh.setMatrixAt(i, matrixWire);
+
     const band = getBandForZ(b.worldZ);
     blockMesh.setColorAt(i, new THREE.Color(band.color));
 
@@ -100,13 +108,17 @@ async function loadBlocks() {
     max.max(position);
   });
 
+  blockMesh.instanceMatrix.needsUpdate = true;
   blockMesh.instanceColor.needsUpdate = true;
+  wireMesh.instanceMatrix.needsUpdate = true;
+
   scene.add(blockMesh);
+  scene.add(wireMesh);
 
   modelSize = max.clone().sub(min);
   resetCameraToModel();
 
-  status.textContent = `Showing ${blocks.length.toLocaleString()} filled display blocks from ${data.totalRows.toLocaleString()} original blocks. Colours are assigned from Z-based slope angle bands.`;
+  status.textContent = `Showing ${blocks.length.toLocaleString()} filled display blocks from ${data.totalRows.toLocaleString()} original blocks. Colours are assigned from Z-based slope-angle bands.`;
 }
 
 function resetCameraToModel() {
@@ -122,6 +134,7 @@ function resetCameraToModel() {
 document.getElementById("resetView").addEventListener("click", resetCameraToModel);
 document.getElementById("toggleGrid").addEventListener("change", e => { grid.visible = e.target.checked; });
 document.getElementById("toggleAxes").addEventListener("change", e => { axes.visible = e.target.checked; });
+document.getElementById("toggleEdges").addEventListener("change", e => { if (wireMesh) wireMesh.visible = e.target.checked; });
 
 window.addEventListener("resize", () => {
   camera.aspect = container.clientWidth / container.clientHeight;
