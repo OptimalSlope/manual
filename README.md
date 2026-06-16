@@ -9,7 +9,7 @@ permalink: /
 ---
 This is the user manual of [Slope Optimiser](https://optimalslope.com/files/OptimalSlope_Latest.zip/) CAD graphical interface.
 
-{% include preview.html %}
+ 
 
   <!-- <iframe
   src="assets/preview.html"
@@ -19,6 +19,8 @@ This is the user manual of [Slope Optimiser](https://optimalslope.com/files/Opti
 </iframe>   -->  
 
 
+ 
+<p>
 <a href="assets/preview.html" target="_blank"
    style="display:block; text-decoration:none;">
   <div style="
@@ -33,7 +35,7 @@ This is the user manual of [Slope Optimiser](https://optimalslope.com/files/Opti
     <p style="margin:0;">Open the full interactive workflow and pitwall comparison.</p>
   </div>
 </a>
-
+</p>
 <!-- <div style="
   width: 100vw;
   margin-left: calc(50% - 50vw);
