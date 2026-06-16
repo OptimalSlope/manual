@@ -138,12 +138,7 @@ The obtained results of a simulation are shown in 2D plot window and also displa
 
 ### 5. Importing Output into Rockscience RS2
 
-<p align="center">
-  <video controls width="100%" preload="metadata">
-    <source src="https://optimalslope.github.io/manual/assets/videos/tutorials/workflow/5-importing-output-into-rs2.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</p>
+ 
 
 Since results from OptimalSlope may be used in RS2 for stability analysis, this step explains how to import output from our software. There are several steps required to import an output profile DXF file into RS2.
 ##### Step 1: Export output profile to DXF from our software
