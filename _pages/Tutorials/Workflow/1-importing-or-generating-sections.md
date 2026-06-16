@@ -1,10 +1,9 @@
 ---
-title: Importing and Generating Sections
+title: Simulation Workflow - 1. Importing or Generating Sections
 author: Dainius Jenkus
 date: 2010-06-30
 category: Tutorials
 layout: post
-parent: Simulation Workflow
 nav_order: 1
 ---
 
