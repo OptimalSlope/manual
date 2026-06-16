@@ -10,15 +10,15 @@ permalink: /
 This is the user manual of [Slope Optimiser](https://optimalslope.com/files/OptimalSlope_Latest.zip/) CAD graphical interface.
 
 
- <!-- <iframe
+  <iframe
   src="assets/intro_interactive.html"
-  width="1500"
-  height="920"
+  width="100%"
+  height="1500"
   style="height:920px; min-height:920px; border:0; border-radius:16px;">
-</iframe> -->
+</iframe>  
 
 
-<div style="
+<!-- <div style="
   width: 100vw;
   margin-left: calc(50% - 50vw);
   overflow-x: auto;
@@ -37,7 +37,7 @@ This is the user manual of [Slope Optimiser](https://optimalslope.com/files/Opti
       margin: 0 auto;
     ">
   </iframe>
-</div>
+</div> -->
  
 <!-- <iframe
   src="assets/pitwall_section_comparison.html"
