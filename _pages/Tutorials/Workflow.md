@@ -309,10 +309,12 @@ The obtained results of a simulation are shown in 2D plot window and also displa
 Since results from OptimalSlope may be used in RS2 for stability analysis, this step explains how to import output from our software. There are several steps required to import an output profile DXF file into RS2.
 ##### Step 1: Export output profile to DXF from our software
  - **Export output profile as DXF** (as explained in step 4) using the `Local XY` export method. This is required as RS2 expects a 2D section, so coordinates are flattened to have a horizontal section on the XY plane.
+
 <!-- ##### Step 2: Modify the DXF File in AutoCAD
 - **Open the DXF file in AutoCAD.**
 - **Convert Block References**: Use the `EXPLODE` command to convert all block references into simpler entities. This is crucial as RS2 cannot handle block references in the DXF.
 - **Save the File**: After exploding the blocks, save the file again as an ASCII DXF 2000 format. -->
+
 **Note**: Other software such as Rhino can be used to achieve such operation.
 ##### Step 2: Import into RS2
 - **Import the DXF File**: Open RS2 and import the modified DXF file.
