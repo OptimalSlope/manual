@@ -12,7 +12,7 @@ This is the user manual of [Slope Optimiser](https://optimalslope.com/files/Opti
 
  <iframe
   src="assets/intro_interactive.html"
-  width="100%"
+  width="1500"
   height="920"
   style="height:920px; min-height:920px; border:0; border-radius:16px;">
 </iframe>
