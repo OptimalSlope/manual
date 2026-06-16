@@ -1,74 +1,89 @@
-<div class="book-summary">
-    <script type="text/javascript">
-        // Fixes the page links scroll problem on both desktop and mobile browsers
-        function pageScrollToTop(element) {
-            // both mobile and non-mobile
-            $('div.body-inner').animate({scrollTop: 0});
-            $(element).parent().find('li>ul>li').removeClass('active');
-            return true;  // propagate
-        }
-        // Fixes the anchor links scroll problem on mobile browsers
-        function mobilePageScrollToAnchor(element) {
-            $(element).closest('li.chapter').find('ul>li').removeClass('active');
-            $(element).parent().addClass('active');
-            if ($(document).width() <= 1240) {
-                $('div.body-inner').animate({scrollTop: $($(element).attr('href')).get(0).offsetTop});
-            }
-            return true;
-        }
-    </script>
+<a href="#" class="js-toolbar-action search-toggle">
+  Click to Search
+</a>
 
-    <nav role="navigation">
-        <div id="book-search-input" role="search">
-            <input type="text" placeholder="Type to search" />
-        </div>
-        <div id="book-search-input-link" role="search">
-            <a href="{{site.baseurl}}/assets/search.html">Click to Search</a>
-        </div>
-        <ul class="summary">
-            {% if page.url == "/index.html" or page.url == "/" %}
-            <li class="chapter active" data-level="1.1" data-path="{{site.baseurl}}">
+<ul class="summary">
+  {% if page.url == "/index.html" or page.url == "/" %}
+    <li class="chapter active">
+  {% else %}
+    <li class="chapter">
+  {% endif %}
+      <a href="{{ site.baseurl }}/">{{ site.title | escape }}</a>
+    </li>
+
+  {% assign workflow_parent_url = "/pages/Tutorials/Workflow/" %}
+  {% assign workflow_child_prefix = "/pages/Tutorials/Workflow/" %}
+
+  {% for collection in site.collections %}
+    {% if collection.output %}
+      {% if collection.label == "posts" %}
+        {% assign docs = site[collection.label] | reverse %}
+      {% else %}
+        {% assign docs = site[collection.label] %}
+      {% endif %}
+
+      {% for post in docs %}
+
+        {% assign is_workflow_child = false %}
+        {% if post.url contains "/pages/Tutorials/Workflow/" and post.url != workflow_parent_url %}
+          {% assign is_workflow_child = true %}
+        {% endif %}
+
+        {% unless is_workflow_child %}
+
+          {% if post.url == workflow_parent_url %}
+
+            {% if page.url == post.url or page.url contains "/pages/Tutorials/Workflow/" %}
+              <li class="chapter active">
             {% else %}
-            <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}">
+              <li class="chapter">
             {% endif %}
-                <a href="{{site.baseurl}}/" onclick="pageScrollToTop(this)">
-                    {{ site.title | escape }}
-                </a>
+
+              <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | escape }}</a>
+
+              <ul class="articles">
+                {% for child in docs %}
+                  {% if child.url contains "/pages/Tutorials/Workflow/" and child.url != workflow_parent_url %}
+                    {% if page.url == child.url %}
+                      <li class="chapter active">
+                    {% else %}
+                      <li class="chapter">
+                    {% endif %}
+                        <a href="{{ site.baseurl }}{{ child.url }}">{{ child.title | escape }}</a>
+
+                        {% if site.toc.enabled %}
+                          {% if page.url == child.url %}
+                            {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
+                          {% endif %}
+                        {% endif %}
+                      </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
             </li>
 
-            <li class="divider"></li>
+          {% else %}
 
-            {% for collection in site.collections %}
-                <!-- <p>{{ collection.label }}</p> -->
-                {% if collection.output %}
-                    {% if collection.label == "posts" %}
-                        {% assign reversed_posts = site[collection.label] | reverse %}
-                    {% else %}
-                        {% assign reversed_posts = site[collection.label] %}
-                    {% endif %}
+            {% if page.url == post.url %}
+              <li class="chapter active">
+            {% else %}
+              <li class="chapter">
+            {% endif %}
 
-                    {% for post in reversed_posts %}
-                        {% if page.url == post.url %}
-                        <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
-                        {% else %}
-                        <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
-                        {% endif %}
-                            <a href="{{site.baseurl}}{{post.url}}" onclick="pageScrollToTop(this)">
-                                {{ post.title | escape }}
-                            </a>
-                            {% if site.toc.enabled %}
-                                {% if page.url == post.url %}
-                                    {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
-                                {% endif %}
-                            {% endif %}
-                        </li>
-                    {% endfor %}
+              <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | escape }}</a>
 
-                    {% if reversed_posts.size > 0 %}
-                        <li class="divider"></li>
-                    {% endif %}
+              {% if site.toc.enabled %}
+                {% if page.url == post.url %}
+                  {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
                 {% endif %}
-            {% endfor %}
-        </ul>
-    </nav>
-</div>
+              {% endif %}
+            </li>
+
+          {% endif %}
+
+        {% endunless %}
+
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+</ul>
