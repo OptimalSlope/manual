@@ -75,9 +75,9 @@ The above properties (bench, rock, and general properties) must be provided to r
 
 
 
----
 
-### Optional Properties
+
+#### Optional Properties
 - **Water Table**: Location and properties of the water table, if applicable.
 - **Surcharge**: Additional loads like magnitude and inclination, if applicable.
 - **Roads**: Presence and properties of roads on or near the slope.
