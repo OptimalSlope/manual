@@ -109,6 +109,16 @@ After the input data is defined, simulations can be started in the simulation wi
 
 {% include output_2d.drawio.html %}
 
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+<model-viewer
+  src="https://optimalslope.github.io/manual/assets/glb/out_glb.glb"
+  camera-controls
+  auto-rotate
+  style="width: 100%; height: 600px; background: #f5f5f5;">
+</model-viewer>
+
+
 - **Note:** results in the 2D plot is always shown as slope is on the right side (mirrored if it is on the left side). When exporting output profile to DXF or visualising in 3D, a produced slope profile is shown in the original position.
 
 ### 4. Exporting Output Profile to DXF
