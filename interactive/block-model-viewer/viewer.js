@@ -1,0 +1,142 @@
+import * as THREE from "three";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+
+const container = document.getElementById("viewer");
+const status = document.getElementById("status");
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xaebdcb);
+
+const camera = new THREE.PerspectiveCamera(
+  45,
+  container.clientWidth / container.clientHeight,
+  1,
+  100000
+);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(container.clientWidth, container.clientHeight);
+renderer.setPixelRatio(window.devicePixelRatio);
+container.appendChild(renderer.domElement);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.screenSpacePanning = true;
+
+scene.add(new THREE.AmbientLight(0xffffff, 1.2));
+
+const light = new THREE.DirectionalLight(0xffffff, 2.0);
+light.position.set(1000, -1000, 1500);
+scene.add(light);
+
+const grid = new THREE.GridHelper(2500, 25, 0x334455, 0x667788);
+scene.add(grid);
+
+const axes = new THREE.AxesHelper(500);
+scene.add(axes);
+
+let blockMesh = null;
+let modelSize = new THREE.Vector3(1000, 1000, 1000);
+
+function colourByZ(z, zMin, zMax) {
+  const t = (z - zMin) / Math.max(zMax - zMin, 1);
+  const color = new THREE.Color();
+  color.setHSL(0.62 - 0.45 * t, 0.85, 0.55);
+  return color;
+}
+
+async function loadBlocks() {
+  const response = await fetch("./data/blocks_sample.json");
+  if (!response.ok) {
+    throw new Error(`Failed to load JSON: ${response.status}`);
+  }
+
+  const data = await response.json();
+  const blocks = data.blocks;
+
+  status.textContent = `Rendering ${blocks.length.toLocaleString()} sampled blocks from ${data.totalRows.toLocaleString()} total blocks...`;
+
+  const zValues = blocks.map(b => b.z);
+  const zMin = Math.min(...zValues);
+  const zMax = Math.max(...zValues);
+
+  const geometry = new THREE.BoxGeometry(1, 1, 1);
+  const material = new THREE.MeshStandardMaterial({
+    vertexColors: true,
+    roughness: 0.8,
+    metalness: 0.0,
+    transparent: true,
+    opacity: 0.85
+  });
+
+  blockMesh = new THREE.InstancedMesh(geometry, material, blocks.length);
+  blockMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+
+  const matrix = new THREE.Matrix4();
+  const position = new THREE.Vector3();
+  const scale = new THREE.Vector3();
+  const quaternion = new THREE.Quaternion();
+  const color = new THREE.Color();
+
+  const min = new THREE.Vector3(Infinity, Infinity, Infinity);
+  const max = new THREE.Vector3(-Infinity, -Infinity, -Infinity);
+
+  blocks.forEach((b, i) => {
+    position.set(b.x, b.y, b.z);
+    scale.set(b.dx, b.dy, b.dz);
+    matrix.compose(position, quaternion, scale);
+
+    blockMesh.setMatrixAt(i, matrix);
+    blockMesh.setColorAt(i, colourByZ(b.z, zMin, zMax));
+
+    min.min(position);
+    max.max(position);
+  });
+
+  scene.add(blockMesh);
+
+  modelSize = max.clone().sub(min);
+  resetCameraToModel();
+
+  status.textContent = `Showing ${blocks.length.toLocaleString()} sampled blocks from ${data.totalRows.toLocaleString()} total blocks. Colours are based on Z elevation.`;
+}
+
+function resetCameraToModel() {
+  const maxDim = Math.max(modelSize.x, modelSize.y, modelSize.z, 1);
+  camera.position.set(maxDim * 0.8, -maxDim * 1.2, maxDim * 0.7);
+  camera.near = maxDim / 1000;
+  camera.far = maxDim * 20;
+  camera.updateProjectionMatrix();
+
+  controls.target.set(0, 0, 0);
+  controls.update();
+}
+
+document.getElementById("resetView").addEventListener("click", resetCameraToModel);
+
+document.getElementById("toggleGrid").addEventListener("change", (event) => {
+  grid.visible = event.target.checked;
+});
+
+document.getElementById("toggleAxes").addEventListener("change", (event) => {
+  axes.visible = event.target.checked;
+});
+
+window.addEventListener("resize", () => {
+  camera.aspect = container.clientWidth / container.clientHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(container.clientWidth, container.clientHeight);
+});
+
+loadBlocks().catch(error => {
+  console.error(error);
+  status.textContent = error.message;
+});
+
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+}
+
+animate();
