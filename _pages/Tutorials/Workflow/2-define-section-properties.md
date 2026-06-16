@@ -4,8 +4,9 @@ author: Dainius Jenkus
 date: 2010-06-30
 category: Tutorials
 layout: post
+parent: Simulation Workflow
+nav_order: 2
 ---
-
 ## Define Section Properties
 
 Before running a simulation, define the required bench, rock, and general properties for the selected section.

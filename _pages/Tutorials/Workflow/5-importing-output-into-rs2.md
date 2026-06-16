@@ -4,6 +4,8 @@ author: Dainius Jenkus
 date: 2010-06-30
 category: Tutorials
 layout: post
+parent: Simulation Workflow
+nav_order: 5
 ---
 
 ## Importing Output into Rockscience RS2

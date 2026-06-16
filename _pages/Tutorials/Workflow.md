@@ -22,7 +22,7 @@ This workflow is split into short tutorials. Each page explains one part of the 
 
 ---
 
-### Video files
+<!-- ### Video files
 
 Place the tutorial videos in:
 
@@ -38,4 +38,4 @@ Expected filenames:
 3-running-simulations.mp4
 4-exporting-output-profile-to-dxf.mp4
 5-importing-output-into-rs2.mp4
-```
+``` -->
