@@ -82,11 +82,11 @@ The above properties (bench, rock, and general properties) must be provided to r
 - **Surcharge**: Additional loads like magnitude and inclination, if applicable.
 - **Roads**: Presence and properties of roads on or near the slope.
 - **Tension Crack Properties**: Characteristics of any tension cracks.
--  **Faults**: Geometry and material properties of faults, if applicable.
+-  **Faults**: Geometry and material properties of faults, if applicable. For detailed information on faults, refer to the [OptimalSlope Manual on Faults](https://optimalslope.github.io/manual/pages/properties/6-properties/#Faults).
 
 Ensure all values are accurate and reflect the physical/mechanical characteristics of your material and cross-section specifics.
 
-For detailed guidance, refer to the [OptimalSlope Manual on Bench Properties](https://optimalslope.github.io/manual/pages/properties/6-properties/#bench-properties).
+For detailed guidance, refer to the [OptimalSlope Manual on Properties](https://optimalslope.github.io/manual/pages/properties/6-properties/).
 
 ---
 ### 3. Running Simulations
