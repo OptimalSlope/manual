@@ -13,9 +13,9 @@ This is the user manual of [Slope Optimiser](https://optimalslope.com/files/Opti
  
 
  <iframe
-  src="interactive/workflow_animation.html"
+  src="assets/workflow_animation.html"
   width="100%"
-  height="900"
+  height="100%"
   style="border:0; border-radius:16px; box-shadow:0 8px 28px rgba(0,0,0,0.15); overflow:auto;"
   loading="lazy">
 </iframe>
