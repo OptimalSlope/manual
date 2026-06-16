@@ -33,12 +33,12 @@ scene.add(grid);
 const axes = new THREE.AxesHelper(700);
 scene.add(axes);
 
-let blockMesh = null;
-let edgeMesh = null;
+let colourMeshes = [];
+let edgeMeshes = [];
 let modelSize = new THREE.Vector3(1000, 1000, 1000);
 
-// Edit these Z bands to match your actual slope-angle schedule.
-// worldZ is the original Z value from the CSV.
+// Z bands used as slope-angle classes.
+// Edit these limits and colours to match your actual slope-angle schedule.
 const slopeBands = [
   { zMin: 1780, zMax: Infinity, label: "55°", color: 0xff3030 },
   { zMin: 1420, zMax: 1780, label: "45°", color: 0x00e5ff },
@@ -46,27 +46,29 @@ const slopeBands = [
   { zMin: -Infinity, zMax: 1300, label: "25°", color: 0x8b55ff }
 ];
 
-function getBandForZ(worldZ) {
-  for (const band of slopeBands) {
+function getBandIndex(worldZ) {
+  for (let i = 0; i < slopeBands.length; i++) {
+    const band = slopeBands[i];
     if (worldZ >= band.zMin && worldZ < band.zMax) {
-      return band;
+      return i;
     }
   }
-  return slopeBands[slopeBands.length - 1];
+  return slopeBands.length - 1;
 }
 
-function updateLegend() {
+function updateLegend(bandCounts) {
   legend.innerHTML =
     "<strong>Slope angle colours, derived from Z bands</strong>" +
-    slopeBands.map(band => {
+    slopeBands.map((band, i) => {
       const hex = "#" + band.color.toString(16).padStart(6, "0");
       const rangeText = `${band.zMin === -Infinity ? "-∞" : band.zMin} to ${band.zMax === Infinity ? "∞" : band.zMax}`;
-      return `<div class="legend-row"><span class="swatch" style="background:${hex}"></span>${band.label} (Z ${rangeText})</div>`;
+      const count = bandCounts ? bandCounts[i].toLocaleString() : "0";
+      return `<div class="legend-row"><span class="swatch" style="background:${hex}"></span>${band.label} (Z ${rangeText}) — ${count} blocks</div>`;
     }).join("");
 }
 
 async function loadBlocks() {
-  const response = await fetch("./data/blocks_coarse.json?v=visible-colours-2");
+  const response = await fetch("./data/blocks_coarse.json?v=band-meshes-1");
   if (!response.ok) {
     throw new Error(`Failed to load JSON: ${response.status}`);
   }
@@ -74,82 +76,87 @@ async function loadBlocks() {
   const data = await response.json();
   const blocks = data.blocks;
 
-  updateLegend();
+  status.textContent = `Preparing ${blocks.length.toLocaleString()} filled blocks...`;
 
-  status.textContent = `Rendering ${blocks.length.toLocaleString()} filled blocks...`;
-
-  const geometry = new THREE.BoxGeometry(1, 1, 1);
-
-  // Bright unlit material: colours do not depend on lighting.
-  const fillMaterial = new THREE.MeshBasicMaterial({
-    vertexColors: true,
-    side: THREE.DoubleSide,
-    toneMapped: false
+  const blocksByBand = slopeBands.map(() => []);
+  blocks.forEach(block => {
+    const index = getBandIndex(block.worldZ);
+    blocksByBand[index].push(block);
   });
 
-  blockMesh = new THREE.InstancedMesh(geometry, fillMaterial, blocks.length);
-  blockMesh.instanceMatrix.setUsage(THREE.StaticDrawUsage);
+  const bandCounts = blocksByBand.map(items => items.length);
+  updateLegend(bandCounts);
 
-  // Lighter edges. Dense black edges made previous versions look black.
+  const boxGeometry = new THREE.BoxGeometry(1, 1, 1);
   const edgeGeometry = new THREE.BoxGeometry(1.006, 1.006, 1.006);
-  const edgeMaterial = new THREE.MeshBasicMaterial({
-    color: 0xffffff,
-    wireframe: true,
-    transparent: true,
-    opacity: 0.12,
-    depthWrite: false,
-    toneMapped: false
-  });
 
-  edgeMesh = new THREE.InstancedMesh(edgeGeometry, edgeMaterial, blocks.length);
-  edgeMesh.instanceMatrix.setUsage(THREE.StaticDrawUsage);
+  const min = new THREE.Vector3(Infinity, Infinity, Infinity);
+  const max = new THREE.Vector3(-Infinity, -Infinity, -Infinity);
 
   const matrix = new THREE.Matrix4();
   const position = new THREE.Vector3();
   const scale = new THREE.Vector3();
   const quaternion = new THREE.Quaternion();
 
-  const min = new THREE.Vector3(Infinity, Infinity, Infinity);
-  const max = new THREE.Vector3(-Infinity, -Infinity, -Infinity);
+  blocksByBand.forEach((bandBlocks, bandIndex) => {
+    if (bandBlocks.length === 0) return;
 
-  const bandCounts = new Map();
+    const band = slopeBands[bandIndex];
 
-  blocks.forEach((b, i) => {
-    position.set(b.x, b.y, b.z);
-    scale.set(b.dx, b.dy, b.dz);
-    matrix.compose(position, quaternion, scale);
+    // Separate material per band. This avoids any reliance on instance vertex colours.
+    const fillMaterial = new THREE.MeshBasicMaterial({
+      color: band.color,
+      side: THREE.DoubleSide,
+      toneMapped: false
+    });
 
-    blockMesh.setMatrixAt(i, matrix);
-    edgeMesh.setMatrixAt(i, matrix);
+    const mesh = new THREE.InstancedMesh(boxGeometry, fillMaterial, bandBlocks.length);
+    mesh.instanceMatrix.setUsage(THREE.StaticDrawUsage);
 
-    const band = getBandForZ(b.worldZ);
-    blockMesh.setColorAt(i, new THREE.Color(band.color));
-    bandCounts.set(band.label, (bandCounts.get(band.label) || 0) + 1);
+    const edgeMaterial = new THREE.MeshBasicMaterial({
+      color: 0xffffff,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.16,
+      depthWrite: false,
+      toneMapped: false
+    });
 
-    min.min(position);
-    max.max(position);
+    const edgeMesh = new THREE.InstancedMesh(edgeGeometry, edgeMaterial, bandBlocks.length);
+    edgeMesh.instanceMatrix.setUsage(THREE.StaticDrawUsage);
+
+    bandBlocks.forEach((b, i) => {
+      position.set(b.x, b.y, b.z);
+      scale.set(b.dx, b.dy, b.dz);
+      matrix.compose(position, quaternion, scale);
+
+      mesh.setMatrixAt(i, matrix);
+      edgeMesh.setMatrixAt(i, matrix);
+
+      min.min(position);
+      max.max(position);
+    });
+
+    mesh.instanceMatrix.needsUpdate = true;
+    edgeMesh.instanceMatrix.needsUpdate = true;
+
+    scene.add(mesh);
+    scene.add(edgeMesh);
+
+    colourMeshes.push(mesh);
+    edgeMeshes.push(edgeMesh);
   });
-
-  blockMesh.instanceMatrix.needsUpdate = true;
-  blockMesh.instanceColor.needsUpdate = true;
-  edgeMesh.instanceMatrix.needsUpdate = true;
-
-  scene.add(blockMesh);
-  scene.add(edgeMesh);
 
   modelSize = max.clone().sub(min);
   resetCameraToModel();
 
-  const countsText = Array.from(bandCounts.entries())
-    .map(([label, count]) => `${label}: ${count.toLocaleString()}`)
-    .join(", ");
-
   status.textContent =
-    `Showing ${blocks.length.toLocaleString()} display blocks from ${data.totalRows.toLocaleString()} original blocks. Band counts: ${countsText}`;
+    `Showing ${blocks.length.toLocaleString()} display blocks from ${data.totalRows.toLocaleString()} original blocks. Separate colour mesh per slope-angle band.`;
 }
 
 function resetCameraToModel() {
   const maxDim = Math.max(modelSize.x, modelSize.y, modelSize.z, 1);
+
   camera.position.set(maxDim * 0.75, -maxDim * 1.1, maxDim * 0.55);
   camera.near = maxDim / 1000;
   camera.far = maxDim * 20;
@@ -170,9 +177,9 @@ document.getElementById("toggleAxes").addEventListener("change", e => {
 });
 
 document.getElementById("toggleEdges").addEventListener("change", e => {
-  if (edgeMesh) {
-    edgeMesh.visible = e.target.checked;
-  }
+  edgeMeshes.forEach(mesh => {
+    mesh.visible = e.target.checked;
+  });
 });
 
 window.addEventListener("resize", () => {
