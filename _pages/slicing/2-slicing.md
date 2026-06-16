@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Slicing Tool
 author: Dainius Jenkus
 date: 2010-06-30
@@ -70,4 +70,4 @@ This example shows a section made from the original stratigraphy model.
 {% include after_trimming.drawio.html %}
 The resulting section after the extents of excavation are updated using the boundary surface. 
 
- ---
+ --- -->
