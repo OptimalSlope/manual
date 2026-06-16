@@ -36,7 +36,7 @@ Ensure your DXF model data meets general quality standards to ensure the best si
 
 <p align="center">
   <video controls width="100%" preload="metadata">
-    <source src="https://optimalslope.github.io/manual/assets/videos/tutorials/workflow/Simulation-Inputs.mp4" type="video/mp4">
+    <source src="https://optimalslope.github.io/manual/assets/videos/tutorials/Simulation-Inputs.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </p>
