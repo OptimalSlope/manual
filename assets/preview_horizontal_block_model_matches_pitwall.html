@@ -720,13 +720,13 @@
   @media (max-width: 1100px) {
     .shell {
       width: min(1180px, calc(100vw - 24px));
-      overflow-x: hidden;
+      overflow-x: auto;
     }
     .hero-grid {
       grid-template-columns: 1fr;
     }
     .section {
-      min-width: 0;
+      min-width: 1080px;
     }
   }
 
@@ -1141,16 +1141,14 @@
   @media (max-width: 1100px) {
     .block-model-intro {
       grid-template-columns: repeat(3, minmax(260px, 1fr));
-      overflow-x: hidden;
+      overflow-x: auto;
     }
 
     .block-model-frame-card {
-      overflow-x: hidden;
+      overflow-x: auto;
     }
 
-    .block-model-wrap iframe {
-      min-width: 0;
-    }
+    
   }
 
 
@@ -1207,44 +1205,68 @@
   }
 
 
-  /* Match block model viewer width to other modules */
-  .block-model-frame-card {
-    margin: 22px 32px 34px !important;
-    width: auto !important;
-    max-width: none !important;
-    border-radius: 26px !important;
+  /* Block model module width: match Pitwall section comparison */
+  #block-model {
+    border: 1px solid var(--line) !important;
+    border-radius: 30px !important;
+    background: var(--card) !important;
+    box-shadow: var(--shadow-soft) !important;
+    overflow: hidden !important;
   }
 
-  .block-model-wrap {
+  #block-model .section-head.block-model-head {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 28px 32px 20px !important;
+  }
+
+  #block-model .block-model-intro.single-info {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 30px 32px 0 !important;
+    background: #fff !important;
+  }
+
+  #block-model .block-model-frame-card {
+    width: auto !important;
+    max-width: none !important;
+    margin: 22px 32px 34px !important;
+    border-radius: 26px !important;
+    overflow: hidden !important;
+  }
+
+  #block-model .block-model-wrap {
+    width: 100% !important;
     overflow: hidden !important;
     background: #fff !important;
   }
 
-  .block-model-wrap iframe {
+  #block-model .block-model-wrap iframe {
+    display: block !important;
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
-    height: 720px !important;
-    border-radius: 0 !important;
-  }
-
-  .block-model-intro.single-info {
-    padding-left: 32px !important;
-    padding-right: 32px !important;
+    height: 760px !important;
+    border: 0 !important;
   }
 
   @media (max-width: 1100px) {
-    .block-model-frame-card {
-      overflow-x: hidden !important;
+    #block-model {
+      min-width: 1120px !important;
     }
 
-    .block-model-wrap {
-      overflow-x: hidden !important;
+    #block-model .block-model-frame-card {
+      margin: 22px 32px 34px !important;
     }
 
-    .block-model-wrap iframe {
-      min-width: 0 !important;
+    #block-model .block-model-wrap iframe {
       width: 100% !important;
+      min-width: 0 !important;
     }
   }
 
