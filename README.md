@@ -9,7 +9,7 @@ permalink: /
 ---
 This is the user manual of [Slope Optimiser](https://optimalslope.com/files/OptimalSlope_Latest.zip/) CAD graphical interface.
 
-{% include assets/preview.html %}
+{% include preview.html %}
 
   <!-- <iframe
   src="assets/preview.html"
