@@ -1,0 +1,91 @@
+* [Click to Search](#){: .js-toolbar-action .search-toggle}
+
+{% if page.url == "/index.html" or page.url == "/" %}
+* [{{ site.title | escape }}]({{ "/" | relative_url }}){: .chapter .active data-level="1.1" data-path="{{ "/" | relative_url }}"}
+{% else %}
+* [{{ site.title | escape }}]({{ "/" | relative_url }}){: .chapter data-level="1.1" data-path="{{ "/" | relative_url }}"}
+{% endif %}
+
+{% assign workflow_parent_url = "/pages/Tutorials/Workflow/" %}
+{% assign workflow_child_prefix = "/pages/Tutorials/Workflow/" %}
+
+{% for collection in site.collections %}
+  {% if collection.output %}
+    {% if collection.label == "posts" %}
+      {% assign docs = site[collection.label] | reverse %}
+    {% else %}
+      {% assign docs = site[collection.label] %}
+    {% endif %}
+
+    {% for post in docs %}
+      {% assign is_workflow_child = false %}
+      {% if post.url contains workflow_child_prefix and post.url != workflow_parent_url %}
+        {% assign is_workflow_child = true %}
+      {% endif %}
+
+      {% unless is_workflow_child %}
+        {% if post.url == workflow_parent_url %}
+{% if page.url == post.url or page.url contains workflow_child_prefix %}
+* [{{ post.title | escape }}]({{ post.url | relative_url }}){: .chapter .active data-level="1.1" data-path="{{ post.url | relative_url }}"}
+{% else %}
+* [{{ post.title | escape }}]({{ post.url | relative_url }}){: .chapter data-level="1.1" data-path="{{ post.url | relative_url }}"}
+{% endif %}
+
+{% for child in docs %}
+  {% if child.url contains workflow_child_prefix and child.url != workflow_parent_url %}
+{% if page.url == child.url %}
+    * [{{ child.title | escape }}]({{ child.url | relative_url }}){: .chapter .active data-level="1.2" data-path="{{ child.url | relative_url }}"}
+{% else %}
+    * [{{ child.title | escape }}]({{ child.url | relative_url }}){: .chapter data-level="1.2" data-path="{{ child.url | relative_url }}"}
+{% endif %}
+
+{% if site.toc.enabled and page.url == child.url %}
+{% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
+{% endif %}
+  {% endif %}
+{% endfor %}
+
+        {% else %}
+{% if page.url == post.url %}
+* [{{ post.title | escape }}]({{ post.url | relative_url }}){: .chapter .active data-level="1.1" data-path="{{ post.url | relative_url }}"}
+{% else %}
+* [{{ post.title | escape }}]({{ post.url | relative_url }}){: .chapter data-level="1.1" data-path="{{ post.url | relative_url }}"}
+{% endif %}
+
+{% if site.toc.enabled and page.url == post.url %}
+{% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
+{% endif %}
+        {% endif %}
+      {% endunless %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Section Viewer</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #dcdcdc;
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 100%;
+      background-color: #dcdcdc;
+    }
+  </style>
+</head>
+<body>
+  <model-viewer
+    src="https://optimalslope.github.io/manual/assets/models/sections/section.gltf"
+    camera-controls
+    auto-rotate
+    shadow-intensity="1">
+  </model-viewer>
+</body>
+</html>

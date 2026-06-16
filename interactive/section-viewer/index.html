@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>OptimalSlope Section Viewer</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background: #aebdcb;
+    }
+
+    #viewer {
+      width: 100%;
+      height: 100%;
+    }
+
+    #toolbar {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 10;
+      padding: 10px 12px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      font-size: 14px;
+    }
+
+    #toolbar button {
+      margin-right: 6px;
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+  </style>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <div id="toolbar">
+    <strong>Section Viewer</strong>
+    <button id="resetView">Reset view</button>
+    <label>
+      <input type="checkbox" id="toggleGrid" checked>
+      Grid
+    </label>
+    <label>
+      <input type="checkbox" id="toggleAxes" checked>
+      Axes
+    </label>
+  </div>
+
+  <div id="viewer"></div>
+
+  <script type="module" src="./viewer.js"></script>
+</body>
+</html>

@@ -32,11 +32,11 @@ Alternatively, you can directly import a DXF section file using the pathway: `Fi
 Ensure your DXF model data meets general quality standards to ensure the best simulation results. For guidelines on data preparation and ensuring quality, refer to the [Data Preparation](https://optimalslope.github.io/manual/pages/Data%20Suitability/7-data/).
 
 ---
-### 2. Define Section Properties
+### 2. Defining Properties
 
 <p align="center">
   <video controls width="100%" preload="metadata">
-    <source src="https://optimalslope.github.io/manual/assets/videos/tutorials/workflow/2-define-section-properties.mp4" type="video/mp4">
+    <source src="https://optimalslope.github.io/manual/assets/videos/tutorials/workflow/Simulation-Inputs.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </p>
@@ -109,14 +109,7 @@ After the input data is defined, simulations can be started in the simulation wi
 
 {% include output_2d.drawio.html %}
 
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
-<model-viewer
-  src="https://optimalslope.github.io/manual/assets/glb/out_glb.glb"
-  camera-controls
-  auto-rotate
-  style="width: 100%; height: 600px; background: #f5f5f5;">
-</model-viewer>
+ 
 
 
 - **Note:** results in the 2D plot is always shown as slope is on the right side (mirrored if it is on the left side). When exporting output profile to DXF or visualising in 3D, a produced slope profile is shown in the original position.
