@@ -72,11 +72,44 @@ Set general properties for the section:
 
 The above properties (bench, rock, and general properties) must be provided to run simulations. Optional properties below can be added if needed.
 
+
+#### How should I choose the crest point?
+
+The **crest point** defines the uppermost starting location of the slope in the model. Its position directly affects how the slope geometry is generated during optimisation.
+
+If the crest is placed **too close to the outer edge** of the section or terrain, the calculated slope (based on the **initial maximum overall slope angle**) may project outward beyond the existing ground surface. In this case, parts of the slope will extend into **open space** — effectively creating a geometry that intersects “thin air.” This can lead to unrealistic results and may cause instability or inaccuracies in subsequent simulations.
+
+To avoid this, position the crest point **further inland**, so that:
+
+- The entire slope profile remains within the defined ground surface.
+- The slope toe and face are generated against actual material, not empty space.
+- The optimisation process has valid geometry to work with in all iterations.
+
+When the crest point is set correctly, the section preview shows the preliminary **minimum** and **maximum Overall Slope Angle (OSA)** limits. These are indicated by the **green triangular search region**. This triangle represents the area where the simulation will search for the optimal slope profile shape (see picture below).
+
+<p align="center">
+  <img src="https://OptimalSlope.github.io/manual/assets/tutorial/min_max_osa.png" alt="Profile setup"/>
+</p>
+
+The preliminary OSA limits are calculated from the selected crest point and the section properties. If the crest point and properties result in a very narrow difference between the minimum and maximum OSA, the simulation has only a limited search range. In this case, the optimiser will not be able to explore many possible slope profiles, which may reduce the quality or usefulness of the optimisation result.
+
+A wider and realistic OSA search range gives the optimiser more flexibility to investigate alternative slope shapes while still remaining within the valid section geometry.
+
+**Practical Tips:**
+
+- Position the crest point slightly further inside the section boundary than you think is necessary.
+- Check that the green triangular search region remains within the available ground/material area.
+- Avoid crest point positions that create a very narrow minimum-to-maximum OSA range.
+- If the green triangle is too narrow or extends outside the model, adjust the crest point or review the section properties before running the simulation.
+
+---
+
 ### Optional Properties
 - **Water Table**: Location and properties of the water table, if applicable.
 - **Surcharge**: Additional loads like magnitude and inclination, if applicable.
 - **Roads**: Presence and properties of roads on or near the slope.
 - **Tension Crack Properties**: Characteristics of any tension cracks.
+-  **Faults**: Geometry and material properties of faults, if applicable.
 
 Ensure all values are accurate and reflect the physical/mechanical characteristics of your material and cross-section specifics.
 
@@ -90,6 +123,14 @@ For detailed guidance, refer to the [OptimalSlope Manual on Bench Properties](ht
 OptimalSlope runs simulations on the cloud to avoid maxing out local resources and affecting the performance of user's machine due to the nature of computationally heavy simulations.
 
 After the problem of simulation is formulated with required inputs, the simulation window is used to run simulations and obtain the results.
+
+
+<p align="center">
+  <video controls width="100%" preload="metadata">
+    <source src="https://optimalslope.github.io/manual/assets/videos/tutorials/Running-Simulation.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</p>
 
 **Configuring user profile**
 * To run simulations on the cloud, the user profile is configured under **Tools > Settings > Account**.
@@ -127,6 +168,7 @@ Typical scenario changes may include:
 - **Slope geometry** — adjust the slope profile, crest position, or slope height.
 - **Bench settings** — test different bench heights, berm widths, or bench face angles.
 - **Material properties** — compare different rock strength parameters or material models.
+- **Faults** — evaluate the influence of different fault positions, orientations, or fault material properties.
 - **Water table** — evaluate dry, wet, or alternative groundwater conditions.
 - **Surcharge or roads** — assess the influence of additional loads or road positions.
 
@@ -144,12 +186,7 @@ or:
 This helps avoid conflicts between simulation outputs, logs, and exported result files. 
 **Note**: when requiring to re-run the same section more than once, e.g., with corrected parameters, select **Yes** to overwrite the existing input data when starting a simulation.
 
-<p align="center">
-  <video controls width="100%" preload="metadata">
-    <source src="https://optimalslope.github.io/manual/assets/videos/tutorials/Running-Simulation.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</p>
+
 
 
 #### Results
@@ -215,4 +252,22 @@ At the moment, OptimalSlope does not export the complete RS2 external boundary b
 
 By following these steps, you can successfully prepare and import a DXF file into RS2, ensuring that all elements are correctly interpreted by the software.
 
- 
+### 6. Exporting the Section Block Model
+
+If the project contains 3D stratigraphy, the section block model can be exported from the simulation window using the **Export block model** tool.
+
+<p align="center">
+  <img src="https://OptimalSlope.github.io/manual/assets/docs_images/block_model_export.png" alt="Export output"/>
+</p>
+
+This export creates a block model for the selected section using the optimized slope angles from the simulation result. The exported model can be used for further visualisation, checking, or downstream modelling workflows.
+
+Before exporting, define the block dimensions:
+
+- **dX** — block size in the X direction.
+- **dY** — block size in the Y direction.
+- **dZ** — block size in the Z direction.
+
+This feature is available when the section is generated from, or associated with, a 3D stratigraphy model. If the project only contains an imported 2D section without 3D stratigraphy, there is no 3D block model available to export.
+
+Choose block dimensions that are appropriate for the scale of the model. Smaller block sizes provide a more detailed representation but may produce larger output files, while larger block sizes reduce file size but give a coarser model.
