@@ -9,7 +9,7 @@
       height: 100%;
       overflow: hidden;
       font-family: Arial, sans-serif;
-      background: #aebdcb;
+      background: #06164d;
     }
 
     #viewer {
@@ -27,7 +27,7 @@
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.18);
       font-size: 14px;
-      max-width: 420px;
+      max-width: 440px;
     }
 
     #toolbar button {
@@ -36,16 +36,10 @@
       cursor: pointer;
     }
 
-    #status {
+    #status, #legend {
       margin-top: 8px;
       font-size: 12px;
       color: #333;
-    }
-
-    #legend {
-      margin-top: 8px;
-      font-size: 12px;
-      line-height: 1.45;
     }
 
     .legend-item {
@@ -78,14 +72,14 @@
   <div id="toolbar">
     <strong>Leapfrog Block Model Viewer</strong><br>
     <button id="resetView">Reset view</button>
-    <label><input type="checkbox" id="toggleGrid" checked> Grid</label>
+    <label><input type="checkbox" id="toggleGrid"> Grid</label>
     <label><input type="checkbox" id="toggleAxes" checked> Axes</label>
+    <label><input type="checkbox" id="toggleWire" checked> Block edges</label>
     <div id="status">Loading block model...</div>
     <div id="legend"></div>
   </div>
 
   <div id="viewer"></div>
-
   <script type="module" src="./viewer.js"></script>
 </body>
 </html>
