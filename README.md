@@ -9,6 +9,14 @@ permalink: /
 ---
 This is the user manual of [Slope Optimiser](https://optimalslope.com/files/OptimalSlope_Latest.zip/) CAD graphical interface.
 
+<iframe
+  src="assets/pitwall_section_comparison.html"
+  width="100%"
+  height="760"
+  style="border: 0; border-radius: 16px; box-shadow: 0 8px 28px rgba(0,0,0,0.15);"
+  loading="lazy">
+</iframe>
+
 ## Workflow
 A diagram shows the workflow consisting of three stages:
 1. Input stage (importing of 3D rock models, phreatic surface).
