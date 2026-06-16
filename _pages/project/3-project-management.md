@@ -69,6 +69,100 @@ A pit boundary surface can be imported and used to generate a trimmed version of
 >
 {: .block-tip }
 
+
+### Creating Sections
+
+The **Slicing** tool is used to create cross-sections from selected 3D shapes or stratigraphy models. It creates sections by cutting the selected geometry with a defined cutting plane.
+
+Cross-sections can be created using one of the following cutting planes:
+
+- **XY**
+- **XZ**
+- **YZ**
+
+The section location is controlled by the global plane position coordinate, in metres.
+
+For vertical cutting planes, such as **XZ** and **YZ**, the slicing tool also supports defining an **azimuth angle**. This allows vertical cross-sections to be created at different orientations.
+
+| Symbol | Action |
+|:-:|:-|
+| ![Slicing tool](https://OptimalSlope.github.io/manual/assets/control-icons/content-cut-custom.png) | Opens the slicing tool for creating cross-sections. |
+
+> ##### TIP
+>
+> - Cross-sections automatically inherit properties from their 3D parent stratigraphy.
+> - If properties are not defined before slicing, they can be added later at either the 3D model level or the individual section level.
+> - It is recommended to define bench properties and the strength model before creating cross-sections.
+>
+{: .block-tip }
+
+#### Usage
+
+To create a section:
+
+1. Select one or more shapes in the project.
+2. Click the **Slicing** button on the toolbar, or right-click the selected shape and choose the cross-section option.
+3. Select the cutting plane: **XY**, **XZ**, or **YZ**.
+4. Specify the position of the cutting plane.
+5. If using a vertical plane, specify the azimuth angle if required.
+6. Click **Slice**.
+
+
+{% include slicing.html %}
+
+<p>&nbsp;</p>
+
+#### Cross-Section Example
+
+{% include slice.html %}
+
+---
+
+### Trim Section to Boundary Surface
+
+#### Boundary Surface
+
+A **boundary surface** is a closed and continuous surface used to constrain or trim a section. In geological and mining workflows, a boundary surface may represent features such as:
+
+- the edge of an open pit,
+- a pushback surface,
+- excavation limits,
+- fault surfaces,
+- model extents.
+
+Boundary surfaces can be imported into the project and used to create a trimmed version of an existing section. This is useful when the original 3D stratigraphy model is available, but the section needs to reflect the current or planned excavation limits.
+
+Trimming at the section level is often faster and simpler than modifying the entire 3D model. It allows the cross-section to better represent real-world mining conditions while keeping the workflow efficient.
+
+#### Example
+
+{% include boundary_surface.drawio.html %}
+
+#### Usage
+
+To trim a section using a boundary surface:
+
+1. Select the required cross-section in the left project panel.
+2. Make sure the boundary surface has already been imported into the project.
+3. In the right properties panel, click **Trim Slice**.
+4. Review the updated section geometry after trimming.
+
+#### Before Trimming
+
+{% include before_trimming.drawio.html %}
+
+This example shows a section created from the original stratigraphy model.
+
+#### After Trimming
+
+{% include after_trimming.drawio.html %}
+
+The resulting section is updated using the boundary surface, so the section better reflects the excavation or pushback limits.
+
+---
+ 
+
+
 *Supported file formats:*
 
 | Format | Description | File extension |
