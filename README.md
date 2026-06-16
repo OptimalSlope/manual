@@ -9,14 +9,30 @@ permalink: /
 ---
 This is the user manual of [Slope Optimiser](https://optimalslope.com/files/OptimalSlope_Latest.zip/) CAD graphical interface.
 
-<!-- {% include preview.html %}
-  <iframe
+{% include preview.html %}
+
+  <!-- <iframe
   src="assets/preview.html"
   width="100%"
   height="1500"
   style="height:920px; min-height:920px; border:0; border-radius:16px;">
-</iframe>   -->
+</iframe>   -->  
 
+
+<a href="assets/preview.html" target="_blank"
+   style="display:block; text-decoration:none;">
+  <div style="
+    border:1px solid #d8e2ea;
+    border-radius:18px;
+    padding:22px;
+    background:linear-gradient(135deg,#0a4e76,#f16b21);
+    color:white;
+    box-shadow:0 8px 28px rgba(0,0,0,0.15);
+  ">
+    <h2 style="margin:0 0 8px;">OptimalSlope Interactive Workflow</h2>
+    <p style="margin:0;">Open the full interactive workflow and pitwall comparison.</p>
+  </div>
+</a>
 
 <!-- <div style="
   width: 100vw;
