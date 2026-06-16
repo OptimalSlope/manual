@@ -21,7 +21,7 @@ This is the user manual of [Slope Optimiser](https://optimalslope.com/files/Opti
 
  
 <p>
-<a href="assets/preview.html" target="_blank"
+<a href="assets/preview_horizontal.html" target="_blank"
    style="display:block; text-decoration:none;">
   <div style="
     border:1px solid #d8e2ea;
