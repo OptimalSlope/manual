@@ -73,6 +73,16 @@ Set general properties for the section:
 The above properties (bench, rock, and general properties) must be provided to run simulations. Optional properties below can be added if needed.
 
 
+### Common Simulation Input Checks
+
+Before running a simulation, review the following common input checks. These checks help ensure that the section geometry, section properties, and optimisation search region are suitable for producing meaningful results.
+
+#### Section Geometry Checks: Gaps and Overlaps
+
+...
+
+#### Crest Point and OSA Search Region Checks
+
 #### How should I choose the crest point?
 
 The **crest point** defines the uppermost starting location of the slope in the model. Its position directly affects how the slope geometry is generated during optimisation.
@@ -88,10 +98,14 @@ To avoid this, position the crest point **further inland**, so that:
 When the crest point is set correctly, the section preview shows the preliminary **minimum** and **maximum Overall Slope Angle (OSA)** limits. These are indicated by the **green triangular search region**. This triangle represents the area where the simulation will search for the optimal slope profile shape (see picture below).
 
 <p align="center">
-  <img src="https://OptimalSlope.github.io/manual/assets/tutorial/min_max_osa.png" alt="Profile setup"/>
+  <img src="https://OptimalSlope.github.io/manual/assets/docs_images/min_max_osa.png" alt="Profile setup"/>
 </p>
 
 The preliminary OSA limits are calculated from the selected crest point and the section properties. If the crest point and properties result in a very narrow difference between the minimum and maximum OSA, the simulation has only a limited search range. In this case, the optimiser will not be able to explore many possible slope profiles, which may reduce the quality or usefulness of the optimisation result.
+
+<p align="center">
+  <img src="https://OptimalSlope.github.io/manual/assets/docs_images/max_osa_limited_space.png" alt="Profile setup"/>
+</p>
 
 A wider and realistic OSA search range gives the optimiser more flexibility to investigate alternative slope shapes while still remaining within the valid section geometry.
 
@@ -101,6 +115,8 @@ A wider and realistic OSA search range gives the optimiser more flexibility to i
 - Check that the green triangular search region remains within the available ground/material area.
 - Avoid crest point positions that create a very narrow minimum-to-maximum OSA range.
 - If the green triangle is too narrow or extends outside the model, adjust the crest point or review the section properties before running the simulation.
+
+
 
 ---
 
