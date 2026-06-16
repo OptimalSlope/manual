@@ -213,7 +213,7 @@ When testing fault sensitivity, duplicate the section and create separate scenar
 ---
 
  
-#### Water Table
+### Water Table
 
 The water table, also referred to as the **piezometric line**, can be defined for a selected cross-section under:
 
