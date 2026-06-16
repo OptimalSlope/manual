@@ -31,59 +31,45 @@ const axes = new THREE.AxesHelper(700);
 scene.add(axes);
 
 let blockMesh = null;
-let edgeMesh = null;
 let modelSize = new THREE.Vector3(1000, 1000, 1000);
 
-const angleClasses = [
-  { min: -Infinity, max: 25, label: "< 25 deg", color: 0x2c7bb6 },
-  { min: 25, max: 35, label: "25-35 deg", color: 0x00a6ca },
-  { min: 35, max: 45, label: "35-45 deg", color: 0x90eb9d },
-  { min: 45, max: 55, label: "45-55 deg", color: 0xf9d057 },
-  { min: 55, max: 65, label: "55-65 deg", color: 0xf29e2e },
-  { min: 65, max: Infinity, label: "> 65 deg", color: 0xd7191c }
+/*
+  Edit these Z bands to match your slope-angle schedule.
+  worldZ uses the original Z values from the CSV.
+  Current defaults are based on the uploaded model and the example screenshot.
+*/
+const slopeBands = [
+  { zMin: 1780, zMax: Infinity, angle: 55, label: "55 deg", color: 0xff4040 },
+  { zMin: 1420, zMax: 1780, angle: 45, label: "45 deg", color: 0x38f2ff },
+  { zMin: 1300, zMax: 1420, angle: 35, label: "35 deg", color: 0x66cc33 },
+  { zMin: -Infinity, zMax: 1300, angle: 25, label: "25 deg", color: 0x8b55ff }
 ];
 
-function colourByAngle(angle) {
-  for (const item of angleClasses) {
-    if (angle >= item.min && angle < item.max) return new THREE.Color(item.color);
+function getBandForZ(worldZ) {
+  for (const band of slopeBands) {
+    if (worldZ >= band.zMin && worldZ < band.zMax) return band;
   }
-  return new THREE.Color(0x999999);
+  return slopeBands[slopeBands.length - 1];
 }
 
-function colourByZ(z, zMin, zMax) {
-  const t = (z - zMin) / Math.max(zMax - zMin, 1);
-  if (t > 0.76) return new THREE.Color(0xff2222);  // upper blocks
-  if (t > 0.52) return new THREE.Color(0x00e5ff);  // middle blocks
-  if (t > 0.28) return new THREE.Color(0x58d12f);  // lower middle
-  return new THREE.Color(0x7a3cff);                // lower blocks
-}
-
-function updateLegend(mode) {
-  if (mode === "angle") {
-    legend.innerHTML = "<strong>Slope angle</strong><br>" +
-      angleClasses.map(item => {
-        const hex = "#" + item.color.toString(16).padStart(6, "0");
-        return `<span class="legend-item"><span class="swatch" style="background:${hex}"></span>${item.label}</span>`;
-      }).join("");
-  } else {
-    legend.innerHTML = "<strong>Colour mode:</strong> Z elevation. Add a <code>SlopeAngle</code> column to colour by slope angle.";
-  }
+function updateLegend() {
+  legend.innerHTML =
+    "<strong>Slope angle colours (derived from Z bands)</strong><br>" +
+    slopeBands.map(band => {
+      const hex = "#" + band.color.toString(16).padStart(6, "0");
+      const rangeText = `${band.zMin === -Infinity ? "-inf" : band.zMin} to ${band.zMax === Infinity ? "inf" : band.zMax}`;
+      return `<span class="legend-item"><span class="swatch" style="background:${hex}"></span>${band.label} (Z ${rangeText})</span>`;
+    }).join("<br>");
 }
 
 async function loadBlocks() {
   const response = await fetch("./data/blocks_coarse.json");
   if (!response.ok) throw new Error(`Failed to load JSON: ${response.status}`);
-
   const data = await response.json();
   const blocks = data.blocks;
-  const hasAngles = blocks.some(b => Number.isFinite(b.angle));
-  updateLegend(hasAngles ? "angle" : "z");
+  updateLegend();
 
-  status.textContent = `Rendering ${blocks.length.toLocaleString()} coarsened filled blocks...`;
-
-  const zValues = blocks.map(b => b.z);
-  const zMin = Math.min(...zValues);
-  const zMax = Math.max(...zValues);
+  status.textContent = `Rendering ${blocks.length.toLocaleString()} filled blocks from ${data.totalRows.toLocaleString()} original blocks...`;
 
   const geometry = new THREE.BoxGeometry(1, 1, 1);
   const material = new THREE.MeshLambertMaterial({
@@ -93,14 +79,6 @@ async function loadBlocks() {
 
   blockMesh = new THREE.InstancedMesh(geometry, material, blocks.length);
   blockMesh.instanceMatrix.setUsage(THREE.StaticDrawUsage);
-
-  const edgeGeometry = new THREE.EdgesGeometry(geometry);
-  const edgeMaterial = new THREE.LineBasicMaterial({
-    color: 0x222222,
-    transparent: true,
-    opacity: 0.35
-  });
-  edgeMesh = new THREE.InstancedMesh(edgeGeometry, edgeMaterial, blocks.length);
 
   const matrix = new THREE.Matrix4();
   const position = new THREE.Vector3();
@@ -115,8 +93,8 @@ async function loadBlocks() {
     matrix.compose(position, quaternion, scale);
 
     blockMesh.setMatrixAt(i, matrix);
-    edgeMesh.setMatrixAt(i, matrix);
-    blockMesh.setColorAt(i, hasAngles ? colourByAngle(b.angle) : colourByZ(b.z, zMin, zMax));
+    const band = getBandForZ(b.worldZ);
+    blockMesh.setColorAt(i, new THREE.Color(band.color));
 
     min.min(position);
     max.max(position);
@@ -124,16 +102,11 @@ async function loadBlocks() {
 
   blockMesh.instanceColor.needsUpdate = true;
   scene.add(blockMesh);
-  scene.add(edgeMesh);
 
   modelSize = max.clone().sub(min);
   resetCameraToModel();
 
-  if (hasAngles) {
-    status.textContent = `Showing ${blocks.length.toLocaleString()} coarsened blocks from ${data.totalRows.toLocaleString()} original blocks. Colours represent slope angle.`;
-  } else {
-    status.textContent = `Showing ${blocks.length.toLocaleString()} coarsened blocks from ${data.totalRows.toLocaleString()} original blocks. Colours are based on Z elevation.`;
-  }
+  status.textContent = `Showing ${blocks.length.toLocaleString()} filled display blocks from ${data.totalRows.toLocaleString()} original blocks. Colours are assigned from Z-based slope angle bands.`;
 }
 
 function resetCameraToModel() {
@@ -142,7 +115,6 @@ function resetCameraToModel() {
   camera.near = maxDim / 1000;
   camera.far = maxDim * 20;
   camera.updateProjectionMatrix();
-
   controls.target.set(0, 0, 0);
   controls.update();
 }
@@ -150,7 +122,6 @@ function resetCameraToModel() {
 document.getElementById("resetView").addEventListener("click", resetCameraToModel);
 document.getElementById("toggleGrid").addEventListener("change", e => { grid.visible = e.target.checked; });
 document.getElementById("toggleAxes").addEventListener("change", e => { axes.visible = e.target.checked; });
-document.getElementById("toggleWire").addEventListener("change", e => { if (edgeMesh) edgeMesh.visible = e.target.checked; });
 
 window.addEventListener("resize", () => {
   camera.aspect = container.clientWidth / container.clientHeight;
@@ -168,5 +139,4 @@ function animate() {
   controls.update();
   renderer.render(scene, camera);
 }
-
 animate();
