@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Faults
 author: Dainius Jenkus
 date: 2010-06-30
@@ -34,4 +34,4 @@ If your faults are stored in a dedicated DXF file:
 | Cohesion       | kPa              | The cohesive strength of the rock mass, measured in kilopascals.            |
 
 ---
-
+ -->
