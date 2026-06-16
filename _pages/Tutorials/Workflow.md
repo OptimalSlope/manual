@@ -73,49 +73,6 @@ Set general properties for the section:
 The above properties (bench, rock, and general properties) must be provided to run simulations. Optional properties below can be added if needed.
 
 
-### Common Simulation Input Checks
-
-Before running a simulation, review the following common input checks. These checks help ensure that the section geometry, section properties, and optimisation search region are suitable for producing meaningful results.
-
-#### Section Geometry Checks: Gaps and Overlaps
-
-...
-
-#### Crest Point and OSA Search Region Checks
-
-#### How should I choose the crest point?
-
-The **crest point** defines the uppermost starting location of the slope in the model. Its position directly affects how the slope geometry is generated during optimisation.
-
-If the crest is placed **too close to the outer edge** of the section or terrain, the calculated slope (based on the **initial maximum overall slope angle**) may project outward beyond the existing ground surface. In this case, parts of the slope will extend into **open space** — effectively creating a geometry that intersects “thin air.” This can lead to unrealistic results and may cause instability or inaccuracies in subsequent simulations.
-
-To avoid this, position the crest point **further inland**, so that:
-
-- The entire slope profile remains within the defined ground surface.
-- The slope toe and face are generated against actual material, not empty space.
-- The optimisation process has valid geometry to work with in all iterations.
-
-When the crest point is set correctly, the section preview shows the preliminary **minimum** and **maximum Overall Slope Angle (OSA)** limits. These are indicated by the **green triangular search region**. This triangle represents the area where the simulation will search for the optimal slope profile shape (see picture below).
-
-<p align="center">
-  <img src="https://OptimalSlope.github.io/manual/assets/docs_images/min_max_osa.png" alt="Profile setup"/>
-</p>
-
-The preliminary OSA limits are calculated from the selected crest point and the section properties. If the crest point and properties result in a very narrow difference between the minimum and maximum OSA, the simulation has only a limited search range. In this case, the optimiser will not be able to explore many possible slope profiles, which may reduce the quality or usefulness of the optimisation result.
-
-<p align="center">
-  <img src="https://OptimalSlope.github.io/manual/assets/docs_images/max_osa_limited_space.png" alt="Profile setup"/>
-</p>
-
-A wider and realistic OSA search range gives the optimiser more flexibility to investigate alternative slope shapes while still remaining within the valid section geometry.
-
-**Practical Tips:**
-
-- Position the crest point slightly further inside the section boundary than you think is necessary.
-- Check that the green triangular search region remains within the available ground/material area.
-- Avoid crest point positions that create a very narrow minimum-to-maximum OSA range.
-- If the green triangle is too narrow or extends outside the model, adjust the crest point or review the section properties before running the simulation.
-
 
 
 ---
@@ -162,6 +119,105 @@ After the input data is defined, simulations can be started in the simulation wi
   <img src="https://OptimalSlope.github.io/manual/assets/tutorial/profile_setup.png" alt="Profile setup"/>
 </p>
 
+
+
+#### Common Simulation Input Checks
+
+Before running a simulation, OptimalSlope automatically checks the input data for common issues that may require manual review. These checks help identify potential problems in the section geometry, section properties, and optimisation search region before the simulation is started.
+
+If an issue is detected, a warning message is displayed to inform the user what was found and whether the data should be reviewed before continuing. Some warnings may not prevent the simulation from running, but they indicate that the input data should be checked carefully because it may affect the reliability or usefulness of the results.
+
+#### Section Geometry Checks: Gaps and Overlaps
+
+#### Section Geometry Checks: Gaps and Overlaps
+
+Before running a simulation, OptimalSlope analyses the input section geometry and checks for common geometry inconsistencies, including **gaps** and **overlaps**.
+
+<p align="center">
+  <img src="https://OptimalSlope.github.io/manual/assets/docs_images/gap_overlap_warning.png" alt="Invalid section geometry warning"/>
+</p>
+
+- **Gaps** are undefined regions between section boundaries or layer wires where material cannot be assigned clearly.
+- **Overlaps** are conflicting regions where two or more material areas occupy the same space.
+
+Small isolated gaps may not significantly affect the simulation result, especially if they occur away from the expected failure region. However, larger gaps or frequent gaps throughout the section can reduce the reliability of the model and may lead to less meaningful results.
+
+Overlaps should be reviewed carefully, especially when they are easily visible in the section geometry. Overlapping regions can affect the material order assignment and may influence how the software estimates the failure mechanism.
+
+To view detected gap and overlap markers, open the **Visualiser**. Gap markers are shown in red, while overlap markers are shown in blue.
+
+<p align="center">
+  <img src="https://OptimalSlope.github.io/manual/assets/docs_images/gap_overlap_visual.png" alt="Gaps and overlaps shown in the visualiser"/>
+</p>
+
+##### Geometry Review Checklist
+
+Before proceeding with a simulation, check the following:
+
+- **Review detected markers**
+  - Open the Visualiser to inspect red and blue markers.
+  - Red markers indicate detected gap points.
+  - Blue markers indicate detected overlap points.
+
+- **Check the size and frequency of gaps**
+  - Small, isolated gaps may be acceptable in some cases.
+  - Large or repeated gaps should be repaired before running the simulation.
+  - Pay particular attention to gaps near the slope face, slope toe, crest, or expected failure region.
+
+- **Check visible overlaps**
+  - Review any overlaps that are clearly visible in the geometry.
+  - Correct overlaps where material boundaries cross or conflict.
+  - Make sure overlapping layers do not create ambiguous material regions.
+
+- **Check imported DXF quality**
+  - Ensure section boundaries are clean and continuous.
+  - Remove duplicate or unnecessary lines where possible.
+  - Avoid very small disconnected segments or sliver regions.
+  - Confirm that layer wires represent the intended geological structure.
+
+- **Decide whether to continue**
+  - If only a few minor markers are detected and they are away from the critical region, it may be reasonable to continue.
+  - If many markers are detected, or if the issues are near the slope profile or likely failure zone, repair the geometry first.
+
+**Recommendation:**  
+For reliable simulation results, review and repair significant gaps and visible overlaps before proceeding. Clean section geometry improves material assignment and gives the optimiser a more reliable basis for estimating the optimal slope profile.
+
+#### Crest Point and OSA Search Region Checks
+
+#### How should I choose the crest point?
+
+The **crest point** defines the uppermost starting location of the slope in the model. Its position directly affects how the slope geometry is generated during optimisation.
+
+If the crest is placed **too close to the outer edge** of the section or terrain, the calculated slope (based on the **initial maximum overall slope angle**) may project outward beyond the existing ground surface. In this case, parts of the slope will extend into **open space** — effectively creating a geometry that intersects “thin air.” This can lead to unrealistic results and may cause instability or inaccuracies in subsequent simulations.
+
+To avoid this, position the crest point **further inland**, so that:
+
+- The entire slope profile remains within the defined ground surface.
+- The slope toe and face are generated against actual material, not empty space.
+- The optimisation process has valid geometry to work with in all iterations.
+
+When the crest point is set correctly, the section preview shows the preliminary **minimum** and **maximum Overall Slope Angle (OSA)** limits. These are indicated by the **green triangular search region**. This triangle represents the area where the simulation will search for the optimal slope profile shape (see picture below).
+
+<p align="center">
+  <img src="https://OptimalSlope.github.io/manual/assets/docs_images/min_max_osa.png" alt="Profile setup"/>
+</p>
+
+The preliminary OSA limits are calculated from the selected crest point and the section properties. If the crest point and properties result in a very narrow difference between the minimum and maximum OSA, the simulation has only a limited search range. In this case, the optimiser will not be able to explore many possible slope profiles, which may reduce the quality or usefulness of the optimisation result.
+
+<p align="center">
+  <img src="https://OptimalSlope.github.io/manual/assets/docs_images/max_osa_limited_space.png" alt="Profile setup"/>
+</p>
+
+A wider and realistic OSA search range gives the optimiser more flexibility to investigate alternative slope shapes while still remaining within the valid section geometry.
+
+**Practical Tips:**
+
+- Position the crest point slightly further inside the section boundary than you think is necessary.
+- Check that the green triangular search region remains within the available ground/material area.
+- Avoid crest point positions that create a very narrow minimum-to-maximum OSA range.
+- If the green triangle is too narrow or extends outside the model, adjust the crest point or review the section properties before running the simulation.
+
+
 #### Starting Simulations 
 
 1. Switch to **Simulation** tab at the botton of the interface.
@@ -169,7 +225,6 @@ After the input data is defined, simulations can be started in the simulation wi
 3. Specify simulation folder.
 4. **To start a simulation**, click **Start** button and then enter the configured username.
 5. The **Fetch results** button is used to download the results and/or see the progress when simulations are running.
-
 
 #### Creating Different Scenarios  
 
