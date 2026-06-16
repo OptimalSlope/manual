@@ -71,6 +71,28 @@ Hoek-Brown or Mohr-Coulomb properties are set depending on the strength model of
 ---
 
  
+
+
+
+
+| Name                                            | Measurement type   | Info                                                                                             |
+|-------------------------------------------------|--------------------|--------------------------------------------------------------------------------------------------|
+| Horizontal Crest Position                       | m                  | Defines a local horizontal crest position (X_section) within a cross-section                     |
+| Slope Height                                    | m                  | The height of a slope                                                                            |
+| Target FoS                                      | -                  | Target factor of safety                                                                          |
+| Side of slope                                   | -                  | Defines if a slope is on the "left" or "right"                                                   |
+| Surcharge magnitude                             | kN/m²              | Unit weight of the Distributed Surcharge                                                         |
+| Surcharge inclination (α)                       | Degrees            | Inclination of the triangular component of distributed surcharge                                 |
+| Surcharge from slope crest                      | m                  | Distance of surcharge from the slope crest                                                       |
+| Road width                                      | m                  | A width of a road                                                                                |
+| Road Vertical Position (Z)                      | m                  | Road Z position coordinate                                                                       |
+
+
+
+***Notes***
+
+* Bench properties and rock properties can be set for individual 3D stratigraphy. If sections are generated using our slicing tool, sections automatically inherit these properties. If sections are imported directly, properties can be set for each layer manually for a particular section.
+
 #### How should I choose the crest point?
 
 The **crest point** defines the uppermost starting location of the slope in the model. Its position directly affects how the slope geometry is generated during optimisation.
@@ -113,29 +135,9 @@ Bench-compatible slope height is the maximum slope height that allows an integer
 
 The properties below are set at a level of selected section.
 
-
-
-| Name                                            | Measurement type   | Info                                                                                             |
-|-------------------------------------------------|--------------------|--------------------------------------------------------------------------------------------------|
-| Horizontal Crest Position                       | m                  | Defines a local horizontal crest position (X_section) within a cross-section                     |
-| Slope Height                                    | m                  | The height of a slope                                                                            |
-| Target FoS                                      | -                  | Target factor of safety                                                                          |
-| Side of slope                                   | -                  | Defines if a slope is on the "left" or "right"                                                   |
-| Surcharge magnitude                             | kN/m²              | Unit weight of the Distributed Surcharge                                                         |
-| Surcharge inclination (α)                       | Degrees            | Inclination of the triangular component of distributed surcharge                                 |
-| Surcharge from slope crest                      | m                  | Distance of surcharge from the slope crest                                                       |
-| Road width                                      | m                  | A width of a road                                                                                |
-| Road Vertical Position (Z)                      | m                  | Road Z position coordinate                                                                       |
-
-
-
-***Notes***
-
-* Bench properties and rock properties can be set for individual 3D stratigraphy. If sections are generated using our slicing tool, sections automatically inherit these properties. If sections are imported directly, properties can be set for each layer manually for a particular section.
-
 ---
 
-#### How are faults used in a section?
+### Faults
 
 Faults represent discontinuities or fractures within the geological model that can influence rock mass behaviour, stability, and stress distribution.
 
@@ -158,7 +160,43 @@ If your faults are stored in a dedicated DXF file:
 2. In the **Properties View** panel on the right, open **Optional Properties** and find the **Faults** option.
 3. Click **Add** to import the fault DXF file.
 4. The imported fault will be incorporated into the existing section.
-5. Assign the fault properties shown in the table below.
+5. Assign the fault properties in the layer properties of the fault.
+---
+##### Faults Optional Properties
+
+The **Maximum Fault Segment Length** parameter is defined under the section **Optional Properties > Faults**.
+
+| Name | Measurement Type | Description |
+|------|------------------|-------------|
+| Maximum Fault Segment Length | m | Controls how imported fault polylines are segmented for analysis. Higher values create fewer segments and faster computation, while lower values create more segments and provide a more detailed representation of the fault geometry. Default value is `20 m`. |
+
+---
+
+##### Fault Layer Properties
+
+The following properties are assigned to the imported fault or joint polyline layer.
+
+| Name | Measurement Type | Description |
+|------|------------------|-------------|
+| Friction Angle | Degrees | The angle of shearing resistance, also known as internal friction, of the fault material. |
+| Cohesion | kPa | The cohesive strength of the fault material, measured in kilopascals. |
+
+
+--- 
+##### Fault Segment Length
+
+The **Maximum fault segment length** parameter controls how imported fault polylines are divided into smaller segments for analysis.
+
+##### The effect on computational speed
+
+A higher value creates fewer fault segments, which can reduce computation time and make the simulation faster. However, the fault geometry may be represented in a more simplified way.
+
+A lower value creates more fault segments, which can provide a more detailed and precise representation of the fault geometry. However, this increases computational effort and may make the simulation slower.
+
+Use a segment length that is appropriate for the scale and complexity of the fault geometry. For simple or long faults, the default value of **20 m** is usually a good starting point. For highly curved, short, or complex fault geometries, a smaller value may be useful.
+
+--- 
+##### Fault Practical Tips
 
 Faults should be defined where they are expected to have a meaningful influence on the slope. For example, a fault crossing the slope face, slope toe, or potential failure region may significantly affect the optimisation result.
 
@@ -169,7 +207,48 @@ When defining faults, make sure that:
 - Fault material properties are representative of the expected geological conditions.
 - The fault is included only where it is geologically justified.
 
-**Practical Tip:**  
+ 
 When testing fault sensitivity, duplicate the section and create separate scenarios with different fault positions, orientations, or material properties. This allows you to compare the influence of faults without changing the original section setup.
 
 ---
+
+ 
+#### Water Table
+
+The water table, also referred to as the **piezometric line**, can be defined for a selected cross-section under:
+
+`Cross-section > Optional Properties > Water Table`
+
+{% include watertableUI.html %}
+
+*The water table is displayed as a blue polyline in the section visualiser.*
+
+##### Water Table Interface
+
+| Column | Description |
+|:-:|:-|
+| Index | Point index, starting from `1` at the slope toe and continuing to `N` at the last boundary point. |
+| Vertical Position (Z) | Z coordinate of the corresponding bench line where the point is located. This value is fixed to the bench Z position. |
+| X | Horizontal coordinate of the water table point. This value is editable. |
+
+##### Defining the Water Table
+
+To define the water table:
+
+1. Click **Draw**.
+2. In the visualiser, hover over the desired bench line and select a point.
+3. Continue selecting points along the required bench lines.
+4. Close the piezometric line by selecting the final point on the boundary.
+5. Press **Enter** to confirm, or press **Esc** to cancel.
+
+##### Notes
+
+- The first point at the slope toe is assigned automatically.
+- Only one water table point is allowed per bench.
+- The water table should be defined so that it follows the expected groundwater conditions for the selected cross-section.
+
+---
+ 
+
+
+ 
