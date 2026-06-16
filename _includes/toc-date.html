@@ -1,28 +1,25 @@
-<a href="#" class="js-toolbar-action search-toggle">
-  Click to Search
-</a>
+* [Click to Search](#){: .js-toolbar-action .search-toggle}
 
-<ul class="summary">
-  {% if page.url == "/index.html" or page.url == "/" %}
-    <li class="chapter active">
-  {% else %}
-    <li class="chapter">
-  {% endif %}
-      <a href="{{ site.baseurl }}/">{{ site.title | escape }}</a>
-    </li>
+{% if page.url == "/index.html" or page.url == "/" %}
+* [{{ site.title | escape }}]({{ "/" | relative_url }}){: .chapter .active data-level="1.1" data-path="{{ "/" | relative_url }}"}
+{% else %}
+* [{{ site.title | escape }}]({{ "/" | relative_url }}){: .chapter data-level="1.1" data-path="{{ "/" | relative_url }}"}
+{% endif %}
 
-  {% assign workflow_parent_url = "/pages/Tutorials/Workflow/" %}
-  {% assign workflow_child_prefix = "/pages/Tutorials/Workflow/" %}
+{% assign workflow_parent_url = "/pages/Tutorials/Workflow/" %}
 
-  {% for collection in site.collections %}
+{% if site.ordered_collections %}
+  {% for label in site.ordered_collections %}
+    {% assign collection = site.collections | where: "label", label | first %}
+
     {% if collection.output %}
       {% if collection.label == "posts" %}
-        {% assign docs = site[collection.label] | reverse %}
+        {% assign reversed_posts = site[collection.label] | reverse %}
       {% else %}
-        {% assign docs = site[collection.label] %}
+        {% assign reversed_posts = site[collection.label] %}
       {% endif %}
 
-      {% for post in docs %}
+      {% for post in reversed_posts %}
 
         {% assign is_workflow_child = false %}
         {% if post.url contains "/pages/Tutorials/Workflow/" and post.url != workflow_parent_url %}
@@ -34,50 +31,40 @@
           {% if post.url == workflow_parent_url %}
 
             {% if page.url == post.url or page.url contains "/pages/Tutorials/Workflow/" %}
-              <li class="chapter active">
+* [{{ post.title | escape }}]({{ post.url | relative_url }}){: .chapter .active data-level="1.1" data-path="{{ post.url | relative_url }}"}
             {% else %}
-              <li class="chapter">
+* [{{ post.title | escape }}]({{ post.url | relative_url }}){: .chapter data-level="1.1" data-path="{{ post.url | relative_url }}"}
             {% endif %}
 
-              <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | escape }}</a>
+            {% for child in reversed_posts %}
+              {% if child.url contains "/pages/Tutorials/Workflow/" and child.url != workflow_parent_url %}
+                {% if page.url == child.url %}
+  * [{{ child.title | escape }}]({{ child.url | relative_url }}){: .chapter .active data-level="1.2" data-path="{{ child.url | relative_url }}"}
+                {% else %}
+  * [{{ child.title | escape }}]({{ child.url | relative_url }}){: .chapter data-level="1.2" data-path="{{ child.url | relative_url }}"}
+                {% endif %}
 
-              <ul class="articles">
-                {% for child in docs %}
-                  {% if child.url contains "/pages/Tutorials/Workflow/" and child.url != workflow_parent_url %}
-                    {% if page.url == child.url %}
-                      <li class="chapter active">
-                    {% else %}
-                      <li class="chapter">
-                    {% endif %}
-                        <a href="{{ site.baseurl }}{{ child.url }}">{{ child.title | escape }}</a>
-
-                        {% if site.toc.enabled %}
-                          {% if page.url == child.url %}
-                            {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
-                          {% endif %}
-                        {% endif %}
-                      </li>
+                {% if site.toc.enabled %}
+                  {% if page.url == child.url %}
+                    {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
                   {% endif %}
-                {% endfor %}
-              </ul>
-            </li>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
 
           {% else %}
 
             {% if page.url == post.url %}
-              <li class="chapter active">
+* [{{ post.title | escape }}]({{ post.url | relative_url }}){: .chapter .active data-level="1.1" data-path="{{ post.url | relative_url }}"}
             {% else %}
-              <li class="chapter">
+* [{{ post.title | escape }}]({{ post.url | relative_url }}){: .chapter data-level="1.1" data-path="{{ post.url | relative_url }}"}
             {% endif %}
 
-              <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | escape }}</a>
-
-              {% if site.toc.enabled %}
-                {% if page.url == post.url %}
-                  {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
-                {% endif %}
+            {% if site.toc.enabled %}
+              {% if page.url == post.url %}
+                {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
               {% endif %}
-            </li>
+            {% endif %}
 
           {% endif %}
 
@@ -86,4 +73,67 @@
       {% endfor %}
     {% endif %}
   {% endfor %}
-</ul>
+{% else %}
+  {% for collection in site.collections %}
+    {% if collection.output %}
+      {% if collection.label == "posts" %}
+        {% assign reversed_posts = site[collection.label] | reverse %}
+      {% else %}
+        {% assign reversed_posts = site[collection.label] %}
+      {% endif %}
+
+      {% for post in reversed_posts %}
+
+        {% assign is_workflow_child = false %}
+        {% if post.url contains "/pages/Tutorials/Workflow/" and post.url != workflow_parent_url %}
+          {% assign is_workflow_child = true %}
+        {% endif %}
+
+        {% unless is_workflow_child %}
+
+          {% if post.url == workflow_parent_url %}
+
+            {% if page.url == post.url or page.url contains "/pages/Tutorials/Workflow/" %}
+* [{{ post.title | escape }}]({{ post.url | relative_url }}){: .chapter .active data-level="1.1" data-path="{{ post.url | relative_url }}"}
+            {% else %}
+* [{{ post.title | escape }}]({{ post.url | relative_url }}){: .chapter data-level="1.1" data-path="{{ post.url | relative_url }}"}
+            {% endif %}
+
+            {% for child in reversed_posts %}
+              {% if child.url contains "/pages/Tutorials/Workflow/" and child.url != workflow_parent_url %}
+                {% if page.url == child.url %}
+  * [{{ child.title | escape }}]({{ child.url | relative_url }}){: .chapter .active data-level="1.2" data-path="{{ child.url | relative_url }}"}
+                {% else %}
+  * [{{ child.title | escape }}]({{ child.url | relative_url }}){: .chapter data-level="1.2" data-path="{{ child.url | relative_url }}"}
+                {% endif %}
+
+                {% if site.toc.enabled %}
+                  {% if page.url == child.url %}
+                    {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+
+          {% else %}
+
+            {% if page.url == post.url %}
+* [{{ post.title | escape }}]({{ post.url | relative_url }}){: .chapter .active data-level="1.1" data-path="{{ post.url | relative_url }}"}
+            {% else %}
+* [{{ post.title | escape }}]({{ post.url | relative_url }}){: .chapter data-level="1.1" data-path="{{ post.url | relative_url }}"}
+            {% endif %}
+
+            {% if site.toc.enabled %}
+              {% if page.url == post.url %}
+                {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
+              {% endif %}
+            {% endif %}
+
+          {% endif %}
+
+        {% endunless %}
+
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
