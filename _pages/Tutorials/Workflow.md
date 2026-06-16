@@ -85,12 +85,16 @@ For detailed guidance, refer to the [OptimalSlope Manual on Bench Properties](ht
 ---
 ### 3. Running Simulations
 
-<p align="center">
-  <video controls width="100%" preload="metadata">
-    <source src="https://optimalslope.github.io/manual/assets/videos/tutorials/workflow/3-running-simulations.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</p>
+**Overview**
+
+OptimalSlope runs simulations on the cloud to avoid maxing out local resources and affecting the performance of user's machine due to the nature of computationally heavy simulations.
+
+After the problem of simulation is formulated with required inputs, the simulation window is used to run simulations and obtain the results.
+
+**Configuring user profile**
+* To run simulations on the cloud, the user profile is configured under **Tools > Settings > Account**.
+
+
 
 After the input data is defined, simulations can be started in the simulation window. Here are the steps to perform before starting a simulation:
 1. **Select a section of interest**. Any section with prescribed properties.
@@ -100,6 +104,60 @@ After the input data is defined, simulations can be started in the simulation wi
 <p align="center">
   <img src="https://OptimalSlope.github.io/manual/assets/tutorial/profile_setup.png" alt="Profile setup"/>
 </p>
+
+#### Starting Simulations 
+
+1. Switch to **Simulation** tab at the botton of the interface.
+2. Under **Cross-sections**, select the desirable cross-section.
+3. Specify simulation folder.
+4. **To start a simulation**, click **Start** button and then enter the configured username.
+5. The **Fetch results** button is used to download the results and/or see the progress when simulations are running.
+
+
+#### Creating Different Scenarios  
+
+To test different design or material scenarios for the same cross-section, right-click the section in the project tree and select **Duplicate**. This creates an independent copy of the selected section, allowing you to modify simulation inputs without changing the original section.
+
+<p align="center">
+  <img src="https://OptimalSlope.github.io/manual/assets/docs_images/dublicate_section.png" alt="Duplicate section"/>
+</p>
+
+Typical scenario changes may include:
+
+- **Slope geometry** — adjust the slope profile, crest position, or slope height.
+- **Bench settings** — test different bench heights, berm widths, or bench face angles.
+- **Material properties** — compare different rock strength parameters or material models.
+- **Water table** — evaluate dry, wet, or alternative groundwater conditions.
+- **Surcharge or roads** — assess the influence of additional loads or road positions.
+
+When running simulations for duplicated sections, make sure each scenario has either:
+
+- **A unique section name**, for example:
+  - `Section_1_BaseCase`
+  - `Section_1_WetCondition`
+  - `Section_1_LowStrength`
+
+or:
+
+- **A different results folder** for each scenario.
+
+This helps avoid conflicts between simulation outputs, logs, and exported result files. 
+**Note**: when requiring to re-run the same section more than once, e.g., with corrected parameters, select **Yes** to overwrite the existing input data when starting a simulation.
+
+<p align="center">
+  <video controls width="100%" preload="metadata">
+    <source src="https://optimalslope.github.io/manual/assets/videos/tutorials/Running-Simulation.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</p>
+
+
+#### Results
+* OptimalSlope returns results in a form a plot, which displays estimated optimal profile of a slope.
+* The estimated angles and profile coordinates and angles are displayed in the logs.
+* The results folder also contains plots and obtained optimal profile data.
+
+
 
 #### An example of input and output slope profile
 
@@ -116,12 +174,12 @@ After the input data is defined, simulations can be started in the simulation wi
 
 ### 4. Exporting Output Profile to DXF
 
-<p align="center">
+<!-- <p align="center">
   <video controls width="100%" preload="metadata">
     <source src="https://optimalslope.github.io/manual/assets/videos/tutorials/workflow/4-exporting-output-profile-to-dxf.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-</p>
+</p> -->
 
 The obtained results of a simulation are shown in 2D plot window and also displayed in the form of logs. The estimated shape of the slope profile can be exported to DXF and later imported to other software.
 
@@ -143,14 +201,18 @@ The obtained results of a simulation are shown in 2D plot window and also displa
 Since results from OptimalSlope may be used in RS2 for stability analysis, this step explains how to import output from our software. There are several steps required to import an output profile DXF file into RS2.
 ##### Step 1: Export output profile to DXF from our software
  - **Export output profile as DXF** (as explained in step 4) using the `Local XY` export method. This is required as RS2 expects a 2D section, so coordinates are flattened to have a horizontal section on the XY plane.
-##### Step 2: Modify the DXF File in AutoCAD
+<!-- ##### Step 2: Modify the DXF File in AutoCAD
 - **Open the DXF file in AutoCAD.**
 - **Convert Block References**: Use the `EXPLODE` command to convert all block references into simpler entities. This is crucial as RS2 cannot handle block references in the DXF.
-- **Save the File**: After exploding the blocks, save the file again as an ASCII DXF 2000 format.
+- **Save the File**: After exploding the blocks, save the file again as an ASCII DXF 2000 format. -->
 **Note**: Other software such as Rhino can be used to achieve such operation.
-##### Step 3: Import into RS2
+##### Step 2: Import into RS2
 - **Import the DXF File**: Open RS2 and import the modified DXF file.
 - **Set Boundary Types**: RS2 assigns Boundary Types based on layer names. Ensure your layer names match the expected Boundary Types in RS2. If a layer name does not match, it will be set to 'Not Assigned'.
-- **Defining the Model**: For a slope model, set the boundary type as 'Material'. Note that the 'External' role should not be used for the top and bottom portions of the slope, which should be defined by two different polylines.
+- **Defining the Model**: For a slope model, set the boundary type as 'Material'. Note that the 'External' role should not be used for the top and bottom portions of the slope, which should be defined by two different polylines. RS2 expects the external boundary to define the complete outer model boundary.
+
+At the moment, OptimalSlope does not export the complete RS2 external boundary by default. The external boundary must be added or drawn manually in RS2 after importing the DXF.
 
 By following these steps, you can successfully prepare and import a DXF file into RS2, ensuring that all elements are correctly interpreted by the software.
+
+ 

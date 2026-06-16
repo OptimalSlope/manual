@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Simulation
 author: Dainius Jenkus
 date: 2010-06-30
@@ -32,4 +32,4 @@ After the problem of simulation is formulated with required inputs, the simulati
 
  
 
- ---
+ --- -->
