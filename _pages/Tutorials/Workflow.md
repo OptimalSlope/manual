@@ -129,8 +129,6 @@ If an issue is detected, a warning message is displayed to inform the user what 
 
 #### Section Geometry Checks: Gaps and Overlaps
 
-#### Section Geometry Checks: Gaps and Overlaps
-
 Before running a simulation, OptimalSlope analyses the input section geometry and checks for common geometry inconsistencies, including **gaps** and **overlaps**.
 
 <p align="center">
