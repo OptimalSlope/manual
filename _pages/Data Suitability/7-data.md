@@ -317,31 +317,8 @@ layout: post
 }
 
 
-.os-section-title {
-  margin: 8px 0 8px;
-  color: var(--ink);
-  font-size: clamp(26px, 3vw, 40px);
-  line-height: 1.05;
-  letter-spacing: -0.04em;
-  font-weight: 900;
-}
-
-/* Hidden headings used only so the GitBook left menu has clean clickable anchors. */
-.os-toc-anchor {
-  position: relative;
-  top: -90px;
-  height: 0;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.os-toc-anchor h3 {
-  margin: 0 !important;
-  padding: 0 !important;
-  line-height: 0 !important;
+.os-data-section h2[id] {
+  scroll-margin-top: 90px;
 }
 
 @media (max-width: 1100px) {
@@ -413,17 +390,10 @@ layout: post
 </a>
 </div>
 
-
-<div class="os-toc-anchor" markdown="1">
-
-### Preparing Model Files
-
-</div>
-
-<section class="os-data-section" id="data-card-preparing-model-files" markdown="1">
+<section class="os-data-section" id="preparing-model-files" markdown="1">
 <div class="os-data-section-head" markdown="0">
 <div class="label">Input data quality</div>
-<div class="os-section-title">Preparing Model Files</div>
+<h2 id="preparing-model-files">Preparing Model Files</h2>
 <p>Good simulation results depend on clean, consistent 3D stratigraphy and section geometry.</p>
 </div>
 <div class="os-data-section-body" markdown="1">
@@ -450,17 +420,10 @@ Before running simulations, visually inspect both the 3D model and any generated
 </div>
 </section>
 
-
-<div class="os-toc-anchor" markdown="1">
-
-### Exporting DXF from Leapfrog
-
-</div>
-
-<section class="os-data-section" id="data-card-exporting-dxf-from-leapfrog" markdown="1">
+<section class="os-data-section" id="exporting-dxf-from-leapfrog" markdown="1">
 <div class="os-data-section-head" markdown="0">
 <div class="label">Leapfrog export</div>
-<div class="os-section-title">Exporting DXF from Leapfrog</div>
+<h2 id="exporting-dxf-from-leapfrog">Exporting DXF from Leapfrog</h2>
 <p>Use the most reliable DXF export option to preserve mesh connectivity for downstream processing.</p>
 </div>
 <div class="os-data-section-body" markdown="1">
@@ -492,17 +455,10 @@ Due to additional processing overhead and cleaner geometry requirements, exporti
 </div>
 </section>
 
-
-<div class="os-toc-anchor" markdown="1">
-
-### Stratighraphy Preparation
-
-</div>
-
-<section class="os-data-section" id="data-card-stratighraphy-preparation" markdown="1">
+<section class="os-data-section" id="stratighraphy-preparation" markdown="1">
 <div class="os-data-section-head" markdown="0">
 <div class="label">3D stratigraphy</div>
-<div class="os-section-title">Stratighraphy Preparation</div>
+<h2 id="stratighraphy-preparation">Stratighraphy Preparation</h2>
 <p>Prepare high-quality 3D DXF models for cross-section generation without gaps, overlaps, or invalid mesh geometry.</p>
 </div>
 <div class="os-data-section-body" markdown="1">
@@ -566,17 +522,10 @@ Use simplifications where possible without compromising the required geological 
 </div>
 </section>
 
-
-<div class="os-toc-anchor" markdown="1">
-
-### Section Preparation
-
-</div>
-
-<section class="os-data-section" id="data-card-section-preparation" markdown="1">
+<section class="os-data-section" id="section-preparation" markdown="1">
 <div class="os-data-section-head" markdown="0">
 <div class="label">Section quality</div>
-<div class="os-section-title">Section Preparation</div>
+<h2 id="section-preparation">Section Preparation</h2>
 <p>Good quality section wires are essential for accurate and reliable simulations.</p>
 </div>
 <div class="os-data-section-body" markdown="1">
@@ -640,17 +589,10 @@ Maintain strict quality control over the 3D model before generating sections. Cl
 </div>
 </section>
 
-
-<div class="os-toc-anchor" markdown="1">
-
-### Model Organisation
-
-</div>
-
-<section class="os-data-section" id="data-card-model-organisation" markdown="1">
+<section class="os-data-section" id="model-organisation" markdown="1">
 <div class="os-data-section-head" markdown="0">
 <div class="label">Layer management</div>
-<div class="os-section-title">Model Organisation</div>
+<h2 id="model-organisation">Model Organisation</h2>
 <p>Use clear layer names and colours so model components can be managed and inspected efficiently.</p>
 </div>
 <div class="os-data-section-body" markdown="1">
