@@ -3,267 +3,496 @@ layout: home
 title: Overview
 permalink: /
 ---
-![](https://optimalslope.com/images/path9338.png)
 
-## Introduction
----
-This is the user manual of [Slope Optimiser](https://optimalslope.com/files/OptimalSlope_Latest.zip/) CAD graphical interface.
+<style>
+.os-home-page {
+  --blue: #0a4e76;
+  --blue2: #0f6e9f;
+  --orange: #f16b21;
+  --orange2: #ff8a3d;
+  --ink: #14202b;
+  --muted: #617180;
+  --line: rgba(20, 35, 50, 0.12);
+  --soft: #f7fafc;
+  --shadow: 0 14px 34px rgba(20, 35, 50, 0.10);
+  --shadow2: 0 22px 58px rgba(10, 78, 118, 0.18);
+}
 
- 
+.os-home-page * {
+  box-sizing: border-box;
+}
 
-  <!-- <iframe
-  src="assets/preview.html"
-  width="100%"
-  height="1500"
-  style="height:920px; min-height:920px; border:0; border-radius:16px;">
-</iframe>   -->  
+.os-home-hero {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 28px;
+  padding: 42px;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 88% 10%, rgba(241, 107, 33, 0.32), transparent 30%),
+    linear-gradient(135deg, #062f50, var(--blue), var(--blue2));
+  color: white;
+  box-shadow: var(--shadow2);
+}
 
+.os-home-hero::after {
+  content: "OptimalSlope";
+  position: absolute;
+  right: -34px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-6deg);
+  font-size: clamp(72px, 12vw, 170px);
+  font-weight: 1000;
+  letter-spacing: -0.06em;
+  color: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  white-space: nowrap;
+}
 
- 
-<p>
-<a href="assets/preview_horizontal_block_model_matches_pitwall.html" target="_blank"
-   style="display:block; text-decoration:none;">
-  <div style="
-    border:1px solid #d8e2ea;
-    border-radius:18px;
-    padding:22px;
-    background:linear-gradient(135deg,#0a4e76,#f16b21);
-    color:white;
-    box-shadow:0 8px 28px rgba(0,0,0,0.15);
-  ">
-    <h2 style="margin:0 0 8px;">OptimalSlope Interactive Workflow</h2>
-    <p style="margin:0;">Open the full interactive workflow and pitwall comparison.</p>
-  </div>
+.os-home-hero .kicker,
+.os-home-hero-title,
+.os-home-hero p,
+.os-home-actions {
+  position: relative;
+  z-index: 1;
+}
+
+.os-home-hero .kicker {
+  color: #ffd9c4;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.os-home-hero-title {
+  margin: 10px 0 12px;
+  color: white;
+  font-size: clamp(42px, 6vw, 76px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.os-home-hero p {
+  max-width: 850px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 19px;
+  line-height: 1.5;
+}
+
+.os-home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.os-home-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 900;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.os-home-button.primary {
+  background: var(--orange);
+  color: white;
+  box-shadow: 0 10px 24px rgba(241, 107, 33, 0.28);
+}
+
+.os-home-button.secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+}
+
+.os-home-button:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.os-home-logo-card {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 18px;
+  align-items: center;
+  margin: 0 0 28px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(241, 107, 33, 0.08), transparent 34%),
+    linear-gradient(180deg, #ffffff, #f7fafc);
+  box-shadow: var(--shadow);
+}
+
+.os-home-logo-card img {
+  width: 96px;
+  max-width: 100%;
+}
+
+.os-home-logo-card strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--blue);
+  font-size: 20px;
+}
+
+.os-home-logo-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.os-home-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+  margin: 0 0 30px;
+}
+
+.os-home-nav a {
+  display: block;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(241, 107, 33, 0.09), transparent 35%),
+    linear-gradient(180deg, #ffffff, #f7fafc);
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.os-home-nav a:hover {
+  transform: translateY(-3px);
+  border-color: rgba(241, 107, 33, 0.36);
+  box-shadow: 0 18px 42px rgba(20, 35, 50, 0.14);
+  text-decoration: none;
+}
+
+.os-home-nav .icon {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--blue), var(--blue2));
+  color: white;
+  font-weight: 1000;
+}
+
+.os-home-nav strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--blue);
+  font-size: 17px;
+}
+
+.os-home-nav span {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.os-home-section {
+  margin: 32px 0;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  background: white;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.os-home-section-head {
+  padding: 24px 28px 18px;
+  border-bottom: 1px solid rgba(20, 35, 50, 0.08);
+  background:
+    radial-gradient(circle at 96% 0%, rgba(241, 107, 33, 0.12), transparent 28%),
+    radial-gradient(circle at 0% 0%, rgba(10, 78, 118, 0.11), transparent 34%),
+    linear-gradient(180deg, #ffffff, #f6fafc);
+}
+
+.os-home-section-head .label {
+  color: var(--orange);
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+}
+
+.os-home-section-head h2 {
+  margin: 8px 0 8px;
+  color: var(--ink);
+  font-size: clamp(26px, 3vw, 40px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  scroll-margin-top: 90px;
+}
+
+.os-home-section-head p {
+  margin: 0;
+  max-width: 900px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.os-home-section-body {
+  padding: 24px 28px 30px;
+}
+
+.os-stage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(210px, 1fr));
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.os-stage {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff, #f8fbfd);
+  box-shadow: 0 8px 22px rgba(20, 35, 50, 0.06);
+}
+
+.os-stage .stage-number {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--blue), var(--blue2));
+  color: white;
+  font-weight: 1000;
+}
+
+.os-stage strong {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--blue);
+  font-size: 17px;
+}
+
+.os-stage p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.os-feature-link {
+  display: block;
+  margin: 18px 0;
+  text-decoration: none;
+}
+
+.os-feature-card {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  border: 1px solid rgba(10, 78, 118, 0.22);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 95% 0%, rgba(241, 107, 33, 0.34), transparent 28%),
+    linear-gradient(135deg, #0a4e76, #0f6e9f);
+  color: white;
+  box-shadow: var(--shadow2);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.os-feature-card::after {
+  content: "Open";
+  position: absolute;
+  right: 20px;
+  bottom: 14px;
+  color: rgba(255,255,255,0.13);
+  font-size: 64px;
+  font-weight: 1000;
+  letter-spacing: -0.06em;
+}
+
+.os-feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 26px 62px rgba(10, 78, 118, 0.22);
+}
+
+.os-feature-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: white;
+  font-size: 24px;
+}
+
+.os-feature-card span {
+  display: block;
+  max-width: 620px;
+  color: rgba(255,255,255,0.86);
+  line-height: 1.45;
+}
+
+.os-include-frame {
+  margin: 20px 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #f8fbfd;
+  box-shadow: 0 8px 22px rgba(20, 35, 50, 0.06);
+}
+
+.os-home-note {
+  margin: 18px 0;
+  padding: 16px 18px;
+  border: 1px solid rgba(241, 107, 33, 0.28);
+  border-radius: 16px;
+  background: #fff7f1;
+  line-height: 1.5;
+}
+
+.os-home-note strong {
+  color: var(--blue);
+}
+
+@media (max-width: 850px) {
+  .os-home-logo-card,
+  .os-stage-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .os-home-hero {
+    padding: 28px;
+  }
+
+  .os-home-section-body {
+    padding: 20px;
+  }
+}
+</style>
+
+<div class="os-home-page" markdown="1">
+
+<section class="os-home-hero" markdown="0">
+<div class="kicker">OptimalSlope user manual</div>
+<div class="os-home-hero-title">Slope Optimiser Manual</div>
+<p>Learn how to prepare data, manage projects, define slope simulation properties, run simulations, and export results from the OptimalSlope CAD interface.</p>
+<div class="os-home-actions">
+<a class="os-home-button primary" href="https://optimalslope.com/files/OptimalSlope_Latest.zip/">Download OptimalSlope</a>
+<a class="os-home-button secondary" href="#workflow">View Workflow</a>
+</div>
+</section>
+
+<div class="os-home-logo-card" markdown="0">
+<img src="https://optimalslope.com/images/path9338.png" alt="OptimalSlope logo">
+<div>
+<strong>OptimalSlope documentation</strong>
+<p>This manual explains the main workflows for using the Slope Optimiser CAD graphical interface.</p>
+</div>
+</div>
+
+<div class="os-home-nav" markdown="0">
+<a href="pages/Data%20Suitability/7-data/">
+<span class="icon">1</span>
+<strong>Prepare Data</strong>
+<span>Check geometry quality, DXF exports, section wires, gaps, overlaps, and layer organisation.</span>
 </a>
-</p>
-<!-- <div style="
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  overflow-x: auto;
-  padding: 20px 0;
-">
-  <iframe
-    src="assets/intro_interactive.html"
-    style="
-      width: 1400px;
-      height: 1550px;
-      max-width: none;
-      border: 0;
-      border-radius: 18px;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.15);
-      display: block;
-      margin: 0 auto;
-    ">
-  </iframe>
-</div> -->
- 
-<!-- <iframe
-  src="assets/pitwall_section_comparison.html"
-  width="100%"
-  height="760"
-  style="border: 0; border-radius: 16px; box-shadow: 0 8px 28px rgba(0,0,0,0.15);"
-  loading="lazy">
-</iframe> -->
 
-## Workflow
-A diagram shows the workflow consisting of three stages:
-1. Input stage (importing of 3D rock models, phreatic surface).
-2. Definition of a problem (property description, generation of cross-sections).
-3. Simulation and output generation, i.e., optimal slopes.
+<a href="pages/project-management/1-project-management/">
+<span class="icon">2</span>
+<strong>Manage Projects</strong>
+<span>Create, save, import, slice, trim, and export OptimalSlope project data.</span>
+</a>
 
+<a href="pages/properties/6-properties/">
+<span class="icon">3</span>
+<strong>Define Properties</strong>
+<span>Set bench, rock, section, fault, and water table inputs for simulations.</span>
+</a>
+
+<a href="pages/Tutorials/Workflow/">
+<span class="icon">4</span>
+<strong>Run Workflow</strong>
+<span>Follow the simulation workflow from importing sections to exporting results.</span>
+</a>
+
+<a href="pages/controls/1-interface/">
+<span class="icon">5</span>
+<strong>Use Controls</strong>
+<span>Navigate the visualiser, change views, adjust object style, and manage selected items.</span>
+</a>
+</div>
+
+<section class="os-home-section" id="introduction" markdown="1">
+<div class="os-home-section-head" markdown="0">
+<div class="label">Introduction</div>
+<h2 id="introduction">Introduction</h2>
+<p>OptimalSlope helps evaluate slope geometry, generate simulation inputs, run cloud simulations, and export optimized slope profiles.</p>
+</div>
+<div class="os-home-section-body" markdown="1">
+
+This is the user manual of the [Slope Optimiser](https://optimalslope.com/files/OptimalSlope_Latest.zip/) CAD graphical interface.
+
+Use the sections below to move through the typical workflow: prepare data, create or import project geometry, define properties, run simulations, review outputs, and export results for downstream analysis.
+
+<a class="os-feature-link" href="assets/preview_horizontal_block_model_matches_pitwall.html" target="_blank">
+<div class="os-feature-card">
+<strong>Slope Optimiser Interactive Workflow</strong>
+<span>Open the full interactive workflow preview in a new tab.</span>
+</div>
+</a>
+
+</div>
+</section>
+
+<section class="os-home-section" id="workflow" markdown="1">
+<div class="os-home-section-head" markdown="0">
+<div class="label">Typical workflow</div>
+<h2 id="workflow">Workflow</h2>
+<p>The workflow moves from input data and model preparation to problem definition, simulation, and output generation.</p>
+</div>
+<div class="os-home-section-body" markdown="1">
+
+<div class="os-stage-grid" markdown="0">
+<div class="os-stage">
+<span class="stage-number">1</span>
+<strong>Input Stage</strong>
+<p>Import 3D rock models, section files, and phreatic or boundary surfaces.</p>
+</div>
+
+<div class="os-stage">
+<span class="stage-number">2</span>
+<strong>Problem Definition</strong>
+<p>Define properties, generate cross-sections, and check geometry before simulation.</p>
+</div>
+
+<div class="os-stage">
+<span class="stage-number">3</span>
+<strong>Simulation and Output</strong>
+<p>Run simulations, review logs and plots, export optimal slope profiles, and generate outputs.</p>
+</div>
+</div>
+
+<div class="os-include-frame" markdown="1">
 {% include workflow-example.html %}
+</div>
 
----
-<!-- ## Why Jekyll with GitBook
+<div class="os-home-note" markdown="1">
+<strong>Recommended starting point</strong><br>
+Start with the Data Preparation page if you are working with new 3D stratigraphy or imported section files. Clean input geometry improves slicing, material assignment, and simulation reliability.
+</div>
 
-GitBook is an amazing frontend style to present and organize contents (such as book chapters
-and blogs) on Web. The typical to deploy GitBook at [Github Pages][1]
-is building HTML files locally and then push to Github repository, usually to the `gh-pages`
-branch. It's quite annoying to repeat such workload and make it hard for people do version
-control via git for when there are generated HTML files to be staged in and out.
+</div>
+</section>
 
-This theme takes style definition out of generated GitBook site and provided the template
-for Jekyll to rendering markdown documents to HTML, thus the whole site can be deployed
-to [Github Pages][1] without generating and uploading HTML bundle every time when there are
-changes to the original repo.
-
-## How to Get Started
-
-This theme can be used just as other [Jekyll themes][1] and support [remote theme][12],
-see [the official guide][13] as well.
-
-You can introduce this jekyll theme into your own site by either
-
-- [Fork][3] this repository and add your markdown posts to the `_posts` folder.
-- Use as a remote theme in your [`_config.yml`][14](just like what we do for this
-  site itself),
-
-```yaml
-remote_theme: sighingnow/jekyll-gitbook
-```
-
-### Deploy Locally with Jekyll Serve
-
-This theme can be ran locally using Ruby and Gemfiles.
-
-[Testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll) - GitHub
-
-## Full-text search
-
-The search functionality in jekyll-gitbook theme is powered by the [gitbook-plugin-search-pro][5] plugin and is enabled by default.
-
-[https://sighingnow.github.io/jekyll-gitbook/?q=generated](https://sighingnow.github.io/jekyll-gitbook/?q=generated)
-
-## Code highlight
-
-The code highlight style is configurable the following entry in `_config.yaml`:
-
-```yaml
-syntax_highlighter_style: colorful
-```
-
-The default code highlight style is `colorful`, the full supported styles can be found from [the rouge repository][6]. Customized
-style can be added to [./assets/gitbook/rouge/](./assets/gitbook/rouge/).
-
-## How to generate TOC
-
-The jekyll-gitbook theme leverages [jekyll-toc][4] to generate the *Contents* for the page.
-The TOC feature is not enabled by default. To use the TOC feature, modify the TOC
-configuration in `_config.yml`:
-
-```yaml
-toc:
-    enabled: true
-    h_min: 1
-    h_max: 3
-```
-
-## Google Analytics, etc.
-
-The jekyll-gitboook theme supports embedding the [Google Analytics][7], [CNZZ][8] and [Application Insights][9] website analytical tools with the following
-minimal configuration in `_config.yaml`:
-
-```yaml
-tracker:
-  google_analytics: "<YOUR GOOGLE ANALYTICS KEY, e.g, UA-xxxxxx-x>"
-```
-
-Similarly, CNZZ can be added with the following configuration in `_config.yaml`
-
-```yaml
-tracker:
-  cnzz: "<YOUR CNZZ ANALYTICS KEY, e.g., xxxxxxxx>"
-```
-
-Application Insights can be added with the following configuration in `_config.yaml`
-
-```yaml
-tracker:
-  application_insights: "<YOUR APPLICATION INSIGHTS CONNECTION STRING>"
-```
-
-## Disqus comments
-
-[Disqus](https://disqus.com/) comments can be enabled by adding the following configuration in `_config.yaml`:
-
-```yaml
-disqushandler: "<YOUR DISQUS SHORTNAME>"
-```
-
-## Extra StyleSheet or Javascript elements
-
-You can add extra CSS or JavaScript references using configuration collections:
-
-- extra_css: for additional style sheets. If the url does not start by http, the path must be relative to the root of the site, without a starting `/`.
-- extra_header_js: for additional scripts to be included in the `<head>` tag, after the `extra_css` has been added. If the url does not start by http, the path must be relative to the root of the site, without a starting `/`.
-- extra_footer_js: for additional scripts to be included at the end of the HTML document, just before the site tracking script. If the url does not start by http, the path must be relative to the root of the site, without a starting `/`.
-
-## Customizing font settings
-
-The fonts can be customized by modifying the `.book.font-family-0` and `.book.font-family-1` entry in [`./assets/gitbook/custom.css`][10],
-
-```css
-.book.font-family-0 {
-    font-family: Georgia, serif;
-}
-.book.font-family-1 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-```
-
-## Tips, Warnings and Dangers blocks
-
-The jekyll-gitbook theme supports customized kramdown attributes (`{: .block-tip }`, `{: .block-warning }`,
-`{: .block-danger }`) like that displayed in [the discord.js website][11]. The marker can be used like
-
-```markdown
-> ##### TIP
->
-> This guide is last tested with @napi-rs/canvas^0.1.20, so make sure you have
-> this or a similar version after installation.
-{: .block-tip }
-```
-
-Rendered page can be previewed from
-
-[https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-06-30-tips_warnings_dangers.html](https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-06-30-tips_warnings_dangers.html)
-
-## Cover image inside pages
-
-The jekyll-gitbook theme supports adding a cover image to a specific page by adding
-a `cover` field to the page metadata:
-
-```diff
-  ---
-  title: Page with cover image
-  author: Tao He
-  date: 2022-05-24
-  category: Jekyll
-  layout: post
-+ cover: /assets/jekyll-gitbook/dinosaur.gif
-  ---
-```
-
-The effect can be previewed from
-
-[https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-05-24-page_cover.html](https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-05-24-page_cover.html)
-
-## Diagrams with mermaid.js
-
-This jekyll-theme supports [mermaid.js](https://mermaid.js.org/) to render diagrams
-in markdown.
-
-To enable the mermaid support, you need to set `mermaid: true` in the front matter
-of your post.
-
-```markdown
----
-mermaid: true
----
-```
-
-The example can be previewed from
-
-[https://sighingnow.github.io/jekyll-gitbook/jekyll/2023-08-31-mermaid.html](https://sighingnow.github.io/jekyll-gitbook/jekyll/2023-08-31-mermaid.html)
-
-## License
-
-This work is open sourced under the Apache License, Version 2.0.
-
-Copyright 2019 Tao He.
-
-[1]: https://pages.github.com
-[2]: https://pages.github.com/themes
-[3]: https://github.com/sighingnow/jekyll-gitbook/fork
-[4]: https://github.com/allejo/jekyll-toc
-[5]: https://github.com/gitbook-plugins/gitbook-plugin-search-pro
-[6]: https://github.com/rouge-ruby/rouge/tree/master/lib/rouge/themes
-[7]: https://analytics.google.com/analytics/web/
-[8]: https://www.cnzz.com/
-[9]: https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
-[10]: https://github.com/sighingnow/jekyll-gitbook/blob/master/gitbook/custom.css
-[11]: https://discordjs.guide/popular-topics/canvas.html#setting-up-napi-rs-canvas
-[12]: https://rubygems.org/gems/jekyll-remote-theme
-[13]: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
-[14]: https://github.com/sighingnow/jekyll-gitbook/blob/master/_config.yml
- -->
+</div>
