@@ -1271,7 +1271,7 @@
   }
 
 
-  /* Integrated live result plot section */
+  /* Clean integrated result plot module */
   .result-plot-section {
     background:
       radial-gradient(circle at 100% 0%, rgba(241,107,33,0.10), transparent 24%),
@@ -1279,71 +1279,16 @@
       rgba(255,255,255,0.96);
   }
 
-  .result-plot-intro {
-    display: grid;
-    grid-template-columns: 1fr !important;
-    padding: 28px 32px 0;
-    background: #fff;
-  }
-
-  .result-plot-frame-card {
-    margin: 22px 32px 34px;
-    border: 1px solid rgba(20,35,50,0.12);
-    border-radius: 28px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0 22px 56px rgba(20,35,50,0.14);
-  }
-
-  .result-plot-toolbar {
-    min-height: 74px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-    padding: 16px 20px;
-    color: #fff;
-    background:
-      radial-gradient(circle at 96% 0%, rgba(255,138,61,0.62), transparent 24%),
-      linear-gradient(135deg, #062f50 0%, #0a4e76 48%, #f16b21 132%);
-  }
-
-  .result-plot-toolbar-kicker {
-    color: rgba(255,255,255,0.78);
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 1000;
-    margin-bottom: 3px;
-  }
-
-  .result-plot-toolbar-title {
-    font-size: 21px;
-    font-weight: 1000;
-    letter-spacing: -0.025em;
-  }
-
-  .result-plot-toolbar a {
-    color: #0a4e76;
-    background: #fff;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 1000;
-    padding: 11px 15px;
-    white-space: nowrap;
-    box-shadow: 0 10px 22px rgba(0,0,0,0.15);
-  }
-
-  .result-plot-wrap {
-    position: relative;
+  .result-plot-frame {
+    margin: 0;
     padding: 0;
     background: #fff;
   }
 
-  .result-plot-wrap iframe {
+  .result-plot-frame iframe {
     display: block;
     width: 100%;
-    height: 1280px;
+    height: 1180px;
     border: 0;
     background: #fff;
   }
@@ -1353,85 +1298,10 @@
       min-width: 1120px !important;
     }
 
-    #result-plot .result-plot-frame-card {
-      margin: 22px 32px 34px !important;
-    }
-
-    #result-plot .result-plot-wrap iframe {
+    #result-plot .result-plot-frame iframe {
       width: 100% !important;
       min-width: 0 !important;
     }
-  }
-
-
-  /* Result plot width alignment: keep it inside the main shell like workflow, comparison and block model */
-  #result-plot {
-    width: auto !important;
-    max-width: none !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  #result-plot .section-head {
-    width: auto !important;
-    max-width: none !important;
-    margin: 0 !important;
-    border-radius: 0 !important;
-  }
-
-  #result-plot .result-plot-intro {
-    width: auto !important;
-    max-width: none !important;
-    margin: 0 !important;
-  }
-
-  #result-plot .result-plot-frame-card {
-    width: auto !important;
-    max-width: none !important;
-    margin: 22px 32px 34px !important;
-  }
-
-  #result-plot .result-plot-wrap iframe {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-  }
-
-
-  /* Result plot height: show full embedded viewer content */
-  #result-plot .result-plot-wrap iframe {
-    height: 1280px !important;
-  }
-
-
-  /* Result plot simplified embedding: single heading, no repeated wrapper banners */
-  #result-plot .result-plot-intro,
-  #result-plot .result-plot-toolbar {
-    display: none !important;
-  }
-
-  #result-plot .result-plot-frame-card {
-    margin: 0 !important;
-    border: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    background: #fff !important;
-    overflow: hidden !important;
-  }
-
-  #result-plot .result-plot-wrap {
-    background: #fff !important;
-    padding: 0 !important;
-  }
-
-  #result-plot .result-plot-wrap iframe {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    height: 1120px !important;
-    border: 0 !important;
-    background: #fff !important;
   }
 
 </style>
@@ -1588,23 +1458,22 @@
         </section>
       </div>
     </section>
-  <section class="section result-plot-section" id="result-plot">
+
+
+    <section class="section result-plot-section" id="result-plot">
       <div class="section-head">
         <div>
           <div class="section-kicker">Output review</div>
           <h2>Optimised profile plot</h2>
           <p>Review the optimised pitwall profile, bench geometry, slope angle bounds and failure mechanism in an interactive section view.</p>
         </div>
-       
       </div>
 
-      <div class="result-plot-frame-card">
-        <div class="result-plot-wrap">
-          <iframe
-            src="../interactive/result-plot/?v=simplified-parent1"
-            title="Optimised profile plot"
-            loading="lazy"></iframe>
-        </div>
+      <div class="result-plot-frame">
+        <iframe
+          src="../interactive/result-plot/?v=safe-integrated1"
+          title="Optimised profile plot"
+          loading="lazy"></iframe>
       </div>
     </section>
 
