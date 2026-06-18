@@ -430,7 +430,7 @@ permalink: /
 <p>Learn how to prepare data, manage projects, define slope simulation properties, run simulations, and export results from the OptimalSlope CAD interface.</p>
 <div class="os-home-actions">
 <a class="os-home-button primary" href="https://optimalslope.com/files/OptimalSlope_Latest.zip/">Download OptimalSlope</a>
-<a class="os-home-button secondary" href="#workflow">Simulation Workflow</a>
+<a class="os-home-button secondary" href="https://optimalslope.github.io/manual/pages/Tutorials/Workflow/">Simulation Workflow</a>
 </div>
 </section>
 
