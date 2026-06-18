@@ -31,7 +31,7 @@ layout: post
   padding: 38px;
   border-radius: 28px;
   background:
-    radial-gradient(circle at 88% 10%, rgba(241, 107, 33, 0.30), transparent 30%),
+    radial-gradient(circle at 88% 10%, rgba(241, 107, 33, 0.36), transparent 30%),
     linear-gradient(135deg, #062f50, var(--blue), var(--blue2));
   color: white;
   box-shadow: var(--shadow2);
@@ -46,16 +46,8 @@ layout: post
   font-size: clamp(70px, 11vw, 150px);
   font-weight: 1000;
   letter-spacing: -0.06em;
-  color: rgba(255, 255, 255, 0.09);
+  color: rgba(255, 255, 255, 0.08);
   pointer-events: none;
-  white-space: nowrap;
-}
-
-.os-workflow-hero .kicker,
-.os-workflow-hero h1,
-.os-workflow-hero p {
-  position: relative;
-  z-index: 1;
 }
 
 .os-workflow-hero .kicker {
@@ -290,20 +282,20 @@ layout: post
 </section>
 
 <div class="os-workflow-nav" markdown="0">
-<a href="#step-1-importing-sections"><span class="step">1</span><strong>Import Sections</strong><span>Start from DXF sections or slice sections from 3D stratigraphy.</span></a>
-<a href="#step-2-defining-properties"><span class="step">2</span><strong>Define Properties</strong><span>Assign bench, rock, general, and optional simulation properties.</span></a>
-<a href="#step-3-running-simulations"><span class="step">3</span><strong>Run Simulations</strong><span>Configure cloud simulation inputs and check geometry before running.</span></a>
-<a href="#step-4-exporting-dxf"><span class="step">4</span><strong>Export DXF</strong><span>Export the optimized output profile for external workflows.</span></a>
-<a href="#step-5-importing-rs2"><span class="step">5</span><strong>Import into RS2</strong><span>Prepare the exported profile for Rockscience RS2 stability analysis.</span></a>
-<a href="#step-6-export-block-model"><span class="step">6</span><strong>Export Block Model</strong><span>Create a section block model from 3D stratigraphy and optimized slope angles.</span></a>
+<a href="#importing-sections"><span class="step">1</span><strong>Import Sections</strong><span>Start from DXF sections or slice sections from 3D stratigraphy.</span></a>
+<a href="#defining-properties"><span class="step">2</span><strong>Define Properties</strong><span>Assign bench, rock, general, and optional simulation properties.</span></a>
+<a href="#running-simulations"><span class="step">3</span><strong>Run Simulations</strong><span>Configure cloud simulation inputs and check geometry before running.</span></a>
+<a href="#exporting-output-profile-to-dxf"><span class="step">4</span><strong>Export DXF</strong><span>Export the optimized output profile for external workflows.</span></a>
+<a href="#importing-output-into-rockscience-rs2"><span class="step">5</span><strong>Import into RS2</strong><span>Prepare the exported profile for Rockscience RS2 stability analysis.</span></a>
+<a href="#exporting-the-section-block-model"><span class="step">6</span><strong>Export Block Model</strong><span>Create a section block model from 3D stratigraphy and optimized slope angles.</span></a>
 </div>
 
 Follow these steps to configure properties for a selected section in OptimalSlope to run a simulation:
 
-<section class="os-workflow-step" id="step-1-importing-sections" markdown="1">
+<section class="os-workflow-step" id="importing-sections" markdown="1">
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 1</div>
-<h2>Importing Sections</h2>
+<h2 id="importing-sections">Importing Sections</h2>
 <p>Start by importing an existing DXF section or creating sections from a 3D stratigraphy model using the slicing tool.</p>
 </div>
 <div class="os-workflow-step-body" markdown="1">
@@ -332,10 +324,10 @@ Ensure your DXF model data meets general quality standards to ensure the best si
 </div>
 </section>
 
-<section class="os-workflow-step" id="step-2-defining-properties" markdown="1">
+<section class="os-workflow-step" id="defining-properties" markdown="1">
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 2</div>
-<h2>Defining Properties</h2>
+<h2 id="defining-properties">Defining Properties</h2>
 <p>Define bench, rock, general, and optional properties before running a simulation.</p>
 </div>
 <div class="os-workflow-step-body" markdown="1">
@@ -399,10 +391,10 @@ For detailed guidance, refer to the [OptimalSlope Manual on Properties](https://
 </div>
 </section>
 
-<section class="os-workflow-step" id="step-3-running-simulations" markdown="1">
+<section class="os-workflow-step" id="running-simulations" markdown="1">
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 3</div>
-<h2>Running Simulations</h2>
+<h2 id="running-simulations">Running Simulations</h2>
 <p>Configure the simulation folder, user profile, input checks, and cloud simulation process.</p>
 </div>
 <div class="os-workflow-step-body" markdown="1">
@@ -598,10 +590,10 @@ This helps avoid conflicts between simulation outputs, logs, and exported result
 </div>
 </section>
 
-<section class="os-workflow-step" id="step-4-exporting-dxf" markdown="1">
+<section class="os-workflow-step" id="exporting-output-profile-to-dxf" markdown="1">
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 4</div>
-<h2>Exporting Output Profile to DXF</h2>
+<h2 id="exporting-output-profile-to-dxf">Exporting Output Profile to DXF</h2>
 <p>Export the optimized slope profile using global or local coordinate options.</p>
 </div>
 <div class="os-workflow-step-body" markdown="1">
@@ -630,10 +622,10 @@ The obtained results of a simulation are shown in 2D plot window and also displa
 </div>
 </section>
 
-<section class="os-workflow-step" id="step-5-importing-rs2" markdown="1">
+<section class="os-workflow-step" id="importing-output-into-rockscience-rs2" markdown="1">
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 5</div>
-<h2>Importing Output into Rockscience RS2</h2>
+<h2 id="importing-output-into-rockscience-rs2">Importing Output into Rockscience RS2</h2>
 <p>Import the exported DXF profile into RS2 and complete the external boundary definition manually.</p>
 </div>
 <div class="os-workflow-step-body" markdown="1">
@@ -661,10 +653,10 @@ By following these steps, you can successfully prepare and import a DXF file int
 </div>
 </section>
 
-<section class="os-workflow-step" id="step-6-export-block-model" markdown="1">
+<section class="os-workflow-step" id="exporting-the-section-block-model" markdown="1">
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 6</div>
-<h2>Exporting the Section Block Model</h2>
+<h2 id="exporting-the-section-block-model">Exporting the Section Block Model</h2>
 <p>Export a block model for sections associated with 3D stratigraphy using optimized slope angles.</p>
 </div>
 <div class="os-workflow-step-body" markdown="1">
