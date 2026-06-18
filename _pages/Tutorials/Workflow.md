@@ -276,8 +276,7 @@ layout: post
 <div class="os-workflow-page" markdown="1">
 
 <section class="os-workflow-hero" markdown="0">
-<div class="kicker">Tutorial workflow</div>
-<div class="os-data-hero-title">Simulation Workflow</div>
+<div class="kicker">Simulation Workflow Tutorialw</div>
 <p>Follow the complete OptimalSlope workflow from importing a section and defining properties through running simulations, reviewing results, exporting profiles, and preparing downstream models.</p>
 </section>
 
