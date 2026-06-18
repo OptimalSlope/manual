@@ -366,7 +366,7 @@ layout: post
 <section class="os-data-hero" markdown="0">
 <div class="kicker">Input quality and geometry checks</div>
 <div class="os-data-hero-title">Data Preparation</div>
-<p>Prepare 3D stratigraphy and section data for reliable cross-section generation, material assignment, and simulation results in OptimalSlope.</p>
+<p>Prepare 3D stratigraphy and section data for reliable cross-section generation, material assignment, and simulation results in Slope Optimiser.</p>
 </section>
 
 <div class="os-data-nav" markdown="0">
@@ -409,7 +409,7 @@ layout: post
 </div>
 <div class="os-data-section-body" markdown="1">
 
-The quality of simulation results is highly correlated to the quality of the provided 3D stratigraphy or section data. Ensuring that the models are topologically and geometrically consistent and correct allows OptimalSlope to make more accurate estimations during simulation.
+The quality of simulation results is highly correlated to the quality of the provided 3D stratigraphy or section data. Ensuring that the models are topologically and geometrically consistent and correct allows Slope Optimiser to make more accurate estimations during simulation.
 
 <div class="os-callout-grid" markdown="0">
 <div class="os-card">
@@ -621,7 +621,7 @@ Name layers descriptively to make model elements easier to manage during cross-s
 
 <div class="os-recommendation" markdown="1">
 <strong>Recommendation</strong><br>
-Define names and colours of layers in the modelling software before exporting DXF files. This reduces manual clean-up in OptimalSlope and improves traceability during section generation.
+Define names and colours of layers in the modelling software before exporting DXF files. This reduces manual clean-up in Slope Optimiser and improves traceability during section generation.
 </div>
 
 </div>

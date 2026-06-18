@@ -368,7 +368,7 @@ layout: post
 <section class="os-pm-hero" markdown="0">
 <div class="kicker">Project setup and data management</div>
 <div class="os-pm-hero-title">Project Management</div>
-<p>Create, save, load, import, slice, trim, and export project data in OptimalSlope.</p>
+<p>Create, save, load, import, slice, trim, and export project data in Slope Optimiser.</p>
 </section>
 
 <div class="os-pm-nav" markdown="0">
@@ -381,7 +381,7 @@ layout: post
 <a href="#savingloading-projects">
 <span class="icon">2</span>
 <strong>Save and Load</strong>
-<span>Save project files and open existing OptimalSlope project data.</span>
+<span>Save project files and open existing Slope Optimiser's project data.</span>
 </a>
 
 <a href="#importing-data">
@@ -508,7 +508,7 @@ A pit boundary surface can be imported and used to generate a trimmed version of
 
 <div class="os-tip" markdown="1">
 <strong>Tip</strong><br>
-It is advised to define names and colours of layers while generating model files. Otherwise, naming and colouring of model layers can be manually set in the OptimalSlope GUI.
+It is advised to define names and colours of layers while generating model files. Otherwise, naming and colouring of model layers can be manually set in the Slope Optimiser GUI.
 </div>
 
 <div class="os-subtitle">Supported import file formats</div>

@@ -425,12 +425,12 @@ permalink: /
 <div class="os-home-page" markdown="1">
 
 <section class="os-home-hero" markdown="0">
-<div class="kicker">OptimalSlope user manual</div>
+<div class="kicker">Slope Optimiser user manual</div>
 <div class="os-home-hero-title">Slope Optimiser Manual</div>
 <p>Learn how to prepare data, manage projects, define slope simulation properties, run simulations, and export results from the OptimalSlope CAD interface.</p>
 <div class="os-home-actions">
 <a class="os-home-button primary" href="https://optimalslope.com/files/OptimalSlope_Latest.zip/">Download OptimalSlope</a>
-<a class="os-home-button secondary" href="https://optimalslope.github.io/manual/pages/Tutorials/Workflow/">Simulation Workflow</a>
+<a class="os-home-button secondary" href="{{ '/pages/Tutorials/Workflow/' | relative_url }}">Simulation Workflow</a>
 </div>
 </section>
 
@@ -482,7 +482,7 @@ Start with the Data Preparation page if you are working with new 3D stratigraphy
 <a href="pages/project-management/1-project-management/">
 <span class="icon">2</span>
 <strong>Manage Projects</strong>
-<span>Create, save, import, slice, trim, and export OptimalSlope project data.</span>
+<span>Create, save, import, slice, trim, and export project data.</span>
 </a>
 
 <a href="pages/properties/6-properties/">

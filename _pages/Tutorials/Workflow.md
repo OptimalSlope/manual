@@ -277,7 +277,7 @@ layout: post
 
 <section class="os-workflow-hero" markdown="0">
 <div class="kicker">Simulation Workflow Tutorial</div>
-<p>Follow the complete OptimalSlope workflow from importing a section and defining properties to running simulations, reviewing results, exporting profiles, and preparing downstream models.</p>
+<p>Follow the complete Slope Optimiser's workflow from importing a section and defining properties to running simulations, reviewing results, exporting profiles, and preparing downstream models.</p>
 </section>
 
  
@@ -291,7 +291,7 @@ layout: post
 <a href="#exporting-the-section-block-model"><span class="step">6</span><strong>Export Block Model</strong><span>Create a section block model from 3D stratigraphy and optimized slope angles.</span></a>
 </div>
 
-Follow these steps to configure properties for a selected section in OptimalSlope to run a simulation:
+Follow these steps to configure properties for a selected section in Slope Optimiser to run a simulation:
 
 <section class="os-workflow-step" id="importing-sections" markdown="1">
 <div class="os-workflow-step-head" markdown="0">
@@ -310,7 +310,7 @@ Follow these steps to configure properties for a selected section in OptimalSlop
 
 It is recommended to directly import sections if you already have them defined in DXF files. This method is straightforward and speeds up the process without the need to import large 3D model files to create sections.
 
-In OptimalSlope, you have two methods available for defining cross-sections:
+In Slope Optimiser, you have two methods available for defining cross-sections:
 
 #### Importing 3D Solid/Wireframe and Making Sections
 You can import a 3D solid or wireframe (`File -> Import Stratigraphy -> DXF`) and then use our slicing tool to create a section. For more information on slicing, refer to [Slicing](https://optimalslope.github.io/manual/pages/slicing/2-slicing/).
@@ -402,7 +402,7 @@ For detailed guidance, refer to the [OptimalSlope Manual on Properties](https://
 
 **Overview**
 
-OptimalSlope runs simulations on the cloud to avoid overloading local resources and affecting the performance of the user's machine due to the nature of computationally heavy simulations.
+Slope Optimiser runs simulations on the cloud to avoid overloading local resources and affecting the performance of the user's machine due to the nature of computationally heavy simulations.
 
 After the problem of simulation is formulated with required inputs, the simulation window is used to run simulations and obtain the results.
 
@@ -432,13 +432,13 @@ After the input data is defined, simulations can be started in the simulation wi
 
 #### Common Simulation Input Checks
 
-Before running a simulation, OptimalSlope automatically checks the input data for common issues that may require manual review. These checks help identify potential problems in the section geometry, section properties, and optimisation search region before the simulation is started.
+Before running a simulation, Slope Optimiser automatically checks the input data for common issues that may require manual review. These checks help identify potential problems in the section geometry, section properties, and optimisation search region before the simulation is started.
 
 If an issue is detected, a warning message is displayed to inform the user what was found and whether the data should be reviewed before continuing. Some warnings may not prevent the simulation from running, but they indicate that the input data should be checked carefully because it may affect the reliability or usefulness of the results.
 
 #### Section Geometry Checks: Gaps and Overlaps
 
-Before running a simulation, OptimalSlope analyses the input section geometry and checks for common geometry inconsistencies, including **gaps** and **overlaps**.
+Before running a simulation, Slope Optimiser analyses the input section geometry and checks for common geometry inconsistencies, including **gaps** and **overlaps**.
 
 <p align="center">
   <img src="https://OptimalSlope.github.io/manual/assets/docs_images/gap_overlap_warning.png" alt="Invalid section geometry warning"/>
@@ -568,7 +568,7 @@ This helps avoid conflicts between simulation outputs, logs, and exported result
 
 
 #### Results
-* OptimalSlope returns results in the form of a plot, which displays estimated optimal profile of a slope.
+* Slope Optimiser returns results in the form of a plot, which displays estimated optimal profile of a slope.
 * The estimated profile coordinates and angles are displayed in the logs.
 * The results folder also contains plots and obtained optimal profile data.
 
@@ -631,7 +631,7 @@ The obtained results of a simulation are shown in 2D plot window and also displa
 </div>
 <div class="os-workflow-step-body" markdown="1">
 
-Since results from OptimalSlope may be used in RS2 for stability analysis, this step explains how to import OptimalSlope output. Several steps are required to import an output profile DXF file into RS2.
+Since results from Slope Optimiser may be used in RS2 for stability analysis, this step explains how to import Slope Optimiser output. Several steps are required to import an output profile DXF file into RS2.
 ##### Step 1: Export output profile to DXF from our software
  - **Export output profile as DXF** (as explained in step 4) using the `Local XY` export method. This is required as RS2 expects a 2D section, so coordinates are flattened to have a horizontal section on the XY plane.
 
@@ -646,7 +646,7 @@ Since results from OptimalSlope may be used in RS2 for stability analysis, this 
 - **Set Boundary Types**: RS2 assigns Boundary Types based on layer names. Ensure your layer names match the expected Boundary Types in RS2. If a layer name does not match, it will be set to 'Not Assigned'.
 - **Define the model**: For a slope model, set the boundary type as 'Material'. Note that the 'External' role should not be used for the top and bottom portions of the slope, which should be defined by two different polylines. RS2 expects the external boundary to define the complete outer model boundary.
 
-At the moment, OptimalSlope does not export the complete RS2 external boundary by default. The external boundary must be added or drawn manually in RS2 after importing the DXF.
+At the moment, Slope Optimiser does not export the complete RS2 external boundary by default. The external boundary must be added or drawn manually in RS2 after importing the DXF.
 
 By following these steps, you can successfully prepare and import a DXF file into RS2, ensuring that all elements are correctly interpreted by the software.
 

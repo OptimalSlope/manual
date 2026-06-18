@@ -352,7 +352,7 @@ layout: post
 <section class="os-props-hero" markdown="0">
 <div class="kicker">Simulation input reference</div>
 <div class="os-props-hero-title">Properties</div>
-<p>Reference guide for bench, rock, section, fault, and water table properties used when defining OptimalSlope simulations.</p>
+<p>Reference guide for bench, rock, section, fault, and water table properties used when defining inputs of simulations.</p>
 </section>
 
 <div class="os-props-nav" markdown="0">
@@ -668,7 +668,7 @@ A wider and realistic OSA search range gives the optimiser more flexibility to i
 
 Faults represent discontinuities or fractures within the geological model that can influence rock mass behaviour, stability, and stress distribution.
 
-In OptimalSlope, faults are defined as **open polylines** and can be added to a section in two different ways.
+In the Slope Optimiser, faults are defined as **open polylines** and can be added to a section in two different ways.
 
 <div class="os-card-grid" markdown="1">
 <div class="os-card" markdown="1">
