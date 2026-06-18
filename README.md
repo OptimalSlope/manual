@@ -303,7 +303,7 @@ permalink: /
   border: 1px solid rgba(10, 78, 118, 0.18);
   border-radius: 22px;
   background:
-    radial-gradient(circle at 96% 0%, rgba(241, 107, 33, 0.14), transparent 30%),
+    radial-gradient(circle at 96% 0%, rgba(241, 107, 33, 0.08), transparent 30%),
     linear-gradient(180deg, #ffffff, #f7fafc);
   box-shadow: 0 12px 30px rgba(20, 35, 50, 0.08);
 }
@@ -318,11 +318,12 @@ permalink: /
   font-weight: 1000;
   letter-spacing: -0.06em;
   pointer-events: none;
+  z-index: 0;
 }
 
 .os-feature-text {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .os-feature-text strong {
@@ -342,20 +343,21 @@ permalink: /
 
 .os-feature-button {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 46px;
   padding: 12px 18px;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--blue), var(--blue2));
+  background: linear-gradient(135deg, #063d5e, var(--blue)) !important;
   color: #ffffff !important;
   text-decoration: none !important;
   font-weight: 1000;
   white-space: nowrap;
-  box-shadow: 0 12px 26px rgba(10, 78, 118, 0.24);
-  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 10px 22px rgba(6, 47, 80, 0.30);
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
 .os-feature-button::after {
@@ -367,8 +369,8 @@ permalink: /
 
 .os-feature-button:hover {
   transform: translateY(-2px);
-  filter: brightness(1.04);
-  box-shadow: 0 16px 34px rgba(10, 78, 118, 0.30);
+  background: linear-gradient(135deg, #052f49, #0a4e76) !important;
+  box-shadow: 0 14px 30px rgba(6, 47, 80, 0.34);
 }
 
 .os-include-frame {
@@ -492,9 +494,15 @@ Use the sections below to move through the typical workflow: prepare data, creat
 <a class="os-feature-button" href="assets/preview_horizontal_block_model_matches_pitwall.html" target="_blank" rel="noopener">Open Workflow</a>
 </div>
 
+<div class="os-home-note" markdown="1">
+<strong>Recommended starting point</strong><br>
+Start with the Data Preparation page if you are working with new 3D stratigraphy or imported section files. Clean input geometry improves slicing, material assignment, and simulation reliability.
+</div>
+
 </div>
 </section>
 
+{% comment %}
 <section class="os-home-section" id="workflow" markdown="1">
 <div class="os-home-section-head" markdown="0">
 <div class="label">Typical workflow</div>
@@ -527,12 +535,8 @@ Use the sections below to move through the typical workflow: prepare data, creat
 {% include workflow-example.html %}
 </div>
 
-<div class="os-home-note" markdown="1">
-<strong>Recommended starting point</strong><br>
-Start with the Data Preparation page if you are working with new 3D stratigraphy or imported section files. Clean input geometry improves slicing, material assignment, and simulation reliability.
-</div>
-
 </div>
 </section>
+{% endcomment %}
 
 </div>
