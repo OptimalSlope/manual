@@ -463,7 +463,7 @@ An empty project can be created using one of the following methods:
 <div class="os-subtitle">Loading an existing project</div>
 
 - An existing project in `.cbf` format is imported by clicking **Open Project** in the file menu.
-- An in-progress import operation is indicated by the loading symbol in the status bar.
+- An import operation in progress is indicated by the loading symbol in the status bar.
 - Loading larger files can take longer than a minute depending on the machine and project size.
 
 <div class="os-note" markdown="1">

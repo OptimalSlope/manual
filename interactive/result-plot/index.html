@@ -447,6 +447,47 @@ h1, h2 {
   margin-top: 2px;
 }
 
+
+  /* Embedded mode: parent page supplies the heading; this viewer shows only controls, legend and plot */
+  body {
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .shell,
+  .result-shell,
+  .page,
+  main {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    border: 0 !important;
+  }
+
+  .result-card,
+  .plot-card,
+  .viewer-card,
+  .panel {
+    border-radius: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .result-head,
+  .result-intro,
+  .stat-grid,
+  .stats,
+  header,
+  .hero,
+  .note {
+    display: none !important;
+  }
+
 </style>
 </head>
 <body>
@@ -455,14 +496,11 @@ h1, h2 {
     <div class="section-head">
       <div>
         <div class="section-kicker">Simulation output</div>
-        <h1>Live result profile plot</h1>
-        <p>Interactive preview of the optimised pitwall profile, bench geometry, slope angle bounds and failure mechanism.</p>
+        <h1>Optimised section result</h1>
+        <p></p>
       </div>
       <div class="badge" id="fosBadge">FoS = --</div>
     </div>
-
-    <div class="result-intro">
-      <div class="stat"><span>FoS</span><strong id="fosStat">--</strong><p>Computed factor of safety for the selected output profile.</p></div>
       <div class="stat"><span>OSA</span><strong id="thetaStat">--</strong><p>Best overall slope angle reported from the optimisation output.</p></div>
       <div class="stat"><span>EXCAVATION DEPTH</span><strong id="depthStat">--</strong><p>Defined slope height from the selected section properties.</p></div>
     </div>

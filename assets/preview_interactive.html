@@ -1403,6 +1403,37 @@
     height: 1280px !important;
   }
 
+
+  /* Result plot simplified embedding: single heading, no repeated wrapper banners */
+  #result-plot .result-plot-intro,
+  #result-plot .result-plot-toolbar {
+    display: none !important;
+  }
+
+  #result-plot .result-plot-frame-card {
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #fff !important;
+    overflow: hidden !important;
+  }
+
+  #result-plot .result-plot-wrap {
+    background: #fff !important;
+    padding: 0 !important;
+  }
+
+  #result-plot .result-plot-wrap iframe {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: 1120px !important;
+    border: 0 !important;
+    background: #fff !important;
+  }
+
 </style>
 </head>
 <body>
@@ -1567,27 +1598,10 @@
        
       </div>
 
-      <div class="result-plot-intro">
-        <div class="viewer-stat wide">
-          <span>R</span>
-          <div>
-            <strong>Detailed result review</strong>
-            <p>Inspect excavation depth, crest point, geological layers, benched profile, face angles, upper/lower search bounds, optimal profile and the critical failure mechanism in one zoomable view.</p>
-          </div>
-        </div>
-      </div>
-
       <div class="result-plot-frame-card">
-        <div class="result-plot-toolbar">
-          <div>
-            <div class="result-plot-toolbar-kicker">Interactive profile</div>
-            <div class="result-plot-toolbar-title">Optimised section result</div>
-          </div>
-          <a href="../interactive/result-plot/" target="_blank" rel="noopener">Open full view</a>
-        </div>
         <div class="result-plot-wrap">
           <iframe
-            src="../interactive/result-plot/?v=taller-result-plot1"
+            src="../interactive/result-plot/?v=simplified-parent1"
             title="Optimised profile plot"
             loading="lazy"></iframe>
         </div>

@@ -469,7 +469,7 @@ Due to additional processing overhead and cleaner geometry requirements, exporti
 <section class="os-data-section" id="stratighraphy-preparation" markdown="1">
 <div class="os-data-section-head" markdown="0">
 <div class="label">3D stratigraphy</div>
-<h2 id="stratighraphy-preparation">Stratighraphy Preparation</h2>
+<h2 id="stratighraphy-preparation">Stratigraphy Preparation</h2>
 <p>Prepare high-quality 3D DXF models for cross-section generation without gaps, overlaps, or invalid mesh geometry.</p>
 </div>
 <div class="os-data-section-body" markdown="1">
@@ -588,7 +588,7 @@ The example above shows layer overlapping introduced due to coarse-grained mesh 
 
 <div class="os-subtitle">Advice on Sections Imported from Third-Party Software</div>
 
-When generating cross-sections using tools such as Leapfrog, AutoCAD, Rhino, or other reputable CAD software, the likelihood of poor-quality sections is reduced if the 3D model itself follows high-quality standards.
+When generating cross-sections using tools such as Leapfrog, AutoCAD, Rhino, or other reputable CAD software, the likelihood of poor-quality sections is reduced if the 3D model itself follows high quality standards.
 
 The reliability of imported sections depends on the initial 3D model quality. A well-constructed model with properly aligned vertices, closed and manifold surfaces, and consistent geometry helps avoid gaps, overlaps, and distorted profiles in generated sections.
 
