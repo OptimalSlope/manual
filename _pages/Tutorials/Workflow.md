@@ -276,8 +276,8 @@ layout: post
 <div class="os-workflow-page" markdown="1">
 
 <section class="os-workflow-hero" markdown="0">
-<div class="kicker">Simulation Workflow Tutorialw</div>
-<p>Follow the complete OptimalSlope workflow from importing a section and defining properties through running simulations, reviewing results, exporting profiles, and preparing downstream models.</p>
+<div class="kicker">Simulation Workflow Tutorial</div>
+<p>Follow the complete OptimalSlope workflow from importing a section and defining properties to running simulations, reviewing results, exporting profiles, and preparing downstream models.</p>
 </section>
 
  
@@ -308,17 +308,17 @@ Follow these steps to configure properties for a selected section in OptimalSlop
   </video>
 </p>
 
-It is recommended to directly import sections if you already have them defined in DXF files. This method is straightforward and speeds up the process without the need to import often large 3D model files to make sections.
+It is recommended to directly import sections if you already have them defined in DXF files. This method is straightforward and speeds up the process without the need to import large 3D model files to create sections.
 
 In OptimalSlope, you have two methods available for defining cross-sections:
 
 #### Importing 3D Solid/Wireframe and Making Sections
-You can import a 3D solid or wireframe (`File -> Import Stratigraphy -> DXF`) and then use our slicing tool to create a section. For more information on slicing, refer to the [Slicing](https://optimalslope.github.io/manual/pages/slicing/2-slicing/).
+You can import a 3D solid or wireframe (`File -> Import Stratigraphy -> DXF`) and then use our slicing tool to create a section. For more information on slicing, refer to [Slicing](https://optimalslope.github.io/manual/pages/slicing/2-slicing/).
 
 #### Directly Importing DXF Section File
 Alternatively, you can directly import a DXF section file using the pathway: `File -> Import Section -> DXF`. 
 #### Use Quality Input Data
-Ensure your DXF model data meets general quality standards to ensure the best simulation results. For guidelines on data preparation and ensuring quality, refer to the [Data Preparation](https://optimalslope.github.io/manual/pages/Data%20Suitability/7-data/).
+Ensure your DXF model data meets general quality standards to ensure the best simulation results. For guidelines on data preparation and ensuring quality, refer to [Data Preparation](https://optimalslope.github.io/manual/pages/Data%20Suitability/7-data/).
 
 ---
 
@@ -357,7 +357,7 @@ Choose between Hoek-Brown and Mohr-Coulomb models and set properties like:
   <img src="https://OptimalSlope.github.io/manual/assets/tutorial/layer_properties.png" alt="Layer properties"/>
 </p>
 
-Section rock properties are set for each section layer separately. Alternatively, if 3D models are used to generate sections, properties can be provided at the 3D level initially. When making a section using our slicing tool, they are automatically inherited from parent 3D models.
+Section rock properties are set for each section layer separately. Alternatively, if 3D models are used to generate sections, properties can be provided at the 3D level initially. When making a section using the slicing tool, they are automatically inherited from parent 3D models.
 
 #### General Section Properties
 Set general properties for the section:
@@ -402,7 +402,7 @@ For detailed guidance, refer to the [OptimalSlope Manual on Properties](https://
 
 **Overview**
 
-OptimalSlope runs simulations on the cloud to avoid maxing out local resources and affecting the performance of user's machine due to the nature of computationally heavy simulations.
+OptimalSlope runs simulations on the cloud to avoid overloading local resources and affecting the performance of the user's machine due to the nature of computationally heavy simulations.
 
 After the problem of simulation is formulated with required inputs, the simulation window is used to run simulations and obtain the results.
 
@@ -419,8 +419,8 @@ After the problem of simulation is formulated with required inputs, the simulati
 
 
 
-After the input data is defined, simulations can be started in the simulation window. Here are the steps to perform before starting a simulation:
-1. **Select a section of interest**. Any section with prescribed properties.
+After the input data is defined, simulations can be started in the simulation window. Follow these steps before starting a simulation:
+1. **Select a section of interest**. Select any section with the required properties.
 2. **Set a simulation folder**. This informs where to write simulation results and logs.
 3. **Make sure user's profile is configured**. When running a simulation for the first time, go to `Tools -> Settings -> Account` and enter provided credential information, click `Configure`. This ensures that your simulation can run on the cloud.
 
@@ -527,10 +527,10 @@ A wider and realistic OSA search range gives the optimiser more flexibility to i
 
 #### Starting Simulations 
 
-1. Switch to **Simulation** tab at the botton of the interface.
-2. Under **Cross-sections**, select the desirable cross-section.
+1. Switch to the **Simulation** tab at the bottom of the interface.
+2. Under **Cross-sections**, select the desired cross-section.
 3. Specify simulation folder.
-4. **To start a simulation**, click **Start** button and then enter the configured username.
+4. **To start a simulation**, click the **Start** button and then enter the configured username.
 5. The **Fetch results** button is used to download the results and/or see the progress when simulations are running.
 
 #### Creating Different Scenarios  
@@ -562,14 +562,14 @@ or:
 - **A different results folder** for each scenario.
 
 This helps avoid conflicts between simulation outputs, logs, and exported result files. 
-**Note**: when requiring to re-run the same section more than once, e.g., with corrected parameters, select **Yes** to overwrite the existing input data when starting a simulation.
+**Note**: when you need to re-run the same section more than once, e.g., with corrected parameters, select **Yes** to overwrite the existing input data when starting a simulation.
 
 
 
 
 #### Results
-* OptimalSlope returns results in a form a plot, which displays estimated optimal profile of a slope.
-* The estimated angles and profile coordinates and angles are displayed in the logs.
+* OptimalSlope returns results in the form of a plot, which displays estimated optimal profile of a slope.
+* The estimated profile coordinates and angles are displayed in the logs.
 * The results folder also contains plots and obtained optimal profile data.
 
 
@@ -585,7 +585,7 @@ This helps avoid conflicts between simulation outputs, logs, and exported result
  
 
 
-- **Note:** results in the 2D plot is always shown as slope is on the right side (mirrored if it is on the left side). When exporting output profile to DXF or visualising in 3D, a produced slope profile is shown in the original position.
+- **Note:** results in the 2D plot are always shown as if the slope is on the right side (mirrored if it is on the left side). When exporting output profile to DXF or visualising in 3D, a produced slope profile is shown in the original position.
 
 
 </div>
@@ -615,7 +615,7 @@ The obtained results of a simulation are shown in 2D plot window and also displa
 
 - Navigate to the tools section in the simulation window (`Export output profile to DXF`).
 - Select one of the export configurations:
-    - `Global` - exported coordinates of profile are in the original global coordinate system. Useful when the result is visualized with respect to the original section or 3D models.
+    - `Global` - exported coordinates of profile are in the original global coordinate system. Useful when the result is visualised with respect to the original section or 3D models.
     - `Local XZ` - exported coordinates of profile are aligned to the XZ plane (Y coordinate is fixed).
     - `Local XY` - exported coordinates are flattened, i.e., the section is on the XY plane and is horizontal (Z coordinate is fixed). Useful when exporting to software like Rockscience RS2.
 
@@ -631,7 +631,7 @@ The obtained results of a simulation are shown in 2D plot window and also displa
 </div>
 <div class="os-workflow-step-body" markdown="1">
 
-Since results from OptimalSlope may be used in RS2 for stability analysis, this step explains how to import output from our software. There are several steps required to import an output profile DXF file into RS2.
+Since results from OptimalSlope may be used in RS2 for stability analysis, this step explains how to import OptimalSlope output. Several steps are required to import an output profile DXF file into RS2.
 ##### Step 1: Export output profile to DXF from our software
  - **Export output profile as DXF** (as explained in step 4) using the `Local XY` export method. This is required as RS2 expects a 2D section, so coordinates are flattened to have a horizontal section on the XY plane.
 
@@ -640,11 +640,11 @@ Since results from OptimalSlope may be used in RS2 for stability analysis, this 
 - **Convert Block References**: Use the `EXPLODE` command to convert all block references into simpler entities. This is crucial as RS2 cannot handle block references in the DXF.
 - **Save the File**: After exploding the blocks, save the file again as an ASCII DXF 2000 format. -->
 
-**Note**: Other software such as Rhino can be used to achieve such operation.
+**Note**: Other software such as Rhino can be used to achieve this operation.
 ##### Step 2: Import into RS2
 - **Import the DXF File**: Open RS2 and import the modified DXF file.
 - **Set Boundary Types**: RS2 assigns Boundary Types based on layer names. Ensure your layer names match the expected Boundary Types in RS2. If a layer name does not match, it will be set to 'Not Assigned'.
-- **Defining the Model**: For a slope model, set the boundary type as 'Material'. Note that the 'External' role should not be used for the top and bottom portions of the slope, which should be defined by two different polylines. RS2 expects the external boundary to define the complete outer model boundary.
+- **Define the model**: For a slope model, set the boundary type as 'Material'. Note that the 'External' role should not be used for the top and bottom portions of the slope, which should be defined by two different polylines. RS2 expects the external boundary to define the complete outer model boundary.
 
 At the moment, OptimalSlope does not export the complete RS2 external boundary by default. The external boundary must be added or drawn manually in RS2 after importing the DXF.
 
