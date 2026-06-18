@@ -842,6 +842,36 @@ wrap.addEventListener("pointercancel", endDrag);
     console.error(error);
   }
 })();
+
+window.addEventListener("message", event => {
+  const data = event.data || {};
+  if (data.type !== "osaViewerCommand") return;
+
+  if (data.action === "option1") {
+    setAutoSwitch(false);
+    applyCase(0, false);
+  }
+
+  if (data.action === "option2") {
+    setAutoSwitch(false);
+    applyCase(1, false);
+  }
+
+  if (data.action === "startAutoSwitch") {
+    setAutoSwitch(true);
+  }
+
+  if (data.action === "stopAutoSwitch") {
+    setAutoSwitch(false);
+  }
+
+  if (data.action === "reset") {
+    setAutoSwitch(false);
+    applyCase(0, true);
+    resetZoom();
+  }
+});
+
 </script>
 </body>
 </html>
