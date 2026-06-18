@@ -291,51 +291,84 @@ permalink: /
   line-height: 1.45;
 }
 
-.os-feature-card {
+.os-feature-panel {
   position: relative;
-  display: block;
-  margin: 18px 0;
-  text-decoration: none;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  margin: 22px 0 4px;
   padding: 24px;
-  border: 1px solid rgba(10, 78, 118, 0.22);
+  overflow: hidden;
+  border: 1px solid rgba(10, 78, 118, 0.18);
   border-radius: 22px;
   background:
-    radial-gradient(circle at 95% 0%, rgba(241, 107, 33, 0.34), transparent 28%),
-    linear-gradient(135deg, #0a4e76, #0f6e9f);
-  color: white;
-  box-shadow: var(--shadow2);
-  transition: transform 180ms ease, box-shadow 180ms ease;
+    radial-gradient(circle at 96% 0%, rgba(241, 107, 33, 0.14), transparent 30%),
+    linear-gradient(180deg, #ffffff, #f7fafc);
+  box-shadow: 0 12px 30px rgba(20, 35, 50, 0.08);
 }
 
-.os-feature-card::after {
-  content: "Open";
+.os-feature-panel::after {
+  content: "Workflow";
   position: absolute;
-  right: 20px;
-  bottom: 14px;
-  color: rgba(255,255,255,0.13);
+  right: 18px;
+  bottom: -10px;
+  color: rgba(10, 78, 118, 0.06);
   font-size: 64px;
   font-weight: 1000;
   letter-spacing: -0.06em;
+  pointer-events: none;
 }
 
-.os-feature-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 26px 62px rgba(10, 78, 118, 0.22);
+.os-feature-text {
+  position: relative;
+  z-index: 1;
 }
 
-.os-feature-card strong {
+.os-feature-text strong {
   display: block;
-  margin-bottom: 8px;
-  color: white;
-  font-size: 24px;
+  margin-bottom: 6px;
+  color: var(--blue);
+  font-size: 22px;
+  line-height: 1.15;
 }
 
-.os-feature-card span {
+.os-feature-text span {
   display: block;
   max-width: 620px;
-  color: rgba(255,255,255,0.86);
+  color: var(--muted);
   line-height: 1.45;
+}
+
+.os-feature-button {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--blue), var(--blue2));
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 1000;
+  white-space: nowrap;
+  box-shadow: 0 12px 26px rgba(10, 78, 118, 0.24);
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.os-feature-button::after {
+  content: "→";
+  margin-left: 8px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.os-feature-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.04);
+  box-shadow: 0 16px 34px rgba(10, 78, 118, 0.30);
 }
 
 .os-include-frame {
@@ -364,6 +397,15 @@ permalink: /
   .os-home-logo-card,
   .os-stage-grid {
     grid-template-columns: 1fr;
+  }
+
+  .os-feature-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .os-feature-button {
+    width: 100%;
   }
 }
 
@@ -442,10 +484,13 @@ This is the user manual of the [Slope Optimiser](https://optimalslope.com/files/
 
 Use the sections below to move through the typical workflow: prepare data, create or import project geometry, define properties, run simulations, review outputs, and export results for downstream analysis.
 
-<a class="os-feature-card" href="assets/preview_horizontal_block_model_matches_pitwall.html" target="_blank">
+<div class="os-feature-panel" markdown="0">
+<div class="os-feature-text">
 <strong>Slope Optimiser Interactive Workflow</strong>
 <span>Open the full interactive workflow preview in a new tab.</span>
-</a>
+</div>
+<a class="os-feature-button" href="assets/preview_horizontal_block_model_matches_pitwall.html" target="_blank" rel="noopener">Open Workflow</a>
+</div>
 
 </div>
 </section>
