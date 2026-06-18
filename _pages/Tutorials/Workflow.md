@@ -6,7 +6,6 @@ category: Tutorials
 layout: post
 ---
 
-```html
 <style>
 .os-workflow-page {
   --blue: #0a4e76;
@@ -283,50 +282,23 @@ layout: post
 </section>
 
 <div class="os-workflow-nav" markdown="0">
-<a href="#step-1-importing-sections">
-<span class="step">1</span>
-<strong>Import Sections</strong>
-<span>Start from DXF sections or slice sections from 3D stratigraphy.</span>
-</a>
-
-<a href="#step-2-defining-properties">
-<span class="step">2</span>
-<strong>Define Properties</strong>
-<span>Assign bench, rock, general, and optional simulation properties.</span>
-</a>
-
-<a href="#step-3-running-simulations">
-<span class="step">3</span>
-<strong>Run Simulations</strong>
-<span>Configure cloud simulation inputs and check geometry before running.</span>
-</a>
-
-<a href="#step-4-exporting-dxf">
-<span class="step">4</span>
-<strong>Export DXF</strong>
-<span>Export the optimized output profile for external workflows.</span>
-</a>
-
-<a href="#step-5-importing-rs2">
-<span class="step">5</span>
-<strong>Import into RS2</strong>
-<span>Prepare the exported profile for Rockscience RS2 stability analysis.</span>
-</a>
-
-<a href="#step-6-export-block-model">
-<span class="step">6</span>
-<strong>Export Block Model</strong>
-<span>Create a section block model from 3D stratigraphy and optimized slope angles.</span>
-</a>
+<a href="#step-1-importing-sections"><span class="step">1</span><strong>Import Sections</strong><span>Start from DXF sections or slice sections from 3D stratigraphy.</span></a>
+<a href="#step-2-defining-properties"><span class="step">2</span><strong>Define Properties</strong><span>Assign bench, rock, general, and optional simulation properties.</span></a>
+<a href="#step-3-running-simulations"><span class="step">3</span><strong>Run Simulations</strong><span>Configure cloud simulation inputs and check geometry before running.</span></a>
+<a href="#step-4-exporting-dxf"><span class="step">4</span><strong>Export DXF</strong><span>Export the optimized output profile for external workflows.</span></a>
+<a href="#step-5-importing-rs2"><span class="step">5</span><strong>Import into RS2</strong><span>Prepare the exported profile for Rockscience RS2 stability analysis.</span></a>
+<a href="#step-6-export-block-model"><span class="step">6</span><strong>Export Block Model</strong><span>Create a section block model from 3D stratigraphy and optimized slope angles.</span></a>
 </div>
-```
-
-
-## Simulation Workflow
 
 Follow these steps to configure properties for a selected section in OptimalSlope to run a simulation:
 
-### 1. Importing Sections
+<section class="os-workflow-step" id="step-1-importing-sections" markdown="1">
+<div class="os-workflow-step-head" markdown="0">
+<div class="label">Step 1</div>
+<h2>Importing Sections</h2>
+<p>Start by importing an existing DXF section or creating sections from a 3D stratigraphy model using the slicing tool.</p>
+</div>
+<div class="os-workflow-step-body" markdown="1">
 
 <p align="center">
   <video controls width="100%" preload="metadata">
@@ -348,7 +320,17 @@ Alternatively, you can directly import a DXF section file using the pathway: `Fi
 Ensure your DXF model data meets general quality standards to ensure the best simulation results. For guidelines on data preparation and ensuring quality, refer to the [Data Preparation](https://optimalslope.github.io/manual/pages/Data%20Suitability/7-data/).
 
 ---
-### 2. Defining Properties
+
+</div>
+</section>
+
+<section class="os-workflow-step" id="step-2-defining-properties" markdown="1">
+<div class="os-workflow-step-head" markdown="0">
+<div class="label">Step 2</div>
+<h2>Defining Properties</h2>
+<p>Define bench, rock, general, and optional properties before running a simulation.</p>
+</div>
+<div class="os-workflow-step-body" markdown="1">
 
 <p align="center">
   <video controls width="100%" preload="metadata">
@@ -405,7 +387,17 @@ Ensure all values are accurate and reflect the physical/mechanical characteristi
 For detailed guidance, refer to the [OptimalSlope Manual on Properties](https://optimalslope.github.io/manual/pages/properties/6-properties/).
 
 ---
-### 3. Running Simulations
+
+</div>
+</section>
+
+<section class="os-workflow-step" id="step-3-running-simulations" markdown="1">
+<div class="os-workflow-step-head" markdown="0">
+<div class="label">Step 3</div>
+<h2>Running Simulations</h2>
+<p>Configure the simulation folder, user profile, input checks, and cloud simulation process.</p>
+</div>
+<div class="os-workflow-step-body" markdown="1">
 
 **Overview**
 
@@ -594,7 +586,17 @@ This helps avoid conflicts between simulation outputs, logs, and exported result
 
 - **Note:** results in the 2D plot is always shown as slope is on the right side (mirrored if it is on the left side). When exporting output profile to DXF or visualising in 3D, a produced slope profile is shown in the original position.
 
-### 4. Exporting Output Profile to DXF
+
+</div>
+</section>
+
+<section class="os-workflow-step" id="step-4-exporting-dxf" markdown="1">
+<div class="os-workflow-step-head" markdown="0">
+<div class="label">Step 4</div>
+<h2>Exporting Output Profile to DXF</h2>
+<p>Export the optimized slope profile using global or local coordinate options.</p>
+</div>
+<div class="os-workflow-step-body" markdown="1">
 
 <!-- <p align="center">
   <video controls width="100%" preload="metadata">
@@ -616,9 +618,17 @@ The obtained results of a simulation are shown in 2D plot window and also displa
     - `Local XZ` - exported coordinates of profile are aligned to the XZ plane (Y coordinate is fixed).
     - `Local XY` - exported coordinates are flattened, i.e., the section is on the XY plane and is horizontal (Z coordinate is fixed). Useful when exporting to software like Rockscience RS2.
 
-### 5. Importing Output into Rockscience RS2
 
- 
+</div>
+</section>
+
+<section class="os-workflow-step" id="step-5-importing-rs2" markdown="1">
+<div class="os-workflow-step-head" markdown="0">
+<div class="label">Step 5</div>
+<h2>Importing Output into Rockscience RS2</h2>
+<p>Import the exported DXF profile into RS2 and complete the external boundary definition manually.</p>
+</div>
+<div class="os-workflow-step-body" markdown="1">
 
 Since results from OptimalSlope may be used in RS2 for stability analysis, this step explains how to import output from our software. There are several steps required to import an output profile DXF file into RS2.
 ##### Step 1: Export output profile to DXF from our software
@@ -639,7 +649,17 @@ At the moment, OptimalSlope does not export the complete RS2 external boundary b
 
 By following these steps, you can successfully prepare and import a DXF file into RS2, ensuring that all elements are correctly interpreted by the software.
 
-### 6. Exporting the Section Block Model
+
+</div>
+</section>
+
+<section class="os-workflow-step" id="step-6-export-block-model" markdown="1">
+<div class="os-workflow-step-head" markdown="0">
+<div class="label">Step 6</div>
+<h2>Exporting the Section Block Model</h2>
+<p>Export a block model for sections associated with 3D stratigraphy using optimized slope angles.</p>
+</div>
+<div class="os-workflow-step-body" markdown="1">
 
 If the project contains 3D stratigraphy, the section block model can be exported from the simulation window using the **Export block model** tool.
 
@@ -658,3 +678,7 @@ Before exporting, define the block dimensions:
 This feature is available when the section is generated from, or associated with, a 3D stratigraphy model. If the project only contains an imported 2D section without 3D stratigraphy, there is no 3D block model available to export.
 
 Choose block dimensions that are appropriate for the scale of the model. Smaller block sizes provide a more detailed representation but may produce larger output files, while larger block sizes reduce file size but give a coarser model.
+</div>
+</section>
+
+</div>
