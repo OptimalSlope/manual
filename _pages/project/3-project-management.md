@@ -52,7 +52,7 @@ layout: post
 }
 
 .os-pm-hero .kicker,
-.os-pm-hero h1,
+.os-pm-hero-title,
 .os-pm-hero p {
   position: relative;
   z-index: 1;
@@ -66,10 +66,13 @@ layout: post
   letter-spacing: 0.08em;
 }
 
-.os-pm-hero h1 {
+.os-pm-hero-title {
+  position: relative;
+  z-index: 1;
   margin: 10px 0 12px;
   color: white;
   font-size: clamp(38px, 5vw, 64px);
+  font-weight: 900;
   line-height: 0.98;
   letter-spacing: -0.055em;
 }
@@ -84,7 +87,7 @@ layout: post
 
 .os-pm-nav {
   display: grid;
-  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 14px;
   margin: 0 0 30px;
 }
@@ -330,8 +333,12 @@ layout: post
   box-shadow: 0 8px 22px rgba(20, 35, 50, 0.06);
 }
 
+
+.os-pm-section h2[id] {
+  scroll-margin-top: 90px;
+}
+
 @media (max-width: 950px) {
-  .os-pm-nav,
   .os-method-grid {
     grid-template-columns: repeat(2, minmax(180px, 1fr));
   }
@@ -342,7 +349,6 @@ layout: post
     padding: 28px;
   }
 
-  .os-pm-nav,
   .os-method-grid {
     grid-template-columns: 1fr;
   }
@@ -361,7 +367,7 @@ layout: post
 
 <section class="os-pm-hero" markdown="0">
 <div class="kicker">Project setup and data management</div>
-<h1>Project Management</h1>
+<div class="os-pm-hero-title">Project Management</div>
 <p>Create, save, load, import, slice, trim, and export project data in OptimalSlope.</p>
 </section>
 
@@ -406,7 +412,7 @@ layout: post
 <section class="os-pm-section" id="creating-a-project" markdown="1">
 <div class="os-pm-section-head" markdown="0">
 <div class="label">Project creation</div>
-<h2>Creating a Project</h2>
+<h2 id="creating-a-project">Creating a Project</h2>
 <p>Create an empty OptimalSlope project before importing geometry or defining simulation properties.</p>
 </div>
 <div class="os-pm-section-body" markdown="1">
@@ -444,7 +450,7 @@ An empty project can be created using one of the following methods:
 <section class="os-pm-section" id="savingloading-projects" markdown="1">
 <div class="os-pm-section-head" markdown="0">
 <div class="label">Project files</div>
-<h2>Saving and Loading Projects</h2>
+<h2 id="savingloading-projects">Saving and Loading Projects</h2>
 <p>Save project data to disk and open existing OptimalSlope project files.</p>
 </div>
 <div class="os-pm-section-body" markdown="1">
@@ -471,7 +477,7 @@ OptimalSlope project data is stored in a binary format: `.cbf`.
 <section class="os-pm-section" id="importing-data" markdown="1">
 <div class="os-pm-section-head" markdown="0">
 <div class="label">Import data</div>
-<h2>Importing Data</h2>
+<h2 id="importing-data">Importing Data</h2>
 <p>Import 3D stratigraphy, section geometry, water surfaces, and boundary surfaces into the project.</p>
 </div>
 <div class="os-pm-section-body" markdown="1">
@@ -545,7 +551,7 @@ It is advised to define names and colours of layers while generating model files
 <section class="os-pm-section" id="creating-sections" markdown="1">
 <div class="os-pm-section-head" markdown="0">
 <div class="label">Cross-sections</div>
-<h2>Creating Sections</h2>
+<h2 id="creating-sections">Creating Sections</h2>
 <p>Use the slicing tool to create cross-sections from selected 3D shapes or stratigraphy models.</p>
 </div>
 <div class="os-pm-section-body" markdown="1">
@@ -605,7 +611,7 @@ To create a section:
 <section class="os-pm-section" id="trim-section-to-boundary-surface" markdown="1">
 <div class="os-pm-section-head" markdown="0">
 <div class="label">Boundary trimming</div>
-<h2>Trim Section to Boundary Surface</h2>
+<h2 id="trim-section-to-boundary-surface">Trim Section to Boundary Surface</h2>
 <p>Use a boundary surface to constrain or trim a section so it reflects current or planned excavation limits.</p>
 </div>
 <div class="os-pm-section-body" markdown="1">
@@ -661,7 +667,7 @@ The resulting section is updated using the boundary surface, so the section bett
 <section class="os-pm-section" id="exporting-project-data" markdown="1">
 <div class="os-pm-section-head" markdown="0">
 <div class="label">Export data</div>
-<h2>Exporting Project Data</h2>
+<h2 id="exporting-project-data">Exporting Project Data</h2>
 <p>Export selected geometry or cross-section data for downstream modelling and simulation workflows.</p>
 </div>
 <div class="os-pm-section-body" markdown="1">
