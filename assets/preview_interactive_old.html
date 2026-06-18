@@ -1304,84 +1304,9 @@
     }
   }
 
-
-  /* Conference demo mode: animated section focus for presentations */
-  .demo-mode-button {
-    background: linear-gradient(135deg, #0a4e76, #f16b21) !important;
-    color: #fff !important;
-    border-color: rgba(255,255,255,0.28) !important;
-  }
-
-  body.demo-mode-active {
-    scroll-behavior: smooth;
-  }
-
-  body.demo-mode-active .section,
-  body.demo-mode-active .hero {
-    transition:
-      transform 520ms ease,
-      box-shadow 520ms ease,
-      outline-color 520ms ease,
-      filter 520ms ease;
-    transform-origin: center center;
-  }
-
-  body.demo-mode-active .demo-focus {
-    transform: scale(1.012);
-    outline: 3px solid rgba(241,107,33,0.46);
-    box-shadow: 0 34px 95px rgba(10,78,118,0.24), 0 0 0 10px rgba(241,107,33,0.09) !important;
-    filter: saturate(1.08);
-  }
-
-  .demo-toast {
-    position: fixed;
-    right: 28px;
-    bottom: 28px;
-    z-index: 7000;
-    width: min(520px, calc(100vw - 56px));
-    padding: 13px 18px;
-    border: 1px solid rgba(255,255,255,0.24);
-    border-radius: 18px;
-    color: #fff;
-    background:
-      radial-gradient(circle at 100% 0%, rgba(255,138,61,0.55), transparent 35%),
-      linear-gradient(135deg, rgba(6,47,80,0.96), rgba(10,78,118,0.94));
-    box-shadow: 0 20px 54px rgba(10,24,35,0.28);
-    font-weight: 950;
-    letter-spacing: -0.01em;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(16px);
-    transition: opacity 260ms ease, transform 260ms ease;
-  }
-
-  .demo-toast.show {
-    opacity: 0.96;
-    transform: translateY(0);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    body.demo-mode-active .section,
-    body.demo-mode-active .hero {
-      transition: none !important;
-      transform: none !important;
-    }
-  }
-
-
-  /* Demo mode scroll safety: keep section headings visible below sticky navigation */
-  #workflow,
-  #comparison,
-  #result-plot,
-  #block-model,
-  .hero {
-    scroll-margin-top: 118px;
-  }
-
 </style>
 </head>
 <body>
-  <div class="demo-toast" id="demoToast">Demo mode</div>
   <div class="expand-backdrop" id="expandBackdrop"></div>
   <button class="expand-close" id="expandClose" type="button" aria-label="Close expanded view">×</button>
   <div class="shell">
@@ -1406,7 +1331,6 @@
         <a href="#comparison">Pitwall comparison</a>
         <a href="#result-plot">Result plot</a>
         <a href="#block-model">Block model</a>
-        <button class="nav-expand demo-mode-button" id="conferenceDemo" type="button">Demo mode</button>
         <button class="nav-expand" id="expandViewNav" type="button">Expand view</button>
       </div>
     </nav>
@@ -1541,7 +1465,7 @@
         <div>
           <div class="section-kicker">Output review</div>
           <h2>Optimised profile plot</h2>
-          <p>Review the optimised pitwall profile, bench geometry and failure mechanism in an interactive section view.</p>
+          <p>Review the optimised pitwall profile, bench geometry, slope angle bounds and failure mechanism in an interactive section view.</p>
         </div>
       </div>
 
@@ -1852,116 +1776,6 @@
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   }
-
-  const conferenceDemo = document.getElementById('conferenceDemo');
-  const demoToast = document.getElementById('demoToast');
-  let demoTimers = [];
-  let demoRunning = false;
-
-  function clearDemoTimers() {
-    demoTimers.forEach(timer => clearTimeout(timer));
-    demoTimers = [];
-  }
-
-  function setDemoMessage(message) {
-    if (!demoToast) return;
-    demoToast.textContent = message;
-    demoToast.classList.add('show');
-  }
-
-  function focusDemoSection(selector, message) {
-    document.querySelectorAll('.demo-focus').forEach(node => node.classList.remove('demo-focus'));
-    const target = document.querySelector(selector);
-    if (!target) return;
-
-    target.classList.add('demo-focus');
-
-    const navOffset = 118;
-    const rect = target.getBoundingClientRect();
-    const targetTop = Math.max(0, window.scrollY + rect.top - navOffset);
-
-    window.scrollTo({
-      top: targetTop,
-      behavior: 'smooth'
-    });
-
-    setDemoMessage(message);
-  }
-
-  function stopConferenceDemo() {
-    clearDemoTimers();
-    demoRunning = false;
-    document.body.classList.remove('demo-mode-active');
-    document.querySelectorAll('.demo-focus').forEach(node => node.classList.remove('demo-focus'));
-    if (demoToast) demoToast.classList.remove('show');
-    if (conferenceDemo) conferenceDemo.textContent = 'Demo mode';
-    stopCompare();
-  }
-
-  function scheduleDemo(delay, action) {
-    demoTimers.push(setTimeout(action, delay));
-  }
-
-  function startConferenceDemo() {
-    stopConferenceDemo();
-    demoRunning = true;
-    document.body.classList.add('demo-mode-active');
-    if (conferenceDemo) conferenceDemo.textContent = 'Stop demo';
-
-    scheduleDemo(0, () => {
-      focusDemoSection('.hero', 'OptimalSlope: from geology to optimised pitwall profile');
-    });
-
-    scheduleDemo(3600, () => {
-      focusDemoSection('#workflow', 'Stage 1: prepare 3D geology, water and boundary inputs');
-      setStage(0);
-    });
-
-    scheduleDemo(7600, () => {
-      focusDemoSection('#workflow', 'Stage 2: define cross-section properties and optimisation constraints');
-      setStage(1);
-    });
-
-    scheduleDemo(11600, () => {
-      focusDemoSection('#workflow', 'Stage 3: run the cloud optimiser and generate design outputs');
-      setStage(2);
-    });
-
-    scheduleDemo(15800, () => {
-      focusDemoSection('#comparison', 'Compare the original pitwall with the optimised excavation profile');
-      setComparison(0);
-      startCompare();
-    });
-
-    scheduleDemo(22000, () => {
-      stopCompare();
-      setComparison(100);
-    });
-
-    scheduleDemo(23800, () => {
-      focusDemoSection('#result-plot', 'Review FoS, geological layers, bench geometry and failure mechanism');
-    });
-
-    scheduleDemo(29800, () => {
-      focusDemoSection('#block-model', 'Inspect the final optimised 3D block model');
-    });
-
-    scheduleDemo(35800, () => {
-      focusDemoSection('.hero', 'Restarting demo sequence');
-    });
-
-    scheduleDemo(39800, () => {
-      if (demoRunning) startConferenceDemo();
-    });
-  }
-
-  if (conferenceDemo) {
-    conferenceDemo.addEventListener('click', () => {
-      if (demoRunning) stopConferenceDemo();
-      else startConferenceDemo();
-    });
-  }
-
 
   setStage(0);
   start();
