@@ -1378,26 +1378,6 @@
     scroll-margin-top: 118px;
   }
 
-
-  /* Demo mode result plot zoom: visual zoom-in effect for the embedded profile plot */
-  #result-plot .result-plot-frame {
-    overflow: hidden;
-  }
-
-  #result-plot .result-plot-frame iframe {
-    transition: transform 1200ms ease, filter 1200ms ease;
-    transform-origin: 52% 42%;
-  }
-
-  body.demo-mode-active #result-plot.demo-result-zoom .result-plot-frame iframe {
-    transform: scale(1.09);
-    filter: saturate(1.08) contrast(1.03);
-  }
-
-  body.demo-mode-active #result-plot.demo-result-zoom {
-    box-shadow: 0 38px 110px rgba(10,78,118,0.28), 0 0 0 12px rgba(241,107,33,0.10) !important;
-  }
-
 </style>
 </head>
 <body>
@@ -1891,7 +1871,6 @@
 
   function focusDemoSection(selector, message) {
     document.querySelectorAll('.demo-focus').forEach(node => node.classList.remove('demo-focus'));
-    if (selector !== '#result-plot') clearResultPlotZoom();
     const target = document.querySelector(selector);
     if (!target) return;
 
@@ -1909,30 +1888,11 @@
     setDemoMessage(message);
   }
 
-
-  function clearResultPlotZoom() {
-    const resultPlot = document.querySelector('#result-plot');
-    if (resultPlot) resultPlot.classList.remove('demo-result-zoom');
-  }
-
-  function startResultPlotZoom() {
-    const resultPlot = document.querySelector('#result-plot');
-    if (!resultPlot) return;
-
-    resultPlot.classList.remove('demo-result-zoom');
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        resultPlot.classList.add('demo-result-zoom');
-      });
-    });
-  }
-
   function stopConferenceDemo() {
     clearDemoTimers();
     demoRunning = false;
     document.body.classList.remove('demo-mode-active');
     document.querySelectorAll('.demo-focus').forEach(node => node.classList.remove('demo-focus'));
-    clearResultPlotZoom();
     if (demoToast) demoToast.classList.remove('show');
     if (conferenceDemo) conferenceDemo.textContent = 'Demo mode';
     stopCompare();
@@ -1980,7 +1940,6 @@
 
     scheduleDemo(23800, () => {
       focusDemoSection('#result-plot', 'Review FoS, geological layers, bench geometry and failure mechanism');
-      scheduleDemo(1400, startResultPlotZoom);
     });
 
     scheduleDemo(29800, () => {
