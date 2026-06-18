@@ -1377,23 +1377,26 @@
   .hero {
     scroll-margin-top: 118px;
   }
-  /* Demo mode result plot zoom: zoom the SVG plot inside the iframe, not the whole page */
+
+
+  /* Demo mode result plot zoom: visual zoom-in effect for the embedded profile plot */
   #result-plot .result-plot-frame {
     overflow: hidden;
   }
 
   #result-plot .result-plot-frame iframe {
-    transition: filter 700ms ease;
+    transition: transform 1200ms ease, filter 1200ms ease;
+    transform-origin: 52% 42%;
   }
 
   body.demo-mode-active #result-plot.demo-result-zoom .result-plot-frame iframe {
+    transform: scale(1.09);
     filter: saturate(1.08) contrast(1.03);
   }
 
   body.demo-mode-active #result-plot.demo-result-zoom {
     box-shadow: 0 38px 110px rgba(10,78,118,0.28), 0 0 0 12px rgba(241,107,33,0.10) !important;
   }
-
 
 </style>
 </head>
@@ -1564,7 +1567,7 @@
 
       <div class="result-plot-frame">
         <iframe
-          src="../interactive/result-plot/?v=internal-zoom1"
+          src="../interactive/result-plot/?v=safe-integrated1"
           title="Optimised profile plot"
           loading="lazy"></iframe>
       </div>
@@ -1905,93 +1908,23 @@
 
     setDemoMessage(message);
   }
-  function getResultPlotFrame() {
-    return document.querySelector('#result-plot iframe');
-  }
 
-  function findFrameButtonByText(frameDocument, text) {
-    const wanted = text.trim().toLowerCase();
-    return Array.from(frameDocument.querySelectorAll('button')).find(button =>
-      (button.textContent || '').trim().toLowerCase() === wanted
-    );
-  }
-
-  function tryRunResultPlotAction(action) {
-    const frame = getResultPlotFrame();
-    if (!frame || !frame.contentWindow) return false;
-
-    try {
-      const win = frame.contentWindow;
-      const doc = win.document;
-      if (!doc) return false;
-
-      if (action === 'reset') {
-        if (typeof win.resetZoom === 'function') {
-          win.resetZoom();
-          return true;
-        }
-
-        const resetButton = doc.querySelector('[data-action="resetZoom"]') || findFrameButtonByText(doc, 'Reset view');
-        if (resetButton) {
-          resetButton.click();
-          return true;
-        }
-
-        return false;
-      }
-
-      if (action === 'zoomFaceAngles') {
-        if (typeof win.resetZoom === 'function') {
-          win.resetZoom();
-        }
-
-        /*
-          Zoom into the bench/profile area where the face-angle labels sit.
-          This uses the result plot's own SVG/domain zoom, so labels become
-          larger without scaling the whole preview page or iframe chrome.
-        */
-        if (typeof win.zoomAt === 'function') {
-          win.zoomAt(0.55, -320, -165);
-          win.zoomAt(0.78, -320, -165);
-          return true;
-        }
-
-        const zoomButton = doc.querySelector('[data-action="zoomIn"]') || findFrameButtonByText(doc, 'Zoom in');
-        if (zoomButton) {
-          zoomButton.click();
-          zoomButton.click();
-          zoomButton.click();
-          return true;
-        }
-
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-
-    return false;
-  }
-
-  function runResultPlotActionWhenReady(action, attempts = 16) {
-    if (tryRunResultPlotAction(action)) return;
-    if (attempts <= 0) return;
-
-    setTimeout(() => {
-      runResultPlotActionWhenReady(action, attempts - 1);
-    }, 250);
-  }
 
   function clearResultPlotZoom() {
     const resultPlot = document.querySelector('#result-plot');
     if (resultPlot) resultPlot.classList.remove('demo-result-zoom');
-    runResultPlotActionWhenReady('reset', 3);
   }
 
   function startResultPlotZoom() {
     const resultPlot = document.querySelector('#result-plot');
-    if (resultPlot) resultPlot.classList.add('demo-result-zoom');
-    runResultPlotActionWhenReady('zoomFaceAngles', 20);
+    if (!resultPlot) return;
+
+    resultPlot.classList.remove('demo-result-zoom');
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        resultPlot.classList.add('demo-result-zoom');
+      });
+    });
   }
 
   function stopConferenceDemo() {
