@@ -87,7 +87,7 @@ layout: post
 
 .os-data-nav {
   display: grid;
-  grid-template-columns: repeat(5, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 14px;
   margin: 0 0 30px;
 }
@@ -104,6 +104,21 @@ layout: post
   text-decoration: none;
   box-shadow: var(--shadow);
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+
+.os-data-nav a {
+  min-width: 0;
+}
+
+.os-data-nav strong,
+.os-data-nav span {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.os-data-nav strong {
+  hyphens: auto;
 }
 
 .os-data-nav a:hover {
@@ -324,14 +339,7 @@ layout: post
   scroll-margin-top: 90px;
 }
 
-@media (max-width: 1100px) {
-  .os-data-nav {
-    grid-template-columns: repeat(3, minmax(170px, 1fr));
-  }
-}
-
 @media (max-width: 850px) {
-  .os-data-nav,
   .os-callout-grid {
     grid-template-columns: repeat(2, minmax(180px, 1fr));
   }
