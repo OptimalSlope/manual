@@ -437,10 +437,40 @@ permalink: /
 <div class="os-home-logo-card" markdown="0">
 <img src="https://optimalslope.com/images/path9338.png" alt="OptimalSlope logo">
 <div>
-<strong>OptimalSlope documentation</strong>
+<strong>Slope Optimiser documentation</strong>
 <p>This manual explains the main workflows for using the Slope Optimiser CAD graphical interface.</p>
 </div>
 </div>
+
+
+
+<section class="os-home-section" id="introduction" markdown="1">
+<div class="os-home-section-head" markdown="0">
+<div class="label">Introduction</div>
+<h2 id="introduction">Introduction</h2>
+<p>OptimalSlope helps evaluate slope geometry, generate simulation inputs, run cloud simulations, and export optimized slope profiles.</p>
+</div>
+<div class="os-home-section-body" markdown="1">
+
+This is the user manual of the [Slope Optimiser](https://optimalslope.com/files/OptimalSlope_Latest.zip/) CAD graphical interface.
+
+Use the sections below to move through the typical workflow: prepare data, create or import project geometry, define properties, run simulations, review outputs, and export results for downstream analysis.
+
+<div class="os-feature-panel" markdown="0">
+<div class="os-feature-text">
+<strong>Slope Optimiser Interactive Workflow</strong>
+<span>Open the full interactive workflow preview in a new tab.</span>
+</div>
+<a class="os-feature-button" href="assets/preview_horizontal_block_model_matches_pitwall.html" target="_blank" rel="noopener">Open Workflow</a>
+</div>
+
+<div class="os-home-note" markdown="1">
+<strong>Recommended starting point</strong><br>
+Start with the Data Preparation page if you are working with new 3D stratigraphy or imported section files. Clean input geometry improves slicing, material assignment, and simulation reliability.
+</div>
+
+</div>
+</section>
 
 <div class="os-home-nav" markdown="0">
 <a href="pages/Data%20Suitability/7-data/">
@@ -473,34 +503,6 @@ permalink: /
 <span>Navigate the visualiser, change views, adjust object style, and manage selected items.</span>
 </a>
 </div>
-
-<section class="os-home-section" id="introduction" markdown="1">
-<div class="os-home-section-head" markdown="0">
-<div class="label">Introduction</div>
-<h2 id="introduction">Introduction</h2>
-<p>OptimalSlope helps evaluate slope geometry, generate simulation inputs, run cloud simulations, and export optimized slope profiles.</p>
-</div>
-<div class="os-home-section-body" markdown="1">
-
-This is the user manual of the [Slope Optimiser](https://optimalslope.com/files/OptimalSlope_Latest.zip/) CAD graphical interface.
-
-Use the sections below to move through the typical workflow: prepare data, create or import project geometry, define properties, run simulations, review outputs, and export results for downstream analysis.
-
-<div class="os-feature-panel" markdown="0">
-<div class="os-feature-text">
-<strong>Slope Optimiser Interactive Workflow</strong>
-<span>Open the full interactive workflow preview in a new tab.</span>
-</div>
-<a class="os-feature-button" href="assets/preview_horizontal_block_model_matches_pitwall.html" target="_blank" rel="noopener">Open Workflow</a>
-</div>
-
-<div class="os-home-note" markdown="1">
-<strong>Recommended starting point</strong><br>
-Start with the Data Preparation page if you are working with new 3D stratigraphy or imported section files. Clean input geometry improves slicing, material assignment, and simulation reliability.
-</div>
-
-</div>
-</section>
 
 {% comment %}
 <section class="os-home-section" id="workflow" markdown="1">
