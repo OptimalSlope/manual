@@ -291,14 +291,11 @@ permalink: /
   line-height: 1.45;
 }
 
-.os-feature-link {
+.os-feature-card {
+  position: relative;
   display: block;
   margin: 18px 0;
   text-decoration: none;
-}
-
-.os-feature-card {
-  position: relative;
   overflow: hidden;
   padding: 24px;
   border: 1px solid rgba(10, 78, 118, 0.22);
@@ -445,11 +442,9 @@ This is the user manual of the [Slope Optimiser](https://optimalslope.com/files/
 
 Use the sections below to move through the typical workflow: prepare data, create or import project geometry, define properties, run simulations, review outputs, and export results for downstream analysis.
 
-<a class="os-feature-link" href="assets/preview_horizontal_block_model_matches_pitwall.html" target="_blank">
-<div class="os-feature-card">
+<a class="os-feature-card" href="assets/preview_horizontal_block_model_matches_pitwall.html" target="_blank">
 <strong>Slope Optimiser Interactive Workflow</strong>
 <span>Open the full interactive workflow preview in a new tab.</span>
-</div>
 </a>
 
 </div>
