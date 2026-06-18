@@ -108,7 +108,7 @@
 
   .info-row {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
     padding: 18px 20px 0;
     background: #fff;
@@ -303,7 +303,7 @@
     }
 
     .info-row {
-      grid-template-columns: repeat(4, minmax(180px, 1fr));
+      grid-template-columns: repeat(2, minmax(220px, 1fr));
     }
 
     .toolbar {
@@ -341,8 +341,6 @@
     <div id="message" class="message"></div>
 
     <div class="info-row">
-      <div class="stat"><div class="label">Layers</div><div class="value" id="layerCount">--</div></div>
-      <div class="stat"><div class="label">Bench lines</div><div class="value" id="benchCount">--</div></div>
       <div class="stat"><div class="label">Max OSA</div><div class="value" id="maxOsaValue">--</div></div>
       <div class="stat"><div class="label">Min OSA</div><div class="value" id="minOsaValue">--</div></div>
     </div>
@@ -809,8 +807,6 @@ function panBy(dxPixels, dyPixels) {
 }
 
 function updateStats(data) {
-  document.getElementById("layerCount").textContent = data.layers.length;
-  document.getElementById("benchCount").textContent = data.benchLines.length;
   document.getElementById("maxOsaValue").textContent = data.maxOsa ? `${fmt(data.maxOsa.angle, 1)}°` : "--";
   document.getElementById("minOsaValue").textContent = data.minOsa ? `${fmt(data.minOsa.angle, 1)}°` : "--";
 }
