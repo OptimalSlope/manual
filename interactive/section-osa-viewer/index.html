@@ -276,7 +276,7 @@
       <div>
         <div class="toolbar-kicker">Interactive section viewer</div>
         <div class="toolbar-title">OSA search region</div>
-        <div class="toolbar-subtitle">Use the buttons to switch between two OSA overlays. The section geometry stays the same.</div>
+        <div class="toolbar-subtitle">Use the buttons or Auto switch to compare two OSA overlays. The section geometry is mirrored to match the DXF coordinate orientation.</div>
       </div>
       <div class="toolbar-right">
         <div class="switcher" id="switcher">
@@ -291,6 +291,7 @@
           <button data-toggle="labels" class="active">Labels</button>
           <button data-action="zoomIn">Zoom in</button>
           <button data-action="zoomOut">Zoom out</button>
+          <button data-action="autoSwitch" id="autoSwitchButton">Auto switch</button>
           <button data-action="reset">Reset view</button>
         </div>
       </div>
@@ -346,6 +347,7 @@ const message = document.getElementById("message");
 let baseData = null;
 let overlayCache = new Map();
 let currentCaseIndex = 0;
+let autoSwitchTimer = null;
 let loaded = null;
 let fullDomain = null;
 let viewDomain = null;
@@ -419,7 +421,25 @@ function parseDxfLines(dxfText) {
   return lines;
 }
 
+function getJsonMirrorAxis(data) {
+  const xs = [];
+  for (const layer of (data.Layers || [])) {
+    for (const arr of (layer.X_section || [])) {
+      for (const x of arr || []) if (Number.isFinite(Number(x))) xs.push(Number(x));
+    }
+  }
+  for (const x of (data.Topo_Layer?.Topo_Layer_X || [])) if (Number.isFinite(Number(x))) xs.push(Number(x));
+  if (!xs.length) return null;
+  return Math.min(...xs) + Math.max(...xs);
+}
+
+function mirrorX(x, axis) {
+  const value = Number(x);
+  return axis === null ? value : axis - value;
+}
+
 function convertInputJson(data) {
+  const mirrorAxis = getJsonMirrorAxis(data);
   const layers = [];
   for (const [i, layer] of (data.Layers || []).entries()) {
     const name = layer.Name || `Layer ${i + 1}`;
@@ -428,7 +448,7 @@ function convertInputJson(data) {
     for (let j = 0; j < Math.min(xsList.length, zsList.length); j++) {
       const xs = xsList[j] || [];
       const zs = zsList[j] || [];
-      const points = xs.map((x, k) => ({ x: Number(x), z: Number(zs[k]) }))
+      const points = xs.map((x, k) => ({ x: mirrorX(x, mirrorAxis), z: Number(zs[k]) }))
         .filter(p => Number.isFinite(p.x) && Number.isFinite(p.z));
       if (points.length >= 3) {
         layers.push({ name, id: layer.Id ?? i + 1, points });
@@ -438,12 +458,12 @@ function convertInputJson(data) {
 
   const tx = data.Topo_Layer?.Topo_Layer_X || [];
   const tz = data.Topo_Layer?.Topo_Layer_Z || [];
-  const topography = tx.map((x, i) => ({ x: Number(x), z: Number(tz[i]) }))
+  const topography = tx.map((x, i) => ({ x: mirrorX(x, mirrorAxis), z: Number(tz[i]) }))
     .filter(p => Number.isFinite(p.x) && Number.isFinite(p.z));
 
   const crestRaw = data.GeneralProperties?.CrestPoint_Local || null;
   const crest = Array.isArray(crestRaw)
-    ? { x: Number(crestRaw[0]), z: Number(crestRaw[1]) }
+    ? { x: mirrorX(crestRaw[0], mirrorAxis), z: Number(crestRaw[1]) }
     : null;
 
   return {
@@ -743,6 +763,7 @@ async function applyCase(caseIndex, reset = true) {
 
 document.querySelectorAll("[data-case]").forEach(button => {
   button.addEventListener("click", () => {
+    setAutoSwitch(false);
     applyCase(Number(button.dataset.case), true);
   });
 });
@@ -756,11 +777,31 @@ document.querySelectorAll("[data-toggle]").forEach(button => {
   });
 });
 
+
+function setAutoSwitch(active) {
+  const button = document.getElementById("autoSwitchButton");
+  if (autoSwitchTimer) {
+    clearInterval(autoSwitchTimer);
+    autoSwitchTimer = null;
+  }
+  if (active) {
+    autoSwitchTimer = setInterval(() => {
+      const next = (currentCaseIndex + 1) % CONFIG.cases.length;
+      applyCase(next, false);
+    }, 2600);
+  }
+  if (button) {
+    button.classList.toggle("active", Boolean(autoSwitchTimer));
+    button.textContent = autoSwitchTimer ? "Pause auto" : "Auto switch";
+  }
+}
+
 document.querySelectorAll("[data-action]").forEach(button => {
   button.addEventListener("click", () => {
     const action = button.dataset.action;
     if (action === "zoomIn") zoomAt(0.82);
     if (action === "zoomOut") zoomAt(1.22);
+    if (action === "autoSwitch") setAutoSwitch(!autoSwitchTimer);
     if (action === "reset") resetZoom();
   });
 });

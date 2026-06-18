@@ -1,48 +1,33 @@
 # OptimalSlope OSA Section Viewer (switchable overlays)
 
-This viewer shows a single section geometry from `input.json`, and lets you switch between two different OSA overlay DXF files.
+This viewer uses one shared `input.json` for the section geometry and two DXF overlays:
 
-## Files
+- `triangle_1.dxf`
+- `triangle_2.dxf`
 
-- `index.html` - interactive viewer
-- `input.json` - shared section geometry
-- `triangle_1.dxf` - OSA overlay option 1
-- `triangle_2.dxf` - OSA overlay option 2
+## Important
 
-## How it works
+The section geometry from `input.json` is mirrored horizontally in the viewer so it matches the DXF coordinate orientation. The DXF files themselves are not mirrored.
 
-The geology/topography/crest come from `input.json`.
+## Controls
 
-The OSA overlay is switched using the two buttons at the top:
+- **OSA option 1 / OSA option 2** switches manually between the two DXF overlays.
+- **Auto switch** cycles between the two overlays automatically.
+- Zoom, pan and layer visibility controls remain available.
 
-- **OSA option 1**
-- **OSA option 2**
+## Repo placement
 
-Each option loads a different DXF file, so you can compare two different Min/Max OSA search regions while keeping the same section geometry.
-
-## Replacing the files
-
-If you want to use your own data, keep the filenames the same:
-
-```text
-input.json
-triangle_1.dxf
-triangle_2.dxf
-```
-
-## Embedding
-
-Place this folder at:
+Put this folder here:
 
 ```text
 manual/interactive/section-osa-viewer/
 ```
 
-Then embed it using:
+The embedded page should use:
 
 ```html
 <iframe
-  src="../interactive/section-osa-viewer/?v=2"
+  src="../interactive/section-osa-viewer/?v=3"
   title="OSA search region viewer"
   loading="lazy">
 </iframe>
@@ -50,7 +35,7 @@ Then embed it using:
 
 ## Local testing
 
-Because the viewer loads files using `fetch()`, test it using a local web server:
+Use a local web server because the viewer loads JSON/DXF files with `fetch()`:
 
 ```bash
 python -m http.server 8000
