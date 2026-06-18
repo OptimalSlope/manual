@@ -31,23 +31,31 @@ layout: post
   padding: 38px;
   border-radius: 28px;
   background:
-    radial-gradient(circle at 88% 10%, rgba(241, 107, 33, 0.36), transparent 30%),
+    radial-gradient(circle at 88% 10%, rgba(241, 107, 33, 0.30), transparent 30%),
     linear-gradient(135deg, #062f50, var(--blue), var(--blue2));
   color: white;
   box-shadow: var(--shadow2);
 }
 
 .os-workflow-hero::after {
-  content: "Workflow";
+  content: "OptimalSlope";
   position: absolute;
-  right: -16px;
+  right: -30px;
   top: 50%;
   transform: translateY(-50%) rotate(-6deg);
-  font-size: clamp(82px, 13vw, 170px);
+  font-size: clamp(70px, 11vw, 150px);
   font-weight: 1000;
-  letter-spacing: -0.08em;
-  color: rgba(255, 255, 255, 0.10);
+  letter-spacing: -0.06em;
+  color: rgba(255, 255, 255, 0.09);
   pointer-events: none;
+  white-space: nowrap;
+}
+
+.os-workflow-hero .kicker,
+.os-workflow-hero h1,
+.os-workflow-hero p {
+  position: relative;
+  z-index: 1;
 }
 
 .os-workflow-hero .kicker {
