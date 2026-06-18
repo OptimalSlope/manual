@@ -992,6 +992,411 @@
     }
   }
 
+
+  /* Professional block model viewer integration */
+  .block-model-section {
+    background:
+      radial-gradient(circle at 100% 0%, rgba(241,107,33,0.10), transparent 24%),
+      radial-gradient(circle at 0% 0%, rgba(10,78,118,0.11), transparent 28%),
+      rgba(255,255,255,0.96);
+  }
+
+  .block-model-head {
+    background:
+      radial-gradient(circle at 94% 0%, rgba(241,107,33,0.18), transparent 30%),
+      radial-gradient(circle at 0% 0%, rgba(10,78,118,0.15), transparent 34%),
+      linear-gradient(180deg, rgba(255,255,255,0.98), rgba(246,250,253,0.78)) !important;
+  }
+
+  .module-link {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #0a4e76 !important;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+
+  .module-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px rgba(20,35,50,0.12);
+  }
+
+  .block-model-intro {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    padding: 28px 32px 0;
+    background: #fff;
+  }
+
+  .viewer-stat {
+    border: 1px solid rgba(20,35,50,0.10);
+    border-radius: 20px;
+    padding: 18px;
+    background:
+      linear-gradient(180deg, #fff, #f7fafc);
+    box-shadow: 0 10px 26px rgba(20,35,50,0.07);
+  }
+
+  .viewer-stat span {
+    display: inline-grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--blue), var(--blue-2));
+    color: #fff;
+    font-weight: 1000;
+    margin-bottom: 12px;
+    font-size: 13px;
+  }
+
+  .viewer-stat strong {
+    display: block;
+    color: var(--blue);
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .viewer-stat p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.42;
+    font-size: 14px;
+  }
+
+  .block-model-frame-card {
+    margin: 22px 32px 34px;
+    border: 1px solid rgba(20,35,50,0.12);
+    border-radius: 28px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 22px 56px rgba(20,35,50,0.14);
+  }
+
+  .viewer-toolbar {
+    min-height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 16px 20px;
+    color: #fff;
+    background:
+      radial-gradient(circle at 96% 0%, rgba(255,138,61,0.62), transparent 24%),
+      linear-gradient(135deg, #062f50 0%, #0a4e76 48%, #f16b21 132%);
+  }
+
+  .viewer-toolbar-kicker {
+    color: rgba(255,255,255,0.78);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 1000;
+    margin-bottom: 3px;
+  }
+
+  .viewer-toolbar-title {
+    font-size: 21px;
+    font-weight: 1000;
+    letter-spacing: -0.025em;
+  }
+
+  .viewer-toolbar a {
+    color: #0a4e76;
+    background: #fff;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 1000;
+    padding: 11px 15px;
+    white-space: nowrap;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+  }
+
+  .block-model-wrap {
+    position: relative;
+    padding: 0;
+    background:
+      linear-gradient(180deg, #f3f7fb, #e8eff5);
+  }
+
+  .block-model-wrap::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
+    z-index: 2;
+  }
+
+  .block-model-wrap iframe {
+    width: 100%;
+    height: 850px;
+    border: 0;
+    display: block;
+    background: white;
+  }
+
+  @media (max-width: 1100px) {
+    .block-model-intro {
+      grid-template-columns: repeat(3, minmax(260px, 1fr));
+      overflow-x: auto;
+    }
+
+    .block-model-frame-card {
+      overflow-x: auto;
+    }
+
+    
+  }
+
+
+  /* Stage 3 additional output: optimal profile block model */
+  .node.block-output {
+    margin-top: 2px;
+    background:
+      linear-gradient(135deg, #eef7fb, #fff7f1);
+    border-color: rgba(10,78,118,0.30);
+    color: var(--blue);
+  }
+
+  .node.block-output:hover {
+    background:
+      linear-gradient(135deg, #e4f2f8, #ffe9d8);
+  }
+
+  .stage3 .lane-body {
+    gap: 13px;
+  }
+
+
+  /* Single explanatory block-model review card */
+  .block-model-intro.single-info {
+    grid-template-columns: 1fr !important;
+  }
+
+  .viewer-stat.wide {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px;
+    align-items: center;
+    padding: 20px 22px;
+  }
+
+  .viewer-stat.wide span {
+    margin-bottom: 0;
+    background: linear-gradient(135deg, var(--orange), var(--orange-2));
+  }
+
+  .viewer-stat.wide strong {
+    font-size: 18px;
+  }
+
+  .viewer-stat.wide p {
+    font-size: 15px;
+    max-width: 960px;
+  }
+
+  @media (max-width: 760px) {
+    .viewer-stat.wide {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+  /* Block model module width: match Pitwall section comparison */
+  #block-model {
+    border: 1px solid var(--line) !important;
+    border-radius: 30px !important;
+    background: var(--card) !important;
+    box-shadow: var(--shadow-soft) !important;
+    overflow: hidden !important;
+  }
+
+  #block-model .section-head.block-model-head {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 28px 32px 20px !important;
+  }
+
+  #block-model .block-model-intro.single-info {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 30px 32px 0 !important;
+    background: #fff !important;
+  }
+
+  #block-model .block-model-frame-card {
+    width: auto !important;
+    max-width: none !important;
+    margin: 22px 32px 34px !important;
+    border-radius: 26px !important;
+    overflow: hidden !important;
+  }
+
+  #block-model .block-model-wrap {
+    width: 100% !important;
+    overflow: hidden !important;
+    background: #fff !important;
+  }
+
+  #block-model .block-model-wrap iframe {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: 760px !important;
+    border: 0 !important;
+  }
+
+  @media (max-width: 1100px) {
+    #block-model {
+      min-width: 1120px !important;
+    }
+
+    #block-model .block-model-frame-card {
+      margin: 22px 32px 34px !important;
+    }
+
+    #block-model .block-model-wrap iframe {
+      width: 100% !important;
+      min-width: 0 !important;
+    }
+  }
+
+
+  /* Integrated live result plot section */
+  .result-plot-section {
+    background:
+      radial-gradient(circle at 100% 0%, rgba(241,107,33,0.10), transparent 24%),
+      radial-gradient(circle at 0% 0%, rgba(10,78,118,0.11), transparent 28%),
+      rgba(255,255,255,0.96);
+  }
+
+  .result-plot-intro {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    padding: 28px 32px 0;
+    background: #fff;
+  }
+
+  .result-plot-frame-card {
+    margin: 22px 32px 34px;
+    border: 1px solid rgba(20,35,50,0.12);
+    border-radius: 28px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 22px 56px rgba(20,35,50,0.14);
+  }
+
+  .result-plot-toolbar {
+    min-height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 16px 20px;
+    color: #fff;
+    background:
+      radial-gradient(circle at 96% 0%, rgba(255,138,61,0.62), transparent 24%),
+      linear-gradient(135deg, #062f50 0%, #0a4e76 48%, #f16b21 132%);
+  }
+
+  .result-plot-toolbar-kicker {
+    color: rgba(255,255,255,0.78);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 1000;
+    margin-bottom: 3px;
+  }
+
+  .result-plot-toolbar-title {
+    font-size: 21px;
+    font-weight: 1000;
+    letter-spacing: -0.025em;
+  }
+
+  .result-plot-toolbar a {
+    color: #0a4e76;
+    background: #fff;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 1000;
+    padding: 11px 15px;
+    white-space: nowrap;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+  }
+
+  .result-plot-wrap {
+    position: relative;
+    padding: 0;
+    background: #fff;
+  }
+
+  .result-plot-wrap iframe {
+    display: block;
+    width: 100%;
+    height: 900px;
+    border: 0;
+    background: #fff;
+  }
+
+  @media (max-width: 1100px) {
+    #result-plot {
+      min-width: 1120px !important;
+    }
+
+    #result-plot .result-plot-frame-card {
+      margin: 22px 32px 34px !important;
+    }
+
+    #result-plot .result-plot-wrap iframe {
+      width: 100% !important;
+      min-width: 0 !important;
+    }
+  }
+
+
+  /* Result plot width alignment: keep it inside the main shell like workflow, comparison and block model */
+  #result-plot {
+    width: auto !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  #result-plot .section-head {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  #result-plot .result-plot-intro {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  #result-plot .result-plot-frame-card {
+    width: auto !important;
+    max-width: none !important;
+    margin: 22px 32px 34px !important;
+  }
+
+  #result-plot .result-plot-wrap iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
 </style>
 </head>
 <body>
@@ -1017,6 +1422,8 @@
       <div class="nav-inner">
         <a href="#workflow">Workflow</a>
         <a href="#comparison">Pitwall comparison</a>
+        <a href="#result-plot">Result plot</a>
+        <a href="#block-model">Block model</a>
         <button class="nav-expand" id="expandViewNav" type="button">Expand view</button>
       </div>
     </nav>
@@ -1078,7 +1485,9 @@
                     <div>Optimiser run</div>
                   </div>
                 </div>
+                
                 <div class="node output" id="outputNode">Optimized pitwall<br>profile</div>
+                <div class="node output block-output" id="blockModelNode">Optimal profile<br>block model</div>
               </div>
             </article>
           </div>
@@ -1104,7 +1513,7 @@
       <div class="notes">
         <div class="note"><b>Stage 1</b><span>Import stratigraphy, 3D geometry, water surface, boundary surface, strength model and bench properties.</span></div>
         <div class="note"><b>Stage 2</b><span>Define pitwall geometry, faults, fault properties, constraints and optimiser settings for each cross-section.</span></div>
-        <div class="note"><b>Stage 3</b><span>Send input to the cloud optimiser and return the optimized pitwall profile.</span></div>
+        <div class="note"><b>Stage 3</b><span>Send input to the cloud optimiser and return the optimized pitwall profile and optimal profile block model.</span></div>
       </div>
     </section>
 
@@ -1142,6 +1551,83 @@
         </section>
       </div>
     </section>
+  <section class="section result-plot-section" id="result-plot">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Output review</div>
+          <h2>Optimised profile plot</h2>
+          <p>Review the optimised pitwall profile, bench geometry, slope angle bounds and failure mechanism in an interactive section view.</p>
+        </div>
+       
+      </div>
+
+      <div class="result-plot-intro">
+        <div class="viewer-stat wide">
+          <span>R</span>
+          <div>
+            <strong>Detailed result review</strong>
+            <p>Inspect excavation depth, crest point, geological layers, benched profile, face angles, upper/lower search bounds, optimal profile and the critical failure mechanism in one zoomable view.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-plot-frame-card">
+        <div class="result-plot-toolbar">
+          <div>
+            <div class="result-plot-toolbar-kicker">Interactive profile</div>
+            <div class="result-plot-toolbar-title">Optimised section result</div>
+          </div>
+          <a href="../interactive/result-plot/" target="_blank" rel="noopener">Open full view</a>
+        </div>
+        <div class="result-plot-wrap">
+          <iframe
+            src="../interactive/result-plot/?v=aligned-width1"
+            title="Optimised profile plot"
+            loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section block-model-section" id="block-model">
+      <div class="section-head block-model-head">
+        <div>
+          <div class="section-kicker">3D Model Review</div>
+          <h2>Block Model Viewer</h2>
+          <p>Inspect the optimal profile block model and use the coloured bands to review different slope-angle zones.</p>
+        </div>
+        <a class="badge module-link" href="https://optimalslope.github.io/manual/interactive/block-model-viewer/?v=band-meshes-1" target="_blank" rel="noopener">Open full viewer</a>
+      </div>
+
+      <div class="block-model-intro single-info">
+        <div class="viewer-stat wide">
+          <span>03</span>
+          <div>
+            <strong>Optimal profile block model</strong>
+            <p>The coloured slope bands represent different slope-angle zones, helping review how the optimized profile varies across the 3D block model.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="block-model-frame-card">
+        <div class="viewer-toolbar">
+          <div>
+            <div class="viewer-toolbar-kicker">Hosted interactive module</div>
+            <div class="viewer-toolbar-title">Block model viewer</div>
+          </div>
+          <a href="https://optimalslope.github.io/manual/interactive/block-model-viewer/?v=band-meshes-1" target="_blank" rel="noopener">Launch in new tab</a>
+        </div>
+
+        <div class="block-model-wrap">
+          <iframe
+            src="https://optimalslope.github.io/manual/interactive/block-model-viewer/?v=band-meshes-1"
+            title="Block model viewer"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+
   </div>
 
   <dialog id="infoDialog">
@@ -1392,6 +1878,15 @@
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') closeExpandedView();
   });
+
+
+  const blockModelNode = document.getElementById('blockModelNode');
+  if (blockModelNode) {
+    blockModelNode.addEventListener('click', () => {
+      const target = document.getElementById('block-model');
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
 
   setStage(0);
   start();

@@ -461,7 +461,7 @@ Use the sections below to move through the typical workflow: prepare data, creat
 <strong>Slope Optimiser Interactive Workflow</strong>
 <span>Open the full interactive workflow preview in a new tab.</span>
 </div>
-<a class="os-feature-button" href="assets/preview_horizontal_block_model_matches_pitwall.html" target="_blank" rel="noopener">Open Workflow</a>
+<a class="os-feature-button" href="assets/preview.html" target="_blank" rel="noopener">Open Workflow</a>
 </div>
 
 <div class="os-home-note" markdown="1">
