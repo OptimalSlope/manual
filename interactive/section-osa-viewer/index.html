@@ -9,11 +9,10 @@
     --blue: #0a4e76;
     --blue-2: #0f6e9f;
     --orange: #f16b21;
-    --orange-2: #ff8a3d;
     --ink: #14202b;
     --muted: #617180;
-    --line: rgba(20, 35, 50, 0.13);
-    --soft-line: rgba(20, 35, 50, 0.08);
+    --line: rgba(20,35,50,0.13);
+    --soft-line: rgba(20,35,50,0.08);
     --bg: #edf3f7;
     --card: rgba(255,255,255,0.96);
     --plot-bg: #aeb7c9;
@@ -82,14 +81,21 @@
     line-height: 1.35;
   }
 
-  .actions {
+  .toolbar-right {
     display: flex;
+    gap: 14px;
+    align-items: center;
     flex-wrap: wrap;
     justify-content: flex-end;
-    gap: 9px;
   }
 
-  .actions button {
+  .switcher {
+    display: inline-flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .switcher button, .actions button {
     appearance: none;
     border: 1px solid rgba(255,255,255,0.28);
     background: rgba(255,255,255,0.13);
@@ -98,17 +104,27 @@
     padding: 9px 12px;
     font-weight: 900;
     cursor: pointer;
+    transition: background .15s ease, color .15s ease, border-color .15s ease, transform .15s ease;
   }
 
-  .actions button:hover,
-  .actions button.active {
+  .switcher button.active,
+  .actions button.active,
+  .switcher button:hover,
+  .actions button:hover {
     background: #fff;
     color: var(--blue);
   }
 
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 9px;
+  }
+
   .info-row {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
     padding: 18px 20px 0;
     background: #fff;
@@ -155,9 +171,7 @@
     touch-action: none;
   }
 
-  .plot-wrap.dragging {
-    cursor: grabbing;
-  }
+  .plot-wrap.dragging { cursor: grabbing; }
 
   svg {
     width: 100%;
@@ -225,95 +239,33 @@
     color: #7b3d14;
     font-weight: 850;
   }
-
   .message.show { display: block; }
 
-  .grid-line {
-    stroke: rgba(255,255,255,0.32);
-    stroke-width: 1;
-  }
-
-  .layer-poly {
-    stroke: rgba(92,76,58,0.72);
-    stroke-width: 1.1;
-    opacity: 0.72;
-  }
-
-  .topography {
-    fill: none;
-    stroke: #d8c36a;
-    stroke-width: 3.2;
-    vector-effect: non-scaling-stroke;
-  }
-
-  .bench-line {
-    stroke: #111;
-    stroke-width: 1.1;
-    opacity: 0.82;
-    vector-effect: non-scaling-stroke;
-  }
-
-  .triangle-fill {
-    fill: rgba(111,193,122,0.43);
-    stroke: #f3df33;
-    stroke-width: 3;
-    vector-effect: non-scaling-stroke;
-  }
-
-  .triangle-edge {
-    stroke: #f3df33;
-    stroke-width: 2.8;
-    fill: none;
-    vector-effect: non-scaling-stroke;
-  }
-
-  .crest-marker {
-    stroke: #ff4b3e;
-    stroke-width: 2.4;
-    vector-effect: non-scaling-stroke;
-  }
-
+  .grid-line { stroke: rgba(255,255,255,0.32); stroke-width: 1; }
+  .layer-poly { stroke: rgba(92,76,58,0.72); stroke-width: 1.1; opacity: 0.72; }
+  .topography { fill: none; stroke: #d8c36a; stroke-width: 3.2; vector-effect: non-scaling-stroke; }
+  .bench-line { stroke: #111; stroke-width: 1.1; opacity: 0.82; vector-effect: non-scaling-stroke; }
+  .triangle-fill { fill: rgba(111,193,122,0.43); stroke: #f3df33; stroke-width: 3; vector-effect: non-scaling-stroke; }
+  .triangle-edge { stroke: #f3df33; stroke-width: 2.8; fill: none; vector-effect: non-scaling-stroke; }
+  .crest-marker { stroke: #ff4b3e; stroke-width: 2.4; vector-effect: non-scaling-stroke; }
   .label-box {
-    fill: white;
-    stroke: #111;
-    stroke-width: 1.4;
+    fill: white; stroke: #111; stroke-width: 1.4;
     filter: drop-shadow(0 7px 12px rgba(0,0,0,0.12));
   }
+  .osa-label { fill: #111; font-weight: 1000; font-size: 20px; }
+  .hidden { display: none !important; }
 
-  .osa-label {
-    fill: #111;
-    font-weight: 1000;
-    font-size: 20px;
-  }
-
-  .axis-label {
-    fill: rgba(20,32,43,0.62);
-    font-size: 12px;
-    font-weight: 800;
-  }
-
-  .hidden {
-    display: none !important;
-  }
-
-  @media (max-width: 900px) {
+  @media (max-width: 980px) {
     .shell {
       width: min(1180px, calc(100vw - 20px));
       min-width: 1080px;
     }
-
-    .info-row {
-      grid-template-columns: repeat(2, minmax(220px, 1fr));
-    }
-
+    .info-row { grid-template-columns: repeat(3, minmax(220px, 1fr)); }
     .toolbar {
       align-items: flex-start;
       flex-direction: column;
     }
-
-    .actions {
-      justify-content: flex-start;
-    }
+    .toolbar-right, .actions { justify-content: flex-start; }
   }
 </style>
 </head>
@@ -323,24 +275,31 @@
     <div class="toolbar">
       <div>
         <div class="toolbar-kicker">Interactive section viewer</div>
-        <div class="toolbar-title">Bench lines and OSA triangle</div>
-        <div class="toolbar-subtitle">Loaded from <code>input.json</code> and <code>triangle.dxf</code>. Use mouse wheel to zoom and drag to pan.</div>
+        <div class="toolbar-title">OSA search region</div>
+        <div class="toolbar-subtitle">Use the buttons to switch between two OSA overlays. The section geometry stays the same.</div>
       </div>
-      <div class="actions">
-        <button data-toggle="layers" class="active">Layers</button>
-        <button data-toggle="topography" class="active">Topography</button>
-        <button data-toggle="benches" class="active">Benches</button>
-        <button data-toggle="triangle" class="active">OSA triangle</button>
-        <button data-toggle="labels" class="active">Labels</button>
-        <button data-action="zoomIn">Zoom in</button>
-        <button data-action="zoomOut">Zoom out</button>
-        <button data-action="reset">Reset view</button>
+      <div class="toolbar-right">
+        <div class="switcher" id="switcher">
+          <button data-case="0" class="active">OSA option 1</button>
+          <button data-case="1">OSA option 2</button>
+        </div>
+        <div class="actions">
+          <button data-toggle="layers" class="active">Layers</button>
+          <button data-toggle="topography" class="active">Topography</button>
+          <button data-toggle="benches" class="active">Benches</button>
+          <button data-toggle="triangle" class="active">OSA region</button>
+          <button data-toggle="labels" class="active">Labels</button>
+          <button data-action="zoomIn">Zoom in</button>
+          <button data-action="zoomOut">Zoom out</button>
+          <button data-action="reset">Reset view</button>
+        </div>
       </div>
     </div>
 
     <div id="message" class="message"></div>
 
     <div class="info-row">
+      <div class="stat"><div class="label">Selected overlay</div><div class="value" id="selectedOverlay">OSA option 1</div></div>
       <div class="stat"><div class="label">Max OSA</div><div class="value" id="maxOsaValue">--</div></div>
       <div class="stat"><div class="label">Min OSA</div><div class="value" id="minOsaValue">--</div></div>
     </div>
@@ -354,8 +313,8 @@
     <div class="legend">
       <span class="legend-item"><span class="swatch layers"></span> Geological layers</span>
       <span class="legend-item"><span class="swatch topo"></span> Topography</span>
-      <span class="legend-item"><span class="swatch bench"></span> Bench lines from DXF</span>
-      <span class="legend-item"><span class="swatch triangle"></span> OSA triangle from DXF</span>
+      <span class="legend-item"><span class="swatch bench"></span> Bench lines</span>
+      <span class="legend-item"><span class="swatch triangle"></span> OSA region</span>
       <span class="legend-item"><span class="swatch crest"></span> Crest point</span>
     </div>
   </div>
@@ -365,9 +324,12 @@
 
 <script>
 const SVG_NS = "http://www.w3.org/2000/svg";
-const FILES = {
+const CONFIG = {
   input: "input.json",
-  dxf: "triangle.dxf"
+  cases: [
+    { label: "OSA option 1", dxf: "triangle_1.dxf" },
+    { label: "OSA option 2", dxf: "triangle_2.dxf" }
+  ]
 };
 
 const palette = [
@@ -376,11 +338,20 @@ const palette = [
   "#9fc3d5", "#c6b7a1", "#9fb886", "#d7c071", "#b39ac9"
 ];
 
+const svg = document.getElementById("plotSvg");
+const wrap = document.getElementById("plotWrap");
+const tooltip = document.getElementById("tooltip");
+const message = document.getElementById("message");
+
+let baseData = null;
+let overlayCache = new Map();
+let currentCaseIndex = 0;
 let loaded = null;
 let fullDomain = null;
 let viewDomain = null;
 let lastScale = null;
 let dragState = null;
+
 let visible = {
   layers: true,
   topography: true,
@@ -388,11 +359,6 @@ let visible = {
   triangle: true,
   labels: true
 };
-
-const svg = document.getElementById("plotSvg");
-const wrap = document.getElementById("plotWrap");
-const tooltip = document.getElementById("tooltip");
-const message = document.getElementById("message");
 
 function add(tag, attrs = {}, parent = svg) {
   const node = document.createElementNS(SVG_NS, tag);
@@ -404,7 +370,7 @@ function add(tag, attrs = {}, parent = svg) {
 }
 
 function group(className) {
-  return add("g", {class: className}, svg);
+  return add("g", { class: className }, svg);
 }
 
 function fmt(value, digits = 1) {
@@ -416,7 +382,6 @@ function showMessage(text) {
   message.textContent = text;
   message.classList.add("show");
 }
-
 function clearMessage() {
   message.classList.remove("show");
   message.textContent = "";
@@ -425,19 +390,15 @@ function clearMessage() {
 function parseDxfLines(dxfText) {
   const raw = dxfText.split(/\r?\n/);
   const pairs = [];
-  for (let i = 0; i + 1 < raw.length; i += 2) {
-    pairs.push([raw[i].trim(), raw[i + 1].trim()]);
-  }
+  for (let i = 0; i + 1 < raw.length; i += 2) pairs.push([raw[i].trim(), raw[i + 1].trim()]);
 
   const lines = [];
   let i = 0;
   while (i < pairs.length) {
     const [code, value] = pairs[i];
-
     if (code === "0" && value === "LINE") {
-      const ent = {type: "LINE"};
+      const ent = { type: "LINE" };
       i += 1;
-
       while (i < pairs.length && pairs[i][0] !== "0") {
         const [c, v] = pairs[i];
         if (c === "8") ent.layer = v;
@@ -450,16 +411,11 @@ function parseDxfLines(dxfText) {
         else if (c === "31") ent.z2 = Number(v);
         i += 1;
       }
-
-      if ([ent.x1, ent.z1, ent.x2, ent.z2].every(Number.isFinite)) {
-        lines.push(ent);
-      }
+      if ([ent.x1, ent.z1, ent.x2, ent.z2].every(Number.isFinite)) lines.push(ent);
       continue;
     }
-
     i += 1;
   }
-
   return lines;
 }
 
@@ -469,31 +425,25 @@ function convertInputJson(data) {
     const name = layer.Name || `Layer ${i + 1}`;
     const xsList = layer.X_section || [];
     const zsList = layer.Z_section || [];
-
     for (let j = 0; j < Math.min(xsList.length, zsList.length); j++) {
       const xs = xsList[j] || [];
       const zs = zsList[j] || [];
-      const points = xs.map((x, k) => ({x: Number(x), z: Number(zs[k])}))
+      const points = xs.map((x, k) => ({ x: Number(x), z: Number(zs[k]) }))
         .filter(p => Number.isFinite(p.x) && Number.isFinite(p.z));
-
       if (points.length >= 3) {
-        layers.push({
-          name,
-          id: layer.Id ?? i + 1,
-          points
-        });
+        layers.push({ name, id: layer.Id ?? i + 1, points });
       }
     }
   }
 
   const tx = data.Topo_Layer?.Topo_Layer_X || [];
   const tz = data.Topo_Layer?.Topo_Layer_Z || [];
-  const topography = tx.map((x, i) => ({x: Number(x), z: Number(tz[i])}))
+  const topography = tx.map((x, i) => ({ x: Number(x), z: Number(tz[i]) }))
     .filter(p => Number.isFinite(p.x) && Number.isFinite(p.z));
 
   const crestRaw = data.GeneralProperties?.CrestPoint_Local || null;
   const crest = Array.isArray(crestRaw)
-    ? {x: Number(crestRaw[0]), z: Number(crestRaw[1])}
+    ? { x: Number(crestRaw[0]), z: Number(crestRaw[1]) }
     : null;
 
   return {
@@ -508,7 +458,7 @@ function convertInputJson(data) {
 function uniquePointsFromLines(lines) {
   const points = [];
   for (const line of lines) {
-    for (const p of [{x: line.x1, z: line.z1}, {x: line.x2, z: line.z2}]) {
+    for (const p of [{ x: line.x1, z: line.z1 }, { x: line.x2, z: line.z2 }]) {
       if (!points.some(q => Math.abs(q.x - p.x) < 1e-5 && Math.abs(q.z - p.z) < 1e-5)) {
         points.push(p);
       }
@@ -527,21 +477,11 @@ function orderPolygon(points) {
 }
 
 function classifyDxf(lines) {
-  /*
-    Default classification for OpenCascade DXF generated here:
-    Layer_0 = black/grey bench lines
-    Layer_1 = green/yellow triangle boundary.
-    If users rename layers, the fallback still works from entity colour/count.
-  */
   let benchLines = lines.filter(line => line.layer === "Layer_0");
   let triangleLines = lines.filter(line => line.layer === "Layer_1");
 
-  if (!benchLines.length) {
-    benchLines = lines.filter(line => line.color === 250);
-  }
-  if (!triangleLines.length) {
-    triangleLines = lines.filter(line => line.color === 92);
-  }
+  if (!benchLines.length) benchLines = lines.filter(line => line.color === 250);
+  if (!triangleLines.length) triangleLines = lines.filter(line => line.color === 92);
 
   if (!triangleLines.length && lines.length >= 3) {
     const nonBench = lines.filter(line => !benchLines.includes(line));
@@ -562,13 +502,12 @@ function classifyDxf(lines) {
       const sorted = [...lower].sort((a, b) => angle(a) - angle(b));
       const minEnd = sorted[0];
       const maxEnd = sorted[sorted.length - 1];
-
-      minOsa = {start: top, end: minEnd, angle: angle(minEnd)};
-      maxOsa = {start: top, end: maxEnd, angle: angle(maxEnd)};
+      minOsa = { start: top, end: minEnd, angle: angle(minEnd) };
+      maxOsa = { start: top, end: maxEnd, angle: angle(maxEnd) };
     }
   }
 
-  return {benchLines, triangleLines, triangle, maxOsa, minOsa};
+  return { benchLines, triangleLines, triangle, maxOsa, minOsa };
 }
 
 function pathFromPoints(points, xScale, yScale, close = false) {
@@ -580,19 +519,16 @@ function pathFromPoints(points, xScale, yScale, close = false) {
 function computeDomain(data) {
   const xs = [];
   const zs = [];
-
   const push = p => {
     if (Number.isFinite(p.x) && Number.isFinite(p.z)) {
-      xs.push(p.x);
-      zs.push(p.z);
+      xs.push(p.x); zs.push(p.z);
     }
   };
 
   for (const layer of data.layers) layer.points.forEach(push);
   data.topography.forEach(push);
   data.benchLines.forEach(line => {
-    push({x: line.x1, z: line.z1});
-    push({x: line.x2, z: line.z2});
+    push({ x: line.x1, z: line.z1 }); push({ x: line.x2, z: line.z2 });
   });
   data.triangle.forEach(push);
   if (data.crest) push(data.crest);
@@ -601,17 +537,15 @@ function computeDomain(data) {
   const xmax = Math.max(...xs);
   const zmin = Math.min(...zs);
   const zmax = Math.max(...zs);
-
   const xpad = (xmax - xmin || 1) * 0.06;
   const zpad = (zmax - zmin || 1) * 0.18;
 
-  return {xmin: xmin - xpad, xmax: xmax + xpad, zmin: zmin - zpad, zmax: zmax + zpad};
+  return { xmin: xmin - xpad, xmax: xmax + xpad, zmin: zmin - zpad, zmax: zmax + zpad };
 }
 
 function buildScale(domain) {
-  const width = 1280;
-  const height = 720;
-  const margin = {left: 44, right: 28, top: 24, bottom: 34};
+  const width = 1280, height = 720;
+  const margin = { left: 44, right: 28, top: 24, bottom: 34 };
   const plotW = width - margin.left - margin.right;
   const plotH = height - margin.top - margin.bottom;
 
@@ -624,19 +558,17 @@ function buildScale(domain) {
 
 function drawGrid(scale, domain) {
   const g = group("grid");
-  const xTicks = 8;
-  const zTicks = 5;
+  const xTicks = 8, zTicks = 5;
 
   for (let i = 0; i <= xTicks; i++) {
     const xVal = domain.xmin + i / xTicks * (domain.xmax - domain.xmin);
     const x = scale.x(xVal);
-    add("line", {x1: x, y1: scale.margin.top, x2: x, y2: scale.margin.top + scale.plotH, class: "grid-line"}, g);
+    add("line", { x1: x, y1: scale.margin.top, x2: x, y2: scale.margin.top + scale.plotH, class: "grid-line" }, g);
   }
-
   for (let i = 0; i <= zTicks; i++) {
     const zVal = domain.zmin + i / zTicks * (domain.zmax - domain.zmin);
     const y = scale.y(zVal);
-    add("line", {x1: scale.margin.left, y1: y, x2: scale.margin.left + scale.plotW, y2: y, class: "grid-line"}, g);
+    add("line", { x1: scale.margin.left, y1: y, x2: scale.margin.left + scale.plotW, y2: y, class: "grid-line" }, g);
   }
 }
 
@@ -647,27 +579,17 @@ function addTooltip(node, label, point) {
     tooltip.style.top = `${event.clientY}px`;
     tooltip.style.opacity = 1;
   });
-
-  node.addEventListener("mouseleave", () => {
-    tooltip.style.opacity = 0;
-  });
+  node.addEventListener("mouseleave", () => { tooltip.style.opacity = 0; });
 }
 
 function drawCallout(parent, label, target, offsetX, offsetY, scale) {
-  const x = scale.x(target.x);
-  const y = scale.y(target.z);
-  const tx = x + offsetX;
-  const ty = y + offsetY;
-  const boxW = label.length * 11 + 32;
-  const boxH = 38;
+  const x = scale.x(target.x), y = scale.y(target.z);
+  const tx = x + offsetX, ty = y + offsetY;
+  const boxW = label.length * 11 + 32, boxH = 38;
 
-  add("line", {x1: tx + boxW / 2, y1: ty + boxH / 2, x2: x, y2: y, stroke: "#111", "stroke-width": 2, "vector-effect": "non-scaling-stroke"}, parent);
-
-  add("rect", {
-    x: tx, y: ty, width: boxW, height: boxH, rx: 4, class: "label-box"
-  }, parent);
-
-  const text = add("text", {x: tx + boxW / 2, y: ty + 25, "text-anchor": "middle", class: "osa-label"}, parent);
+  add("line", { x1: tx + boxW / 2, y1: ty + boxH / 2, x2: x, y2: y, stroke: "#111", "stroke-width": 2, "vector-effect": "non-scaling-stroke" }, parent);
+  add("rect", { x: tx, y: ty, width: boxW, height: boxH, rx: 4, class: "label-box" }, parent);
+  const text = add("text", { x: tx + boxW / 2, y: ty + 25, "text-anchor": "middle", class: "osa-label" }, parent);
   text.textContent = label;
 }
 
@@ -691,65 +613,46 @@ function draw(data) {
 
   const topoGroup = group(visible.topography ? "topography-group" : "topography-group hidden");
   if (data.topography.length) {
-    add("path", {
-      d: pathFromPoints(data.topography, lastScale.x, lastScale.y, false),
-      class: "topography"
-    }, topoGroup);
+    add("path", { d: pathFromPoints(data.topography, lastScale.x, lastScale.y, false), class: "topography" }, topoGroup);
   }
 
   const benchesGroup = group(visible.benches ? "benches" : "benches hidden");
   data.benchLines.forEach(line => {
     const node = add("line", {
-      x1: lastScale.x(line.x1),
-      y1: lastScale.y(line.z1),
-      x2: lastScale.x(line.x2),
-      y2: lastScale.y(line.z2),
+      x1: lastScale.x(line.x1), y1: lastScale.y(line.z1),
+      x2: lastScale.x(line.x2), y2: lastScale.y(line.z2),
       class: "bench-line"
     }, benchesGroup);
-    addTooltip(node, "Bench line", {x: (line.x1 + line.x2) / 2, z: (line.z1 + line.z2) / 2});
+    addTooltip(node, "Bench line", { x: (line.x1 + line.x2) / 2, z: (line.z1 + line.z2) / 2 });
   });
 
   const triGroup = group(visible.triangle ? "triangle" : "triangle hidden");
   if (data.triangle.length >= 3) {
-    add("path", {
-      d: pathFromPoints(data.triangle, lastScale.x, lastScale.y, true),
-      class: "triangle-fill"
-    }, triGroup);
+    add("path", { d: pathFromPoints(data.triangle, lastScale.x, lastScale.y, true), class: "triangle-fill" }, triGroup);
   }
-
   data.triangleLines.forEach(line => {
     add("line", {
-      x1: lastScale.x(line.x1),
-      y1: lastScale.y(line.z1),
-      x2: lastScale.x(line.x2),
-      y2: lastScale.y(line.z2),
+      x1: lastScale.x(line.x1), y1: lastScale.y(line.z1),
+      x2: lastScale.x(line.x2), y2: lastScale.y(line.z2),
       class: "triangle-edge"
     }, triGroup);
   });
 
   if (data.crest) {
-    const x = lastScale.x(data.crest.x);
-    const y = lastScale.y(data.crest.z);
+    const x = lastScale.x(data.crest.x), y = lastScale.y(data.crest.z);
     const crestGroup = add("g", {}, triGroup);
-    add("line", {x1: x - 10, y1: y, x2: x + 10, y2: y, class: "crest-marker"}, crestGroup);
-    add("line", {x1: x, y1: y - 10, x2: x, y2: y + 10, class: "crest-marker"}, crestGroup);
+    add("line", { x1: x - 10, y1: y, x2: x + 10, y2: y, class: "crest-marker" }, crestGroup);
+    add("line", { x1: x, y1: y - 10, x2: x, y2: y + 10, class: "crest-marker" }, crestGroup);
     addTooltip(crestGroup, "Crest point", data.crest);
   }
 
   const labelGroup = group(visible.labels ? "labels" : "labels hidden");
   if (data.maxOsa) {
-    const mid = {
-      x: (data.maxOsa.start.x + data.maxOsa.end.x) / 2,
-      z: (data.maxOsa.start.z + data.maxOsa.end.z) / 2
-    };
+    const mid = { x: (data.maxOsa.start.x + data.maxOsa.end.x) / 2, z: (data.maxOsa.start.z + data.maxOsa.end.z) / 2 };
     drawCallout(labelGroup, "Max OSA", mid, -210, -28, lastScale);
   }
-
   if (data.minOsa) {
-    const mid = {
-      x: (data.minOsa.start.x + data.minOsa.end.x) / 2,
-      z: (data.minOsa.start.z + data.minOsa.end.z) / 2
-    };
+    const mid = { x: (data.minOsa.start.x + data.minOsa.end.x) / 2, z: (data.minOsa.start.z + data.minOsa.end.z) / 2 };
     drawCallout(labelGroup, "Min OSA", mid, 96, -56, lastScale);
   }
 }
@@ -757,9 +660,7 @@ function draw(data) {
 function clampDomain(domain) {
   const minSpanX = (fullDomain.xmax - fullDomain.xmin) / 80;
   const minSpanZ = (fullDomain.zmax - fullDomain.zmin) / 80;
-  if (domain.xmax - domain.xmin < minSpanX || domain.zmax - domain.zmin < minSpanZ) {
-    return viewDomain;
-  }
+  if (domain.xmax - domain.xmin < minSpanX || domain.zmax - domain.zmin < minSpanZ) return viewDomain;
   return domain;
 }
 
@@ -778,18 +679,13 @@ function zoomAt(factor, clientX = null, clientY = null) {
 
   const newHalfX = (viewDomain.xmax - viewDomain.xmin) * factor / 2;
   const newHalfZ = (viewDomain.zmax - viewDomain.zmin) * factor / 2;
-  viewDomain = clampDomain({
-    xmin: cx - newHalfX,
-    xmax: cx + newHalfX,
-    zmin: cz - newHalfZ,
-    zmax: cz + newHalfZ
-  });
+  viewDomain = clampDomain({ xmin: cx - newHalfX, xmax: cx + newHalfX, zmin: cz - newHalfZ, zmax: cz + newHalfZ });
   draw(loaded);
 }
 
 function resetZoom() {
   if (!fullDomain) return;
-  viewDomain = {...fullDomain};
+  viewDomain = { ...fullDomain };
   draw(loaded);
 }
 
@@ -797,47 +693,59 @@ function panBy(dxPixels, dyPixels) {
   if (!viewDomain || !lastScale) return;
   const dx = dxPixels / lastScale.plotW * (viewDomain.xmax - viewDomain.xmin);
   const dz = -dyPixels / lastScale.plotH * (viewDomain.zmax - viewDomain.zmin);
-  viewDomain = {
-    xmin: viewDomain.xmin - dx,
-    xmax: viewDomain.xmax - dx,
-    zmin: viewDomain.zmin - dz,
-    zmax: viewDomain.zmax - dz
-  };
+  viewDomain = { xmin: viewDomain.xmin - dx, xmax: viewDomain.xmax - dx, zmin: viewDomain.zmin - dz, zmax: viewDomain.zmax - dz };
   draw(loaded);
 }
 
-function updateStats(data) {
+function updateStats(data, label) {
+  document.getElementById("selectedOverlay").textContent = label;
   document.getElementById("maxOsaValue").textContent = data.maxOsa ? `${fmt(data.maxOsa.angle, 1)}°` : "--";
   document.getElementById("minOsaValue").textContent = data.minOsa ? `${fmt(data.minOsa.angle, 1)}°` : "--";
 }
 
-async function loadFiles() {
+async function loadBaseData() {
+  const res = await fetch(CONFIG.input, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Could not load ${CONFIG.input}`);
+  const json = await res.json();
+  baseData = convertInputJson(json);
+}
+
+async function loadOverlay(caseIndex) {
+  if (overlayCache.has(caseIndex)) return overlayCache.get(caseIndex);
+  const cfg = CONFIG.cases[caseIndex];
+  const res = await fetch(cfg.dxf, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Could not load ${cfg.dxf}`);
+  const dxfText = await res.text();
+  const overlay = classifyDxf(parseDxfLines(dxfText));
+  overlayCache.set(caseIndex, overlay);
+  return overlay;
+}
+
+async function applyCase(caseIndex, reset = true) {
   try {
-    const [jsonResponse, dxfResponse] = await Promise.all([
-      fetch(FILES.input, {cache: "no-store"}),
-      fetch(FILES.dxf, {cache: "no-store"})
-    ]);
-
-    if (!jsonResponse.ok) throw new Error(`Could not load ${FILES.input}`);
-    if (!dxfResponse.ok) throw new Error(`Could not load ${FILES.dxf}`);
-
-    const inputData = await jsonResponse.json();
-    const dxfText = await dxfResponse.text();
-
-    const base = convertInputJson(inputData);
-    const classified = classifyDxf(parseDxfLines(dxfText));
-
-    loaded = {...base, ...classified};
-    fullDomain = computeDomain(loaded);
-    viewDomain = {...fullDomain};
-    updateStats(loaded);
     clearMessage();
+    currentCaseIndex = caseIndex;
+    const overlay = await loadOverlay(caseIndex);
+    loaded = { ...baseData, ...overlay };
+    fullDomain = computeDomain(loaded);
+    if (reset || !viewDomain) viewDomain = { ...fullDomain };
+    updateStats(loaded, CONFIG.cases[caseIndex].label);
     draw(loaded);
+
+    document.querySelectorAll("[data-case]").forEach(btn => {
+      btn.classList.toggle("active", Number(btn.dataset.case) === caseIndex);
+    });
   } catch (error) {
     showMessage(`${error.message}. When testing locally, use a small local web server instead of opening index.html directly.`);
     console.error(error);
   }
 }
+
+document.querySelectorAll("[data-case]").forEach(button => {
+  button.addEventListener("click", () => {
+    applyCase(Number(button.dataset.case), true);
+  });
+});
 
 document.querySelectorAll("[data-toggle]").forEach(button => {
   button.addEventListener("click", () => {
@@ -860,10 +768,10 @@ document.querySelectorAll("[data-action]").forEach(button => {
 wrap.addEventListener("wheel", event => {
   event.preventDefault();
   zoomAt(event.deltaY < 0 ? 0.9 : 1.1, event.clientX, event.clientY);
-}, {passive: false});
+}, { passive: false });
 
 wrap.addEventListener("pointerdown", event => {
-  dragState = {x: event.clientX, y: event.clientY};
+  dragState = { x: event.clientX, y: event.clientY };
   wrap.classList.add("dragging");
   wrap.setPointerCapture(event.pointerId);
 });
@@ -872,7 +780,7 @@ wrap.addEventListener("pointermove", event => {
   if (!dragState) return;
   const dx = event.clientX - dragState.x;
   const dy = event.clientY - dragState.y;
-  dragState = {x: event.clientX, y: event.clientY};
+  dragState = { x: event.clientX, y: event.clientY };
   panBy(dx, dy);
 });
 
@@ -881,29 +789,18 @@ function endDrag(event) {
   wrap.classList.remove("dragging");
   try { wrap.releasePointerCapture(event.pointerId); } catch (error) {}
 }
-
 wrap.addEventListener("pointerup", endDrag);
 wrap.addEventListener("pointercancel", endDrag);
 
-window.resetZoom = resetZoom;
-window.zoomAt = function(factor, x = null, z = null) {
-  if (x === null || z === null) {
-    zoomAt(factor);
-    return;
+(async function init() {
+  try {
+    await loadBaseData();
+    await applyCase(0, true);
+  } catch (error) {
+    showMessage(`${error.message}. When testing locally, use a small local web server instead of opening index.html directly.`);
+    console.error(error);
   }
-  const d = viewDomain;
-  const newHalfX = (d.xmax - d.xmin) * factor / 2;
-  const newHalfZ = (d.zmax - d.zmin) * factor / 2;
-  viewDomain = clampDomain({
-    xmin: x - newHalfX,
-    xmax: x + newHalfX,
-    zmin: z - newHalfZ,
-    zmax: z + newHalfZ
-  });
-  draw(loaded);
-};
-
-loadFiles();
+})();
 </script>
 </body>
 </html>
