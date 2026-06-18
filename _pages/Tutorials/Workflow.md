@@ -277,9 +277,11 @@ layout: post
 
 <section class="os-workflow-hero" markdown="0">
 <div class="kicker">Tutorial workflow</div>
-<h1>Simulation Workflow</h1>
+<div class="os-data-hero-title">Simulation Workflow</div>
 <p>Follow the complete OptimalSlope workflow from importing a section and defining properties through running simulations, reviewing results, exporting profiles, and preparing downstream models.</p>
 </section>
+
+ 
 
 <div class="os-workflow-nav" markdown="0">
 <a href="#importing-sections"><span class="step">1</span><strong>Import Sections</strong><span>Start from DXF sections or slice sections from 3D stratigraphy.</span></a>
