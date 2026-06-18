@@ -6,6 +6,322 @@ category: Tutorials
 layout: post
 ---
 
+```html
+<style>
+.os-workflow-page {
+  --blue: #0a4e76;
+  --blue2: #0f6e9f;
+  --orange: #f16b21;
+  --orange2: #ff8a3d;
+  --ink: #14202b;
+  --muted: #617180;
+  --line: rgba(20, 35, 50, 0.12);
+  --soft: #f7fafc;
+  --shadow: 0 14px 34px rgba(20, 35, 50, 0.10);
+  --shadow2: 0 22px 58px rgba(10, 78, 118, 0.18);
+}
+
+.os-workflow-page * {
+  box-sizing: border-box;
+}
+
+.os-workflow-hero {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 26px;
+  padding: 38px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 88% 10%, rgba(241, 107, 33, 0.36), transparent 30%),
+    linear-gradient(135deg, #062f50, var(--blue), var(--blue2));
+  color: white;
+  box-shadow: var(--shadow2);
+}
+
+.os-workflow-hero::after {
+  content: "Workflow";
+  position: absolute;
+  right: -16px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-6deg);
+  font-size: clamp(82px, 13vw, 170px);
+  font-weight: 1000;
+  letter-spacing: -0.08em;
+  color: rgba(255, 255, 255, 0.10);
+  pointer-events: none;
+}
+
+.os-workflow-hero .kicker {
+  position: relative;
+  z-index: 1;
+  color: #ffd9c4;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.os-workflow-hero h1 {
+  position: relative;
+  z-index: 1;
+  margin: 10px 0 12px;
+  color: white;
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.os-workflow-hero p {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.os-workflow-nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 14px;
+  margin: 0 0 30px;
+}
+
+.os-workflow-nav a {
+  display: block;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(241, 107, 33, 0.09), transparent 35%),
+    linear-gradient(180deg, #ffffff, #f7fafc);
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.os-workflow-nav a:hover {
+  transform: translateY(-3px);
+  border-color: rgba(241, 107, 33, 0.36);
+  box-shadow: 0 18px 42px rgba(20, 35, 50, 0.14);
+  text-decoration: none;
+}
+
+.os-workflow-nav .step {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--blue), var(--blue2));
+  color: white;
+  font-weight: 1000;
+}
+
+.os-workflow-nav strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--blue);
+  font-size: 17px;
+}
+
+.os-workflow-nav span {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.os-workflow-step {
+  margin: 32px 0;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  background: white;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.os-workflow-step-head {
+  padding: 24px 28px 18px;
+  border-bottom: 1px solid rgba(20, 35, 50, 0.08);
+  background:
+    radial-gradient(circle at 96% 0%, rgba(241, 107, 33, 0.12), transparent 28%),
+    radial-gradient(circle at 0% 0%, rgba(10, 78, 118, 0.11), transparent 34%),
+    linear-gradient(180deg, #ffffff, #f6fafc);
+}
+
+.os-workflow-step-head .label {
+  color: var(--orange);
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+}
+
+.os-workflow-step-head h2 {
+  margin: 8px 0 8px;
+  color: var(--ink);
+  font-size: clamp(26px, 3vw, 40px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.os-workflow-step-head p {
+  margin: 0;
+  max-width: 880px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.os-workflow-step-body {
+  padding: 24px 28px 30px;
+}
+
+.os-workflow-page video,
+.os-workflow-page img {
+  max-width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgba(20, 35, 50, 0.13);
+}
+
+.os-workflow-page video {
+  background: #0f1720;
+}
+
+.os-workflow-page p[align="center"] {
+  margin: 22px 0;
+}
+
+.os-workflow-page h3,
+.os-workflow-page h4,
+.os-workflow-page h5 {
+  color: var(--blue);
+}
+
+.os-workflow-page ul,
+.os-workflow-page ol {
+  line-height: 1.55;
+}
+
+.os-callout,
+.os-note,
+.os-warning {
+  margin: 18px 0;
+  padding: 16px 18px;
+  border-radius: 16px;
+  line-height: 1.5;
+}
+
+.os-callout {
+  border: 1px solid rgba(10, 78, 118, 0.18);
+  background: #eef6fb;
+}
+
+.os-note {
+  border: 1px solid rgba(241, 107, 33, 0.28);
+  background: #fff7f1;
+}
+
+.os-warning {
+  border: 1px solid rgba(197, 73, 50, 0.28);
+  background: #fff3f0;
+}
+
+.os-callout strong,
+.os-note strong,
+.os-warning strong {
+  color: var(--blue);
+}
+
+.os-checklist {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.os-check {
+  padding: 13px 15px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffffff, #f8fbfd);
+}
+
+.os-check strong {
+  color: var(--blue);
+}
+
+@media (max-width: 900px) {
+  .os-workflow-nav {
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .os-workflow-hero {
+    padding: 28px;
+  }
+
+  .os-workflow-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .os-workflow-step-body {
+    padding: 20px;
+  }
+}
+</style>
+
+<div class="os-workflow-page" markdown="1">
+
+<section class="os-workflow-hero" markdown="0">
+<div class="kicker">Tutorial workflow</div>
+<h1>Simulation Workflow</h1>
+<p>Follow the complete OptimalSlope workflow from importing a section and defining properties through running simulations, reviewing results, exporting profiles, and preparing downstream models.</p>
+</section>
+
+<div class="os-workflow-nav" markdown="0">
+<a href="#step-1-importing-sections">
+<span class="step">1</span>
+<strong>Import Sections</strong>
+<span>Start from DXF sections or slice sections from 3D stratigraphy.</span>
+</a>
+
+<a href="#step-2-defining-properties">
+<span class="step">2</span>
+<strong>Define Properties</strong>
+<span>Assign bench, rock, general, and optional simulation properties.</span>
+</a>
+
+<a href="#step-3-running-simulations">
+<span class="step">3</span>
+<strong>Run Simulations</strong>
+<span>Configure cloud simulation inputs and check geometry before running.</span>
+</a>
+
+<a href="#step-4-exporting-dxf">
+<span class="step">4</span>
+<strong>Export DXF</strong>
+<span>Export the optimized output profile for external workflows.</span>
+</a>
+
+<a href="#step-5-importing-rs2">
+<span class="step">5</span>
+<strong>Import into RS2</strong>
+<span>Prepare the exported profile for Rockscience RS2 stability analysis.</span>
+</a>
+
+<a href="#step-6-export-block-model">
+<span class="step">6</span>
+<strong>Export Block Model</strong>
+<span>Create a section block model from 3D stratigraphy and optimized slope angles.</span>
+</a>
+</div>
+```
+
+
 ## Simulation Workflow
 
 Follow these steps to configure properties for a selected section in OptimalSlope to run a simulation:
@@ -203,7 +519,7 @@ When the crest point is set correctly, the section preview shows the preliminary
 The preliminary OSA limits are calculated from the selected crest point and the section properties. If the crest point and properties result in a very narrow difference between the minimum and maximum OSA, the simulation has only a limited search range. In this case, the optimiser will not be able to explore many possible slope profiles, which may reduce the quality or usefulness of the optimisation result.
 
 <p align="center">
-  <img src="https://OptimalSlope.github.io/manual/assets/docs_images/max_osa_limited_space.png" alt="Profile setup"/>
+  <img src="https://OptimalSlope.github.io/manual/assets/docs_images/min_max_limited.png" alt="Profile setup"/>
 </p>
 
 A wider and realistic OSA search range gives the optimiser more flexibility to investigate alternative slope shapes while still remaining within the valid section geometry.
