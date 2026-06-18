@@ -1,5 +1,5 @@
 ---
-title: Project management
+title: Project Management
 author: Dainius Jenkus
 date: 2010-06-30
 category: Project-management
