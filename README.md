@@ -430,7 +430,7 @@ permalink: /
 <p>Learn how to prepare data, manage projects, define slope simulation properties, run simulations, and export results from the OptimalSlope CAD interface.</p>
 <div class="os-home-actions">
 <a class="os-home-button primary" href="https://optimalslope.com/files/OptimalSlope_Latest.zip/">Download OptimalSlope</a>
-<a class="os-home-button secondary" href="#workflow">View Workflow</a>
+<a class="os-home-button secondary" href="#workflow">Simulation Workflow</a>
 </div>
 </section>
 
@@ -461,7 +461,7 @@ Use the sections below to move through the typical workflow: prepare data, creat
 <strong>Slope Optimiser Interactive Workflow</strong>
 <span>Open the full interactive workflow preview in a new tab.</span>
 </div>
-<a class="os-feature-button" href="assets/preview.html" target="_blank" rel="noopener">Open Workflow</a>
+<a class="os-feature-button" href="assets/preview_interactive.html" target="_blank" rel="noopener">View</a>
 </div>
 
 <div class="os-home-note" markdown="1">
