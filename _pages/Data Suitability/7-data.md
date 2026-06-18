@@ -317,8 +317,17 @@ layout: post
 }
 
 
-.os-data-section h2[id] {
-  scroll-margin-top: 90px;
+/* Hidden Markdown headings used by the GitBook sidebar.
+   Do not remove: these keep the left menu anchors clickable. */
+.os-toc-anchor {
+  position: relative;
+  top: -90px;
+  height: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 @media (max-width: 1100px) {
@@ -390,10 +399,13 @@ layout: post
 </a>
 </div>
 
-<section class="os-data-section" id="data-section-preparing-model-files" markdown="1">
+
+### Preparing Model Files {#preparing-model-files .os-toc-anchor}
+
+<section class="os-data-section" id="data-card-preparing-model-files" markdown="1">
 <div class="os-data-section-head" markdown="0">
 <div class="label">Input data quality</div>
-<h2 id="preparing-model-files">Preparing Model Files</h2>
+<h2>Preparing Model Files</h2>
 <p>Good simulation results depend on clean, consistent 3D stratigraphy and section geometry.</p>
 </div>
 <div class="os-data-section-body" markdown="1">
@@ -420,10 +432,13 @@ Before running simulations, visually inspect both the 3D model and any generated
 </div>
 </section>
 
-<section class="os-data-section" id="data-section-exporting-dxf-from-leapfrog" markdown="1">
+
+### Exporting DXF from Leapfrog {#exporting-dxf-from-leapfrog .os-toc-anchor}
+
+<section class="os-data-section" id="data-card-exporting-dxf-from-leapfrog" markdown="1">
 <div class="os-data-section-head" markdown="0">
 <div class="label">Leapfrog export</div>
-<h2 id="exporting-dxf-from-leapfrog">Exporting DXF from Leapfrog</h2>
+<h2>Exporting DXF from Leapfrog</h2>
 <p>Use the most reliable DXF export option to preserve mesh connectivity for downstream processing.</p>
 </div>
 <div class="os-data-section-body" markdown="1">
@@ -455,10 +470,13 @@ Due to additional processing overhead and cleaner geometry requirements, exporti
 </div>
 </section>
 
-<section class="os-data-section" id="data-section-stratighraphy-preparation" markdown="1">
+
+### Stratighraphy Preparation {#stratighraphy-preparation .os-toc-anchor}
+
+<section class="os-data-section" id="data-card-stratighraphy-preparation" markdown="1">
 <div class="os-data-section-head" markdown="0">
 <div class="label">3D stratigraphy</div>
-<h2 id="stratighraphy-preparation">Stratighraphy Preparation</h2>
+<h2>Stratighraphy Preparation</h2>
 <p>Prepare high-quality 3D DXF models for cross-section generation without gaps, overlaps, or invalid mesh geometry.</p>
 </div>
 <div class="os-data-section-body" markdown="1">
@@ -522,10 +540,13 @@ Use simplifications where possible without compromising the required geological 
 </div>
 </section>
 
-<section class="os-data-section" id="data-section-section-preparation" markdown="1">
+
+### Section Preparation {#section-preparation .os-toc-anchor}
+
+<section class="os-data-section" id="data-card-section-preparation" markdown="1">
 <div class="os-data-section-head" markdown="0">
 <div class="label">Section quality</div>
-<h2 id="section-preparation">Section Preparation</h2>
+<h2>Section Preparation</h2>
 <p>Good quality section wires are essential for accurate and reliable simulations.</p>
 </div>
 <div class="os-data-section-body" markdown="1">
@@ -589,10 +610,13 @@ Maintain strict quality control over the 3D model before generating sections. Cl
 </div>
 </section>
 
-<section class="os-data-section" id="data-section-model-organisation" markdown="1">
+
+### Model Organisation {#model-organisation .os-toc-anchor}
+
+<section class="os-data-section" id="data-card-model-organisation" markdown="1">
 <div class="os-data-section-head" markdown="0">
 <div class="label">Layer management</div>
-<h2 id="model-organisation">Model Organisation</h2>
+<h2>Model Organisation</h2>
 <p>Use clear layer names and colours so model components can be managed and inspected efficiently.</p>
 </div>
 <div class="os-data-section-body" markdown="1">
