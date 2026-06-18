@@ -447,12 +447,22 @@ h1, h2 {
   margin-top: 2px;
 }
 
+ 
 
-  /* Embedded in preview_interactive.html */
+    /* Embedded in preview_interactive.html */
   body {
     margin: 0 !important;
     padding: 0 !important;
     background: #fff !important;
+  }
+
+  /* Hide standalone result plot heading when embedded in preview page */
+  #result-plot > .section-head {
+    display: none !important;
+  }
+
+  #result-plot {
+    margin-top: 0 !important;
   }
 
 </style>
@@ -460,7 +470,14 @@ h1, h2 {
 <body>
 <div class="shell">
   <section class="section" id="result-plot">
- 
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Simulation output</div>
+        <h1>Live result profile plot</h1>
+        <p>Interactive preview of the optimised pitwall profile, bench geometry, slope angle bounds and failure mechanism.</p>
+      </div>
+      <div class="badge" id="fosBadge">FoS = --</div>
+    </div>
 
     <div class="result-intro">
       <div class="stat"><span>FoS</span><strong id="fosStat">--</strong><p>Computed factor of safety for the selected output profile.</p></div>
