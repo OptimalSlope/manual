@@ -52,7 +52,7 @@ layout: post
 }
 
 .os-data-hero .kicker,
-.os-data-hero h1,
+.os-data-hero-title,
 .os-data-hero p {
   position: relative;
   z-index: 1;
@@ -66,10 +66,13 @@ layout: post
   letter-spacing: 0.08em;
 }
 
-.os-data-hero h1 {
+.os-data-hero-title {
+  position: relative;
+  z-index: 1;
   margin: 10px 0 12px;
   color: white;
   font-size: clamp(38px, 5vw, 64px);
+  font-weight: 900;
   line-height: 0.98;
   letter-spacing: -0.055em;
 }
@@ -354,7 +357,7 @@ layout: post
 
 <section class="os-data-hero" markdown="0">
 <div class="kicker">Input quality and geometry checks</div>
-<h1>Data Preparation</h1>
+<div class="os-data-hero-title">Data Preparation</div>
 <p>Prepare 3D stratigraphy and section data for reliable cross-section generation, material assignment, and simulation results in OptimalSlope.</p>
 </section>
 
