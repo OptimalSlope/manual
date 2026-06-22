@@ -546,3 +546,4 @@ Start with the Data Preparation page if you are working with new 3D stratigraphy
 {% endcomment %}
 
 </div>
+ 
