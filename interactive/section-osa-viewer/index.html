@@ -3,229 +3,875 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>OptimalSlope conference autoplay loop</title>
+<title>OptimalSlope OSA Section Viewer</title>
 <style>
-  :root { --blue: #0a4e76; --orange: #f16b21; }
+  :root {
+    --blue: #0a4e76;
+    --blue-2: #0f6e9f;
+    --orange: #f16b21;
+    --ink: #14202b;
+    --muted: #617180;
+    --line: rgba(20,35,50,0.13);
+    --soft-line: rgba(20,35,50,0.08);
+    --bg: #edf3f7;
+    --card: rgba(255,255,255,0.96);
+    --plot-bg: #aeb7c9;
+  }
+
   * { box-sizing: border-box; }
+
   html, body {
     margin: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: #071725;
-    color: white;
+    min-height: 100%;
+    background:
+      radial-gradient(circle at 4% 0%, rgba(241,107,33,0.13), transparent 28%),
+      radial-gradient(circle at 96% 0%, rgba(10,78,118,0.14), transparent 30%),
+      linear-gradient(180deg, #fbfdff 0%, #edf3f7 100%);
+    color: var(--ink);
     font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
-  .stage { position: fixed; inset: 0; background: #071725; }
-  video, iframe {
-    position: absolute;
-    inset: 0;
+
+  .shell {
+    width: min(1420px, calc(100vw - 36px));
+    margin: 0 auto;
+    padding: 24px 0 36px;
+  }
+
+  .viewer-card {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    background: var(--card);
+    box-shadow: 0 22px 58px rgba(20,35,50,0.14);
+  }
+
+  .toolbar {
+    min-height: 78px;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: center;
+    padding: 18px 22px;
+    color: #fff;
+    background:
+      radial-gradient(circle at 96% 0%, rgba(255,138,61,0.62), transparent 24%),
+      linear-gradient(135deg, #062f50 0%, #0a4e76 48%, #f16b21 132%);
+  }
+
+  .toolbar-kicker {
+    color: rgba(255,255,255,0.80);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 1000;
+    margin-bottom: 4px;
+  }
+
+  .toolbar-title {
+    font-size: clamp(23px, 2.8vw, 36px);
+    font-weight: 1000;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+  }
+
+  .toolbar-subtitle {
+    margin-top: 5px;
+    color: rgba(255,255,255,0.83);
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .toolbar-right {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .switcher {
+    display: inline-flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .switcher button, .actions button {
+    appearance: none;
+    border: 1px solid rgba(255,255,255,0.28);
+    background: rgba(255,255,255,0.13);
+    color: #fff;
+    border-radius: 999px;
+    padding: 9px 12px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease, border-color .15s ease, transform .15s ease;
+  }
+
+  .switcher button.active,
+  .actions button.active,
+  .switcher button:hover,
+  .actions button:hover {
+    background: #fff;
+    color: var(--blue);
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 9px;
+  }
+
+  .info-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    padding: 18px 20px 0;
+    background: #fff;
+  }
+
+  .stat {
+    border: 1px solid rgba(20,35,50,0.10);
+    border-radius: 18px;
+    padding: 14px 16px;
+    background: linear-gradient(180deg, #fff, #f7fafc);
+    box-shadow: 0 8px 20px rgba(20,35,50,0.06);
+  }
+
+  .stat .label {
+    color: var(--muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 1000;
+  }
+
+  .stat .value {
+    margin-top: 5px;
+    color: var(--blue);
+    font-size: 20px;
+    font-weight: 1000;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stage {
+    position: relative;
+    padding: 18px 20px 20px;
+    background: #fff;
+  }
+
+  .plot-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid rgba(20,35,50,0.12);
+    background: var(--plot-bg);
+    height: 690px;
+    cursor: grab;
+    touch-action: none;
+  }
+
+  .plot-wrap.dragging { cursor: grabbing; }
+
+  svg {
     width: 100%;
     height: 100%;
-    border: 0;
-    background: #071725;
+    display: block;
+    user-select: none;
   }
-  video { object-fit: contain; background: #000; z-index: 2; transition: opacity 600ms ease; }
-  iframe { z-index: 1; opacity: 0; transition: opacity 600ms ease; }
-  body.show-workflow iframe { opacity: 1; z-index: 3; }
-  body.show-workflow video { opacity: 0; pointer-events: none; }
-  .start-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 10;
-    display: grid;
-    place-items: center;
-    padding: 32px;
-    background:
-      radial-gradient(circle at 88% 10%, rgba(241,107,33,0.42), transparent 28%),
-      linear-gradient(135deg, rgba(6,47,80,0.98), rgba(10,78,118,0.96) 48%, rgba(241,107,33,0.92) 140%);
-  }
-  .start-card {
-    width: min(760px, calc(100vw - 48px));
-    border: 1px solid rgba(255,255,255,0.22);
-    border-radius: 30px;
-    padding: 34px;
-    background: rgba(255,255,255,0.11);
-    backdrop-filter: blur(14px);
-    box-shadow: 0 34px 100px rgba(0,0,0,0.34);
-    text-align: center;
-  }
-  .kicker {
-    color: rgba(255,255,255,0.74);
-    text-transform: uppercase;
-    letter-spacing: 0.10em;
-    font-weight: 1000;
-    font-size: 12px;
-  }
-  h1 {
-    margin: 12px 0 10px;
-    font-size: clamp(38px, 6vw, 76px);
-    line-height: 0.95;
-    letter-spacing: -0.06em;
-  }
-  p {
-    margin: 0 auto 24px;
-    max-width: 600px;
-    color: rgba(255,255,255,0.82);
-    font-size: 18px;
-    line-height: 1.45;
-  }
-  button {
-    appearance: none;
-    border: 0;
-    border-radius: 999px;
-    padding: 15px 22px;
-    color: var(--blue);
-    background: white;
-    font-weight: 1000;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.22);
-  }
-  .controls {
-    position: fixed;
-    right: 18px;
-    bottom: 18px;
-    z-index: 12;
+
+  .legend {
     display: flex;
-    gap: 8px;
-    opacity: 0.18;
-    transition: opacity 160ms ease;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    align-items: center;
+    padding: 14px 18px 16px;
+    border-top: 1px solid var(--soft-line);
+    background: #fff;
+    color: #344250;
+    font-size: 13px;
+    font-weight: 800;
   }
-  .controls:hover { opacity: 1; }
-  .controls button {
-    padding: 9px 12px;
+
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .swatch {
+    width: 24px;
+    height: 8px;
+    border-radius: 999px;
+    display: inline-block;
+    border: 1px solid rgba(0,0,0,0.15);
+  }
+
+  .swatch.layers { background: #d0b48c; }
+  .swatch.topo { background: #d8c36a; }
+  .swatch.bench { background: #111; height: 3px; }
+  .swatch.triangle { background: rgba(111,193,122,0.55); border-color: #e4d025; height: 13px; }
+  .swatch.crest { background: #ff4b3e; width: 12px; height: 12px; border-radius: 50%; }
+
+  .tooltip {
+    position: fixed;
+    pointer-events: none;
+    z-index: 50;
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: rgba(20,32,43,0.92);
+    color: #fff;
     font-size: 12px;
-    background: rgba(255,255,255,0.88);
+    line-height: 1.35;
+    transform: translate(12px, 12px);
+    opacity: 0;
+    transition: opacity 110ms ease;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.22);
   }
+
+  .message {
+    display: none;
+    margin: 18px 20px 0;
+    border: 1px solid rgba(241,107,33,0.24);
+    border-radius: 16px;
+    padding: 14px 16px;
+    background: #fff7f1;
+    color: #7b3d14;
+    font-weight: 850;
+  }
+  .message.show { display: block; }
+
+  .grid-line { stroke: rgba(255,255,255,0.32); stroke-width: 1; }
+  .layer-poly { stroke: rgba(92,76,58,0.72); stroke-width: 1.1; opacity: 0.72; }
+  .topography { fill: none; stroke: #d8c36a; stroke-width: 3.2; vector-effect: non-scaling-stroke; }
+  .bench-line { stroke: #111; stroke-width: 1.1; opacity: 0.82; vector-effect: non-scaling-stroke; }
+  .triangle-fill { fill: rgba(111,193,122,0.43); stroke: #f3df33; stroke-width: 3; vector-effect: non-scaling-stroke; }
+  .triangle-edge { stroke: #f3df33; stroke-width: 2.8; fill: none; vector-effect: non-scaling-stroke; }
+  .crest-marker { stroke: #ff4b3e; stroke-width: 2.4; vector-effect: non-scaling-stroke; }
+  .label-box {
+    fill: white; stroke: #111; stroke-width: 1.4;
+    filter: drop-shadow(0 7px 12px rgba(0,0,0,0.12));
+  }
+  .osa-label { fill: #111; font-weight: 1000; font-size: 20px; }
   .hidden { display: none !important; }
+
+  @media (max-width: 980px) {
+    .shell {
+      width: min(1180px, calc(100vw - 20px));
+      min-width: 1080px;
+    }
+    .info-row { grid-template-columns: repeat(3, minmax(220px, 1fr)); }
+    .toolbar {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    .toolbar-right, .actions { justify-content: flex-start; }
+  }
 </style>
 </head>
 <body>
-  <div class="stage">
-    <video id="introVideo" src="https://s3.eu-west-2.amazonaws.com/optimalslope.com/conference_video/intro-video.mov" playsinline preload="auto"></video>
-    <iframe id="workflowFrame" src="../assets/preview_interactive.html?v=exact-uploaded-index" title="OptimalSlope workflow demo"></iframe>
-  </div>
+<div class="shell">
+  <div class="viewer-card">
+    <div class="toolbar">
+      <div>
+        <div class="toolbar-kicker">Interactive section viewer</div>
+        <div class="toolbar-title">OSA search region</div>
+        <div class="toolbar-subtitle">Use the buttons or Auto switch to compare two OSA overlays. The section geometry is mirrored to match the DXF coordinate orientation.</div>
+      </div>
+      <div class="toolbar-right">
+        <div class="switcher" id="switcher">
+          <button data-case="0" class="active">OSA option 1</button>
+          <button data-case="1">OSA option 2</button>
+        </div>
+        <div class="actions">
+          <button data-toggle="layers" class="active">Layers</button>
+          <button data-toggle="topography" class="active">Topography</button>
+          <button data-toggle="benches" class="active">Benches</button>
+          <button data-toggle="triangle" class="active">OSA region</button>
+          <button data-toggle="labels" class="active">Labels</button>
+          <button data-action="zoomIn">Zoom in</button>
+          <button data-action="zoomOut">Zoom out</button>
+          <button data-action="autoSwitch" id="autoSwitchButton">Auto switch</button>
+          <button data-action="reset">Reset view</button>
+        </div>
+      </div>
+    </div>
 
-  <div class="start-overlay" id="startOverlay">
-    <div class="start-card">
-      <div class="kicker">OptimalSlope conference loop</div>
-      <h1>Start conference demo</h1>
-      <p>Click once to enter fullscreen. The page will play the video, then run the interactive workflow demo, then repeat automatically.</p>
-      <button id="startButton" type="button">Start autoplay loop</button>
+    <div id="message" class="message"></div>
+
+    <div class="info-row">
+      <div class="stat"><div class="label">Selected overlay</div><div class="value" id="selectedOverlay">OSA option 1</div></div>
+      <div class="stat"><div class="label">Max OSA</div><div class="value" id="maxOsaValue">--</div></div>
+      <div class="stat"><div class="label">Min OSA</div><div class="value" id="minOsaValue">--</div></div>
+    </div>
+
+    <div class="stage">
+      <div class="plot-wrap" id="plotWrap">
+        <svg id="plotSvg" viewBox="0 0 1280 720" role="img" aria-label="OSA section plot"></svg>
+      </div>
+    </div>
+
+    <div class="legend">
+      <span class="legend-item"><span class="swatch layers"></span> Geological layers</span>
+      <span class="legend-item"><span class="swatch topo"></span> Topography</span>
+      <span class="legend-item"><span class="swatch bench"></span> Bench lines</span>
+      <span class="legend-item"><span class="swatch triangle"></span> OSA region</span>
+      <span class="legend-item"><span class="swatch crest"></span> Crest point</span>
     </div>
   </div>
+</div>
 
-  <div class="controls">
-    <button id="skipVideo" type="button">Skip video</button>
-    <button id="showVideo" type="button">Video</button>
-    <button id="showWorkflow" type="button">Workflow</button>
-  </div>
+<div class="tooltip" id="tooltip"></div>
 
 <script>
-  const video = document.getElementById('introVideo');
-  const frame = document.getElementById('workflowFrame');
-  const startOverlay = document.getElementById('startOverlay');
-  const startButton = document.getElementById('startButton');
+const SVG_NS = "http://www.w3.org/2000/svg";
+const CONFIG = {
+  input: "input.json",
+  cases: [
+    { label: "OSA option 1", dxf: "triangle_1.dxf" },
+    { label: "OSA option 2", dxf: "triangle_2.dxf" }
+  ]
+};
 
-  const WORKFLOW_DEMO_MS = 48000;
+const palette = [
+  "#b99a80", "#8ec4c2", "#e7d185", "#efad98", "#a5d89d",
+  "#b5bfde", "#d4bd82", "#d5a9d8", "#abc67d", "#d2a679",
+  "#9fc3d5", "#c6b7a1", "#9fb886", "#d7c071", "#b39ac9"
+];
 
-  let loopRunning = false;
-  let workflowTimer = null;
+const svg = document.getElementById("plotSvg");
+const wrap = document.getElementById("plotWrap");
+const tooltip = document.getElementById("tooltip");
+const message = document.getElementById("message");
 
-  function requestFullscreenOnce() {
-    const root = document.documentElement;
-    if (!document.fullscreenElement && root.requestFullscreen) {
-      return root.requestFullscreen().catch(() => {});
+let baseData = null;
+let overlayCache = new Map();
+let currentCaseIndex = 0;
+let autoSwitchTimer = null;
+let loaded = null;
+let fullDomain = null;
+let viewDomain = null;
+let lastScale = null;
+let dragState = null;
+
+let visible = {
+  layers: true,
+  topography: true,
+  benches: true,
+  triangle: true,
+  labels: true
+};
+
+function add(tag, attrs = {}, parent = svg) {
+  const node = document.createElementNS(SVG_NS, tag);
+  for (const [key, value] of Object.entries(attrs)) {
+    if (value !== undefined && value !== null) node.setAttribute(key, value);
+  }
+  parent.appendChild(node);
+  return node;
+}
+
+function group(className) {
+  return add("g", { class: className }, svg);
+}
+
+function fmt(value, digits = 1) {
+  if (!Number.isFinite(value)) return "--";
+  return Number(value).toFixed(digits);
+}
+
+function showMessage(text) {
+  message.textContent = text;
+  message.classList.add("show");
+}
+function clearMessage() {
+  message.classList.remove("show");
+  message.textContent = "";
+}
+
+function parseDxfLines(dxfText) {
+  const raw = dxfText.split(/\r?\n/);
+  const pairs = [];
+  for (let i = 0; i + 1 < raw.length; i += 2) pairs.push([raw[i].trim(), raw[i + 1].trim()]);
+
+  const lines = [];
+  let i = 0;
+  while (i < pairs.length) {
+    const [code, value] = pairs[i];
+    if (code === "0" && value === "LINE") {
+      const ent = { type: "LINE" };
+      i += 1;
+      while (i < pairs.length && pairs[i][0] !== "0") {
+        const [c, v] = pairs[i];
+        if (c === "8") ent.layer = v;
+        else if (c === "62") ent.color = Number(v);
+        else if (c === "10") ent.x1 = Number(v);
+        else if (c === "20") ent.y1 = Number(v);
+        else if (c === "30") ent.z1 = Number(v);
+        else if (c === "11") ent.x2 = Number(v);
+        else if (c === "21") ent.y2 = Number(v);
+        else if (c === "31") ent.z2 = Number(v);
+        i += 1;
+      }
+      if ([ent.x1, ent.z1, ent.x2, ent.z2].every(Number.isFinite)) lines.push(ent);
+      continue;
     }
-    return Promise.resolve();
+    i += 1;
   }
+  return lines;
+}
 
-  function stopWorkflowDemo() {
-    try {
-      if (frame.contentWindow && frame.contentWindow.stopOptimalSlopeDemo) {
-        frame.contentWindow.stopOptimalSlopeDemo();
-      }
-    } catch (error) {}
+function getJsonMirrorAxis(data) {
+  const xs = [];
+  for (const layer of (data.Layers || [])) {
+    for (const arr of (layer.X_section || [])) {
+      for (const x of arr || []) if (Number.isFinite(Number(x))) xs.push(Number(x));
+    }
   }
+  for (const x of (data.Topo_Layer?.Topo_Layer_X || [])) if (Number.isFinite(Number(x))) xs.push(Number(x));
+  if (!xs.length) return null;
+  return Math.min(...xs) + Math.max(...xs);
+}
 
-  function startWorkflowDemo() {
-    try {
-      if (frame.contentWindow && frame.contentWindow.startOptimalSlopeDemo) {
-        frame.contentWindow.startOptimalSlopeDemo();
-        return true;
+function mirrorX(x, axis) {
+  const value = Number(x);
+  return axis === null ? value : axis - value;
+}
+
+function convertInputJson(data) {
+  const mirrorAxis = getJsonMirrorAxis(data);
+  const layers = [];
+  for (const [i, layer] of (data.Layers || []).entries()) {
+    const name = layer.Name || `Layer ${i + 1}`;
+    const xsList = layer.X_section || [];
+    const zsList = layer.Z_section || [];
+    for (let j = 0; j < Math.min(xsList.length, zsList.length); j++) {
+      const xs = xsList[j] || [];
+      const zs = zsList[j] || [];
+      const points = xs.map((x, k) => ({ x: mirrorX(x, mirrorAxis), z: Number(zs[k]) }))
+        .filter(p => Number.isFinite(p.x) && Number.isFinite(p.z));
+      if (points.length >= 3) {
+        layers.push({ name, id: layer.Id ?? i + 1, points });
       }
-    } catch (error) {}
-
-    try {
-      const button = frame.contentWindow.document.getElementById('conferenceDemo');
-      if (button) {
-        button.click();
-        return true;
-      }
-    } catch (error) {}
-
-    return false;
-  }
-
-  function showVideoStage() {
-    document.body.classList.remove('show-workflow');
-    stopWorkflowDemo();
-    clearTimeout(workflowTimer);
-    workflowTimer = null;
-
-    video.currentTime = 0;
-    const playPromise = video.play();
-    if (playPromise && playPromise.catch) {
-      playPromise.catch(() => showWorkflowStage());
     }
   }
 
-  function showWorkflowStage() {
-    video.pause();
-    document.body.classList.add('show-workflow');
+  const tx = data.Topo_Layer?.Topo_Layer_X || [];
+  const tz = data.Topo_Layer?.Topo_Layer_Z || [];
+  const topography = tx.map((x, i) => ({ x: mirrorX(x, mirrorAxis), z: Number(tz[i]) }))
+    .filter(p => Number.isFinite(p.x) && Number.isFinite(p.z));
 
-    const tryStart = (attempts = 20) => {
-      if (startWorkflowDemo()) return;
-      if (attempts <= 0) return;
-      setTimeout(() => tryStart(attempts - 1), 400);
-    };
+  const crestRaw = data.GeneralProperties?.CrestPoint_Local || null;
+  const crest = Array.isArray(crestRaw)
+    ? { x: mirrorX(crestRaw[0], mirrorAxis), z: Number(crestRaw[1]) }
+    : null;
 
-    tryStart();
+  return {
+    layers,
+    topography,
+    crest,
+    slopeHeight: data.GeneralProperties?.SlopeHeight ?? null,
+    simulationName: data.SimulationName || "Section"
+  };
+}
 
-    clearTimeout(workflowTimer);
-    workflowTimer = setTimeout(() => {
-      if (loopRunning) showVideoStage();
-    }, WORKFLOW_DEMO_MS);
+function uniquePointsFromLines(lines) {
+  const points = [];
+  for (const line of lines) {
+    for (const p of [{ x: line.x1, z: line.z1 }, { x: line.x2, z: line.z2 }]) {
+      if (!points.some(q => Math.abs(q.x - p.x) < 1e-5 && Math.abs(q.z - p.z) < 1e-5)) {
+        points.push(p);
+      }
+    }
+  }
+  return points;
+}
+
+function orderPolygon(points) {
+  if (points.length <= 2) return points;
+  const cx = points.reduce((s, p) => s + p.x, 0) / points.length;
+  const cz = points.reduce((s, p) => s + p.z, 0) / points.length;
+  return [...points].sort((a, b) =>
+    Math.atan2(a.z - cz, a.x - cx) - Math.atan2(b.z - cz, b.x - cx)
+  );
+}
+
+function classifyDxf(lines) {
+  let benchLines = lines.filter(line => line.layer === "Layer_0");
+  let triangleLines = lines.filter(line => line.layer === "Layer_1");
+
+  if (!benchLines.length) benchLines = lines.filter(line => line.color === 250);
+  if (!triangleLines.length) triangleLines = lines.filter(line => line.color === 92);
+
+  if (!triangleLines.length && lines.length >= 3) {
+    const nonBench = lines.filter(line => !benchLines.includes(line));
+    triangleLines = nonBench.slice(-3);
   }
 
-  async function startLoop() {
-    loopRunning = true;
-    startOverlay.classList.add('hidden');
-    await requestFullscreenOnce();
-    showVideoStage();
+  const triangle = orderPolygon(uniquePointsFromLines(triangleLines));
+
+  let maxOsa = null;
+  let minOsa = null;
+  if (triangle.length >= 3) {
+    const top = triangle.reduce((best, p) => p.z > best.z ? p : best, triangle[0]);
+    const lower = triangle.filter(p => p !== top);
+
+    const angle = p => Math.atan2(Math.abs(top.z - p.z), Math.abs(top.x - p.x) || 1e-9) * 180 / Math.PI;
+
+    if (lower.length >= 2) {
+      const sorted = [...lower].sort((a, b) => angle(a) - angle(b));
+      const minEnd = sorted[0];
+      const maxEnd = sorted[sorted.length - 1];
+      minOsa = { start: top, end: minEnd, angle: angle(minEnd) };
+      maxOsa = { start: top, end: maxEnd, angle: angle(maxEnd) };
+    }
   }
 
-  video.addEventListener('ended', () => {
-    if (loopRunning) showWorkflowStage();
+  return { benchLines, triangleLines, triangle, maxOsa, minOsa };
+}
+
+function pathFromPoints(points, xScale, yScale, close = false) {
+  if (!points?.length) return "";
+  const d = points.map((p, i) => `${i ? "L" : "M"} ${xScale(p.x)} ${yScale(p.z)}`).join(" ");
+  return close ? `${d} Z` : d;
+}
+
+function computeDomain(data) {
+  const xs = [];
+  const zs = [];
+  const push = p => {
+    if (Number.isFinite(p.x) && Number.isFinite(p.z)) {
+      xs.push(p.x); zs.push(p.z);
+    }
+  };
+
+  for (const layer of data.layers) layer.points.forEach(push);
+  data.topography.forEach(push);
+  data.benchLines.forEach(line => {
+    push({ x: line.x1, z: line.z1 }); push({ x: line.x2, z: line.z2 });
+  });
+  data.triangle.forEach(push);
+  if (data.crest) push(data.crest);
+
+  const xmin = Math.min(...xs);
+  const xmax = Math.max(...xs);
+  const zmin = Math.min(...zs);
+  const zmax = Math.max(...zs);
+  const xpad = (xmax - xmin || 1) * 0.06;
+  const zpad = (zmax - zmin || 1) * 0.18;
+
+  return { xmin: xmin - xpad, xmax: xmax + xpad, zmin: zmin - zpad, zmax: zmax + zpad };
+}
+
+function buildScale(domain) {
+  const width = 1280, height = 720;
+  const margin = { left: 44, right: 28, top: 24, bottom: 34 };
+  const plotW = width - margin.left - margin.right;
+  const plotH = height - margin.top - margin.bottom;
+
+  return {
+    width, height, margin, plotW, plotH,
+    x: value => margin.left + (value - domain.xmin) / (domain.xmax - domain.xmin) * plotW,
+    y: value => margin.top + (domain.zmax - value) / (domain.zmax - domain.zmin) * plotH
+  };
+}
+
+function drawGrid(scale, domain) {
+  const g = group("grid");
+  const xTicks = 8, zTicks = 5;
+
+  for (let i = 0; i <= xTicks; i++) {
+    const xVal = domain.xmin + i / xTicks * (domain.xmax - domain.xmin);
+    const x = scale.x(xVal);
+    add("line", { x1: x, y1: scale.margin.top, x2: x, y2: scale.margin.top + scale.plotH, class: "grid-line" }, g);
+  }
+  for (let i = 0; i <= zTicks; i++) {
+    const zVal = domain.zmin + i / zTicks * (domain.zmax - domain.zmin);
+    const y = scale.y(zVal);
+    add("line", { x1: scale.margin.left, y1: y, x2: scale.margin.left + scale.plotW, y2: y, class: "grid-line" }, g);
+  }
+}
+
+function addTooltip(node, label, point) {
+  node.addEventListener("mousemove", event => {
+    tooltip.innerHTML = `<b>${label}</b><br>X: ${fmt(point.x, 2)}<br>Z: ${fmt(point.z, 2)}`;
+    tooltip.style.left = `${event.clientX}px`;
+    tooltip.style.top = `${event.clientY}px`;
+    tooltip.style.opacity = 1;
+  });
+  node.addEventListener("mouseleave", () => { tooltip.style.opacity = 0; });
+}
+
+function drawCallout(parent, label, target, offsetX, offsetY, scale) {
+  const x = scale.x(target.x), y = scale.y(target.z);
+  const tx = x + offsetX, ty = y + offsetY;
+  const boxW = label.length * 11 + 32, boxH = 38;
+
+  add("line", { x1: tx + boxW / 2, y1: ty + boxH / 2, x2: x, y2: y, stroke: "#111", "stroke-width": 2, "vector-effect": "non-scaling-stroke" }, parent);
+  add("rect", { x: tx, y: ty, width: boxW, height: boxH, rx: 4, class: "label-box" }, parent);
+  const text = add("text", { x: tx + boxW / 2, y: ty + 25, "text-anchor": "middle", class: "osa-label" }, parent);
+  text.textContent = label;
+}
+
+function draw(data) {
+  svg.innerHTML = "";
+  if (!viewDomain) return;
+
+  lastScale = buildScale(viewDomain);
+  drawGrid(lastScale, viewDomain);
+
+  const layersGroup = group(visible.layers ? "layers" : "layers hidden");
+  data.layers.forEach((layer, i) => {
+    const node = add("path", {
+      d: pathFromPoints(layer.points, lastScale.x, lastScale.y, true),
+      fill: palette[i % palette.length],
+      class: "layer-poly"
+    }, layersGroup);
+    const p = layer.points[Math.floor(layer.points.length / 2)];
+    addTooltip(node, layer.name, p);
   });
 
-  startButton.addEventListener('click', startLoop);
+  const topoGroup = group(visible.topography ? "topography-group" : "topography-group hidden");
+  if (data.topography.length) {
+    add("path", { d: pathFromPoints(data.topography, lastScale.x, lastScale.y, false), class: "topography" }, topoGroup);
+  }
 
-  document.getElementById('skipVideo').addEventListener('click', () => {
-    loopRunning = true;
-    showWorkflowStage();
+  const benchesGroup = group(visible.benches ? "benches" : "benches hidden");
+  data.benchLines.forEach(line => {
+    const node = add("line", {
+      x1: lastScale.x(line.x1), y1: lastScale.y(line.z1),
+      x2: lastScale.x(line.x2), y2: lastScale.y(line.z2),
+      class: "bench-line"
+    }, benchesGroup);
+    addTooltip(node, "Bench line", { x: (line.x1 + line.x2) / 2, z: (line.z1 + line.z2) / 2 });
   });
 
-  document.getElementById('showVideo').addEventListener('click', () => {
-    loopRunning = true;
-    showVideoStage();
+  const triGroup = group(visible.triangle ? "triangle" : "triangle hidden");
+  if (data.triangle.length >= 3) {
+    add("path", { d: pathFromPoints(data.triangle, lastScale.x, lastScale.y, true), class: "triangle-fill" }, triGroup);
+  }
+  data.triangleLines.forEach(line => {
+    add("line", {
+      x1: lastScale.x(line.x1), y1: lastScale.y(line.z1),
+      x2: lastScale.x(line.x2), y2: lastScale.y(line.z2),
+      class: "triangle-edge"
+    }, triGroup);
   });
 
-  document.getElementById('showWorkflow').addEventListener('click', () => {
-    loopRunning = true;
-    showWorkflowStage();
+  if (data.crest) {
+    const x = lastScale.x(data.crest.x), y = lastScale.y(data.crest.z);
+    const crestGroup = add("g", {}, triGroup);
+    add("line", { x1: x - 10, y1: y, x2: x + 10, y2: y, class: "crest-marker" }, crestGroup);
+    add("line", { x1: x, y1: y - 10, x2: x, y2: y + 10, class: "crest-marker" }, crestGroup);
+    addTooltip(crestGroup, "Crest point", data.crest);
+  }
+
+  const labelGroup = group(visible.labels ? "labels" : "labels hidden");
+  if (data.maxOsa) {
+    const mid = { x: (data.maxOsa.start.x + data.maxOsa.end.x) / 2, z: (data.maxOsa.start.z + data.maxOsa.end.z) / 2 };
+    drawCallout(labelGroup, "Max OSA", mid, -210, -28, lastScale);
+  }
+  if (data.minOsa) {
+    const mid = { x: (data.minOsa.start.x + data.minOsa.end.x) / 2, z: (data.minOsa.start.z + data.minOsa.end.z) / 2 };
+    drawCallout(labelGroup, "Min OSA", mid, 96, -56, lastScale);
+  }
+}
+
+function clampDomain(domain) {
+  const minSpanX = (fullDomain.xmax - fullDomain.xmin) / 80;
+  const minSpanZ = (fullDomain.zmax - fullDomain.zmin) / 80;
+  if (domain.xmax - domain.xmin < minSpanX || domain.zmax - domain.zmin < minSpanZ) return viewDomain;
+  return domain;
+}
+
+function zoomAt(factor, clientX = null, clientY = null) {
+  if (!viewDomain || !fullDomain) return;
+  let cx = (viewDomain.xmin + viewDomain.xmax) / 2;
+  let cz = (viewDomain.zmin + viewDomain.zmax) / 2;
+
+  if (clientX !== null && clientY !== null && lastScale) {
+    const rect = svg.getBoundingClientRect();
+    const px = (clientX - rect.left) / rect.width;
+    const py = (clientY - rect.top) / rect.height;
+    cx = viewDomain.xmin + px * (viewDomain.xmax - viewDomain.xmin);
+    cz = viewDomain.zmax - py * (viewDomain.zmax - viewDomain.zmin);
+  }
+
+  const newHalfX = (viewDomain.xmax - viewDomain.xmin) * factor / 2;
+  const newHalfZ = (viewDomain.zmax - viewDomain.zmin) * factor / 2;
+  viewDomain = clampDomain({ xmin: cx - newHalfX, xmax: cx + newHalfX, zmin: cz - newHalfZ, zmax: cz + newHalfZ });
+  draw(loaded);
+}
+
+function resetZoom() {
+  if (!fullDomain) return;
+  viewDomain = { ...fullDomain };
+  draw(loaded);
+}
+
+function panBy(dxPixels, dyPixels) {
+  if (!viewDomain || !lastScale) return;
+  const dx = dxPixels / lastScale.plotW * (viewDomain.xmax - viewDomain.xmin);
+  const dz = -dyPixels / lastScale.plotH * (viewDomain.zmax - viewDomain.zmin);
+  viewDomain = { xmin: viewDomain.xmin - dx, xmax: viewDomain.xmax - dx, zmin: viewDomain.zmin - dz, zmax: viewDomain.zmax - dz };
+  draw(loaded);
+}
+
+function updateStats(data, label) {
+  document.getElementById("selectedOverlay").textContent = label;
+  document.getElementById("maxOsaValue").textContent = data.maxOsa ? `${fmt(data.maxOsa.angle, 1)}°` : "--";
+  document.getElementById("minOsaValue").textContent = data.minOsa ? `${fmt(data.minOsa.angle, 1)}°` : "--";
+}
+
+async function loadBaseData() {
+  const res = await fetch(CONFIG.input, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Could not load ${CONFIG.input}`);
+  const json = await res.json();
+  baseData = convertInputJson(json);
+}
+
+async function loadOverlay(caseIndex) {
+  if (overlayCache.has(caseIndex)) return overlayCache.get(caseIndex);
+  const cfg = CONFIG.cases[caseIndex];
+  const res = await fetch(cfg.dxf, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Could not load ${cfg.dxf}`);
+  const dxfText = await res.text();
+  const overlay = classifyDxf(parseDxfLines(dxfText));
+  overlayCache.set(caseIndex, overlay);
+  return overlay;
+}
+
+async function applyCase(caseIndex, reset = true) {
+  try {
+    clearMessage();
+    currentCaseIndex = caseIndex;
+    const overlay = await loadOverlay(caseIndex);
+    loaded = { ...baseData, ...overlay };
+    fullDomain = computeDomain(loaded);
+    if (reset || !viewDomain) viewDomain = { ...fullDomain };
+    updateStats(loaded, CONFIG.cases[caseIndex].label);
+    draw(loaded);
+
+    document.querySelectorAll("[data-case]").forEach(btn => {
+      btn.classList.toggle("active", Number(btn.dataset.case) === caseIndex);
+    });
+  } catch (error) {
+    showMessage(`${error.message}. When testing locally, use a small local web server instead of opening index.html directly.`);
+    console.error(error);
+  }
+}
+
+document.querySelectorAll("[data-case]").forEach(button => {
+  button.addEventListener("click", () => {
+    setAutoSwitch(false);
+    applyCase(Number(button.dataset.case), true);
   });
+});
+
+document.querySelectorAll("[data-toggle]").forEach(button => {
+  button.addEventListener("click", () => {
+    const key = button.dataset.toggle;
+    visible[key] = !visible[key];
+    button.classList.toggle("active", visible[key]);
+    draw(loaded);
+  });
+});
+
+
+function setAutoSwitch(active) {
+  const button = document.getElementById("autoSwitchButton");
+  if (autoSwitchTimer) {
+    clearInterval(autoSwitchTimer);
+    autoSwitchTimer = null;
+  }
+  if (active) {
+    autoSwitchTimer = setInterval(() => {
+      const next = (currentCaseIndex + 1) % CONFIG.cases.length;
+      applyCase(next, false);
+    }, 2600);
+  }
+  if (button) {
+    button.classList.toggle("active", Boolean(autoSwitchTimer));
+    button.textContent = autoSwitchTimer ? "Pause auto" : "Auto switch";
+  }
+}
+
+document.querySelectorAll("[data-action]").forEach(button => {
+  button.addEventListener("click", () => {
+    const action = button.dataset.action;
+    if (action === "zoomIn") zoomAt(0.82);
+    if (action === "zoomOut") zoomAt(1.22);
+    if (action === "autoSwitch") setAutoSwitch(!autoSwitchTimer);
+    if (action === "reset") resetZoom();
+  });
+});
+
+wrap.addEventListener("wheel", event => {
+  event.preventDefault();
+  zoomAt(event.deltaY < 0 ? 0.9 : 1.1, event.clientX, event.clientY);
+}, { passive: false });
+
+wrap.addEventListener("pointerdown", event => {
+  dragState = { x: event.clientX, y: event.clientY };
+  wrap.classList.add("dragging");
+  wrap.setPointerCapture(event.pointerId);
+});
+
+wrap.addEventListener("pointermove", event => {
+  if (!dragState) return;
+  const dx = event.clientX - dragState.x;
+  const dy = event.clientY - dragState.y;
+  dragState = { x: event.clientX, y: event.clientY };
+  panBy(dx, dy);
+});
+
+function endDrag(event) {
+  dragState = null;
+  wrap.classList.remove("dragging");
+  try { wrap.releasePointerCapture(event.pointerId); } catch (error) {}
+}
+wrap.addEventListener("pointerup", endDrag);
+wrap.addEventListener("pointercancel", endDrag);
+
+(async function init() {
+  try {
+    await loadBaseData();
+    await applyCase(0, true);
+  } catch (error) {
+    showMessage(`${error.message}. When testing locally, use a small local web server instead of opening index.html directly.`);
+    console.error(error);
+  }
+})();
+
+window.addEventListener("message", event => {
+  const data = event.data || {};
+  if (data.type !== "osaViewerCommand") return;
+
+  if (data.action === "option1") {
+    setAutoSwitch(false);
+    applyCase(0, false);
+  }
+
+  if (data.action === "option2") {
+    setAutoSwitch(false);
+    applyCase(1, false);
+  }
+
+  if (data.action === "startAutoSwitch") {
+    setAutoSwitch(true);
+  }
+
+  if (data.action === "stopAutoSwitch") {
+    setAutoSwitch(false);
+  }
+
+  if (data.action === "reset") {
+    setAutoSwitch(false);
+    applyCase(0, true);
+    resetZoom();
+  }
+});
+
 </script>
 </body>
 </html>

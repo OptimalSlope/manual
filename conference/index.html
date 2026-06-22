@@ -5,227 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>60th US Rock Mechanics / Geomechanics Symposium</title>
 <style>
-  :root { --blue: #0a4e76; --orange: #f16b21; }
-  * { box-sizing: border-box; }
-  html, body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: #071725;
-    color: white;
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  }
-  .stage { position: fixed; inset: 0; background: #071725; }
-  video, iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-    background: #071725;
-  }
-  video { object-fit: contain; background: #000; z-index: 2; transition: opacity 600ms ease; }
-  iframe { z-index: 1; opacity: 0; transition: opacity 600ms ease; }
-  body.show-workflow iframe { opacity: 1; z-index: 3; }
-  body.show-workflow video { opacity: 0; pointer-events: none; }
-  .start-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 10;
-    display: grid;
-    place-items: center;
-    padding: 32px;
-    background:
-      radial-gradient(circle at 88% 10%, rgba(241,107,33,0.42), transparent 28%),
-      linear-gradient(135deg, rgba(6,47,80,0.98), rgba(10,78,118,0.96) 48%, rgba(241,107,33,0.92) 140%);
-  }
-  .start-card {
-    width: min(760px, calc(100vw - 48px));
-    border: 1px solid rgba(255,255,255,0.22);
-    border-radius: 30px;
-    padding: 34px;
-    background: rgba(255,255,255,0.11);
-    backdrop-filter: blur(14px);
-    box-shadow: 0 34px 100px rgba(0,0,0,0.34);
-    text-align: center;
-  }
-  .kicker {
-    color: rgba(255,255,255,0.74);
-    text-transform: uppercase;
-    letter-spacing: 0.10em;
-    font-weight: 1000;
-    font-size: 12px;
-  }
-  h1 {
-    margin: 12px 0 10px;
-    font-size: clamp(38px, 6vw, 76px);
-    line-height: 0.95;
-    letter-spacing: -0.06em;
-  }
-  p {
-    margin: 0 auto 24px;
-    max-width: 600px;
-    color: rgba(255,255,255,0.82);
-    font-size: 18px;
-    line-height: 1.45;
-  }
-  button {
-    appearance: none;
-    border: 0;
-    border-radius: 999px;
-    padding: 15px 22px;
-    color: var(--blue);
-    background: white;
-    font-weight: 1000;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.22);
-  }
-  .controls {
-    position: fixed;
-    right: 18px;
-    bottom: 18px;
-    z-index: 12;
-    display: flex;
-    gap: 8px;
-    opacity: 0.18;
-    transition: opacity 160ms ease;
-  }
-  .controls:hover { opacity: 1; }
-  .controls button {
-    padding: 9px 12px;
-    font-size: 12px;
-    background: rgba(255,255,255,0.88);
-  }
-  .hidden { display: none !important; }
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#071725;color:#fff;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.stage{position:fixed;inset:0;background:#071725}video,iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#071725}video{object-fit:contain;background:#000;z-index:2;transition:opacity .6s ease}iframe{z-index:1;opacity:0;transition:opacity .6s ease}body.show-workflow iframe{opacity:1;z-index:3}body.show-workflow video{opacity:0;pointer-events:none}.start-overlay{position:fixed;inset:0;z-index:10;display:grid;place-items:center;padding:32px;background:radial-gradient(circle at 88% 10%,rgba(241,107,33,.42),transparent 28%),linear-gradient(135deg,rgba(6,47,80,.98),rgba(10,78,118,.96) 48%,rgba(241,107,33,.92) 140%)}.start-card{width:min(760px,calc(100vw - 48px));border:1px solid rgba(255,255,255,.22);border-radius:30px;padding:34px;background:rgba(255,255,255,.11);backdrop-filter:blur(14px);box-shadow:0 34px 100px rgba(0,0,0,.34);text-align:center}.kicker{color:rgba(255,255,255,.74);text-transform:uppercase;letter-spacing:.10em;font-weight:1000;font-size:12px}h1{margin:12px 0 10px;font-size:clamp(38px,6vw,76px);line-height:.95;letter-spacing:-.06em}p{margin:0 auto 24px;max-width:600px;color:rgba(255,255,255,.82);font-size:18px;line-height:1.45}button{appearance:none;border:0;border-radius:999px;padding:15px 22px;color:#0a4e76;background:white;font-weight:1000;font-size:16px;cursor:pointer;box-shadow:0 18px 40px rgba(0,0,0,.22)}.controls{position:fixed;right:18px;bottom:18px;z-index:12;display:flex;gap:8px;opacity:.18;transition:opacity .16s ease}.controls:hover{opacity:1}.controls button{padding:9px 12px;font-size:12px;background:rgba(255,255,255,.88)}.hidden{display:none!important}
 </style>
 </head>
 <body>
-  <div class="stage">
-    <video id="introVideo" src="https://s3.eu-west-2.amazonaws.com/optimalslope.com/conference_video/intro-video.mov" playsinline preload="auto"></video>
-    <iframe id="workflowFrame" src="../assets/preview_interactive.html?v=exact-uploaded-index" title="OptimalSlope workflow demo"></iframe>
-  </div>
-
-  <div class="start-overlay" id="startOverlay">
-    <div class="start-card">
-      <div class="kicker">OptimalSlope interactive demonstration</div>
-      <h1>60th US Rock Mechanics / Geomechanics Symposium</h1>
-      <p>Interactive demonstration of slope optimisation workflow, OSA search region and optimised pitwall output.</p>
-      <button id="startButton" type="button">Start demonstration</button>
-    </div>
-  </div>
-
-  <div class="controls">
-    <button id="skipVideo" type="button">Skip video</button>
-    <button id="showVideo" type="button">Video</button>
-    <button id="showWorkflow" type="button">Workflow</button>
-  </div>
-
+<div class="stage">
+<video id="introVideo" src="https://s3.eu-west-2.amazonaws.com/optimalslope.com/conference_video/intro-video.mov" playsinline preload="auto"></video>
+<iframe id="workflowFrame" src="../assets/preview_interactive.html?v=osa-fixed" title="OptimalSlope workflow demo"></iframe>
+</div>
+<div class="start-overlay" id="startOverlay">
+<div class="start-card">
+<div class="kicker">OptimalSlope interactive demonstration</div>
+<h1>60th US Rock Mechanics / Geomechanics Symposium</h1>
+<p>Interactive demonstration of slope optimisation workflow, OSA search region and optimised pitwall output.</p>
+<button id="startButton" type="button">Start demonstration</button>
+</div>
+</div>
+<div class="controls">
+<button id="skipVideo" type="button">Skip video</button>
+<button id="showVideo" type="button">Video</button>
+<button id="showWorkflow" type="button">Workflow</button>
+</div>
 <script>
-  const video = document.getElementById('introVideo');
-  const frame = document.getElementById('workflowFrame');
-  const startOverlay = document.getElementById('startOverlay');
-  const startButton = document.getElementById('startButton');
-
-  const WORKFLOW_DEMO_MS = 48000;
-
-  let loopRunning = false;
-  let workflowTimer = null;
-
-  function requestFullscreenOnce() {
-    const root = document.documentElement;
-    if (!document.fullscreenElement && root.requestFullscreen) {
-      return root.requestFullscreen().catch(() => {});
-    }
-    return Promise.resolve();
-  }
-
-  function stopWorkflowDemo() {
-    try {
-      if (frame.contentWindow && frame.contentWindow.stopOptimalSlopeDemo) {
-        frame.contentWindow.stopOptimalSlopeDemo();
-      }
-    } catch (error) {}
-  }
-
-  function startWorkflowDemo() {
-    try {
-      if (frame.contentWindow && frame.contentWindow.startOptimalSlopeDemo) {
-        frame.contentWindow.startOptimalSlopeDemo();
-        return true;
-      }
-    } catch (error) {}
-
-    try {
-      const button = frame.contentWindow.document.getElementById('conferenceDemo');
-      if (button) {
-        button.click();
-        return true;
-      }
-    } catch (error) {}
-
-    return false;
-  }
-
-  function showVideoStage() {
-    document.body.classList.remove('show-workflow');
-    stopWorkflowDemo();
-    clearTimeout(workflowTimer);
-    workflowTimer = null;
-
-    video.currentTime = 0;
-    const playPromise = video.play();
-    if (playPromise && playPromise.catch) {
-      playPromise.catch(() => showWorkflowStage());
-    }
-  }
-
-  function showWorkflowStage() {
-    video.pause();
-    document.body.classList.add('show-workflow');
-
-    const tryStart = (attempts = 20) => {
-      if (startWorkflowDemo()) return;
-      if (attempts <= 0) return;
-      setTimeout(() => tryStart(attempts - 1), 400);
-    };
-
-    tryStart();
-
-    clearTimeout(workflowTimer);
-    workflowTimer = setTimeout(() => {
-      if (loopRunning) showVideoStage();
-    }, WORKFLOW_DEMO_MS);
-  }
-
-  async function startLoop() {
-    loopRunning = true;
-    startOverlay.classList.add('hidden');
-    await requestFullscreenOnce();
-    showVideoStage();
-  }
-
-  video.addEventListener('ended', () => {
-    if (loopRunning) showWorkflowStage();
-  });
-
-  startButton.addEventListener('click', startLoop);
-
-  document.getElementById('skipVideo').addEventListener('click', () => {
-    loopRunning = true;
-    showWorkflowStage();
-  });
-
-  document.getElementById('showVideo').addEventListener('click', () => {
-    loopRunning = true;
-    showVideoStage();
-  });
-
-  document.getElementById('showWorkflow').addEventListener('click', () => {
-    loopRunning = true;
-    showWorkflowStage();
-  });
+const video=document.getElementById('introVideo'),frame=document.getElementById('workflowFrame'),startOverlay=document.getElementById('startOverlay'),startButton=document.getElementById('startButton');const WORKFLOW_DEMO_MS=48000;let loopRunning=false,workflowTimer=null;
+function requestFullscreenOnce(){const root=document.documentElement;if(!document.fullscreenElement&&root.requestFullscreen){return root.requestFullscreen().catch(()=>{})}return Promise.resolve()}
+function stopWorkflowDemo(){try{if(frame.contentWindow&&frame.contentWindow.stopOptimalSlopeDemo){frame.contentWindow.stopOptimalSlopeDemo()}}catch(e){}}
+function startWorkflowDemo(){try{if(frame.contentWindow&&frame.contentWindow.startOptimalSlopeDemo){frame.contentWindow.startOptimalSlopeDemo();return true}}catch(e){}try{const b=frame.contentWindow.document.getElementById('conferenceDemo');if(b){b.click();return true}}catch(e){}return false}
+function showVideoStage(){document.body.classList.remove('show-workflow');stopWorkflowDemo();clearTimeout(workflowTimer);workflowTimer=null;video.currentTime=0;const p=video.play();if(p&&p.catch)p.catch(()=>showWorkflowStage())}
+function showWorkflowStage(){video.pause();document.body.classList.add('show-workflow');const tryStart=(n=20)=>{if(startWorkflowDemo())return;if(n<=0)return;setTimeout(()=>tryStart(n-1),400)};tryStart();clearTimeout(workflowTimer);workflowTimer=setTimeout(()=>{if(loopRunning)showVideoStage()},WORKFLOW_DEMO_MS)}
+async function startLoop(){loopRunning=true;startOverlay.classList.add('hidden');await requestFullscreenOnce();showVideoStage()}
+video.addEventListener('ended',()=>{if(loopRunning)showWorkflowStage()});startButton.addEventListener('click',startLoop);document.getElementById('skipVideo').addEventListener('click',()=>{loopRunning=true;showWorkflowStage()});document.getElementById('showVideo').addEventListener('click',()=>{loopRunning=true;showVideoStage()});document.getElementById('showWorkflow').addEventListener('click',()=>{loopRunning=true;showWorkflowStage()});
 </script>
 </body>
 </html>
