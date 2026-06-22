@@ -431,7 +431,7 @@ permalink: /
 <div class="os-home-actions">
 <a class="os-home-button primary" href="https://optimalslope.com/files/OptimalSlope_Latest.zip/">Download OptimalSlope</a>
 <a class="os-home-button secondary" href="{{ '/pages/Tutorials/Workflow/' | relative_url }}">Simulation Workflow</a>
-<a class="os-home-button secondary" href="{{ '/conference/' | relative_url }}" target="_blank" rel="noopener">60th US Rock Mechanics / Geomechanics Symposium Demo</a>
+<a class="os-home-button secondary" href="/manual/conference/" target="_blank" rel="noopener">Conference Demo</a>
 </div>
 </section>
 
@@ -464,7 +464,7 @@ Use the sections below to move through the typical workflow: prepare data, creat
 </div>
 <div style="display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:2;">
 <a class="os-feature-button" href="assets/preview_interactive.html" target="_blank" rel="noopener">View workflow</a>
-<a class="os-feature-button" href="{{ '/conference/' | relative_url }}" target="_blank" rel="noopener">Conference demo</a>
+<a class="os-feature-button" href="/manual/conference/" target="_blank" rel="noopener">Conference demo</a>
 </div>
 </div>
 
@@ -546,4 +546,3 @@ Start with the Data Preparation page if you are working with new 3D stratigraphy
 {% endcomment %}
 
 </div>
- 
