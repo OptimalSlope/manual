@@ -716,7 +716,7 @@ Choose block dimensions that are appropriate for the scale of the model. Smaller
 <section class="os-workflow-step" id="import-block-model-into-datamine" markdown="1">
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 7</div>
-<h2 id="import-block-model-into-datamine">Import block model into Datamine</h2>
+<h2 id="import-block-model-into-datamine">Import Block Model into Datamine</h2>
 <p>Import the OptimalSlope exported block model CSV into Datamine, assign the correct block model fields, and combine slope-angle output with the original block model.</p>
 </div>
 <div class="os-workflow-step-body" markdown="1">
