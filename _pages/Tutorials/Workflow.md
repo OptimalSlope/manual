@@ -318,7 +318,7 @@ layout: post
 <a href="#exporting-output-profile-to-dxf"><span class="step">4</span><strong>Export DXF</strong><span>Export the optimized output profile for external workflows.</span></a>
 <a href="#importing-output-into-rockscience-rs2"><span class="step">5</span><strong>Import into RS2</strong><span>Prepare the exported profile for Rockscience RS2 stability analysis.</span></a>
 <a href="#exporting-the-section-block-model"><span class="step">6</span><strong>Export Block Model</strong><span>Create a section block model from 3D stratigraphy and optimized slope angles.</span></a>
-<a href="#import-block-model-into-datamine"><span class="step">7</span><strong>Import into Datamine</strong><span>Import the exported block model CSV and combine slope-angle data.</span></a>
+<a href="#import-block-model-into-datamine"><span class="step">7</span><strong>Import Block Model into Datamine</strong><span>Import the exported block model CSV and combine slope-angle data.</span></a>
 </div>
 
 Follow these steps to configure properties for a selected section in Slope Optimiser to run a simulation:
@@ -723,8 +723,8 @@ Choose block dimensions that are appropriate for the scale of the model. Smaller
 
 This step explains how to import an OptimalSlope block model export into Datamine. The workflow is split into two parts:
 
-- Import the main block geometry and save it as `Block_Model_XYZ`.
-- Import the OptimalSlope slope-angle output and combine it with the original model using `ADDMOD`.
+- Import the main block geometry and save it with a clear base-model name, for example `Block_Model_XYZ`.
+- Import the OptimalSlope slope-angle output, save it with a clear slope-model name, and combine it with the original model using `ADDMOD`.
 
 <div class="os-note" markdown="1">
 <strong>Input files:</strong> The CSV should contain the block dimensions, block centre coordinates, and any extra attributes such as density, grade, rock type, lithology, or slope angle.
@@ -823,11 +823,13 @@ Click **Finish**. The block model should be displayed in Datamine.
   <img src="{{ '/assets/datamine-import/datamine-import-step-07.png' | relative_url }}" alt="Imported block model displayed in Datamine">
 </p>
 
-Save the imported Datamine block model as:
+Save the imported Datamine block model with a clear name. In this tutorial, the suggested example name is:
 
 ```text
 Block_Model_XYZ
 ```
+
+You may use another valid Datamine file name, as long as you can clearly identify it later as the base block model.
 
 #### 5. Import the OptimalSlope slope-angle model
 
@@ -844,11 +846,13 @@ When assigning fields, map the coordinate and block-size fields as before. The s
 </tbody>
 </table>
 
-Save this imported model as:
+Save this imported model with a clear name. In this tutorial, the suggested example name is:
 
 ```text
 Block_Model_Slope
 ```
+
+You may use another valid Datamine file name, as long as you can clearly identify it later as the slope-angle model.
 
 #### 6. Combine the two block models
 
@@ -858,7 +862,11 @@ Run the Datamine function:
 ADDMOD
 ```
 
-Use `ADDMOD` to add `Block_Model_Slope` to `Block_Model_XYZ`, then save the output as a new Datamine block model file.
+Use `ADDMOD` to add the slope-angle model to the base block model, then save the output as a new Datamine block model file. In this tutorial example, `Block_Model_Slope` is added to `Block_Model_XYZ`, but the exact file names can be changed.
+
+<div class="os-note" markdown="1">
+<strong>Naming note:</strong> The names `Block_Model_XYZ` and `Block_Model_Slope` are examples only. Datamine does not require these exact names. The important point is to use consistent, recognisable names so the correct base model and slope-angle model are selected in `ADDMOD`.
+</div>
 
 The final output should combine:
 
