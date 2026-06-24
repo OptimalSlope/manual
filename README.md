@@ -430,7 +430,9 @@ permalink: /
 <p>Learn how to prepare data, manage projects, define slope simulation properties, run simulations, and export results from the OptimalSlope CAD interface.</p>
 <div class="os-home-actions">
 <a class="os-home-button primary" href="https://optimalslope.com/files/OptimalSlope_Latest.zip/">Download OptimalSlope</a>
+<a class="os-home-button secondary" href="{{ '/pages/quick-start/' | relative_url }}">Quick Start</a>
 <a class="os-home-button secondary" href="{{ '/pages/Tutorials/Workflow/' | relative_url }}">Simulation Workflow</a>
+<a class="os-home-button secondary" href="{{ '/pages/troubleshooting/' | relative_url }}">Troubleshooting</a>
 <a class="os-home-button secondary" href="/manual/conference/" target="_blank" rel="noopener">Conference Demo</a>
 </div>
 </section>
@@ -477,36 +479,92 @@ Start with the Data Preparation page if you are working with new 3D stratigraphy
 </section>
 
 <div class="os-home-nav" markdown="0">
-<a href="pages/Data%20Suitability/7-data/">
+<a href="{{ '/pages/quick-start/' | relative_url }}">
 <span class="icon">1</span>
+<strong>Quick Start</strong>
+<span>Run your first simulation from prepared data through result review and export.</span>
+</a>
+
+<a href="pages/Data%20Suitability/7-data/">
+<span class="icon">2</span>
 <strong>Prepare Data</strong>
 <span>Check geometry quality, DXF exports, section wires, gaps, overlaps, and layer organisation.</span>
 </a>
 
 <a href="pages/project-management/1-project-management/">
-<span class="icon">2</span>
+<span class="icon">3</span>
 <strong>Manage Projects</strong>
 <span>Create, save, import, slice, trim, and export project data.</span>
 </a>
 
 <a href="pages/properties/6-properties/">
-<span class="icon">3</span>
+<span class="icon">4</span>
 <strong>Define Properties</strong>
 <span>Set bench, rock, section, fault, and water table inputs for simulations.</span>
 </a>
 
 <a href="pages/Tutorials/Workflow/">
-<span class="icon">4</span>
+<span class="icon">5</span>
 <strong>Run Workflow</strong>
 <span>Follow the simulation workflow from importing sections to exporting results.</span>
 </a>
 
 <a href="pages/controls/1-interface/">
-<span class="icon">5</span>
+<span class="icon">6</span>
 <strong>Use Controls</strong>
 <span>Navigate the visualiser, change views, adjust object style, and manage selected items.</span>
 </a>
+
+<a href="{{ '/pages/troubleshooting/' | relative_url }}">
+<span class="icon">7</span>
+<strong>Troubleshooting</strong>
+<span>Resolve common issues with geometry, OSA search region, simulations, and exports.</span>
+</a>
+
+<a href="{{ '/pages/glossary/' | relative_url }}">
+<span class="icon">8</span>
+<strong>Glossary</strong>
+<span>Review common OptimalSlope, slope design, simulation, and export terms.</span>
+</a>
 </div>
+
+
+<section class="os-home-section" id="common-support-tasks" markdown="1">
+<div class="os-home-section-head" markdown="0">
+<div class="label">Common support tasks</div>
+<h2 id="common-support-tasks">Common support tasks</h2>
+<p>Use these shortcuts when you are checking input data, preparing a simulation, or diagnosing a warning.</p>
+</div>
+<div class="os-home-section-body" markdown="1">
+
+<div class="os-home-nav" markdown="0">
+<a href="{{ '/pages/troubleshooting/#gaps-overlaps' | relative_url }}">
+<span class="icon">A</span>
+<strong>Gaps and overlaps</strong>
+<span>Understand geometry warnings and decide whether input data needs repair.</span>
+</a>
+
+<a href="{{ '/pages/troubleshooting/#osa-search-region' | relative_url }}">
+<span class="icon">B</span>
+<strong>OSA search region</strong>
+<span>Check the crest point and Min/Max OSA range before running the optimiser.</span>
+</a>
+
+<a href="{{ '/pages/Tutorials/Workflow/#exporting-the-section-block-model' | relative_url }}">
+<span class="icon">C</span>
+<strong>Export block model</strong>
+<span>Create downstream block model outputs from 3D stratigraphy and slope-angle results.</span>
+</a>
+
+<a href="{{ '/pages/Tutorials/Workflow/#import-block-model-into-datamine' | relative_url }}">
+<span class="icon">D</span>
+<strong>Import into Datamine</strong>
+<span>Map block model fields and combine slope-angle data using Datamine workflows.</span>
+</a>
+</div>
+
+</div>
+</section>
 
 {% comment %}
 <section class="os-home-section" id="workflow" markdown="1">

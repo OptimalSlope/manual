@@ -882,4 +882,22 @@ The final output should combine:
 </section>
 
 
+
+<section class="os-workflow-step" id="related-pages" markdown="1">
+<div class="os-workflow-step-head" markdown="0">
+<div class="label">Related help</div>
+<h2 id="related-pages">Related pages</h2>
+<p>Use these pages to start faster, understand common terms, or troubleshoot issues found during the workflow.</p>
+</div>
+<div class="os-workflow-step-body" markdown="1">
+
+<div class="os-checklist" markdown="0">
+<div class="os-check"><strong><a href="{{ '/pages/quick-start/' | relative_url }}">Quick Start</a></strong><br>Run through the shortest route from prepared data to simulation results.</div>
+<div class="os-check"><strong><a href="{{ '/pages/troubleshooting/' | relative_url }}">Troubleshooting</a></strong><br>Review common problems with geometry, OSA search region, simulation setup, and exports.</div>
+<div class="os-check"><strong><a href="{{ '/pages/glossary/' | relative_url }}">Glossary</a></strong><br>Review key OptimalSlope, slope design, simulation, and export terms.</div>
+</div>
+
+</div>
+</section>
+
 </div>

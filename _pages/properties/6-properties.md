@@ -837,4 +837,20 @@ To define the water table:
 </div>
 </section>
 
+
+<section class="os-props-section" id="related-help" markdown="1">
+<div class="os-props-section-head" markdown="0">
+<div class="label">Related help</div>
+<h2 id="related-help">Related help</h2>
+<p>Use these pages for the recommended first workflow, troubleshooting checks, and terminology.</p>
+</div>
+<div class="os-props-section-body" markdown="1">
+
+- [Quick Start]({{ '/pages/quick-start/' | relative_url }}) — shortest route through the first simulation workflow.
+- [Troubleshooting]({{ '/pages/troubleshooting/' | relative_url }}) — common geometry, OSA search region, simulation, and export checks.
+- [Glossary]({{ '/pages/glossary/' | relative_url }}) — definitions of common OptimalSlope terms.
+
+</div>
+</section>
+
 </div>
