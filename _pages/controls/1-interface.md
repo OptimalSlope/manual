@@ -294,7 +294,7 @@ layout: post
 <div class="os-section-head">
 <div class="label">Delete / hide items</div>
 <h2 id="slices-and-3d-models-heading">Slices and 3D Models</h2>
-<p>These controls are used to hide selected shapes on the visualiser or delete selected items from the project.</p>
+<p>These controls are used to hide selected shapes in the visualiser or delete selected items from the project.</p>
 </div>
 <div class="os-section-body">
 <div class="os-control-list">
@@ -303,7 +303,7 @@ layout: post
 <img src="https://OptimalSlope.github.io/manual/assets/control-icons/eye-off-custom.png" alt="Hide selected shape">
 <div>
 <div class="control-title">Hide Selected Shape</div>
-<p>Hides the selected shape on the visualiser without deleting it from the project.</p>
+<p>Hides the selected shape in the visualiser without deleting it from the project.</p>
 </div>
 </div>
 
@@ -342,7 +342,7 @@ layout: post
 <div>
 <div class="control-title">Dynamic Zooming</div>
 <p>Press the left mouse button, then move the pointer left or right to zoom in or out.</p>
-<p class="os-tip">Alternatively, use the <code>Ctrl</code> button on the keyboard.</p>
+<p class="os-tip">Alternatively, use the <code>Ctrl</code> key.</p>
 </div>
 </div>
 
@@ -408,7 +408,7 @@ layout: post
 <div>
 <div class="control-title">Dynamic Rotation</div>
 <p>Press the left mouse button, then move the pointer to rotate the view.</p>
-<p class="os-tip">Alternatively, use the <code>Space</code> button on the keyboard.</p>
+<p class="os-tip">Alternatively, use the <code>Space</code> key.</p>
 </div>
 </div>
 
@@ -461,7 +461,7 @@ layout: post
 <img src="https://OptimalSlope.github.io/manual/assets/control-icons/eye-off-custom.png" alt="Hide selected shape">
 <div>
 <div class="control-title">Hide Selected Shape</div>
-<p>Hides the selected shape on the visualiser.</p>
+<p>Hides the selected shape in the visualiser.</p>
 </div>
 </div>
 

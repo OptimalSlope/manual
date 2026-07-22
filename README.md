@@ -451,11 +451,11 @@ permalink: /
 <div class="os-home-section-head" markdown="0">
 <div class="label">Introduction</div>
 <h2 id="introduction">Introduction</h2>
-<p>OptimalSlope helps evaluate slope geometry, generate simulation inputs, run cloud simulations, and export optimized slope profiles.</p>
+<p>OptimalSlope helps evaluate slope geometry, generate simulation inputs, run cloud simulations, and export optimised slope profiles.</p>
 </div>
 <div class="os-home-section-body" markdown="1">
 
-This is the user manual of the [Slope Optimiser](https://optimalslope.com/files/OptimalSlope_Latest.zip/) CAD graphical interface.
+This is the user manual for the [Slope Optimiser](https://optimalslope.com/files/OptimalSlope_Latest.zip/) CAD graphical interface.
 
 Use the sections below to move through the typical workflow: prepare data, create or import project geometry, define properties, run simulations, review outputs, and export results for downstream analysis.
 

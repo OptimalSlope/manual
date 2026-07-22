@@ -291,7 +291,7 @@ permalink: /pages/quick-start/
 <a href="#prepare-data"><span class="icon">1</span><strong>Prepare data</strong><span>Check geometry quality before importing or slicing sections.</span></a>
 <a href="#create-section"><span class="icon">2</span><strong>Create section</strong><span>Import a DXF section or slice one from 3D stratigraphy.</span></a>
 <a href="#define-properties"><span class="icon">3</span><strong>Define properties</strong><span>Set bench, rock, general, and optional inputs.</span></a>
-<a href="#run-simulation"><span class="icon">4</span><strong>Run simulation</strong><span>Configure account, folder, and submit the cloud job.</span></a>
+<a href="#run-simulation"><span class="icon">4</span><strong>Run simulation</strong><span>Configure the account and folder, then submit the cloud job.</span></a>
 <a href="#review-export"><span class="icon">5</span><strong>Review and export</strong><span>Fetch results and export profiles or block models.</span></a>
 </div>
 
@@ -317,7 +317,7 @@ Focus on:
 <strong>Recommended starting point:</strong> Review the Data Preparation page before working with new project data.
 </div>
 
-<a class="os-link-card" href="{ '/pages/Data%20Suitability/7-data/' | relative_url }">
+<a class="os-link-card" href="{{ '/pages/Data%20Suitability/7-data/' | relative_url }}">
 <strong>Open Data Preparation</strong>
 <span>Review geometry quality, DXF preparation, layer organisation, gaps, overlaps, and input suitability.</span>
 </a>
@@ -341,8 +341,8 @@ You can create the analysis section in two main ways:
 Use direct DXF import when your section is already prepared. Use slicing when the section must be generated from 3D geological solids or wireframes.
 
 <div class="os-link-grid" markdown="0">
-<a class="os-link-card" href="{ '/pages/Tutorials/Workflow/#importing-sections' | relative_url }"><strong>Workflow: Importing Sections</strong><span>Follow the workflow step for importing or generating sections.</span></a>
-<a class="os-link-card" href="{ '/pages/slicing/2-slicing/' | relative_url }"><strong>Slicing</strong><span>Create sections from imported 3D stratigraphy.</span></a>
+<a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#importing-sections' | relative_url }}"><strong>Workflow: Importing Sections</strong><span>Follow the workflow step for importing or generating sections.</span></a>
+<a class="os-link-card" href="{{ '/pages/project-management/1-project-management/#creating-sections' | relative_url }}"><strong>Slicing</strong><span>Create sections from imported 3D stratigraphy.</span></a>
 </div>
 
 </div>
@@ -361,13 +361,13 @@ At minimum, check and define:
 - **Bench properties** such as bench height, bench face angle, berm width, and number of benches.
 - **Rock properties** using the appropriate strength model.
 - **General section properties** such as crest position, slope height, and target Factor of Safety.
-- Optional inputs such as water table, surcharge, roads, tension cracks, and faults if they apply.
+- Optional inputs, such as a water table, surcharge, roads, tension cracks, and faults, if applicable.
 
 <div class="os-warning" markdown="1">
 <strong>Check the crest point:</strong> If the crest point is too close to the section boundary, the OSA search region may extend outside the available ground surface.
 </div>
 
-<a class="os-link-card" href="{ '/pages/properties/6-properties/' | relative_url }">
+<a class="os-link-card" href="{{ '/pages/properties/6-properties/' | relative_url }}">
 <strong>Open Properties</strong>
 <span>Review bench, rock, general section, water table, and fault settings.</span>
 </a>
@@ -388,12 +388,12 @@ Before starting:
 1. Select the section of interest.
 2. Set a simulation folder.
 3. Configure the user profile under `Tools -> Settings -> Account` if this is the first cloud run.
-4. Review any warnings, especially geometry, gaps, overlaps, crest point, and OSA search region warnings.
+4. Review any warnings, especially those concerning geometry, gaps, overlaps, the crest point, or the OSA search region.
 5. Start the simulation and fetch results when available.
 
 <div class="os-link-grid" markdown="0">
-<a class="os-link-card" href="{ '/pages/Tutorials/Workflow/#running-simulations' | relative_url }"><strong>Workflow: Running Simulations</strong><span>See the detailed simulation workflow.</span></a>
-<a class="os-link-card" href="{ '/pages/troubleshooting/' | relative_url }"><strong>Troubleshooting</strong><span>Check common issues before and after running simulations.</span></a>
+<a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#running-simulations' | relative_url }}"><strong>Workflow: Running Simulations</strong><span>See the detailed simulation workflow.</span></a>
+<a class="os-link-card" href="{{ '/pages/troubleshooting/' | relative_url }}"><strong>Troubleshooting</strong><span>Check common issues before and after running simulations.</span></a>
 </div>
 
 </div>
@@ -410,14 +410,14 @@ Before starting:
 After the simulation is complete:
 
 - review the result plot and logs;
-- export the optimized slope profile to DXF if it is needed for external workflows;
+- export the optimised slope profile to DXF if it is needed for external workflows;
 - export a section block model when the section is associated with 3D stratigraphy;
 - use downstream import steps for RS2 or Datamine where relevant.
 
 <div class="os-link-grid" markdown="0">
-<a class="os-link-card" href="{ '/pages/Tutorials/Workflow/#exporting-output-profile-to-dxf' | relative_url }"><strong>Export DXF</strong><span>Export the optimized slope profile for external analysis.</span></a>
-<a class="os-link-card" href="{ '/pages/Tutorials/Workflow/#exporting-the-section-block-model' | relative_url }"><strong>Export Block Model</strong><span>Create a block model using optimized slope-angle results.</span></a>
-<a class="os-link-card" href="{ '/pages/Tutorials/Workflow/#import-block-model-into-datamine' | relative_url }"><strong>Import into Datamine</strong><span>Import and combine exported block model data in Datamine.</span></a>
+<a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#exporting-output-profile-to-dxf' | relative_url }}"><strong>Export DXF</strong><span>Export the optimised slope profile for external analysis.</span></a>
+<a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#exporting-the-section-block-model' | relative_url }}"><strong>Export Block Model</strong><span>Create a block model using optimised slope-angle results.</span></a>
+<a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#import-block-model-into-datamine' | relative_url }}"><strong>Import into Datamine</strong><span>Import and combine exported block model data in Datamine.</span></a>
 </div>
 
 </div>

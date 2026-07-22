@@ -352,7 +352,7 @@ layout: post
 <section class="os-props-hero" markdown="0">
 <div class="kicker">Simulation input reference</div>
 <div class="os-props-hero-title">Properties</div>
-<p>Reference guide for bench, rock, section, fault, and water table properties used when defining inputs of simulations.</p>
+<p>Reference guide for the bench, rock, section, fault, and water table properties used to define simulation inputs.</p>
 </section>
 
 <div class="os-props-nav" markdown="0">
@@ -403,7 +403,7 @@ layout: post
 
 At this stage, a **fixed bench height** is used for each rock or section layer.
 
-When working with **3D rock models**, if a bench height is defined, it is automatically **inherited by the section** from its parent shape during the slicing operation. This ensures consistency between the 3D model and the generated section geometry. If required, section bench height can be directly edited later.
+When working with **3D rock models**, if a bench height is defined, it is automatically **inherited by the section** from its parent shape during the slicing operation. This ensures consistency between the 3D model and the generated section geometry. If required, the section's bench height can be edited later.
 
 By default, bench height is set by **specifying a bench height** for either:
 
@@ -424,7 +424,7 @@ If slope height = 120 m and number of benches = 12, then bench height = 10 m.
 
 <div class="os-subtitle">Bench-compatible slope height</div>
 
-Bench-compatible slope height is the maximum slope height that allows an integer number of benches without exceeding the total slope height.
+Bench-compatible slope height is the maximum slope height that allows a whole number of benches without exceeding the total slope height.
 
 <div class="os-note" markdown="1">
 <strong>Example</strong><br>
@@ -557,7 +557,7 @@ Hoek-Brown or Mohr-Coulomb properties are set depending on the strength model of
 
 <div class="os-tip" markdown="1">
 <strong>Note</strong><br>
-Bench properties and rock properties can be set for individual 3D stratigraphy. If sections are generated using the slicing tool, sections automatically inherit these properties. If sections are imported directly, properties can be set manually for each layer in a particular section.
+Bench and rock properties can be set for individual 3D stratigraphic models. If sections are generated using the slicing tool, they automatically inherit these properties. If sections are imported directly, properties can be set manually for each layer in a particular section.
 </div>
 
 </div>
@@ -632,7 +632,7 @@ Bench properties and rock properties can be set for individual 3D stratigraphy. 
 
 The **crest point** defines the uppermost starting location of the slope in the model. Its position directly affects how the slope geometry is generated during optimisation.
 
-If the crest is placed **too close to the outer edge** of the section or terrain, the calculated slope, based on the **initial maximum overall slope angle**, may project outward beyond the existing ground surface. In this case, parts of the slope will extend into **open space**, effectively creating a geometry that intersects “thin air.” This can lead to unrealistic results and may cause instability or inaccuracies in subsequent simulations.
+If the crest is placed **too close to the outer edge** of the section or terrain, the calculated slope, based on the **initial maximum overall slope angle**, may project outward beyond the existing ground surface. In this case, parts of the slope will extend into **open space**, effectively creating geometry that intersects “thin air.” This can lead to unrealistic results and may cause instability or inaccuracies in subsequent simulations.
 
 To avoid this, position the crest point **further inland**, so that:
 
@@ -644,7 +644,7 @@ When the crest point is set correctly, the section preview shows the preliminary
 
 The preliminary OSA limits are calculated from the selected crest point and the section properties. If the crest point and properties result in a very narrow difference between the minimum and maximum OSA, the simulation has only a limited search range. In this case, the optimiser will not be able to explore many possible slope profiles, which may reduce the quality or usefulness of the optimisation result.
 
-A wider and realistic OSA search range gives the optimiser more flexibility to investigate alternative slope shapes while still remaining within the valid section geometry.
+A wider, realistic OSA search range gives the optimiser more flexibility to investigate alternative slope shapes while remaining within the valid section geometry.
 
 <div class="os-recommendation" markdown="1">
 <strong>Practical tips</strong>
@@ -706,7 +706,7 @@ The **Maximum Fault Segment Length** parameter is defined under **Optional Prope
 <tr>
 <td>Maximum Fault Segment Length</td>
 <td>m</td>
-<td>Controls how imported fault polylines are segmented for analysis. Higher values create fewer segments and faster computation, while lower values create more segments and provide a more detailed representation of the fault geometry. Default value is <code>20 m</code>.</td>
+<td>Controls how imported fault polylines are segmented for analysis. Higher values create fewer segments and allow faster computation, while lower values create more segments and provide a more detailed representation of the fault geometry. The default value is <code>20 m</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -744,7 +744,7 @@ The **Maximum fault segment length** parameter controls how imported fault polyl
 <div class="os-card-grid" markdown="0">
 <div class="os-card">
 <strong>Higher value</strong>
-<p>Creates fewer fault segments, which can reduce computation time and make the simulation faster. The fault geometry may be represented in a more simplified way.</p>
+<p>Creates fewer fault segments, which can reduce computation time and make the simulation faster. The fault geometry may be represented in a simplified form.</p>
 </div>
 
 <div class="os-card">
@@ -821,15 +821,15 @@ The water table, also referred to as the **piezometric line**, can be defined fo
 To define the water table:
 
 1. Click **Draw**.
-2. In the visualiser, hover over the desired bench line and select a point.
-3. Continue selecting points along the required bench lines.
-4. Close the piezometric line by selecting the final point on the boundary.
+2. In the visualiser, select the slope toe on the lowest bench line to add the first water table point.
+3. Move upwards through the section, selecting one water table point on each required bench line.
+4. To close the piezometric line, hover over the section boundary on the left or right side, depending on the section orientation. When a valid boundary point is detected, a red circle is displayed around it. Select the highlighted point to add the final boundary point.
 5. Press **Enter** to confirm, or press **Esc** to cancel.
 
 <div class="os-note" markdown="1">
 <strong>Notes</strong>
 
-- The first point at the slope toe is assigned automatically.
+- Define the water table from the slope toe upwards, beginning on the lowest bench line.
 - Only one water table point is allowed per bench.
 - The water table should be defined so that it follows the expected groundwater conditions for the selected cross-section.
 </div>

@@ -297,7 +297,7 @@ permalink: /pages/troubleshooting/
 <section class="os-guide-section" id="gaps-overlaps" markdown="1">
 <div class="os-guide-section-head" markdown="0">
 <div class="label">Geometry warning</div>
-<h2 id="gaps-overlaps">Gaps and overlaps warning</h2>
+<h2 id="gaps-overlaps">Gaps and Overlaps Warning</h2>
 <p>Gaps and overlaps indicate that the section geometry may not assign material regions clearly.</p>
 </div>
 <div class="os-guide-section-body" markdown="1">
@@ -332,7 +332,7 @@ Open the Visualiser and inspect detected markers:
 <strong>When it may be acceptable:</strong> A few small isolated markers away from the critical slope region may not significantly affect the result, but the geometry should still be reviewed carefully.
 </div>
 
-<a class="os-link-card" href="{ '/pages/Tutorials/Workflow/#section-geometry-checks-gaps-and-overlaps' | relative_url }">
+<a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#section-geometry-checks-gaps-and-overlaps' | relative_url }}">
 <strong>Related workflow section</strong>
 <span>Read the detailed gaps and overlaps checklist.</span>
 </a>
@@ -372,7 +372,7 @@ If the minimum and maximum OSA values create only a very small search range, the
 <strong>Practical tip:</strong> Position the crest slightly further inside the section boundary than you think is necessary, then confirm that the OSA search region remains inside valid material.
 </div>
 
-<a class="os-link-card" href="{ '/pages/Tutorials/Workflow/#crest-point-and-osa-search-region-checks' | relative_url }">
+<a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#crest-point-and-osa-search-region-checks' | relative_url }}">
 <strong>Related workflow section</strong>
 <span>Read the crest point and OSA search region guidance.</span>
 </a>
@@ -384,7 +384,7 @@ If the minimum and maximum OSA values create only a very small search range, the
 <div class="os-guide-section-head" markdown="0">
 <div class="label">Simulation setup</div>
 <h2 id="simulation-start">Simulation does not start</h2>
-<p>Most start-up issues are caused by missing setup, missing section data, or unresolved input warnings.</p>
+<p>Most start-up issues are caused by incomplete configuration, missing section data, or unresolved input warnings.</p>
 </div>
 <div class="os-guide-section-body" markdown="1">
 
@@ -398,10 +398,10 @@ Check the following:
 - Any warnings have been reviewed before continuing.
 
 <div class="os-note" markdown="1">
-<strong>Cloud simulation note:</strong> Slope Optimiser runs simulations on the cloud, so the user account/profile must be configured before cloud runs can be submitted.
+<strong>Cloud simulation note:</strong> Slope Optimiser runs simulations in the cloud, so the user account profile must be configured before cloud runs can be submitted.
 </div>
 
-<a class="os-link-card" href="{ '/pages/Tutorials/Workflow/#running-simulations' | relative_url }">
+<a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#running-simulations' | relative_url }}">
 <strong>Related workflow section</strong>
 <span>Review the full simulation setup workflow.</span>
 </a>
@@ -440,9 +440,9 @@ Check that:
 - slope-angle fields are imported as numeric attributes where required.
 
 <div class="os-link-grid" markdown="0">
-<a class="os-link-card" href="{ '/pages/Tutorials/Workflow/#exporting-output-profile-to-dxf' | relative_url }"><strong>Export DXF</strong><span>Review export options and coordinate systems.</span></a>
-<a class="os-link-card" href="{ '/pages/Tutorials/Workflow/#importing-output-into-rockscience-rs2' | relative_url }"><strong>Import into RS2</strong><span>Prepare exported profiles for RS2.</span></a>
-<a class="os-link-card" href="{ '/pages/Tutorials/Workflow/#import-block-model-into-datamine' | relative_url }"><strong>Import into Datamine</strong><span>Map block model fields and combine slope-angle data.</span></a>
+<a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#exporting-output-profile-to-dxf' | relative_url }}"><strong>Export DXF</strong><span>Review export options and coordinate systems.</span></a>
+<a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#importing-output-into-rockscience-rs2' | relative_url }}"><strong>Import into RS2</strong><span>Prepare exported profiles for RS2.</span></a>
+<a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#import-block-model-into-datamine' | relative_url }}"><strong>Import into Datamine</strong><span>Map block model fields and combine slope-angle data.</span></a>
 </div>
 
 </div>

@@ -306,7 +306,7 @@ layout: post
 
 <section class="os-workflow-hero" markdown="0">
 <div class="kicker">Simulation Workflow Tutorial</div>
-<p>Follow the complete Slope Optimiser's workflow from importing a section and defining properties to running simulations, reviewing results, exporting profiles, and preparing downstream models.</p>
+<p>Follow the complete Slope Optimiser workflow, from importing a section and defining properties to running simulations, reviewing results, exporting profiles, and preparing downstream models.</p>
 </section>
 
  
@@ -315,13 +315,13 @@ layout: post
 <a href="#importing-sections"><span class="step">1</span><strong>Import Sections</strong><span>Start from DXF sections or slice sections from 3D stratigraphy.</span></a>
 <a href="#defining-properties"><span class="step">2</span><strong>Define Properties</strong><span>Assign bench, rock, general, and optional simulation properties.</span></a>
 <a href="#running-simulations"><span class="step">3</span><strong>Run Simulations</strong><span>Configure cloud simulation inputs and check geometry before running.</span></a>
-<a href="#exporting-output-profile-to-dxf"><span class="step">4</span><strong>Export DXF</strong><span>Export the optimized output profile for external workflows.</span></a>
-<a href="#importing-output-into-rockscience-rs2"><span class="step">5</span><strong>Import into RS2</strong><span>Prepare the exported profile for Rockscience RS2 stability analysis.</span></a>
-<a href="#exporting-the-section-block-model"><span class="step">6</span><strong>Export Block Model</strong><span>Create a section block model from 3D stratigraphy and optimized slope angles.</span></a>
+<a href="#exporting-output-profile-to-dxf"><span class="step">4</span><strong>Export DXF</strong><span>Export the optimised output profile for external workflows.</span></a>
+<a href="#importing-output-into-rockscience-rs2"><span class="step">5</span><strong>Import into RS2</strong><span>Prepare the exported profile for Rocscience RS2 stability analysis.</span></a>
+<a href="#exporting-the-section-block-model"><span class="step">6</span><strong>Export Block Model</strong><span>Create a section block model from 3D stratigraphy and optimised slope angles.</span></a>
 <a href="#import-block-model-into-datamine"><span class="step">7</span><strong>Import Block Model into Datamine</strong><span>Import the exported block model CSV and combine slope-angle data.</span></a>
 </div>
 
-Follow these steps to configure properties for a selected section in Slope Optimiser to run a simulation:
+Follow these steps to configure a selected section in Slope Optimiser and run a simulation:
 
 <section class="os-workflow-step" id="importing-sections" markdown="1">
 <div class="os-workflow-step-head" markdown="0">
@@ -338,17 +338,17 @@ Follow these steps to configure properties for a selected section in Slope Optim
   </video>
 </p>
 
-It is recommended to directly import sections if you already have them defined in DXF files. This method is straightforward and speeds up the process without the need to import large 3D model files to create sections.
+We recommend importing sections directly if they are already defined in DXF files. This straightforward method avoids importing large 3D model files solely to create sections.
 
 In Slope Optimiser, you have two methods available for defining cross-sections:
 
 #### Importing 3D Solid/Wireframe and Making Sections
-You can import a 3D solid or wireframe (`File -> Import Stratigraphy -> DXF`) and then use our slicing tool to create a section. For more information on slicing, refer to [Slicing](https://optimalslope.github.io/manual/pages/slicing/2-slicing/).
+You can import a 3D solid or wireframe (`File -> Import Stratigraphy -> DXF`) and then use the slicing tool to create a section. For more information, refer to [Creating Sections](https://optimalslope.github.io/manual/pages/project-management/1-project-management/#creating-sections).
 
 #### Directly Importing DXF Section File
 Alternatively, you can directly import a DXF section file using the pathway: `File -> Import Section -> DXF`. 
 #### Use Quality Input Data
-Ensure your DXF model data meets general quality standards to ensure the best simulation results. For guidelines on data preparation and ensuring quality, refer to [Data Preparation](https://optimalslope.github.io/manual/pages/Data%20Suitability/7-data/).
+Ensure your DXF model data meets general quality standards to obtain reliable simulation results. For guidance on preparing and checking data, refer to [Data Preparation](https://optimalslope.github.io/manual/pages/Data%20Suitability/7-data/).
 
 ---
 
@@ -372,10 +372,10 @@ Ensure your DXF model data meets general quality standards to ensure the best si
 
 #### Define Bench Properties
 Specify properties for benches if your cross-section includes them:
-- **Unit Weight**: Weight of material per cubic meter.
+- **Unit Weight**: Weight of material per cubic metre.
 - **Bench Face Angle**: Inclination angle of bench faces.
 - **Min Berm Width**: Minimum width of berms between benches.
-- **Number of Benches**: Total benches count.
+- **Number of Benches**: Total number of benches.
 - **Bench Height**: Height of each bench.
 
 #### Set Rock Properties
@@ -387,7 +387,7 @@ Choose between Hoek-Brown and Mohr-Coulomb models and set properties like:
   <img src="https://OptimalSlope.github.io/manual/assets/tutorial/layer_properties.png" alt="Layer properties"/>
 </p>
 
-Section rock properties are set for each section layer separately. Alternatively, if 3D models are used to generate sections, properties can be provided at the 3D level initially. When making a section using the slicing tool, they are automatically inherited from parent 3D models.
+Rock properties are set separately for each section layer. Alternatively, if 3D models are used to generate sections, properties can be defined initially at the 3D model level. Sections created using the slicing tool automatically inherit these properties from their parent 3D models.
 
 #### General Section Properties
 Set general properties for the section:
@@ -399,7 +399,7 @@ Set general properties for the section:
   <img src="https://OptimalSlope.github.io/manual/assets/tutorial/general_properties.png" alt="General properties"/>
 </p>
 
-The above properties (bench, rock, and general properties) must be provided to run simulations. Optional properties below can be added if needed.
+The bench, rock, and general properties described above must be provided before running a simulation. The optional properties listed below can be added if required.
 
 
 
@@ -408,12 +408,12 @@ The above properties (bench, rock, and general properties) must be provided to r
 
 #### Optional Properties
 - **Water Table**: Location and properties of the water table, if applicable.
-- **Surcharge**: Additional loads like magnitude and inclination, if applicable.
+- **Surcharge**: An additional load defined by its magnitude and inclination, if applicable.
 - **Roads**: Presence and properties of roads on or near the slope.
 - **Tension Crack Properties**: Characteristics of any tension cracks.
--  **Faults**: Geometry and material properties of faults, if applicable. For detailed information on faults, refer to the [OptimalSlope Manual on Faults](https://optimalslope.github.io/manual/pages/properties/6-properties/#Faults).
+- **Faults**: Geometry and material properties of faults, if applicable. For detailed information on faults, refer to the [OptimalSlope Manual on Faults](https://optimalslope.github.io/manual/pages/properties/6-properties/#faults).
 
-Ensure all values are accurate and reflect the physical/mechanical characteristics of your material and cross-section specifics.
+Ensure that all values accurately reflect the physical and mechanical characteristics of the materials and the specific cross-section.
 
 For detailed guidance, refer to the [OptimalSlope Manual on Properties](https://optimalslope.github.io/manual/pages/properties/6-properties/).
 
@@ -432,9 +432,9 @@ For detailed guidance, refer to the [OptimalSlope Manual on Properties](https://
 
 **Overview**
 
-Slope Optimiser runs simulations on the cloud to avoid overloading local resources and affecting the performance of the user's machine due to the nature of computationally heavy simulations.
+Slope Optimiser runs computationally intensive simulations in the cloud to avoid overloading local resources or affecting the performance of the user's computer.
 
-After the problem of simulation is formulated with required inputs, the simulation window is used to run simulations and obtain the results.
+After the simulation problem has been defined with the required inputs, use the simulation window to run the analysis and obtain results.
 
 
 <p align="center">
@@ -444,15 +444,15 @@ After the problem of simulation is formulated with required inputs, the simulati
   </video>
 </p>
 
-**Configuring user profile**
-* To run simulations on the cloud, the user profile is configured under **Tools > Settings > Account**.
+**Configuring the user profile**
+* To run simulations in the cloud, configure the user profile under **Tools > Settings > Account**.
 
 
 
 After the input data is defined, simulations can be started in the simulation window. Follow these steps before starting a simulation:
 1. **Select a section of interest**. Select any section with the required properties.
-2. **Set a simulation folder**. This informs where to write simulation results and logs.
-3. **Make sure user's profile is configured**. When running a simulation for the first time, go to `Tools -> Settings -> Account` and enter provided credential information, click `Configure`. This ensures that your simulation can run on the cloud.
+2. **Set a simulation folder**. This specifies where simulation results and logs will be written.
+3. **Make sure the user profile is configured**. When running a simulation for the first time, go to `Tools -> Settings -> Account`, enter the provided credentials, and click **Configure**. This ensures that the simulation can run in the cloud.
 
 <p align="center">
   <img src="https://OptimalSlope.github.io/manual/assets/tutorial/profile_setup.png" alt="Profile setup"/>
@@ -525,7 +525,7 @@ For reliable simulation results, review and repair significant gaps and visible 
 
 The **crest point** defines the uppermost starting location of the slope in the model. Its position directly affects how the slope geometry is generated during optimisation.
 
-If the crest is placed **too close to the outer edge** of the section or terrain, the calculated slope (based on the **initial maximum overall slope angle**) may project outward beyond the existing ground surface. In this case, parts of the slope will extend into **open space** — effectively creating a geometry that intersects “thin air.” This can lead to unrealistic results and may cause instability or inaccuracies in subsequent simulations.
+If the crest is placed **too close to the outer edge** of the section or terrain, the calculated slope (based on the **initial maximum overall slope angle**) may project outward beyond the existing ground surface. In this case, parts of the slope will extend into **open space** — effectively creating geometry that intersects “thin air.” This can lead to unrealistic results and may cause instability or inaccuracies in subsequent simulations.
 
 To avoid this, position the crest point **further inland**, so that:
 
@@ -545,7 +545,7 @@ The preliminary OSA limits are calculated from the selected crest point and the 
   <img src="https://OptimalSlope.github.io/manual/assets/docs_images/min_max_limited.png" alt="Profile setup"/>
 </p>
 
-A wider and realistic OSA search range gives the optimiser more flexibility to investigate alternative slope shapes while still remaining within the valid section geometry.
+A wider, realistic OSA search range gives the optimiser more flexibility to investigate alternative slope shapes while remaining within the valid section geometry.
 
 **Practical Tips:**
 
@@ -559,9 +559,9 @@ A wider and realistic OSA search range gives the optimiser more flexibility to i
 
 1. Switch to the **Simulation** tab at the bottom of the interface.
 2. Under **Cross-sections**, select the desired cross-section.
-3. Specify simulation folder.
+3. Specify a simulation folder.
 4. **To start a simulation**, click the **Start** button and then enter the configured username.
-5. The **Fetch results** button is used to download the results and/or see the progress when simulations are running.
+5. Use **Fetch results** to download completed results or view the progress of a running simulation.
 
 #### Creating Different Scenarios  
 
@@ -592,15 +592,15 @@ or:
 - **A different results folder** for each scenario.
 
 This helps avoid conflicts between simulation outputs, logs, and exported result files. 
-**Note**: when you need to re-run the same section more than once, e.g., with corrected parameters, select **Yes** to overwrite the existing input data when starting a simulation.
+**Note:** When rerunning a section with corrected parameters, select **Yes** to overwrite the existing input data when starting the simulation.
 
 
 
 
 #### Results
-* Slope Optimiser returns results in the form of a plot, which displays estimated optimal profile of a slope.
+* Slope Optimiser returns a plot that displays the estimated optimal slope profile.
 * The estimated profile coordinates and angles are displayed in the logs.
-* The results folder also contains plots and obtained optimal profile data.
+* The results folder also contains plots and optimal-profile data.
 
 
 
@@ -615,7 +615,7 @@ This helps avoid conflicts between simulation outputs, logs, and exported result
  
 
 
-- **Note:** results in the 2D plot are always shown as if the slope is on the right side (mirrored if it is on the left side). When exporting output profile to DXF or visualising in 3D, a produced slope profile is shown in the original position.
+- **Note:** Results in the 2D plot are always shown as if the slope is on the right side and are mirrored if the slope is on the left. When exporting the output profile to DXF or visualising it in 3D, the resulting slope profile is shown in its original position.
 
 
 </div>
@@ -625,7 +625,7 @@ This helps avoid conflicts between simulation outputs, logs, and exported result
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 4</div>
 <h2 id="exporting-output-profile-to-dxf">Exporting Output Profile to DXF</h2>
-<p>Export the optimized slope profile using global or local coordinate options.</p>
+<p>Export the optimised slope profile using global or local coordinate options.</p>
 </div>
 <div class="os-workflow-step-body" markdown="1">
 
@@ -636,7 +636,7 @@ This helps avoid conflicts between simulation outputs, logs, and exported result
   </video>
 </p> -->
 
-The obtained results of a simulation are shown in 2D plot window and also displayed in the form of logs. The estimated shape of the slope profile can be exported to DXF and later imported to other software.
+Simulation results are shown in the 2D plot window and recorded in the logs. The estimated slope profile can be exported to DXF and later imported into other software.
 
 
 <p align="center">
@@ -645,9 +645,9 @@ The obtained results of a simulation are shown in 2D plot window and also displa
 
 - Navigate to the tools section in the simulation window (`Export output profile to DXF`).
 - Select one of the export configurations:
-    - `Global` - exported coordinates of profile are in the original global coordinate system. Useful when the result is visualised with respect to the original section or 3D models.
-    - `Local XZ` - exported coordinates of profile are aligned to the XZ plane (Y coordinate is fixed).
-    - `Local XY` - exported coordinates are flattened, i.e., the section is on the XY plane and is horizontal (Z coordinate is fixed). Useful when exporting to software like Rockscience RS2.
+    - `Global` - the exported profile coordinates use the original global coordinate system. This is useful when the result is visualised relative to the original section or 3D models.
+    - `Local XZ` - the exported profile coordinates are aligned with the XZ plane (the Y coordinate is fixed).
+    - `Local XY` - exported coordinates are flattened, i.e., the section is on the XY plane and is horizontal (Z coordinate is fixed). This option is useful when exporting to software such as Rocscience RS2.
 
 
 </div>
@@ -656,14 +656,14 @@ The obtained results of a simulation are shown in 2D plot window and also displa
 <section class="os-workflow-step" id="importing-output-into-rockscience-rs2" markdown="1">
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 5</div>
-<h2 id="importing-output-into-rockscience-rs2">Importing Output into Rockscience RS2</h2>
+<h2 id="importing-output-into-rockscience-rs2">Importing Output into Rocscience RS2</h2>
 <p>Import the exported DXF profile into RS2 and complete the external boundary definition manually.</p>
 </div>
 <div class="os-workflow-step-body" markdown="1">
 
 Since results from Slope Optimiser may be used in RS2 for stability analysis, this step explains how to import Slope Optimiser output. Several steps are required to import an output profile DXF file into RS2.
 ##### Step 1: Export output profile to DXF from our software
- - **Export output profile as DXF** (as explained in step 4) using the `Local XY` export method. This is required as RS2 expects a 2D section, so coordinates are flattened to have a horizontal section on the XY plane.
+ - **Export the output profile as DXF** (as explained in Step 4) using the `Local XY` export method. This is required because RS2 expects a 2D section, so the coordinates are flattened to place the section horizontally on the XY plane.
 
 <!-- ##### Step 2: Modify the DXF File in AutoCAD
 - **Open the DXF file in AutoCAD.**
@@ -674,7 +674,7 @@ Since results from Slope Optimiser may be used in RS2 for stability analysis, th
 ##### Step 2: Import into RS2
 - **Import the DXF File**: Open RS2 and import the modified DXF file.
 - **Set Boundary Types**: RS2 assigns Boundary Types based on layer names. Ensure your layer names match the expected Boundary Types in RS2. If a layer name does not match, it will be set to 'Not Assigned'.
-- **Define the model**: For a slope model, set the boundary type as 'Material'. Note that the 'External' role should not be used for the top and bottom portions of the slope, which should be defined by two different polylines. RS2 expects the external boundary to define the complete outer model boundary.
+- **Define the model**: For a slope model, set the boundary type to 'Material'. Note that the 'External' role should not be used for the top and bottom portions of the slope, which should be defined by two different polylines. RS2 expects the external boundary to define the complete outer model boundary.
 
 At the moment, Slope Optimiser does not export the complete RS2 external boundary by default. The external boundary must be added or drawn manually in RS2 after importing the DXF.
 
@@ -688,7 +688,7 @@ By following these steps, you can successfully prepare and import a DXF file int
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 6</div>
 <h2 id="exporting-the-section-block-model">Exporting the Section Block Model</h2>
-<p>Export a block model for sections associated with 3D stratigraphy using optimized slope angles.</p>
+<p>Export a block model for sections associated with 3D stratigraphy using optimised slope angles.</p>
 </div>
 <div class="os-workflow-step-body" markdown="1">
 
@@ -698,7 +698,7 @@ If the project contains 3D stratigraphy, the section block model can be exported
   <img src="https://OptimalSlope.github.io/manual/assets/docs_images/block_model_export.png" alt="Export output"/>
 </p>
 
-This export creates a block model for the selected section using the optimized slope angles from the simulation result. The exported model can be used for further visualisation, checking, or downstream modelling workflows.
+This export creates a block model for the selected section using the optimised slope angles from the simulation result. The exported model can be used for further visualisation, checking, or downstream modelling workflows.
 
 Before exporting, define the block dimensions:
 
@@ -717,7 +717,7 @@ Choose block dimensions that are appropriate for the scale of the model. Smaller
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 7</div>
 <h2 id="import-block-model-into-datamine">Import Block Model into Datamine</h2>
-<p>Import the OptimalSlope exported block model CSV into Datamine, assign the correct block model fields, and combine slope-angle output with the original block model.</p>
+<p>Import the block model CSV exported from OptimalSlope into Datamine, assign the correct block model fields, and combine the slope-angle output with the original block model.</p>
 </div>
 <div class="os-workflow-step-body" markdown="1">
 
@@ -862,7 +862,7 @@ Run the Datamine function:
 ADDMOD
 ```
 
-Use `ADDMOD` to add the slope-angle model to the base block model, then save the output as a new Datamine block model file. In this tutorial example, `Block_Model_Slope` is added to `Block_Model_XYZ`, but the exact file names can be changed.
+Use `ADDMOD` to add the slope-angle model to the base block model, then save the output as a new Datamine block model file. In this example, `Block_Model_Slope` is added to `Block_Model_XYZ`, but the exact file names can be changed.
 
 <div class="os-note" markdown="1">
 <strong>Naming note:</strong> The names `Block_Model_XYZ` and `Block_Model_Slope` are examples only. Datamine does not require these exact names. The important point is to use consistent, recognisable names so the correct base model and slope-angle model are selected in `ADDMOD`.

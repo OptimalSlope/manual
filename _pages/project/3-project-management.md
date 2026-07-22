@@ -381,7 +381,7 @@ layout: post
 <a href="#savingloading-projects">
 <span class="icon">2</span>
 <strong>Save and Load</strong>
-<span>Save project files and open existing Slope Optimiser's project data.</span>
+<span>Save project files and open existing Slope Optimiser project data.</span>
 </a>
 
 <a href="#importing-data">
@@ -462,7 +462,7 @@ An empty project can be created using one of the following methods:
 
 <div class="os-subtitle">Loading an existing project</div>
 
-- An existing project in `.cbf` format is imported by clicking **Open Project** in the file menu.
+- Open an existing project in `.cbf` format by clicking **Open Project** in the file menu.
 - An import operation in progress is indicated by the loading symbol in the status bar.
 - Loading larger files can take longer than a minute depending on the machine and project size.
 
@@ -508,7 +508,7 @@ A pit boundary surface can be imported and used to generate a trimmed version of
 
 <div class="os-tip" markdown="1">
 <strong>Tip</strong><br>
-It is advised to define names and colours of layers while generating model files. Otherwise, naming and colouring of model layers can be manually set in the Slope Optimiser GUI.
+Define layer names and colours when generating model files. Otherwise, layer names and colours can be set manually in the Slope Optimiser interface.
 </div>
 
 <div class="os-subtitle">Supported import file formats</div>
@@ -526,21 +526,6 @@ It is advised to define names and colours of layers while generating model files
 <td>DXF</td>
 <td>Autodesk drawing exchange format</td>
 <td>.dxf</td>
-</tr>
-<tr>
-<td>BREP</td>
-<td>Open Cascade native format</td>
-<td>.brep</td>
-</tr>
-<tr>
-<td>IGES</td>
-<td>Older solid-based format</td>
-<td>.iges</td>
-</tr>
-<tr>
-<td>STEP</td>
-<td>Exchange format for engineering models</td>
-<td>.step</td>
 </tr>
 </tbody>
 </table>
@@ -566,7 +551,7 @@ Cross-sections can be created using one of the following cutting planes:
 
 The section location is controlled by the global plane position coordinate, in metres.
 
-For vertical cutting planes, such as **XZ** and **YZ**, the slicing tool also supports defining an **azimuth angle**. This allows vertical cross-sections to be created at different orientations.
+For vertical cutting planes, such as **XZ** and **YZ**, the slicing tool also supports defining an **azimuth angle**. This allows vertical cross-sections to be created in different orientations.
 
 <div class="os-action-card" markdown="0">
 <img src="https://OptimalSlope.github.io/manual/assets/control-icons/content-cut-custom.png" alt="Slicing tool">
@@ -674,7 +659,7 @@ The resulting section is updated using the boundary surface, so the section bett
 
 <div class="os-subtitle">Exporting 2D/3D shapes</div>
 
-Selected shapes on the visualiser can be exported by clicking **Export** in the file menu.
+Selected shapes in the visualiser can be exported by clicking **Export** in the file menu.
 
 <div class="os-subtitle">Supported export file formats</div>
 
@@ -691,21 +676,6 @@ Selected shapes on the visualiser can be exported by clicking **Export** in the 
 <td>DXF</td>
 <td>Autodesk drawing exchange format</td>
 <td>.dxf</td>
-</tr>
-<tr>
-<td>BREP</td>
-<td>Open Cascade native format</td>
-<td>.brep</td>
-</tr>
-<tr>
-<td>IGES</td>
-<td>Older solid-based format</td>
-<td>.iges</td>
-</tr>
-<tr>
-<td>STEP</td>
-<td>Exchange format for engineering models</td>
-<td>.step</td>
 </tr>
 <tr>
 <td>STL</td>
@@ -727,7 +697,7 @@ Selected shapes on the visualiser can be exported by clicking **Export** in the 
 
 <div class="os-subtitle">Exporting cross-section data</div>
 
-A project can contain multiple cross-sections. Each cross-section can be considered as an individual simulation project containing the properties required for the simulation.
+A project can contain multiple cross-sections. Each cross-section can be considered an individual simulation project containing the properties required for the simulation.
 
 Properties describing an individual slice and its layers can be exported in **JSON** format:
 

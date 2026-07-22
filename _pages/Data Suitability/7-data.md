@@ -382,7 +382,7 @@ layout: post
 <span>Use Polyface DXF export where possible for connected mesh geometry.</span>
 </a>
 
-<a href="#stratighraphy-preparation">
+<a href="#stratigraphy-preparation">
 <span class="icon">3</span>
 <strong>Stratigraphy</strong>
 <span>Check closed meshes, gaps, tolerance settings, and model complexity.</span>
@@ -409,7 +409,7 @@ layout: post
 </div>
 <div class="os-data-section-body" markdown="1">
 
-The quality of simulation results is highly correlated to the quality of the provided 3D stratigraphy or section data. Ensuring that the models are topologically and geometrically consistent and correct allows Slope Optimiser to make more accurate estimations during simulation.
+The quality of simulation results depends heavily on the quality of the provided 3D stratigraphy or section data. Topologically and geometrically consistent models allow Slope Optimiser to produce more reliable simulation estimates.
 
 <div class="os-callout-grid" markdown="0">
 <div class="os-card">
@@ -466,10 +466,10 @@ Due to additional processing overhead and cleaner geometry requirements, exporti
 </div>
 </section>
 
-<section class="os-data-section" id="stratighraphy-preparation" markdown="1">
+<section class="os-data-section" id="stratigraphy-preparation" markdown="1">
 <div class="os-data-section-head" markdown="0">
 <div class="label">3D stratigraphy</div>
-<h2 id="stratighraphy-preparation">Stratigraphy Preparation</h2>
+<h2 id="stratigraphy-preparation">Stratigraphy Preparation</h2>
 <p>Prepare high-quality 3D DXF models for cross-section generation without gaps, overlaps, or invalid mesh geometry.</p>
 </div>
 <div class="os-data-section-body" markdown="1">
@@ -570,6 +570,11 @@ Good quality section wires are essential inputs for simulations. Section wires c
 <strong>Sequential edge ordering</strong>
 <span>Out-of-order edges or vertex points can lead to inaccurate shape representations in local 2D coordinates.</span>
 </div>
+
+<div class="os-check">
+<strong>Avoid spline geometry</strong>
+<span>Splines represent smooth curves defined by control points and mathematical interpolation. Do not create geometry as splines in water, section, or fault layers, because processing them adds unnecessary complexity. Use polylines instead. Converting existing splines to polylines approximates the original curve with straight segments and can introduce approximation errors, so create the source geometry as polylines whenever possible.</span>
+</div>
 </div>
 
 Small voids may be acceptable, but large voids create undefined space between layers. Undefined regions cannot be assigned to a specific material during the simulation and can affect the final result.
@@ -584,11 +589,11 @@ The example above shows missing layers, which introduce incomplete section regio
 {% include overlapping.drawio.html %}
 </div>
 
-The example above shows layer overlapping introduced due to coarse-grained mesh precision.
+The example above shows overlapping layers caused by coarse mesh resolution.
 
 <div class="os-subtitle">Advice on Sections Imported from Third-Party Software</div>
 
-When generating cross-sections using tools such as Leapfrog, AutoCAD, Rhino, or other reputable CAD software, the likelihood of poor-quality sections is reduced if the 3D model itself follows high quality standards.
+When generating cross-sections using tools such as Leapfrog, AutoCAD, Rhino, or other reputable CAD software, the likelihood of poor-quality sections is reduced if the 3D model itself meets high-quality standards.
 
 The reliability of imported sections depends on the initial 3D model quality. A well-constructed model with properly aligned vertices, closed and manifold surfaces, and consistent geometry helps avoid gaps, overlaps, and distorted profiles in generated sections.
 
