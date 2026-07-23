@@ -5,6 +5,8 @@ date: 2010-06-30
 category: Reference
 layout: post
 permalink: /pages/glossary/
+toc_h_min: 2
+toc_h_max: 2
 ---
 
 
