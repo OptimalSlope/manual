@@ -352,7 +352,7 @@ layout: post
 <section class="os-props-hero" markdown="0">
 <div class="kicker">Simulation input reference</div>
 <div class="os-props-hero-title">Properties</div>
-<p>Reference guide for the bench, rock, section, fault, and water table properties used to define simulation inputs.</p>
+<p>Reference guide for slope anchors, bench and rock inputs, loads, faults, roads, and groundwater settings used to define simulations.</p>
 </section>
 
 <div class="os-props-nav" markdown="0">
@@ -377,7 +377,7 @@ layout: post
 <a href="#general-section-properties">
 <span class="icon">4</span>
 <strong>Section Properties</strong>
-<span>Define crest position, slope height, target FoS, surcharge, and road inputs.</span>
+<span>Define the slope anchor, slope geometry, target FoS, loads, roads, and water-pressure method.</span>
 </a>
 
 <a href="#faults">
@@ -567,7 +567,7 @@ Bench and rock properties can be set for individual 3D stratigraphic models. If 
 <div class="os-props-section-head" markdown="0">
 <div class="label">Section-level inputs</div>
 <h2 id="general-section-properties">General Section Properties</h2>
-<p>General section properties define the slope geometry, target factor of safety, surcharge, and road inputs.</p>
+<p>General section properties define the fixed slope endpoint, slope geometry, target factor of safety, loads, and road inputs.</p>
 </div>
 <div class="os-props-section-body" markdown="1">
 
@@ -581,14 +581,29 @@ Bench and rock properties can be set for individual 3D stratigraphic models. If 
 </thead>
 <tbody>
 <tr>
-<td>Horizontal Crest Position</td>
+<td>Slope Anchor</td>
+<td>-</td>
+<td>Selects the fixed endpoint used to define the slope: <strong>Crest</strong> or <strong>Toe</strong>.</td>
+</tr>
+<tr>
+<td>Crest Position</td>
 <td>m</td>
-<td>Defines a local horizontal crest position, X_section, within a cross-section.</td>
+<td>Local horizontal crest coordinate. Available when <strong>Crest</strong> is the active slope anchor.</td>
+</tr>
+<tr>
+<td>Toe Position</td>
+<td>m</td>
+<td>Local horizontal toe coordinate. Available when <strong>Toe</strong> is the active slope anchor.</td>
+</tr>
+<tr>
+<td>Toe Elevation</td>
+<td>m</td>
+<td>Vertical toe coordinate. It can be entered or selected in the visualiser after the toe position is defined.</td>
 </tr>
 <tr>
 <td>Slope Height</td>
 <td>m</td>
-<td>The height of the slope.</td>
+<td>Target slope height in crest-anchor mode. In toe-anchor mode, slope height is calculated from the selected toe and section geometry.</td>
 </tr>
 <tr>
 <td>Target FoS</td>
@@ -596,24 +611,9 @@ Bench and rock properties can be set for individual 3D stratigraphic models. If 
 <td>Target factor of safety.</td>
 </tr>
 <tr>
-<td>Side of slope</td>
+<td>Failure Direction</td>
 <td>-</td>
-<td>Defines whether the slope is on the left or right side.</td>
-</tr>
-<tr>
-<td>Surcharge magnitude</td>
-<td>kN/m²</td>
-<td>Unit weight of the distributed surcharge.</td>
-</tr>
-<tr>
-<td>Surcharge inclination (α)</td>
-<td>Degrees</td>
-<td>Inclination of the triangular component of distributed surcharge.</td>
-</tr>
-<tr>
-<td>Surcharge from slope crest</td>
-<td>m</td>
-<td>Distance of surcharge from the slope crest.</td>
+<td>Defines whether failure and slope generation proceed from right to left or left to right.</td>
 </tr>
 <tr>
 <td>Road width</td>
@@ -627,6 +627,20 @@ Bench and rock properties can be set for individual 3D stratigraphic models. If 
 </tr>
 </tbody>
 </table>
+
+<div class="os-subtitle">Choosing the Slope Anchor</div>
+
+The **Slope Anchor** is the fixed endpoint used to generate the candidate slope geometry.
+
+- Select **Crest** when the crest location and target slope height are known. Enter the crest position or click **Select** and choose it in the visualiser.
+- Select **Toe** when the toe location controls the design. Define the toe horizontal position and elevation by entering the values or using the two **Select** controls. Slope height and the bench-compatible height are then calculated automatically.
+- The property panel displays the resolved global coordinates and the estimated minimum and maximum OSA for the active anchor.
+
+The toe must lie inside the section, at or below the topography, and above the section floor. Toe elevations are resolved to the whole-unit elevation used by the solver. If a new value is invalid, review the message in the interface and adjust the toe position or elevation.
+
+<div class="os-note" markdown="1">
+<strong>Water-table update required:</strong> Changing the active anchor or toe geometry can invalidate an existing water table. If the application removes the water table, redraw or re-import it after the slope geometry is finalised.
+</div>
 
 <div class="os-subtitle">How should I choose the crest point?</div>
 
@@ -654,6 +668,48 @@ A wider, realistic OSA search range gives the optimiser more flexibility to inve
 - Avoid crest point positions that create a very narrow minimum-to-maximum OSA range.
 - If the green triangle is too narrow or extends outside the model, adjust the crest point or review the section properties before running the simulation.
 </div>
+
+<div class="os-subtitle">Section Loads</div>
+
+Loads are defined under **Optional Properties > Loads** and placed directly on the section topography.
+
+<table class="os-props-table">
+<thead>
+<tr>
+<th>Load type</th>
+<th>Selection</th>
+<th>Magnitude</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Line</td>
+<td>Select one point on the topography.</td>
+<td>Enter one magnitude greater than zero.</td>
+</tr>
+<tr>
+<td>Distributed — Uniform</td>
+<td>Select the left and right endpoints of the loaded interval.</td>
+<td>Enter one magnitude greater than zero.</td>
+</tr>
+<tr>
+<td>Distributed — Linear</td>
+<td>Select the left and right endpoints of the loaded interval.</td>
+<td>Enter left and right magnitudes. Both must be non-negative and at least one must be greater than zero.</td>
+</tr>
+</tbody>
+</table>
+
+To add a load:
+
+1. Choose **Line** or **Distributed**. For a distributed load, also choose **Uniform** or **Linear**.
+2. Enter the required magnitude value or values.
+3. Click **Select** and choose the point or interval on the section topography. The pointer snaps to valid topography positions.
+4. Review the new entry in the load table.
+
+Loads may not overlap. If the selected location overlaps another load, the existing load is highlighted and the new load is not accepted. Select a different position or delete the conflicting entry. Use **Cancel** to leave selection mode and **Delete** to remove the selected load.
+
+Roads remain separate optional inputs and are defined using their width and vertical position.
 
 </div>
 </section>
@@ -784,6 +840,17 @@ When testing fault sensitivity, duplicate the section and create separate scenar
 The water table, also referred to as the **piezometric line**, can be defined for a selected cross-section under:
 
 `Cross-section > Optional Properties > Water Table`
+
+<div class="os-subtitle">Water Pressure Method</div>
+
+Select the pressure method that matches the analysis assumptions:
+
+- **Inclination-corrected** accounts for the gradient of the phreatic line: `u = γw hw cos² α`.
+- **Hydrostatic** applies no inclination correction: `u = γw hw`.
+
+Here, `γw` is the unit weight of water, `hw` is the water head, and `α` is the inclination of the water-table segment. Confirm the selected method before running the simulation, particularly when the piezometric line is steep.
+
+Hydraulic conductivity is not currently available as an editable interface input.
 
 <div class="os-include-frame" markdown="1">
 {% include watertableUI.html %}

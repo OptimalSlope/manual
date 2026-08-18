@@ -340,9 +340,11 @@ You can create the analysis section in two main ways:
 
 Use direct DXF import when your section is already prepared. Use slicing when the section must be generated from 3D geological solids or wireframes.
 
+For slicing, open the tool, click **Select visible models**, choose the plane direction, and position the live clipping plane. Drag the arrow to move the plane and, for vertical planes, drag the ring to change azimuth. Review the preview before clicking **Slice**.
+
 <div class="os-link-grid" markdown="0">
 <a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#importing-sections' | relative_url }}"><strong>Workflow: Importing Sections</strong><span>Follow the workflow step for importing or generating sections.</span></a>
-<a class="os-link-card" href="{{ '/pages/project-management/1-project-management/#creating-sections' | relative_url }}"><strong>Slicing</strong><span>Create sections from imported 3D stratigraphy.</span></a>
+<a class="os-link-card" href="{{ '/pages/project/3-project-management/#creating-sections' | relative_url }}"><strong>Slicing</strong><span>Create sections from imported 3D stratigraphy.</span></a>
 </div>
 
 </div>
@@ -360,16 +362,17 @@ At minimum, check and define:
 
 - **Bench properties** such as bench height, bench face angle, berm width, and number of benches.
 - **Rock properties** using the appropriate strength model.
-- **General section properties** such as crest position, slope height, and target Factor of Safety.
-- Optional inputs, such as a water table, surcharge, roads, tension cracks, and faults, if applicable.
+- **Slope anchor**: use a crest with a target slope height, or define the toe position and elevation and let the software calculate slope height.
+- **General section properties** such as failure direction and target Factor of Safety.
+- Optional inputs, such as a water table and pressure method, line or distributed loads, roads, tension cracks, and faults.
 
 <div class="os-warning" markdown="1">
-<strong>Check the crest point:</strong> If the crest point is too close to the section boundary, the OSA search region may extend outside the available ground surface.
+<strong>Check the active slope anchor:</strong> A crest too close to the boundary can move the OSA search region outside the ground surface. A toe must have valid X and Z coordinates and remain inside the section, at or below the topography, and above the section floor.
 </div>
 
 <a class="os-link-card" href="{{ '/pages/properties/6-properties/' | relative_url }}">
 <strong>Open Properties</strong>
-<span>Review bench, rock, general section, water table, and fault settings.</span>
+<span>Review slope anchors, bench and rock inputs, loads, roads, groundwater, and fault settings.</span>
 </a>
 
 </div>
@@ -386,10 +389,11 @@ At minimum, check and define:
 Before starting:
 
 1. Select the section of interest.
-2. Set a simulation folder.
+2. Choose **Automatic** or **Custom** under **Simulation results location**. Automatic mode requires a saved project; Custom mode requires an existing selected folder.
 3. Configure the user profile under `Tools -> Settings -> Account` if this is the first cloud run.
-4. Review any warnings, especially those concerning geometry, gaps, overlaps, the crest point, or the OSA search region.
-5. Start the simulation and fetch results when available.
+4. Click **Start** and resolve every item in **Simulation Check**. Use **Fix** to open and highlight the affected input, then select **Check Again**.
+5. When the check passes, click **Start** again and review any later geometry or groundwater warnings.
+6. Fetch results when they are available.
 
 <div class="os-link-grid" markdown="0">
 <a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#running-simulations' | relative_url }}"><strong>Workflow: Running Simulations</strong><span>See the detailed simulation workflow.</span></a>
@@ -409,8 +413,11 @@ Before starting:
 
 After the simulation is complete:
 
-- review the result plot and logs;
+- review the interactive result plot and logs;
+- use the plot toolbar to control the legend and visible items, fit the plot, change its theme, copy it, or save it as PNG/SVG;
+- detach plots and keep multiple cross-section results open for comparison;
 - export the optimised slope profile to DXF if it is needed for external workflows;
+- create a new project cross-section from the optimised output when required;
 - export a section block model when the section is associated with 3D stratigraphy;
 - use downstream import steps for RS2 or Datamine where relevant.
 

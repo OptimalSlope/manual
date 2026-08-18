@@ -549,7 +549,7 @@ Cross-sections can be created using one of the following cutting planes:
 - **XZ**
 - **YZ**
 
-The section location is controlled by the global plane position coordinate, in metres.
+The section location is controlled by the global plane position coordinate, in metres. While the tool is open, the selected models are clipped in the visualiser so the proposed section can be checked before it is created.
 
 For vertical cutting planes, such as **XZ** and **YZ**, the slicing tool also supports defining an **azimuth angle**. This allows vertical cross-sections to be created in different orientations.
 
@@ -573,12 +573,17 @@ For vertical cutting planes, such as **XZ** and **YZ**, the slicing tool also su
 
 To create a section:
 
-1. Select one or more shapes in the project.
-2. Click the **Slicing** button on the toolbar, or right-click the selected shape and choose the cross-section option.
-3. Select the cutting plane: **XY**, **XZ**, or **YZ**.
-4. Specify the position of the cutting plane.
-5. If using a vertical plane, specify the azimuth angle if required.
-6. Click **Slice**.
+1. Display the 3D models that should be included in the section.
+2. Click the **Slicing** button on the toolbar, or right-click a model and choose the cross-section option.
+3. In **Model Selection**, click **Select visible models**. The status below the button confirms how many visible models are selected.
+4. Select the plane direction: **XY**, **XZ**, or **YZ**.
+5. Position the live clipping plane:
+   - enter a value under **Clipping Settings**, or
+   - drag the arrow in the visualiser to translate the plane.
+6. For an **XZ** or **YZ** plane, enter the required azimuth or drag the ring in the visualiser to rotate the plane.
+7. Review the clipped preview and click **Slice**.
+
+Click **Close** to leave the tool without creating a section. If the visible-model selection changes while the tool is open, select the required visible models again before slicing.
 
 <div class="os-include-frame" markdown="1">
 {% include slicing.html %}

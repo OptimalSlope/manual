@@ -316,7 +316,7 @@ A geological or material region within a cross-section. Each section layer can h
 
 <div class="os-glossary-term" markdown="1">
 <h3>Slicing plane</h3>
-The XY, XZ, or YZ plane used to intersect selected 3D geometry and generate a cross-section. Its global position determines where the section is created.
+The XY, XZ, or YZ plane used to intersect selected 3D geometry and generate a cross-section. The live clipping preview shows its current position; the visualiser arrow translates it and the ring rotates a vertical plane.
 </div>
 
 <div class="os-glossary-term" markdown="1">
@@ -325,13 +325,18 @@ The horizontal orientation angle of a vertical slicing plane. It allows XZ or YZ
 </div>
 
 <div class="os-glossary-term" markdown="1">
+<h3>Slope anchor</h3>
+The fixed endpoint used to define the candidate slope geometry. The user can prescribe either the crest or the toe.
+</div>
+
+<div class="os-glossary-term" markdown="1">
 <h3>Crest point</h3>
-The upper starting location of the slope profile. Its position affects the OSA search region and the generated slope geometry.
+The upper starting location of the slope profile. In crest-anchor mode, its position and the target slope height define the slope geometry and affect the OSA search region.
 </div>
 
 <div class="os-glossary-term" markdown="1">
 <h3>Toe</h3>
-The lower end of the slope profile where the slope meets the lower ground or design boundary.
+The lower end of the slope profile where the slope meets the lower ground or design boundary. In toe-anchor mode, its horizontal position and elevation are prescribed and slope height is calculated by the software.
 </div>
 
 <div class="os-glossary-term" markdown="1">
@@ -351,7 +356,7 @@ The 2D line or polyline representing the slope geometry being analysed or optimi
 
 <div class="os-glossary-term" markdown="1">
 <h3>Slope height</h3>
-The vertical height of the slope used when defining the section and bench arrangement.
+The vertical height of the slope used when defining the section and bench arrangement. It is entered in crest-anchor mode and calculated from the section geometry in toe-anchor mode.
 </div>
 
 <div class="os-glossary-term" markdown="1">
@@ -377,6 +382,16 @@ A closed, continuous 3D surface used to trim a section to an excavation, pushbac
 <div class="os-glossary-term" markdown="1">
 <h3>Water table (piezometric line)</h3>
 The groundwater boundary defined for a cross-section. It is represented as a blue polyline in the section visualiser.
+</div>
+
+<div class="os-glossary-term" markdown="1">
+<h3>Inclination-corrected water pressure</h3>
+Water pressure calculated with a correction for the phreatic-line gradient: <code>u = γw hw cos² α</code>.
+</div>
+
+<div class="os-glossary-term" markdown="1">
+<h3>Hydrostatic water pressure</h3>
+Water pressure calculated without a phreatic-line inclination correction: <code>u = γw hw</code>.
 </div>
 
 <div class="os-glossary-term" markdown="1">
@@ -502,8 +517,13 @@ The potential failure path or mechanism considered during slope stability analys
 </div>
 
 <div class="os-glossary-term" markdown="1">
-<h3>Surcharge</h3>
-An additional distributed load applied near the slope crest. Its magnitude, inclination, and distance from the crest are defined in the section properties.
+<h3>Line load</h3>
+A concentrated section load placed at one selected point on the topography. Its magnitude must be greater than zero.
+</div>
+
+<div class="os-glossary-term" markdown="1">
+<h3>Distributed load</h3>
+A load applied over an interval selected on the section topography. It may be uniform, with one magnitude, or linear, with separate left and right magnitudes.
 </div>
 
 <div class="os-glossary-term" markdown="1">
@@ -522,8 +542,18 @@ The combined section geometry, material properties, bench properties, optional f
 </div>
 
 <div class="os-glossary-term" markdown="1">
+<h3>Simulation Check</h3>
+The pre-submission panel that lists incomplete or invalid section inputs. Its Fix action navigates to and highlights the affected property; Check Again repeats the validation after corrections.
+</div>
+
+<div class="os-glossary-term" markdown="1">
 <h3>Simulation result</h3>
 The output from a completed analysis, including the estimated optimal slope profile and associated result data or plots.
+</div>
+
+<div class="os-glossary-term" markdown="1">
+<h3>Detached plot</h3>
+A static Output Plot opened in a separate window so that multiple cross-section results can be kept visible and compared side by side.
 </div>
 
 </div>

@@ -343,7 +343,9 @@ We recommend importing sections directly if they are already defined in DXF file
 In Slope Optimiser, you have two methods available for defining cross-sections:
 
 #### Importing 3D Solid/Wireframe and Making Sections
-You can import a 3D solid or wireframe (`File -> Import Stratigraphy -> DXF`) and then use the slicing tool to create a section. For more information, refer to [Creating Sections](https://optimalslope.github.io/manual/pages/project-management/1-project-management/#creating-sections).
+You can import a 3D solid or wireframe (`File -> Import Stratigraphy -> DXF`) and then use the slicing tool to create a section. For more information, refer to [Creating Sections]({{ '/pages/project/3-project-management/#creating-sections' | relative_url }}).
+
+In the current slicing tool, click **Select visible models**, choose the **XY**, **XZ**, or **YZ** plane, and position the live clipping plane. Drag the arrow to translate the plane; for a vertical plane, drag the ring to change its azimuth. Review the clipped preview before clicking **Slice**.
 
 #### Directly Importing DXF Section File
 Alternatively, you can directly import a DXF section file using the pathway: `File -> Import Section -> DXF`. 
@@ -391,9 +393,11 @@ Rock properties are set separately for each section layer. Alternatively, if 3D 
 
 #### General Section Properties
 Set general properties for the section:
-- **Horizontal Crest Position**: Position of the crest relative to the section origin.
-- **Slope Height**: Total height of the slope.
+- **Slope Anchor**: Choose whether the crest or toe is the fixed endpoint of the design.
+- **Crest anchor**: Define the crest position and target slope height.
+- **Toe anchor**: Define the toe horizontal position and elevation. The software calculates the slope height and bench-compatible height.
 - **Target FoS (Factor of Safety)**.
+- **Failure Direction**: Select right-to-left or left-to-right slope generation.
 
 <p align="center">
   <img src="https://OptimalSlope.github.io/manual/assets/tutorial/general_properties.png" alt="General properties"/>
@@ -408,7 +412,8 @@ The bench, rock, and general properties described above must be provided before 
 
 #### Optional Properties
 - **Water Table**: Location and properties of the water table, if applicable.
-- **Surcharge**: An additional load defined by its magnitude and inclination, if applicable.
+- **Water Pressure**: Use hydrostatic pressure or apply the phreatic-line inclination correction.
+- **Loads**: Add line loads or uniform/linear distributed loads by selecting their positions on the section topography.
 - **Roads**: Presence and properties of roads on or near the slope.
 - **Tension Crack Properties**: Characteristics of any tension cracks.
 - **Faults**: Geometry and material properties of faults, if applicable. For detailed information on faults, refer to the [OptimalSlope Manual on Faults](https://optimalslope.github.io/manual/pages/properties/6-properties/#faults).
@@ -426,7 +431,7 @@ For detailed guidance, refer to the [OptimalSlope Manual on Properties](https://
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 3</div>
 <h2 id="running-simulations">Running Simulations</h2>
-<p>Configure the simulation folder, user profile, input checks, and cloud simulation process.</p>
+<p>Configure results storage, the user profile, input checks, and the cloud simulation process.</p>
 </div>
 <div class="os-workflow-step-body" markdown="1">
 
@@ -451,7 +456,10 @@ After the simulation problem has been defined with the required inputs, use the 
 
 After the input data is defined, simulations can be started in the simulation window. Follow these steps before starting a simulation:
 1. **Select a section of interest**. Select any section with the required properties.
-2. **Set a simulation folder**. This specifies where simulation results and logs will be written.
+2. **Choose the results location**:
+   - **Automatic** creates a section simulation folder beside the saved project when the simulation starts.
+   - **Custom** uses a folder selected by the user.
+   Automatic storage requires the project to be saved as a `.cbf` file first. Custom folder names may contain only letters, numbers, hyphens, and underscores.
 3. **Make sure the user profile is configured**. When running a simulation for the first time, go to `Tools -> Settings -> Account`, enter the provided credentials, and click **Configure**. This ensures that the simulation can run in the cloud.
 
 <p align="center">
@@ -462,9 +470,19 @@ After the input data is defined, simulations can be started in the simulation wi
 
 #### Common Simulation Input Checks
 
-Before running a simulation, Slope Optimiser automatically checks the input data for common issues that may require manual review. These checks help identify potential problems in the section geometry, section properties, and optimisation search region before the simulation is started.
+Before submitting a simulation, Slope Optimiser opens the **Simulation Check** panel when required inputs need attention. Each issue includes a description and a **Fix** button. Selecting **Fix** opens the relevant section or layer in the Property View and highlights the field that needs input. After correcting the values, click **Check Again**.
 
-If an issue is detected, a warning message is displayed to inform the user what was found and whether the data should be reviewed before continuing. Some warnings may not prevent the simulation from running, but they indicate that the input data should be checked carefully because it may affect the reliability or usefulness of the results.
+The structured check covers:
+
+- the active crest or toe anchor and its coordinates;
+- slope height where crest-anchor mode is used;
+- target FoS and bench definition;
+- required bench and rock properties;
+- the selected strength model and its required parameters;
+- cohesion and friction angle for fault layers;
+- load positions, magnitudes, endpoints, and overlapping loads.
+
+Geometry and groundwater checks that require native model processing or a user decision can still appear later while the simulation input is generated. Review those messages before choosing whether to continue.
 
 #### Section Geometry Checks: Gaps and Overlaps
 
@@ -519,11 +537,11 @@ Before proceeding with a simulation, check the following:
 **Recommendation:**  
 For reliable simulation results, review and repair significant gaps and visible overlaps before proceeding. Clean section geometry improves material assignment and gives the optimiser a more reliable basis for estimating the optimal slope profile.
 
-#### Crest Point and OSA Search Region Checks
+#### Slope Anchor and OSA Search Region Checks
 
 #### How should I choose the crest point?
 
-The **crest point** defines the uppermost starting location of the slope in the model. Its position directly affects how the slope geometry is generated during optimisation.
+In **Crest** anchor mode, the crest point defines the uppermost starting location of the slope. Its position and the target slope height directly affect how the slope geometry is generated during optimisation.
 
 If the crest is placed **too close to the outer edge** of the section or terrain, the calculated slope (based on the **initial maximum overall slope angle**) may project outward beyond the existing ground surface. In this case, parts of the slope will extend into **open space** — effectively creating geometry that intersects “thin air.” This can lead to unrealistic results and may cause instability or inaccuracies in subsequent simulations.
 
@@ -539,7 +557,7 @@ When the crest point is set correctly, the section preview shows the preliminary
   <img src="https://OptimalSlope.github.io/manual/assets/docs_images/min_max_osa.png" alt="Profile setup"/>
 </p>
 
-The preliminary OSA limits are calculated from the selected crest point and the section properties. If the crest point and properties result in a very narrow difference between the minimum and maximum OSA, the simulation has only a limited search range. In this case, the optimiser will not be able to explore many possible slope profiles, which may reduce the quality or usefulness of the optimisation result.
+The preliminary OSA limits are calculated from the active slope anchor and the section properties. If the anchor and properties result in a very narrow difference between the minimum and maximum OSA, the simulation has only a limited search range. In this case, the optimiser will not be able to explore many possible slope profiles, which may reduce the quality or usefulness of the optimisation result.
 
 <p align="center">
   <img src="https://OptimalSlope.github.io/manual/assets/docs_images/min_max_limited.png" alt="Profile setup"/>
@@ -554,14 +572,24 @@ A wider, realistic OSA search range gives the optimiser more flexibility to inve
 - Avoid crest point positions that create a very narrow minimum-to-maximum OSA range.
 - If the green triangle is too narrow or extends outside the model, adjust the crest point or review the section properties before running the simulation.
 
+#### How should I define a toe anchor?
+
+Use **Toe** anchor mode when the lower endpoint of the design is known. Enter or select both the toe horizontal position and its elevation. The application calculates the slope height and bench-compatible height from the resolved toe.
+
+The toe must remain inside the section, at or below the topography, and above the section floor. Review the estimated OSA range after every toe adjustment. Changing the toe may invalidate the existing water table; redraw or re-import it if the application removes it.
+
 
 #### Starting Simulations 
 
 1. Switch to the **Simulation** tab at the bottom of the interface.
 2. Under **Cross-sections**, select the desired cross-section.
-3. Specify a simulation folder.
-4. **To start a simulation**, click the **Start** button and then enter the configured username.
-5. Use **Fetch results** to download completed results or view the progress of a running simulation.
+3. Select **Automatic** or **Custom** under **Simulation results location**. If using **Custom**, click **Select folder**.
+4. Click **Start**.
+5. Resolve any items listed under **Simulation Check**, then click **Check Again**.
+6. When the check passes, click **Start** again to begin submission.
+7. Continue through any geometry or groundwater warnings shown while the input is generated.
+8. Enter the configured username when requested.
+9. Use **Fetch results** to download completed results or view the progress of a running simulation.
 
 #### Creating Different Scenarios  
 
@@ -578,7 +606,7 @@ Typical scenario changes may include:
 - **Material properties** — compare different rock strength parameters or material models.
 - **Faults** — evaluate the influence of different fault positions, orientations, or fault material properties.
 - **Water table** — evaluate dry, wet, or alternative groundwater conditions.
-- **Surcharge or roads** — assess the influence of additional loads or road positions.
+- **Loads or roads** — assess line loads, distributed loads, or alternative road positions.
 
 When running simulations for duplicated sections, make sure each scenario has either:
 
@@ -598,9 +626,20 @@ This helps avoid conflicts between simulation outputs, logs, and exported result
 
 
 #### Results
-* Slope Optimiser returns a plot that displays the estimated optimal slope profile.
-* The estimated profile coordinates and angles are displayed in the logs.
-* The results folder also contains plots and optimal-profile data.
+
+Slope Optimiser returns an interactive **Output Plot** showing the estimated optimal slope profile. The plot toolbar can be used to:
+
+- show or hide the legend;
+- choose individual visible plot items or select **Show all**;
+- fit the view to the plot data;
+- switch the embedded 2D plot between light and dark backgrounds;
+- copy the plot to the clipboard;
+- save the plot as a PNG or SVG image;
+- open a detached plot window.
+
+Detached plot windows are static snapshots and can be kept open side by side to compare cross-sections. From a detached window, the same cross-section can be opened in another window. Legend visibility, plot-item visibility, fit, copy, and save controls remain available.
+
+The estimated profile coordinates and angles are also displayed in the logs, and the results folder contains the generated plots and optimal-profile data. Under **Output Tools**, use **Create cross-section from output** to add the optimised result as a new section in the project.
 
 
 

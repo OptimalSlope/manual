@@ -289,8 +289,8 @@ permalink: /pages/troubleshooting/
 
 <div class="os-guide-nav" markdown="0">
 <a href="#gaps-overlaps"><span class="icon">1</span><strong>Gaps and overlaps</strong><span>Understand geometry warnings and when to repair input data.</span></a>
-<a href="#osa-search-region"><span class="icon">2</span><strong>OSA search region</strong><span>Check crest point, Min/Max OSA, and search-region limits.</span></a>
-<a href="#simulation-start"><span class="icon">3</span><strong>Simulation setup</strong><span>Check profile, selected section, and simulation folder.</span></a>
+<a href="#osa-search-region"><span class="icon">2</span><strong>Slope anchor / OSA</strong><span>Check the crest or toe, Min/Max OSA, and search-region limits.</span></a>
+<a href="#simulation-start"><span class="icon">3</span><strong>Simulation setup</strong><span>Resolve Simulation Check items, account settings, and results storage.</span></a>
 <a href="#results-fetch"><span class="icon">4</span><strong>Results and export</strong><span>Review missing results, DXF export, and block model output.</span></a>
 </div>
 
@@ -368,11 +368,23 @@ If the minimum and maximum OSA values create only a very small search range, the
 - Adjust crest position if necessary.
 - Check that the search range is realistic for the section geometry.
 
+#### Problem: Toe anchor is rejected or incomplete
+
+The toe must have valid horizontal and vertical coordinates and must lie inside the section, at or below the topography, and above the section floor.
+
+#### How to fix
+
+- Enter or select both the toe position and toe elevation.
+- If the toe is above the topography, lower its elevation.
+- If it is below the section floor, change the horizontal position or raise the elevation.
+- If it lies outside the section, move it back within the section boundary.
+- Redraw the water table if it was removed after the toe geometry changed.
+
 <div class="os-tip" markdown="1">
 <strong>Practical tip:</strong> Position the crest slightly further inside the section boundary than you think is necessary, then confirm that the OSA search region remains inside valid material.
 </div>
 
-<a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#crest-point-and-osa-search-region-checks' | relative_url }}">
+<a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#slope-anchor-and-osa-search-region-checks' | relative_url }}">
 <strong>Related workflow section</strong>
 <span>Read the crest point and OSA search region guidance.</span>
 </a>
@@ -391,11 +403,22 @@ If the minimum and maximum OSA values create only a very small search range, the
 Check the following:
 
 - A valid section is selected.
-- Required bench, rock, and general section properties are defined.
-- A simulation folder has been selected.
+- Required bench, rock, fault, and general section properties are defined.
+- The active crest or toe anchor is complete.
+- The target FoS and bench definition are valid.
+- Loads have valid positions and magnitudes and do not overlap.
+- For **Automatic** results storage, the project has been saved as a `.cbf` file.
+- For **Custom** results storage, an existing folder has been selected and its final folder name contains only letters, numbers, hyphens, or underscores.
 - The user profile is configured under `Tools -> Settings -> Account`.
 - The selected section has valid geometry and required inputs.
 - Any warnings have been reviewed before continuing.
+
+If the **Simulation Check** panel is displayed:
+
+1. Select **Fix** beside an issue to open and highlight the affected field.
+2. Correct the value. For layer issues, repeat this for each missing property.
+3. Select **Check Again**.
+4. After the check passes, select **Start** again. Passing the check confirms readiness but does not automatically submit the simulation.
 
 <div class="os-note" markdown="1">
 <strong>Cloud simulation note:</strong> Slope Optimiser runs simulations in the cloud, so the user account profile must be configured before cloud runs can be submitted.
@@ -422,9 +445,17 @@ Check the following:
 Check that:
 
 - the simulation was submitted successfully;
-- the correct simulation folder is selected;
+- the correct automatic or custom results location is being used;
 - **Fetch results** has been used to update the local results;
 - the results folder contains logs and output files.
+
+#### Output plot is difficult to read
+
+- Use **Fit plot to data** to restore the full plot extent.
+- Toggle the legend or use **Visible plot items** to hide unnecessary series.
+- Switch the embedded plot between light and dark backgrounds when a line has insufficient contrast.
+- Save the plot as PNG or SVG if a larger external view is required.
+- Detach plots and arrange them side by side when comparing different cross-sections.
 
 #### Exported DXF does not import as expected
 

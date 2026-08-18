@@ -491,7 +491,7 @@ Start with the Data Preparation page if you are working with new 3D stratigraphy
 <span>Check geometry quality, DXF exports, section wires, gaps, overlaps, and layer organisation.</span>
 </a>
 
-<a href="pages/project-management/1-project-management/">
+<a href="pages/project/3-project-management/">
 <span class="icon">3</span>
 <strong>Manage Projects</strong>
 <span>Create, save, import, slice, trim, and export project data.</span>
@@ -500,7 +500,7 @@ Start with the Data Preparation page if you are working with new 3D stratigraphy
 <a href="pages/properties/6-properties/">
 <span class="icon">4</span>
 <strong>Define Properties</strong>
-<span>Set bench, rock, section, fault, and water table inputs for simulations.</span>
+<span>Set slope anchors, bench and rock properties, loads, faults, roads, and groundwater inputs.</span>
 </a>
 
 <a href="pages/Tutorials/Workflow/">
