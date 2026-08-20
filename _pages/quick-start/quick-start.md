@@ -399,7 +399,7 @@ Before starting:
 
 <div class="os-link-grid" markdown="0">
 <a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#running-simulations' | relative_url }}"><strong>Workflow: Running Simulations</strong><span>See the detailed simulation workflow.</span></a>
-<a class="os-link-card" href="{{ '/pages/troubleshooting/' | relative_url }}"><strong>Troubleshooting</strong><span>Check common issues before and after running simulations.</span></a>
+<a class="os-link-card" href="{{ '/pages/troubleshooting/' | relative_url }}"><strong>Help and Solutions</strong><span>Check common issues before and after running simulations.</span></a>
 </div>
 
 </div>

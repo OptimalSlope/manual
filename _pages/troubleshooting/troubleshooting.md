@@ -1,8 +1,8 @@
 ---
-title: Troubleshooting
+title: Help and Solutions
 author: Dainius Jenkus
 date: 2010-06-30
-category: Troubleshooting
+category: Help
 layout: post
 permalink: /pages/troubleshooting/
 nav_order: 70
@@ -283,7 +283,7 @@ nav_order: 70
 <div class="os-guide-page" markdown="1">
 
 <section class="os-guide-hero" markdown="0">
-<div class="kicker">Troubleshooting</div>
+<div class="kicker">Help and Solutions</div>
 <h1>Common issues and checks</h1>
 <p>Use this page when a simulation warning appears, results are not available, or exported data does not behave as expected in downstream software.</p>
 </section>
@@ -344,7 +344,7 @@ Open the Visualiser and inspect detected markers:
 <section class="os-guide-section" id="osa-search-region" markdown="1">
 <div class="os-guide-section-head" markdown="0">
 <div class="label">Search region warning</div>
-<h2 id="osa-search-region">OSA search region issues</h2>
+<h2 id="osa-search-region">OSA Search Region Issues</h2>
 <p>The OSA search region controls where the optimiser searches for the optimal slope profile.</p>
 </div>
 <div class="os-guide-section-body" markdown="1">
@@ -396,7 +396,7 @@ The toe must have valid horizontal and vertical coordinates and must lie inside 
 <section class="os-guide-section" id="simulation-start" markdown="1">
 <div class="os-guide-section-head" markdown="0">
 <div class="label">Simulation setup</div>
-<h2 id="simulation-start">Simulation does not start</h2>
+<h2 id="simulation-start">Simulation Does Not Start</h2>
 <p>Most start-up issues are caused by incomplete configuration, missing section data, or unresolved input warnings.</p>
 </div>
 <div class="os-guide-section-body" markdown="1">
@@ -436,7 +436,7 @@ If the **Simulation Check** panel is displayed:
 <section class="os-guide-section" id="results-fetch" markdown="1">
 <div class="os-guide-section-head" markdown="0">
 <div class="label">Results and exports</div>
-<h2 id="results-fetch">Results or exports do not look correct</h2>
+<h2 id="results-fetch">Results or Exports Do Not Look Correct</h2>
 <p>Review result folders, export options, and downstream import requirements.</p>
 </div>
 <div class="os-guide-section-body" markdown="1">

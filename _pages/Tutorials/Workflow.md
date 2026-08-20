@@ -985,7 +985,7 @@ The final output should combine:
 
 <div class="os-checklist" markdown="0">
 <div class="os-check"><strong><a href="{{ '/pages/quick-start/' | relative_url }}">Quick Start</a></strong><br>Run through the shortest route from prepared data to simulation results.</div>
-<div class="os-check"><strong><a href="{{ '/pages/troubleshooting/' | relative_url }}">Troubleshooting</a></strong><br>Review common problems with geometry, OSA search region, simulation setup, and exports.</div>
+<div class="os-check"><strong><a href="{{ '/pages/troubleshooting/' | relative_url }}">Help and Solutions</a></strong><br>Review common problems with geometry, OSA search region, simulation setup, and exports.</div>
 <div class="os-check"><strong><a href="{{ '/pages/glossary/' | relative_url }}">Glossary</a></strong><br>Review key OptimalSlope, slope design, simulation, and export terms.</div>
 </div>
 

@@ -440,7 +440,7 @@ permalink: /
 <a class="os-home-button primary" href="https://optimalslope.com/files/OptimalSlope_Latest.zip/">Download OptimalSlope</a>
 <a class="os-home-button secondary" href="{{ '/pages/quick-start/' | relative_url }}">Quick Start</a>
 <a class="os-home-button secondary" href="{{ '/pages/Tutorials/Workflow/' | relative_url }}">Simulation Workflow</a>
-<a class="os-home-button secondary" href="{{ '/pages/troubleshooting/' | relative_url }}">Troubleshooting</a>
+<a class="os-home-button secondary" href="{{ '/pages/troubleshooting/' | relative_url }}">Help and Solutions</a>
 <a class="os-home-button secondary" href="{{ '/conference/' | relative_url }}" target="_blank" rel="noopener">Conference Demo</a>
 </div>
 </section>
@@ -513,7 +513,7 @@ Start with the Data Preparation page if you are working with new 3D stratigraphy
 
 <a href="{{ '/pages/troubleshooting/' | relative_url }}">
 <span class="icon">5</span>
-<strong>Troubleshooting</strong>
+<strong>Help and Solutions</strong>
 <span>Resolve common issues with geometry, OSA search region, simulations, and exports.</span>
 </a>
 

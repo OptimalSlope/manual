@@ -7,7 +7,8 @@ layout: post
 permalink: /pages/glossary/
 toc_h_min: 2
 toc_h_max: 2
-nav_order: 80
+nav_order: 72
+nav_parent: Help and Solutions
 ---
 
 

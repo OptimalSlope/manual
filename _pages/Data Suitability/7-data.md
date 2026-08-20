@@ -4,7 +4,8 @@ author: Dainius Jenkus
 date: 2010-06-30
 category: Data
 layout: post
-nav_order: 20
+nav_order: 71
+nav_parent: Help and Solutions
 ---
 
 <style>
@@ -638,12 +639,12 @@ Define names and colours of layers in the modelling software before exporting DX
 <div class="os-data-section-head" markdown="0">
 <div class="label">Related help</div>
 <h2 id="related-help">Related help</h2>
-<p>Use these pages for the recommended first workflow, troubleshooting checks, and terminology.</p>
+<p>Use these pages for the recommended first workflow, common issue checks, and terminology.</p>
 </div>
 <div class="os-data-section-body" markdown="1">
 
 - [Quick Start]({{ '/pages/quick-start/' | relative_url }}) — shortest route through the first simulation workflow.
-- [Troubleshooting]({{ '/pages/troubleshooting/' | relative_url }}) — common geometry, OSA search region, simulation, and export checks.
+- [Help and Solutions]({{ '/pages/troubleshooting/' | relative_url }}) — common geometry, OSA search region, simulation, and export checks.
 - [Glossary]({{ '/pages/glossary/' | relative_url }}) — definitions of common OptimalSlope terms.
 
 </div>
