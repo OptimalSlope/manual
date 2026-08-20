@@ -24,6 +24,130 @@
     line-height: 1.4;
 }
 
+/* Shared article metadata shown directly below the page title */
+.os-page-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+    margin: -0.35rem 0 1.6rem;
+    color: #7a8490;
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+.os-page-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.os-page-meta i {
+    color: #8d97a2;
+}
+
+.os-page-meta-separator {
+    opacity: 0.55;
+}
+
+@media (max-width: 520px) {
+    .os-page-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+
+    .os-page-meta-separator {
+        display: none !important;
+    }
+}
+
+/* Shared documentation callouts */
+.os-callout {
+    --os-callout-accent: #0a4e76;
+    --os-callout-border: #bfd2de;
+    --os-callout-bg: #f1f7fa;
+    --os-callout-label: "Important";
+    --os-callout-icon: "\f05a";
+    position: relative;
+    margin: 1.35rem 0;
+    padding: 3.45rem 1.15rem 1.05rem;
+    border: 1px solid var(--os-callout-border);
+    border-left: 4px solid var(--os-callout-accent);
+    border-radius: 12px;
+    background: var(--os-callout-bg);
+    color: #263746;
+    line-height: 1.6;
+    box-shadow: 0 5px 16px rgba(20, 35, 50, 0.06);
+}
+
+.os-callout::before {
+    position: absolute;
+    top: 0.9rem;
+    left: 1.05rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    background: var(--os-callout-accent);
+    color: #fff;
+    content: var(--os-callout-icon);
+    font-family: FontAwesome;
+    font-size: 0.92rem;
+    line-height: 1.8rem;
+    text-align: center;
+}
+
+.os-callout::after {
+    position: absolute;
+    top: 1.05rem;
+    left: 3.35rem;
+    color: var(--os-callout-accent);
+    content: var(--os-callout-label);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.os-callout > :first-child {
+    margin-top: 0;
+}
+
+.os-callout > :last-child {
+    margin-bottom: 0;
+}
+
+.os-callout--tip {
+    --os-callout-accent: #147eb3;
+    --os-callout-border: #b9ddec;
+    --os-callout-bg: #eef9fd;
+    --os-callout-label: "Tip";
+    --os-callout-icon: "\f0eb";
+}
+
+.os-callout--important {
+    --os-callout-accent: #0a4e76;
+    --os-callout-border: #bfd2de;
+    --os-callout-bg: #f1f7fa;
+    --os-callout-label: "Important";
+    --os-callout-icon: "\f05a";
+}
+
+.os-callout--warning {
+    --os-callout-accent: #c75b12;
+    --os-callout-border: #efc59f;
+    --os-callout-bg: #fff6ed;
+    --os-callout-label: "Warning";
+    --os-callout-icon: "\f071";
+}
+
+.os-callout--recommendation {
+    --os-callout-accent: #2f7d4a;
+    --os-callout-border: #badbc5;
+    --os-callout-bg: #f0f9f3;
+    --os-callout-label: "Recommendation";
+    --os-callout-icon: "\f058";
+}
+
 .os-expandable-media {
     margin: 1.5rem auto;
     max-width: 960px;

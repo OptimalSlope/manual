@@ -6,6 +6,7 @@ category: Controls
 layout: post
 nav_order: 60
 nav_parent: Project Management
+nav_position: bottom
 ---
 
 <style>
@@ -312,7 +313,7 @@ nav_parent: Project Management
 <div>
 <div class="control-title">Delete Selected Item</div>
 <p>Deletes the selected item from the project.</p>
-<p class="os-tip">Use this carefully. Deleting an item removes it from the project structure.</p>
+<p class="os-callout os-callout--warning">Deleting an item removes it from the project structure. Confirm that the selected item is no longer required.</p>
 </div>
 </div>
 
@@ -342,7 +343,7 @@ nav_parent: Project Management
 <div>
 <div class="control-title">Dynamic Zooming</div>
 <p>Press the left mouse button, then move the pointer left or right to zoom in or out.</p>
-<p class="os-tip">Alternatively, use the <code>Ctrl</code> key.</p>
+<p class="os-callout os-callout--tip">Alternatively, use the <code>Ctrl</code> key.</p>
 </div>
 </div>
 
@@ -351,7 +352,7 @@ nav_parent: Project Management
 <div>
 <div class="control-title">Dynamic Panning</div>
 <p>Press the left mouse button, then move the pointer to pan around the visualiser.</p>
-<p class="os-tip">Alternatively, use the middle mouse button.</p>
+<p class="os-callout os-callout--tip">Alternatively, use the middle mouse button.</p>
 </div>
 </div>
 
@@ -408,7 +409,7 @@ nav_parent: Project Management
 <div>
 <div class="control-title">Dynamic Rotation</div>
 <p>Press the left mouse button, then move the pointer to rotate the view.</p>
-<p class="os-tip">Alternatively, use the <code>Space</code> key.</p>
+<p class="os-callout os-callout--tip">Alternatively, use the <code>Space</code> key.</p>
 </div>
 </div>
 
@@ -475,7 +476,7 @@ nav_parent: Project Management
 
 </div>
 
-<p class="os-tip">Use transparency together with wireframe display when checking internal stratigraphy, overlapping geometry, fault surfaces, or trimmed cross-section boundaries.</p>
+<p class="os-callout os-callout--tip">Use transparency together with wireframe display when checking internal stratigraphy, overlapping geometry, fault surfaces, or trimmed cross-section boundaries.</p>
 
 </div>
 </section>

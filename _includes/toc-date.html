@@ -68,8 +68,9 @@
                                     {{ post.title | escape }}
                                 </a>
 
-                                {% if child_pages.size > 0 %}
-                                <ul class="articles os-nav-children">
+                                {% assign bottom_child_pages = child_pages | where: "nav_position", "bottom" %}
+                                {% if child_pages.size > 0 or post.nav_sections %}
+                                <ul class="articles os-nav-children{% if post.nav_sections %} os-nav-sections{% endif %}">
                                     {% for child_page in child_pages %}
                                         {% unless child_page.nav_position == "bottom" %}
                                             {% if page.url == child_page.url %}
@@ -88,18 +89,15 @@
                                             </li>
                                         {% endunless %}
                                     {% endfor %}
-                                </ul>
-                                {% endif %}
-
-                                {% if site.toc.enabled and page.url == post.url %}
-                                    {% assign toc_h_min = page.toc_h_min | default: site.toc.h_min %}
-                                    {% assign toc_h_max = page.toc_h_max | default: site.toc.h_max %}
-                                    {% include toc.html html=content h_min=toc_h_min h_max=toc_h_max %}
-                                {% endif %}
-
-                                {% assign bottom_child_pages = child_pages | where: "nav_position", "bottom" %}
-                                {% if bottom_child_pages.size > 0 %}
-                                <ul class="articles os-nav-children os-nav-children-bottom">
+                                    {% if post.nav_sections %}
+                                        {% for nav_section in post.nav_sections %}
+                                        <li>
+                                            <a href="{{site.baseurl}}{{post.url}}#{{ nav_section.anchor | escape }}">
+                                                {{ nav_section.title | escape }}
+                                            </a>
+                                        </li>
+                                        {% endfor %}
+                                    {% endif %}
                                     {% for child_page in bottom_child_pages %}
                                         {% if page.url == child_page.url %}
                                         <li class="chapter active expanded" data-level="2.1" data-path="{{site.baseurl}}{{child_page.url}}">
@@ -118,6 +116,14 @@
                                     {% endfor %}
                                 </ul>
                                 {% endif %}
+
+                                {% unless post.nav_sections %}
+                                    {% if site.toc.enabled and page.url == post.url %}
+                                        {% assign toc_h_min = page.toc_h_min | default: site.toc.h_min %}
+                                        {% assign toc_h_max = page.toc_h_max | default: site.toc.h_max %}
+                                        {% include toc.html html=content h_min=toc_h_min h_max=toc_h_max %}
+                                    {% endif %}
+                                {% endunless %}
                             </li>
                         {% endunless %}
                     {% endfor %}

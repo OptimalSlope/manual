@@ -232,18 +232,12 @@ nav_order: 30
   line-height: 1.55;
 }
 
-.os-callout,
 .os-note,
 .os-warning {
   margin: 18px 0;
   padding: 16px 18px;
   border-radius: 16px;
   line-height: 1.5;
-}
-
-.os-callout {
-  border: 1px solid rgba(10, 78, 118, 0.18);
-  background: #eef6fb;
 }
 
 .os-note {
@@ -256,7 +250,6 @@ nav_order: 30
   background: #fff3f0;
 }
 
-.os-callout strong,
 .os-note strong,
 .os-warning strong {
   color: var(--blue);
@@ -818,8 +811,8 @@ This step explains how to import an OptimalSlope block model export into Datamin
 - Import the main block geometry and save it with a clear base-model name, for example `Block_Model_XYZ`.
 - Import the OptimalSlope slope-angle output, save it with a clear slope-model name, and combine it with the original model using `ADDMOD`.
 
-<div class="os-note" markdown="1">
-<strong>Input files:</strong> The CSV should contain the block dimensions, block centre coordinates, and any extra attributes such as density, grade, rock type, lithology, or slope angle.
+<div class="os-callout os-callout--important" markdown="1">
+The CSV should contain the block dimensions, block centre coordinates, and any extra attributes such as density, grade, rock type, lithology, or slope angle.
 </div>
 
 #### 1. Import an external block model file
@@ -956,8 +949,8 @@ ADDMOD
 
 Use `ADDMOD` to add the slope-angle model to the base block model, then save the output as a new Datamine block model file. In this example, `Block_Model_Slope` is added to `Block_Model_XYZ`, but the exact file names can be changed.
 
-<div class="os-note" markdown="1">
-<strong>Naming note:</strong> The names `Block_Model_XYZ` and `Block_Model_Slope` are examples only. Datamine does not require these exact names. The important point is to use consistent, recognisable names so the correct base model and slope-angle model are selected in `ADDMOD`.
+<div class="os-callout os-callout--tip" markdown="1">
+The names `Block_Model_XYZ` and `Block_Model_Slope` are examples only. Datamine does not require these exact names. Use consistent, recognisable names so the correct base model and slope-angle model are selected in `ADDMOD`.
 </div>
 
 The final output should combine:
@@ -966,8 +959,8 @@ The final output should combine:
 - the OptimalSlope slope-angle data;
 - any other attributes imported from the CSV file.
 
-<div class="os-warning" markdown="1">
-<strong>Final check:</strong> After combining the models, check that all relevant blocks have a slope-angle value assigned.
+<div class="os-callout os-callout--warning" markdown="1">
+After combining the models, check that all relevant blocks have a slope-angle value assigned.
 </div>
 
 </div>

@@ -314,8 +314,8 @@ Focus on:
 - realistic geometry around the expected slope area;
 - consistent units and coordinates.
 
-<div class="os-tip" markdown="1">
-<strong>Recommended starting point:</strong> Review the Data Preparation page before working with new project data.
+<div class="os-callout os-callout--recommendation" markdown="1">
+Review the Data Preparation page before working with new project data.
 </div>
 
 <a class="os-link-card" href="{{ '/pages/Data%20Suitability/7-data/' | relative_url }}">
@@ -367,7 +367,7 @@ At minimum, check and define:
 - **General section properties** such as failure direction and target Factor of Safety.
 - Optional inputs, such as a water table and pressure method, line or distributed loads, roads, tension cracks, and faults.
 
-<div class="os-warning" markdown="1">
+<div class="os-callout os-callout--warning" markdown="1">
 <strong>Check the active slope anchor:</strong> A crest too close to the boundary can move the OSA search region outside the ground surface. A toe must have valid X and Z coordinates and remain inside the section, at or below the topography, and above the section floor.
 </div>
 

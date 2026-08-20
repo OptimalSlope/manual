@@ -425,8 +425,7 @@ The quality of simulation results depends heavily on the quality of the provided
 </div>
 </div>
 
-<div class="os-recommendation" markdown="1">
-<strong>Recommendation</strong><br>
+<div class="os-callout os-callout--recommendation" markdown="1">
 Before running simulations, visually inspect both the 3D model and any generated or imported sections. Repair significant gaps, overlaps, missing layers, and non-manifold geometry before proceeding.
 </div>
 
@@ -445,9 +444,8 @@ Before running simulations, visually inspect both the 3D model and any generated
 
 When exporting 3D meshes or model surfaces from Leapfrog, always use Polyfaces by selecting:
 
-<div class="os-note" markdown="1">
-<strong>Recommended option</strong><br>
-`DXF Polyface Files (11/12 [AC1009]) (.dxf)`
+<div class="os-callout os-callout--recommendation" markdown="1">
+Use `DXF Polyface Files (11/12 [AC1009]) (.dxf)` whenever it is available.
 </div>
 
 This option exports geometry as a connected polyface mesh, preserving mesh connectivity and providing the most reliable results for downstream processing and cross-section generation. Using polyfaces minimises the need for post-processing and is the recommended export method.
@@ -456,9 +454,8 @@ This option exports geometry as a connected polyface mesh, preserving mesh conne
 
 DXF files exported using 3D Faces via:
 
-<div class="os-warning" markdown="1">
-<strong>Supported but less preferred option</strong><br>
-`DXF Files (11/12 [AC1009]) (.dxf)`
+<div class="os-callout os-callout--warning" markdown="1">
+`DXF Files (11/12 [AC1009]) (.dxf)` is supported but less preferred because it exports individual, unconnected faces.
 </div>
 
 are currently supported. However, this export method represents geometry as individual, unconnected faces, which requires additional processing before the data can be reliably used for cross-section generation.
@@ -599,8 +596,7 @@ When generating cross-sections using tools such as Leapfrog, AutoCAD, Rhino, or 
 
 The reliability of imported sections depends on the initial 3D model quality. A well-constructed model with properly aligned vertices, closed and manifold surfaces, and consistent geometry helps avoid gaps, overlaps, and distorted profiles in generated sections.
 
-<div class="os-tip" markdown="1">
-<strong>Best practice</strong><br>
+<div class="os-callout os-callout--recommendation" markdown="1">
 Maintain strict quality control over the 3D model before generating sections. Clean source geometry usually leads to cleaner and more accurate cross-sections.
 </div>
 
@@ -626,8 +622,7 @@ Use layers and set their names when generating DXF files to separate different m
 
 Name layers descriptively to make model elements easier to manage during cross-section extraction.
 
-<div class="os-recommendation" markdown="1">
-<strong>Recommendation</strong><br>
+<div class="os-callout os-callout--recommendation" markdown="1">
 Define names and colours of layers in the modelling software before exporting DXF files. This reduces manual clean-up in Slope Optimiser and improves traceability during section generation.
 </div>
 

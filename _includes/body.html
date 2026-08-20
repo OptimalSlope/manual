@@ -18,6 +18,10 @@
                         <h1 id="{{ page.id }}">{{ site.title | escape }}</h1>
                     {% endif %}
 
+                    {% if page.layout == "post" %}
+                        {% include page-meta.html %}
+                    {% endif %}
+
                     {{ content }}
 
                     {%- if jekyll.environment != 'dev' and site.disqushandler -%}

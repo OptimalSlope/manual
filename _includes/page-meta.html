@@ -1,0 +1,19 @@
+{% assign os_reading_source = page.content | split: '</style>' | last %}
+{% assign os_word_count = os_reading_source | strip_html | number_of_words %}
+{% assign os_reading_minutes = os_word_count | plus: 219 | divided_by: 220 %}
+{% if os_reading_minutes < 1 %}
+    {% assign os_reading_minutes = 1 %}
+{% endif %}
+{% assign os_updated = page.last_updated | default: site.manual_last_updated %}
+
+<div class="os-page-meta" aria-label="Page information">
+    <span>
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+        Estimated reading time: {{ os_reading_minutes }} min
+    </span>
+    <span class="os-page-meta-separator" aria-hidden="true">&bull;</span>
+    <span>
+        <i class="fa fa-calendar-o" aria-hidden="true"></i>
+        Last updated: {{ os_updated }}
+    </span>
+</div>

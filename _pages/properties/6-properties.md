@@ -424,18 +424,16 @@ Alternatively, in the **section properties**, the bench height can be **estimate
 
 The software will calculate the corresponding bench height automatically.
 
-<div class="os-note" markdown="1">
-<strong>Example</strong><br>
-If slope height = 120 m and number of benches = 12, then bench height = 10 m.
+<div class="os-callout os-callout--important" markdown="1">
+For example, if slope height = 120 m and number of benches = 12, then bench height = 10 m.
 </div>
 
 <div class="os-subtitle">Bench-compatible slope height</div>
 
 Bench-compatible slope height is the maximum slope height that allows a whole number of benches without exceeding the total slope height.
 
-<div class="os-note" markdown="1">
-<strong>Example</strong><br>
-Slope height = 385 m and bench height = 10 m gives a bench-compatible slope height of 380 m. Adding another full bench would exceed the defined slope height.
+<div class="os-callout os-callout--important" markdown="1">
+For example, slope height = 385 m and bench height = 10 m gives a bench-compatible slope height of 380 m. Adding another full bench would exceed the defined slope height.
 </div>
 
 </div>
@@ -562,8 +560,7 @@ Hoek-Brown or Mohr-Coulomb properties are set depending on the strength model of
 </tbody>
 </table>
 
-<div class="os-tip" markdown="1">
-<strong>Note</strong><br>
+<div class="os-callout os-callout--important" markdown="1">
 Bench and rock properties can be set for individual 3D stratigraphic models. If sections are generated using the slicing tool, they automatically inherit these properties. If sections are imported directly, properties can be set manually for each layer in a particular section.
 </div>
 
@@ -655,7 +652,7 @@ The animation below shows how changing the anchor keeps either the crest or toe 
 
 The toe must lie inside the section, at or below the topography, and above the section floor. Toe elevations are resolved to the whole-unit elevation used by the solver. If a new value is invalid, review the message in the interface and adjust the toe position or elevation.
 
-<div class="os-note" markdown="1">
+<div class="os-callout os-callout--warning" markdown="1">
 <strong>Water-table update required:</strong> Changing the active anchor or toe geometry can invalidate an existing water table. If the application removes the water table, redraw or re-import it after the slope geometry is finalised.
 </div>
 
@@ -677,8 +674,7 @@ The preliminary OSA limits are calculated from the selected crest point and the 
 
 A wider, realistic OSA search range gives the optimiser more flexibility to investigate alternative slope shapes while remaining within the valid section geometry.
 
-<div class="os-recommendation" markdown="1">
-<strong>Practical tips</strong>
+<div class="os-callout os-callout--recommendation" markdown="1">
 
 - Position the crest point slightly further inside the section boundary than you think is necessary.
 - Check that the green triangular search region remains within the available ground/material area.
@@ -763,7 +759,7 @@ The animation below shows properties being transferred from an existing section 
 
 The layer table automatically includes unique exact-name matches. Review every mapping, manually select a source layer where required, and clear **Include** for layers that should remain unchanged. A source layer can be mapped only once. Blank numerical fields in the source do not overwrite defined values in the receiving section.
 
-<div class="os-note" markdown="1">
+<div class="os-callout os-callout--important" markdown="1">
 <strong>Not transferred:</strong> Crest and toe coordinates, slope height, water-line points, roads, loads, simulation folders, plot data, simulation results, and result logs remain tied to their original geometry or simulation. The receiving section keeps its own geometry-dependent data. If it already has results, they are retained but marked as out of date after transferred properties change the setup.
 </div>
 
@@ -869,8 +865,7 @@ The **Maximum fault segment length** parameter controls how imported fault polyl
 
 Use a segment length that is appropriate for the scale and complexity of the fault geometry. For simple or long faults, the default value of **20 m** is usually a good starting point. For highly curved, short, or complex fault geometries, a smaller value may be useful.
 
-<div class="os-recommendation" markdown="1">
-<strong>Fault practical tips</strong>
+<div class="os-callout os-callout--recommendation" markdown="1">
 
 Faults should be defined where they are expected to have a meaningful influence on the slope, such as where a fault crosses the slope face, slope toe, or potential failure region.
 
@@ -957,8 +952,7 @@ The animation below shows the complete drawing workflow, from selecting the firs
    alt="Drawing water-table points from the slope toe to the section boundary and choosing between the manually drawn and imported water tables"
 %}
 
-<div class="os-note" markdown="1">
-<strong>Notes</strong>
+<div class="os-callout os-callout--important" markdown="1">
 
 - Define the water table from the slope toe upwards, beginning on the lowest bench line.
 - Only one water table point is allowed per bench.

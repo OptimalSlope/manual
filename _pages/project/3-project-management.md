@@ -5,6 +5,17 @@ date: 2010-06-30
 category: Project-management
 layout: post
 nav_order: 50
+nav_sections:
+  - title: Creating, Saving and Loading Projects
+    anchor: creating-a-project
+  - title: Importing Project Data
+    anchor: importing-data
+  - title: Section Slicing and Clipping
+    anchor: creating-sections
+  - title: Trimming Geometry
+    anchor: trim-section-to-boundary-surface
+  - title: Exporting Project Data
+    anchor: exporting-project-data
 ---
 
 <style>
@@ -467,8 +478,7 @@ An empty project can be created using one of the following methods:
 - An import operation in progress is indicated by the loading symbol in the status bar.
 - Loading larger files can take longer than a minute depending on the machine and project size.
 
-<div class="os-note" markdown="1">
-<strong>File format</strong><br>
+<div class="os-callout os-callout--important" markdown="1">
 OptimalSlope project data is stored in a binary format: `.cbf`.
 </div>
 
@@ -507,8 +517,7 @@ A pit boundary surface can be imported and used to generate a trimmed version of
 
 - Select **Import Surface > Boundary > required file format**.
 
-<div class="os-tip" markdown="1">
-<strong>Tip</strong><br>
+<div class="os-callout os-callout--tip" markdown="1">
 Define layer names and colours when generating model files. Otherwise, layer names and colours can be set manually in the Slope Optimiser interface.
 </div>
 
@@ -562,8 +571,7 @@ For vertical cutting planes, such as **XZ** and **YZ**, the slicing tool also su
 </div>
 </div>
 
-<div class="os-tip" markdown="1">
-<strong>Tip</strong>
+<div class="os-callout os-callout--tip" markdown="1">
 
 - Cross-sections automatically inherit properties from their 3D parent stratigraphy.
 - If properties are not defined before slicing, they can be added later at either the 3D model level or the individual section level.

@@ -6,6 +6,15 @@ category: Help
 layout: post
 permalink: /pages/troubleshooting/
 nav_order: 70
+nav_sections:
+  - title: Gaps and Overlaps
+    anchor: gaps-overlaps
+  - title: OSA Search Region Issues
+    anchor: osa-search-region
+  - title: Simulation Does Not Start
+    anchor: simulation-start
+  - title: Results or Exports Do Not Look Correct
+    anchor: results-fetch
 ---
 
 
@@ -329,7 +338,7 @@ Open the Visualiser and inspect detected markers:
 - Remove duplicate or unnecessary geometry.
 - Pay particular attention to issues near the slope face, toe, crest, or expected failure region.
 
-<div class="os-note" markdown="1">
+<div class="os-callout os-callout--important" markdown="1">
 <strong>When it may be acceptable:</strong> A few small isolated markers away from the critical slope region may not significantly affect the result, but the geometry should still be reviewed carefully.
 </div>
 
@@ -381,8 +390,8 @@ The toe must have valid horizontal and vertical coordinates and must lie inside 
 - If it lies outside the section, move it back within the section boundary.
 - Redraw the water table if it was removed after the toe geometry changed.
 
-<div class="os-tip" markdown="1">
-<strong>Practical tip:</strong> Position the crest slightly further inside the section boundary than you think is necessary, then confirm that the OSA search region remains inside valid material.
+<div class="os-callout os-callout--tip" markdown="1">
+Position the crest slightly further inside the section boundary than you think is necessary, then confirm that the OSA search region remains inside valid material.
 </div>
 
 <a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#slope-anchor-and-osa-search-region-checks' | relative_url }}">
@@ -421,8 +430,8 @@ If the **Simulation Check** panel is displayed:
 3. Select **Check Again**.
 4. After the check passes, select **Start** again. Passing the check confirms readiness but does not automatically submit the simulation.
 
-<div class="os-note" markdown="1">
-<strong>Cloud simulation note:</strong> Slope Optimiser runs simulations in the cloud, so the user account profile must be configured before cloud runs can be submitted.
+<div class="os-callout os-callout--important" markdown="1">
+Slope Optimiser runs simulations in the cloud, so the user account profile must be configured before cloud runs can be submitted.
 </div>
 
 <a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#running-simulations' | relative_url }}">
