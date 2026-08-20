@@ -7,6 +7,7 @@ description: >
   OptimalSlope user manual
 
 version:          1.0
+manual_last_updated: "20 August 2026"
 gitbook_version:  3.2.3
 
 url:              'https://OptimalSlope.github.io'

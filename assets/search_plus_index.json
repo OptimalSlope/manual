@@ -11,6 +11,7 @@ layout: null
 {%- for collection in site.collections -%}
   {%- if collection.output -%}
     {%- for post in site[collection.label] -%}
+      {%- if post.layout == "post" -%}
       {%- unless post.exclude_from_search == true or excluded_files contains post.path -%}
         {%- assign has_excluded_taxonomy = false -%}
         {%- for tag in post.tags -%}
@@ -27,6 +28,7 @@ layout: null
           {%- assign index = index | push: post | uniq -%}
         {%- endunless -%}
       {%- endunless -%}
+      {%- endif -%}
     {%- endfor -%}
   {%- endif -%}
 {%- endfor -%}

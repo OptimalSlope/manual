@@ -5,6 +5,7 @@ date: 2010-06-30
 category: Project-management
 layout: post
 nav_order: 60
+nav_group: Project and reference
 ---
 
 <style>
@@ -708,7 +709,7 @@ A project can contain multiple cross-sections. Each cross-section can be conside
 Properties describing an individual slice and its layers can be exported in **JSON** format:
 
 1. Select a cross-section.
-2. In the **Property View** panel, select **Export** under the tools section.
+2. In the **Properties** panel, select **Export** under the tools section.
 
 </div>
 </section>

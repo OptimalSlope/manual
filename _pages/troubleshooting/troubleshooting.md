@@ -6,6 +6,7 @@ category: Troubleshooting
 layout: post
 permalink: /pages/troubleshooting/
 nav_order: 50
+nav_group: Configuration and help
 ---
 
 

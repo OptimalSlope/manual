@@ -8,6 +8,7 @@ permalink: /pages/glossary/
 toc_h_min: 2
 toc_h_max: 2
 nav_order: 80
+nav_group: Project and reference
 ---
 
 

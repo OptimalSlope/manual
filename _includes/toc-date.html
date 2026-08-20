@@ -20,7 +20,7 @@
 
     <nav role="navigation">
         <div id="book-search-input" role="search">
-            <input type="text" placeholder="Type to search" />
+            <input type="text" placeholder="Search the manual" aria-label="Search the manual" />
         </div>
         <div id="book-search-input-link" role="search">
             <a href="{{site.baseurl}}/assets/search.html">Click to Search</a>
@@ -47,7 +47,12 @@
                         {% assign reversed_posts = site[collection.label] | where: "layout", "post" | sort: "nav_order" %}
                     {% endif %}
 
+                    {% assign current_nav_group = "" %}
                     {% for post in reversed_posts %}
+                        {% if post.nav_group and post.nav_group != current_nav_group %}
+                        <li class="header os-nav-group">{{ post.nav_group | escape }}</li>
+                        {% assign current_nav_group = post.nav_group %}
+                        {% endif %}
                         {% if page.url == post.url %}
                         <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
                         {% else %}
@@ -71,6 +76,11 @@
                     {% endif %}
                 {% endif %}
             {% endfor %}
+
+            <li class="os-manual-meta">
+                <span>Manual v{{ site.version | escape }}</span>
+                <span>Updated {{ site.manual_last_updated | escape }}</span>
+            </li>
         </ul>
     </nav>
 </div>

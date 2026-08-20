@@ -6,6 +6,7 @@ category: Tutorials
 layout: post
 permalink: /pages/quick-start/
 nav_order: 10
+nav_group: Getting started
 ---
 
 
@@ -416,7 +417,7 @@ Before starting:
 After the simulation is complete:
 
 - review the interactive result plot and logs;
-- use the plot toolbar to control the legend and visible items, fit the plot, change its theme, copy it, or save it as PNG/SVG;
+- use the first plot-toolbar button to fit the plot, then control the legend and visible items, change the theme, copy the plot, or save it as PNG/SVG;
 - detach plots and keep multiple cross-section results open for comparison;
 - export the optimised slope profile to DXF if it is needed for external workflows;
 - create a new project cross-section from the optimised output when required;

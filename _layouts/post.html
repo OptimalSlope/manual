@@ -4,14 +4,35 @@
 
         {%- include head.html -%}
 
-        {% if page.previous %}
-            <link rel="prev" href="{{site.baseurl}}{{page.previous.url}}" />
+        {% assign os_navigation_pages = "" | split: "" %}
+        {% for os_collection in site.collections %}
+            {% if os_collection.label == "pages" %}
+                {% assign os_navigation_pages = site[os_collection.label] | where: "layout", "post" | sort: "nav_order" %}
+            {% endif %}
+        {% endfor %}
+        {% assign os_previous_page = nil %}
+        {% assign os_next_page = nil %}
+        {% for os_navigation_page in os_navigation_pages %}
+            {% if os_navigation_page.url == page.url %}
+                {% unless forloop.first %}
+                    {% assign os_previous_index = forloop.index0 | minus: 1 %}
+                    {% assign os_previous_page = os_navigation_pages[os_previous_index] %}
+                {% endunless %}
+                {% unless forloop.last %}
+                    {% assign os_next_index = forloop.index0 | plus: 1 %}
+                    {% assign os_next_page = os_navigation_pages[os_next_index] %}
+                {% endunless %}
+            {% endif %}
+        {% endfor %}
+
+        {% if os_previous_page %}
+            <link rel="prev" href="{{site.baseurl}}{{os_previous_page.url}}" />
         {% else %}
             <link rel="prev" href="{{site.baseurl}}/" />
         {% endif %}
 
-        {% if page.next %}
-            <link rel="next" href="{{site.baseurl}}{{page.next.url}}" />
+        {% if os_next_page %}
+            <link rel="next" href="{{site.baseurl}}{{os_next_page.url}}" />
         {% endif %}
     </head>
     <body>
@@ -35,8 +56,8 @@
                 <div class="body-inner">
                     {%- include body.html -%}
 
-                    {% if page.previous %}
-                        <a href="{{site.baseurl}}{{page.previous.url}}" class="navigation navigation-prev navigation-unique" aria-label="Previous page: {{page.previous.title}}">
+                    {% if os_previous_page %}
+                        <a href="{{site.baseurl}}{{os_previous_page.url}}" class="navigation navigation-prev navigation-unique" aria-label="Previous page: {{os_previous_page.title}}">
                             <i class="fa fa-angle-left"></i>
                         </a>
                     {% else %}
@@ -45,8 +66,8 @@
                         </a>
                     {% endif %}
 
-                    {% if page.next %}
-                        <a href="{{site.baseurl}}{{page.next.url}}" class="navigation navigation-next navigation-unique" aria-label="Next page: {{page.next.title}}">
+                    {% if os_next_page %}
+                        <a href="{{site.baseurl}}{{os_next_page.url}}" class="navigation navigation-next navigation-unique" aria-label="Next page: {{os_next_page.title}}">
                             <i class="fa fa-angle-right"></i>
                         </a>
                     {% endif %}

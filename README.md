@@ -151,6 +151,14 @@ permalink: /
   line-height: 1.5;
 }
 
+.os-home-version {
+  display: block;
+  margin-top: 6px;
+  color: #7a8792;
+  font-size: 13px;
+  font-weight: 700;
+}
+
 .os-home-nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -433,7 +441,7 @@ permalink: /
 <a class="os-home-button secondary" href="{{ '/pages/quick-start/' | relative_url }}">Quick Start</a>
 <a class="os-home-button secondary" href="{{ '/pages/Tutorials/Workflow/' | relative_url }}">Simulation Workflow</a>
 <a class="os-home-button secondary" href="{{ '/pages/troubleshooting/' | relative_url }}">Troubleshooting</a>
-<a class="os-home-button secondary" href="/manual/conference/" target="_blank" rel="noopener">Conference Demo</a>
+<a class="os-home-button secondary" href="{{ '/conference/' | relative_url }}" target="_blank" rel="noopener">Conference Demo</a>
 </div>
 </section>
 
@@ -441,7 +449,7 @@ permalink: /
 <img src="https://optimalslope.com/images/path9338.png" alt="OptimalSlope logo">
 <div>
 <strong>Slope Optimiser documentation</strong>
-<p>This manual explains the main workflows for using the Slope Optimiser CAD graphical interface.</p>
+<p>This manual explains the main workflows for using the Slope Optimiser CAD graphical interface.<span class="os-home-version">Manual v{{ site.version }} · Updated {{ site.manual_last_updated }}</span></p>
 </div>
 </div>
 
@@ -465,8 +473,8 @@ Use the sections below to move through the typical workflow: prepare data, creat
 <span>Open the full interactive workflow preview in a new tab.</span>
 </div>
 <div style="display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:2;">
-<a class="os-feature-button" href="assets/preview_interactive.html" target="_blank" rel="noopener">View workflow</a>
-<a class="os-feature-button" href="/manual/conference/" target="_blank" rel="noopener">Conference demo</a>
+<a class="os-feature-button" href="{{ '/assets/preview_interactive.html' | relative_url }}" target="_blank" rel="noopener">View workflow</a>
+<a class="os-feature-button" href="{{ '/conference/' | relative_url }}" target="_blank" rel="noopener">Conference demo</a>
 </div>
 </div>
 
@@ -485,40 +493,40 @@ Start with the Data Preparation page if you are working with new 3D stratigraphy
 <span>Run your first simulation from prepared data through result review and export.</span>
 </a>
 
-<a href="pages/Data%20Suitability/7-data/">
+<a href="{{ '/pages/Data%20Suitability/7-data/' | relative_url }}">
 <span class="icon">2</span>
 <strong>Prepare Data</strong>
 <span>Check geometry quality, DXF exports, section wires, gaps, overlaps, and layer organisation.</span>
 </a>
 
-<a href="pages/project/3-project-management/">
+<a href="{{ '/pages/Tutorials/Workflow/' | relative_url }}">
 <span class="icon">3</span>
-<strong>Manage Projects</strong>
-<span>Create, save, import, slice, trim, and export project data.</span>
+<strong>Run Workflow</strong>
+<span>Follow the simulation workflow from importing sections to exporting results.</span>
 </a>
 
-<a href="pages/properties/6-properties/">
+<a href="{{ '/pages/properties/6-properties/' | relative_url }}">
 <span class="icon">4</span>
 <strong>Define Properties</strong>
 <span>Set slope anchors, bench and rock properties, loads, faults, roads, and groundwater inputs.</span>
 </a>
 
-<a href="pages/Tutorials/Workflow/">
-<span class="icon">5</span>
-<strong>Run Workflow</strong>
-<span>Follow the simulation workflow from importing sections to exporting results.</span>
-</a>
-
-<a href="pages/controls/1-interface/">
-<span class="icon">6</span>
-<strong>Use Controls</strong>
-<span>Navigate the visualiser, change views, adjust object style, and manage selected items.</span>
-</a>
-
 <a href="{{ '/pages/troubleshooting/' | relative_url }}">
-<span class="icon">7</span>
+<span class="icon">5</span>
 <strong>Troubleshooting</strong>
 <span>Resolve common issues with geometry, OSA search region, simulations, and exports.</span>
+</a>
+
+<a href="{{ '/pages/project/3-project-management/' | relative_url }}">
+<span class="icon">6</span>
+<strong>Manage Projects</strong>
+<span>Create, save, import, slice, trim, and export project data.</span>
+</a>
+
+<a href="{{ '/pages/controls/1-interface/' | relative_url }}">
+<span class="icon">7</span>
+<strong>Use Controls</strong>
+<span>Navigate the visualiser, change views, adjust object style, and manage selected items.</span>
 </a>
 
 <a href="{{ '/pages/glossary/' | relative_url }}">

@@ -4,6 +4,26 @@
  *   these get simply added to the ones already active in the layout.
  */
 
+.book-summary ul.summary li.os-nav-group {
+    margin-top: 0.65rem;
+    padding: 0.4rem 1rem 0.25rem;
+    color: #75808b;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.book-summary ul.summary li.os-manual-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.9rem 1rem 1.1rem;
+    color: #7a8490;
+    font-size: 0.72rem;
+    line-height: 1.4;
+}
+
 .os-expandable-media {
     margin: 1.5rem auto;
     max-width: 960px;
@@ -31,6 +51,7 @@
 
 .os-expandable-media-title,
 .os-media-modal-title {
+    flex: 1 1 auto;
     overflow: hidden;
     color: #24292f;
     font-size: 0.9rem;
@@ -40,6 +61,14 @@
     white-space: nowrap;
 }
 
+.os-expandable-media-actions {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.os-expandable-media-control,
 .os-expandable-media-expand,
 .os-media-modal-close {
     display: inline-flex;
@@ -58,6 +87,8 @@
     line-height: 1.2;
 }
 
+.os-expandable-media-control:hover,
+.os-expandable-media-control:focus,
 .os-expandable-media-expand:hover,
 .os-expandable-media-expand:focus,
 .os-media-modal-close:hover,
@@ -67,6 +98,7 @@
     outline: none;
 }
 
+.os-expandable-media-control:focus-visible,
 .os-expandable-media-expand:focus-visible,
 .os-expandable-media-stage:focus-visible,
 .os-media-modal-close:focus-visible {
@@ -87,6 +119,17 @@
     width: 100%;
     height: auto;
     margin: 0 auto;
+}
+
+.os-media-paused-frame {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.os-media-paused-frame[hidden] {
+    display: none;
 }
 
 .os-expandable-media figcaption {
@@ -143,6 +186,12 @@ body.os-media-modal-open {
     object-fit: contain;
 }
 
+.os-media-modal-stage .os-media-paused-frame {
+    max-width: 100%;
+    max-height: calc(100vh - 7rem);
+    object-fit: contain;
+}
+
 @media (max-width: 600px) {
     .os-media-modal {
         padding: 0.75rem;
@@ -153,6 +202,7 @@ body.os-media-modal-open {
         padding-left: 0.75rem;
     }
 
+    .os-expandable-media-control span,
     .os-expandable-media-expand span,
     .os-media-modal-close span {
         display: none;

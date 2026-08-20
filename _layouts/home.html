@@ -4,10 +4,15 @@
 
         {%- include head.html -%}
 
-        {% assign reversed_posts = site.posts | reverse %}
+        {% assign os_navigation_pages = "" | split: "" %}
+        {% for os_collection in site.collections %}
+            {% if os_collection.label == "pages" %}
+                {% assign os_navigation_pages = site[os_collection.label] | where: "layout", "post" | sort: "nav_order" %}
+            {% endif %}
+        {% endfor %}
 
-        {% if reversed_posts %}
-            <link rel="next" href="{{site.baseurl}}{{reversed_posts.first.url}}" />
+        {% if os_navigation_pages.size > 0 %}
+            <link rel="next" href="{{site.baseurl}}{{os_navigation_pages.first.url}}" />
         {% endif %}
     </head>
     <body>
@@ -35,8 +40,8 @@
                         <i class="fa"></i>
                     </a>
 
-                    {% if reversed_posts %}
-                        <a href="{{site.baseurl}}{{reversed_posts.first.url}}" class="navigation navigation-next navigation-unique" aria-label="Next page: {{reversed_posts.first.title}}">
+                    {% if os_navigation_pages.size > 0 %}
+                        <a href="{{site.baseurl}}{{os_navigation_pages.first.url}}" class="navigation navigation-next navigation-unique" aria-label="Next page: {{os_navigation_pages.first.title}}">
                             <i class="fa fa-angle-right"></i>
                         </a>
                     {% endif %}

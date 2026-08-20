@@ -5,6 +5,7 @@ date: 2010-06-30
 category: Properties
 layout: post
 nav_order: 40
+nav_group: Configuration and help
 ---
 
 <style>
@@ -798,13 +799,13 @@ In the Slope Optimiser, faults are defined as **open polylines** and can be adde
 <strong>Import faults as a separate DXF</strong>
 
 1. In the **Explorer** menu, select the target section.
-2. In the **Properties View** panel, open **Optional Properties > Faults**.
+2. In the **Properties** panel, open **Optional Properties > Faults**.
 3. Click **Add** to import the fault DXF file.
 4. Assign the fault properties in the fault layer properties.
 </div>
 </div>
 
-<div class="os-subtitle">Faults Optional Properties</div>
+<div class="os-subtitle">Fault Settings</div>
 
 The **Maximum Fault Segment Length** parameter is defined under **Optional Properties > Faults**.
 
@@ -897,7 +898,7 @@ When testing fault sensitivity, duplicate the section and create separate scenar
 
 The water table, also referred to as the **piezometric line**, can be defined for a selected cross-section under:
 
-`Cross-section > Optional Properties > Water Table`
+`Cross-section > Optional Properties > Water`
 
 <div class="os-subtitle">Water Pressure Method</div>
 

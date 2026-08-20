@@ -5,6 +5,7 @@ date: 2010-06-30
 category: Tutorials
 layout: post
 nav_order: 30
+nav_group: Getting started
 ---
 
 <style>
@@ -364,7 +365,7 @@ Follow these steps to configure a selected section in Slope Optimiser and run a 
 
 <p align="center">
   <video controls width="100%" preload="metadata">
-    <source src="https://optimalslope.github.io/manual/assets/videos/tutorials/Importing-Sections.mp4" type="video/mp4">
+    <source src="{{ '/assets/videos/tutorials/Importing-Sections.mp4' | relative_url }}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </p>
@@ -381,7 +382,7 @@ In the current slicing tool, click **Select visible models**, choose the **XY**,
 #### Directly Importing DXF Section File
 Alternatively, you can directly import a DXF section file using the pathway: `File -> Import Section -> DXF`. 
 #### Use Quality Input Data
-Ensure your DXF model data meets general quality standards to obtain reliable simulation results. For guidance on preparing and checking data, refer to [Data Preparation](https://optimalslope.github.io/manual/pages/Data%20Suitability/7-data/).
+Ensure your DXF model data meets general quality standards to obtain reliable simulation results. For guidance on preparing and checking data, refer to [Data Preparation]({{ '/pages/Data%20Suitability/7-data/' | relative_url }}).
 
 ---
 
@@ -398,7 +399,7 @@ Ensure your DXF model data meets general quality standards to obtain reliable si
 
 <p align="center">
   <video controls width="100%" preload="metadata">
-    <source src="https://optimalslope.github.io/manual/assets/videos/tutorials/Simulation-Inputs.mp4" type="video/mp4">
+    <source src="{{ '/assets/videos/tutorials/Simulation-Inputs.mp4' | relative_url }}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </p>
@@ -449,12 +450,12 @@ The bench, rock, and general properties described above must be provided before 
 
 
 #### Optional Properties
-- **Water Table**: Location and properties of the water table, if applicable.
+- **Water**: Water-table location and pressure method, if applicable.
 - **Water Pressure**: Use hydrostatic pressure or apply the phreatic-line inclination correction.
 - **Loads**: Add line loads or uniform/linear distributed loads by selecting their positions on the section topography.
 - **Roads**: Presence and properties of roads on or near the slope.
 - **Tension Crack Properties**: Characteristics of any tension cracks.
-- **Faults**: Geometry and material properties of faults, if applicable. For detailed information on faults, refer to the [OptimalSlope Manual on Faults](https://optimalslope.github.io/manual/pages/properties/6-properties/#faults).
+- **Faults**: Geometry and material properties of faults, if applicable. For detailed information, refer to [Faults]({{ '/pages/properties/6-properties/#faults' | relative_url }}).
 
 <p align="center">
   <img src="{{ '/assets/tutorial/optional_properties.png' | relative_url }}" alt="Optional Properties card with expandable Tension Crack, Faults, Loads, Roads, and Water sections"/>
@@ -462,7 +463,7 @@ The bench, rock, and general properties described above must be provided before 
 
 Ensure that all values accurately reflect the physical and mechanical characteristics of the materials and the specific cross-section.
 
-For detailed guidance, refer to the [OptimalSlope Manual on Properties](https://optimalslope.github.io/manual/pages/properties/6-properties/).
+For detailed guidance, refer to [Properties]({{ '/pages/properties/6-properties/' | relative_url }}).
 
 ---
 
@@ -486,7 +487,7 @@ After the simulation problem has been defined with the required inputs, use the 
 
 <p align="center">
   <video controls width="100%" preload="metadata">
-    <source src="https://optimalslope.github.io/manual/assets/videos/tutorials/Running-Simulation.mp4" type="video/mp4">
+    <source src="{{ '/assets/videos/tutorials/Running-Simulation.mp4' | relative_url }}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </p>
@@ -512,7 +513,7 @@ After the input data is defined, simulations can be started in the simulation wi
 
 #### Common Simulation Input Checks
 
-Before submitting a simulation, Slope Optimiser opens the **Simulation Check** panel when required inputs need attention. Each issue includes a description and a **Fix** button. Selecting **Fix** opens the relevant section or layer in the Property View and highlights the field that needs input. After correcting the values, click **Check Again**.
+Before submitting a simulation, Slope Optimiser opens the **Simulation Check** panel when required inputs need attention. Each issue includes a description and a **Fix** button. Selecting **Fix** opens the relevant section or layer in the **Properties** panel and highlights the field that needs input. After correcting the values, click **Check Again**.
 
 The structured check covers:
 
@@ -687,11 +688,11 @@ The receiving section must not have an active or submitted simulation. Fetch or 
 
 #### Results
 
-Slope Optimiser returns an interactive **Output Plot** showing the estimated optimal slope profile. The plot toolbar can be used to:
+Slope Optimiser returns an interactive **Output Plot** showing the estimated optimal slope profile. In the legend, the green result line is labelled **Optimal profile for mine planning**. The plot toolbar can be used to:
 
+- fit the view to the plot data using the first button on the left;
 - show or hide the legend;
 - choose individual visible plot items or select **Show all**;
-- fit the view to the plot data;
 - switch the embedded 2D plot between light and dark backgrounds;
 - copy the plot to the clipboard;
 - save the plot as a PNG or SVG image;
@@ -727,13 +728,6 @@ The estimated profile coordinates and angles are also displayed in the logs, and
 <p>Export the optimised slope profile using global or local coordinate options.</p>
 </div>
 <div class="os-workflow-step-body" markdown="1">
-
-<!-- <p align="center">
-  <video controls width="100%" preload="metadata">
-    <source src="https://optimalslope.github.io/manual/assets/videos/tutorials/workflow/4-exporting-output-profile-to-dxf.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</p> -->
 
 Simulation results are shown in the 2D plot window and recorded in the logs. The estimated slope profile can be exported to DXF and later imported into other software.
 

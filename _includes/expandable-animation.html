@@ -2,13 +2,23 @@
   <div class="os-expandable-media-window" data-media-title="{{ include.title | escape }}">
     <div class="os-expandable-media-toolbar">
       <span class="os-expandable-media-title">{{ include.title }}</span>
-      <button class="os-expandable-media-expand" type="button" data-media-expand aria-label="Expand {{ include.title | escape }}">
-        <i class="fa fa-expand" aria-hidden="true"></i>
-        <span>Expand</span>
-      </button>
+      <div class="os-expandable-media-actions">
+        <button class="os-expandable-media-control" type="button" data-media-pause aria-pressed="false" aria-label="Pause {{ include.title | escape }}">
+          <i class="fa fa-pause" aria-hidden="true"></i>
+          <span>Pause</span>
+        </button>
+        <button class="os-expandable-media-control" type="button" data-media-replay aria-label="Replay {{ include.title | escape }}">
+          <i class="fa fa-repeat" aria-hidden="true"></i>
+          <span>Replay</span>
+        </button>
+        <button class="os-expandable-media-expand" type="button" data-media-expand aria-label="Expand {{ include.title | escape }}">
+          <i class="fa fa-expand" aria-hidden="true"></i>
+          <span>Expand</span>
+        </button>
+      </div>
     </div>
     <button class="os-expandable-media-stage" type="button" data-media-expand aria-label="Expand {{ include.title | escape }}">
-      <img src="{{ include.src | relative_url }}" alt="{{ include.alt | escape }}" loading="lazy">
+      <img src="{{ include.src | relative_url }}" data-animation-src="{{ include.src | relative_url }}" alt="{{ include.alt | escape }}" loading="lazy">
     </button>
   </div>
   {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}

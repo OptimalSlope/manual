@@ -2,7 +2,7 @@ require([
     'gitbook',
     'jquery'
 ], function(gitbook, $) {
-    var MAX_DESCRIPTION_SIZE = 500;
+    var MAX_DESCRIPTION_SIZE = 240;
     var state = gitbook.state;
     var INDEX_DATA = {};
     var usePushState = (typeof history.pushState !== 'undefined');
@@ -70,7 +70,7 @@ require([
 
             var content = item.body.trim();
             if (content.length > MAX_DESCRIPTION_SIZE) {
-                content = content + '...';
+                content = content.substr(0, MAX_DESCRIPTION_SIZE).trim() + '…';
             }
             var $content = $('<p>').html(content);
 
@@ -90,20 +90,57 @@ require([
     function query(keyword) {
         if (keyword == null || keyword.trim() === '') return;
 
-        var results = [],
-            index = -1;
+        var queryText = keyword.trim();
+        var queryTerms = queryText.toLowerCase().split(/\s+/).filter(Boolean);
+        var highlightPattern = new RegExp('(' + queryTerms.map(escapeReg).join('|') + ')', 'gi');
+        var results = [];
+
         for (var page in INDEX_DATA) {
-            if ((index = INDEX_DATA[page].body.toLowerCase().indexOf(keyword.toLowerCase())) !== -1) {
+            var title = INDEX_DATA[page].title || '';
+            var body = INDEX_DATA[page].body || '';
+            var titleLower = title.toLowerCase();
+            var bodyLower = body.toLowerCase();
+            var searchableText = titleLower + ' ' + bodyLower;
+            var matchesAllTerms = queryTerms.every(function(term) {
+                return searchableText.indexOf(term) !== -1;
+            });
+
+            if (matchesAllTerms) {
+                var fullQueryIndex = bodyLower.indexOf(queryText.toLowerCase());
+                var firstTermIndex = bodyLower.indexOf(queryTerms[0]);
+                var matchIndex = fullQueryIndex !== -1 ? fullQueryIndex : firstTermIndex;
+                var excerptStart = matchIndex > 90 ? matchIndex - 90 : 0;
+                var excerpt = body.substr(excerptStart, MAX_DESCRIPTION_SIZE);
+                var score = 0;
+
+                if (titleLower.indexOf(queryText.toLowerCase()) !== -1) {
+                    score += 100;
+                }
+                queryTerms.forEach(function(term) {
+                    if (titleLower.indexOf(term) !== -1) {
+                        score += 20;
+                    }
+                });
+                if (fullQueryIndex !== -1) {
+                    score += 10;
+                }
+
                 results.push({
                     url: page,
-                    title: INDEX_DATA[page].title,
-                    body: INDEX_DATA[page].body.substr(Math.max(0, index - 50), MAX_DESCRIPTION_SIZE).replace(new RegExp('(' + escapeReg(keyword) + ')', 'gi'), '<span class="search-highlight-keyword">$1</span>')
+                    title: title,
+                    score: score,
+                    body: (excerptStart > 0 ? '…' : '') + excerpt.replace(highlightPattern, '<span class="search-highlight-keyword">$1</span>')
                 });
             }
         }
+
+        results.sort(function(a, b) {
+            return b.score - a.score || a.title.localeCompare(b.title);
+        });
+
         displayResults({
             count: results.length,
-            query: keyword,
+            query: queryText,
             results: results
         });
     }
@@ -188,6 +225,19 @@ require([
     gitbook.events.on('start', function() {
         bindSearch('#book-search-input input');
         bindSearch('#book-search-input-inside input');
+
+        $body.on('click', '[data-search-suggestion]', function() {
+            var suggestion = $(this).attr('data-search-suggestion');
+            $('#book-search-input input').val(suggestion);
+            $('#book-search-input-inside input').val(suggestion);
+            launchSearch(suggestion);
+
+            if (usePushState) {
+                history.pushState({
+                    path: updateQueryString('q', suggestion)
+                }, null, updateQueryString('q', suggestion));
+            }
+        });
 
         showResult();
         closeSearch();

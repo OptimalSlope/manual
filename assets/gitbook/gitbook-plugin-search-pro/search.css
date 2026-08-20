@@ -39,3 +39,32 @@
   #book-search-results span.search-highlight-keyword {
     background: #ff0;
   }
+
+  .os-search-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+    margin: 0.75rem 0 1.25rem;
+    color: #687582;
+    font-size: 0.86rem;
+  }
+
+  .os-search-suggestions button {
+    padding: 0.35rem 0.65rem;
+    border: 1px solid #cbd4dc;
+    border-radius: 999px;
+    background: #fff;
+    color: #245f87;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+  }
+
+  .os-search-suggestions button:hover,
+  .os-search-suggestions button:focus-visible {
+    border-color: #f16b21;
+    background: #fff7f1;
+    color: #9d430f;
+    outline: none;
+  }
