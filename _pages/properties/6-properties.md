@@ -638,9 +638,11 @@ Bench and rock properties can be set for individual 3D stratigraphic models. If 
 
 The **Slope Anchor** is the fixed endpoint used to generate the candidate slope geometry.
 
-- Select **Crest** when the crest location and target slope height are known. Enter the crest position or click **Select** and choose it in the visualiser.
-- Select **Toe** when the toe location controls the design. Define the toe horizontal position and elevation by entering the values or using the two **Select** controls. Slope height and the bench-compatible height are then calculated automatically.
+- Select **Crest** when the upper endpoint is fixed by topography, a pit limit, or the planned crest alignment. Define the crest position and target slope height.
+- Select **Toe** when the lower endpoint is fixed by the pit floor, haul road, excavation boundary, or another design constraint. Define the toe horizontal position and elevation; the slope height and bench-compatible height are calculated automatically.
 - The property panel displays the resolved global coordinates and the estimated minimum and maximum OSA for the active anchor.
+
+Choose the anchor based on which endpoint must remain fixed, then set **Failure Direction** separately to match the slope orientation.
 
 The toe must lie inside the section, at or below the topography, and above the section floor. Toe elevations are resolved to the whole-unit elevation used by the solver. If a new value is invalid, review the message in the interface and adjust the toe position or elevation.
 
