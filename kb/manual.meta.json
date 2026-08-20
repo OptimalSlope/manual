@@ -1,0 +1,62 @@
+{
+  "generated": "2026-08-20T18:43:44+00:00",
+  "sha256": "b72313d389b70f96df087d75ecc61e2092b964f2a3d43cad5b7d43eddbba3cb2",
+  "bytes": 96221,
+  "sections": 119,
+  "pages": [
+    {
+      "title": "Overview",
+      "url": "https://OptimalSlope.github.io/manual/",
+      "sections": 3,
+      "source": "index.html"
+    },
+    {
+      "title": "Quick Start",
+      "url": "https://OptimalSlope.github.io/manual/pages/quick-start/",
+      "sections": 7,
+      "source": "pages\\quick-start\\index.html"
+    },
+    {
+      "title": "Simulation Workflow",
+      "url": "https://OptimalSlope.github.io/manual/pages/Tutorials/Workflow/",
+      "sections": 9,
+      "source": "pages\\Tutorials\\Workflow\\index.html"
+    },
+    {
+      "title": "Properties",
+      "url": "https://OptimalSlope.github.io/manual/pages/properties/6-properties/",
+      "sections": 9,
+      "source": "pages\\properties\\6-properties\\index.html"
+    },
+    {
+      "title": "Project Management",
+      "url": "https://OptimalSlope.github.io/manual/pages/project/3-project-management/",
+      "sections": 7,
+      "source": "pages\\project\\3-project-management\\index.html"
+    },
+    {
+      "title": "Controls",
+      "url": "https://OptimalSlope.github.io/manual/pages/controls/1-interface/",
+      "sections": 4,
+      "source": "pages\\controls\\1-interface\\index.html"
+    },
+    {
+      "title": "Help and Solutions",
+      "url": "https://OptimalSlope.github.io/manual/pages/troubleshooting/",
+      "sections": 6,
+      "source": "pages\\troubleshooting\\index.html"
+    },
+    {
+      "title": "Data Preparation",
+      "url": "https://OptimalSlope.github.io/manual/pages/Data Suitability/7-data/",
+      "sections": 7,
+      "source": "pages\\Data Suitability\\7-data\\index.html"
+    },
+    {
+      "title": "Glossary",
+      "url": "https://OptimalSlope.github.io/manual/pages/glossary/",
+      "sections": 67,
+      "source": "pages\\glossary\\index.html"
+    }
+  ]
+}

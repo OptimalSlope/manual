@@ -1,0 +1,2266 @@
+### Overview > Overview
+URL: https://OptimalSlope.github.io/manual/
+
+Slope Optimiser user manual
+
+Slope Optimiser Manual
+
+Learn how to prepare data, manage projects, define slope simulation properties, run simulations, and export results from the OptimalSlope CAD interface.
+
+Download OptimalSlope Quick Start Simulation Workflow Help and Solutions Conference Demo
+
+[figure: OptimalSlope logo]
+
+Slope Optimiser documentation
+This manual explains the main workflows for using the Slope Optimiser CAD graphical interface.Manual v1.0 · Updated 20 August 2026
+
+Introduction
+
+### Overview > Introduction
+URL: https://OptimalSlope.github.io/manual/#introduction
+
+OptimalSlope helps evaluate slope geometry, generate simulation inputs, run cloud simulations, and export optimised slope profiles.
+
+This is the user manual for the Slope Optimiser CAD graphical interface.
+
+Use the sections below to move through the typical workflow: prepare data, create or import project geometry, define properties, run simulations, review outputs, and export results for downstream analysis.
+
+Slope Optimiser Interactive Workflow Open the full interactive workflow preview in a new tab.
+
+View workflow Conference demo
+
+Start with the Data Preparation page if you are working with new 3D stratigraphy or imported section files. Clean input geometry improves slicing, material assignment, and simulation reliability.
+
+1 Quick Start Run your first simulation from prepared data through result review and export. 2 Prepare Data Check geometry quality, DXF exports, section wires, gaps, overlaps, and layer organisation. 3 Run Workflow Follow the simulation workflow from importing sections to exporting results. 4 Define Properties Set slope anchors, bench and rock properties, loads, faults, roads, and groundwater inputs. 5 Help and Solutions Resolve common issues with geometry, OSA search region, simulations, and exports. 6 Manage Projects Create, save, import, slice, trim, and export project data. 7 Use Controls Navigate the visualiser, change views, adjust object style, and manage selected items. 8 Glossary Review common OptimalSlope, slope design, simulation, and export terms.
+
+Common support tasks
+
+### Overview > Common support tasks
+URL: https://OptimalSlope.github.io/manual/#common-support-tasks
+
+Use these shortcuts when you are checking input data, preparing a simulation, or diagnosing a warning.
+
+A Gaps and overlaps Understand geometry warnings and decide whether input data needs repair. B OSA search region Check the crest point and Min/Max OSA range before running the optimiser. C Export block model Create downstream block model outputs from 3D stratigraphy and slope-angle results. D Import into Datamine Map block model fields and combine slope-angle data using Datamine workflows.
+
+### Quick Start > Quick Start
+URL: https://OptimalSlope.github.io/manual/pages/quick-start/
+
+Quick Start
+
+### Quick Start > Run your first simulation
+URL: https://OptimalSlope.github.io/manual/pages/quick-start/
+
+A short route through Slope Optimiser for new users: prepare data, import or create a section, define properties, run the simulation, review results, and export outputs.
+
+Step 1
+
+### Quick Start > Prepare input data
+URL: https://OptimalSlope.github.io/manual/pages/quick-start/#prepare-data
+
+Clean input geometry improves slicing, material assignment, and simulation reliability.
+
+Before creating a simulation, check that the imported DXF sections or 3D stratigraphy data are suitable for modelling.
+
+Focus on:
+
+clean and continuous section boundaries;
+
+correct layer organisation;
+
+minimal gaps or overlaps;
+
+realistic geometry around the expected slope area;
+
+consistent units and coordinates.
+
+Review the Data Preparation page before working with new project data.
+
+Open Data Preparation Review geometry quality, DXF preparation, layer organisation, gaps, overlaps, and input suitability.
+
+Step 2
+
+### Quick Start > Import or create a section
+URL: https://OptimalSlope.github.io/manual/pages/quick-start/#create-section
+
+Start from an existing DXF section or generate a section from 3D stratigraphy.
+
+You can create the analysis section in two main ways:
+
+Directly import a DXF section using File -> Import Section -> DXF.
+
+Import 3D stratigraphy using File -> Import Stratigraphy -> DXF, then create a section using the slicing tool.
+
+Use direct DXF import when your section is already prepared. Use slicing when the section must be generated from 3D geological solids or wireframes.
+
+For slicing, open the tool, click Select visible models, choose the plane direction, and position the live clipping plane. Drag the arrow handle to move the plane. For a vertical plane, drag the circular rotation handle to rotate the plane and change its azimuth. Review the live preview before clicking Slice.
+
+Step 3
+
+### Quick Start > Define properties
+URL: https://OptimalSlope.github.io/manual/pages/quick-start/#define-properties
+
+Set the inputs required for the selected section before running the simulation.
+
+At minimum, check and define:
+
+Bench properties such as bench height, bench face angle, berm width, and number of benches.
+
+Rock properties using the appropriate strength model.
+
+Slope anchor: use a crest with a target slope height, or define the toe position and elevation and let the software calculate slope height.
+
+General section properties such as failure direction and target Factor of Safety.
+
+Optional inputs, such as a water table and pressure method, line or distributed loads, roads, tension cracks, and faults.
+
+Check the active slope anchor: A crest too close to the boundary can move the OSA search region outside the ground surface. A toe must have valid X and Z coordinates and remain inside the section, at or below the topography, and above the section floor.
+
+Open Properties Review slope anchors, bench and rock inputs, loads, roads, groundwater, and fault settings.
+
+Step 4
+
+### Quick Start > Run the simulation
+URL: https://OptimalSlope.github.io/manual/pages/quick-start/#run-simulation
+
+Submit the simulation after account, folder, and input checks are complete.
+
+Before starting:
+
+Select the section of interest.
+
+Choose Automatic or Custom under Simulation results location. Automatic mode requires a saved project; Custom mode requires an existing selected folder.
+
+Configure the user profile under Tools -> Settings -> Account if this is the first cloud run.
+
+Click Start and resolve every item in Simulation Check. Use Fix to open and highlight the affected input, then select Check Again.
+
+When the check passes, click Start again and review any later geometry or groundwater warnings.
+
+Monitor the Node status summary while the simulation runs. Open the panel and select a node to inspect its output; use Show main output to return to the main log.
+
+Fetch results when they are available.
+
+Step 5
+
+### Quick Start > Review and export results
+URL: https://OptimalSlope.github.io/manual/pages/quick-start/#review-export
+
+Fetch simulation outputs, review the result plot and logs, then export downstream files.
+
+After the simulation is complete:
+
+review the interactive result plot and logs;
+
+use the first plot-toolbar button to fit the plot, then control the legend and visible items, change the theme, copy the plot, or save it as PNG/SVG;
+
+detach plots and keep multiple cross-section results open for comparison;
+
+export the optimised slope profile to DXF if it is needed for external workflows;
+
+create a new project cross-section from the optimised output when required;
+
+export a section block model when the section is associated with 3D stratigraphy;
+
+use downstream import steps for RS2 or Datamine where relevant.
+
+### Simulation Workflow > Simulation Workflow
+URL: https://OptimalSlope.github.io/manual/pages/Tutorials/Workflow/
+
+Simulation Workflow Tutorial
+
+Follow the complete Slope Optimiser workflow, from importing a section and defining properties to running simulations, reviewing results, exporting profiles, and preparing downstream models.
+
+1Import SectionsStart from DXF sections or slice sections from 3D stratigraphy. 2Define PropertiesAssign bench, rock, general, and optional simulation properties. 3Run SimulationsConfigure cloud simulation inputs and check geometry before running. 4Export DXFExport the optimised output profile for external workflows. 5Import into RS2Prepare the exported profile for Rocscience RS2 stability analysis. 6Export Block ModelCreate a section block model from 3D stratigraphy and optimised slope angles. 7Import Block Model into DatamineImport the exported block model CSV and combine slope-angle data.
+
+Follow these steps to configure a selected section in Slope Optimiser and run a simulation:
+
+Step 1
+
+### Simulation Workflow > Importing Sections
+URL: https://OptimalSlope.github.io/manual/pages/Tutorials/Workflow/#importing-sections
+
+Start by importing an existing DXF section or creating sections from a 3D stratigraphy model using the slicing tool.
+
+Your browser does not support the video tag.
+
+We recommend importing sections directly if they are already defined in DXF files. This straightforward method avoids importing large 3D model files solely to create sections.
+
+In Slope Optimiser, you have two methods available for defining cross-sections:
+
+Importing 3D Solid/Wireframe and Making Sections
+
+You can import a 3D solid or wireframe (File -> Import Stratigraphy -> DXF) and then use the slicing tool to create a section. For more information, refer to Creating Sections.
+
+In the current slicing tool, click Select visible models, choose the XY, XZ, or YZ plane, and position the live clipping plane. Drag the arrow handle to move the plane. For a vertical plane, drag the circular rotation handle to rotate the plane and change its azimuth. Review the live clipped preview before clicking Slice.
+
+Directly Importing DXF Section File
+
+Alternatively, you can directly import a DXF section file using the pathway: File -> Import Section -> DXF.
+
+Use Quality Input Data
+
+Ensure your DXF model data meets general quality standards to obtain reliable simulation results. For guidance on preparing and checking data, refer to Data Preparation.
+
+Step 2
+
+### Simulation Workflow > Defining Properties
+URL: https://OptimalSlope.github.io/manual/pages/Tutorials/Workflow/#defining-properties
+
+Define bench, rock, general, and optional properties before running a simulation.
+
+Your browser does not support the video tag.
+
+Define Bench Properties
+
+Specify properties for benches if your cross-section includes them:
+
+Unit Weight: Weight of material per cubic metre.
+
+Bench Face Angle: Inclination angle of bench faces.
+
+Min Berm Width: Minimum width of berms between benches.
+
+Number of Benches: Total number of benches.
+
+Bench Height: Height of each bench.
+
+Set Rock Properties
+
+Choose between Hoek-Brown and Mohr-Coulomb models and set properties like:
+
+Strength characteristics.
+
+Friction parameters.
+
+[figure: Layer properties]
+
+Rock properties are set separately for each section layer. Alternatively, if 3D models are used to generate sections, properties can be defined initially at the 3D model level. Sections created using the slicing tool automatically inherit these properties from their parent 3D models.
+
+General Section Properties
+
+Set general properties for the section:
+
+Slope Anchor: Choose whether the crest or toe is the fixed endpoint of the design.
+
+Crest anchor: Define the crest position and target slope height.
+
+Toe anchor: Define the toe horizontal position and elevation. The software calculates the slope height and bench-compatible height.
+
+Target FoS (Factor of Safety).
+
+Failure Direction: Select right-to-left or left-to-right slope generation.
+
+[figure: Section properties and Crest slope-anchor settings]
+
+Section properties and slope anchor
+
+[figure: Failure direction and slope-geometry settings]
+
+Failure direction and slope geometry
+
+The bench, rock, and general properties described above must be provided before running a simulation. The optional properties listed below can be added if required.
+
+Optional Properties
+
+Water: Water-table location and pressure method, if applicable.
+
+Water Pressure: Use hydrostatic pressure or apply the phreatic-line inclination correction.
+
+Loads: Add line loads or uniform/linear distributed loads by selecting their positions on the section topography.
+
+Roads: Presence and properties of roads on or near the slope.
+
+Tension Crack Properties: Characteristics of any tension cracks.
+
+Faults: Geometry and material properties of faults, if applicable. For detailed information, refer to Faults.
+
+[figure: Optional Properties card with expandable Tension Crack, Faults, Loads, Roads, and Water sections]
+
+Ensure that all values accurately reflect the physical and mechanical characteristics of the materials and the specific cross-section.
+
+For detailed guidance, refer to Properties.
+
+Step 3
+
+### Simulation Workflow > Running Simulations
+URL: https://OptimalSlope.github.io/manual/pages/Tutorials/Workflow/#running-simulations
+
+Configure results storage, the user profile, input checks, and the cloud simulation process.
+
+Overview
+
+Slope Optimiser runs computationally intensive simulations in the cloud to avoid overloading local resources or affecting the performance of the user’s computer.
+
+After the simulation problem has been defined with the required inputs, use the simulation window to run the analysis and obtain results.
+
+Your browser does not support the video tag.
+
+Configuring the user profile
+
+To run simulations in the cloud, configure the user profile under Tools > Settings > Account.
+
+After the input data is defined, simulations can be started in the simulation window. Follow these steps before starting a simulation:
+
+Select a section of interest. Select any section with the required properties.
+
+Choose the results location:
+
+Automatic creates a section simulation folder beside the saved project when the simulation starts.
+
+Custom uses a folder selected by the user.
+Automatic storage requires the project to be saved as a .cbf file first. Custom folder names may contain only letters, numbers, hyphens, and underscores.
+
+Make sure the user profile is configured. When running a simulation for the first time, go to Tools -> Settings -> Account, enter the provided credentials, and click Configure. This ensures that the simulation can run in the cloud.
+
+[figure: Profile setup]
+
+Common Simulation Input Checks
+
+Before submitting a simulation, Slope Optimiser opens the Simulation Check panel when required inputs need attention. Each issue includes a description and a Fix button. Selecting Fix opens the relevant section or layer in the Properties panel and highlights the field that needs input. After correcting the values, click Check Again.
+
+The structured check covers:
+
+the active crest or toe anchor and its coordinates;
+
+slope height where crest-anchor mode is used;
+
+target FoS and bench definition;
+
+required bench and rock properties;
+
+the selected strength model and its required parameters;
+
+cohesion and friction angle for fault layers;
+
+load positions, magnitudes, endpoints, and overlapping loads.
+
+Geometry and groundwater checks that require native model processing or a user decision can still appear later while the simulation input is generated. Review those messages before choosing whether to continue.
+
+Section Geometry Checks: Gaps and Overlaps
+
+Before running a simulation, Slope Optimiser analyses the input section geometry and checks for common geometry inconsistencies, including gaps and overlaps.
+
+[figure: Invalid section geometry warning]
+
+Gaps are undefined regions between section boundaries or layer wires where material cannot be assigned clearly.
+
+Overlaps are conflicting regions where two or more material areas occupy the same space.
+
+Small isolated gaps may not significantly affect the simulation result, especially if they occur away from the expected failure region. However, larger gaps or frequent gaps throughout the section can reduce the reliability of the model and may lead to less meaningful results.
+
+Overlaps should be reviewed carefully, especially when they are easily visible in the section geometry. Overlapping regions can affect the material order assignment and may influence how the software estimates the failure mechanism.
+
+To view detected gap and overlap markers, open the Visualiser. Gap markers are shown in red, while overlap markers are shown in blue.
+
+[figure: Gaps and overlaps shown in the visualiser]
+
+Geometry Review Checklist
+
+Before proceeding with a simulation, check the following:
+
+Review detected markers
+
+Open the Visualiser to inspect red and blue markers.
+
+Red markers indicate detected gap points.
+
+Blue markers indicate detected overlap points.
+
+Check the size and frequency of gaps
+
+Small, isolated gaps may be acceptable in some cases.
+
+Large or repeated gaps should be repaired before running the simulation.
+
+Pay particular attention to gaps near the slope face, slope toe, crest, or expected failure region.
+
+Check visible overlaps
+
+Review any overlaps that are clearly visible in the geometry.
+
+Correct overlaps where material boundaries cross or conflict.
+
+Make sure overlapping layers do not create ambiguous material regions.
+
+Check imported DXF quality
+
+Ensure section boundaries are clean and continuous.
+
+Remove duplicate or unnecessary lines where possible.
+
+Avoid very small disconnected segments or sliver regions.
+
+Confirm that layer wires represent the intended geological structure.
+
+Decide whether to continue
+
+If only a few minor markers are detected and they are away from the critical region, it may be reasonable to continue.
+
+If many markers are detected, or if the issues are near the slope profile or likely failure zone, repair the geometry first.
+
+Recommendation:
+
+For reliable simulation results, review and repair significant gaps and visible overlaps before proceeding. Clean section geometry improves material assignment and gives the optimiser a more reliable basis for estimating the optimal slope profile.
+
+Slope Anchor and OSA Search Region Checks
+
+How should I choose the crest point?
+
+In Crest anchor mode, the crest point defines the uppermost starting location of the slope. Its position and the target slope height directly affect how the slope geometry is generated during optimisation.
+
+If the crest is placed too close to the outer edge of the section or terrain, the calculated slope (based on the initial maximum overall slope angle) may project outward beyond the existing ground surface. In this case, parts of the slope will extend into open space — effectively creating geometry that intersects “thin air.” This can lead to unrealistic results and may cause instability or inaccuracies in subsequent simulations.
+
+To avoid this, position the crest point further inland, so that:
+
+The entire slope profile remains within the defined ground surface.
+
+The slope toe and face are generated against actual material, not empty space.
+
+The optimisation process has valid geometry to work with in all iterations.
+
+When the crest point is set correctly, the section preview shows the preliminary minimum and maximum Overall Slope Angle (OSA) limits. These are indicated by the green triangular search region. This triangle represents the area where the simulation will search for the optimal slope profile shape (see picture below).
+
+[figure: Profile setup]
+
+The preliminary OSA limits are calculated from the active slope anchor and the section properties. If the anchor and properties result in a very narrow difference between the minimum and maximum OSA, the simulation has only a limited search range. In this case, the optimiser will not be able to explore many possible slope profiles, which may reduce the quality or usefulness of the optimisation result.
+
+[figure: Profile setup]
+
+A wider, realistic OSA search range gives the optimiser more flexibility to investigate alternative slope shapes while remaining within the valid section geometry.
+
+Practical Tips:
+
+Position the crest point slightly further inside the section boundary than you think is necessary.
+
+Check that the green triangular search region remains within the available ground/material area.
+
+Avoid crest point positions that create a very narrow minimum-to-maximum OSA range.
+
+If the green triangle is too narrow or extends outside the model, adjust the crest point or review the section properties before running the simulation.
+
+How should I define a toe anchor?
+
+Use Toe anchor mode when the lower endpoint of the design is known. Enter or select both the toe horizontal position and its elevation. The application calculates the slope height and bench-compatible height from the resolved toe.
+
+The toe must remain inside the section, at or below the topography, and above the section floor. Review the estimated OSA range after every toe adjustment. Changing the toe may invalidate the existing water table; redraw or re-import it if the application removes it.
+
+Starting Simulations
+
+Switch to the Simulation tab at the bottom of the interface.
+
+Under Cross-sections, select the desired cross-section.
+
+Select Automatic or Custom under Simulation results location. If using Custom, click Select folder.
+
+Click Start.
+
+Resolve any items listed under Simulation Check, then click Check Again.
+
+When the check passes, click Start again to begin submission.
+
+Continue through any geometry or groundwater warnings shown while the input is generated.
+
+Enter the configured username when requested.
+
+Use Fetch results to download completed results or view the progress of a running simulation.
+
+Monitoring Node Status and Output
+
+The Simulation Output area displays a Node status summary when node information is available. Open the panel to review whether individual nodes are preparing, queued, running, complete, or failed.
+
+Select a node to display that node’s output in the log area.
+
+Click Show main output to return to the main simulation output.
+
+Keep Follow output selected to scroll automatically as new log lines arrive. Clear it when reviewing an earlier part of the log.
+
+Use the search field and Next, or press Enter, to move through matching log entries.
+
+Click Copy to copy the displayed output.
+
+Creating Different Scenarios
+
+To test different design or material scenarios for the same cross-section, right-click the section in the project tree and select Duplicate. This creates an independent copy of the selected section, allowing you to modify simulation inputs without changing the original section.
+
+[figure: Duplicate section]
+
+Typical scenario changes may include:
+
+Slope geometry — adjust the slope profile, crest position, or slope height.
+
+Bench settings — test different bench heights, berm widths, or bench face angles.
+
+Material properties — compare different rock strength parameters or material models.
+
+Faults — evaluate the influence of different fault positions, orientations, or fault material properties.
+
+Water table — evaluate dry, wet, or alternative groundwater conditions.
+
+Loads or roads — assess line loads, distributed loads, or alternative road positions.
+
+When running simulations for duplicated sections, make sure each scenario has either:
+
+A unique section name, for example:
+
+Section_1_BaseCase
+
+Section_1_WetCondition
+
+Section_1_LowStrength
+
+or:
+
+A different results folder for each scenario.
+
+This helps avoid conflicts between simulation outputs, logs, and exported result files.
+Note: When rerunning a section with corrected parameters, select Yes to overwrite the existing input data when starting the simulation.
+
+Transferring Properties to Another Section
+
+To reuse an existing setup on a newly imported section, open Tools > Settings > Transfer Section Properties. Select the section that should receive the properties, click Transfer Section Properties, and then choose the source section.
+
+Review the property groups and layer mapping before confirming the transfer. Layers with the same name are matched automatically; unmatched layers can be mapped manually or excluded. Geometry-dependent data, including crest and toe coordinates, slope height, water-line points, roads, loads, simulation folders, plots, results, and result logs, is not transferred.
+
+The receiving section must not have an active or submitted simulation. Fetch or stop that simulation before transferring properties.
+
+Results
+
+Slope Optimiser returns an interactive Output Plot showing the estimated optimal slope profile. In the legend, the green result line is labelled Optimal profile for mine planning. The plot toolbar can be used to:
+
+fit the view to the plot data using the first button on the left;
+
+show or hide the legend;
+
+choose individual visible plot items or select Show all;
+
+switch the embedded 2D plot between light and dark backgrounds;
+
+copy the plot to the clipboard;
+
+save the plot as a PNG or SVG image;
+
+open a detached plot window.
+
+Detached plot windows are static snapshots and can be kept open side by side to compare cross-sections. From a detached window, the same cross-section can be opened in another window. Legend visibility, plot-item visibility, fit, copy, and save controls remain available.
+
+The estimated profile coordinates and angles are also displayed in the logs, and the results folder contains the generated plots and optimal-profile data. Under Output Tools, use Create cross-section from output to add the optimised result as a new section in the project.
+
+An example of input and output slope profile
+input_output
+
+An example of 2D output slope profile
+input_output
+
+Note: Results in the 2D plot are always shown as if the slope is on the right side and are mirrored if the slope is on the left. When exporting the output profile to DXF or visualising it in 3D, the resulting slope profile is shown in its original position.
+
+Step 4
+
+### Simulation Workflow > Exporting Output Profile to DXF
+URL: https://OptimalSlope.github.io/manual/pages/Tutorials/Workflow/#exporting-output-profile-to-dxf
+
+Export the optimised slope profile using global or local coordinate options.
+
+Simulation results are shown in the 2D plot window and recorded in the logs. The estimated slope profile can be exported to DXF and later imported into other software.
+
+[figure: Export output]
+
+Navigate to the tools section in the simulation window (Export output profile to DXF).
+
+Select one of the export configurations:
+
+Global - the exported profile coordinates use the original global coordinate system. This is useful when the result is visualised relative to the original section or 3D models.
+
+Local XZ - the exported profile coordinates are aligned with the XZ plane (the Y coordinate is fixed).
+
+Local XY - exported coordinates are flattened, i.e., the section is on the XY plane and is horizontal (Z coordinate is fixed). This option is useful when exporting to software such as Rocscience RS2.
+
+Step 5
+
+### Simulation Workflow > Importing Output into Rocscience RS2
+URL: https://OptimalSlope.github.io/manual/pages/Tutorials/Workflow/#importing-output-into-rockscience-rs2
+
+Import the exported DXF profile into RS2 and complete the external boundary definition manually.
+
+Since results from Slope Optimiser may be used in RS2 for stability analysis, this step explains how to import Slope Optimiser output. Several steps are required to import an output profile DXF file into RS2.
+
+Step 1: Export output profile to DXF from our software
+
+Export the output profile as DXF (as explained in Step 4) using the Local XY export method. This is required because RS2 expects a 2D section, so the coordinates are flattened to place the section horizontally on the XY plane.
+
+Note: Other software such as Rhino can be used to achieve this operation.
+
+Step 2: Import into RS2
+
+Import the DXF File: Open RS2 and import the modified DXF file.
+
+Set Boundary Types: RS2 assigns Boundary Types based on layer names. Ensure your layer names match the expected Boundary Types in RS2. If a layer name does not match, it will be set to ‘Not Assigned’.
+
+Define the model: For a slope model, set the boundary type to ‘Material’. Note that the ‘External’ role should not be used for the top and bottom portions of the slope, which should be defined by two different polylines. RS2 expects the external boundary to define the complete outer model boundary.
+
+At the moment, Slope Optimiser does not export the complete RS2 external boundary by default. The external boundary must be added or drawn manually in RS2 after importing the DXF.
+
+By following these steps, you can successfully prepare and import a DXF file into RS2, ensuring that all elements are correctly interpreted by the software.
+
+Step 6
+
+### Simulation Workflow > Exporting the Section Block Model
+URL: https://OptimalSlope.github.io/manual/pages/Tutorials/Workflow/#exporting-the-section-block-model
+
+Export a block model for sections associated with 3D stratigraphy using optimised slope angles.
+
+If the project contains 3D stratigraphy, the section block model can be exported from the simulation window using the Export block model tool.
+
+[figure: Export output]
+
+This export creates a block model for the selected section using the optimised slope angles from the simulation result. The exported model can be used for further visualisation, checking, or downstream modelling workflows.
+
+Before exporting, define the block dimensions:
+
+dX — block size in the X direction.
+
+dY — block size in the Y direction.
+
+dZ — block size in the Z direction.
+
+This feature is available when the section is generated from, or associated with, a 3D stratigraphy model. If the project only contains an imported 2D section without 3D stratigraphy, there is no 3D block model available to export.
+
+Choose block dimensions that are appropriate for the scale of the model. Smaller block sizes provide a more detailed representation but may produce larger output files, while larger block sizes reduce file size but give a coarser model.
+
+Step 7
+
+### Simulation Workflow > Import Block Model into Datamine
+URL: https://OptimalSlope.github.io/manual/pages/Tutorials/Workflow/#import-block-model-into-datamine
+
+Import the block model CSV exported from OptimalSlope into Datamine, assign the correct block model fields, and combine the slope-angle output with the original block model.
+
+This step explains how to import an OptimalSlope block model export into Datamine. The workflow is split into two parts:
+
+Import the main block geometry and save it with a clear base-model name, for example Block_Model_XYZ.
+
+Import the OptimalSlope slope-angle output, save it with a clear slope-model name, and combine it with the original model using ADDMOD.
+
+The CSV should contain the block dimensions, block centre coordinates, and any extra attributes such as density, grade, rock type, lithology, or slope angle.
+
+1. Import an external block model file
+
+In Datamine, select the option to import an External file.
+
+[figure: Datamine external file import option]
+
+In the Data Import window:
+
+Select Text as the driver category.
+
+Select Block Model as the data type.
+
+Click OK.
+
+[figure: Datamine data import dialog for text block model]
+
+2. Specify model parameters
+
+Specify the block model parameters:
+
+Model Origin — enter the X, Y, and Z origin values.
+
+Block Size — enter the X, Y, and Z block dimensions.
+
+Number of Blocks — enter the number of blocks in X, Y, and Z.
+
+[figure: Datamine specify model parameters dialog]
+
+Click OK to start the import wizard.
+
+3. Configure the text wizard
+
+In Text Wizard 1 of 3:
+
+Set Data Type to Delimited.
+
+Set Header Row to 1.
+
+Check that the preview shows the expected CSV columns.
+
+Click Next.
+
+[figure: Datamine text wizard data type and header row settings]
+
+In Text Wizard 2 of 3:
+
+Select Comma as the delimiter.
+
+Confirm that each CSV field is separated into its own column.
+
+Click Next.
+
+[figure: Datamine text wizard CSV delimiter settings]
+
+4. Assign Datamine field types
+
+In Text Wizard 3 of 3, assign the field type for each imported column.
+
+Use the following mapping for the main block model:
+
+| CSV field | Datamine field type | Data type | Purpose
+
+| X_dim | XINC | Numeric | Block size in the X direction.
+
+| Y_dim | YINC | Numeric | Block size in the Y direction.
+
+| Z_dim | ZINC | Numeric | Block size in the Z direction.
+
+| X_coord | X | Numeric | Block centre X coordinate.
+
+| Y_coord | Y | Numeric | Block centre Y coordinate.
+
+| Z_coord | Z | Numeric | Block centre Z coordinate.
+
+Additional fields may include:
+
+Density
+
+Grades
+
+Rock Type
+
+Lithology
+
+Other project-specific attributes
+
+[figure: Datamine text wizard field type assignment]
+
+Click Finish. The block model should be displayed in Datamine.
+
+[figure: Imported block model displayed in Datamine]
+
+Save the imported Datamine block model with a clear name. In this tutorial, the suggested example name is:
+
+Block_Model_XYZ
+
+You may use another valid Datamine file name, as long as you can clearly identify it later as the base block model.
+
+5. Import the OptimalSlope slope-angle model
+
+Repeat the import workflow for the model that contains the OptimalSlope slope-angle output.
+
+When assigning fields, map the coordinate and block-size fields as before. The slope-angle field should be imported as:
+
+| Field | Datamine field type | Data type
+
+| slope_angle | Attribute | Numeric
+
+Save this imported model with a clear name. In this tutorial, the suggested example name is:
+
+Block_Model_Slope
+
+You may use another valid Datamine file name, as long as you can clearly identify it later as the slope-angle model.
+
+6. Combine the two block models
+
+Run the Datamine function:
+
+ADDMOD
+
+Use ADDMOD to add the slope-angle model to the base block model, then save the output as a new Datamine block model file. In this example, Block_Model_Slope is added to Block_Model_XYZ, but the exact file names can be changed.
+
+The names Block_Model_XYZ and Block_Model_Slope are examples only. Datamine does not require these exact names. Use consistent, recognisable names so the correct base model and slope-angle model are selected in ADDMOD.
+
+The final output should combine:
+
+the original block model fields;
+
+the OptimalSlope slope-angle data;
+
+any other attributes imported from the CSV file.
+
+After combining the models, check that all relevant blocks have a slope-angle value assigned.
+
+Related help
+
+### Simulation Workflow > Related pages
+URL: https://OptimalSlope.github.io/manual/pages/Tutorials/Workflow/#related-pages
+
+Use these pages to start faster, understand common terms, or troubleshoot issues found during the workflow.
+
+Quick Start
+
+Run through the shortest route from prepared data to simulation results.
+
+Help and Solutions
+
+Review common problems with geometry, OSA search region, simulation setup, and exports.
+
+Glossary
+
+Review key OptimalSlope, slope design, simulation, and export terms.
+
+### Properties > Properties
+URL: https://OptimalSlope.github.io/manual/pages/properties/6-properties/
+
+Simulation input reference
+
+Properties
+
+Reference guide for slope anchors, bench and rock inputs, loads, faults, roads, and groundwater settings used to define simulations.
+
+1 Bench Height Understand fixed and estimated bench height definitions. 2 Bench Properties Review unit weight, bench face angle, berm width, and bench count. 3 Rock Properties Set Hoek-Brown or Mohr-Coulomb strength parameters. 4 Section Properties Define the slope anchor, slope geometry, target FoS, loads, roads, and water-pressure method. 5 Transfer Properties Reuse section settings and mapped layer properties on another section. 6 Faults Add fault polylines, define fault segmentation, and assign material properties. 7 Water Table Define the piezometric line for selected cross-sections.
+
+Bench geometry
+
+### Properties > Defining Bench Height
+URL: https://OptimalSlope.github.io/manual/pages/properties/6-properties/#defining-bench-height
+
+Bench height can be fixed for a section or inherited from a parent 3D rock model during slicing.
+
+At this stage, a fixed bench height is used for each rock or section layer.
+
+When working with 3D rock models, if a bench height is defined, it is automatically inherited by the section from its parent shape during the slicing operation. This ensures consistency between the 3D model and the generated section geometry. If required, the section’s bench height can be edited later.
+
+By default, bench height is set by specifying a bench height for either:
+
+a section, or
+
+a 3D rock model (stratigraphy).
+
+Alternatively, in the section properties, the bench height can be estimated by specifying:
+
+the number of benches, and
+
+the slope height.
+
+The software will calculate the corresponding bench height automatically.
+
+For example, if slope height = 120 m and number of benches = 12, then bench height = 10 m.
+
+Bench-compatible slope height
+
+Bench-compatible slope height is the maximum slope height that allows a whole number of benches without exceeding the total slope height.
+
+For example, slope height = 385 m and bench height = 10 m gives a bench-compatible slope height of 380 m. Adding another full bench would exceed the defined slope height.
+
+Bench input table
+
+### Properties > Bench Properties
+URL: https://OptimalSlope.github.io/manual/pages/properties/6-properties/#bench-properties
+
+Bench properties describe the basic geometry and unit weight used for bench generation.
+
+| Name | Measurement type | Info
+
+| Unit Weight | kN/m³ | Unit weight in kN/m³.
+
+| Bench Face Angle | Degrees | Bench face inclination.
+
+| Min Berm Width | m | Minimum berm width.
+
+| Number of benches | - | Number of benches, set only if Bench defined by = No. of benches.
+
+| Bench Height | m | The height of each bench.
+
+Material strength
+
+### Properties > Rock Properties
+URL: https://OptimalSlope.github.io/manual/pages/properties/6-properties/#rock-properties
+
+Rock strength properties are set according to the selected strength model.
+
+Hoek-Brown or Mohr-Coulomb properties are set depending on the strength model of the material type.
+
+Hoek-Brown Strength Model
+
+| Name | Measurement type | Info
+
+| σ_ci | MPa | Unconfined compressive strength of the intact rock.
+
+| Geological Strength Index | - | Geological Strength Index for the rock mass.
+
+| Intact rock m_i value | - | Value controlling the Hoek-Brown curvature.
+
+| σ3_max | MPa | Minor principal stress averaged along the likely slope failure surface. If unavailable, set to -1.
+
+| Disturbance Factor | - | Factor accounting for rock mass strength reduction due to stress relaxation and blasting.
+
+Mohr-Coulomb Strength Model
+
+| Name | Measurement type | Info
+
+| Friction Angle | Degrees | Angle of shearing resistance, also known as internal friction, of the rock mass.
+
+| Cohesion | kPa | Cohesion of the rock mass.
+
+Bench and rock properties can be set for individual 3D stratigraphic models. If sections are generated using the slicing tool, they automatically inherit these properties. If sections are imported directly, properties can be set manually for each layer in a particular section.
+
+Section-level inputs
+
+### Properties > General Section Properties
+URL: https://OptimalSlope.github.io/manual/pages/properties/6-properties/#general-section-properties
+
+General section properties define the fixed slope endpoint, slope geometry, target factor of safety, loads, and road inputs.
+
+| Name | Measurement type | Info
+
+| Slope Anchor | - | Selects the fixed endpoint used to define the slope: Crest or Toe.
+
+| Crest Position | m | Local horizontal crest coordinate. Available when Crest is the active slope anchor.
+
+| Toe Position | m | Local horizontal toe coordinate. Available when Toe is the active slope anchor.
+
+| Toe Elevation | m | Vertical toe coordinate. It can be entered or selected in the visualiser after the toe position is defined.
+
+| Slope Height | m | Target slope height in crest-anchor mode. In toe-anchor mode, slope height is calculated from the selected toe and section geometry.
+
+| Target FoS | - | Target factor of safety.
+
+| Failure Direction | - | Defines whether failure and slope generation proceed from right to left or left to right.
+
+| Road width | m | Width of a road.
+
+| Road Vertical Position (Z) | m | Road Z position coordinate.
+
+Choosing the Slope Anchor
+
+The Slope Anchor is the fixed endpoint used to generate the candidate slope geometry.
+
+Select Crest when the upper endpoint is fixed by topography, a pit limit, or the planned crest alignment. Define the crest position and target slope height.
+
+Select Toe when the lower endpoint is fixed by the pit floor, haul road, excavation boundary, or another design constraint. Define the toe horizontal position and elevation; the slope height and bench-compatible height are calculated automatically.
+
+The property panel displays the resolved global coordinates and the estimated minimum and maximum OSA for the active anchor.
+
+Choose the anchor based on which endpoint must remain fixed, then set Failure Direction separately to match the slope orientation.
+
+The animation below shows how changing the anchor keeps either the crest or toe fixed and updates the related slope values.
+
+Choosing a Crest or Toe anchor
+
+The toe must lie inside the section, at or below the topography, and above the section floor. Toe elevations are resolved to the whole-unit elevation used by the solver. If a new value is invalid, review the message in the interface and adjust the toe position or elevation.
+
+Water-table update required: Changing the active anchor or toe geometry can invalidate an existing water table. If the application removes the water table, redraw or re-import it after the slope geometry is finalised.
+
+How should I choose the crest point?
+
+The crest point defines the uppermost starting location of the slope in the model. Its position directly affects how the slope geometry is generated during optimisation.
+
+If the crest is placed too close to the outer edge of the section or terrain, the calculated slope, based on the initial maximum overall slope angle, may project outward beyond the existing ground surface. In this case, parts of the slope will extend into open space, effectively creating geometry that intersects “thin air.” This can lead to unrealistic results and may cause instability or inaccuracies in subsequent simulations.
+
+To avoid this, position the crest point further inland, so that:
+
+the entire slope profile remains within the defined ground surface,
+
+the slope toe and face are generated against actual material, not empty space,
+
+the optimisation process has valid geometry to work with in all iterations.
+
+When the crest point is set correctly, the section preview shows the preliminary minimum and maximum Overall Slope Angle (OSA) limits. These are indicated by the green triangular search region. This triangle represents the area where the simulation will search for the optimal slope profile shape.
+
+The preliminary OSA limits are calculated from the selected crest point and the section properties. If the crest point and properties result in a very narrow difference between the minimum and maximum OSA, the simulation has only a limited search range. In this case, the optimiser will not be able to explore many possible slope profiles, which may reduce the quality or usefulness of the optimisation result.
+
+A wider, realistic OSA search range gives the optimiser more flexibility to investigate alternative slope shapes while remaining within the valid section geometry.
+
+Position the crest point slightly further inside the section boundary than you think is necessary.
+
+Check that the green triangular search region remains within the available ground/material area.
+
+Avoid crest point positions that create a very narrow minimum-to-maximum OSA range.
+
+If the green triangle is too narrow or extends outside the model, adjust the crest point or review the section properties before running the simulation.
+
+Section Loads
+
+Loads are defined under Optional Properties > Loads and placed directly on the section topography.
+
+| Load type | Selection | Magnitude
+
+| Line | Select one point on the topography. | Enter one magnitude greater than zero.
+
+| Distributed — Uniform | Select the left and right endpoints of the loaded interval. | Enter one magnitude greater than zero.
+
+| Distributed — Linear | Select the left and right endpoints of the loaded interval. | Enter left and right magnitudes. Both must be non-negative and at least one must be greater than zero.
+
+To add a load:
+
+Choose Line or Distributed. For a distributed load, also choose Uniform or Linear.
+
+Enter the required magnitude value or values.
+
+Click Select and choose the point or interval on the section topography. The pointer snaps to valid topography positions.
+
+Review the new entry in the load table.
+
+Loads may not overlap. If the selected location overlaps another load, the existing load is highlighted and the new load is not accepted. Select a different position or delete the conflicting entry. Use Cancel to leave selection mode and Delete to remove the selected load.
+
+The animation below demonstrates a line load, a distributed linear load with different endpoint magnitudes, and a distributed uniform load with one fixed magnitude. It also shows the warning displayed when a new load overlaps an existing load.
+
+Adding section loads
+
+Roads remain separate optional inputs and are defined using their width and vertical position.
+
+Reuse a section setup
+
+### Properties > Transfer Section Properties
+URL: https://OptimalSlope.github.io/manual/pages/properties/6-properties/#transfer-section-properties
+
+Copy reusable settings and mapped layer properties from an existing section to another section in the same project.
+
+Open Tools > Settings > Transfer Section Properties, select the newly imported or receiving cross-section, and click Transfer Section Properties. In the transfer window, select the source section and choose what to copy:
+
+The animation below shows properties being transferred from an existing section to a receiving section with different geometry. The receiving section gains the selected reusable properties while retaining its own geometry.
+
+Transferring properties between sections
+
+Section settings — target FoS, bench and strength-model definitions, water-pressure option, and maximum fault segment length.
+
+Entity types — rock material, fault/joint, or piezometric-line classification.
+
+Layer properties — defined material, strength, and bench-property values.
+
+The layer table automatically includes unique exact-name matches. Review every mapping, manually select a source layer where required, and clear Include for layers that should remain unchanged. A source layer can be mapped only once. Blank numerical fields in the source do not overwrite defined values in the receiving section.
+
+Not transferred: Crest and toe coordinates, slope height, water-line points, roads, loads, simulation folders, plot data, simulation results, and result logs remain tied to their original geometry or simulation. The receiving section keeps its own geometry-dependent data. If it already has results, they are retained but marked as out of date after transferred properties change the setup.
+
+Properties cannot be transferred while the receiving section has an active or submitted simulation. Use Fetch results or stop the simulation first.
+
+Discontinuities
+
+### Properties > Faults
+URL: https://OptimalSlope.github.io/manual/pages/properties/6-properties/#faults
+
+Faults represent discontinuities or fractures that can influence rock mass behaviour, stability, and stress distribution.
+
+Faults represent discontinuities or fractures within the geological model that can influence rock mass behaviour, stability, and stress distribution.
+
+In the Slope Optimiser, faults are defined as open polylines and can be added to a section in two different ways.
+
+Assign faults in an imported section
+
+Import the DXF file as a regular section.
+
+In the Explorer menu, locate and select the layer containing the fault geometry.
+
+Tick This entity is a fault/joint (open polyline).
+
+Assign the fault properties shown below.
+
+Import faults as a separate DXF
+
+In the Explorer menu, select the target section.
+
+In the Properties panel, open Optional Properties > Faults.
+
+Click Add to import the fault DXF file.
+
+Assign the fault properties in the fault layer properties.
+
+Fault Settings
+
+The Maximum Fault Segment Length parameter is defined under Optional Properties > Faults.
+
+| Name | Measurement type | Description
+
+| Maximum Fault Segment Length | m | Controls how imported fault polylines are segmented for analysis. Higher values create fewer segments and allow faster computation, while lower values create more segments and provide a more detailed representation of the fault geometry. The default value is 20 m.
+
+Fault Layer Properties
+
+The following properties are assigned to the imported fault or joint polyline layer.
+
+| Name | Measurement type | Description
+
+| Friction Angle | Degrees | The angle of shearing resistance, also known as internal friction, of the fault material.
+
+| Cohesion | kPa | The cohesive strength of the fault material, measured in kilopascals.
+
+Fault Segment Length
+
+The Maximum fault segment length parameter controls how imported fault polylines are divided into smaller segments for analysis.
+
+Higher value
+Creates fewer fault segments, which can reduce computation time and make the simulation faster. The fault geometry may be represented in a simplified form.
+
+Lower value
+Creates more fault segments, providing a more detailed fault representation. This increases computational effort and may make the simulation slower.
+
+Use a segment length that is appropriate for the scale and complexity of the fault geometry. For simple or long faults, the default value of 20 m is usually a good starting point. For highly curved, short, or complex fault geometries, a smaller value may be useful.
+
+Faults should be defined where they are expected to have a meaningful influence on the slope, such as where a fault crosses the slope face, slope toe, or potential failure region.
+
+When defining faults, make sure that:
+
+the fault geometry is correctly positioned relative to the section,
+
+the fault intersects the relevant part of the slope model if it is expected to influence the result,
+
+fault material properties are representative of the expected geological conditions,
+
+the fault is included only where it is geologically justified.
+
+When testing fault sensitivity, duplicate the section and create separate scenarios with different fault positions, orientations, or material properties.
+
+Groundwater
+
+### Properties > Water Table
+URL: https://OptimalSlope.github.io/manual/pages/properties/6-properties/#water-table
+
+The water table, also referred to as the piezometric line, can be defined for a selected cross-section.
+
+The water table, also referred to as the piezometric line, can be defined for a selected cross-section under:
+
+Cross-section > Optional Properties > Water
+
+Water Pressure Method
+
+Select the pressure method that matches the analysis assumptions:
+
+Inclination-corrected accounts for the gradient of the phreatic line: u = γw hw cos² α.
+
+Hydrostatic applies no inclination correction: u = γw hw.
+
+Here, γw is the unit weight of water, hw is the water head, and α is the inclination of the water-table segment. Confirm the selected method before running the simulation, particularly when the piezometric line is steep.
+
+Hydraulic conductivity is not currently available as an editable interface input.
+
+The water table is displayed as a blue polyline in the section visualiser.
+
+Water Table Interface
+
+| Column | Description
+
+| Index | Point index, starting from 1 at the slope toe and continuing to N at the last boundary point.
+
+| Vertical Position (Z) | Z coordinate of the corresponding bench line where the point is located. This value is fixed to the bench Z position.
+
+| X | Horizontal coordinate of the water table point. This value is editable.
+
+Defining the Water Table
+
+To define the water table:
+
+Click Draw.
+
+In the visualiser, select the slope toe on the lowest bench line to add the first water table point.
+
+Move upwards through the section, selecting one water table point on each required bench line.
+
+To close the piezometric line, hover over the section boundary on the left or right side, depending on the section orientation. When a valid boundary point is detected, a red circle is displayed around it. Select the highlighted point to add the final boundary point.
+
+Press Enter to confirm, or press Esc to cancel.
+
+If a water table was previously imported from a DXF file, the application asks which water table to use for the simulation. Select Yes to use the manually drawn points instead, or No to keep the imported water table.
+
+The animation below shows the complete drawing workflow, from selecting the first point at the toe to confirming the final point at the section boundary.
+
+Drawing a water table
+
+Define the water table from the slope toe upwards, beginning on the lowest bench line.
+
+Only one water table point is allowed per bench.
+
+The water table should be defined so that it follows the expected groundwater conditions for the selected cross-section.
+
+Related help
+
+### Properties > Related help
+URL: https://OptimalSlope.github.io/manual/pages/properties/6-properties/#related-help
+
+Use these pages for the recommended first workflow, common issue checks, and terminology.
+
+Quick Start — shortest route through the first simulation workflow.
+
+Help and Solutions — common geometry, OSA search region, simulation, and export checks.
+
+Glossary — definitions of common OptimalSlope terms.
+
+### Project Management > Project Management
+URL: https://OptimalSlope.github.io/manual/pages/project/3-project-management/
+
+Project setup and data management
+
+Project Management
+
+Create, save, load, import, slice, trim, and export project data in Slope Optimiser.
+
+1 Create Projects Start a new project using the menu, shortcut, or toolbar button. 2 Save and Load Save project files and open existing Slope Optimiser project data. 3 Import Data Import stratigraphy, sections, water surfaces, and boundary surfaces. 4 Create Sections Generate cross-sections from selected 3D shapes using slicing. 5 Trim Sections Use boundary surfaces to trim sections to excavation or pushback limits. 6 Export Data Export shapes, project geometry, and cross-section simulation data.
+
+Project creation
+
+### Project Management > Creating a Project
+URL: https://OptimalSlope.github.io/manual/pages/project/3-project-management/#creating-a-project
+
+Create an empty OptimalSlope project before importing geometry or defining simulation properties.
+
+An empty project can be created using one of the following methods:
+
+Keyboard shortcut Press Ctrl + N.
+
+File menu Open the file menu and click New.
+
+Toolbar button Click the create project button.
+
+[figure: Create project]
+
+Create Empty Project Creates an empty project.
+
+Project files
+
+### Project Management > Saving and Loading Projects
+URL: https://OptimalSlope.github.io/manual/pages/project/3-project-management/#savingloading-projects
+
+Save project data to disk and open existing OptimalSlope project files.
+
+Saving options
+
+To save using a specified file name, open the file menu and select Save as.
+
+To save updates to the current working project, open the file menu and select Save.
+
+Loading an existing project
+
+Open an existing project in .cbf format by clicking Open Project in the file menu.
+
+An import operation in progress is indicated by the loading symbol in the status bar.
+
+Loading larger files can take longer than a minute depending on the machine and project size.
+
+OptimalSlope project data is stored in a binary format: .cbf.
+
+Import data
+
+### Project Management > Importing Data
+URL: https://OptimalSlope.github.io/manual/pages/project/3-project-management/#importing-data
+
+Import 3D stratigraphy, section geometry, water surfaces, and boundary surfaces into the project.
+
+Importing Stratigraphy
+
+Import 3D stratigraphies to the project from the file menu:
+
+Select Import Stratigraphy > required file format.
+
+Importing Section
+
+Sections generated using third-party software can be imported directly without requiring section generation through the slicing tool.
+
+Select Import Section > required file format.
+
+Importing Water Surface
+
+A water surface can be imported and used to generate a water table boundary when creating a section. It can be used as a reference boundary when drawing the water table.
+
+Select Import Surface > Phreatic > required file format.
+
+Importing Boundary Surface
+
+A pit boundary surface can be imported and used to generate a trimmed version of a section so that it reflects an existing pushback of an open pit mine.
+
+Select Import Surface > Boundary > required file format.
+
+Define layer names and colours when generating model files. Otherwise, layer names and colours can be set manually in the Slope Optimiser interface.
+
+Supported import file formats
+
+| Format | Description | File extension
+
+| DXF | Autodesk drawing exchange format | .dxf
+
+Cross-sections
+
+### Project Management > Creating Sections
+URL: https://OptimalSlope.github.io/manual/pages/project/3-project-management/#creating-sections
+
+Use the slicing tool to create cross-sections from selected 3D shapes or stratigraphy models.
+
+The Slicing tool is used to create cross-sections from selected 3D shapes or stratigraphy models. It creates sections by cutting the selected geometry with a defined cutting plane.
+
+Cross-sections can be created using one of the following cutting planes:
+
+XY
+
+XZ
+
+YZ
+
+The section location is controlled by the global plane position coordinate, in metres. While the tool is open, the selected models are clipped in the visualiser so the proposed section can be checked before it is created.
+
+For vertical cutting planes, such as XZ and YZ, the slicing tool also supports defining an azimuth angle. This allows vertical cross-sections to be created in different orientations.
+
+[figure: Slicing tool]
+
+Slicing Tool Opens the slicing tool for creating cross-sections.
+
+Cross-sections automatically inherit properties from their 3D parent stratigraphy.
+
+If properties are not defined before slicing, they can be added later at either the 3D model level or the individual section level.
+
+It is recommended to define bench properties and the strength model before creating cross-sections.
+
+Usage
+
+To create a section:
+
+Display the 3D models that should be included in the section.
+
+Click the Slicing button on the toolbar, or right-click a model and choose the cross-section option.
+
+In Model Selection, click Select visible models. The status below the button confirms how many visible models are selected.
+
+Select the plane direction: XY, XZ, or YZ.
+
+Position the live clipping plane:
+
+enter a value under Clipping Settings, or
+
+drag the arrow handle in the visualiser to move the plane.
+
+For an XZ or YZ plane, enter the required azimuth or drag the circular rotation handle in the visualiser to rotate the plane and change its azimuth.
+
+Review the clipped preview and click Slice.
+
+Click Close to leave the tool without creating a section. If the visible-model selection changes while the tool is open, select the required visible models again before slicing.
+
+Clipping-plane controls
+
+The animation below demonstrates selecting the visible models, rotating a vertical clipping plane with the circular handle, and moving the plane with the arrow handle.
+
+Clipping-plane controls
+
+Boundary trimming
+
+### Project Management > Trim Section to Boundary Surface
+URL: https://OptimalSlope.github.io/manual/pages/project/3-project-management/#trim-section-to-boundary-surface
+
+Use a boundary surface to constrain or trim a section so it reflects current or planned excavation limits.
+
+Boundary Surface
+
+A boundary surface is a closed and continuous surface used to constrain or trim a section. In geological and mining workflows, a boundary surface may represent features such as:
+
+the edge of an open pit,
+
+a pushback surface,
+
+excavation limits,
+
+fault surfaces,
+
+model extents.
+
+Boundary surfaces can be imported into the project and used to create a trimmed version of an existing section. This is useful when the original 3D stratigraphy model is available, but the section needs to reflect the current or planned excavation limits.
+
+Trimming at the section level is often faster and simpler than modifying the entire 3D model. It allows the cross-section to better represent real-world mining conditions while keeping the workflow efficient.
+
+Example
+
+boundary_surface
+
+Usage
+
+To trim a section using a boundary surface:
+
+Select the required cross-section in the left project panel.
+
+Make sure the boundary surface has already been imported into the project.
+
+In the right properties panel, click Trim Slice.
+
+Review the updated section geometry after trimming.
+
+Before Trimming
+
+before_trimming
+
+This example shows a section created from the original stratigraphy model.
+
+After Trimming
+
+after_trimming
+
+The resulting section is updated using the boundary surface, so the section better reflects the excavation or pushback limits.
+
+Export data
+
+### Project Management > Exporting Project Data
+URL: https://OptimalSlope.github.io/manual/pages/project/3-project-management/#exporting-project-data
+
+Export selected geometry or cross-section data for downstream modelling and simulation workflows.
+
+Exporting 2D/3D shapes
+
+Selected shapes in the visualiser can be exported by clicking Export in the file menu.
+
+Supported export file formats
+
+| Format | Description | File extension
+
+| DXF | Autodesk drawing exchange format | .dxf
+
+| STL | Stereolithography mesh | .stl
+
+| VRML | VRML Web 3D format | .vrml
+
+| IMAGE | Image format | .bmp
+
+Exporting cross-section data
+
+A project can contain multiple cross-sections. Each cross-section can be considered an individual simulation project containing the properties required for the simulation.
+
+Properties describing an individual slice and its layers can be exported in JSON format:
+
+Select a cross-section.
+
+In the Properties panel, select Export under the tools section.
+
+### Controls > Controls
+URL: https://OptimalSlope.github.io/manual/pages/controls/1-interface/
+
+Interface guide
+
+Visualisation Controls
+
+Use the visualisation controls to navigate the model, change the viewing direction, adjust object display styles, and manage selected slices or 3D models in the project.
+
+Delete / Hide Position Style
+
+Manage Items
+Hide selected shapes from the visualiser or delete selected items from the project.
+
+Control Position
+Fit, zoom, pan, rotate, or flip the model to a standard viewing direction.
+
+Change Style
+Display selected objects as wireframe or shaded geometry, and adjust colour or transparency.
+
+Delete / hide items
+
+### Controls > Slices and 3D Models
+URL: https://OptimalSlope.github.io/manual/pages/controls/1-interface/#slices-and-3d-models-heading
+
+These controls are used to hide selected shapes in the visualiser or delete selected items from the project.
+
+[figure: Hide selected shape]
+
+Hide Selected Shape
+
+Hides the selected shape in the visualiser without deleting it from the project.
+
+[figure: Delete selected item]
+
+Delete Selected Item
+
+Deletes the selected item from the project.
+
+Deleting an item removes it from the project structure. Confirm that the selected item is no longer required.
+
+Visualisation position
+
+### Controls > Fit, Zoom, Pan, Flip and Rotate
+URL: https://OptimalSlope.github.io/manual/pages/controls/1-interface/#fit-zoom-pan-flip-and-rotate-heading
+
+These controls are used to move around the visualiser and change the view direction.
+
+[figure: Fit visualiser content to screen]
+
+Fit Visualiser Content to Screen
+
+Fits the visualiser content to the available screen area.
+
+[figure: Dynamic zooming]
+
+Dynamic Zooming
+
+Press the left mouse button, then move the pointer left or right to zoom in or out.
+
+Alternatively, use the Ctrl key.
+
+[figure: Dynamic panning]
+
+Dynamic Panning
+
+Press the left mouse button, then move the pointer to pan around the visualiser.
+
+Alternatively, use the middle mouse button.
+
+[figure: Flip shape to front]
+
+Flip Shape to Front
+
+Changes the visualiser to the front viewing direction.
+
+[figure: Flip shape to back]
+
+Flip Shape to Back
+
+Changes the visualiser to the back viewing direction.
+
+[figure: Flip shape to top]
+
+Flip Shape to Top
+
+Changes the visualiser to the top viewing direction.
+
+[figure: Flip shape to bottom]
+
+Flip Shape to Bottom
+
+Changes the visualiser to the bottom viewing direction.
+
+[figure: Flip shape to left]
+
+Flip Shape to Left
+
+Changes the visualiser to the left viewing direction.
+
+[figure: Flip shape to right]
+
+Flip Shape to Right
+
+Changes the visualiser to the right viewing direction.
+
+[figure: Dynamic rotation]
+
+Dynamic Rotation
+
+Press the left mouse button, then move the pointer to rotate the view.
+
+Alternatively, use the Space key.
+
+Visualisation style
+
+### Controls > Wireframe, Shading, Colour and Transparency
+URL: https://OptimalSlope.github.io/manual/pages/controls/1-interface/#wireframe-shading-colour-and-transparency-heading
+
+These controls change the appearance of selected objects in the visualiser.
+
+[figure: Display selected as wireframe]
+
+Display Selected as Wireframe
+
+Displays the selected object as wireframe geometry.
+
+[figure: Display selected with shading]
+
+Display Selected with Shading
+
+Displays the selected object with shaded solid geometry.
+
+[figure: Change colour]
+
+Change Colour
+
+Changes the display colour of the selected object.
+
+[figure: Change transparency]
+
+Change Transparency
+
+Adjusts the transparency of the selected object.
+
+[figure: Hide selected shape]
+
+Hide Selected Shape
+
+Hides the selected shape in the visualiser.
+
+[figure: Delete selected item]
+
+Delete Selected Item
+
+Deletes the selected item from the project.
+
+Use transparency together with wireframe display when checking internal stratigraphy, overlapping geometry, fault surfaces, or trimmed cross-section boundaries.
+
+### Help and Solutions > Help and Solutions
+URL: https://OptimalSlope.github.io/manual/pages/troubleshooting/
+
+Help and Solutions
+
+### Help and Solutions > Common issues and checks
+URL: https://OptimalSlope.github.io/manual/pages/troubleshooting/
+
+Use this page when a simulation warning appears, results are not available, or exported data does not behave as expected in downstream software.
+
+Geometry warning
+
+### Help and Solutions > Gaps and Overlaps
+URL: https://OptimalSlope.github.io/manual/pages/troubleshooting/#gaps-overlaps
+
+Gaps and overlaps indicate that the section geometry may not assign material regions clearly.
+
+What it means
+
+Gaps are undefined regions between section boundaries or layer wires.
+
+Overlaps are conflicting regions where two or more material areas occupy the same space.
+
+Common causes
+
+DXF section boundaries are not closed or continuous.
+
+Layer wires intersect or cross incorrectly.
+
+Duplicate or very small sliver lines are present.
+
+Imported 3D data contains inconsistent surfaces or solids.
+
+How to check
+
+Open the Visualiser and inspect detected markers:
+
+red markers indicate gap points;
+
+blue markers indicate overlap points.
+
+How to fix
+
+Repair large or repeated gaps before running the simulation.
+
+Correct visible overlaps where material boundaries cross.
+
+Remove duplicate or unnecessary geometry.
+
+Pay particular attention to issues near the slope face, toe, crest, or expected failure region.
+
+When it may be acceptable: A few small isolated markers away from the critical slope region may not significantly affect the result, but the geometry should still be reviewed carefully.
+
+Related workflow section Read the detailed gaps and overlaps checklist.
+
+Search region warning
+
+### Help and Solutions > OSA Search Region Issues
+URL: https://OptimalSlope.github.io/manual/pages/troubleshooting/#osa-search-region
+
+The OSA search region controls where the optimiser searches for the optimal slope profile.
+
+Problem: OSA triangle extends outside the model
+
+This can happen when the crest point is too close to the outer edge of the section or terrain. The calculated slope profile may project outside the available ground surface.
+
+How to fix
+
+Move the crest point further inside the section.
+
+Check slope height and OSA limits.
+
+Confirm that the green triangular search region remains within the available ground or material area.
+
+Problem: OSA range is too narrow
+
+If the minimum and maximum OSA values create only a very small search range, the optimiser has limited flexibility and may not explore enough possible profiles.
+
+How to fix
+
+Review Min/Max OSA values.
+
+Adjust crest position if necessary.
+
+Check that the search range is realistic for the section geometry.
+
+Problem: Toe anchor is rejected or incomplete
+
+The toe must have valid horizontal and vertical coordinates and must lie inside the section, at or below the topography, and above the section floor.
+
+How to fix
+
+Enter or select both the toe position and toe elevation.
+
+If the toe is above the topography, lower its elevation.
+
+If it is below the section floor, change the horizontal position or raise the elevation.
+
+If it lies outside the section, move it back within the section boundary.
+
+Redraw the water table if it was removed after the toe geometry changed.
+
+Position the crest slightly further inside the section boundary than you think is necessary, then confirm that the OSA search region remains inside valid material.
+
+Related workflow section Read the crest point and OSA search region guidance.
+
+Simulation setup
+
+### Help and Solutions > Simulation Does Not Start
+URL: https://OptimalSlope.github.io/manual/pages/troubleshooting/#simulation-start
+
+Most start-up issues are caused by incomplete configuration, missing section data, or unresolved input warnings.
+
+Check the following:
+
+A valid section is selected.
+
+Required bench, rock, fault, and general section properties are defined.
+
+The active crest or toe anchor is complete.
+
+The target FoS and bench definition are valid.
+
+Loads have valid positions and magnitudes and do not overlap.
+
+For Automatic results storage, the project has been saved as a .cbf file.
+
+For Custom results storage, an existing folder has been selected and its final folder name contains only letters, numbers, hyphens, or underscores.
+
+The user profile is configured under Tools -> Settings -> Account.
+
+The selected section has valid geometry and required inputs.
+
+Any warnings have been reviewed before continuing.
+
+If the Simulation Check panel is displayed:
+
+Select Fix beside an issue to open and highlight the affected field.
+
+Correct the value. For layer issues, repeat this for each missing property.
+
+Select Check Again.
+
+After the check passes, select Start again. Passing the check confirms readiness but does not automatically submit the simulation.
+
+Slope Optimiser runs simulations in the cloud, so the user account profile must be configured before cloud runs can be submitted.
+
+Related workflow section Review the full simulation setup workflow.
+
+Results and exports
+
+### Help and Solutions > Results or Exports Do Not Look Correct
+URL: https://OptimalSlope.github.io/manual/pages/troubleshooting/#results-fetch
+
+Review result folders, export options, and downstream import requirements.
+
+Results are not available
+
+Check that:
+
+the simulation was submitted successfully;
+
+the correct automatic or custom results location is being used;
+
+Fetch results has been used to update the local results;
+
+the results folder contains logs and output files.
+
+Output plot is difficult to read
+
+Use Fit plot to data to restore the full plot extent.
+
+Toggle the legend or use Visible plot items to hide unnecessary series.
+
+Switch the embedded plot between light and dark backgrounds when a line has insufficient contrast.
+
+Save the plot as PNG or SVG if a larger external view is required.
+
+Detach plots and arrange them side by side when comparing different cross-sections.
+
+Exported DXF does not import as expected
+
+For RS2 workflows, use the Local XY export method when a 2D section is required. Some external applications may still require manual cleanup or additional boundary definition after import.
+
+Block model output does not look correct
+
+Check that:
+
+the section is associated with 3D stratigraphy;
+
+block dimensions are appropriate for the model scale;
+
+exported fields are mapped correctly in downstream software;
+
+slope-angle fields are imported as numeric attributes where required.
+
+### Data Preparation > Data Preparation
+URL: https://OptimalSlope.github.io/manual/pages/Data Suitability/7-data/
+
+Input quality and geometry checks
+
+Data Preparation
+
+Prepare 3D stratigraphy and section data for reliable cross-section generation, material assignment, and simulation results in Slope Optimiser.
+
+1 Model Files Understand why clean input data is important for simulation quality. 2 Leapfrog DXF Use Polyface DXF export where possible for connected mesh geometry. 3 Stratigraphy Check closed meshes, gaps, tolerance settings, and model complexity. 4 Sections Inspect wires for continuity, voids, overlaps, duplicates, and ordering. 5 Organisation Use clear layer names and colours to keep model components manageable.
+
+Input data quality
+
+### Data Preparation > Preparing Model Files
+URL: https://OptimalSlope.github.io/manual/pages/Data Suitability/7-data/#preparing-model-files
+
+Good simulation results depend on clean, consistent 3D stratigraphy and section geometry.
+
+The quality of simulation results depends heavily on the quality of the provided 3D stratigraphy or section data. Topologically and geometrically consistent models allow Slope Optimiser to produce more reliable simulation estimates.
+
+Topology matters
+Closed, connected, and well-ordered geometry reduces the risk of gaps, overlaps, and invalid section wires.
+
+Geometry matters
+Clean surfaces and sensible tolerances improve slicing, material assignment, and interpretation of simulation results.
+
+Before running simulations, visually inspect both the 3D model and any generated or imported sections. Repair significant gaps, overlaps, missing layers, and non-manifold geometry before proceeding.
+
+Leapfrog export
+
+### Data Preparation > Exporting DXF from Leapfrog
+URL: https://OptimalSlope.github.io/manual/pages/Data Suitability/7-data/#exporting-dxf-from-leapfrog
+
+Use the most reliable DXF export option to preserve mesh connectivity for downstream processing.
+
+DXF Export Recommendation
+
+When exporting 3D meshes or model surfaces from Leapfrog, always use Polyfaces by selecting:
+
+Use DXF Polyface Files (11/12 [AC1009]) (.dxf) whenever it is available.
+
+This option exports geometry as a connected polyface mesh, preserving mesh connectivity and providing the most reliable results for downstream processing and cross-section generation. Using polyfaces minimises the need for post-processing and is the recommended export method.
+
+Note on Using 3D Faces
+
+DXF files exported using 3D Faces via:
+
+DXF Files (11/12 [AC1009]) (.dxf) is supported but less preferred because it exports individual, unconnected faces.
+
+are currently supported. However, this export method represents geometry as individual, unconnected faces, which requires additional processing before the data can be reliably used for cross-section generation.
+
+Due to additional processing overhead and cleaner geometry requirements, exporting DXF files as Polyfaces is strongly recommended whenever possible.
+
+3D stratigraphy
+
+### Data Preparation > Stratigraphy Preparation
+URL: https://OptimalSlope.github.io/manual/pages/Data Suitability/7-data/#stratigraphy-preparation
+
+Prepare high-quality 3D DXF models for cross-section generation without gaps, overlaps, or invalid mesh geometry.
+
+The following tips and examples can be used to prepare high-quality 3D DXF models for cross-section generation.
+
+Model Integrity and Clean Geometry
+
+Gaps in 3D models Models should form closed meshes. Shared layer boundaries should be closely aligned and joined without gaps.
+
+Closed meshes Each 3D object should be a closed manifold mesh. Every edge should be shared by exactly two adjacent faces.
+
+Gaps between boundaries that are intended to connect can create holes or discontinuities. These issues can compromise the structural consistency and visual coherence of the model. Proper modelling practices, verification, and quality-control tools help maintain robust, gap-free meshes.
+
+open_solids
+
+The example above shows an open solid, which should be fixed to avoid disruptions and open wires when generating sections.
+
+Precision and Tolerance Settings
+
+Tolerance settings Use a reasonable tolerance, typically around 0.001-0.01 mm, to avoid tiny gaps that can lead to misalignments.
+
+Export precision Set high precision for curves and surfaces during DXF export to retain detail and reduce approximation errors.
+
+Precision settings should be selected according to the complexity and size of the model. Highly complex models should either be simplified, for example by reducing the mesh, or sections should be imported directly into the project.
+
+Simplified Geometry for Complex Models
+
+Avoid excessive complexity Highly detailed or overly complex models can be problematic during cross-section generation using the slicing tool.
+
+Limit model size Very large 3D model files, especially files over 1 GB, can cause performance issues, long processing times, and sharing difficulties.
+
+Use simplifications where possible without compromising the required geological or engineering detail.
+
+Section quality
+
+### Data Preparation > Section Preparation
+URL: https://OptimalSlope.github.io/manual/pages/Data Suitability/7-data/#section-preparation
+
+Good quality section wires are essential for accurate and reliable simulations.
+
+Good quality section wires are essential inputs for simulations. Section wires can either be imported directly from external software or generated using the in-house slicing tool. A thorough visual inspection of selected section wires or surfaces is important before proceeding with more complex and time-intensive simulations.
+
+Section Geometry Checklist
+
+Wire continuity Ensure that all edges are connected to avoid gaps within wires.
+
+Voids or missing layers Ensure that adjacent layers are well aligned and that shared boundaries are joined without creating undesirable voids between layers.
+
+Overlapping layers Ensure that sections used for simulations do not have layers that overlap each other.
+
+Duplicate vertices or edges Remove duplicate vertices or edges that may cause self-intersecting surfaces or invalid wires.
+
+Sequential edge ordering Out-of-order edges or vertex points can lead to inaccurate shape representations in local 2D coordinates.
+
+Avoid spline geometry Splines represent smooth curves defined by control points and mathematical interpolation. Do not create geometry as splines in water, section, or fault layers, because processing them adds unnecessary complexity. Use polylines instead. Converting existing splines to polylines approximates the original curve with straight segments and can introduce approximation errors, so create the source geometry as polylines whenever possible.
+
+Small voids may be acceptable, but large voids create undefined space between layers. Undefined regions cannot be assigned to a specific material during the simulation and can affect the final result.
+
+voids
+
+The example above shows missing layers, which introduce incomplete section regions by creating voids.
+
+overlapping
+
+The example above shows overlapping layers caused by coarse mesh resolution.
+
+Advice on Sections Imported from Third-Party Software
+
+When generating cross-sections using tools such as Leapfrog, AutoCAD, Rhino, or other reputable CAD software, the likelihood of poor-quality sections is reduced if the 3D model itself meets high-quality standards.
+
+The reliability of imported sections depends on the initial 3D model quality. A well-constructed model with properly aligned vertices, closed and manifold surfaces, and consistent geometry helps avoid gaps, overlaps, and distorted profiles in generated sections.
+
+Maintain strict quality control over the 3D model before generating sections. Clean source geometry usually leads to cleaner and more accurate cross-sections.
+
+Layer management
+
+### Data Preparation > Model Organisation
+URL: https://OptimalSlope.github.io/manual/pages/Data Suitability/7-data/#model-organisation
+
+Use clear layer names and colours so model components can be managed and inspected efficiently.
+
+Use layers and set their names when generating DXF files to separate different model components or regions. This makes it easier to control visibility and extract sections accurately.
+
+Descriptive layer names Consistent colours Separate model regions Clear visibility control
+
+Name layers descriptively to make model elements easier to manage during cross-section extraction.
+
+Define names and colours of layers in the modelling software before exporting DXF files. This reduces manual clean-up in Slope Optimiser and improves traceability during section generation.
+
+Related help
+
+### Data Preparation > Related help
+URL: https://OptimalSlope.github.io/manual/pages/Data Suitability/7-data/#related-help
+
+Use these pages for the recommended first workflow, common issue checks, and terminology.
+
+Quick Start — shortest route through the first simulation workflow.
+
+Help and Solutions — common geometry, OSA search region, simulation, and export checks.
+
+Glossary — definitions of common OptimalSlope terms.
+
+### Glossary > Glossary
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+Reference
+
+### Glossary > Glossary
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+Definitions of common OptimalSlope, slope design, and simulation terms used throughout the manual.
+
+Geometry
+
+### Glossary > Geometry terms
+URL: https://OptimalSlope.github.io/manual/pages/glossary/#geometry
+
+Terms related to imported sections, slope shape, and design geometry.
+
+### Glossary > Cross-section
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A 2D representation of the geological model along a selected cutting plane. A cross-section may be imported directly or generated by slicing a 3D model and is the geometry used to define a simulation.
+
+### Glossary > Section layer
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A geological or material region within a cross-section. Each section layer can have its own bench and strength properties.
+
+### Glossary > Slicing plane
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The XY, XZ, or YZ plane used to intersect selected 3D geometry and generate a cross-section. The live clipping preview shows its current position; the visualiser arrow translates it and the ring rotates a vertical plane.
+
+### Glossary > Azimuth
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The horizontal orientation angle of a vertical slicing plane. It allows XZ or YZ cross-sections to be created in different orientations through the model.
+
+### Glossary > Slope anchor
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The fixed endpoint used to define the candidate slope geometry. The user can prescribe either the crest or the toe.
+
+### Glossary > Crest point
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The upper starting location of the slope profile. In crest-anchor mode, its position and the target slope height define the slope geometry and affect the OSA search region.
+
+### Glossary > Toe
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The lower end of the slope profile where the slope meets the lower ground or design boundary. In toe-anchor mode, its horizontal position and elevation are prescribed and slope height is calculated by the software.
+
+### Glossary > Bench
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A stepped part of the slope geometry, usually defined by bench height, bench face angle, berm width, and number of benches.
+
+### Glossary > Berm
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The horizontal or near-horizontal platform between bench faces.
+
+### Glossary > Slope profile
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The 2D line or polyline representing the slope geometry being analysed or optimised.
+
+### Glossary > Slope height
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The vertical height of the slope used when defining the section and bench arrangement. It is entered in crest-anchor mode and calculated from the section geometry in toe-anchor mode.
+
+### Glossary > Bench face angle
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The inclination of an individual bench face, measured in degrees.
+
+### Glossary > Minimum berm width
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The smallest permitted width of the platform between adjacent bench faces.
+
+### Glossary > Bench-compatible slope height
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The greatest slope height that accommodates a whole number of benches without exceeding the defined total slope height.
+
+### Glossary > Boundary surface
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A closed, continuous 3D surface used to trim a section to an excavation, pushback, pit, or other model limit.
+
+### Glossary > Water table (piezometric line)
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The groundwater boundary defined for a cross-section. It is represented as a blue polyline in the section visualiser.
+
+### Glossary > Inclination-corrected water pressure
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+Water pressure calculated with a correction for the phreatic-line gradient: u = γw hw cos² α.
+
+### Glossary > Hydrostatic water pressure
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+Water pressure calculated without a phreatic-line inclination correction: u = γw hw.
+
+### Glossary > Fault or joint
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A geological discontinuity or fracture that may influence rock-mass behaviour and slope stability. Faults are represented in Slope Optimiser as open polylines with assigned strength properties.
+
+Material properties
+
+### Glossary > Material property terms
+URL: https://OptimalSlope.github.io/manual/pages/glossary/#materials
+
+Terms used to describe material weight, rock-mass strength, and fault strength.
+
+### Glossary > Unit weight
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The weight of material per unit volume, entered in kN/m³. It contributes to the gravitational loading of the slope.
+
+### Glossary > Strength model
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A mathematical relationship used to describe how a material resists failure under stress. Slope Optimiser supports the Mohr-Coulomb and Hoek-Brown models for rock layers.
+
+### Glossary > Mohr-Coulomb model
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A linear shear-strength model defined primarily by cohesion and friction angle.
+
+### Glossary > Hoek-Brown model
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+An empirical, non-linear strength criterion for rock masses. Its inputs describe intact-rock strength, rock-mass condition, material characteristics, confinement, and disturbance.
+
+### Glossary > Friction angle (φ)
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The angle of shearing resistance, or internal friction, of rock or fault material. It is entered in degrees.
+
+### Glossary > Cohesion (c)
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The component of shear strength that is independent of normal stress in the Mohr-Coulomb model. It is entered in kPa.
+
+### Glossary > Intact compressive strength (σci)
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The unconfined compressive strength of intact rock, entered in MPa for the Hoek-Brown model.
+
+### Glossary > Geological Strength Index (GSI)
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A value representing the geological structure and surface condition of a rock mass for use in the Hoek-Brown model.
+
+### Glossary > Intact-rock constant (mi)
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A material constant for intact rock that controls the curvature of the Hoek-Brown strength relationship.
+
+### Glossary > Maximum minor principal stress (σ3 max)
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The minor principal stress averaged along the likely slope failure surface. It is entered in MPa for the Hoek-Brown model; the manual specifies -1 when it is unavailable.
+
+### Glossary > Disturbance factor (D)
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A Hoek-Brown parameter that accounts for rock-mass strength reduction caused by effects such as blasting and stress relaxation.
+
+Simulation
+
+### Glossary > Simulation terms
+URL: https://OptimalSlope.github.io/manual/pages/glossary/#simulation
+
+Terms related to simulation inputs, optimisation, and results.
+
+### Glossary > FoS
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+Factor of Safety. A measure used in slope stability analysis to compare resisting forces against driving forces.
+
+### Glossary > Target FoS
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The factor of safety specified as the stability objective for a simulation.
+
+### Glossary > OSA
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+Overall Slope Angle. In OptimalSlope, Min/Max OSA values define the search range used to explore possible slope profiles.
+
+### Glossary > Minimum and maximum OSA
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The lower and upper overall slope-angle limits used to bound the slope geometries considered by the optimiser.
+
+### Glossary > OSA search region
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The triangular region shown in the section preview where the optimiser searches for the optimal slope profile.
+
+### Glossary > Optimisation
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The process of evaluating candidate slope geometries to identify a profile that meets the defined stability objective and design inputs.
+
+### Glossary > Optimised profile
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The slope profile estimated by the optimiser after running the simulation and evaluating candidate geometries.
+
+### Glossary > Failure mechanism
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The potential failure path or mechanism considered during slope stability analysis.
+
+### Glossary > Line load
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A concentrated section load placed at one selected point on the topography. Its magnitude must be greater than zero.
+
+### Glossary > Distributed load
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A load applied over an interval selected on the section topography. It may be uniform, with one magnitude, or linear, with separate left and right magnitudes.
+
+### Glossary > Road input
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A section-level input that defines a road by its width and vertical position within the slope geometry.
+
+### Glossary > Maximum fault segment length
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The maximum length used when dividing an imported fault polyline into analysis segments. Smaller values give a more detailed representation but require more computation; larger values simplify the fault and can run faster.
+
+### Glossary > Simulation input
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The combined section geometry, material properties, bench properties, optional features, and optimisation settings submitted for analysis.
+
+### Glossary > Simulation Check
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The pre-submission panel that lists incomplete or invalid section inputs. Its Fix action navigates to and highlights the affected property; Check Again repeats the validation after corrections.
+
+### Glossary > Simulation result
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The output from a completed analysis, including the estimated optimal slope profile and associated result data or plots.
+
+### Glossary > Detached plot
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A static Output Plot opened in a separate window so that multiple cross-section results can be kept visible and compared side by side.
+
+Data and export
+
+### Glossary > Data and export terms
+URL: https://OptimalSlope.github.io/manual/pages/glossary/#data
+
+Terms related to input files, geometry models, and downstream workflows.
+
+### Glossary > DXF
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A drawing exchange format used to import section geometry and stratigraphy into Slope Optimiser and to export slope profiles to other engineering tools.
+
+### Glossary > CBF
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The binary file format used to save and reopen an entire Slope Optimiser project.
+
+### Glossary > Stratigraphy
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+The geological layer model used to define material regions and generate sections.
+
+### Glossary > Polyline
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+An ordered sequence of connected line segments defined by vertices. Polylines are the recommended geometry for water, section, and fault layers.
+
+### Glossary > Open polyline
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A polyline whose first and last points are not joined. Faults and joints are imported as open polylines.
+
+### Glossary > Spline
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A smooth mathematical curve defined by control points and interpolation. Splines add processing complexity and should not be used for water, section, or fault layers; converting them to polylines can introduce approximation errors.
+
+### Glossary > Wire
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A connected sequence of edges used to represent a boundary in section geometry. Gaps, duplicate edges, or incorrect edge ordering can produce an invalid wire.
+
+### Glossary > Mesh
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A 3D surface representation formed from connected faces, edges, and vertices.
+
+### Glossary > Closed manifold mesh
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A watertight mesh in which every edge is shared by exactly two adjacent faces. Closed manifold geometry helps produce complete and reliable cross-sections.
+
+### Glossary > DXF Polyface
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A connected mesh representation in a DXF file. It is the recommended Leapfrog DXF export option because it preserves mesh connectivity and generally requires less post-processing.
+
+### Glossary > DXF 3D Face
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+An individual face entity in a DXF file. A model exported as separate 3D Faces requires additional processing because the faces are not stored as one connected mesh.
+
+### Glossary > Block model
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A 3D grid of blocks used to represent material, geometry, or simulation result attributes such as slope angle.
+
+### Glossary > JSON simulation export
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A text-based export containing the properties and inputs associated with an individual section and its layers.
+
+### Glossary > Local XY export
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A DXF export option where the section is flattened onto the XY plane. This is useful for workflows that require 2D geometry, such as RS2.
+
+### Glossary > ADDMOD
+URL: https://OptimalSlope.github.io/manual/pages/glossary/
+
+A Datamine function used to combine model data, for example adding OptimalSlope slope-angle output to an existing block model.

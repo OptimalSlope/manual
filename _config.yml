@@ -50,6 +50,9 @@ permalink:                /:categories/:year-:month-:day-:title:output_ext
 exclude:
   - _drafts
   - README_old.md
+  - tools
+  - kb
+  - evals
 
 collections:
   pages:
