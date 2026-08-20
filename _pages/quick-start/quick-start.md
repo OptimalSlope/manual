@@ -340,7 +340,7 @@ You can create the analysis section in two main ways:
 
 Use direct DXF import when your section is already prepared. Use slicing when the section must be generated from 3D geological solids or wireframes.
 
-For slicing, open the tool, click **Select visible models**, choose the plane direction, and position the live clipping plane. Drag the arrow to move the plane and, for vertical planes, drag the ring to change azimuth. Review the preview before clicking **Slice**.
+For slicing, open the tool, click **Select visible models**, choose the plane direction, and position the live clipping plane. Drag the arrow handle to move the plane. For a vertical plane, drag the circular rotation handle to rotate the plane and change its azimuth. Review the live preview before clicking **Slice**.
 
 <div class="os-link-grid" markdown="0">
 <a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#importing-sections' | relative_url }}"><strong>Workflow: Importing Sections</strong><span>Follow the workflow step for importing or generating sections.</span></a>
@@ -393,7 +393,8 @@ Before starting:
 3. Configure the user profile under `Tools -> Settings -> Account` if this is the first cloud run.
 4. Click **Start** and resolve every item in **Simulation Check**. Use **Fix** to open and highlight the affected input, then select **Check Again**.
 5. When the check passes, click **Start** again and review any later geometry or groundwater warnings.
-6. Fetch results when they are available.
+6. Monitor the **Node status** summary while the simulation runs. Open the panel and select a node to inspect its output; use **Show main output** to return to the main log.
+7. Fetch results when they are available.
 
 <div class="os-link-grid" markdown="0">
 <a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#running-simulations' | relative_url }}"><strong>Workflow: Running Simulations</strong><span>See the detailed simulation workflow.</span></a>

@@ -345,7 +345,7 @@ In Slope Optimiser, you have two methods available for defining cross-sections:
 #### Importing 3D Solid/Wireframe and Making Sections
 You can import a 3D solid or wireframe (`File -> Import Stratigraphy -> DXF`) and then use the slicing tool to create a section. For more information, refer to [Creating Sections]({{ '/pages/project/3-project-management/#creating-sections' | relative_url }}).
 
-In the current slicing tool, click **Select visible models**, choose the **XY**, **XZ**, or **YZ** plane, and position the live clipping plane. Drag the arrow to translate the plane; for a vertical plane, drag the ring to change its azimuth. Review the clipped preview before clicking **Slice**.
+In the current slicing tool, click **Select visible models**, choose the **XY**, **XZ**, or **YZ** plane, and position the live clipping plane. Drag the arrow handle to move the plane. For a vertical plane, drag the circular rotation handle to rotate the plane and change its azimuth. Review the live clipped preview before clicking **Slice**.
 
 #### Directly Importing DXF Section File
 Alternatively, you can directly import a DXF section file using the pathway: `File -> Import Section -> DXF`. 
@@ -591,6 +591,16 @@ The toe must remain inside the section, at or below the topography, and above th
 8. Enter the configured username when requested.
 9. Use **Fetch results** to download completed results or view the progress of a running simulation.
 
+#### Monitoring Node Status and Output
+
+The **Simulation Output** area displays a **Node status** summary when node information is available. Open the panel to review whether individual nodes are preparing, queued, running, complete, or failed.
+
+- Select a node to display that node's output in the log area.
+- Click **Show main output** to return to the main simulation output.
+- Keep **Follow output** selected to scroll automatically as new log lines arrive. Clear it when reviewing an earlier part of the log.
+- Use the search field and **Next**, or press **Enter**, to move through matching log entries.
+- Click **Copy** to copy the displayed output.
+
 #### Creating Different Scenarios  
 
 To test different design or material scenarios for the same cross-section, right-click the section in the project tree and select **Duplicate**. This creates an independent copy of the selected section, allowing you to modify simulation inputs without changing the original section.
@@ -621,6 +631,14 @@ or:
 
 This helps avoid conflicts between simulation outputs, logs, and exported result files. 
 **Note:** When rerunning a section with corrected parameters, select **Yes** to overwrite the existing input data when starting the simulation.
+
+#### Transferring Properties to Another Section
+
+To reuse an existing setup on a newly imported section, open **Tools > Settings > Transfer Section Properties**. Select the section that should receive the properties, click **Transfer Section Properties**, and then choose the source section.
+
+Review the property groups and layer mapping before confirming the transfer. Layers with the same name are matched automatically; unmatched layers can be mapped manually or excluded. Geometry-dependent data, including crest and toe coordinates, slope height, water-line points, roads, loads, simulation folders, plots, results, and result logs, is not transferred.
+
+The receiving section must not have an active or submitted simulation. Fetch or stop that simulation before transferring properties.
 
 
 

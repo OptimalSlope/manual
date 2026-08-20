@@ -380,14 +380,20 @@ layout: post
 <span>Define the slope anchor, slope geometry, target FoS, loads, roads, and water-pressure method.</span>
 </a>
 
-<a href="#faults">
+<a href="#transfer-section-properties">
 <span class="icon">5</span>
+<strong>Transfer Properties</strong>
+<span>Reuse section settings and mapped layer properties on another section.</span>
+</a>
+
+<a href="#faults">
+<span class="icon">6</span>
 <strong>Faults</strong>
 <span>Add fault polylines, define fault segmentation, and assign material properties.</span>
 </a>
 
 <a href="#water-table">
-<span class="icon">6</span>
+<span class="icon">7</span>
 <strong>Water Table</strong>
 <span>Define the piezometric line for selected cross-sections.</span>
 </a>
@@ -710,6 +716,31 @@ To add a load:
 Loads may not overlap. If the selected location overlaps another load, the existing load is highlighted and the new load is not accepted. Select a different position or delete the conflicting entry. Use **Cancel** to leave selection mode and **Delete** to remove the selected load.
 
 Roads remain separate optional inputs and are defined using their width and vertical position.
+
+</div>
+</section>
+
+<section class="os-props-section" id="transfer-section-properties" markdown="1">
+<div class="os-props-section-head" markdown="0">
+<div class="label">Reuse a section setup</div>
+<h2 id="transfer-section-properties">Transfer Section Properties</h2>
+<p>Copy reusable settings and mapped layer properties from an existing section to another section in the same project.</p>
+</div>
+<div class="os-props-section-body" markdown="1">
+
+Open **Tools > Settings > Transfer Section Properties**, select the newly imported or receiving cross-section, and click **Transfer Section Properties**. In the transfer window, select the source section and choose what to copy:
+
+- **Section settings** — target FoS, bench and strength-model definitions, water-pressure option, and maximum fault segment length.
+- **Entity types** — rock material, fault/joint, or piezometric-line classification.
+- **Layer properties** — defined material, strength, and bench-property values.
+
+The layer table automatically includes unique exact-name matches. Review every mapping, manually select a source layer where required, and clear **Include** for layers that should remain unchanged. A source layer can be mapped only once. Blank numerical fields in the source do not overwrite defined values in the receiving section.
+
+<div class="os-note" markdown="1">
+<strong>Not transferred:</strong> Crest and toe coordinates, slope height, water-line points, roads, loads, simulation folders, plot data, simulation results, and result logs remain tied to their original geometry or simulation. The receiving section keeps its own geometry-dependent data. If it already has results, they are retained but marked as out of date after transferred properties change the setup.
+</div>
+
+Properties cannot be transferred while the receiving section has an active or submitted simulation. Use **Fetch results** or stop the simulation first.
 
 </div>
 </section>

@@ -579,8 +579,8 @@ To create a section:
 4. Select the plane direction: **XY**, **XZ**, or **YZ**.
 5. Position the live clipping plane:
    - enter a value under **Clipping Settings**, or
-   - drag the arrow in the visualiser to translate the plane.
-6. For an **XZ** or **YZ** plane, enter the required azimuth or drag the ring in the visualiser to rotate the plane.
+   - drag the arrow handle in the visualiser to move the plane.
+6. For an **XZ** or **YZ** plane, enter the required azimuth or drag the circular rotation handle in the visualiser to rotate the plane and change its azimuth.
 7. Review the clipped preview and click **Slice**.
 
 Click **Close** to leave the tool without creating a section. If the visible-model selection changes while the tool is open, select the required visible models again before slicing.
