@@ -1,0 +1,15 @@
+<figure class="os-expandable-media">
+  <div class="os-expandable-media-window" data-media-title="{{ include.title | escape }}">
+    <div class="os-expandable-media-toolbar">
+      <span class="os-expandable-media-title">{{ include.title }}</span>
+      <button class="os-expandable-media-expand" type="button" data-media-expand aria-label="Expand {{ include.title | escape }}">
+        <i class="fa fa-expand" aria-hidden="true"></i>
+        <span>Expand</span>
+      </button>
+    </div>
+    <button class="os-expandable-media-stage" type="button" data-media-expand aria-label="Expand {{ include.title | escape }}">
+      <img src="{{ include.src | relative_url }}" alt="{{ include.alt | escape }}" loading="lazy">
+    </button>
+  </div>
+  {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+</figure>

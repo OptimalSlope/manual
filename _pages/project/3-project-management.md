@@ -589,9 +589,11 @@ Click **Close** to leave the tool without creating a section. If the visible-mod
 
 The animation below demonstrates selecting the visible models, rotating a vertical clipping plane with the circular handle, and moving the plane with the arrow handle.
 
-<p align="center">
-  <img src="{{ '/assets/slicing/clipping-plane-controls.gif' | relative_url }}" alt="Selecting visible models, rotating the clipping plane with the circular handle, and moving it with the arrow handle" loading="lazy">
-</p>
+{% include expandable-animation.html
+   src="/assets/slicing/clipping-plane-controls.gif"
+   title="Clipping-plane controls"
+   alt="Selecting visible models, rotating the clipping plane with the circular handle, and moving it with the arrow handle"
+%}
 
 </div>
 </section>

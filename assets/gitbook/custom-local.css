@@ -3,3 +3,162 @@
  * Its purpose is for users of the theme to be able to add css rules from a blank file
  *   these get simply added to the ones already active in the layout.
  */
+
+.os-expandable-media {
+    margin: 1.5rem auto;
+    max-width: 960px;
+}
+
+.os-expandable-media-window {
+    overflow: hidden;
+    border: 1px solid #d8dee4;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(31, 35, 40, 0.12);
+}
+
+.os-expandable-media-toolbar,
+.os-media-modal-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 42px;
+    padding: 0.55rem 0.75rem 0.55rem 1rem;
+    border-bottom: 1px solid #d8dee4;
+    background: #f6f8fa;
+}
+
+.os-expandable-media-title,
+.os-media-modal-title {
+    overflow: hidden;
+    color: #24292f;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.35;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.os-expandable-media-expand,
+.os-media-modal-close {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.65rem;
+    border: 1px solid #b8c0c8;
+    border-radius: 4px;
+    background: #fff;
+    color: #3b4652;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.os-expandable-media-expand:hover,
+.os-expandable-media-expand:focus,
+.os-media-modal-close:hover,
+.os-media-modal-close:focus {
+    border-color: #4183c4;
+    color: #2468a2;
+    outline: none;
+}
+
+.os-expandable-media-expand:focus-visible,
+.os-expandable-media-stage:focus-visible,
+.os-media-modal-close:focus-visible {
+    box-shadow: 0 0 0 3px rgba(65, 131, 196, 0.3);
+}
+
+.os-expandable-media-stage {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: #eef1f4;
+    cursor: zoom-in;
+}
+
+.os-expandable-media-stage img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.os-expandable-media figcaption {
+    margin-top: 0.55rem;
+    color: #66707a;
+    font-size: 0.88rem;
+    text-align: center;
+}
+
+body.os-media-modal-open {
+    overflow: hidden;
+}
+
+.os-media-modal[hidden] {
+    display: none;
+}
+
+.os-media-modal {
+    position: fixed;
+    z-index: 10000;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: rgba(14, 20, 27, 0.82);
+}
+
+.os-media-modal-window {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    width: min(1500px, 100%);
+    max-height: 100%;
+    border: 1px solid #68727d;
+    border-radius: 7px;
+    background: #fff;
+    box-shadow: 0 14px 42px rgba(0, 0, 0, 0.4);
+}
+
+.os-media-modal-stage {
+    display: flex;
+    overflow: auto;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    background: #1f252b;
+}
+
+.os-media-modal-stage img {
+    display: block;
+    max-width: 100%;
+    max-height: calc(100vh - 7rem);
+    object-fit: contain;
+}
+
+@media (max-width: 600px) {
+    .os-media-modal {
+        padding: 0.75rem;
+    }
+
+    .os-expandable-media-toolbar,
+    .os-media-modal-toolbar {
+        padding-left: 0.75rem;
+    }
+
+    .os-expandable-media-expand span,
+    .os-media-modal-close span {
+        display: none;
+    }
+
+    .os-media-modal-stage img {
+        max-height: calc(100vh - 5rem);
+    }
+}

@@ -644,6 +644,14 @@ The **Slope Anchor** is the fixed endpoint used to generate the candidate slope 
 
 Choose the anchor based on which endpoint must remain fixed, then set **Failure Direction** separately to match the slope orientation.
 
+The animation below shows how changing the anchor keeps either the crest or toe fixed and updates the related slope values.
+
+{% include expandable-animation.html
+   src="/assets/tutorial/slope-anchor.gif"
+   title="Choosing a Crest or Toe anchor"
+   alt="Switching between Crest and Toe slope anchors and reviewing the recalculated slope height and OSA range"
+%}
+
 The toe must lie inside the section, at or below the topography, and above the section floor. Toe elevations are resolved to the whole-unit elevation used by the solver. If a new value is invalid, review the message in the interface and adjust the toe position or elevation.
 
 <div class="os-note" markdown="1">
@@ -734,9 +742,11 @@ Open **Tools > Settings > Transfer Section Properties**, select the newly import
 
 The animation below shows properties being transferred from an existing section to a receiving section with different geometry. The receiving section gains the selected reusable properties while retaining its own geometry.
 
-<p align="center">
-  <img src="{{ '/assets/tutorial/property-transfer.gif' | relative_url }}" alt="Selecting a receiving section, reviewing layer mappings, transferring section properties, and confirming that the receiving geometry remains unchanged" loading="lazy">
-</p>
+{% include expandable-animation.html
+   src="/assets/tutorial/property-transfer.gif"
+   title="Transferring properties between sections"
+   alt="Selecting a receiving section, reviewing layer mappings, transferring section properties, and confirming that the receiving geometry remains unchanged"
+%}
 
 - **Section settings** — target FoS, bench and strength-model definitions, water-pressure option, and maximum fault segment length.
 - **Entity types** — rock material, fault/joint, or piezometric-line classification.
