@@ -190,6 +190,32 @@ layout: post
   background: #0f1720;
 }
 
+.os-workflow-image-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+  margin: 22px 0;
+}
+
+.os-workflow-image-pair figure {
+  margin: 0;
+  text-align: center;
+}
+
+.os-workflow-image-pair img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.os-workflow-image-pair figcaption {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
 .os-workflow-page p[align="center"] {
   margin: 22px 0;
 }
@@ -299,6 +325,10 @@ layout: post
   .os-workflow-step-body {
     padding: 20px;
   }
+
+  .os-workflow-image-pair {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 
@@ -399,9 +429,16 @@ Set general properties for the section:
 - **Target FoS (Factor of Safety)**.
 - **Failure Direction**: Select right-to-left or left-to-right slope generation.
 
-<p align="center">
-  <img src="https://OptimalSlope.github.io/manual/assets/tutorial/general_properties.png" alt="General properties"/>
-</p>
+<div class="os-workflow-image-pair">
+  <figure>
+    <img src="{{ '/assets/tutorial/general_properties.png' | relative_url }}" alt="Section properties and Crest slope-anchor settings"/>
+    <figcaption>Section properties and slope anchor</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/assets/tutorial/general_properties_slope.png' | relative_url }}" alt="Failure direction and slope-geometry settings"/>
+    <figcaption>Failure direction and slope geometry</figcaption>
+  </figure>
+</div>
 
 The bench, rock, and general properties described above must be provided before running a simulation. The optional properties listed below can be added if required.
 
