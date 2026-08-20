@@ -455,6 +455,10 @@ The bench, rock, and general properties described above must be provided before 
 - **Tension Crack Properties**: Characteristics of any tension cracks.
 - **Faults**: Geometry and material properties of faults, if applicable. For detailed information on faults, refer to the [OptimalSlope Manual on Faults](https://optimalslope.github.io/manual/pages/properties/6-properties/#faults).
 
+<p align="center">
+  <img src="{{ '/assets/tutorial/optional_properties.png' | relative_url }}" alt="Optional Properties card with expandable Tension Crack, Faults, Loads, Roads, and Water sections"/>
+</p>
+
 Ensure that all values accurately reflect the physical and mechanical characteristics of the materials and the specific cross-section.
 
 For detailed guidance, refer to the [OptimalSlope Manual on Properties](https://optimalslope.github.io/manual/pages/properties/6-properties/).

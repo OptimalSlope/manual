@@ -725,6 +725,14 @@ To add a load:
 
 Loads may not overlap. If the selected location overlaps another load, the existing load is highlighted and the new load is not accepted. Select a different position or delete the conflicting entry. Use **Cancel** to leave selection mode and **Delete** to remove the selected load.
 
+The animation below demonstrates a line load, a distributed linear load with different endpoint magnitudes, and a distributed uniform load with one fixed magnitude. It also shows the warning displayed when a new load overlaps an existing load.
+
+{% include expandable-animation.html
+   src="/assets/tutorial/distributed-loads.gif"
+   title="Adding section loads"
+   alt="Adding line, distributed linear, and distributed uniform loads and responding to an overlapping-load warning"
+%}
+
 Roads remain separate optional inputs and are defined using their width and vertical position.
 
 </div>
@@ -941,6 +949,16 @@ To define the water table:
 3. Move upwards through the section, selecting one water table point on each required bench line.
 4. To close the piezometric line, hover over the section boundary on the left or right side, depending on the section orientation. When a valid boundary point is detected, a red circle is displayed around it. Select the highlighted point to add the final boundary point.
 5. Press **Enter** to confirm, or press **Esc** to cancel.
+
+If a water table was previously imported from a DXF file, the application asks which water table to use for the simulation. Select **Yes** to use the manually drawn points instead, or **No** to keep the imported water table.
+
+The animation below shows the complete drawing workflow, from selecting the first point at the toe to confirming the final point at the section boundary.
+
+{% include expandable-animation.html
+   src="/assets/tutorial/water-table-drawing.gif"
+   title="Drawing a water table"
+   alt="Drawing water-table points from the slope toe to the section boundary and choosing between the manually drawn and imported water tables"
+%}
 
 <div class="os-note" markdown="1">
 <strong>Notes</strong>
