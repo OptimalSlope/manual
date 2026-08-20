@@ -8,8 +8,6 @@ nav_order: 60
 nav_parent: Project Management
 ---
 
-### Visualisation Controls
-
 <style>
 .os-controls-page {
   --blue: #0a4e76;
