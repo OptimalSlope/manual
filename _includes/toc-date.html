@@ -47,55 +47,28 @@
                         {% assign reversed_posts = site[collection.label] | where: "layout", "post" | sort: "nav_order" %}
                     {% endif %}
 
+                    {% assign current_nav_group = "" %}
                     {% for post in reversed_posts %}
-                        {% unless post.nav_parent %}
-                            {% assign child_pages = reversed_posts | where: "nav_parent", post.title %}
-                            {% assign has_active_child = false %}
-                            {% for child_page in child_pages %}
-                                {% if page.url == child_page.url %}
-                                    {% assign has_active_child = true %}
-                                {% endif %}
-                            {% endfor %}
-
-                            {% if page.url == post.url %}
-                            <li class="chapter active expanded" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
-                            {% elsif has_active_child %}
-                            <li class="chapter expanded" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
-                            {% else %}
-                            <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
-                            {% endif %}
-                                <a href="{{site.baseurl}}{{post.url}}" onclick="pageScrollToTop(this)">
-                                    {{ post.title | escape }}
-                                </a>
-
-                                {% if child_pages.size > 0 %}
-                                <ul class="articles os-nav-children">
-                                    {% for child_page in child_pages %}
-                                        {% if page.url == child_page.url %}
-                                        <li class="chapter active expanded" data-level="2.1" data-path="{{site.baseurl}}{{child_page.url}}">
-                                        {% else %}
-                                        <li class="chapter" data-level="2.1" data-path="{{site.baseurl}}{{child_page.url}}">
-                                        {% endif %}
-                                            <a href="{{site.baseurl}}{{child_page.url}}" onclick="pageScrollToTop(this)">
-                                                {{ child_page.title | escape }}
-                                            </a>
-                                            {% if site.toc.enabled and page.url == child_page.url %}
-                                                {% assign toc_h_min = page.toc_h_min | default: site.toc.h_min %}
-                                                {% assign toc_h_max = page.toc_h_max | default: site.toc.h_max %}
-                                                {% include toc.html html=content h_min=toc_h_min h_max=toc_h_max %}
-                                            {% endif %}
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                                {% endif %}
-
-                                {% if site.toc.enabled and page.url == post.url %}
+                        {% if post.nav_group and post.nav_group != current_nav_group %}
+                        <li class="header os-nav-group">{{ post.nav_group | escape }}</li>
+                        {% assign current_nav_group = post.nav_group %}
+                        {% endif %}
+                        {% if page.url == post.url %}
+                        <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+                        {% else %}
+                        <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                        {% endif %}
+                            <a href="{{site.baseurl}}{{post.url}}" onclick="pageScrollToTop(this)">
+                                {{ post.title | escape }}
+                            </a>
+                            {% if site.toc.enabled %}
+                                {% if page.url == post.url %}
                                     {% assign toc_h_min = page.toc_h_min | default: site.toc.h_min %}
                                     {% assign toc_h_max = page.toc_h_max | default: site.toc.h_max %}
                                     {% include toc.html html=content h_min=toc_h_min h_max=toc_h_max %}
                                 {% endif %}
-                            </li>
-                        {% endunless %}
+                            {% endif %}
+                        </li>
                     {% endfor %}
 
                     {% if reversed_posts.size > 0 %}

@@ -5,7 +5,6 @@ date: 2010-06-30
 category: Controls
 layout: post
 nav_order: 60
-nav_parent: Project Management
 ---
 
 ### Visualisation Controls
