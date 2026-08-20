@@ -585,15 +585,13 @@ To create a section:
 
 Click **Close** to leave the tool without creating a section. If the visible-model selection changes while the tool is open, select the required visible models again before slicing.
 
-<div class="os-include-frame" markdown="1">
-{% include slicing.html %}
-</div>
+<div class="os-subtitle">Clipping-plane controls</div>
 
-<div class="os-subtitle">Cross-section example</div>
+The animation below demonstrates selecting the visible models, rotating a vertical clipping plane with the circular handle, and moving the plane with the arrow handle.
 
-<div class="os-include-frame" markdown="1">
-{% include slice.html %}
-</div>
+<p align="center">
+  <img src="{{ '/assets/slicing/clipping-plane-controls.gif' | relative_url }}" alt="Selecting visible models, rotating the clipping plane with the circular handle, and moving it with the arrow handle" loading="lazy">
+</p>
 
 </div>
 </section>
