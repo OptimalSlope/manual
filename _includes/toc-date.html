@@ -71,6 +71,36 @@
                                 {% if child_pages.size > 0 %}
                                 <ul class="articles os-nav-children">
                                     {% for child_page in child_pages %}
+                                        {% unless child_page.nav_position == "bottom" %}
+                                            {% if page.url == child_page.url %}
+                                            <li class="chapter active expanded" data-level="2.1" data-path="{{site.baseurl}}{{child_page.url}}">
+                                            {% else %}
+                                            <li class="chapter" data-level="2.1" data-path="{{site.baseurl}}{{child_page.url}}">
+                                            {% endif %}
+                                                <a href="{{site.baseurl}}{{child_page.url}}" onclick="pageScrollToTop(this)">
+                                                    {{ child_page.title | escape }}
+                                                </a>
+                                                {% if site.toc.enabled and page.url == child_page.url %}
+                                                    {% assign toc_h_min = page.toc_h_min | default: site.toc.h_min %}
+                                                    {% assign toc_h_max = page.toc_h_max | default: site.toc.h_max %}
+                                                    {% include toc.html html=content h_min=toc_h_min h_max=toc_h_max %}
+                                                {% endif %}
+                                            </li>
+                                        {% endunless %}
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+
+                                {% if site.toc.enabled and page.url == post.url %}
+                                    {% assign toc_h_min = page.toc_h_min | default: site.toc.h_min %}
+                                    {% assign toc_h_max = page.toc_h_max | default: site.toc.h_max %}
+                                    {% include toc.html html=content h_min=toc_h_min h_max=toc_h_max %}
+                                {% endif %}
+
+                                {% assign bottom_child_pages = child_pages | where: "nav_position", "bottom" %}
+                                {% if bottom_child_pages.size > 0 %}
+                                <ul class="articles os-nav-children os-nav-children-bottom">
+                                    {% for child_page in bottom_child_pages %}
                                         {% if page.url == child_page.url %}
                                         <li class="chapter active expanded" data-level="2.1" data-path="{{site.baseurl}}{{child_page.url}}">
                                         {% else %}
@@ -87,12 +117,6 @@
                                         </li>
                                     {% endfor %}
                                 </ul>
-                                {% endif %}
-
-                                {% if site.toc.enabled and page.url == post.url %}
-                                    {% assign toc_h_min = page.toc_h_min | default: site.toc.h_min %}
-                                    {% assign toc_h_max = page.toc_h_max | default: site.toc.h_max %}
-                                    {% include toc.html html=content h_min=toc_h_min h_max=toc_h_max %}
                                 {% endif %}
                             </li>
                         {% endunless %}

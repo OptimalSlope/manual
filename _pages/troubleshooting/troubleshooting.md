@@ -284,7 +284,7 @@ nav_order: 70
 
 <section class="os-guide-hero" markdown="0">
 <div class="kicker">Help and Solutions</div>
-<h1>Common issues and checks</h1>
+<h1 class="no_toc">Common issues and checks</h1>
 <p>Use this page when a simulation warning appears, results are not available, or exported data does not behave as expected in downstream software.</p>
 </section>
 
@@ -298,7 +298,7 @@ nav_order: 70
 <section class="os-guide-section" id="gaps-overlaps" markdown="1">
 <div class="os-guide-section-head" markdown="0">
 <div class="label">Geometry warning</div>
-<h2 id="gaps-overlaps">Gaps and Overlaps Warning</h2>
+<h2 id="gaps-overlaps">Gaps and Overlaps</h2>
 <p>Gaps and overlaps indicate that the section geometry may not assign material regions clearly.</p>
 </div>
 <div class="os-guide-section-body" markdown="1">
