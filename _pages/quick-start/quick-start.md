@@ -6,7 +6,6 @@ category: Tutorials
 layout: post
 permalink: /pages/quick-start/
 nav_order: 10
-nav_group: Getting started
 ---
 
 

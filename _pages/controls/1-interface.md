@@ -4,8 +4,7 @@ author: Dainius Jenkus
 date: 2010-06-30
 category: Controls
 layout: post
-nav_order: 70
-nav_group: Project and reference
+nav_order: 60
 ---
 
 ### Visualisation Controls

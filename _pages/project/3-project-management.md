@@ -4,8 +4,7 @@ author: Dainius Jenkus
 date: 2010-06-30
 category: Project-management
 layout: post
-nav_order: 60
-nav_group: Project and reference
+nav_order: 50
 ---
 
 <style>
