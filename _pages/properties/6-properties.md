@@ -730,6 +730,12 @@ Roads remain separate optional inputs and are defined using their width and vert
 
 Open **Tools > Settings > Transfer Section Properties**, select the newly imported or receiving cross-section, and click **Transfer Section Properties**. In the transfer window, select the source section and choose what to copy:
 
+The animation below shows properties being transferred from an existing section to a receiving section with different geometry. The receiving section gains the selected reusable properties while retaining its own geometry.
+
+<p align="center">
+  <img src="{{ '/assets/tutorial/property-transfer.gif' | relative_url }}" alt="Selecting a receiving section, reviewing layer mappings, transferring section properties, and confirming that the receiving geometry remains unchanged" loading="lazy">
+</p>
+
 - **Section settings** — target FoS, bench and strength-model definitions, water-pressure option, and maximum fault segment length.
 - **Entity types** — rock material, fault/joint, or piezometric-line classification.
 - **Layer properties** — defined material, strength, and bench-property values.
