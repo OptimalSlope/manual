@@ -4,6 +4,7 @@ author: Dainius Jenkus
 date: 2010-06-30
 category: Properties
 layout: post
+nav_order: 40
 ---
 
 <style>
@@ -908,10 +909,6 @@ Select the pressure method that matches the analysis assumptions:
 Here, `γw` is the unit weight of water, `hw` is the water head, and `α` is the inclination of the water-table segment. Confirm the selected method before running the simulation, particularly when the piezometric line is steep.
 
 Hydraulic conductivity is not currently available as an editable interface input.
-
-<div class="os-include-frame" markdown="1">
-{% include watertableUI.html %}
-</div>
 
 *The water table is displayed as a blue polyline in the section visualiser.*
 

@@ -10,8 +10,6 @@ layout: post
 
 The water table (piezometric line) can be defined for a given cross-section under **Cross-section > Optional properties > Water table**.
 
-
-{% include watertableUI.html %}
 *Displayed as a blue polyline.*
 
 **Interface**

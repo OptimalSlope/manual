@@ -5,6 +5,7 @@ date: 2010-06-30
 category: Troubleshooting
 layout: post
 permalink: /pages/troubleshooting/
+nav_order: 50
 ---
 
 

@@ -5,6 +5,7 @@ date: 2010-06-30
 category: Tutorials
 layout: post
 permalink: /pages/quick-start/
+nav_order: 10
 ---
 
 
