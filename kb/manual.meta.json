@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-21T14:41:21+00:00",
+  "generated": "2026-08-21T15:25:57+00:00",
   "sha256": "1a47ae89e4fceeea2372fa7372adb72c5771b34ecfab2d68b9f58beb38aef8b3",
   "bytes": 96221,
   "sections": 119,
@@ -14,49 +14,49 @@
       "title": "Quick Start",
       "url": "https://optimalslope.github.io/manual/pages/quick-start/",
       "sections": 7,
-      "source": "pages\\quick-start\\index.html"
+      "source": "pages/quick-start/index.html"
     },
     {
       "title": "Simulation Workflow",
       "url": "https://optimalslope.github.io/manual/pages/Tutorials/Workflow/",
       "sections": 9,
-      "source": "pages\\Tutorials\\Workflow\\index.html"
+      "source": "pages/Tutorials/Workflow/index.html"
     },
     {
       "title": "Properties",
       "url": "https://optimalslope.github.io/manual/pages/properties/6-properties/",
       "sections": 9,
-      "source": "pages\\properties\\6-properties\\index.html"
+      "source": "pages/properties/6-properties/index.html"
     },
     {
       "title": "Project Management",
       "url": "https://optimalslope.github.io/manual/pages/project/3-project-management/",
       "sections": 7,
-      "source": "pages\\project\\3-project-management\\index.html"
+      "source": "pages/project/3-project-management/index.html"
     },
     {
       "title": "Controls",
       "url": "https://optimalslope.github.io/manual/pages/controls/1-interface/",
       "sections": 4,
-      "source": "pages\\controls\\1-interface\\index.html"
+      "source": "pages/controls/1-interface/index.html"
     },
     {
       "title": "Help and Solutions",
       "url": "https://optimalslope.github.io/manual/pages/troubleshooting/",
       "sections": 6,
-      "source": "pages\\troubleshooting\\index.html"
+      "source": "pages/troubleshooting/index.html"
     },
     {
       "title": "Data Preparation",
       "url": "https://optimalslope.github.io/manual/pages/Data Suitability/7-data/",
       "sections": 7,
-      "source": "pages\\Data Suitability\\7-data\\index.html"
+      "source": "pages/Data Suitability/7-data/index.html"
     },
     {
       "title": "Glossary",
       "url": "https://optimalslope.github.io/manual/pages/glossary/",
       "sections": 67,
-      "source": "pages\\glossary\\index.html"
+      "source": "pages/glossary/index.html"
     }
   ]
 }
