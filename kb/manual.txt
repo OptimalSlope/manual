@@ -25,6 +25,10 @@ This is the user manual for the Slope Optimiser CAD graphical interface.
 
 Use the sections below to move through the typical workflow: prepare data, create or import project geometry, define properties, run simulations, review outputs, and export results for downstream analysis.
 
+Optimal vs planar pitwall profile
+
+The planar design in blue against the optimal profile in orange. The shaded area is the waste rock that does not need to be excavated.
+
 Slope Optimiser Interactive Workflow Open the full interactive workflow preview in a new tab.
 
 View workflow Conference demo
@@ -284,6 +288,10 @@ Step 3
 
 ### Simulation Workflow > Running Simulations
 URL: https://optimalslope.github.io/manual/pages/Tutorials/Workflow/#running-simulations
+
+An optimised profile over a real rock cutting
+
+The stepped blue line is the bench geometry the simulation produces; the orange segments mark the local face angles.
 
 Configure results storage, the user profile, input checks, and the cloud simulation process.
 
