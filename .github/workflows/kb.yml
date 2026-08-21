@@ -41,7 +41,10 @@ jobs:
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'
+          # Must match the Ruby the lockfile was written with. Gemfile.lock says
+          # BUNDLED WITH 4.0.16, and bundler 2 (which ships with Ruby 3.x)
+          # refuses a lockfile it is too old to read - that is bundler exit 16.
+          ruby-version: '4.0'
           bundler-cache: true
 
       - name: Build site
