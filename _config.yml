@@ -61,6 +61,9 @@ collections:
 
 page_width: 800px
 
+# Manual assistant backend (manual-chat repo). Blank disables the widget.
+chat_endpoint: 'https://zwtwkfvku4hd35srobpqqlkotm0fxfmt.lambda-url.us-east-2.on.aws/chat'
+
 destination:      ./_site
 incremental:      false
 regenerate:       true

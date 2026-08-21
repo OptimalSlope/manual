@@ -1,0 +1,629 @@
+{%- comment -%}
+Manual assistant widget. Included from footer.html, so it appears on every page
+of the manual. Talks to the Lambda function URL in manual-chat.
+
+Deliberately dependency-free: the theme already loads jQuery and a pile of
+gitbook plugins, and this has no reason to add to that.
+{%- endcomment -%}
+
+<div id="os-chat" data-endpoint="{{ site.chat_endpoint }}" hidden>
+  <button type="button" class="os-chat-launcher" aria-expanded="false"
+          aria-controls="os-chat-panel" aria-label="Ask the manual assistant">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+    </svg>
+    <span class="os-chat-launcher-label">Ask the manual</span>
+  </button>
+
+  <section id="os-chat-panel" class="os-chat-panel" role="dialog" aria-modal="false"
+           aria-labelledby="os-chat-title" hidden>
+    <header class="os-chat-head">
+      <div>
+        <h2 id="os-chat-title">Manual Assistant</h2>
+        <p>Answers from the OptimalSlope manual</p>
+      </div>
+      <button type="button" class="os-chat-close" aria-label="Close assistant">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M18 6 6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </header>
+
+    <div class="os-chat-log" role="log" aria-live="polite" aria-atomic="false">
+      <div class="os-chat-intro">
+        <p>Ask about any part of the manual. Answers are drawn only from the
+           documentation, with a link to the section used.</p>
+        <div class="os-chat-suggestions">
+          <button type="button">What do the red and blue markers mean?</button>
+          <button type="button">How do I prepare section geometry?</button>
+          <button type="button">Why did my simulation fail to start?</button>
+        </div>
+      </div>
+    </div>
+
+    <form class="os-chat-form">
+      <label class="os-chat-sr" for="os-chat-input">Your question</label>
+      <textarea id="os-chat-input" rows="1" maxlength="2000" autocomplete="off"
+                placeholder="Ask a question&hellip;"></textarea>
+      <button type="submit" class="os-chat-send" aria-label="Send question">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+        </svg>
+      </button>
+    </form>
+
+    <p class="os-chat-foot">
+      Not a substitute for support. Always verify against the manual.
+    </p>
+  </section>
+</div>
+
+<style>
+#os-chat {
+  --os-blue: #0a4e76;
+  --os-blue2: #0f6e9f;
+  --os-orange: #f16b21;
+  --os-ink: #14202b;
+  --os-muted: #617180;
+  --os-surface: #ffffff;
+  --os-raised: #f5f8fa;
+  --os-line: rgba(20, 35, 50, 0.14);
+  --os-shadow: 0 18px 48px rgba(10, 40, 60, 0.22);
+
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 10001; /* the gitbook back-to-top button sits at 10000 */
+  font-family: inherit;
+  color: var(--os-ink);
+}
+
+/* The theme's fontsettings plugin swaps colour themes on .book at runtime;
+   a MutationObserver mirrors that onto this element as data-theme. */
+#os-chat[data-theme="sepia"] {
+  --os-surface: #f3eacb;
+  --os-raised: #ece0bb;
+  --os-ink: #43341a;
+  --os-muted: #6b5c3e;
+  --os-line: rgba(67, 52, 26, 0.18);
+}
+
+#os-chat[data-theme="night"] {
+  --os-surface: #1c1f2b;
+  --os-raised: #262b3a;
+  --os-ink: #dfe4ef;
+  --os-muted: #99a2b8;
+  --os-line: rgba(220, 228, 240, 0.16);
+  --os-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
+}
+
+#os-chat *, #os-chat *::before, #os-chat *::after { box-sizing: border-box; }
+
+.os-chat-sr {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- launcher ---------- */
+
+.os-chat-launcher {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-left: auto;
+  padding: 12px 20px 12px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--os-blue), var(--os-blue2));
+  color: #fff;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--os-shadow);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.os-chat-launcher:hover { transform: translateY(-2px); }
+.os-chat-launcher:focus-visible { outline: 3px solid var(--os-orange); outline-offset: 3px; }
+.os-chat-launcher svg {
+  width: 20px; height: 20px; flex: none;
+  fill: none; stroke: currentColor; stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+
+#os-chat.is-open .os-chat-launcher { display: none; }
+
+/* ---------- panel ---------- */
+
+.os-chat-panel {
+  display: flex;
+  flex-direction: column;
+  width: 390px;
+  height: min(580px, calc(100vh - 48px));
+  border: 1px solid var(--os-line);
+  border-radius: 18px;
+  background: var(--os-surface);
+  box-shadow: var(--os-shadow);
+  overflow: hidden;
+  animation: os-chat-in .18s ease-out;
+}
+
+@keyframes os-chat-in {
+  from { opacity: 0; transform: translateY(12px) scale(.98); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .os-chat-panel { animation: none; }
+  .os-chat-launcher { transition: none; }
+}
+
+.os-chat-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 16px;
+  background: linear-gradient(135deg, var(--os-blue), var(--os-blue2));
+  color: #fff;
+}
+
+.os-chat-head h2 { margin: 0; font-size: 15.5px; font-weight: 700; color: #fff; }
+.os-chat-head p  { margin: 2px 0 0; font-size: 12.5px; opacity: .82; }
+
+.os-chat-close {
+  flex: none;
+  padding: 4px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  opacity: .85;
+}
+.os-chat-close:hover { opacity: 1; background: rgba(255, 255, 255, .16); }
+.os-chat-close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.os-chat-close svg {
+  width: 18px; height: 18px; display: block;
+  fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round;
+}
+
+/* ---------- transcript ---------- */
+
+.os-chat-log {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.os-chat-intro p { margin: 0 0 12px; color: var(--os-muted); font-size: 13px; }
+
+.os-chat-suggestions { display: flex; flex-direction: column; gap: 7px; }
+.os-chat-suggestions button {
+  padding: 9px 12px;
+  border: 1px solid var(--os-line);
+  border-radius: 10px;
+  background: var(--os-raised);
+  color: var(--os-ink);
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+.os-chat-suggestions button:hover { border-color: var(--os-blue2); }
+.os-chat-suggestions button:focus-visible { outline: 2px solid var(--os-orange); outline-offset: 1px; }
+
+.os-chat-msg { max-width: 88%; padding: 10px 13px; border-radius: 14px; }
+.os-chat-msg.user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, var(--os-blue), var(--os-blue2));
+  color: #fff;
+  border-bottom-right-radius: 5px;
+}
+.os-chat-msg.bot {
+  align-self: flex-start;
+  background: var(--os-raised);
+  border: 1px solid var(--os-line);
+  border-bottom-left-radius: 5px;
+}
+.os-chat-msg.error {
+  align-self: stretch;
+  max-width: 100%;
+  background: rgba(241, 107, 33, .12);
+  border: 1px solid rgba(241, 107, 33, .45);
+  color: var(--os-ink);
+  font-size: 13px;
+}
+
+.os-chat-msg p        { margin: 0 0 8px; }
+.os-chat-msg p:last-child { margin-bottom: 0; }
+.os-chat-msg ul,
+.os-chat-msg ol       { margin: 0 0 8px; padding-left: 20px; }
+.os-chat-msg li       { margin: 2px 0; }
+.os-chat-msg code {
+  padding: 1px 5px;
+  border-radius: 5px;
+  background: rgba(125, 140, 155, .2);
+  font-size: 12.5px;
+}
+
+.os-chat-cite {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: rgba(15, 110, 159, .12);
+  color: var(--os-blue2);
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
+}
+#os-chat[data-theme="night"] .os-chat-cite { color: #7fc4e8; background: rgba(127, 196, 232, .14); }
+.os-chat-cite:hover { text-decoration: underline; }
+
+.os-chat-typing::after {
+  content: "";
+  display: inline-block;
+  width: 7px; height: 14px;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: var(--os-blue2);
+  animation: os-chat-blink 1s steps(2) infinite;
+}
+@keyframes os-chat-blink { 50% { opacity: 0; } }
+
+/* ---------- composer ---------- */
+
+.os-chat-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 10px 12px;
+  border-top: 1px solid var(--os-line);
+  background: var(--os-surface);
+}
+
+.os-chat-form textarea {
+  flex: 1;
+  max-height: 120px;
+  padding: 9px 12px;
+  border: 1px solid var(--os-line);
+  border-radius: 11px;
+  background: var(--os-raised);
+  color: var(--os-ink);
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.45;
+  resize: none;
+}
+.os-chat-form textarea:focus { outline: 2px solid var(--os-blue2); outline-offset: -1px; }
+
+.os-chat-send {
+  flex: none;
+  width: 38px; height: 38px;
+  border: 0;
+  border-radius: 11px;
+  background: var(--os-orange);
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.os-chat-send:disabled { opacity: .45; cursor: default; }
+.os-chat-send:focus-visible { outline: 2px solid var(--os-blue2); outline-offset: 2px; }
+.os-chat-send svg {
+  width: 17px; height: 17px;
+  fill: none; stroke: currentColor; stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+
+.os-chat-foot {
+  margin: 0;
+  padding: 0 14px 11px;
+  background: var(--os-surface);
+  color: var(--os-muted);
+  font-size: 11px;
+  text-align: center;
+}
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 600px) {
+  #os-chat { right: 14px; bottom: 14px; left: 14px; }
+  .os-chat-launcher { padding: 11px 17px; }
+  .os-chat-panel {
+    position: fixed;
+    inset: 0;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    border: 0;
+  }
+}
+</style>
+
+<script>
+(function () {
+  var root = document.getElementById('os-chat');
+  if (!root) { return; }
+
+  var endpoint = (root.dataset.endpoint || '').trim();
+  if (!endpoint) {
+    // No chat_endpoint in _config.yml - stay invisible rather than render a
+    // button that cannot work.
+    return;
+  }
+  root.hidden = false;
+
+  var panel       = document.getElementById('os-chat-panel');
+  var launcher    = root.querySelector('.os-chat-launcher');
+  var closeBtn    = root.querySelector('.os-chat-close');
+  var log         = root.querySelector('.os-chat-log');
+  var intro       = root.querySelector('.os-chat-intro');
+  var form        = root.querySelector('.os-chat-form');
+  var input       = document.getElementById('os-chat-input');
+  var sendBtn     = root.querySelector('.os-chat-send');
+
+  var history = [];
+  var busy = false;
+
+  var sessionId = sessionStorage.getItem('os-chat-session');
+  if (!sessionId) {
+    sessionId = (crypto.randomUUID ? crypto.randomUUID()
+                                   : String(Date.now()) + Math.random());
+    sessionStorage.setItem('os-chat-session', sessionId);
+  }
+
+  /* ---- theme mirroring -------------------------------------------------
+     The widget lives outside .book, so the theme's colour-theme classes are
+     not reachable by CSS descendant selectors. Mirror them instead. */
+
+  var book = document.querySelector('.book');
+
+  function syncTheme() {
+    if (!book) { return; }
+    var name = book.classList.contains('color-theme-2') ? 'night'
+             : book.classList.contains('color-theme-1') ? 'sepia'
+             : '';
+    if (name) { root.dataset.theme = name; } else { delete root.dataset.theme; }
+  }
+
+  if (book && window.MutationObserver) {
+    new MutationObserver(syncTheme).observe(book, {
+      attributes: true, attributeFilter: ['class']
+    });
+  }
+  syncTheme();
+
+  /* ---- rendering -------------------------------------------------------
+     The model replies in light markdown. Everything is escaped first, so the
+     only HTML that reaches the DOM is what this function puts there. */
+
+  function escapeHtml(text) {
+    return text.replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;',
+               '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function render(markdown) {
+    var citation = '';
+
+    // "Source: Title - https://..." becomes a chip rather than a raw URL.
+    var text = markdown.replace(
+      /\n*Source:\s*(.+?)\s+-\s+(https?:\/\/\S+)\s*$/,
+      function (_, title, url) {
+        citation = '<a class="os-chat-cite" href="' + escapeHtml(url) +
+                   '">' + escapeHtml(title) + '</a>';
+        return '';
+      }
+    );
+
+    var html = escapeHtml(text.trim())
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<em>$2</em>');
+
+    // Answers about a manual are often numbered procedures, so ordered lists
+    // matter as much as bullets here.
+    var blocks = html.split(/\n{2,}/).map(function (block) {
+      var lines = block.split('\n').filter(function (l) { return l.trim(); });
+      if (!lines.length) { return ''; }
+
+      function allMatch(pattern) {
+        return lines.every(function (l) { return pattern.test(l); });
+      }
+
+      if (allMatch(/^\s*[-*]\s+/)) {
+        return '<ul>' + lines.map(function (l) {
+          return '<li>' + l.replace(/^\s*[-*]\s+/, '') + '</li>';
+        }).join('') + '</ul>';
+      }
+
+      if (allMatch(/^\s*\d+[.)]\s+/)) {
+        return '<ol>' + lines.map(function (l) {
+          return '<li>' + l.replace(/^\s*\d+[.)]\s+/, '') + '</li>';
+        }).join('') + '</ol>';
+      }
+
+      // Mixed block: a lead-in line followed by list items, which is how most
+      // procedures actually arrive.
+      var out = '';
+      var open = null;
+      lines.forEach(function (line) {
+        var bullet = /^\s*[-*]\s+/.test(line);
+        var number = /^\s*\d+[.)]\s+/.test(line);
+        var want = bullet ? 'ul' : number ? 'ol' : null;
+
+        if (want !== open) {
+          if (open) { out += '</' + open + '>'; }
+          if (want) { out += '<' + want + '>'; }
+          open = want;
+        }
+        out += want
+          ? '<li>' + line.replace(/^\s*(?:[-*]|\d+[.)])\s+/, '') + '</li>'
+          : '<p>' + line + '</p>';
+      });
+      if (open) { out += '</' + open + '>'; }
+      return out;
+    });
+
+    return blocks.join('') + citation;
+  }
+
+  function addMessage(kind, content, asMarkdown) {
+    if (intro && intro.parentNode) { intro.remove(); }
+    var el = document.createElement('div');
+    el.className = 'os-chat-msg ' + kind;
+    if (asMarkdown) { el.innerHTML = render(content); }
+    else { el.textContent = content; }
+    log.appendChild(el);
+    log.scrollTop = log.scrollHeight;
+    return el;
+  }
+
+  /* ---- open / close ---------------------------------------------------- */
+
+  function open() {
+    root.classList.add('is-open');
+    panel.hidden = false;
+    launcher.setAttribute('aria-expanded', 'true');
+    input.focus();
+  }
+
+  function close() {
+    root.classList.remove('is-open');
+    panel.hidden = true;
+    launcher.setAttribute('aria-expanded', 'false');
+    launcher.focus();
+  }
+
+  launcher.addEventListener('click', open);
+  closeBtn.addEventListener('click', close);
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && !panel.hidden) { close(); }
+  });
+
+  root.querySelectorAll('.os-chat-suggestions button').forEach(function (btn) {
+    btn.addEventListener('click', function () { ask(btn.textContent); });
+  });
+
+  /* ---- composer -------------------------------------------------------- */
+
+  input.addEventListener('input', function () {
+    input.style.height = 'auto';
+    input.style.height = Math.min(input.scrollHeight, 120) + 'px';
+  });
+
+  input.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      form.requestSubmit();
+    }
+  });
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    ask(input.value);
+  });
+
+  /* ---- the request ----------------------------------------------------- */
+
+  function ask(question) {
+    question = (question || '').trim();
+    if (!question || busy) { return; }
+
+    busy = true;
+    sendBtn.disabled = true;
+    input.value = '';
+    input.style.height = 'auto';
+
+    addMessage('user', question, false);
+    var bubble = addMessage('bot', '', false);
+    bubble.classList.add('os-chat-typing');
+
+    var answer = '';
+
+    fetch(endpoint, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        message: question,
+        session_id: sessionId,
+        history: history.slice(-8),
+        page: location.pathname
+      })
+    }).then(function (response) {
+      if (response.status === 429) {
+        throw new Error('Too many questions in a short time. Please wait a moment and try again.');
+      }
+      if (!response.ok || !response.body) {
+        throw new Error('The assistant is unavailable right now. Please try again shortly.');
+      }
+
+      var reader = response.body.getReader();
+      var decoder = new TextDecoder();
+      var buffer = '';
+
+      function pump() {
+        return reader.read().then(function (result) {
+          if (result.done) { return; }
+          buffer += decoder.decode(result.value, { stream: true });
+
+          var chunks = buffer.split('\n\n');
+          buffer = chunks.pop();
+
+          chunks.forEach(function (chunk) {
+            var line = chunk.trim();
+            if (line.indexOf('data:') !== 0) { return; }
+
+            var event;
+            try { event = JSON.parse(line.slice(5)); }
+            catch (err) { return; }
+
+            if (event.delta) {
+              answer += event.delta;
+              bubble.textContent = answer;
+              log.scrollTop = log.scrollHeight;
+            } else if (event.error) {
+              throw new Error(event.error);
+            }
+          });
+
+          return pump();
+        });
+      }
+
+      return pump();
+    }).then(function () {
+      bubble.classList.remove('os-chat-typing');
+      if (answer.trim()) {
+        bubble.innerHTML = render(answer);
+        history.push({ role: 'user', content: question });
+        history.push({ role: 'assistant', content: answer });
+      } else {
+        bubble.remove();
+        addMessage('error', 'No answer came back. Please try again.', false);
+      }
+      log.scrollTop = log.scrollHeight;
+    }).catch(function (err) {
+      bubble.classList.remove('os-chat-typing');
+      bubble.remove();
+      addMessage('error', err.message || 'Something went wrong.', false);
+    }).then(function () {
+      busy = false;
+      sendBtn.disabled = false;
+      input.focus();
+    });
+  }
+})();
+</script>
