@@ -1,0 +1,42 @@
+{%- comment -%}
+A looping video used as an animated diagram.
+
+Deliberately mirrors expandable-animation.html's frame and toolbar classes so it
+sits alongside the existing GIF animations without looking like a different
+component. Video rather than GIF because the same clip is roughly six times
+smaller as H.264 at higher resolution and frame rate.
+
+Usage:
+  {% include looping-video.html
+     src="/assets/videos/animations/optimal-vs-planar.mp4"
+     poster="/assets/videos/animations/optimal-vs-planar.jpg"
+     title="Optimal vs planar profile"
+     caption="Optional caption below the frame." %}
+{%- endcomment -%}
+<figure class="os-expandable-media os-loop-video">
+  <div class="os-expandable-media-window">
+    <div class="os-expandable-media-toolbar">
+      <span class="os-expandable-media-title">{{ include.title }}</span>
+      <div class="os-expandable-media-actions">
+        <button class="os-expandable-media-control" type="button"
+                data-loop-toggle aria-pressed="false"
+                aria-label="Pause {{ include.title | escape }}">
+          <i class="fa fa-pause" aria-hidden="true"></i>
+          <span>Pause</span>
+        </button>
+        <button class="os-expandable-media-control" type="button"
+                data-loop-restart aria-label="Replay {{ include.title | escape }}">
+          <i class="fa fa-repeat" aria-hidden="true"></i>
+          <span>Replay</span>
+        </button>
+      </div>
+    </div>
+    <video class="os-loop-video-stage"
+           muted loop playsinline preload="metadata"
+           poster="{{ include.poster | relative_url }}"
+           {% if include.title %}aria-label="{{ include.title | escape }}"{% endif %}>
+      <source src="{{ include.src | relative_url }}" type="video/mp4">
+    </video>
+  </div>
+  {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+</figure>

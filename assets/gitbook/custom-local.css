@@ -336,3 +336,92 @@ body.os-media-modal-open {
         max-height: calc(100vh - 5rem);
     }
 }
+
+
+/* --- looping video figures (see _includes/looping-video.html) --------------
+   Shares the frame and toolbar of .os-expandable-media so animated diagrams
+   look the same whether they are GIFs or video. */
+
+.os-loop-video-stage {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #000;
+    cursor: pointer;
+}
+
+.os-loop-video figcaption {
+    margin-top: 0.6rem;
+    color: #57606a;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    text-align: center;
+}
+
+/* ---------------------------------------------------------------------------
+   Sidebar: brand-coloured navigation.
+
+   The theme ships a flat #fafafa sidebar with a generic #008cff active link.
+   This replaces it with the OptimalSlope blues and uses the orange only as the
+   active marker, so the eye lands on "where am I" first.
+
+   Scoped away from the fontsettings colour themes: sepia has a warm paper
+   background that a navy panel would fight, and night already darkens the
+   chrome itself.
+--------------------------------------------------------------------------- */
+
+.book:not(.color-theme-1):not(.color-theme-2) .book-summary {
+    color: rgba(255, 255, 255, 0.78);
+    background: linear-gradient(180deg, #062f50 0%, #0a4e76 45%, #0f6e9f 100%);
+    border-right: 0;
+    box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.06);
+}
+
+.book:not(.color-theme-1):not(.color-theme-2) .book-summary ul.summary li a,
+.book:not(.color-theme-1):not(.color-theme-2) .book-summary ul.summary li span {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.book:not(.color-theme-1):not(.color-theme-2) .book-summary ul.summary li a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    text-decoration: none;
+}
+
+/* Active page: white text plus an orange marker down the left edge. */
+.book:not(.color-theme-1):not(.color-theme-2) .book-summary ul.summary li.active > a {
+    color: #ffffff;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: inset 3px 0 0 var(--os-nav-accent, #f16b21);
+}
+
+.book:not(.color-theme-1):not(.color-theme-2) .book-summary ul.summary li.header,
+.book:not(.color-theme-1):not(.color-theme-2) .book-summary ul.summary li.os-nav-group {
+    color: rgba(255, 255, 255, 0.48);
+}
+
+.book:not(.color-theme-1):not(.color-theme-2) .book-summary ul.summary li.divider {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.book:not(.color-theme-1):not(.color-theme-2) .book-summary ul.summary li.os-manual-meta {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* The search field has to be re-tinted or it sits as a white slab on the navy. */
+.book:not(.color-theme-1):not(.color-theme-2) #book-search-input {
+    background: rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.book:not(.color-theme-1):not(.color-theme-2) #book-search-input input,
+.book:not(.color-theme-1):not(.color-theme-2) #book-search-input input:focus,
+.book:not(.color-theme-1):not(.color-theme-2) #book-search-input input:hover {
+    color: #ffffff;
+}
+
+.book:not(.color-theme-1):not(.color-theme-2) #book-search-input input::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}

@@ -466,6 +466,12 @@ For detailed guidance, refer to [Properties]({{ '/pages/properties/6-properties/
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 3</div>
 <h2 id="running-simulations">Running Simulations</h2>
+
+{% include looping-video.html
+   src="/assets/videos/animations/profile-on-rockface.mp4"
+   poster="/assets/videos/animations/profile-on-rockface.jpg"
+   title="An optimised profile over a real rock cutting"
+   caption="The stepped blue line is the bench geometry the simulation produces; the orange segments mark the local face angles." %}
 <p>Configure results storage, the user profile, input checks, and the cloud simulation process.</p>
 </div>
 <div class="os-workflow-step-body" markdown="1">

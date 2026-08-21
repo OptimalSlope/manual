@@ -30,7 +30,8 @@ permalink: /
   border-radius: 30px;
   background:
     radial-gradient(circle at 88% 10%, rgba(241, 107, 33, 0.32), transparent 30%),
-    linear-gradient(135deg, #062f50, var(--blue), var(--blue2));
+    linear-gradient(135deg, rgba(6, 47, 80, 0.92), rgba(10, 78, 118, 0.86), rgba(15, 110, 159, 0.78)),
+    url("/manual/assets/docs_images/hero-pit-spiral.jpg") center 62% / cover no-repeat;
   color: white;
   box-shadow: var(--shadow2);
 }
@@ -302,6 +303,7 @@ permalink: /
 .os-feature-panel {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 22px;
@@ -316,22 +318,23 @@ permalink: /
   box-shadow: 0 12px 30px rgba(20, 35, 50, 0.08);
 }
 
-.os-feature-panel::after {
-  content: "Workflow";
-  position: absolute;
-  right: 18px;
-  bottom: -10px;
-  color: rgba(10, 78, 118, 0.06);
-  font-size: 64px;
-  font-weight: 1000;
-  letter-spacing: -0.06em;
-  pointer-events: none;
-  z-index: 0;
-}
-
 .os-feature-text {
   position: relative;
   z-index: 2;
+  flex: 1 1 260px;
+}
+
+.os-feature-actions {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 320px;
+  /* auto-fit + 1fr keeps the buttons exactly equal whether they sit side by
+     side or wrap to their own rows, which a flex row cannot do - flex
+     distributes spare space in proportion to content width, so the longer
+     label always ends up wider. */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 10px;
 }
 
 .os-feature-text strong {
@@ -467,12 +470,18 @@ This is the user manual for the [Slope Optimiser](https://optimalslope.com/files
 
 Use the sections below to move through the typical workflow: prepare data, create or import project geometry, define properties, run simulations, review outputs, and export results for downstream analysis.
 
+{% include looping-video.html
+   src="/assets/videos/animations/optimal-vs-planar.mp4"
+   poster="/assets/videos/animations/optimal-vs-planar.jpg"
+   title="Optimal vs planar pitwall profile"
+   caption="The planar design in blue against the optimal profile in orange. The shaded area is the waste rock that does not need to be excavated." %}
+
 <div class="os-feature-panel" markdown="0">
 <div class="os-feature-text">
 <strong>Slope Optimiser Interactive Workflow</strong>
 <span>Open the full interactive workflow preview in a new tab.</span>
 </div>
-<div style="display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:2;">
+<div class="os-feature-actions">
 <a class="os-feature-button" href="{{ '/assets/preview_interactive.html' | relative_url }}" target="_blank" rel="noopener">View workflow</a>
 <a class="os-feature-button" href="{{ '/conference/' | relative_url }}" target="_blank" rel="noopener">Conference demo</a>
 </div>

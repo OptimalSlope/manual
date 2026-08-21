@@ -17,6 +17,10 @@ kb/*.json            text eol=lf
 
 # --- Binary assets ------------------------------------------------------
 *.png                binary
+*.jpg                binary
+*.jpeg               binary
+*.tiff               binary
+*.svg                text eol=lf
 *.bmp                binary
 *.gif                binary
 *.mp4                binary
