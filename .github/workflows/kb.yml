@@ -75,8 +75,8 @@ jobs:
                     f"{len(meta['pages'])} pages")
               for page in meta['pages']:
                   print(f"    {page['sections']:>3}  {page['title']}")
-          print(f"
-total prompt payload: {total:,} bytes (~{total // 4:,} tokens)")
+          print()
+          print(f"total prompt payload: {total:,} bytes (~{total // 4:,} tokens)")
           PY
 
       - name: Fail if the knowledge base came out empty
