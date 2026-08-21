@@ -1,5 +1,5 @@
 ### Overview > Overview
-URL: https://OptimalSlope.github.io/manual/
+URL: https://optimalslope.github.io/manual/
 
 Slope Optimiser user manual
 
@@ -17,7 +17,7 @@ This manual explains the main workflows for using the Slope Optimiser CAD graphi
 Introduction
 
 ### Overview > Introduction
-URL: https://OptimalSlope.github.io/manual/#introduction
+URL: https://optimalslope.github.io/manual/#introduction
 
 OptimalSlope helps evaluate slope geometry, generate simulation inputs, run cloud simulations, and export optimised slope profiles.
 
@@ -36,26 +36,26 @@ Start with the Data Preparation page if you are working with new 3D stratigraphy
 Common support tasks
 
 ### Overview > Common support tasks
-URL: https://OptimalSlope.github.io/manual/#common-support-tasks
+URL: https://optimalslope.github.io/manual/#common-support-tasks
 
 Use these shortcuts when you are checking input data, preparing a simulation, or diagnosing a warning.
 
 A Gaps and overlaps Understand geometry warnings and decide whether input data needs repair. B OSA search region Check the crest point and Min/Max OSA range before running the optimiser. C Export block model Create downstream block model outputs from 3D stratigraphy and slope-angle results. D Import into Datamine Map block model fields and combine slope-angle data using Datamine workflows.
 
 ### Quick Start > Quick Start
-URL: https://OptimalSlope.github.io/manual/pages/quick-start/
+URL: https://optimalslope.github.io/manual/pages/quick-start/
 
 Quick Start
 
 ### Quick Start > Run your first simulation
-URL: https://OptimalSlope.github.io/manual/pages/quick-start/
+URL: https://optimalslope.github.io/manual/pages/quick-start/
 
 A short route through Slope Optimiser for new users: prepare data, import or create a section, define properties, run the simulation, review results, and export outputs.
 
 Step 1
 
 ### Quick Start > Prepare input data
-URL: https://OptimalSlope.github.io/manual/pages/quick-start/#prepare-data
+URL: https://optimalslope.github.io/manual/pages/quick-start/#prepare-data
 
 Clean input geometry improves slicing, material assignment, and simulation reliability.
 
@@ -80,7 +80,7 @@ Open Data Preparation Review geometry quality, DXF preparation, layer organisati
 Step 2
 
 ### Quick Start > Import or create a section
-URL: https://OptimalSlope.github.io/manual/pages/quick-start/#create-section
+URL: https://optimalslope.github.io/manual/pages/quick-start/#create-section
 
 Start from an existing DXF section or generate a section from 3D stratigraphy.
 
@@ -97,7 +97,7 @@ For slicing, open the tool, click Select visible models, choose the plane direct
 Step 3
 
 ### Quick Start > Define properties
-URL: https://OptimalSlope.github.io/manual/pages/quick-start/#define-properties
+URL: https://optimalslope.github.io/manual/pages/quick-start/#define-properties
 
 Set the inputs required for the selected section before running the simulation.
 
@@ -120,7 +120,7 @@ Open Properties Review slope anchors, bench and rock inputs, loads, roads, groun
 Step 4
 
 ### Quick Start > Run the simulation
-URL: https://OptimalSlope.github.io/manual/pages/quick-start/#run-simulation
+URL: https://optimalslope.github.io/manual/pages/quick-start/#run-simulation
 
 Submit the simulation after account, folder, and input checks are complete.
 
@@ -143,7 +143,7 @@ Fetch results when they are available.
 Step 5
 
 ### Quick Start > Review and export results
-URL: https://OptimalSlope.github.io/manual/pages/quick-start/#review-export
+URL: https://optimalslope.github.io/manual/pages/quick-start/#review-export
 
 Fetch simulation outputs, review the result plot and logs, then export downstream files.
 
@@ -164,7 +164,7 @@ export a section block model when the section is associated with 3D stratigraphy
 use downstream import steps for RS2 or Datamine where relevant.
 
 ### Simulation Workflow > Simulation Workflow
-URL: https://OptimalSlope.github.io/manual/pages/Tutorials/Workflow/
+URL: https://optimalslope.github.io/manual/pages/Tutorials/Workflow/
 
 Simulation Workflow Tutorial
 
@@ -177,7 +177,7 @@ Follow these steps to configure a selected section in Slope Optimiser and run a 
 Step 1
 
 ### Simulation Workflow > Importing Sections
-URL: https://OptimalSlope.github.io/manual/pages/Tutorials/Workflow/#importing-sections
+URL: https://optimalslope.github.io/manual/pages/Tutorials/Workflow/#importing-sections
 
 Start by importing an existing DXF section or creating sections from a 3D stratigraphy model using the slicing tool.
 
@@ -204,7 +204,7 @@ Ensure your DXF model data meets general quality standards to obtain reliable si
 Step 2
 
 ### Simulation Workflow > Defining Properties
-URL: https://OptimalSlope.github.io/manual/pages/Tutorials/Workflow/#defining-properties
+URL: https://optimalslope.github.io/manual/pages/Tutorials/Workflow/#defining-properties
 
 Define bench, rock, general, and optional properties before running a simulation.
 
@@ -283,7 +283,7 @@ For detailed guidance, refer to Properties.
 Step 3
 
 ### Simulation Workflow > Running Simulations
-URL: https://OptimalSlope.github.io/manual/pages/Tutorials/Workflow/#running-simulations
+URL: https://optimalslope.github.io/manual/pages/Tutorials/Workflow/#running-simulations
 
 Configure results storage, the user profile, input checks, and the cloud simulation process.
 
@@ -556,7 +556,7 @@ Note: Results in the 2D plot are always shown as if the slope is on the right si
 Step 4
 
 ### Simulation Workflow > Exporting Output Profile to DXF
-URL: https://OptimalSlope.github.io/manual/pages/Tutorials/Workflow/#exporting-output-profile-to-dxf
+URL: https://optimalslope.github.io/manual/pages/Tutorials/Workflow/#exporting-output-profile-to-dxf
 
 Export the optimised slope profile using global or local coordinate options.
 
@@ -577,7 +577,7 @@ Local XY - exported coordinates are flattened, i.e., the section is on the XY pl
 Step 5
 
 ### Simulation Workflow > Importing Output into Rocscience RS2
-URL: https://OptimalSlope.github.io/manual/pages/Tutorials/Workflow/#importing-output-into-rockscience-rs2
+URL: https://optimalslope.github.io/manual/pages/Tutorials/Workflow/#importing-output-into-rockscience-rs2
 
 Import the exported DXF profile into RS2 and complete the external boundary definition manually.
 
@@ -604,7 +604,7 @@ By following these steps, you can successfully prepare and import a DXF file int
 Step 6
 
 ### Simulation Workflow > Exporting the Section Block Model
-URL: https://OptimalSlope.github.io/manual/pages/Tutorials/Workflow/#exporting-the-section-block-model
+URL: https://optimalslope.github.io/manual/pages/Tutorials/Workflow/#exporting-the-section-block-model
 
 Export a block model for sections associated with 3D stratigraphy using optimised slope angles.
 
@@ -629,7 +629,7 @@ Choose block dimensions that are appropriate for the scale of the model. Smaller
 Step 7
 
 ### Simulation Workflow > Import Block Model into Datamine
-URL: https://OptimalSlope.github.io/manual/pages/Tutorials/Workflow/#import-block-model-into-datamine
+URL: https://optimalslope.github.io/manual/pages/Tutorials/Workflow/#import-block-model-into-datamine
 
 Import the block model CSV exported from OptimalSlope into Datamine, assign the correct block model fields, and combine the slope-angle output with the original block model.
 
@@ -778,7 +778,7 @@ After combining the models, check that all relevant blocks have a slope-angle va
 Related help
 
 ### Simulation Workflow > Related pages
-URL: https://OptimalSlope.github.io/manual/pages/Tutorials/Workflow/#related-pages
+URL: https://optimalslope.github.io/manual/pages/Tutorials/Workflow/#related-pages
 
 Use these pages to start faster, understand common terms, or troubleshoot issues found during the workflow.
 
@@ -795,7 +795,7 @@ Glossary
 Review key OptimalSlope, slope design, simulation, and export terms.
 
 ### Properties > Properties
-URL: https://OptimalSlope.github.io/manual/pages/properties/6-properties/
+URL: https://optimalslope.github.io/manual/pages/properties/6-properties/
 
 Simulation input reference
 
@@ -808,7 +808,7 @@ Reference guide for slope anchors, bench and rock inputs, loads, faults, roads, 
 Bench geometry
 
 ### Properties > Defining Bench Height
-URL: https://OptimalSlope.github.io/manual/pages/properties/6-properties/#defining-bench-height
+URL: https://optimalslope.github.io/manual/pages/properties/6-properties/#defining-bench-height
 
 Bench height can be fixed for a section or inherited from a parent 3D rock model during slicing.
 
@@ -841,7 +841,7 @@ For example, slope height = 385 m and bench height = 10 m gives a bench-compatib
 Bench input table
 
 ### Properties > Bench Properties
-URL: https://OptimalSlope.github.io/manual/pages/properties/6-properties/#bench-properties
+URL: https://optimalslope.github.io/manual/pages/properties/6-properties/#bench-properties
 
 Bench properties describe the basic geometry and unit weight used for bench generation.
 
@@ -860,7 +860,7 @@ Bench properties describe the basic geometry and unit weight used for bench gene
 Material strength
 
 ### Properties > Rock Properties
-URL: https://OptimalSlope.github.io/manual/pages/properties/6-properties/#rock-properties
+URL: https://optimalslope.github.io/manual/pages/properties/6-properties/#rock-properties
 
 Rock strength properties are set according to the selected strength model.
 
@@ -893,7 +893,7 @@ Bench and rock properties can be set for individual 3D stratigraphic models. If 
 Section-level inputs
 
 ### Properties > General Section Properties
-URL: https://OptimalSlope.github.io/manual/pages/properties/6-properties/#general-section-properties
+URL: https://optimalslope.github.io/manual/pages/properties/6-properties/#general-section-properties
 
 General section properties define the fixed slope endpoint, slope geometry, target factor of safety, loads, and road inputs.
 
@@ -998,7 +998,7 @@ Roads remain separate optional inputs and are defined using their width and vert
 Reuse a section setup
 
 ### Properties > Transfer Section Properties
-URL: https://OptimalSlope.github.io/manual/pages/properties/6-properties/#transfer-section-properties
+URL: https://optimalslope.github.io/manual/pages/properties/6-properties/#transfer-section-properties
 
 Copy reusable settings and mapped layer properties from an existing section to another section in the same project.
 
@@ -1023,7 +1023,7 @@ Properties cannot be transferred while the receiving section has an active or su
 Discontinuities
 
 ### Properties > Faults
-URL: https://OptimalSlope.github.io/manual/pages/properties/6-properties/#faults
+URL: https://optimalslope.github.io/manual/pages/properties/6-properties/#faults
 
 Faults represent discontinuities or fractures that can influence rock mass behaviour, stability, and stress distribution.
 
@@ -1098,7 +1098,7 @@ When testing fault sensitivity, duplicate the section and create separate scenar
 Groundwater
 
 ### Properties > Water Table
-URL: https://OptimalSlope.github.io/manual/pages/properties/6-properties/#water-table
+URL: https://optimalslope.github.io/manual/pages/properties/6-properties/#water-table
 
 The water table, also referred to as the piezometric line, can be defined for a selected cross-section.
 
@@ -1159,7 +1159,7 @@ The water table should be defined so that it follows the expected groundwater co
 Related help
 
 ### Properties > Related help
-URL: https://OptimalSlope.github.io/manual/pages/properties/6-properties/#related-help
+URL: https://optimalslope.github.io/manual/pages/properties/6-properties/#related-help
 
 Use these pages for the recommended first workflow, common issue checks, and terminology.
 
@@ -1170,7 +1170,7 @@ Help and Solutions — common geometry, OSA search region, simulation, and expor
 Glossary — definitions of common OptimalSlope terms.
 
 ### Project Management > Project Management
-URL: https://OptimalSlope.github.io/manual/pages/project/3-project-management/
+URL: https://optimalslope.github.io/manual/pages/project/3-project-management/
 
 Project setup and data management
 
@@ -1183,7 +1183,7 @@ Create, save, load, import, slice, trim, and export project data in Slope Optimi
 Project creation
 
 ### Project Management > Creating a Project
-URL: https://OptimalSlope.github.io/manual/pages/project/3-project-management/#creating-a-project
+URL: https://optimalslope.github.io/manual/pages/project/3-project-management/#creating-a-project
 
 Create an empty OptimalSlope project before importing geometry or defining simulation properties.
 
@@ -1202,7 +1202,7 @@ Create Empty Project Creates an empty project.
 Project files
 
 ### Project Management > Saving and Loading Projects
-URL: https://OptimalSlope.github.io/manual/pages/project/3-project-management/#savingloading-projects
+URL: https://optimalslope.github.io/manual/pages/project/3-project-management/#savingloading-projects
 
 Save project data to disk and open existing OptimalSlope project files.
 
@@ -1225,7 +1225,7 @@ OptimalSlope project data is stored in a binary format: .cbf.
 Import data
 
 ### Project Management > Importing Data
-URL: https://OptimalSlope.github.io/manual/pages/project/3-project-management/#importing-data
+URL: https://optimalslope.github.io/manual/pages/project/3-project-management/#importing-data
 
 Import 3D stratigraphy, section geometry, water surfaces, and boundary surfaces into the project.
 
@@ -1264,7 +1264,7 @@ Supported import file formats
 Cross-sections
 
 ### Project Management > Creating Sections
-URL: https://OptimalSlope.github.io/manual/pages/project/3-project-management/#creating-sections
+URL: https://optimalslope.github.io/manual/pages/project/3-project-management/#creating-sections
 
 Use the slicing tool to create cross-sections from selected 3D shapes or stratigraphy models.
 
@@ -1325,7 +1325,7 @@ Clipping-plane controls
 Boundary trimming
 
 ### Project Management > Trim Section to Boundary Surface
-URL: https://OptimalSlope.github.io/manual/pages/project/3-project-management/#trim-section-to-boundary-surface
+URL: https://optimalslope.github.io/manual/pages/project/3-project-management/#trim-section-to-boundary-surface
 
 Use a boundary surface to constrain or trim a section so it reflects current or planned excavation limits.
 
@@ -1378,7 +1378,7 @@ The resulting section is updated using the boundary surface, so the section bett
 Export data
 
 ### Project Management > Exporting Project Data
-URL: https://OptimalSlope.github.io/manual/pages/project/3-project-management/#exporting-project-data
+URL: https://optimalslope.github.io/manual/pages/project/3-project-management/#exporting-project-data
 
 Export selected geometry or cross-section data for downstream modelling and simulation workflows.
 
@@ -1409,7 +1409,7 @@ Select a cross-section.
 In the Properties panel, select Export under the tools section.
 
 ### Controls > Controls
-URL: https://OptimalSlope.github.io/manual/pages/controls/1-interface/
+URL: https://optimalslope.github.io/manual/pages/controls/1-interface/
 
 Interface guide
 
@@ -1431,7 +1431,7 @@ Display selected objects as wireframe or shaded geometry, and adjust colour or t
 Delete / hide items
 
 ### Controls > Slices and 3D Models
-URL: https://OptimalSlope.github.io/manual/pages/controls/1-interface/#slices-and-3d-models-heading
+URL: https://optimalslope.github.io/manual/pages/controls/1-interface/#slices-and-3d-models-heading
 
 These controls are used to hide selected shapes in the visualiser or delete selected items from the project.
 
@@ -1452,7 +1452,7 @@ Deleting an item removes it from the project structure. Confirm that the selecte
 Visualisation position
 
 ### Controls > Fit, Zoom, Pan, Flip and Rotate
-URL: https://OptimalSlope.github.io/manual/pages/controls/1-interface/#fit-zoom-pan-flip-and-rotate-heading
+URL: https://optimalslope.github.io/manual/pages/controls/1-interface/#fit-zoom-pan-flip-and-rotate-heading
 
 These controls are used to move around the visualiser and change the view direction.
 
@@ -1525,7 +1525,7 @@ Alternatively, use the Space key.
 Visualisation style
 
 ### Controls > Wireframe, Shading, Colour and Transparency
-URL: https://OptimalSlope.github.io/manual/pages/controls/1-interface/#wireframe-shading-colour-and-transparency-heading
+URL: https://optimalslope.github.io/manual/pages/controls/1-interface/#wireframe-shading-colour-and-transparency-heading
 
 These controls change the appearance of selected objects in the visualiser.
 
@@ -1568,19 +1568,19 @@ Deletes the selected item from the project.
 Use transparency together with wireframe display when checking internal stratigraphy, overlapping geometry, fault surfaces, or trimmed cross-section boundaries.
 
 ### Help and Solutions > Help and Solutions
-URL: https://OptimalSlope.github.io/manual/pages/troubleshooting/
+URL: https://optimalslope.github.io/manual/pages/troubleshooting/
 
 Help and Solutions
 
 ### Help and Solutions > Common issues and checks
-URL: https://OptimalSlope.github.io/manual/pages/troubleshooting/
+URL: https://optimalslope.github.io/manual/pages/troubleshooting/
 
 Use this page when a simulation warning appears, results are not available, or exported data does not behave as expected in downstream software.
 
 Geometry warning
 
 ### Help and Solutions > Gaps and Overlaps
-URL: https://OptimalSlope.github.io/manual/pages/troubleshooting/#gaps-overlaps
+URL: https://optimalslope.github.io/manual/pages/troubleshooting/#gaps-overlaps
 
 Gaps and overlaps indicate that the section geometry may not assign material regions clearly.
 
@@ -1625,7 +1625,7 @@ Related workflow section Read the detailed gaps and overlaps checklist.
 Search region warning
 
 ### Help and Solutions > OSA Search Region Issues
-URL: https://OptimalSlope.github.io/manual/pages/troubleshooting/#osa-search-region
+URL: https://optimalslope.github.io/manual/pages/troubleshooting/#osa-search-region
 
 The OSA search region controls where the optimiser searches for the optimal slope profile.
 
@@ -1676,7 +1676,7 @@ Related workflow section Read the crest point and OSA search region guidance.
 Simulation setup
 
 ### Help and Solutions > Simulation Does Not Start
-URL: https://OptimalSlope.github.io/manual/pages/troubleshooting/#simulation-start
+URL: https://optimalslope.github.io/manual/pages/troubleshooting/#simulation-start
 
 Most start-up issues are caused by incomplete configuration, missing section data, or unresolved input warnings.
 
@@ -1719,7 +1719,7 @@ Related workflow section Review the full simulation setup workflow.
 Results and exports
 
 ### Help and Solutions > Results or Exports Do Not Look Correct
-URL: https://OptimalSlope.github.io/manual/pages/troubleshooting/#results-fetch
+URL: https://optimalslope.github.io/manual/pages/troubleshooting/#results-fetch
 
 Review result folders, export options, and downstream import requirements.
 
@@ -1764,7 +1764,7 @@ exported fields are mapped correctly in downstream software;
 slope-angle fields are imported as numeric attributes where required.
 
 ### Data Preparation > Data Preparation
-URL: https://OptimalSlope.github.io/manual/pages/Data Suitability/7-data/
+URL: https://optimalslope.github.io/manual/pages/Data Suitability/7-data/
 
 Input quality and geometry checks
 
@@ -1777,7 +1777,7 @@ Prepare 3D stratigraphy and section data for reliable cross-section generation, 
 Input data quality
 
 ### Data Preparation > Preparing Model Files
-URL: https://OptimalSlope.github.io/manual/pages/Data Suitability/7-data/#preparing-model-files
+URL: https://optimalslope.github.io/manual/pages/Data Suitability/7-data/#preparing-model-files
 
 Good simulation results depend on clean, consistent 3D stratigraphy and section geometry.
 
@@ -1794,7 +1794,7 @@ Before running simulations, visually inspect both the 3D model and any generated
 Leapfrog export
 
 ### Data Preparation > Exporting DXF from Leapfrog
-URL: https://OptimalSlope.github.io/manual/pages/Data Suitability/7-data/#exporting-dxf-from-leapfrog
+URL: https://optimalslope.github.io/manual/pages/Data Suitability/7-data/#exporting-dxf-from-leapfrog
 
 Use the most reliable DXF export option to preserve mesh connectivity for downstream processing.
 
@@ -1819,7 +1819,7 @@ Due to additional processing overhead and cleaner geometry requirements, exporti
 3D stratigraphy
 
 ### Data Preparation > Stratigraphy Preparation
-URL: https://OptimalSlope.github.io/manual/pages/Data Suitability/7-data/#stratigraphy-preparation
+URL: https://optimalslope.github.io/manual/pages/Data Suitability/7-data/#stratigraphy-preparation
 
 Prepare high-quality 3D DXF models for cross-section generation without gaps, overlaps, or invalid mesh geometry.
 
@@ -1856,7 +1856,7 @@ Use simplifications where possible without compromising the required geological 
 Section quality
 
 ### Data Preparation > Section Preparation
-URL: https://OptimalSlope.github.io/manual/pages/Data Suitability/7-data/#section-preparation
+URL: https://optimalslope.github.io/manual/pages/Data Suitability/7-data/#section-preparation
 
 Good quality section wires are essential for accurate and reliable simulations.
 
@@ -1897,7 +1897,7 @@ Maintain strict quality control over the 3D model before generating sections. Cl
 Layer management
 
 ### Data Preparation > Model Organisation
-URL: https://OptimalSlope.github.io/manual/pages/Data Suitability/7-data/#model-organisation
+URL: https://optimalslope.github.io/manual/pages/Data Suitability/7-data/#model-organisation
 
 Use clear layer names and colours so model components can be managed and inspected efficiently.
 
@@ -1912,7 +1912,7 @@ Define names and colours of layers in the modelling software before exporting DX
 Related help
 
 ### Data Preparation > Related help
-URL: https://OptimalSlope.github.io/manual/pages/Data Suitability/7-data/#related-help
+URL: https://optimalslope.github.io/manual/pages/Data Suitability/7-data/#related-help
 
 Use these pages for the recommended first workflow, common issue checks, and terminology.
 
@@ -1923,344 +1923,344 @@ Help and Solutions — common geometry, OSA search region, simulation, and expor
 Glossary — definitions of common OptimalSlope terms.
 
 ### Glossary > Glossary
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 Reference
 
 ### Glossary > Glossary
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 Definitions of common OptimalSlope, slope design, and simulation terms used throughout the manual.
 
 Geometry
 
 ### Glossary > Geometry terms
-URL: https://OptimalSlope.github.io/manual/pages/glossary/#geometry
+URL: https://optimalslope.github.io/manual/pages/glossary/#geometry
 
 Terms related to imported sections, slope shape, and design geometry.
 
 ### Glossary > Cross-section
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A 2D representation of the geological model along a selected cutting plane. A cross-section may be imported directly or generated by slicing a 3D model and is the geometry used to define a simulation.
 
 ### Glossary > Section layer
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A geological or material region within a cross-section. Each section layer can have its own bench and strength properties.
 
 ### Glossary > Slicing plane
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The XY, XZ, or YZ plane used to intersect selected 3D geometry and generate a cross-section. The live clipping preview shows its current position; the visualiser arrow translates it and the ring rotates a vertical plane.
 
 ### Glossary > Azimuth
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The horizontal orientation angle of a vertical slicing plane. It allows XZ or YZ cross-sections to be created in different orientations through the model.
 
 ### Glossary > Slope anchor
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The fixed endpoint used to define the candidate slope geometry. The user can prescribe either the crest or the toe.
 
 ### Glossary > Crest point
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The upper starting location of the slope profile. In crest-anchor mode, its position and the target slope height define the slope geometry and affect the OSA search region.
 
 ### Glossary > Toe
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The lower end of the slope profile where the slope meets the lower ground or design boundary. In toe-anchor mode, its horizontal position and elevation are prescribed and slope height is calculated by the software.
 
 ### Glossary > Bench
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A stepped part of the slope geometry, usually defined by bench height, bench face angle, berm width, and number of benches.
 
 ### Glossary > Berm
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The horizontal or near-horizontal platform between bench faces.
 
 ### Glossary > Slope profile
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The 2D line or polyline representing the slope geometry being analysed or optimised.
 
 ### Glossary > Slope height
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The vertical height of the slope used when defining the section and bench arrangement. It is entered in crest-anchor mode and calculated from the section geometry in toe-anchor mode.
 
 ### Glossary > Bench face angle
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The inclination of an individual bench face, measured in degrees.
 
 ### Glossary > Minimum berm width
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The smallest permitted width of the platform between adjacent bench faces.
 
 ### Glossary > Bench-compatible slope height
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The greatest slope height that accommodates a whole number of benches without exceeding the defined total slope height.
 
 ### Glossary > Boundary surface
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A closed, continuous 3D surface used to trim a section to an excavation, pushback, pit, or other model limit.
 
 ### Glossary > Water table (piezometric line)
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The groundwater boundary defined for a cross-section. It is represented as a blue polyline in the section visualiser.
 
 ### Glossary > Inclination-corrected water pressure
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 Water pressure calculated with a correction for the phreatic-line gradient: u = γw hw cos² α.
 
 ### Glossary > Hydrostatic water pressure
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 Water pressure calculated without a phreatic-line inclination correction: u = γw hw.
 
 ### Glossary > Fault or joint
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A geological discontinuity or fracture that may influence rock-mass behaviour and slope stability. Faults are represented in Slope Optimiser as open polylines with assigned strength properties.
 
 Material properties
 
 ### Glossary > Material property terms
-URL: https://OptimalSlope.github.io/manual/pages/glossary/#materials
+URL: https://optimalslope.github.io/manual/pages/glossary/#materials
 
 Terms used to describe material weight, rock-mass strength, and fault strength.
 
 ### Glossary > Unit weight
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The weight of material per unit volume, entered in kN/m³. It contributes to the gravitational loading of the slope.
 
 ### Glossary > Strength model
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A mathematical relationship used to describe how a material resists failure under stress. Slope Optimiser supports the Mohr-Coulomb and Hoek-Brown models for rock layers.
 
 ### Glossary > Mohr-Coulomb model
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A linear shear-strength model defined primarily by cohesion and friction angle.
 
 ### Glossary > Hoek-Brown model
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 An empirical, non-linear strength criterion for rock masses. Its inputs describe intact-rock strength, rock-mass condition, material characteristics, confinement, and disturbance.
 
 ### Glossary > Friction angle (φ)
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The angle of shearing resistance, or internal friction, of rock or fault material. It is entered in degrees.
 
 ### Glossary > Cohesion (c)
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The component of shear strength that is independent of normal stress in the Mohr-Coulomb model. It is entered in kPa.
 
 ### Glossary > Intact compressive strength (σci)
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The unconfined compressive strength of intact rock, entered in MPa for the Hoek-Brown model.
 
 ### Glossary > Geological Strength Index (GSI)
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A value representing the geological structure and surface condition of a rock mass for use in the Hoek-Brown model.
 
 ### Glossary > Intact-rock constant (mi)
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A material constant for intact rock that controls the curvature of the Hoek-Brown strength relationship.
 
 ### Glossary > Maximum minor principal stress (σ3 max)
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The minor principal stress averaged along the likely slope failure surface. It is entered in MPa for the Hoek-Brown model; the manual specifies -1 when it is unavailable.
 
 ### Glossary > Disturbance factor (D)
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A Hoek-Brown parameter that accounts for rock-mass strength reduction caused by effects such as blasting and stress relaxation.
 
 Simulation
 
 ### Glossary > Simulation terms
-URL: https://OptimalSlope.github.io/manual/pages/glossary/#simulation
+URL: https://optimalslope.github.io/manual/pages/glossary/#simulation
 
 Terms related to simulation inputs, optimisation, and results.
 
 ### Glossary > FoS
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 Factor of Safety. A measure used in slope stability analysis to compare resisting forces against driving forces.
 
 ### Glossary > Target FoS
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The factor of safety specified as the stability objective for a simulation.
 
 ### Glossary > OSA
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 Overall Slope Angle. In OptimalSlope, Min/Max OSA values define the search range used to explore possible slope profiles.
 
 ### Glossary > Minimum and maximum OSA
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The lower and upper overall slope-angle limits used to bound the slope geometries considered by the optimiser.
 
 ### Glossary > OSA search region
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The triangular region shown in the section preview where the optimiser searches for the optimal slope profile.
 
 ### Glossary > Optimisation
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The process of evaluating candidate slope geometries to identify a profile that meets the defined stability objective and design inputs.
 
 ### Glossary > Optimised profile
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The slope profile estimated by the optimiser after running the simulation and evaluating candidate geometries.
 
 ### Glossary > Failure mechanism
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The potential failure path or mechanism considered during slope stability analysis.
 
 ### Glossary > Line load
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A concentrated section load placed at one selected point on the topography. Its magnitude must be greater than zero.
 
 ### Glossary > Distributed load
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A load applied over an interval selected on the section topography. It may be uniform, with one magnitude, or linear, with separate left and right magnitudes.
 
 ### Glossary > Road input
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A section-level input that defines a road by its width and vertical position within the slope geometry.
 
 ### Glossary > Maximum fault segment length
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The maximum length used when dividing an imported fault polyline into analysis segments. Smaller values give a more detailed representation but require more computation; larger values simplify the fault and can run faster.
 
 ### Glossary > Simulation input
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The combined section geometry, material properties, bench properties, optional features, and optimisation settings submitted for analysis.
 
 ### Glossary > Simulation Check
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The pre-submission panel that lists incomplete or invalid section inputs. Its Fix action navigates to and highlights the affected property; Check Again repeats the validation after corrections.
 
 ### Glossary > Simulation result
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The output from a completed analysis, including the estimated optimal slope profile and associated result data or plots.
 
 ### Glossary > Detached plot
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A static Output Plot opened in a separate window so that multiple cross-section results can be kept visible and compared side by side.
 
 Data and export
 
 ### Glossary > Data and export terms
-URL: https://OptimalSlope.github.io/manual/pages/glossary/#data
+URL: https://optimalslope.github.io/manual/pages/glossary/#data
 
 Terms related to input files, geometry models, and downstream workflows.
 
 ### Glossary > DXF
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A drawing exchange format used to import section geometry and stratigraphy into Slope Optimiser and to export slope profiles to other engineering tools.
 
 ### Glossary > CBF
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The binary file format used to save and reopen an entire Slope Optimiser project.
 
 ### Glossary > Stratigraphy
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The geological layer model used to define material regions and generate sections.
 
 ### Glossary > Polyline
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 An ordered sequence of connected line segments defined by vertices. Polylines are the recommended geometry for water, section, and fault layers.
 
 ### Glossary > Open polyline
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A polyline whose first and last points are not joined. Faults and joints are imported as open polylines.
 
 ### Glossary > Spline
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A smooth mathematical curve defined by control points and interpolation. Splines add processing complexity and should not be used for water, section, or fault layers; converting them to polylines can introduce approximation errors.
 
 ### Glossary > Wire
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A connected sequence of edges used to represent a boundary in section geometry. Gaps, duplicate edges, or incorrect edge ordering can produce an invalid wire.
 
 ### Glossary > Mesh
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A 3D surface representation formed from connected faces, edges, and vertices.
 
 ### Glossary > Closed manifold mesh
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A watertight mesh in which every edge is shared by exactly two adjacent faces. Closed manifold geometry helps produce complete and reliable cross-sections.
 
 ### Glossary > DXF Polyface
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A connected mesh representation in a DXF file. It is the recommended Leapfrog DXF export option because it preserves mesh connectivity and generally requires less post-processing.
 
 ### Glossary > DXF 3D Face
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 An individual face entity in a DXF file. A model exported as separate 3D Faces requires additional processing because the faces are not stored as one connected mesh.
 
 ### Glossary > Block model
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A 3D grid of blocks used to represent material, geometry, or simulation result attributes such as slope angle.
 
 ### Glossary > JSON simulation export
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A text-based export containing the properties and inputs associated with an individual section and its layers.
 
 ### Glossary > Local XY export
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A DXF export option where the section is flattened onto the XY plane. This is useful for workflows that require 2D geometry, such as RS2.
 
 ### Glossary > ADDMOD
-URL: https://OptimalSlope.github.io/manual/pages/glossary/
+URL: https://optimalslope.github.io/manual/pages/glossary/
 
 A Datamine function used to combine model data, for example adding OptimalSlope slope-angle output to an existing block model.

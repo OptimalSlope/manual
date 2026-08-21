@@ -250,7 +250,9 @@ def walk_pages(site: Path, baseurl: str) -> list[tuple[Path, str]]:
 
 def build(site: Path, config: Path) -> tuple[str, dict]:
     baseurl = _config_value(config, "baseurl")
-    site_url = _config_value(config, "url")
+    # _config.yml spells the host with capitals; hosts are case-insensitive but
+    # the citations read as typos unless normalised.
+    site_url = _config_value(config, "url").lower()
     pages = walk_pages(site, baseurl)
 
     chunks: list[str] = []
