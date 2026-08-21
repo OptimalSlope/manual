@@ -1,0 +1,122 @@
+name: Publish knowledge base
+
+# Rebuilds the assistant's copy of the manual whenever the docs change, so the
+# chatbot cannot quietly drift out of date with the published site.
+#
+# Auth is GitHub OIDC into a role scoped to this repo and to PutObject on a
+# single S3 key. No AWS access keys exist anywhere in this repo.
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - '_pages/**'
+      - '_includes/**'
+      - '_layouts/**'
+      - '_config.yml'
+      - 'README.md'
+      - 'tools/build_kb.py'
+      - 'tools/build_site_kb.py'
+      - '.github/workflows/kb.yml'
+  workflow_dispatch:
+  schedule:
+    # The marketing site changes independently of this repo, so nothing here
+    # would ever trigger a refresh of website.txt. Pick it up weekly.
+    - cron: '17 4 * * 1'
+
+concurrency:
+  # A newer docs commit supersedes an in-flight publish.
+  group: publish-kb
+  cancel-in-progress: true
+
+permissions:
+  id-token: write   # required to request the OIDC token
+  contents: write   # the last step commits the regenerated kb/
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec jekyll build
+
+      - name: Extract knowledge base (manual)
+        run: python tools/build_kb.py
+
+      - name: Extract knowledge base (website)
+        # Fetches optimalslope.com. Non-fatal: a marketing-site outage should
+        # not block publishing an updated manual, and the handler tolerates a
+        # missing source.
+        continue-on-error: true
+        run: python tools/build_site_kb.py
+
+      - name: Show what changed
+        # Surfaced in the run log so a surprising jump in size is visible
+        # without anyone going to look for it.
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          total = 0
+          for name in ('manual', 'website'):
+              path = pathlib.Path(f'kb/{name}.meta.json')
+              if not path.is_file():
+                  print(f"{name}: not built")
+                  continue
+              meta = json.loads(path.read_text())
+              total += meta['bytes']
+              print(f"{name}: {meta['bytes']:,} bytes, {meta['sections']} sections, "
+                    f"{len(meta['pages'])} pages")
+              for page in meta['pages']:
+                  print(f"    {page['sections']:>3}  {page['title']}")
+          print(f"
+total prompt payload: {total:,} bytes (~{total // 4:,} tokens)")
+          PY
+
+      - name: Fail if the knowledge base came out empty
+        # A theme change that renames the content wrapper would silently produce
+        # an empty file and wipe the assistant's entire knowledge. Catch it here
+        # rather than in production.
+        run: |
+          size=$(stat -c%s kb/manual.txt)
+          echo "manual.txt is $size bytes"
+          if [ "$size" -lt 20000 ]; then
+            echo "::error::manual.txt is suspiciously small - refusing to publish"
+            exit 1
+          fi
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: us-east-2
+
+      - name: Publish to S3
+        run: |
+          aws s3 cp kb/manual.txt s3://${{ vars.KB_BUCKET }}/manual.txt \
+            --content-type 'text/plain; charset=utf-8'
+          if [ -f kb/website.txt ]; then
+            aws s3 cp kb/website.txt s3://${{ vars.KB_BUCKET }}/website.txt \
+              --content-type 'text/plain; charset=utf-8'
+          else
+            echo "::warning::website.txt missing - publishing manual only"
+          fi
+
+      - name: Commit the regenerated knowledge base
+        # Keeps kb/manual.txt in the repo in step with the site, so the diff of
+        # "what the assistant knows" is reviewable alongside the docs change.
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          if git diff --quiet -- kb/; then
+            echo "knowledge base unchanged"
+          else
+            git add kb/
+            git commit -m 'Rebuild knowledge base [skip ci]'
+            git push
+          fi

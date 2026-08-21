@@ -1,0 +1,343 @@
+### [Website] Overview > Our product
+URL: https://optimalslope.com/
+
+OptimalSlope is intelligent software that designs optimal mine pitwalls. Because of the optimality of the pitwall shape, the amount of waste rock to be excavated is substantially reduced and so the cost of excavation resulting in higher profits for tens of million USD (from 11 to 140 million, see Case Studies) and up to 20% lower carbon footprint per mine.
+
+learn more Download our brochure
+
+### [Website] Overview > High costs
+URL: https://optimalslope.com/
+
+The excavation of a mine incurs costs typically in the order of hundreds of million USD. Lower costs would allow higher profitability and more mining projects coming to fruition.
+
+### [Website] Overview > Long time to design
+URL: https://optimalslope.com/
+
+Current
+pitwall profiles are designed by geotechnical consultants on the basis of their
+experience and overly simplified formulae (e.g. use of stability charts). No software for the design of pitwalls
+exist.
+
+### [Website] Overview > High carbon footprint
+URL: https://optimalslope.com/
+
+Mining
+is a highly carbon intensive industry needing urgent solutions to reduce mining
+carbon footprint.
+
+### [Website] Overview > Inefficient design
+URL: https://optimalslope.com/
+
+The current
+life-of-mine design methodology is sequential: pitwall profiles are provided by
+geotechnical consultants to mining engineers who run pit optimisers. No
+iterations are performed between pit optimisation and pitwall design so the
+resulting mine design (pushbacks and UPL) often turn out to be highly
+suboptimal.
+
+### [Website] Overview > Optimize Project NPV
+URL: https://optimalslope.com/
+
+OptimalSlope has been tested on 4 peer reviewed case studies of small-medium metalliferous mines with increases of Net Present Value obtained in comparison with the design based on traditional methodology of up to 52%.
+
+### [Website] Overview > Reduce Carbon Footprint
+URL: https://optimalslope.com/
+
+Optimal pitwall profiles enable average reductions of CO2 equivalent emissions of 30,000 tonnes a year per mine. If our solution was adopted globally, 200 million tonnes of CO2 a year could be saved.
+
+### [Website] Overview > Intelligent
+and efficient mining design
+URL: https://optimalslope.com/
+
+OptimalSlope replaces the need for time consuming back and forth between geotechnical and mining teams. OptimalSlope’s pitwalls can be fed directly into the pit optimiser of choice to calculate pushbacks and the Ultimate Pit Limit.
+
+### [Website] Overview > Quick and User Friendly
+URL: https://optimalslope.com/
+
+OptimalSlope is highly parallelised so that the heavy calculations
+involved to find the optimal profile for each sector of a mine pit can be
+performed in reasonable times. A user friendly GUI is used for the input and output of the data.
+
+### [Website] Overview > Cloud Based
+URL: https://optimalslope.com/
+
+OptimalSlope does not require any dongle or physical device but it is deployed on the AWS cloud. This allows best management of computational resources so that the right
+computational power is always made available.
+
+### [Website] Overview > Bespoke Service
+URL: https://optimalslope.com/
+
+We
+have a flexible pricing model: you can purchase a licence for use of the code
+on a subscription basis (annual or monthly) or you can ask a quote for a
+consultancy to get the strategic design of the mine and anything in
+between including training.
+
+OUR STORY
+
+### [Website] Overview > Our Founders
+URL: https://optimalslope.com/
+
+Committed to revolutionise mining to build a better tomorrow
+
+Stefano is Professor of Geotechnical Engineering at Newcastle University (UK) and a Chartered Engineer and Fellow of the Institution of Civil
+Engineering. He is member of the International Technical
+Committee 208 “Slope stability in engineering practice” and has worked for several years on the stability assessment and design of slopes. Stefano has developed the initial version of OptimalSlope.
+
+Prof Stefano Utili
+
+CO-FOUNDER & CEO
+
+Andrea holds a PhD in Geotechnical Engineering from Newcastle University with title "Design of optimal pitwall profiles for open pit mines". Andrea's expertise lies in ensuring mine safety by employing analytical insights derived from numerical simulations. Notably, during his PhD, Andrea further developed the current version of OptimalSlope, demonstrating a keen commitment to advancing the field.
+
+Andrea Agosti
+
+CO-FOUNDER & CTO
+
+Our
+team is made of geotechnical engineers, software engineers, and computer
+scientists. If you are interested in joining us or in any further information please see our Team page
+
+### [Website] Case Studies > Discover the case studies showcasing the gains obtained by using OptimalSlope
+URL: https://optimalslope.com/Case-Studies.html
+
+CASE STUDY WITH BHP (FORMERLY OZ MINERALS): OPTIMISING PIT WALL PROFILES
+FOR ENHANCED SAFETY AND EFFICIENCY IN AUSTRALIAN MINE
+
+OptimalSlope was contracted by the Think & Act Differently mining
+business incubator to redesign the starter pit of one open pit mines owned by BHP
+in Australia following its successful bid to the call for innovations in “Slope
+Engineering”: Unearthed
+| Think & Act Differently | Open House Slope Engineering | Overview.OptimalSlope’s Slope Optimiser produced
+geotechnically optimal pitwall profiles achieving significant improvements in
+overall slope angles, typically ranging from 3 to 4 degrees, of the thick
+overburden to be excavated to gain access to the metalliferous resources (see
+Figure below). An
+independent evaluation carried out by BHP mine managers assessed that the optimised
+profiles for the overburden were worth of 50 million AUD saving on waste rock
+excavation costs.
+We are
+unable to disclose the mine name due to confidentiality.
+
+Copper Mine
+
+The work on this case study is published in the SME Journal of Mining, Metallurgy & Exploration. The block model, geotechnical and
+economic data were provided by AMTC (University of
+Santiago, Chile). To showcase the gains achievable by
+OptimalSlope, two independent designs were carried out
+using Geovia Whittle: first employing planar pitwalls as
+per traditional methodology, and secondly adopting the
+optimal pitwall profiles from OptimalSlope. The results
+are summarised in the table below. A representative 2D cross-section was assumed for the
+design of the pitwall in each mine sector. The Factor of
+Safety (FoS) of the profiles calculated by OptimalSlope
+was verified by stability analyses performed by
+Rocscience Slide 2 and FLAC3D.
+
+Gold Mine
+
+The work on this case study is published in the CIM Journal. The block model, geotechnical and economic
+data for the mine were provided by Kinross. To showcase
+the gains achievable by OptimalSlope, two independent
+designs were carried out (one for the traditional pitwalls
+and one for optimal pitwalls) using Datamine. Due to the
+complex geology the pit was divided into five
+geotechnical sectors, each requiring a different pitwall
+profile. The results are summarised in the table below. The Factor of Safety of the profiles calculated by
+OptimalSlope was verified by stability analyses
+performed by Rocscience Slide 2 and FLAC3D.
+
+the McLaughlin gold mine
+
+The work is published Open Access in the
+proceedings of the International Slope stability in Mining Conference 2021 in Perth. The
+block model and economic data for the mine were taken
+from MineLib, a publically available repository of open pit
+mine data.
+This means that the design and calculations reported in
+the paper can be replicated by anyone. The two
+independent designs were carried out using Geovia
+Whittle. The results are summarised in the table below. The Factor of Safety of the profiles calculated by
+OptimalSlope was verified by stability analyses
+performed by Rocscience Slide 2 and FLAC3D.
+
+the MARVIN DEPOSIT
+
+The work on this case study is published in Mining Technology. This paper investigates the financial and environmental consequences stemming from the introduction of a carbon levy applied to mining and processing activities. The Marvin copper deposit (block model data publicly available from MineLib repository) was adopted as a case study. Several pit optimizations were performed based on four different values of carbon tax and adopting either traditional planar or non-linear optimal pitwalls. It emerges that the relationships between carbon tax value versus NPV, amount of ore extracted, and carbon emissions exhibited linearity in both cases of planar and optimal pitwall profiles. Moreover, the adoption of optimal profiles realizes gains up to 215 million AUD, without compromising the safety of the UPL.
+
+GOLD-COPPER
+MINE, ACCOUNTING FOR ANISOTROPIC JOINTED ROCK MASSES
+
+The work on
+this case study is published in the International Journal of Mining, Reclamation and Environment. We worked with the international
+geotechnical mining consultancy Call & Nicholas which provided the geotechnical data for the
+case study.
+The mine
+considered here is located in Mexico into Cretaceous siltstone featuring a
+large amount of discontinuities: eight different joint sets and a primary
+bedding plane. These fractures together with tension cracks were accounted for
+by Slope Optimiser to determine the optimal shape of the pitwalls. To replicate
+the effect of joints on slope stability, direction-dependent cohesion and
+internal friction angle parameters were employed. Key inputs include joint
+orientation, non-persistence, and probability of occurrence.
+Optimal
+pitwall profiles were determined for various combinations of bedding dip angles
+(0°, 15°, 30°, 45°, 60°, 75°, 90°) and mine pitwall orientations (hanging wall,
+footwall, side walls), considering the three-dimensional kinematics of the
+joints through anisotropic functions of cohesion and friction angle. Results
+indicate that the optimal pitwall profiles exhibit higher OSA compared to
+planar profiles with the same FoS of up to 3 degrees. Additionally, stability
+analyses performed using Rocscience Slide2 independently verified the FoS
+values of the optimal profiles.
+
+### [Website] Publications > Discover our latest publications
+URL: https://optimalslope.com/Publications.html
+
+Utili S., Agosti A., Morales N., Valderrama C., Pell R., Albornoz G. (2022) Optimal pitwall shapes to maximise financial return and decrease carbon footprint of open pit mines. Mining Engineering (extended abstracts), 45: 45–47.
+
+Alexandra Lopez-Pacheco. (2022) Ancient Japanese moats may lead to better open-pit mine designs. CIM Magazine 30–31.
+
+Utili S., Agosti A., Morales N., Valderrama C., Pell R., Albornoz G. (2022) Optimal pitwall shapes to maximise financial return and decrease carbon footprint of open pit mines. Mining Metallurgy & Exploration, 39 : 335–355, DOI: 10.1007/s42461-022-00546-8.
+
+Agosti A., Utili S., Gregory D., Lapworth A., Samardzic J., Prawasono A. (2021) Design of an open pit goldmine by optimal pitwall profiles. CIM Journal, 12(4): 149-168. DOI: 10.1080/19236026.2021.1979382.
+
+Utili S., Agosti A., Morales N., Valderrama C., Pell R., Albornoz G. (2022) in Russian Optimal pitwall shapes to maximise financial return and decrease carbon footprint of open pit mines. Gornyi Zhurnal, 2022(3): 22–37, www.rudmet.ru.
+
+Agosti A., Utili S.,
+Valderrama C., Albornoz G. (2021) Optimal pitwall profiles to maximise the Overall Slope Angle of open pit mines: the McLaughlin mine. ACG Proceedings
+ofSlope stability in mining conference 2021, 69- 82, Perth
+(AU). DOI: 10.36487/ACG_repo/2135_01.
+
+Agosti A., Utili S., Tasker J., Zhao C., Knights P., Nerhing M.,
+Zia S. (2022) The effect of carbon tax and optimal profiles on profitability and emissions of open pit mines. Mining Technology, DOI: 10.1080/25726668.2022.2122336.
+
+Agosti A., Cylwik S., Utili S., (2022) Analysis of geotechnically optimal profiles to maximize mine pit-wall steepness in anisotropic bedded sedimentary rocks. Slope stability 2022 Conf, Tucson
+(USA).
+
+Agosti A., Utili S. (2022) Optimal slope profiles for maximum mine pit-wall steepness in Banded Iron Formation rocks. Ausrock 2022, Melbourne (AU).
+
+Agosti A., Cylwik S., Utili S., (2024) Optimal mine pitwall profiles in jointed anisotropicrock masses. International Journal of Mining, Reclamation and Environment, DOI: 10.1080/17480930.2024.2387988
+
+### [Website] Presentations > Discover the latest presentations, news and more
+URL: https://optimalslope.com/Presentations.html
+
+Four case studies of open pit mines designed by optimal pitwall profiles
+learn more
+
+A Novel Methodology to Implement Mining Carbon Tax and Optimal Pitwall Profiles into Strategic Open-Pit Optimisation
+learn more
+
+Geotechnically Optimal Pitwall Profiles for Open Pit Mines to Maximise NPV and Reduce Carbon Footprint
+learn more
+
+Optimal slope profiles for maximum mine pit-wall steepness in Banded Iron Formation rocks
+learn more
+
+Analysis of geotechnically optimal profiles to maximize mine pit-wall steepness in anisotropic bedded sedimentary rocks
+learn more
+
+Optimal Pitwall Shapes to Maximize Financial Return and
+Decrease Carbon Footprint of Open Pit Mines
+learn more
+
+A novel slope optimization software for the design of open pit mines with improved NPV and reduced carbon footprint
+learn more
+
+Strategic mine planning: a novel design philosophy integrating geotechnical design with pit optimization validated through case studies of gold and copper open pit mines
+learn more
+
+Slope optimization for the design of open pit mines with improved NPV and reduced carbon footprint
+learn more
+
+OptimalSlope: a software determining optimal pitwall profiles to maximise mining financial returns and reduce carbon footprint
+learn more
+
+OptimalSlope: a software determining optimal pitwall profiles to maximise mining financial returns and reduce carbon footprint
+learn more
+
+Optimal pitwall profiles to maximise the Overall Slope Angle of open pit mines: the McLaughlin mine
+learn more
+
+OptimalSlope: a software to determine
+optimal pitwall shapes which
+maximises mining financial returns
+while minimising carbon footprint
+learn more
+
+OptimalSlope: a software determining optimal
+pitwall profiles to maximize mine financial
+returns
+learn more
+
+OptimalSlope: a software determining optimal
+pitwall profiles to maximize mine financial
+returns
+learn more
+
+### [Website] Our Story and Traction
+URL: https://optimalslope.com/Our-Story-and-Traction.html
+
+20 years ago during his PhD
+Stefano stumbled upon some Japanese castle moats of a very peculiar non-planar
+shape. His supervisor asked him: “why did the ancient samurai decide to build slopes in that way?” The quest to solve this riddle started there. The quest led
+to research the topological optimisation of slopes, i.e. looking to answer the
+question: what is the most efficient shape for a man made slope (cuttings,
+embankments, mine pitwalls)? We are surrounded by planar man-made slopes so
+that when an excavation is needed, we design it to be along a straight line by
+default. However, his research work on landslides meant Stefano was often looking
+at natural landscapes where most slopes are anything but planar. Several years
+of research led him to formulate the problem in a mathematical tractable way whereby
+the optimal shape is found as the one that maximises the resistance to
+landsliding and for any given geology and target excavation depth allows the
+maximum stable overall inclination to be safely excavated. The software
+OptimalSlope was born. Along the journey he met
+some young and brilliant students who are now part of the team: Andrea is
+co-founder and Dainius is Principal software engineer. The key pillars of the
+benefits brought by OptimalSlope to open pit mining are increased
+profitability, carbon footprint reduction and a more efficient, fast and
+automated design process. .
+
+### [Website] Our Team > Stefano Utili
+URL: https://optimalslope.com/Our-Team.html
+
+CEO
+
+Stefano is Professor of Geotechnical Engineering at Newcastle University (UK) and a Chartered Engineer and Fellow of the Institution of Civil
+Engineering. He is member of the International Technical
+Committee 208 “Slope stability in engineering practice” and has worked for several years on the stability assessment and design of slopes. Stefano has developed the initial version of OptimalSlope.
+
+### [Website] Our Team > Dainius Jenkus
+URL: https://optimalslope.com/Our-Team.html
+
+CTO
+
+Danius (MSc in Computer Engineering) is
+an experienced engineer in designing scalable and adaptive-computing
+systems using principles of AI. ​He oversees both the AWS cloud architecture and the complete development lifecycle of the CAD-based user interface. He designs and develops core system functionality, including advanced geometric modelling algorithms, 3D CAD interaction workflows, and high-performance computational pipelines.
+
+### [Website] Our Team > Akanksha Mishra
+URL: https://optimalslope.com/Our-Team.html
+
+Principal software engineer
+
+Dr Akanksha Mishra (PhD from ETH Zurich) is an advanced C++ programmer with an extensive R&D experience in parallel C++ coding and optimisation techniques.
+
+### [Website] Our Team > JOIN OUR TEAM
+URL: https://optimalslope.com/Our-Team.html
+
+OptimalSlope is actively seeking driven, innovative thinkers who are passionate about mining, geotechnical and software engineering. If this sounds like you please send us your CV and Cover Letter.
+
+contact us
+
+### [Website] Download > Software Download
+URL: https://optimalslope.com/Download.html
+
+Discover the advanced functionalities that set our latest software release apart from the competition.
+Download The latest version User MANUAL
+
+### [Website] Contact > Contact Info
+URL: https://optimalslope.com/Contact-Us.html
+
+CONTACT US
+
+Our office is at the Centre for Climate Change & Innovation at the Royal Institution (London) Mail address for any correspondence: 71 – 75 Shelton Street, Covent Garden, WC2H 9JQ, London, UK

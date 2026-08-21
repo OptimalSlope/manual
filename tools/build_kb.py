@@ -49,6 +49,11 @@ SKIP_CLASSES = {
 
 SKIP_TAGS = {"script", "style", "svg", "noscript", "button"}
 
+# Elements skipped by id. The chat widget is injected into footer.html, so
+# without this the assistant ingests its own interface text and can end up
+# quoting its own placeholder copy back at the reader.
+SKIP_IDS = {"os-chat"}
+
 BLOCK_TAGS = {
     "p", "div", "section", "article", "header", "footer", "aside",
     "h1", "h2", "h3", "h4", "h5", "h6",
@@ -58,6 +63,12 @@ BLOCK_TAGS = {
 }
 
 HEADING_TAGS = {"h1", "h2", "h3"}
+
+# Void elements never fire handle_endtag, so counting them would leave the depth
+# counters permanently unbalanced - <meta> and <link> in <head> alone are enough
+# to strand the parser in "skipping" forever.
+VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input",
+             "link", "meta", "param", "source", "track", "wbr"}
 
 
 class Section:
@@ -91,7 +102,11 @@ class PageParser(HTMLParser):
         self.next_url: str | None = None
         self.sections: list[Section] = []
 
-        self._depth = 0                 # nesting depth inside the content wrapper
+        # No depth counting: the manual pages contain hand-written HTML with
+        # unbalanced divs, so any attempt to detect the end of the content
+        # wrapper by counting truncates pages. Once inside the content we stay
+        # there and rely on SKIP_CLASSES/SKIP_TAGS to reject the page chrome,
+        # which sits after the prose anyway.
         self._in_content = False
         self._skip_depth = 0            # >0 while inside skipped chrome
         self._in_title_tag = False
@@ -129,18 +144,20 @@ class PageParser(HTMLParser):
         if not self._in_content:
             if CONTENT_CLASS in classes:
                 self._in_content = True
-                self._depth = 1
                 # Prose before the first heading still needs somewhere to go.
                 self.sections.append(Section("", "", 0))
             return
 
-        self._depth += 1
-
+        # Void elements never fire handle_endtag, so counting them would strand
+        # the skip counter permanently above zero.
+        void = tag in VOID_TAGS
         if self._skip_depth:
-            self._skip_depth += 1
+            if not void:
+                self._skip_depth += 1
             return
 
-        if tag in SKIP_TAGS or (classes & SKIP_CLASSES):
+        if (tag in SKIP_TAGS or (classes & SKIP_CLASSES)
+                or a.get("id") in SKIP_IDS):
             self._skip_depth = 1
             return
 
@@ -181,17 +198,12 @@ class PageParser(HTMLParser):
             h.parts = []
             if h.heading:
                 self.sections.append(h)
-            self._depth -= 1
             return
 
         if self._skip_depth:
             self._skip_depth -= 1
         elif tag in BLOCK_TAGS:
             self._emit("\n")
-
-        self._depth -= 1
-        if self._depth <= 0:
-            self._in_content = False
 
     def handle_data(self, data):
         if self._in_title_tag and self.title is None:

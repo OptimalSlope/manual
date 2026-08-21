@@ -1,6 +1,6 @@
 {%- comment -%}
-Manual assistant widget. Included from footer.html, so it appears on every page
-of the manual. Talks to the Lambda function URL in manual-chat.
+OptimalSlope assistant widget. Included from footer.html, so it appears on every
+page of the manual. Talks to the Lambda function URL in manual-chat.
 
 Deliberately dependency-free: the theme already loads jQuery and a pile of
 gitbook plugins, and this has no reason to add to that.
@@ -8,19 +8,19 @@ gitbook plugins, and this has no reason to add to that.
 
 <div id="os-chat" data-endpoint="{{ site.chat_endpoint }}" hidden>
   <button type="button" class="os-chat-launcher" aria-expanded="false"
-          aria-controls="os-chat-panel" aria-label="Ask the manual assistant">
+          aria-controls="os-chat-panel" aria-label="Ask the OptimalSlope assistant">
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
       <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
     </svg>
-    <span class="os-chat-launcher-label">Ask the manual</span>
+    <span class="os-chat-launcher-label">Ask a question</span>
   </button>
 
   <section id="os-chat-panel" class="os-chat-panel" role="dialog" aria-modal="false"
            aria-labelledby="os-chat-title" hidden>
     <header class="os-chat-head">
       <div>
-        <h2 id="os-chat-title">Manual Assistant</h2>
-        <p>Answers from the OptimalSlope manual</p>
+        <h2 id="os-chat-title">OptimalSlope Assistant</h2>
+        <p>Answers from the manual and optimalslope.com</p>
       </div>
       <button type="button" class="os-chat-close" aria-label="Close assistant">
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -31,13 +31,9 @@ gitbook plugins, and this has no reason to add to that.
 
     <div class="os-chat-log" role="log" aria-live="polite" aria-atomic="false">
       <div class="os-chat-intro">
-        <p>Ask about any part of the manual. Answers are drawn only from the
-           documentation, with a link to the section used.</p>
-        <div class="os-chat-suggestions">
-          <button type="button">What do the red and blue markers mean?</button>
-          <button type="button">How do I prepare section geometry?</button>
-          <button type="button">Why did my simulation fail to start?</button>
-        </div>
+        <p>Ask about using OptimalSlope, or about the product itself. Answers
+           are drawn only from the manual and optimalslope.com, and link to the
+           section used.</p>
       </div>
     </div>
 
@@ -53,7 +49,7 @@ gitbook plugins, and this has no reason to add to that.
     </form>
 
     <p class="os-chat-foot">
-      Not a substitute for support. Always verify against the manual.
+      Not a substitute for support. Always verify against the documentation.
     </p>
   </section>
 </div>
@@ -136,6 +132,10 @@ gitbook plugins, and this has no reason to add to that.
 
 /* ---------- panel ---------- */
 
+/* Must outrank the display:flex below, or the [hidden] attribute does nothing
+   and the panel is stuck open. Author `display` beats the UA rule for [hidden]. */
+.os-chat-panel[hidden] { display: none; }
+
 .os-chat-panel {
   display: flex;
   flex-direction: column;
@@ -206,21 +206,6 @@ gitbook plugins, and this has no reason to add to that.
 
 .os-chat-intro p { margin: 0 0 12px; color: var(--os-muted); font-size: 13px; }
 
-.os-chat-suggestions { display: flex; flex-direction: column; gap: 7px; }
-.os-chat-suggestions button {
-  padding: 9px 12px;
-  border: 1px solid var(--os-line);
-  border-radius: 10px;
-  background: var(--os-raised);
-  color: var(--os-ink);
-  font: inherit;
-  font-size: 13px;
-  text-align: left;
-  cursor: pointer;
-}
-.os-chat-suggestions button:hover { border-color: var(--os-blue2); }
-.os-chat-suggestions button:focus-visible { outline: 2px solid var(--os-orange); outline-offset: 1px; }
-
 .os-chat-msg { max-width: 88%; padding: 10px 13px; border-radius: 14px; }
 .os-chat-msg.user {
   align-self: flex-end;
@@ -255,6 +240,38 @@ gitbook plugins, and this has no reason to add to that.
   font-size: 12.5px;
 }
 
+.os-chat-rate {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 9px;
+  padding-top: 8px;
+  border-top: 1px solid var(--os-line);
+}
+.os-chat-rate span { color: var(--os-muted); font-size: 11.5px; margin-right: 2px; }
+.os-chat-rate button {
+  padding: 3px 7px;
+  border: 1px solid var(--os-line);
+  border-radius: 7px;
+  background: transparent;
+  color: var(--os-muted);
+  font: inherit;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+}
+.os-chat-rate button:hover { color: var(--os-ink); border-color: var(--os-blue2); }
+.os-chat-rate button:focus-visible { outline: 2px solid var(--os-orange); outline-offset: 1px; }
+.os-chat-rate.done { color: var(--os-muted); font-size: 11.5px; }
+
+.os-chat-truncated {
+  margin: 8px 0 0;
+  padding-top: 7px;
+  border-top: 1px solid var(--os-line);
+  color: var(--os-muted);
+  font-size: 12px;
+}
+
 .os-chat-cite {
   display: inline-block;
   margin-top: 8px;
@@ -266,7 +283,39 @@ gitbook plugins, and this has no reason to add to that.
   font-weight: 600;
   text-decoration: none;
 }
-#os-chat[data-theme="night"] .os-chat-cite { color: #7fc4e8; background: rgba(127, 196, 232, .14); }
+#os-chat[data-theme="night"] .os-chat-rate {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 9px;
+  padding-top: 8px;
+  border-top: 1px solid var(--os-line);
+}
+.os-chat-rate span { color: var(--os-muted); font-size: 11.5px; margin-right: 2px; }
+.os-chat-rate button {
+  padding: 3px 7px;
+  border: 1px solid var(--os-line);
+  border-radius: 7px;
+  background: transparent;
+  color: var(--os-muted);
+  font: inherit;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+}
+.os-chat-rate button:hover { color: var(--os-ink); border-color: var(--os-blue2); }
+.os-chat-rate button:focus-visible { outline: 2px solid var(--os-orange); outline-offset: 1px; }
+.os-chat-rate.done { color: var(--os-muted); font-size: 11.5px; }
+
+.os-chat-truncated {
+  margin: 8px 0 0;
+  padding-top: 7px;
+  border-top: 1px solid var(--os-line);
+  color: var(--os-muted);
+  font-size: 12px;
+}
+
+.os-chat-cite { color: #7fc4e8; background: rgba(127, 196, 232, .14); }
 .os-chat-cite:hover { text-decoration: underline; }
 
 .os-chat-typing::after {
@@ -374,6 +423,7 @@ gitbook plugins, and this has no reason to add to that.
 
   var history = [];
   var busy = false;
+  var inFlight = null;   // AbortController for the request being streamed
 
   var sessionId = sessionStorage.getItem('os-chat-session');
   if (!sessionId) {
@@ -479,6 +529,43 @@ gitbook plugins, and this has no reason to add to that.
     return blocks.join('') + citation;
   }
 
+  function addRating(bubble, question, answer) {
+    var bar = document.createElement('div');
+    bar.className = 'os-chat-rate';
+
+    var label = document.createElement('span');
+    label.textContent = 'Was this helpful?';
+    bar.appendChild(label);
+
+    [['up', '\u{1F44D}', 'Helpful'],
+     ['down', '\u{1F44E}', 'Not helpful']].forEach(function (option) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = option[1];
+      btn.setAttribute('aria-label', option[2]);
+      btn.addEventListener('click', function () {
+        // Fire and forget: a rating that fails to save is not worth
+        // interrupting the reader over.
+        fetch(endpoint.replace(/\/chat$/, '/feedback'), {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({
+            session_id: sessionId, rating: option[0],
+            question: question, answer: answer, page: location.pathname
+          })
+        }).catch(function () {});
+
+        bar.textContent = option[0] === 'up'
+          ? 'Thanks \u2014 glad that helped.'
+          : 'Thanks \u2014 we use this to improve the documentation.';
+        bar.className = 'os-chat-rate done';
+      });
+      bar.appendChild(btn);
+    });
+
+    bubble.appendChild(bar);
+  }
+
   function addMessage(kind, content, asMarkdown) {
     if (intro && intro.parentNode) { intro.remove(); }
     var el = document.createElement('div');
@@ -500,6 +587,9 @@ gitbook plugins, and this has no reason to add to that.
   }
 
   function close() {
+    // Abandon any answer still streaming. Without this the Lambda keeps
+    // generating - and billing - for a panel nobody is looking at.
+    if (inFlight) { inFlight.abort(); inFlight = null; }
     root.classList.remove('is-open');
     panel.hidden = true;
     launcher.setAttribute('aria-expanded', 'false');
@@ -511,10 +601,6 @@ gitbook plugins, and this has no reason to add to that.
 
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' && !panel.hidden) { close(); }
-  });
-
-  root.querySelectorAll('.os-chat-suggestions button').forEach(function (btn) {
-    btn.addEventListener('click', function () { ask(btn.textContent); });
   });
 
   /* ---- composer -------------------------------------------------------- */
@@ -552,9 +638,13 @@ gitbook plugins, and this has no reason to add to that.
     bubble.classList.add('os-chat-typing');
 
     var answer = '';
+    var truncated = false;
+    var controller = new AbortController();
+    inFlight = controller;
 
     fetch(endpoint, {
       method: 'POST',
+      signal: controller.signal,
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({
         message: question,
@@ -596,6 +686,8 @@ gitbook plugins, and this has no reason to add to that.
               log.scrollTop = log.scrollHeight;
             } else if (event.error) {
               throw new Error(event.error);
+            } else if (event.done) {
+              truncated = !!event.truncated;
             }
           });
 
@@ -608,8 +700,16 @@ gitbook plugins, and this has no reason to add to that.
       bubble.classList.remove('os-chat-typing');
       if (answer.trim()) {
         bubble.innerHTML = render(answer);
+        if (truncated) {
+          var note = document.createElement('p');
+          note.className = 'os-chat-truncated';
+          note.textContent = 'This answer was cut short. Ask a narrower question, '
+                           + 'or open the linked section for the full detail.';
+          bubble.appendChild(note);
+        }
         history.push({ role: 'user', content: question });
         history.push({ role: 'assistant', content: answer });
+        addRating(bubble, question, answer);
       } else {
         bubble.remove();
         addMessage('error', 'No answer came back. Please try again.', false);
@@ -617,9 +717,12 @@ gitbook plugins, and this has no reason to add to that.
       log.scrollTop = log.scrollHeight;
     }).catch(function (err) {
       bubble.classList.remove('os-chat-typing');
+      // Aborting on close is intentional - do not report it as a failure.
+      if (err && err.name === 'AbortError') { bubble.remove(); return; }
       bubble.remove();
       addMessage('error', err.message || 'Something went wrong.', false);
     }).then(function () {
+      inFlight = null;
       busy = false;
       sendBtn.disabled = false;
       input.focus();

@@ -1,0 +1,48 @@
+{
+  "generated": "2026-08-21T14:27:46+00:00",
+  "sha256": "a5fadd575548d70a74418da7c674b21df053bd3484667706dd99f8eebd491edd",
+  "bytes": 17879,
+  "sections": 22,
+  "pages": [
+    {
+      "title": "Overview",
+      "url": "https://optimalslope.com/",
+      "sections": 12
+    },
+    {
+      "title": "Case Studies",
+      "url": "https://optimalslope.com/Case-Studies.html",
+      "sections": 1
+    },
+    {
+      "title": "Publications",
+      "url": "https://optimalslope.com/Publications.html",
+      "sections": 1
+    },
+    {
+      "title": "Presentations",
+      "url": "https://optimalslope.com/Presentations.html",
+      "sections": 1
+    },
+    {
+      "title": "Our Story and Traction",
+      "url": "https://optimalslope.com/Our-Story-and-Traction.html",
+      "sections": 1
+    },
+    {
+      "title": "Our Team",
+      "url": "https://optimalslope.com/Our-Team.html",
+      "sections": 4
+    },
+    {
+      "title": "Download",
+      "url": "https://optimalslope.com/Download.html",
+      "sections": 1
+    },
+    {
+      "title": "Contact",
+      "url": "https://optimalslope.com/Contact-Us.html",
+      "sections": 1
+    }
+  ]
+}
