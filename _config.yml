@@ -62,6 +62,12 @@ collections:
 page_width: 800px
 
 # Manual assistant backend (manual-chat repo). Blank disables the widget.
+# Cloudflare Web Analytics site token. Cookieless, so no consent banner is
+# needed. Get it from the Cloudflare dashboard: Web Analytics > Add a site >
+# copy the token out of the JS snippet. Blank disables the beacon entirely.
+tracker:
+  cloudflare_analytics: 'bff844be1faa458a8b4ecb7bd795fc2e'
+
 chat_endpoint: 'https://zwtwkfvku4hd35srobpqqlkotm0fxfmt.lambda-url.us-east-2.on.aws/chat'
 
 destination:      ./_site

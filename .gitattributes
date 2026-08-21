@@ -6,8 +6,8 @@
 # A CRLF checkout changes its SHA-256, which breaks `build_kb.py --check` and
 # busts the prompt cache, since the manual must be byte-identical on every
 # request to hit the cached prefix. Pin these to LF everywhere.
-kb/manual.txt        text eol=lf
-kb/manual.meta.json  text eol=lf
+kb/*.txt             text eol=lf
+kb/*.json            text eol=lf
 
 # --- Tooling ------------------------------------------------------------
 *.py                 text eol=lf

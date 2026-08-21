@@ -25,7 +25,6 @@ import re
 import sys
 import urllib.error
 import urllib.request
-from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -172,8 +171,8 @@ def build() -> tuple[str, dict]:
         print(f"  {title:<26} {kept:>3} sections  {url}")
 
     text = "\n".join(chunks).strip() + "\n"
+    # See build_kb.py: no wall-clock field in a committed generated file.
     meta = {
-        "generated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(),
         "bytes": len(text.encode("utf-8")),
         "sections": sum(p["sections"] for p in meta_pages),

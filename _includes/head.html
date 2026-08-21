@@ -69,4 +69,9 @@
         {%- include application-insights.html -%}
     {%- endif -%}
 
+    {%- if site.tracker.cloudflare_analytics != blank -%}
+        <!-- cloudflare web analytics -->
+        {%- include cloudflare-analytics.html -%}
+    {%- endif -%}
+
 {%- endif -%}

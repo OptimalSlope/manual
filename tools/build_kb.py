@@ -26,7 +26,6 @@ import hashlib
 import json
 import re
 import sys
-from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlparse
@@ -293,12 +292,17 @@ def build(site: Path, config: Path) -> tuple[str, dict]:
             kept += 1
 
         meta_pages.append({"title": title, "url": page_url, "sections": kept,
-                           "source": str(path.relative_to(site))})
+                           # posix separators: a native path makes this file
+                           # differ between a Windows run and CI, and the two
+                           # then overwrite each other forever.
+                           "source": path.relative_to(site).as_posix()})
         print("  {:<28} {:>3} sections  {}".format(title, kept, url_path))
 
     text = "\n".join(chunks).strip() + "\n"
+    # No "generated" timestamp on purpose. This file is committed, so a
+    # wall-clock field would make every CI run produce a commit even when the
+    # knowledge base is byte-identical. Git and S3 both already record when.
     meta = {
-        "generated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(),
         "bytes": len(text.encode("utf-8")),
         "sections": sum(p["sections"] for p in meta_pages),

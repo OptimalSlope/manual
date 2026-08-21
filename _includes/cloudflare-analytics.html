@@ -1,0 +1,15 @@
+{%- comment -%}
+Cloudflare Web Analytics.
+
+Cookieless and no fingerprinting, so it needs no consent banner - which is the
+reason it was chosen over Google Analytics, whose cookies would have required
+one. Page views and top pages only; no unique-visitor counts, by design.
+
+The manual is served from GitHub Pages rather than proxied through Cloudflare,
+so this is the JS beacon ("manual installation") rather than automatic
+injection. Set tracker.cloudflare_analytics in _config.yml to the site token
+from the Cloudflare dashboard; leave it blank to disable.
+{%- endcomment -%}
+<!-- Cloudflare Web Analytics --><script type="module"
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "{{ site.tracker.cloudflare_analytics }}"}'></script><!-- End Cloudflare Web Analytics -->
