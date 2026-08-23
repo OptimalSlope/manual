@@ -462,7 +462,7 @@ permalink: /
 <div class="os-home-section-head" markdown="0">
 <div class="label">Introduction</div>
 <h2 id="introduction">Introduction</h2>
-<p>OptimalSlope helps evaluate slope geometry, generate simulation inputs, run cloud simulations, and export optimised slope profiles.</p>
+<p>Slope Optimiser automates open pit slope design. Give it the stratigraphy, rock properties and a target factor of safety, and it finds the steepest safe pitwall profile - so less waste rock has to be excavated.</p>
 </div>
 <div class="os-home-section-body" markdown="1">
 

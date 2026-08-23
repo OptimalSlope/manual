@@ -425,3 +425,43 @@ body.os-media-modal-open {
 .book:not(.color-theme-1):not(.color-theme-2) #book-search-input input::placeholder {
     color: rgba(255, 255, 255, 0.55);
 }
+
+/* A paused loop shows a play badge over the poster. Without it a still frame
+   is indistinguishable from a plain screenshot, and the reader has no reason
+   to think anything is meant to move. */
+
+.os-loop-video .os-expandable-media-window {
+    position: relative;
+}
+
+.os-loop-video.is-paused .os-expandable-media-window::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    background: rgba(10, 78, 118, 0.82);
+    pointer-events: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* The triangle is drawn with borders rather than a FontAwesome glyph: the icon
+   font is a dependency this component does not otherwise need, and when it
+   fails to map the codepoint the badge renders as an empty circle. */
+.os-loop-video.is-paused .os-expandable-media-window::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    transform: translate(-40%, -50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 13px 0 13px 21px;
+    border-color: transparent transparent transparent #ffffff;
+    pointer-events: none;
+}

@@ -19,7 +19,7 @@ Introduction
 ### Overview > Introduction
 URL: https://optimalslope.github.io/manual/#introduction
 
-OptimalSlope helps evaluate slope geometry, generate simulation inputs, run cloud simulations, and export optimised slope profiles.
+Slope Optimiser automates open pit slope design. Give it the stratigraphy, rock properties and a target factor of safety, and it finds the steepest safe pitwall profile - so less waste rock has to be excavated.
 
 This is the user manual for the Slope Optimiser CAD graphical interface.
 

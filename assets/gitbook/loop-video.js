@@ -39,8 +39,17 @@
             return;
         }
 
+        video.muted = true;
+
         var toggle = figure.querySelector("[data-loop-toggle]");
         var restart = figure.querySelector("[data-loop-restart]");
+
+        // The markup ships with a "Pause" label. Correct it to whatever is
+        // actually true right now: if playback never starts - autoplay refused,
+        // reduced motion, script cached stale - a button reading "Pause" over a
+        // motionless video tells the reader the opposite of what to do.
+        setToggleState(figure, video.paused);
+        figure.classList.toggle("is-paused", video.paused);
 
         if (toggle) {
             toggle.addEventListener("click", function () {
@@ -59,8 +68,14 @@
             });
         }
 
-        video.addEventListener("play", function () { setToggleState(figure, false); });
-        video.addEventListener("pause", function () { setToggleState(figure, true); });
+        video.addEventListener("play", function () {
+            setToggleState(figure, false);
+            figure.classList.remove("is-paused");
+        });
+        video.addEventListener("pause", function () {
+            setToggleState(figure, true);
+            figure.classList.add("is-paused");
+        });
 
         // Clicking the video itself is the obvious gesture; honour it.
         video.addEventListener("click", function () {
