@@ -581,7 +581,7 @@ For reliable simulation results, review and repair significant gaps and visible 
 #### Slope Anchor and OSA Search Region
 
 <figure class="os-svg-figure">
-  <img src="{{ '/assets/docs_images/slope-anchor-modes.svg' | relative_url }}"
+  <img src="{{ '/assets/docs_images/slope-anchor-modes.png' | relative_url }}"
        alt="Crest anchor fixes the upper endpoint and uses a target slope height; toe anchor fixes the lower endpoint and calculates the slope height. In both, the minimum and maximum OSA bound a green search region the optimiser explores.">
   <figcaption>The active slope anchor decides which endpoint is fixed and how the slope height is obtained.</figcaption>
 </figure>
