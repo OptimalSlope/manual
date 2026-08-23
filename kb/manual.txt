@@ -410,7 +410,11 @@ Recommendation:
 
 For reliable simulation results, review and repair significant gaps and visible overlaps before proceeding. Clean section geometry improves material assignment and gives the optimiser a more reliable basis for estimating the optimal slope profile.
 
-Slope Anchor and OSA Search Region Checks
+Slope Anchor and OSA Search Region
+
+[figure: Crest anchor fixes the upper endpoint and uses a target slope height; toe anchor fixes the lower endpoint and calculates the slope height. In both, the minimum and maximum OSA bound a green search region the optimiser explores.]
+
+The active slope anchor decides which endpoint is fixed and how the slope height is obtained.
 
 How should I choose the crest point?
 
@@ -984,6 +988,10 @@ Loads are defined under Optional Properties > Loads and placed directly on the s
 | Distributed — Uniform | Select the left and right endpoints of the loaded interval. | Enter one magnitude greater than zero.
 
 | Distributed — Linear | Select the left and right endpoints of the loaded interval. | Enter left and right magnitudes. Both must be non-negative and at least one must be greater than zero.
+
+[figure: Line load applies one magnitude at a single topography point; a uniform distributed load applies one magnitude across an interval; a linear distributed load varies between separate left and right magnitudes.]
+
+How each load type is applied to the section topography.
 
 To add a load:
 
@@ -2212,6 +2220,10 @@ The binary file format used to save and reopen an entire Slope Optimiser project
 URL: https://optimalslope.github.io/manual/pages/glossary/
 
 The geological layer model used to define material regions and generate sections.
+
+[figure: Polyline: connected straight segments. Open polyline: endpoints not joined. Spline: smooth curve through control points. Wire: closed boundary made from edges. Mesh: connected faces representing a surface. Closed manifold mesh: watertight surface enclosing a volume.]
+
+The geometry types the terms below refer to.
 
 ### Glossary > Polyline
 URL: https://optimalslope.github.io/manual/pages/glossary/
