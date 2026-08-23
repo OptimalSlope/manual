@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img"
+     aria-labelledby="loadsTitle loadsDesc" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title id="loadsTitle">The three section load types</title>
+  <desc id="loadsDesc">Line load applies one magnitude at a single topography point. A uniform
+  distributed load applies one magnitude across an interval. A linear distributed load varies
+  between separate left and right magnitudes across the interval.</desc>
+
+  <defs>
+    <marker id="loadArrow" viewBox="0 0 12 12" refX="6" refY="6"
+            markerWidth="5.4" markerHeight="5.4" orient="auto-start-reverse">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#f16b21"/>
+    </marker>
+
+    <!-- One topography profile, reused in all three panels so the comparison
+         is like-for-like. -->
+    <path id="ground"
+          d="M0,296 C30,301 55,307 85,303 C115,299 136,286 166,290
+             C196,294 216,281 250,269 C284,257 306,261 330,255"/>
+  </defs>
+
+  <style>
+    .card    { fill:#ffffff; stroke:#dbe5ec; stroke-width:1.5; rx:14; }
+    .title   { fill:#0a4e76; font-size:21px; font-weight:700; }
+    .sub     { fill:#617180; font-size:13.5px; }
+    .caption { fill:#48586a; font-size:13px; text-anchor:middle; }
+    .soil    { fill:#d8e6ee; }
+    .surface { fill:none; stroke:#7ba3b8; stroke-width:2.6; stroke-linecap:round; }
+    .load    { stroke:#f16b21; stroke-width:3.4; stroke-linecap:butt;
+               marker-end:url(#loadArrow); }
+    .bar     { stroke:#f16b21; stroke-width:3.4; stroke-linecap:round; fill:none; }
+    .mag     { fill:#f16b21; font-size:17px; font-weight:700; }
+    .magsub  { font-size:12px; }
+    .point   { fill:#0a4e76; }
+  </style>
+
+  <!-- ============ 1. Line load ============ -->
+  <g transform="translate(20,24)">
+    <rect class="card" x="0" y="0" width="360" height="508"/>
+    <text class="title" x="32" y="56">Line load</text>
+    <text class="sub"   x="32" y="82">One point and one magnitude</text>
+
+    <g transform="translate(15,110)">
+      <path class="soil" d="M0,296 C30,301 55,307 85,303 C115,299 136,286 166,290
+                            C196,294 216,281 250,269 C284,257 306,261 330,255
+                            L330,360 L0,360 Z"/>
+      <use href="#ground" class="surface"/>
+      <line class="load" x1="166" y1="60" x2="166" y2="281"/>
+      <circle class="point" cx="166" cy="290" r="6.5"/>
+      <text class="mag" x="180" y="98">P</text>
+    </g>
+    <text class="caption" x="180" y="488">Selected topography point</text>
+  </g>
+
+  <!-- ============ 2. Distributed - uniform ============ -->
+  <g transform="translate(420,24)">
+    <rect class="card" x="0" y="0" width="360" height="508"/>
+    <text class="title" x="32" y="56">Distributed — Uniform</text>
+    <text class="sub"   x="32" y="82">One magnitude across an interval</text>
+
+    <g transform="translate(15,110)">
+      <path class="soil" d="M0,296 C30,301 55,307 85,303 C115,299 136,286 166,290
+                            C196,294 216,281 250,269 C284,257 306,261 330,255
+                            L330,360 L0,360 Z"/>
+      <use href="#ground" class="surface"/>
+
+      <!-- constant magnitude: every arrow starts from the same height -->
+      <path class="bar" d="M56,64 H276"/>
+      <line class="load" x1="56"  y1="64" x2="56"  y2="296"/>
+      <line class="load" x1="111" y1="64" x2="111" y2="289"/>
+      <line class="load" x1="166" y1="64" x2="166" y2="282"/>
+      <line class="load" x1="221" y1="64" x2="221" y2="272"/>
+      <line class="load" x1="276" y1="64" x2="276" y2="254"/>
+      <text class="mag" x="166" y="52" text-anchor="middle">q</text>
+    </g>
+    <text class="caption" x="180" y="488">Equal magnitude throughout</text>
+  </g>
+
+  <!-- ============ 3. Distributed - linear ============ -->
+  <g transform="translate(820,24)">
+    <rect class="card" x="0" y="0" width="360" height="508"/>
+    <text class="title" x="32" y="56">Distributed — Linear</text>
+    <text class="sub"   x="32" y="82">Different left and right magnitudes</text>
+
+    <g transform="translate(15,110)">
+      <path class="soil" d="M0,296 C30,301 55,307 85,303 C115,299 136,286 166,290
+                            C196,294 216,281 250,269 C284,257 306,261 330,255
+                            L330,360 L0,360 Z"/>
+      <use href="#ground" class="surface"/>
+
+      <!-- magnitude ramps left to right, so the bar slopes and each arrow
+           starts at a different height -->
+      <path class="bar" d="M56,96 L276,26"/>
+      <line class="load" x1="56"  y1="96" x2="56"  y2="296"/>
+      <line class="load" x1="111" y1="78" x2="111" y2="289"/>
+      <line class="load" x1="166" y1="61" x2="166" y2="282"/>
+      <line class="load" x1="221" y1="43" x2="221" y2="272"/>
+      <line class="load" x1="276" y1="26" x2="276" y2="254"/>
+      <text class="mag" x="44" y="92" text-anchor="end">q<tspan class="magsub" dy="4">L</tspan></text>
+      <text class="mag" x="288" y="22">q<tspan class="magsub" dy="4">R</tspan></text>
+    </g>
+    <text class="caption" x="180" y="488">Magnitude varies linearly</text>
+  </g>
+</svg>

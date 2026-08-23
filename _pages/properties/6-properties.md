@@ -713,6 +713,12 @@ Loads are defined under **Optional Properties > Loads** and placed directly on t
 </tbody>
 </table>
 
+<figure class="os-svg-figure">
+  <img src="{{ '/assets/docs_images/section-loads-types.svg' | relative_url }}"
+       alt="Line load applies one magnitude at a single topography point; a uniform distributed load applies one magnitude across an interval; a linear distributed load varies between separate left and right magnitudes.">
+  <figcaption>How each load type is applied to the section topography.</figcaption>
+</figure>
+
 To add a load:
 
 1. Choose **Line** or **Distributed**. For a distributed load, also choose **Uniform** or **Linear**.

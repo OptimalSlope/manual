@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1660 940" role="img"
+     aria-labelledby="anchorTitle anchorDesc"
+     font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title id="anchorTitle">Crest anchor and toe anchor modes</title>
+  <desc id="anchorDesc">In crest anchor mode the upper endpoint is fixed and the slope height is a
+  target you set. In toe anchor mode the lower endpoint is fixed and the slope height is calculated.
+  In both, the minimum and maximum overall slope angle bound a green search region in which the
+  optimiser looks for the optimal profile.</desc>
+
+  <style>
+    .outer   { fill:#ffffff; stroke:#e3e9ef; stroke-width:2; }
+    .panel   { fill:#fdfdfe; stroke:#e3e9ef; stroke-width:2; }
+    .divider { stroke:#e3e9ef; stroke-width:2; }
+    .title   { fill:#0a4e76; font-size:34px; font-weight:700; }
+    .sub     { fill:#12384f; font-size:19px; }
+    .rock    { fill:#cfe0f2; stroke:#4a7fb5; stroke-width:2.4; }
+    .search  { fill:#cfe0f2; stroke:#1c5e94; stroke-width:2.4; }
+    .band    { fill:#d9e8d2; }
+    .maxosa  { stroke:#12395e; stroke-width:3.6; stroke-dasharray:14 10; fill:none; }
+    .minosa  { stroke:#e2751d; stroke-width:3.6; stroke-dasharray:14 10; fill:none; }
+    .anchor  { fill:#f4801f; stroke:#ffffff; stroke-width:3; }
+    .lab     { fill:#14202b; font-size:21px; }
+    .lab-b   { fill:#14202b; font-size:21px; font-weight:700; }
+    .dim     { stroke:#12395e; stroke-width:3; fill:none;
+               marker-start:url(#dimA); marker-end:url(#dimA); }
+    .legend  { fill:#14202b; font-size:21px; }
+  </style>
+
+  <defs>
+    <marker id="dimA" viewBox="0 0 10 10" refX="5" refY="5"
+            markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+      <path d="M9,5 L1,1 L1,9 Z" fill="#12395e"/>
+    </marker>
+  </defs>
+
+  <rect class="outer" x="8" y="8" width="1644" height="924" rx="26"/>
+
+  <!-- ================= Crest anchor ================= -->
+  <g transform="translate(46,52)">
+    <rect class="panel" x="0" y="0" width="756" height="782" rx="18"/>
+    <text class="title" x="52" y="66">Crest anchor</text>
+    <text class="sub"   x="52" y="112">The upper endpoint remains fixed.</text>
+
+    <g transform="translate(52,170)">
+      <!-- ground falling left to right, fixed at the crest -->
+      <path class="rock"
+            d="M132,52 C232,58 300,150 330,250 C356,336 372,420 420,468
+               L660,468 L660,540 L48,540 L48,52 Z"/>
+
+      <!-- search band between the two OSA limits -->
+      <path class="band" d="M132,52 L448,470 L660,470 Z"/>
+      <line class="maxosa" x1="132" y1="52" x2="448" y2="470"/>
+      <line class="minosa" x1="132" y1="52" x2="660" y2="470"/>
+
+      <text class="lab" x="486" y="286" text-anchor="middle">Min OSA</text>
+      <text class="lab" x="212" y="252" text-anchor="end">Max OSA</text>
+
+      <!-- target height: the value the user sets -->
+      <line class="dim" x1="26" y1="52" x2="26" y2="470"/>
+      <text class="lab-b" x="-6" y="261" text-anchor="middle"
+            transform="rotate(-90,-6,261)">Target slope height</text>
+
+      <rect class="search" x="48" y="470" width="612" height="98"/>
+      <text class="lab-b" x="354" y="527" text-anchor="middle">OSA search region</text>
+
+      <circle class="anchor" cx="132" cy="52" r="14"/>
+      <text class="lab-b" x="132" y="20" text-anchor="middle">Fixed crest</text>
+    </g>
+  </g>
+
+  <line class="divider" x1="830" y1="90" x2="830" y2="790"/>
+
+  <!-- ================= Toe anchor ================= -->
+  <g transform="translate(858,52)">
+    <rect class="panel" x="0" y="0" width="756" height="782" rx="18"/>
+    <text class="title" x="52" y="66">Toe anchor</text>
+    <text class="sub"   x="52" y="112">The lower endpoint remains fixed.</text>
+
+    <g transform="translate(52,170)">
+      <!-- ground rising left to right, fixed at the toe -->
+      <path class="rock"
+            d="M48,470 L48,540 L660,540 L660,52 C560,58 470,96 396,166
+               C336,222 268,344 190,420 C150,450 96,466 48,470 Z"/>
+
+      <path class="band" d="M48,470 L660,52 L660,120 Z"/>
+      <line class="maxosa" x1="48" y1="470" x2="660" y2="52"/>
+      <line class="minosa" x1="48" y1="470" x2="660" y2="120"/>
+
+      <text class="lab" x="292" y="268" text-anchor="middle">Max OSA</text>
+      <text class="lab" x="470" y="330" text-anchor="middle">Min OSA</text>
+
+      <!-- calculated height: the value the software derives -->
+      <line class="dim" x1="682" y1="52" x2="682" y2="470"/>
+      <text class="lab-b" x="714" y="261" text-anchor="middle"
+            transform="rotate(90,714,261)">Calculated slope height</text>
+
+      <rect class="search" x="48" y="470" width="612" height="98"/>
+      <text class="lab-b" x="380" y="527" text-anchor="middle">OSA search region</text>
+
+      <!-- anchor drawn last so the search region cannot paint over it -->
+      <circle class="anchor" cx="48" cy="470" r="14"/>
+      <text class="lab-b" x="70" y="446" text-anchor="start">Fixed toe</text>
+    </g>
+  </g>
+
+  <!-- ================= legend ================= -->
+  <g transform="translate(0,880)">
+    <rect class="band" x="596" y="-22" width="44" height="30" rx="5"/>
+    <text class="legend" x="656" y="0">
+      <tspan fill="#3f7a35" font-weight="700">Green region:</tspan>
+      <tspan> the optimiser explores candidate solutions to find the optimal profile.</tspan>
+    </text>
+  </g>
+</svg>

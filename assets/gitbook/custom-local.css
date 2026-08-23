@@ -465,3 +465,25 @@ body.os-media-modal-open {
     border-color: transparent transparent transparent #ffffff;
     pointer-events: none;
 }
+
+/* Diagram figures drawn as SVG (see assets/docs_images/*.svg). Sized by the
+   column rather than the file so the vector scales with the page. */
+
+.os-svg-figure {
+    margin: 1.4rem auto;
+    max-width: 900px;
+}
+
+.os-svg-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.os-svg-figure figcaption {
+    margin-top: 0.55rem;
+    color: #57606a;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    text-align: center;
+}

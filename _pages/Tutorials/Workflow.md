@@ -578,7 +578,13 @@ Before proceeding with a simulation, check the following:
 **Recommendation:**  
 For reliable simulation results, review and repair significant gaps and visible overlaps before proceeding. Clean section geometry improves material assignment and gives the optimiser a more reliable basis for estimating the optimal slope profile.
 
-#### Slope Anchor and OSA Search Region Checks
+#### Slope Anchor and OSA Search Region
+
+<figure class="os-svg-figure">
+  <img src="{{ '/assets/docs_images/slope-anchor-modes.svg' | relative_url }}"
+       alt="Crest anchor fixes the upper endpoint and uses a target slope height; toe anchor fixes the lower endpoint and calculates the slope height. In both, the minimum and maximum OSA bound a green search region the optimiser explores.">
+  <figcaption>The active slope anchor decides which endpoint is fixed and how the slope height is obtained.</figcaption>
+</figure>
 
 #### How should I choose the crest point?
 

@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img"
+     aria-labelledby="geoTitle geoDesc"
+     font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title id="geoTitle">Geometry types used in the manual</title>
+  <desc id="geoDesc">A polyline is connected straight segments. An open polyline has endpoints that
+  are not joined. A spline is a smooth curve through control points. A wire is a closed boundary
+  made from edges. A mesh is connected faces representing a surface. A closed manifold mesh is a
+  watertight surface enclosing a volume.</desc>
+
+  <style>
+    .card  { fill:#ffffff; stroke:#e3e9ef; stroke-width:2; }
+    .name  { fill:#0a4e76; font-size:23px; font-weight:700; }
+    .desc  { fill:#5c6b7a; font-size:15px; }
+    .edge  { stroke:#f4801f; stroke-width:7; fill:none;
+             stroke-linecap:round; stroke-linejoin:round; }
+    .node  { fill:#ffffff; stroke:#1c5e94; stroke-width:3.2; }
+    .term  { fill:#f4801f; }
+    .tip   { fill:#3f5468; font-size:15px; }
+    .face  { fill:#dbe8f4; stroke:#12395e; stroke-width:3; stroke-linejoin:round; }
+    .inner { stroke:#7ba3c4; stroke-width:1.6; fill:none; }
+    .rib   { stroke:#12395e; stroke-width:3; fill:none; stroke-linejoin:round; }
+  </style>
+
+  <!-- ========== row 1 ========== -->
+
+  <!-- Polyline -->
+  <g transform="translate(30,20)">
+    <rect class="card" x="0" y="0" width="360" height="316" rx="16"/>
+    <text class="name" x="28" y="46">Polyline</text>
+    <text class="desc" x="28" y="76">Connected straight segments</text>
+    <polyline class="edge" points="58,240 118,168 176,208 262,118"/>
+    <circle class="node" cx="58"  cy="240" r="9"/>
+    <circle class="node" cx="118" cy="168" r="9"/>
+    <circle class="node" cx="176" cy="208" r="9"/>
+    <circle class="node" cx="262" cy="118" r="9"/>
+  </g>
+
+  <!-- Open polyline -->
+  <g transform="translate(420,20)">
+    <rect class="card" x="0" y="0" width="360" height="316" rx="16"/>
+    <text class="name" x="28" y="46">Open polyline</text>
+    <text class="desc" x="28" y="76">Endpoints are not joined</text>
+    <polyline class="edge" points="58,232 128,142 196,208 268,150"/>
+    <!-- solid ends: the two that never meet -->
+    <circle class="term" cx="58"  cy="232" r="10"/>
+    <circle class="term" cx="268" cy="150" r="10"/>
+    <text class="tip" x="58"  y="272" text-anchor="middle">Start</text>
+    <text class="tip" x="268" y="126" text-anchor="middle">End</text>
+  </g>
+
+  <!-- Spline -->
+  <g transform="translate(810,20)">
+    <rect class="card" x="0" y="0" width="360" height="316" rx="16"/>
+    <text class="name" x="28" y="46">Spline</text>
+    <text class="desc" x="28" y="76">Smooth curve through control points</text>
+    <path class="edge" d="M58,236 C96,236 108,168 146,168
+                          C184,168 190,200 222,200 C254,200 258,140 276,122"/>
+    <circle class="node" cx="58"  cy="236" r="9"/>
+    <circle class="node" cx="146" cy="168" r="9"/>
+    <circle class="node" cx="222" cy="200" r="9"/>
+    <circle class="node" cx="276" cy="122" r="9"/>
+  </g>
+
+  <!-- ========== row 2 ========== -->
+
+  <!-- Wire -->
+  <g transform="translate(30,376)">
+    <rect class="card" x="0" y="0" width="360" height="316" rx="16"/>
+    <text class="name" x="28" y="46">Wire</text>
+    <text class="desc" x="28" y="76">Closed boundary made from edges</text>
+    <polygon class="edge" points="112,142 216,124 250,208 174,246 82,220"/>
+    <circle class="node" cx="112" cy="142" r="9"/>
+    <circle class="node" cx="216" cy="124" r="9"/>
+    <circle class="node" cx="250" cy="208" r="9"/>
+    <circle class="node" cx="174" cy="246" r="9"/>
+    <circle class="node" cx="82"  cy="220" r="9"/>
+  </g>
+
+  <!-- Mesh -->
+  <g transform="translate(420,376)">
+    <rect class="card" x="0" y="0" width="360" height="316" rx="16"/>
+    <text class="name" x="28" y="46">Mesh</text>
+    <text class="desc" x="28" y="76">Connected faces representing a surface</text>
+    <polygon class="face" points="62,206 118,130 206,120 274,166 236,240 132,252"/>
+    <!-- interior edges: the faces the surface is divided into -->
+    <path class="inner" d="M62,206 L206,120 M62,206 L274,166 M62,206 L236,240
+                           M118,130 L274,166 M118,130 L236,240 M118,130 L132,252
+                           M206,120 L236,240 M206,120 L132,252 M274,166 L132,252"/>
+  </g>
+
+  <!-- Closed manifold mesh -->
+  <g transform="translate(810,376)">
+    <rect class="card" x="0" y="0" width="360" height="316" rx="16"/>
+    <text class="name" x="28" y="46">Closed manifold mesh</text>
+    <text class="desc" x="28" y="76">Watertight surface enclosing a volume</text>
+    <g transform="translate(14,10)">
+      <!-- top, then the two visible sides, so nothing overlaps wrongly -->
+      <polygon class="face" points="170,118 254,166 170,214 86,166"/>
+      <polygon class="face" points="86,166 170,214 170,278 86,230"/>
+      <polygon class="face" points="254,166 170,214 170,278 254,230"/>
+      <!-- subdivision lines: a closed mesh is still made of faces -->
+      <path class="inner" d="M128,142 L212,190 M212,142 L128,190
+                             M128,190 L128,254 M212,190 L212,254
+                             M86,198 L170,246 M254,198 L170,246"/>
+      <!-- silhouette redrawn so the subdivisions do not soften it -->
+      <path class="rib" d="M170,118 L254,166 L254,230 L170,278 L86,230 L86,166 Z
+                           M86,166 L170,214 L254,166 M170,214 L170,278"/>
+    </g>
+  </g>
+</svg>

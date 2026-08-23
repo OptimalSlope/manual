@@ -585,6 +585,12 @@ The binary file format used to save and reopen an entire Slope Optimiser project
 The geological layer model used to define material regions and generate sections.
 </div>
 
+<figure class="os-svg-figure">
+  <img src="{{ '/assets/docs_images/geometry-types.svg' | relative_url }}"
+       alt="Polyline: connected straight segments. Open polyline: endpoints not joined. Spline: smooth curve through control points. Wire: closed boundary made from edges. Mesh: connected faces representing a surface. Closed manifold mesh: watertight surface enclosing a volume.">
+  <figcaption>The geometry types the terms below refer to.</figcaption>
+</figure>
+
 <div class="os-glossary-term" markdown="1">
 <h3>Polyline</h3>
 An ordered sequence of connected line segments defined by vertices. Polylines are the recommended geometry for water, section, and fault layers.
