@@ -786,6 +786,12 @@ Faults represent discontinuities or fractures within the geological model that c
 
 In the Slope Optimiser, faults are defined as **open polylines** and can be added to a section in two different ways.
 
+<figure class="os-svg-figure">
+  <img src="{{ '/assets/docs_images/fault-or-joint.png' | relative_url }}"
+       alt="A fault or joint drawn as an open polyline crossing the rock layers of a cross-section, shown alongside the water table.">
+  <figcaption>A fault or joint is an open polyline crossing the section geometry.</figcaption>
+</figure>
+
 <div class="os-card-grid" markdown="1">
 <div class="os-card" markdown="1">
 <strong>Assign faults in an imported section</strong>
