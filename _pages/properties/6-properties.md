@@ -400,6 +400,12 @@ nav_order: 40
 </a>
 </div>
 
+<figure class="os-svg-figure os-svg-figure--wide">
+  <img src="{{ '/assets/docs_images/slope-profile-anatomy.png' | relative_url }}"
+       alt="An optimised slope profile labelled with crest point, bench height, bench face, berm, minimum berm width, road and road width, optimal face angle, slope height and toe. The optimal profile with benches, the simplified profile for mine planning, and the planar profile are shown together.">
+  <figcaption>The parts of a slope profile that the properties on this page control.</figcaption>
+</figure>
+
 <section class="os-props-section" id="defining-bench-height" markdown="1">
 <div class="os-props-section-head" markdown="0">
 <div class="label">Bench geometry</div>

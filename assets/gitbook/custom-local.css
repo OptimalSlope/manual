@@ -487,3 +487,9 @@ body.os-media-modal-open {
     line-height: 1.45;
     text-align: center;
 }
+
+/* A few figures are wider than they are tall and carry fine labelling; let
+   them use the full column rather than the 900px the others are capped to. */
+.os-svg-figure--wide {
+    max-width: 100%;
+}
