@@ -817,6 +817,10 @@ Reference guide for slope anchors, bench and rock inputs, loads, faults, roads, 
 
 1 Bench Height Understand fixed and estimated bench height definitions. 2 Bench Properties Review unit weight, bench face angle, berm width, and bench count. 3 Rock Properties Set Hoek-Brown or Mohr-Coulomb strength parameters. 4 Section Properties Define the slope anchor, slope geometry, target FoS, loads, roads, and water-pressure method. 5 Transfer Properties Reuse section settings and mapped layer properties on another section. 6 Faults Add fault polylines, define fault segmentation, and assign material properties. 7 Water Table Define the piezometric line for selected cross-sections.
 
+[figure: An optimised slope profile labelled with crest point, bench height, bench face, berm, minimum berm width, road and road width, optimal face angle, slope height and toe. The optimal profile with benches, the simplified profile for mine planning, and the planar profile are shown together.]
+
+The parts of a slope profile that the properties on this page control.
+
 Bench geometry
 
 ### Properties > Defining Bench Height
@@ -1046,6 +1050,10 @@ Faults represent discontinuities or fractures that can influence rock mass behav
 Faults represent discontinuities or fractures within the geological model that can influence rock mass behaviour, stability, and stress distribution.
 
 In the Slope Optimiser, faults are defined as open polylines and can be added to a section in two different ways.
+
+[figure: A fault or joint drawn as an open polyline crossing the rock layers of a cross-section, shown alongside the water table.]
+
+A fault or joint is an open polyline crossing the section geometry.
 
 Assign faults in an imported section
 
