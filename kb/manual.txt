@@ -12,7 +12,7 @@ Download OptimalSlope Quick Start Simulation Workflow Help and Solutions Confere
 [figure: OptimalSlope logo]
 
 Slope Optimiser documentation
-This manual explains the main workflows for using the Slope Optimiser CAD graphical interface.Manual v1.0 · Updated 20 August 2026
+This manual explains the main workflows for using the Slope Optimiser CAD graphical interface.Manual v1.0 · Updated
 
 Introduction
 
