@@ -136,7 +136,7 @@
 
             <li class="os-manual-meta">
                 <span>Manual v{{ site.version | escape }}</span>
-                <span>Updated {{ site.manual_last_updated | escape }}</span>
+                <span>Updated {{ site.time | date: "%-d %B %Y" }}</span>
             </li>
         </ul>
     </nav>
