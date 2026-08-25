@@ -1,7 +1,7 @@
 {
-  "sha256": "6ec8a3e1a304a8cf564d034d4f5f489a0803681c6c60eb03de6629d77c92ae1a",
-  "bytes": 97765,
-  "sections": 119,
+  "sha256": "c2b3be95d676822fe26af06b23d0a2e8b649805ac7dfa4b95a1d66a42ef718fb",
+  "bytes": 97879,
+  "sections": 120,
   "pages": [
     {
       "title": "Overview",
@@ -54,7 +54,7 @@
     {
       "title": "Glossary",
       "url": "https://optimalslope.github.io/manual/pages/glossary/",
-      "sections": 67,
+      "sections": 68,
       "source": "pages/glossary/index.html"
     }
   ]

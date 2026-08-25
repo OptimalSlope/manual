@@ -469,7 +469,7 @@ Check that:
 
 #### Exported DXF does not import as expected
 
-For RS2 workflows, use the `Local XY` export method when a 2D section is required. Some external applications may still require manual cleanup or additional boundary definition after import.
+For RS2 workflows, use the `Rocscience` export option. It prepares the section as 2D geometry and automatically generates a closed external boundary. After import, confirm that RS2 recognises the generated outer polyline as the `External` boundary and that the remaining boundary types are assigned correctly.
 
 #### Block model output does not look correct
 

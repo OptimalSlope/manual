@@ -643,7 +643,12 @@ A text-based export containing the properties and inputs associated with an indi
 
 <div class="os-glossary-term" markdown="1">
 <h3>Local XY export</h3>
-A DXF export option where the section is flattened onto the XY plane. This is useful for workflows that require 2D geometry, such as RS2.
+A DXF export option where the section is flattened onto the XY plane. This is useful for general workflows that require 2D geometry.
+</div>
+
+<div class="os-glossary-term" markdown="1">
+<h3>Rocscience export</h3>
+A DXF export option that prepares 2D section geometry for Rocscience software and automatically generates the closed external boundary required by the model.
 </div>
 
 <div class="os-glossary-term" markdown="1">
