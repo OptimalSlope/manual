@@ -1,0 +1,19 @@
+## Export and Reuse the Output
+
+1. On the **Simulation** page, expand **Output Tools**.
+2. Choose the required DXF export format, then click **Export DXF**.
+3. To bring the optimised geometry back into the project, click **Create project section from output**.
+4. Open **Visualiser** and find the new section in **Navigation**.
+
+| Export option | When to use it |
+| --- | --- |
+| **Rocscience** | Prepare a 2D DXF for Rocscience software. The orientation is converted to the required import plane and the closed external boundary is generated automatically. |
+| **Global** | Keep the original global coordinates for comparison with the source model. |
+| **Local XZ** | Align the section with the XZ plane, with a fixed Y coordinate. |
+| **Local XY** | Flatten the section onto the XY plane, with a fixed Z coordinate. |
+
+{% include tutorial-image.html file="export-output.png" title="Exporting the Optimised Profile" alt="Output Tools with the Rocscience, Global, Local XZ and Local XY export choices" caption="Choose the export format to suit the receiving software before exporting the DXF." %}
+
+{% include tutorial-image.html file="create-output-section.png" title="Creating a Project Section from Output" alt="Output Tools showing the Create project section from output action" caption="The new section can be viewed in the Visualiser alongside the original model." %}
+
+For a Rocscience RS2 workflow, follow [Importing Output into Rocscience RS2]({{ '/pages/Tutorials/Workflow/#importing-output-into-rockscience-rs2' | relative_url }}) and check the imported boundary assignments.

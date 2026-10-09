@@ -420,7 +420,7 @@ After the simulation is complete:
 - detach plots and keep multiple cross-section results open for comparison;
 - export the optimised slope profile to DXF if it is needed for external workflows;
 - create a new project cross-section from the optimised output when required;
-- export a section block model when the section is associated with 3D stratigraphy;
+- export a **2D (X, Z)** block model CSV from the section, or a **3D (X, Y, Z)** block model when associated 3D stratigraphy is available;
 - use downstream import steps for RS2 or Datamine where relevant.
 
 <div class="os-link-grid" markdown="0">

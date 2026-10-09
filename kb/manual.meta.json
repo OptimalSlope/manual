@@ -1,7 +1,7 @@
 {
-  "sha256": "c2b3be95d676822fe26af06b23d0a2e8b649805ac7dfa4b95a1d66a42ef718fb",
-  "bytes": 97879,
-  "sections": 120,
+  "sha256": "9add04a243f0ce432e34f26224d3e09e7ab69b5b2600b3e96cef8dd2f1810891",
+  "bytes": 148104,
+  "sections": 182,
   "pages": [
     {
       "title": "Overview",
@@ -20,6 +20,48 @@
       "url": "https://optimalslope.github.io/manual/pages/Tutorials/Workflow/",
       "sections": 9,
       "source": "pages/Tutorials/Workflow/index.html"
+    },
+    {
+      "title": "Tutorials",
+      "url": "https://optimalslope.github.io/manual/pages/tutorials/",
+      "sections": 13,
+      "source": "pages/tutorials/index.html"
+    },
+    {
+      "title": "Case 1a: Homogeneous Slope with Mohr-Coulomb",
+      "url": "https://optimalslope.github.io/manual/pages/tutorials/case-1a/",
+      "sections": 9,
+      "source": "pages/tutorials/case-1a/index.html"
+    },
+    {
+      "title": "Case 1b: Homogeneous Slope with Hoek-Brown",
+      "url": "https://optimalslope.github.io/manual/pages/tutorials/case-1b/",
+      "sections": 7,
+      "source": "pages/tutorials/case-1b/index.html"
+    },
+    {
+      "title": "Case 2: Layered Slope",
+      "url": "https://optimalslope.github.io/manual/pages/tutorials/case-2/",
+      "sections": 7,
+      "source": "pages/tutorials/case-2/index.html"
+    },
+    {
+      "title": "Case 3a: Groundwater with a Crest Anchor",
+      "url": "https://optimalslope.github.io/manual/pages/tutorials/case-3a/",
+      "sections": 8,
+      "source": "pages/tutorials/case-3a/index.html"
+    },
+    {
+      "title": "Case 3b: Groundwater with a Toe Anchor",
+      "url": "https://optimalslope.github.io/manual/pages/tutorials/case-3b/",
+      "sections": 8,
+      "source": "pages/tutorials/case-3b/index.html"
+    },
+    {
+      "title": "Case 4: Groundwater and Faults",
+      "url": "https://optimalslope.github.io/manual/pages/tutorials/case-4/",
+      "sections": 10,
+      "source": "pages/tutorials/case-4/index.html"
     },
     {
       "title": "Properties",

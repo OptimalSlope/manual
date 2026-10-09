@@ -1,0 +1,10 @@
+<nav class="os-tutorials-pagination" aria-label="Tutorial navigation">
+  <a href="{{ page.previous_case_url | default: '/pages/tutorials/' | relative_url }}">
+    <span>Previous</span>
+    <strong>{{ page.previous_case_title | default: 'Tutorials Overview' | escape }}</strong>
+  </a>
+  <a href="{{ page.next_case_url | default: '/pages/tutorials/' | relative_url }}">
+    <span>{% if page.next_case_url %}Next{% else %}Return to{% endif %}</span>
+    <strong>{{ page.next_case_title | default: 'Tutorials Overview' | escape }}</strong>
+  </a>
+</nav>

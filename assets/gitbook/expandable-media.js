@@ -148,6 +148,7 @@
     function openModal(trigger) {
         var mediaWindow = trigger.closest(".os-expandable-media-window");
         var sourceImage;
+        var isStatic;
 
         if (!mediaWindow) {
             return;
@@ -162,6 +163,11 @@
             createModal();
         }
 
+        isStatic = mediaWindow.getAttribute("data-media-static") === "true";
+        modal.querySelectorAll("[data-media-pause], [data-media-replay]").forEach(function (control) {
+            control.style.display = isStatic ? "none" : "";
+        });
+        closeButton.setAttribute("aria-label", isStatic ? "Close expanded image" : "Close expanded animation");
         lastTrigger = trigger;
         modalTitle.textContent = mediaWindow.getAttribute("data-media-title") || sourceImage.alt;
         modalImage.src = sourceImage.currentSrc || sourceImage.src;
@@ -213,7 +219,9 @@
 
     if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         document.querySelectorAll(".os-expandable-media-window").forEach(function (mediaWindow) {
-            setPaused(mediaWindow, true);
+            if (mediaWindow.getAttribute("data-media-static") !== "true") {
+                setPaused(mediaWindow, true);
+            }
         });
     }
 })();

@@ -341,7 +341,7 @@ nav_order: 30
 <a href="#running-simulations"><span class="step">3</span><strong>Run Simulations</strong><span>Configure cloud simulation inputs and check geometry before running.</span></a>
 <a href="#exporting-output-profile-to-dxf"><span class="step">4</span><strong>Export DXF</strong><span>Export the optimised output profile for external workflows.</span></a>
 <a href="#importing-output-into-rockscience-rs2"><span class="step">5</span><strong>Import into RS2</strong><span>Prepare the exported profile for Rocscience RS2 stability analysis.</span></a>
-<a href="#exporting-the-section-block-model"><span class="step">6</span><strong>Export Block Model</strong><span>Create a section block model from 3D stratigraphy and optimised slope angles.</span></a>
+<a href="#exporting-the-section-block-model"><span class="step">6</span><strong>Export Block Model</strong><span>Create a 2D or 3D block model CSV with optimised slope angles.</span></a>
 <a href="#import-block-model-into-datamine"><span class="step">7</span><strong>Import Block Model into Datamine</strong><span>Import the exported block model CSV and combine slope-angle data.</span></a>
 </div>
 
@@ -783,27 +783,82 @@ By following these steps, you can successfully prepare and import a DXF file int
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 6</div>
 <h2 id="exporting-the-section-block-model">Exporting the Section Block Model</h2>
-<p>Export a block model for sections associated with 3D stratigraphy using optimised slope angles.</p>
+<p>Export a 2D or 3D block model CSV using the optimised slope angles.</p>
 </div>
 <div class="os-workflow-step-body" markdown="1">
 
-If the project contains 3D stratigraphy, the section block model can be exported from the simulation window using the **Export block model** tool.
+After fetching the simulation results, open **Output Tools** in the simulation window and click **Export block model**. The export opens in a separate, resizable window for the selected section.
 
 <p align="center">
-  <img src="https://OptimalSlope.github.io/manual/assets/docs_images/block_model_export.png" alt="Export output"/>
+  <img src="{{ '/assets/docs_images/block_model_export_button.png' | relative_url }}" alt="Export block model button in Output Tools" loading="lazy"/>
 </p>
 
-This export creates a block model for the selected section using the optimised slope angles from the simulation result. The exported model can be used for further visualisation, checking, or downstream modelling workflows.
+<figure class="os-expandable-media">
+  <div class="os-expandable-media-window" data-media-title="Block Model Export" data-media-static="true">
+    <div class="os-expandable-media-toolbar">
+      <span class="os-expandable-media-title">Block Model Export</span>
+      <button class="os-expandable-media-expand" type="button" data-media-expand aria-label="Expand Block Model Export">
+        <i class="fa fa-expand" aria-hidden="true"></i><span>Expand</span>
+      </button>
+    </div>
+    <button class="os-expandable-media-stage" type="button" data-media-expand aria-label="Expand Block Model Export">
+      <img src="{{ '/assets/docs_images/block_model_export.png' | relative_url }}" alt="Block model export window showing 3D mode, block dimensions, origin and coordinate choices, and the coloured block preview" loading="lazy"/>
+    </button>
+  </div>
+  <figcaption>The 3D export window. Select 2D (X, Z) to export a section grid without 3D stratigraphy.</figcaption>
+</figure>
 
-Before exporting, define the block dimensions:
+#### 1. Choose the export mode and block size
 
-- **dX** — block size in the X direction.
-- **dY** — block size in the Y direction.
-- **dZ** — block size in the Z direction.
+| Mode | Block dimensions in metres | Model requirements |
+| --- | --- | --- |
+| **3D (X, Y, Z)** | Width **dX**, depth **dY**, height **dZ** | The section must be associated with 3D stratigraphy. |
+| **2D (X, Z)** | Width **dX**, height **dZ**; dY is hidden | Uses the cross-section and its simulation results. No 3D stratigraphy is required. |
 
-This feature is available when the section is generated from, or associated with, a 3D stratigraphy model. If the project only contains an imported 2D section without 3D stratigraphy, there is no 3D block model available to export.
+Smaller blocks provide more detail but produce larger CSV files. Choose dimensions appropriate for the model scale and check the total block count in the preview.
 
-Choose block dimensions that are appropriate for the scale of the model. Smaller block sizes provide a more detailed representation but may produce larger output files, while larger block sizes reduce file size but give a coarser model.
+#### 2. Set the block model origin
+
+Under **Block Model origin coordinates**, choose:
+
+- **Automatic** — uses the lower bounds of the Ground Model in 3D, or the cross-section in 2D. The origin fields are read-only.
+- **Custom position** — enter the origin in Ground Model axes: X, Y and Z for 3D, or X and Z for 2D. This sets the lower corner of the grid, not the centre of the first block. It does not move the model or the slope geometry.
+
+A custom origin below the model bounds extends the grid; an origin inside the bounds crops its lower part. Select **Automatic** to restore the original lower bounds.
+
+#### 3. Choose the exported coordinates
+
+Under **Block coordinates**, choose:
+
+- **Relative to Block Model axes** — block centre coordinates are measured from the chosen grid origin. For example, with 20 m blocks, the first centre is 10 m along each axis.
+- **Relative to Ground Model axes** — preserves global X, Y and Z coordinates in 3D, or the section's X and Z coordinates in 2D. A rotated section's 2D coordinates are not global 3D coordinates.
+
+The **First block centre** readout shows the coordinates that will be written to the CSV. Changing this option changes the exported coordinate values, not the grid or its slope angles.
+
+<div class="os-callout os-callout--important" markdown="1">
+The origin is a block corner; exported coordinates are block centres. When importing or combining models, match the coordinate system, origin and block dimensions. To align a 3D export with an existing global model, use **Relative to Ground Model axes**.
+</div>
+
+#### 4. Check the preview
+
+The preview updates when you change the dimensions, origin or coordinate option. Check the grid extent, block count and **First block centre** before exporting.
+
+- Colours show slope angles in degrees; grey blocks have no angle and export with a blank `slope_angle` value.
+- In 3D, drag to rotate and scroll to zoom. Axis colours are X red, Y green and Z blue.
+- In 2D, pan and zoom to inspect the grid. Use **Fit view** to restore the full view in either mode.
+
+The grid covers a rectangular area or volume; it is not clipped to rock boundaries or the excavation shape. Fine grid lines may be hidden at larger scales.
+
+#### 5. Export the CSV
+
+Click **Export CSV**, choose a file name and save location, and save the file. If export is unavailable, follow the explanation shown in the window and check the results, model requirements and input values. Grids larger than 10 million blocks require larger block dimensions or a smaller extent.
+
+The CSV contains block centre coordinates, block dimensions and `slope_angle` in degrees:
+
+- **3D:** `X, Y, Z, dX, dY, dZ, slope_angle`
+- **2D:** `X, Z, dX, dZ, slope_angle`
+
+For a 3D Datamine workflow, continue with [Import Block Model into Datamine](#import-block-model-into-datamine).
 </div>
 </section>
 
@@ -850,6 +905,8 @@ Specify the block model parameters:
 - **Model Origin** — enter the X, Y, and Z origin values.
 - **Block Size** — enter the X, Y, and Z block dimensions.
 - **Number of Blocks** — enter the number of blocks in X, Y, and Z.
+
+Use the same dimensions and coordinate frame as the export. With **Relative to Ground Model axes**, use the export's Ground Model origin. With **Relative to Block Model axes**, the grid origin is zero on each axis. The **First block centre** is not the model origin.
 
 <p align="center">
   <img src="{{ '/assets/datamine-import/datamine-import-step-03.png' | relative_url }}" alt="Datamine specify model parameters dialog">
@@ -930,7 +987,9 @@ You may use another valid Datamine file name, as long as you can clearly identif
 
 Repeat the import workflow for the model that contains the OptimalSlope slope-angle output.
 
-When assigning fields, map the coordinate and block-size fields as before. The slope-angle field should be imported as:
+For the **3D** OptimalSlope CSV, map `X`, `Y` and `Z` to Datamine coordinate fields `X`, `Y` and `Z`; map `dX`, `dY` and `dZ` to `XINC`, `YINC` and `ZINC`. These column names differ from the example base-model fields above. Check that both models use the same coordinate system, origin and block dimensions before combining them.
+
+The slope-angle field should be imported as:
 
 <table class="os-field-table">
 <thead>

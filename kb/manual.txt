@@ -35,7 +35,7 @@ View workflow Conference demo
 
 Start with the Data Preparation page if you are working with new 3D stratigraphy or imported section files. Clean input geometry improves slicing, material assignment, and simulation reliability.
 
-1 Quick Start Run your first simulation from prepared data through result review and export. 2 Prepare Data Check geometry quality, DXF exports, section wires, gaps, overlaps, and layer organisation. 3 Run Workflow Follow the simulation workflow from importing sections to exporting results. 4 Define Properties Set slope anchors, bench and rock properties, loads, faults, roads, and groundwater inputs. 5 Help and Solutions Resolve common issues with geometry, OSA search region, simulations, and exports. 6 Manage Projects Create, save, import, slice, trim, and export project data. 7 Use Controls Navigate the visualiser, change views, adjust object style, and manage selected items. 8 Glossary Review common OptimalSlope, slope design, simulation, and export terms.
+1 Quick Start Run your first simulation from prepared data through result review and export. 2 Prepare Data Check geometry quality, DXF exports, section wires, gaps, overlaps, and layer organisation. 3 Run Workflow Follow the simulation workflow from importing sections to exporting results. 4 Tutorials Practise with six worked cases covering materials, groundwater, slope anchors, and faults. 5 Define Properties Set slope anchors, bench and rock properties, loads, faults, roads, and groundwater inputs. 6 Help and Solutions Resolve common issues with geometry, OSA search region, simulations, and exports. 7 Manage Projects Create, save, import, slice, trim, and export project data. 8 Use Controls Navigate the visualiser, change views, adjust object style, and manage selected items. 9 Glossary Review common OptimalSlope, slope design, simulation, and export terms.
 
 Common support tasks
 
@@ -44,7 +44,7 @@ URL: https://optimalslope.github.io/manual/#common-support-tasks
 
 Use these shortcuts when you are checking input data, preparing a simulation, or diagnosing a warning.
 
-A Gaps and overlaps Understand geometry warnings and decide whether input data needs repair. B OSA search region Check the crest point and Min/Max OSA range before running the optimiser. C Export block model Create downstream block model outputs from 3D stratigraphy and slope-angle results. D Import into Datamine Map block model fields and combine slope-angle data using Datamine workflows.
+A Gaps and overlaps Understand geometry warnings and decide whether input data needs repair. B OSA search region Check the crest point and Min/Max OSA range before running the optimiser. C Export block model Create 2D or 3D block model CSV outputs using optimised slope-angle results. D Import into Datamine Map block model fields and combine slope-angle data using Datamine workflows.
 
 ### Quick Start > Quick Start
 URL: https://optimalslope.github.io/manual/pages/quick-start/
@@ -163,7 +163,7 @@ export the optimised slope profile to DXF if it is needed for external workflows
 
 create a new project cross-section from the optimised output when required;
 
-export a section block model when the section is associated with 3D stratigraphy;
+export a 2D (X, Z) block model CSV from the section, or a 3D (X, Y, Z) block model when associated 3D stratigraphy is available;
 
 use downstream import steps for RS2 or Datamine where relevant.
 
@@ -174,7 +174,7 @@ Simulation Workflow Tutorial
 
 Follow the complete Slope Optimiser workflow, from importing a section and defining properties to running simulations, reviewing results, exporting profiles, and preparing downstream models.
 
-1Import SectionsStart from DXF sections or slice sections from 3D stratigraphy. 2Define PropertiesAssign bench, rock, general, and optional simulation properties. 3Run SimulationsConfigure cloud simulation inputs and check geometry before running. 4Export DXFExport the optimised output profile for external workflows. 5Import into RS2Prepare the exported profile for Rocscience RS2 stability analysis. 6Export Block ModelCreate a section block model from 3D stratigraphy and optimised slope angles. 7Import Block Model into DatamineImport the exported block model CSV and combine slope-angle data.
+1Import SectionsStart from DXF sections or slice sections from 3D stratigraphy. 2Define PropertiesAssign bench, rock, general, and optional simulation properties. 3Run SimulationsConfigure cloud simulation inputs and check geometry before running. 4Export DXFExport the optimised output profile for external workflows. 5Import into RS2Prepare the exported profile for Rocscience RS2 stability analysis. 6Export Block ModelCreate a 2D or 3D block model CSV with optimised slope angles. 7Import Block Model into DatamineImport the exported block model CSV and combine slope-angle data.
 
 Follow these steps to configure a selected section in Slope Optimiser and run a simulation:
 
@@ -616,25 +616,71 @@ Step 6
 ### Simulation Workflow > Exporting the Section Block Model
 URL: https://optimalslope.github.io/manual/pages/Tutorials/Workflow/#exporting-the-section-block-model
 
-Export a block model for sections associated with 3D stratigraphy using optimised slope angles.
+Export a 2D or 3D block model CSV using the optimised slope angles.
 
-If the project contains 3D stratigraphy, the section block model can be exported from the simulation window using the Export block model tool.
+After fetching the simulation results, open Output Tools in the simulation window and click Export block model. The export opens in a separate, resizable window for the selected section.
 
-[figure: Export output]
+[figure: Export block model button in Output Tools]
 
-This export creates a block model for the selected section using the optimised slope angles from the simulation result. The exported model can be used for further visualisation, checking, or downstream modelling workflows.
+Block Model Export
 
-Before exporting, define the block dimensions:
+The 3D export window. Select 2D (X, Z) to export a section grid without 3D stratigraphy.
 
-dX — block size in the X direction.
+1. Choose the export mode and block size
 
-dY — block size in the Y direction.
+| Mode | Block dimensions in metres | Model requirements
 
-dZ — block size in the Z direction.
+| 3D (X, Y, Z) | Width dX, depth dY, height dZ | The section must be associated with 3D stratigraphy.
 
-This feature is available when the section is generated from, or associated with, a 3D stratigraphy model. If the project only contains an imported 2D section without 3D stratigraphy, there is no 3D block model available to export.
+| 2D (X, Z) | Width dX, height dZ; dY is hidden | Uses the cross-section and its simulation results. No 3D stratigraphy is required.
 
-Choose block dimensions that are appropriate for the scale of the model. Smaller block sizes provide a more detailed representation but may produce larger output files, while larger block sizes reduce file size but give a coarser model.
+Smaller blocks provide more detail but produce larger CSV files. Choose dimensions appropriate for the model scale and check the total block count in the preview.
+
+2. Set the block model origin
+
+Under Block Model origin coordinates, choose:
+
+Automatic — uses the lower bounds of the Ground Model in 3D, or the cross-section in 2D. The origin fields are read-only.
+
+Custom position — enter the origin in Ground Model axes: X, Y and Z for 3D, or X and Z for 2D. This sets the lower corner of the grid, not the centre of the first block. It does not move the model or the slope geometry.
+
+A custom origin below the model bounds extends the grid; an origin inside the bounds crops its lower part. Select Automatic to restore the original lower bounds.
+
+3. Choose the exported coordinates
+
+Under Block coordinates, choose:
+
+Relative to Block Model axes — block centre coordinates are measured from the chosen grid origin. For example, with 20 m blocks, the first centre is 10 m along each axis.
+
+Relative to Ground Model axes — preserves global X, Y and Z coordinates in 3D, or the section’s X and Z coordinates in 2D. A rotated section’s 2D coordinates are not global 3D coordinates.
+
+The First block centre readout shows the coordinates that will be written to the CSV. Changing this option changes the exported coordinate values, not the grid or its slope angles.
+
+The origin is a block corner; exported coordinates are block centres. When importing or combining models, match the coordinate system, origin and block dimensions. To align a 3D export with an existing global model, use Relative to Ground Model axes.
+
+4. Check the preview
+
+The preview updates when you change the dimensions, origin or coordinate option. Check the grid extent, block count and First block centre before exporting.
+
+Colours show slope angles in degrees; grey blocks have no angle and export with a blank slope_angle value.
+
+In 3D, drag to rotate and scroll to zoom. Axis colours are X red, Y green and Z blue.
+
+In 2D, pan and zoom to inspect the grid. Use Fit view to restore the full view in either mode.
+
+The grid covers a rectangular area or volume; it is not clipped to rock boundaries or the excavation shape. Fine grid lines may be hidden at larger scales.
+
+5. Export the CSV
+
+Click Export CSV, choose a file name and save location, and save the file. If export is unavailable, follow the explanation shown in the window and check the results, model requirements and input values. Grids larger than 10 million blocks require larger block dimensions or a smaller extent.
+
+The CSV contains block centre coordinates, block dimensions and slope_angle in degrees:
+
+3D: X, Y, Z, dX, dY, dZ, slope_angle
+
+2D: X, Z, dX, dZ, slope_angle
+
+For a 3D Datamine workflow, continue with Import Block Model into Datamine.
 
 Step 7
 
@@ -676,6 +722,8 @@ Model Origin — enter the X, Y, and Z origin values.
 Block Size — enter the X, Y, and Z block dimensions.
 
 Number of Blocks — enter the number of blocks in X, Y, and Z.
+
+Use the same dimensions and coordinate frame as the export. With Relative to Ground Model axes, use the export’s Ground Model origin. With Relative to Block Model axes, the grid origin is zero on each axis. The First block centre is not the model origin.
 
 [figure: Datamine specify model parameters dialog]
 
@@ -753,7 +801,9 @@ You may use another valid Datamine file name, as long as you can clearly identif
 
 Repeat the import workflow for the model that contains the OptimalSlope slope-angle output.
 
-When assigning fields, map the coordinate and block-size fields as before. The slope-angle field should be imported as:
+For the 3D OptimalSlope CSV, map X, Y and Z to Datamine coordinate fields X, Y and Z; map dX, dY and dZ to XINC, YINC and ZINC. These column names differ from the example base-model fields above. Check that both models use the same coordinate system, origin and block dimensions before combining them.
+
+The slope-angle field should be imported as:
 
 | Field | Datamine field type | Data type
 
@@ -803,6 +853,1188 @@ Review common problems with geometry, OSA search region, simulation setup, and e
 Glossary
 
 Review key OptimalSlope, slope design, simulation, and export terms.
+
+### Tutorials > Tutorials
+URL: https://optimalslope.github.io/manual/pages/tutorials/
+
+Practical exercises
+
+Slope Optimisation Case Studies
+
+Practise the Slope Optimiser workflow with six worked cases. Begin with a homogeneous slope, then explore layered materials, groundwater, crest and toe anchors, and geological faults.
+
+Start Case 1a to follow your first exercise online, or choose a case below. Each case includes its input values, illustrated steps, and example results.
+
+### Tutorials > Before you begin
+URL: https://optimalslope.github.io/manual/pages/tutorials/#before-you-begin
+
+Set up the software and your account before starting the exercises.
+
+Install Slope Optimiser from the OptimalSlope website.
+
+Have a valid software licence and the account credentials provided to you.
+
+Open Tools > Settings > Account, enter your Username, Access Key ID, and Secret Access Key, then click Configure.
+
+Click Check profile and confirm that the account is configured correctly.
+
+Download the tutorial models below and extract the ZIP into a working folder before opening or importing files. The workbook PDF is optional for printing or offline use.
+
+Each exercise follows the same sequence: create or open a project, import a section, define properties, set the slope geometry, run a simulation, review the results, and export the output. For the supplied DXF sections, select Meters when importing.
+
+New to the interface? Read Quick Start first. Keep Simulation Workflow open for detailed explanations of individual tools and simulation checks.
+
+### Tutorials > Download tutorial files
+URL: https://optimalslope.github.io/manual/pages/tutorials/#download-tutorial-files
+
+Follow the exercises online and download the models to practise in the software.
+
+### Tutorials > Tutorial models
+URL: https://optimalslope.github.io/manual/pages/tutorials/
+
+DXF sections, starter and final CBF projects, and example exported profiles, organised in the same case folders as the workbook.
+Download tutorial models ZIP
+
+### Tutorials > Optional Workbook PDF
+URL: https://optimalslope.github.io/manual/pages/tutorials/
+
+All six exercises for printing or offline use, with numbered steps, material inputs, screenshots, and example results. PDF, approximately 28 MB.
+Download workbook PDF
+
+Use the starter project when you want to begin with an existing project file, or import the DXF to follow an exercise from the beginning. The final project provides a reference for checking the completed setup. Each online case includes the workbook’s example result plot.
+
+The workbook was prepared for the IOC 2026 OPTIMALMINE School on 7 October 2026. Its exercises can also be followed independently.
+
+### Tutorials > Choose a case
+URL: https://optimalslope.github.io/manual/pages/tutorials/#choose-a-case
+
+Start with Case 1a and follow the sequence below to introduce one feature at a time.
+
+Case 1a
+
+### Tutorials > Homogeneous Slope with Mohr-Coulomb
+URL: https://optimalslope.github.io/manual/pages/tutorials/
+
+Create your first model, assign bench and rock properties, define a crest anchor, and review the optimised slope and Factor of Safety.
+
+Workbook: pages 5-11.
+Open Case 1a
+
+Case 1b
+
+### Tutorials > Homogeneous Slope with Hoek-Brown
+URL: https://optimalslope.github.io/manual/pages/tutorials/
+
+Use the Generalised Hoek-Brown strength model and practise entering its rock-mass parameters.
+
+Workbook: pages 12-16.
+Open Case 1b
+
+Case 2
+
+### Tutorials > Layered Slope
+URL: https://optimalslope.github.io/manual/pages/tutorials/
+
+Assign separate material properties to multiple geological layers and optimise the resulting slope.
+
+Workbook: pages 17-21.
+Open Case 2
+
+Case 3a
+
+### Tutorials > Groundwater with a Crest Anchor
+URL: https://optimalslope.github.io/manual/pages/tutorials/
+
+Assign an imported open polyline as the piezometric line and run a layered slope with a prescribed crest.
+
+Workbook: pages 22-27.
+Open Case 3a
+
+Case 3b
+
+### Tutorials > Groundwater with a Toe Anchor
+URL: https://optimalslope.github.io/manual/pages/tutorials/
+
+Reuse the Case 3a setup, prescribe the toe position and elevation, and compare the two anchor choices.
+
+Workbook: pages 28-30.
+Open Case 3b
+
+Case 4
+
+### Tutorials > Groundwater and Faults
+URL: https://optimalslope.github.io/manual/pages/tutorials/
+
+Classify faults separately from rock layers, assign fault strength properties, and analyse the slope with groundwater and faults.
+
+Workbook: pages 31-36.
+Open Case 4
+
+Case 3b builds on Case 3a. Open Case3A_final.cbf from Case_3A_water_crest, then save the toe-anchor variant separately in Case_3B_water_toe so that both setups remain available for comparison.
+
+Open a case above for the full online instructions. Use Properties when you need an explanation of a material, geometry, or optional input.
+
+### Tutorials > Review and reuse results
+URL: https://optimalslope.github.io/manual/pages/tutorials/#review-and-reuse-results
+
+Check the completed model before exporting or comparing scenarios.
+
+Save each exercise as a separate .cbf project before running it. With Automatic results storage selected, the software creates a section simulation folder beside the saved project. Review any Simulation Check items before submission and use Fetch results to retrieve the output.
+
+Compare the achieved Factor of Safety, slope height, bench geometry, and prescribed crest or toe with your inputs and the workbook’s example. Cases 1a and 1b use different material and bench inputs as well as different strength models; their results should be read in the context of each case’s settings.
+
+Each online case ends with instructions for exporting a DXF and creating a project section from the output. Choose Rocscience when exporting for a Rocscience workflow; this option automatically generates the closed external boundary. The same shared instructions are on workbook pages 37-38.
+
+Export the output profile to DXF.
+
+Import the output into Rocscience RS2.
+
+Help and Solutions for geometry warnings, simulation checks, or export issues.
+
+Glossary for definitions of the terms used in the exercises.
+
+### Case 1a: Homogeneous Slope with Mohr-Coulomb > Case 1a: Homogeneous Slope with Mohr-Coulomb
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-1a/
+
+Case 1a
+
+Build Your First Slope Model
+
+Create a homogeneous rock-mass section, assign Mohr-Coulomb properties, prescribe the crest, and optimise the slope to a target Factor of Safety.
+
+Exercise folder: Files for users/Case_1A_homogeneous_MC in the tutorial models ZIP.
+
+Before starting, complete the account setup. Follow the steps below online; the workbook PDF is available for printing or offline use. This case corresponds to workbook pages 5-11.
+
+### Case 1a: Homogeneous Slope with Mohr-Coulomb > Create and Import the Section
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-1a/#create-and-import-the-section
+
+Choose File > New to create a project.
+
+Choose File > Import Section > DXF and open case1-GroundModel.dxf from Case_1A_homogeneous_MC.
+
+Set Import as to Meters and click OK.
+
+In Navigation, expand Project > Cross-Sections > case1-GroundModel1 to reveal the Ophiolite layer.
+
+Selecting Import Units
+
+The supplied tutorial sections use metres. Confirm the units before completing the import.
+
+Imported Homogeneous Section
+
+You can also open Case1A-starter.cbf to begin from the supplied starter project. Check the properties against the tables below before running it.
+
+### Case 1a: Homogeneous Slope with Mohr-Coulomb > View and Navigate the Section
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-1a/#view-and-navigate-the-section
+
+Click the South face of the view cube in the top-right corner of the Visualiser to align the view with the section.
+
+Expand the small arrows in Navigation until the section and its layers are visible.
+
+Select Ophiolite. Its material and bench settings appear in the right-hand Properties panel.
+
+Selecting the Ophiolite Layer
+
+Select a layer to edit material properties; select the cross-section itself to edit the slope geometry.
+
+### Case 1a: Homogeneous Slope with Mohr-Coulomb > Define Bench and Material Properties
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-1a/#define-bench-and-material-properties
+
+With Ophiolite selected, enter:
+
+| Property | Value
+
+| Bench height | 12.19 m
+
+| Bench face angle | 90°
+
+| Minimum berm width | 6.938 m
+
+| Unit weight | 29 kN/m³
+
+| Strength model | Mohr-Coulomb
+
+| Friction angle | 31°
+
+| Cohesion | 469 kPa
+
+Bench and Mohr-Coulomb Properties
+
+The reference panel shows the fields before values are entered. Use the values in the table above.
+
+If the minimum berm width is left blank, the software uses 4.5 m + 0.2 × bench height. For a 12.19 m bench, this gives 6.938 m.
+
+### Case 1a: Homogeneous Slope with Mohr-Coulomb > Set the Slope Geometry
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-1a/#set-the-slope-geometry
+
+Select case1-GroundModel1 in Navigation, then enter:
+
+| Section Input | Value
+
+| Bench definition | Bench height
+
+| Target FoS | 1.3
+
+| Slope Anchor > Prescribed point | Crest
+
+| Horizontal Crest Position | 750 m
+
+| Failure Direction | Right to left
+
+| Target slope height | 230 m
+
+Prescribing the Crest
+
+Slope Direction and Height
+
+The crest is the fixed upper endpoint. Failure Direction is a separate setting that controls the slope orientation. Review the estimated minimum and maximum Overall Slope Angle (OSA) and confirm that the green search region stays inside the available ground.
+
+### Case 1a: Homogeneous Slope with Mohr-Coulomb > Understand the Two Slope Heights
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-1a/#understand-the-two-slope-heights
+
+Target slope height is the requested overall height. Bench-compatible slope height uses a whole number of full-height benches without exceeding that target. For this case, retain the full-height bench arrangement shown in the reference result.
+
+The following examples illustrate the difference; they do not replace the Case 1a inputs:
+
+| Illustrative Target Height | Bench Height | Arrangement | Resulting Height
+
+| 330 m | 15 m | 22 full benches | 330 m
+
+| 330 m | 20 m | 16 full benches | 320 m
+
+| 330 m | 20 m | Use target slope height: 16 full benches and a 10 m crest bench | 330 m
+
+Selecting Use target slope height allows a shorter crest bench to reach the target; the other benches keep their specified height. In the second example, another full 20 m bench would give 340 m and exceed the target.
+
+### Case 1a: Homogeneous Slope with Mohr-Coulomb > Save and Run the Simulation
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-1a/#save-and-run-the-simulation
+
+Choose File > Save As and save the project as Case1A-final.cbf in the exercise folder. Use a separate working folder if you want to keep the supplied reference project for comparison.
+
+Open the Simulation tab and select case1-GroundModel1.
+
+Set Simulation results location to Automatic. A section simulation folder is created beside the saved .cbf project when the simulation starts.
+
+Click Start. If Simulation Check lists an issue, use Fix to open the affected field, correct it, and select Check Again.
+
+Once the check passes, click Start again. Review any later geometry or groundwater warnings and enter your configured username when requested.
+
+Monitor the Node status summary and use Fetch results to retrieve the output.
+
+For more detail, see Running Simulations. If the analysis does not start, use Simulation Does Not Start.
+
+Selecting the Section and Results Location
+
+### Case 1a: Homogeneous Slope with Mohr-Coulomb > Review the Results
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-1a/#review-the-results
+
+The workbook’s example reports:
+
+| Result | Example Value
+
+| Target FoS | 1.3
+
+| Achieved FoS | 1.337
+
+| Target slope height | 230 m
+
+| Bench-compatible slope height | 219.419 m
+
+Case 1a Example Result
+
+Workbook example: achieved FoS 1.337. Use the plot and logs to review your own run.
+
+Check the achieved FoS against the target, the prescribed crest at 750 m, and the bench height and berm width against your inputs. The bench-compatible height is lower than the target because only full-height benches are used in this example.
+
+The supplied Case1A-final.cbf is a reference for the completed model setup. Compare your inputs with it if your result differs, and check Help and Solutions for simulation or geometry issues.
+
+### Case 1a: Homogeneous Slope with Mohr-Coulomb > Export and Reuse the Output
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-1a/#export-and-reuse-the-output
+
+On the Simulation page, expand Output Tools.
+
+Choose the required DXF export format, then click Export DXF.
+
+To bring the optimised geometry back into the project, click Create project section from output.
+
+Open Visualiser and find the new section in Navigation.
+
+| Export option | When to use it
+
+| Rocscience | Prepare a 2D DXF for Rocscience software. The orientation is converted to the required import plane and the closed external boundary is generated automatically.
+
+| Global | Keep the original global coordinates for comparison with the source model.
+
+| Local XZ | Align the section with the XZ plane, with a fixed Y coordinate.
+
+| Local XY | Flatten the section onto the XY plane, with a fixed Z coordinate.
+
+Exporting the Optimised Profile
+
+Choose the export format to suit the receiving software before exporting the DXF.
+
+Creating a Project Section from Output
+
+The new section can be viewed in the Visualiser alongside the original model.
+
+For a Rocscience RS2 workflow, follow Importing Output into Rocscience RS2 and check the imported boundary assignments.
+
+Viewing the Output Section
+
+Case 1a example after creating a project section from the optimised output.
+
+Previous Tutorials Overview Next Case 1b: Homogeneous Slope with Hoek-Brown
+
+### Case 1b: Homogeneous Slope with Hoek-Brown > Case 1b: Homogeneous Slope with Hoek-Brown
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-1b/
+
+Case 1b
+
+Use the Hoek-Brown Strength Model
+
+Optimise a homogeneous rock mass using Generalised Hoek-Brown parameters and a crest anchor.
+
+Exercise folder: Files for users/Case_1B_homogeneous_HB in the tutorial models ZIP.
+
+Before starting, complete the account setup. Follow the steps below online; the workbook PDF is available for printing or offline use. This case corresponds to workbook pages 12-16.
+
+### Case 1b: Homogeneous Slope with Hoek-Brown > Create and Import the Section
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-1b/#create-and-import-the-section
+
+Choose File > New.
+
+Choose File > Import Section > DXF and open case1-GroundModel.dxf from Case_1B_homogeneous_HB.
+
+Select Meters under Import as, then click OK.
+
+Click the South face of the view cube to align the section view. Expand the section in Navigation and select Ophiolite.
+
+Finding the Rock Layer
+
+The homogeneous geometry is shared with Case 1a. Select Ophiolite to enter the Hoek-Brown properties.
+
+The workbook names this case’s section case1B-GroundModel1. If a fresh DXF import uses a different name, rename the section to match before running it. Alternatively, open Case1B_starter.cbf from the exercise folder and check all inputs below.
+
+### Case 1b: Homogeneous Slope with Hoek-Brown > Define Bench and Material Properties
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-1b/#define-bench-and-material-properties
+
+Select Ophiolite, then enter:
+
+| Property | Value
+
+| Bench height | 10 m
+
+| Bench face angle | 90°
+
+| Minimum berm width | 6.5 m
+
+| Unit weight | 25.9 kN/m³
+
+| Strength model | Generalised Hoek-Brown
+
+| UCS / intact compressive strength | 50 MPa
+
+| Geological Strength Index (GSI) | 45
+
+| Intact rock constant (mi) | 12
+
+| Maximum minor principal stress (σ3,max) | -1 MPa
+
+| Disturbance factor (D) | 1
+
+Use -1 MPa for σ3,max in this exercise, as specified in the workbook. For field definitions, see Rock Properties.
+
+Hoek-Brown Input Fields
+
+The panel shows the fields before values are entered. Apply the values in the table above.
+
+The automatic berm-width rule is 4.5 m + 0.2 × bench height. A 10 m bench gives the 6.5 m width used here.
+
+### Case 1b: Homogeneous Slope with Hoek-Brown > Set the Slope Geometry
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-1b/#set-the-slope-geometry
+
+Select case1B-GroundModel1 in Navigation and enter:
+
+| Section Input | Value
+
+| Bench definition | Bench height
+
+| Target FoS | 1.3
+
+| Slope Anchor > Prescribed point | Crest
+
+| Horizontal Crest Position | 700 m
+
+| Failure Direction | Right to left
+
+| Target slope height | 230 m
+
+Case 1b Crest Anchor
+
+Case 1b Slope Height
+
+The height fits 23 full benches × 10 m = 230 m, so the target and bench-compatible heights match. Check the green OSA search region before starting the simulation.
+
+### Case 1b: Homogeneous Slope with Hoek-Brown > Save and Run the Simulation
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-1b/#save-and-run-the-simulation
+
+Choose File > Save As and save the project as Case1B_final.cbf in the exercise folder. Use a separate working folder if you want to keep the supplied reference project for comparison.
+
+Open the Simulation tab and select case1B-GroundModel1.
+
+Set Simulation results location to Automatic. A section simulation folder is created beside the saved .cbf project when the simulation starts.
+
+Click Start. If Simulation Check lists an issue, use Fix to open the affected field, correct it, and select Check Again.
+
+Once the check passes, click Start again. Review any later geometry or groundwater warnings and enter your configured username when requested.
+
+Monitor the Node status summary and use Fetch results to retrieve the output.
+
+For more detail, see Running Simulations. If the analysis does not start, use Simulation Does Not Start.
+
+### Case 1b: Homogeneous Slope with Hoek-Brown > Review the Results
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-1b/#review-the-results
+
+The workbook’s example reports:
+
+| Result | Example Value
+
+| Target FoS | 1.3
+
+| Achieved FoS | 1.362
+
+| Target slope height | 230 m
+
+| Bench-compatible slope height | 230 m
+
+Case 1b Example Result
+
+Confirm that the crest remains at 700 m, the slope height is 230 m, and the achieved FoS meets the specified target. The supplied Case1B_final.cbf provides the reference model setup.
+
+Cases 1a and 1b change the strength model and other inputs, including bench height, unit weight, and crest position. Their results illustrate two setups; the difference cannot be attributed to the strength model alone.
+
+### Case 1b: Homogeneous Slope with Hoek-Brown > Export and Reuse the Output
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-1b/#export-and-reuse-the-output
+
+On the Simulation page, expand Output Tools.
+
+Choose the required DXF export format, then click Export DXF.
+
+To bring the optimised geometry back into the project, click Create project section from output.
+
+Open Visualiser and find the new section in Navigation.
+
+| Export option | When to use it
+
+| Rocscience | Prepare a 2D DXF for Rocscience software. The orientation is converted to the required import plane and the closed external boundary is generated automatically.
+
+| Global | Keep the original global coordinates for comparison with the source model.
+
+| Local XZ | Align the section with the XZ plane, with a fixed Y coordinate.
+
+| Local XY | Flatten the section onto the XY plane, with a fixed Z coordinate.
+
+Exporting the Optimised Profile
+
+Choose the export format to suit the receiving software before exporting the DXF.
+
+Creating a Project Section from Output
+
+The new section can be viewed in the Visualiser alongside the original model.
+
+For a Rocscience RS2 workflow, follow Importing Output into Rocscience RS2 and check the imported boundary assignments.
+
+Previous Case 1a: Homogeneous Slope with Mohr-Coulomb Next Case 2: Layered Slope
+
+### Case 2: Layered Slope > Case 2: Layered Slope
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-2/
+
+Case 2
+
+Assign Properties Across Geological Layers
+
+Define different material properties for four rock layers, apply common bench settings, and optimise a layered open-pit slope.
+
+Exercise folder: Files for users/Case_2_layered in the tutorial models ZIP.
+
+Before starting, complete the account setup. Follow the steps below online; the workbook PDF is available for printing or offline use. This case corresponds to workbook pages 17-21.
+
+### Case 2: Layered Slope > Create and Import the Section
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-2/#create-and-import-the-section
+
+Choose File > New.
+
+Choose File > Import Section > DXF and open Case2_Layered_GroundModel.dxf from Case_2_layered.
+
+Select Meters under Import as, then click OK.
+
+Click the South face of the view cube. In Navigation, expand Cross-Sections > Case2_Layered_GroundModel1 to see its layers.
+
+Imported Layered Section
+
+You can also open Case2_layered_starter.cbf to begin with the supplied project. Check each layer’s properties rather than assuming that every field is complete.
+
+### Case 2: Layered Slope > Define Bench and Material Properties
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-2/#define-bench-and-material-properties
+
+Select each rock layer in Navigation. Use the following bench values for all four layers:
+
+| Bench Input | Value
+
+| Bench height | 15 m
+
+| Bench face angle | 80°
+
+| Minimum berm width | 7.5 m
+
+Use Mohr-Coulomb for each layer and enter its material values:
+
+| Material | Cohesion (kPa) | Friction Angle (°) | Unit Weight (kN/m³)
+
+| Granite | 400 | 38 | 26.5
+
+| Limestone | 400 | 28 | 24
+
+| Paragneiss | 250 | 30 | 25.5
+
+| Quartz porphyries | 280 | 33 | 27
+
+Entering Layer Properties
+
+Use the common bench values for every rock layer, then enter the material-specific values from the table.
+
+The automatic berm-width rule gives 4.5 m + 0.2 × 15 m = 7.5 m if that field is left blank. Check every layer before selecting the cross-section.
+
+### Case 2: Layered Slope > Set the Slope Geometry
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-2/#set-the-slope-geometry
+
+Select Case2_Layered_GroundModel1 and enter:
+
+| Section Input | Value
+
+| Bench definition | Bench height
+
+| Target FoS | 1.3
+
+| Slope Anchor > Prescribed point | Crest
+
+| Horizontal Crest Position | 1300 m
+
+| Failure Direction | Right to left
+
+| Target slope height | 340 m
+
+Case 2 Crest Anchor
+
+Case 2 Slope Geometry
+
+The full-bench arrangement gives 22 benches × 15 m = 330 m. For the workbook’s example, keep this bench-compatible height rather than selecting Use target height to add a shorter crest bench. The target input remains 340 m.
+
+Review the estimated OSA range and ensure the green search region remains within the section’s ground area.
+
+### Case 2: Layered Slope > Save and Run the Simulation
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-2/#save-and-run-the-simulation
+
+Choose File > Save As and save the project as Case2_layered_final.cbf in the exercise folder. Use a separate working folder if you want to keep the supplied reference project for comparison.
+
+Open the Simulation tab and select Case2_Layered_GroundModel1.
+
+Set Simulation results location to Automatic. A section simulation folder is created beside the saved .cbf project when the simulation starts.
+
+Click Start. If Simulation Check lists an issue, use Fix to open the affected field, correct it, and select Check Again.
+
+Once the check passes, click Start again. Review any later geometry or groundwater warnings and enter your configured username when requested.
+
+Monitor the Node status summary and use Fetch results to retrieve the output.
+
+For more detail, see Running Simulations. If the analysis does not start, use Simulation Does Not Start.
+
+### Case 2: Layered Slope > Review the Results
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-2/#review-the-results
+
+The workbook’s example reports:
+
+| Result | Example Value
+
+| Target FoS | 1.3
+
+| Achieved FoS | 1.319
+
+| Target slope height | 340 m
+
+| Bench-compatible slope height | 330 m
+
+Case 2 Example Result
+
+Check that the crest is prescribed at 1300 m, the bench-compatible height is 330 m, and all four layers have the intended material and bench properties. Review the plotted layer boundaries and failure mechanism as well as the FoS. Use Case2_layered_final.cbf to compare the completed setup.
+
+### Case 2: Layered Slope > Export and Reuse the Output
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-2/#export-and-reuse-the-output
+
+On the Simulation page, expand Output Tools.
+
+Choose the required DXF export format, then click Export DXF.
+
+To bring the optimised geometry back into the project, click Create project section from output.
+
+Open Visualiser and find the new section in Navigation.
+
+| Export option | When to use it
+
+| Rocscience | Prepare a 2D DXF for Rocscience software. The orientation is converted to the required import plane and the closed external boundary is generated automatically.
+
+| Global | Keep the original global coordinates for comparison with the source model.
+
+| Local XZ | Align the section with the XZ plane, with a fixed Y coordinate.
+
+| Local XY | Flatten the section onto the XY plane, with a fixed Z coordinate.
+
+Exporting the Optimised Profile
+
+Choose the export format to suit the receiving software before exporting the DXF.
+
+Creating a Project Section from Output
+
+The new section can be viewed in the Visualiser alongside the original model.
+
+For a Rocscience RS2 workflow, follow Importing Output into Rocscience RS2 and check the imported boundary assignments.
+
+Previous Case 1b: Homogeneous Slope with Hoek-Brown Next Case 3a: Groundwater with a Crest Anchor
+
+### Case 3a: Groundwater with a Crest Anchor > Case 3a: Groundwater with a Crest Anchor
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-3a/
+
+Case 3a
+
+Add Groundwater to a Layered Slope
+
+Assign an imported piezometric line, define the rock layers, and optimise the slope with a fixed crest.
+
+Exercise folder: Files for users/Case_3A_water_crest in the tutorial models ZIP.
+
+Before starting, complete the account setup. Follow the steps below online; the workbook PDF is available for printing or offline use. This case corresponds to workbook pages 22-27.
+
+### Case 3a: Groundwater with a Crest Anchor > Create and Import the Section
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-3a/#create-and-import-the-section
+
+Choose File > New.
+
+Choose File > Import Section > DXF and open Case3_GroundModel.dxf from Case_3A_water_crest.
+
+Select Meters under Import as, then click OK.
+
+Click the South face of the view cube and expand Cross-Sections > Case3_GroundModel1 in Navigation.
+
+Groundwater Exercise Section
+
+Reference view of the section; the workbook screenshot also shows later geometry setup.
+
+Alternatively, open Case3A_starter.cbf. Check the materials, groundwater assignment, and slope inputs below before running the analysis.
+
+### Case 3a: Groundwater with a Crest Anchor > Define Bench and Material Properties
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-3a/#define-bench-and-material-properties
+
+Select each rock-material layer in Navigation. Use the following bench values for all five rock layers:
+
+| Bench Input | Value
+
+| Bench height | 15 m
+
+| Bench face angle | 90°
+
+| Minimum berm width | 7.5 m
+
+Set the strength model to Mohr-Coulomb and enter:
+
+| Material | Cohesion (kPa) | Friction Angle (°) | Unit Weight (kN/m³)
+
+| Granite_1 | 1430 | 27.62 | 25.1
+
+| Granite_2 | 732 | 16.68 | 24.5
+
+| Porfirite_1 | 971 | 20.01 | 26.3
+
+| Porfirite_2 | 727 | 16.61 | 23.6
+
+| Vulcanite | 700 | 33.6 | 26.4
+
+Rock-Layer Input Fields
+
+Enter each layer's material values separately. The bench settings are common to all rock layers.
+
+If minimum berm width is left blank, 4.5 m + 0.2 × 15 m gives the required 7.5 m.
+
+### Case 3a: Groundwater with a Crest Anchor > Assign the Piezometric Line
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-3a/#assign-the-piezometric-line
+
+The DXF includes an open polyline named water. Classify it as groundwater rather than a rock-material layer:
+
+Select water in the imported layer list in Navigation.
+
+Under Entity Type in Properties, enable Piezometric line (open polyline).
+
+Confirm that the water entity is classified correctly before continuing to the cross-section geometry.
+
+Assigning the Water Entity
+
+The reference image shows the checkbox before selection. Enable Piezometric line for the water entity.
+
+See Water Table for details about imported and manually drawn groundwater lines.
+
+### Case 3a: Groundwater with a Crest Anchor > Set the Slope Geometry
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-3a/#set-the-slope-geometry
+
+Select Case3_GroundModel1 and enter:
+
+| Section Input | Value
+
+| Bench definition | Bench height
+
+| Target FoS | 1.3
+
+| Slope Anchor > Prescribed point | Crest
+
+| Horizontal Crest Position | 1150 m
+
+| Failure Direction | Right to left
+
+| Target slope height | 330 m
+
+Case 3a Crest Anchor
+
+Case 3a Slope Height
+
+The specified height fits 22 full benches × 15 m = 330 m. Check the green OSA search region and the water line together after setting the geometry.
+
+Changing the slope anchor or geometry can invalidate an existing water table. If the application removes it, restore the imported piezometric line or redraw the water table after the geometry is finalised. Confirm that groundwater is present before running the wet case.
+
+### Case 3a: Groundwater with a Crest Anchor > Save and Run the Simulation
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-3a/#save-and-run-the-simulation
+
+Choose File > Save As and save the project as Case3A_final.cbf in the exercise folder. Use a separate working folder if you want to keep the supplied reference project for comparison.
+
+Open the Simulation tab and select Case3_GroundModel1.
+
+Set Simulation results location to Automatic. A section simulation folder is created beside the saved .cbf project when the simulation starts.
+
+Click Start. If Simulation Check lists an issue, use Fix to open the affected field, correct it, and select Check Again.
+
+Once the check passes, click Start again. Review any later geometry or groundwater warnings and enter your configured username when requested.
+
+Monitor the Node status summary and use Fetch results to retrieve the output.
+
+For more detail, see Running Simulations. If the analysis does not start, use Simulation Does Not Start.
+
+### Case 3a: Groundwater with a Crest Anchor > Review the Results
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-3a/#review-the-results
+
+The workbook’s example reports:
+
+| Result | Example Value
+
+| Target FoS | 1.3
+
+| Achieved FoS | 1.323
+
+| Target slope height | 330 m
+
+| Bench-compatible slope height | 330 m
+
+Case 3a Example Result
+
+Check the prescribed crest at 1150 m, the 330 m height, the water line, and each rock layer’s properties. Review the failure mechanism and achieved FoS in the output plot and logs.
+
+Keep the completed Case 3a project for the next exercise. The supplied Case3A_final.cbf can also be used as the starting point for Case 3b, which changes the fixed endpoint to the toe.
+
+### Case 3a: Groundwater with a Crest Anchor > Export and Reuse the Output
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-3a/#export-and-reuse-the-output
+
+On the Simulation page, expand Output Tools.
+
+Choose the required DXF export format, then click Export DXF.
+
+To bring the optimised geometry back into the project, click Create project section from output.
+
+Open Visualiser and find the new section in Navigation.
+
+| Export option | When to use it
+
+| Rocscience | Prepare a 2D DXF for Rocscience software. The orientation is converted to the required import plane and the closed external boundary is generated automatically.
+
+| Global | Keep the original global coordinates for comparison with the source model.
+
+| Local XZ | Align the section with the XZ plane, with a fixed Y coordinate.
+
+| Local XY | Flatten the section onto the XY plane, with a fixed Z coordinate.
+
+Exporting the Optimised Profile
+
+Choose the export format to suit the receiving software before exporting the DXF.
+
+Creating a Project Section from Output
+
+The new section can be viewed in the Visualiser alongside the original model.
+
+For a Rocscience RS2 workflow, follow Importing Output into Rocscience RS2 and check the imported boundary assignments.
+
+Previous Case 2: Layered Slope Next Case 3b: Groundwater with a Toe Anchor
+
+### Case 3b: Groundwater with a Toe Anchor > Case 3b: Groundwater with a Toe Anchor
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-3b/
+
+Case 3b
+
+Fix the Toe and Compare the Slope
+
+Reuse the groundwater model from Case 3a, prescribe the lower endpoint, and compare the result with the crest-anchored slope.
+
+Exercise folder: Files for users/Case_3B_water_toe in the tutorial models ZIP.
+
+Before starting, complete the account setup. Follow the steps below online; the workbook PDF is available for printing or offline use. This case corresponds to workbook pages 28-30.
+
+### Case 3b: Groundwater with a Toe Anchor > Open the Case 3a Model
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-3b/#open-the-case-3a-model
+
+Choose File > Open and open Case3A_final.cbf from Files for users/Case_3A_water_crest in the tutorial models download.
+
+Choose File > Save As and save a working copy as Case3B_final.cbf in Case_3B_water_toe before changing its inputs. Keep the supplied reference files in a separate folder if you want to compare them later.
+
+In Navigation, select Case3_GroundModel1.
+
+This exercise starts from Case 3a, not from a new empty project. You can use your own completed model, but its inputs should match Case 3a before comparing results.
+
+### Case 3b: Groundwater with a Toe Anchor > Keep the Material and Groundwater Inputs
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-3b/#keep-the-material-and-groundwater-inputs
+
+Retain the five Mohr-Coulomb rock materials and their parameters:
+
+| Material | Cohesion (kPa) | Friction Angle (°) | Unit Weight (kN/m³)
+
+| Granite_1 | 1430 | 27.62 | 25.1
+
+| Granite_2 | 732 | 16.68 | 24.5
+
+| Porfirite_1 | 971 | 20.01 | 26.3
+
+| Porfirite_2 | 727 | 16.61 | 23.6
+
+| Vulcanite | 700 | 33.6 | 26.4
+
+Keep these shared settings:
+
+| Input | Value
+
+| Bench definition | Bench height
+
+| Bench height for all rock layers | 15 m
+
+| Bench face angle for all rock layers | 90°
+
+| Minimum berm width for all rock layers | 7.5 m
+
+| Target FoS | 1.3
+
+| Failure Direction | Right to left
+
+| Groundwater | The same piezometric line as Case 3a
+
+### Case 3b: Groundwater with a Toe Anchor > Prescribe the Toe
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-3b/#prescribe-the-toe
+
+With Case3_GroundModel1 selected, open Slope Anchor and set:
+
+| Anchor Input | Value
+
+| Prescribed point | Toe
+
+| Horizontal Toe Position | 859 m
+
+| Vertical Toe Position (Z) | 547 m
+
+Prescribing the Toe Coordinates
+
+Toe-Anchor Geometry Preview
+
+These coordinates are taken from the previous optimised slope in the workbook. In toe-anchor mode, the software calculates the slope height and bench-compatible height from the toe and section geometry. The workbook uses 330 m as its height reference; check the resolved values rather than entering a new crest-mode target height.
+
+The toe must remain inside the section, at or below the topography, and above the section floor. Confirm that the green OSA search region is within the ground area.
+
+### Case 3b: Groundwater with a Toe Anchor > Check Groundwater After Changing the Anchor
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-3b/#check-groundwater-after-changing-the-anchor
+
+Confirm that the same piezometric line is still present after selecting Toe and entering its coordinates. If the application removes the water table, restore the imported water entity or redraw the line using the Water Table instructions. Keep the groundwater geometry consistent with Case 3a before comparing the two results.
+
+### Case 3b: Groundwater with a Toe Anchor > Save and Run the Simulation
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-3b/#save-and-run-the-simulation
+
+Choose File > Save As and save the project as Case3B_final.cbf in the exercise folder. Use a separate working folder if you want to keep the supplied reference project for comparison.
+
+Open the Simulation tab and select Case3_GroundModel1.
+
+Set Simulation results location to Automatic. A section simulation folder is created beside the saved .cbf project when the simulation starts.
+
+Click Start. If Simulation Check lists an issue, use Fix to open the affected field, correct it, and select Check Again.
+
+Once the check passes, click Start again. Review any later geometry or groundwater warnings and enter your configured username when requested.
+
+Monitor the Node status summary and use Fetch results to retrieve the output.
+
+For more detail, see Running Simulations. If the analysis does not start, use Simulation Does Not Start.
+
+### Case 3b: Groundwater with a Toe Anchor > Review and Compare the Results
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-3b/#review-and-compare-the-results
+
+The workbook gives the following examples:
+
+| Result | Case 3a: Crest | Case 3b: Toe
+
+| Target FoS | 1.3 | 1.3
+
+| Achieved FoS | 1.323 | 1.336
+
+| Workbook height reference | 330 m | 330 m
+
+| Bench-compatible slope height | 330 m | 330 m
+
+| Fixed endpoint | Crest at 1150 m | Toe at X = 859 m, Z = 547 m
+
+Case 3b Example Result
+
+Check that the toe remains at X = 859 m, Z = 547 m, then review the resolved height, bench geometry, and achieved FoS. Compare the optimised profile and failure mechanism with the Case 3a example.
+
+The supplied Case3B_final.cbf provides the reference setup. Keep the two projects separate so that each run has its own saved model and results folder.
+
+### Case 3b: Groundwater with a Toe Anchor > Export and Reuse the Output
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-3b/#export-and-reuse-the-output
+
+On the Simulation page, expand Output Tools.
+
+Choose the required DXF export format, then click Export DXF.
+
+To bring the optimised geometry back into the project, click Create project section from output.
+
+Open Visualiser and find the new section in Navigation.
+
+| Export option | When to use it
+
+| Rocscience | Prepare a 2D DXF for Rocscience software. The orientation is converted to the required import plane and the closed external boundary is generated automatically.
+
+| Global | Keep the original global coordinates for comparison with the source model.
+
+| Local XZ | Align the section with the XZ plane, with a fixed Y coordinate.
+
+| Local XY | Flatten the section onto the XY plane, with a fixed Z coordinate.
+
+Exporting the Optimised Profile
+
+Choose the export format to suit the receiving software before exporting the DXF.
+
+Creating a Project Section from Output
+
+The new section can be viewed in the Visualiser alongside the original model.
+
+For a Rocscience RS2 workflow, follow Importing Output into Rocscience RS2 and check the imported boundary assignments.
+
+Previous Case 3a: Groundwater with a Crest Anchor Next Case 4: Groundwater and Faults
+
+### Case 4: Groundwater and Faults > Case 4: Groundwater and Faults
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-4/
+
+Case 4
+
+Add Faults to the Groundwater Model
+
+Classify groundwater and faults separately from rock layers, assign fault strength properties, and optimise the resulting slope.
+
+Exercise folder: Files for users/Case_4_faults in the tutorial models ZIP.
+
+Before starting, complete the account setup. Follow the steps below online; the workbook PDF is available for printing or offline use. This case corresponds to workbook pages 31-36.
+
+### Case 4: Groundwater and Faults > Create and Import the Section
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-4/#create-and-import-the-section
+
+Choose File > New.
+
+Choose File > Import Section > DXF and open Case4_GroundModel.dxf from Case_4_faults.
+
+Select Meters under Import as, then click OK.
+
+Click the South face of the view cube and expand Cross-Sections > Case4_GroundModel1 in Navigation.
+
+Groundwater and Faults Exercise Section
+
+Reference view from the workbook; later slope geometry setup is also visible.
+
+You can also open Case4_starter.cbf. Verify the rock materials, water entity, and both faults before running it.
+
+### Case 4: Groundwater and Faults > Define Bench and Material Properties
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-4/#define-bench-and-material-properties
+
+Use these bench settings for all five rock-material layers:
+
+| Bench Input | Value
+
+| Bench height | 15 m
+
+| Bench face angle | 90°
+
+| Minimum berm width | 7.5 m
+
+Select each rock layer, set Mohr-Coulomb, and enter:
+
+| Material | Cohesion (kPa) | Friction Angle (°) | Unit Weight (kN/m³)
+
+| Granite_1 | 1430 | 27.62 | 25.1
+
+| Granite_2 | 732 | 16.68 | 24.5
+
+| Porfirite_1 | 971 | 20.01 | 26.3
+
+| Porfirite_2 | 727 | 16.61 | 23.6
+
+| Vulcanite | 700 | 33.6 | 26.4
+
+Rock-Layer Properties
+
+These values apply to rock layers. Assign the water line and faults separately in the next step.
+
+The automatic berm-width rule gives 7.5 m for a 15 m bench if no width is entered.
+
+### Case 4: Groundwater and Faults > Groundwater
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-4/#groundwater
+
+Select water in Navigation.
+
+In Properties > Entity Type, enable Piezometric line (open polyline).
+
+Classifying Groundwater
+
+Enable the Piezometric line checkbox; the reference screenshot shows its initial unselected state.
+
+### Case 4: Groundwater and Faults > Fault Planes
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-4/#fault-planes
+
+Select F32 and enable Fault / joint (open polyline) under Entity Type.
+
+Set the fault strength model to Mohr-Coulomb and enter the values below.
+
+Repeat the assignment and strength values for F42. The screenshot labels include spaces: F 32 and F 42.
+
+| Fault | Strength Model | Cohesion (kPa) | Friction Angle (°)
+
+| F32 | Mohr-Coulomb | 40 | 23
+
+| F42 | Mohr-Coulomb | 40 | 23
+
+Assigning a Fault and Its Strength
+
+Apply the same strength model and values to both fault planes.
+
+The water and fault polylines are auxiliary entities. Do not leave them classified as rock layers. Check both fault planes and the water line before selecting the cross-section.
+
+For background, see Faults and Water Table.
+
+### Case 4: Groundwater and Faults > Set the Slope Geometry
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-4/#set-the-slope-geometry
+
+Select Case4_GroundModel1 and enter:
+
+| Section Input | Value
+
+| Bench definition | Bench height
+
+| Target FoS | 1.3
+
+| Slope Anchor > Prescribed point | Crest
+
+| Horizontal Crest Position | 1150 m
+
+| Failure Direction | Right to left
+
+| Target slope height | 330 m
+
+Section Properties
+
+Case 4 Crest Settings
+
+Case 4 uses the same crest and slope-height settings as Case 3a.
+
+The full-bench arrangement is 22 × 15 m = 330 m. Check the green OSA search region, the water line, and the fault assignments after setting the geometry. If a geometry change removes the water table, restore it before starting the simulation.
+
+### Case 4: Groundwater and Faults > Save and Run the Simulation
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-4/#save-and-run-the-simulation
+
+Choose File > Save As and save the project as Case4_final.cbf in the exercise folder. Use a separate working folder if you want to keep the supplied reference project for comparison.
+
+Open the Simulation tab and select Case4_GroundModel1.
+
+Set Simulation results location to Automatic. A section simulation folder is created beside the saved .cbf project when the simulation starts.
+
+Click Start. If Simulation Check lists an issue, use Fix to open the affected field, correct it, and select Check Again.
+
+Once the check passes, click Start again. Review any later geometry or groundwater warnings and enter your configured username when requested.
+
+Monitor the Node status summary and use Fetch results to retrieve the output.
+
+For more detail, see Running Simulations. If the analysis does not start, use Simulation Does Not Start.
+
+### Case 4: Groundwater and Faults > Review the Results
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-4/#review-the-results
+
+The workbook’s example reports:
+
+| Result | Example Value
+
+| Target FoS | 1.3
+
+| Achieved FoS | 1.319
+
+| Target slope height | 330 m
+
+| Bench-compatible slope height | 330 m
+
+Case 4 Example Result
+
+Confirm that F32 and F42 have the intended strength values, the piezometric line is present, and the crest remains at 1150 m. Review the achieved FoS, bench geometry, and failure mechanism against your inputs. Use Case4_final.cbf to compare the reference setup.
+
+### Case 4: Groundwater and Faults > Export and Reuse the Output
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-4/#export-and-reuse-the-output
+
+On the Simulation page, expand Output Tools.
+
+Choose the required DXF export format, then click Export DXF.
+
+To bring the optimised geometry back into the project, click Create project section from output.
+
+Open Visualiser and find the new section in Navigation.
+
+| Export option | When to use it
+
+| Rocscience | Prepare a 2D DXF for Rocscience software. The orientation is converted to the required import plane and the closed external boundary is generated automatically.
+
+| Global | Keep the original global coordinates for comparison with the source model.
+
+| Local XZ | Align the section with the XZ plane, with a fixed Y coordinate.
+
+| Local XY | Flatten the section onto the XY plane, with a fixed Z coordinate.
+
+Exporting the Optimised Profile
+
+Choose the export format to suit the receiving software before exporting the DXF.
+
+Creating a Project Section from Output
+
+The new section can be viewed in the Visualiser alongside the original model.
+
+For a Rocscience RS2 workflow, follow Importing Output into Rocscience RS2 and check the imported boundary assignments.
+
+### Case 4: Groundwater and Faults > Continue with Your Own Scenarios
+URL: https://optimalslope.github.io/manual/pages/tutorials/case-4/#continue-with-your-own-scenarios
+
+You have now worked through homogeneous materials, layered geology, groundwater, crest and toe anchors, and faults. Keep separate projects or duplicated sections when changing a scenario, and check all affected inputs before running it. See Creating Different Scenarios for the workflow.
+
+Previous Case 3b: Groundwater with a Toe Anchor Return to Tutorials Overview
 
 ### Properties > Properties
 URL: https://optimalslope.github.io/manual/pages/properties/6-properties/
@@ -1773,13 +3005,19 @@ Block model output does not look correct
 
 Check that:
 
-the section is associated with 3D stratigraphy;
+3D (X, Y, Z) export has associated 3D stratigraphy; for a section without it, use 2D (X, Z);
 
 block dimensions are appropriate for the model scale;
+
+the grid origin and Block coordinates option match the downstream model;
+
+exported coordinates are treated as block centres, not block corners;
 
 exported fields are mapped correctly in downstream software;
 
 slope-angle fields are imported as numeric attributes where required.
+
+Grey preview blocks have blank slope-angle values. The exported grid is rectangular and is not clipped to material boundaries.
 
 ### Data Preparation > Data Preparation
 URL: https://optimalslope.github.io/manual/pages/Data Suitability/7-data/

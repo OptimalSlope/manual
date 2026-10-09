@@ -394,7 +394,7 @@ The toe must have valid horizontal and vertical coordinates and must lie inside 
 Position the crest slightly further inside the section boundary than you think is necessary, then confirm that the OSA search region remains inside valid material.
 </div>
 
-<a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#slope-anchor-and-osa-search-region-checks' | relative_url }}">
+<a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#slope-anchor-and-osa-search-region' | relative_url }}">
 <strong>Related workflow section</strong>
 <span>Read the crest point and OSA search region guidance.</span>
 </a>
@@ -475,10 +475,14 @@ For RS2 workflows, use the `Rocscience` export option. It prepares the section a
 
 Check that:
 
-- the section is associated with 3D stratigraphy;
+- **3D (X, Y, Z)** export has associated 3D stratigraphy; for a section without it, use **2D (X, Z)**;
 - block dimensions are appropriate for the model scale;
+- the grid origin and **Block coordinates** option match the downstream model;
+- exported coordinates are treated as block centres, not block corners;
 - exported fields are mapped correctly in downstream software;
 - slope-angle fields are imported as numeric attributes where required.
+
+Grey preview blocks have blank slope-angle values. The exported grid is rectangular and is not clipped to material boundaries.
 
 <div class="os-link-grid" markdown="0">
 <a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#exporting-output-profile-to-dxf' | relative_url }}"><strong>Export DXF</strong><span>Review export options and coordinate systems.</span></a>

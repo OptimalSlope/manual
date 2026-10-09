@@ -513,32 +513,38 @@ Start with the Data Preparation page if you are working with new 3D stratigraphy
 <span>Follow the simulation workflow from importing sections to exporting results.</span>
 </a>
 
-<a href="{{ '/pages/properties/6-properties/' | relative_url }}">
+<a href="{{ '/pages/tutorials/' | relative_url }}">
 <span class="icon">4</span>
+<strong>Tutorials</strong>
+<span>Practise with six worked cases covering materials, groundwater, slope anchors, and faults.</span>
+</a>
+
+<a href="{{ '/pages/properties/6-properties/' | relative_url }}">
+<span class="icon">5</span>
 <strong>Define Properties</strong>
 <span>Set slope anchors, bench and rock properties, loads, faults, roads, and groundwater inputs.</span>
 </a>
 
 <a href="{{ '/pages/troubleshooting/' | relative_url }}">
-<span class="icon">5</span>
+<span class="icon">6</span>
 <strong>Help and Solutions</strong>
 <span>Resolve common issues with geometry, OSA search region, simulations, and exports.</span>
 </a>
 
 <a href="{{ '/pages/project/3-project-management/' | relative_url }}">
-<span class="icon">6</span>
+<span class="icon">7</span>
 <strong>Manage Projects</strong>
 <span>Create, save, import, slice, trim, and export project data.</span>
 </a>
 
 <a href="{{ '/pages/controls/1-interface/' | relative_url }}">
-<span class="icon">7</span>
+<span class="icon">8</span>
 <strong>Use Controls</strong>
 <span>Navigate the visualiser, change views, adjust object style, and manage selected items.</span>
 </a>
 
 <a href="{{ '/pages/glossary/' | relative_url }}">
-<span class="icon">8</span>
+<span class="icon">9</span>
 <strong>Glossary</strong>
 <span>Review common OptimalSlope, slope design, simulation, and export terms.</span>
 </a>
@@ -569,7 +575,7 @@ Start with the Data Preparation page if you are working with new 3D stratigraphy
 <a href="{{ '/pages/Tutorials/Workflow/#exporting-the-section-block-model' | relative_url }}">
 <span class="icon">C</span>
 <strong>Export block model</strong>
-<span>Create downstream block model outputs from 3D stratigraphy and slope-angle results.</span>
+<span>Create 2D or 3D block model CSV outputs using optimised slope-angle results.</span>
 </a>
 
 <a href="{{ '/pages/Tutorials/Workflow/#import-block-model-into-datamine' | relative_url }}">
