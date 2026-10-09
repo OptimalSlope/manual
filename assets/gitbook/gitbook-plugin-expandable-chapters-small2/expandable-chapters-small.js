@@ -23,6 +23,12 @@ require(['gitbook', 'jQuery'], function (gitbook, $) {
                 .prev()
                 .css('cursor', 'pointer')
                 .on('click', function (e) {
+                    // A section title remains a navigation link even when it has
+                    // child steps. Its arrow alone toggles the nested list.
+                    var href = $(this).attr('href') || '';
+                    if (href.indexOf('#') !== -1 && !$(e.target).closest('.exc-trigger').length) {
+                        return;
+                    }
                     e.preventDefault();
                     e.stopPropagation();
                     toggle($(e.target).closest(FOLDABLE));

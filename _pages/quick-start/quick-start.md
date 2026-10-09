@@ -284,7 +284,7 @@ nav_order: 10
 
 <section class="os-guide-hero" markdown="0">
 <div class="kicker">Quick Start</div>
-<h1>Run your first simulation</h1>
+<h1 id="run-your-first-simulation">Run your first simulation</h1>
 <p>A short route through Slope Optimiser for new users: prepare data, import or create a section, define properties, run the simulation, review results, and export outputs.</p>
 </section>
 

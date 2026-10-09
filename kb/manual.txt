@@ -52,7 +52,7 @@ URL: https://optimalslope.github.io/manual/pages/quick-start/
 Quick Start
 
 ### Quick Start > Run your first simulation
-URL: https://optimalslope.github.io/manual/pages/quick-start/
+URL: https://optimalslope.github.io/manual/pages/quick-start/#run-your-first-simulation
 
 A short route through Slope Optimiser for new users: prepare data, import or create a section, define properties, run the simulation, review results, and export outputs.
 
