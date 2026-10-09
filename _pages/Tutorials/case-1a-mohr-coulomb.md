@@ -24,7 +24,7 @@ next_case_title: "Case 1b: Homogeneous Slope with Hoek-Brown"
 
 <section class="os-tutorials-hero" markdown="0">
 <div class="kicker">Case 1a</div>
-<div class="os-tutorials-hero-title">Build Your First Slope Model</div>
+<div class="os-tutorials-hero-title">Create and Optimise Your First Slope</div>
 <p>Create a homogeneous rock-mass section, assign Mohr-Coulomb properties, prescribe the crest, and optimise the slope to a target Factor of Safety.</p>
 </section>
 

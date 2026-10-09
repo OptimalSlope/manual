@@ -80,7 +80,7 @@
 .os-tutorials-card p { margin: 0 0 10px; line-height: 1.5; }
 .os-tutorials-card p:last-child { margin-bottom: 0; }
 .os-tutorials-case-label { color: var(--orange); font-weight: 800; }
-.os-tutorials-download {
+.os-tutorials-page a.os-tutorials-download {
   display: inline-block;
   margin-top: 8px;
   padding: 10px 16px;
@@ -90,11 +90,104 @@
   font-weight: 700;
   text-decoration: none;
 }
-.os-tutorials-download:hover { background: var(--blue2); text-decoration: none; }
+.os-tutorials-page a.os-tutorials-download:hover { background: var(--blue2); text-decoration: none; }
 .os-tutorials-page a:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+.os-tutorials-workflow {
+  margin: 0 0 22px;
+  padding: 20px 16px;
+  border-radius: 16px;
+  background: #073e50;
+}
+.os-tutorials-workflow-label {
+  margin-bottom: 16px;
+  color: #ffd9c4;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.os-tutorials-page .os-tutorials-workflow ol {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: tutorial-workflow-step;
+}
+.os-tutorials-workflow li { position: relative; margin: 0; counter-increment: tutorial-workflow-step; }
+.os-tutorials-workflow li::before {
+  content: counter(tutorial-workflow-step);
+  position: absolute;
+  z-index: 1;
+  top: -8px;
+  left: calc(50% - 29px);
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--orange);
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  pointer-events: none;
+}
+.os-tutorials-workflow li:not(:last-child)::after {
+  content: '\2192';
+  position: absolute;
+  top: 8px;
+  right: -12px;
+  color: #92bdc8;
+  font-size: 22px;
+}
+.os-tutorials-page .os-tutorials-workflow a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.os-tutorials-workflow .fa {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: white;
+  color: var(--orange);
+  font-size: 23px;
+}
+.os-tutorials-workflow a:hover span { text-decoration: underline; }
+.os-tutorials-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+.os-tutorials-overview-card { background: #f0f5f7; }
+.os-tutorials-overview-card p { color: var(--muted); }
+.os-tutorials-case-diagram { display: block; width: 100%; height: auto; margin-top: 12px; }
+.os-tutorials-overview-links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 14px; }
+.os-tutorials-overview-links a { font-weight: 700; }
 @media (max-width: 650px) {
   .os-tutorials-hero { padding: 26px; }
   .os-tutorials-section-head, .os-tutorials-section-body { padding: 20px; }
+  .os-tutorials-page .os-tutorials-workflow ol { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .os-tutorials-workflow li:not(:last-child)::after { content: none; }
+  .os-tutorials-workflow li::before { top: -7px; left: -7px; }
+  .os-tutorials-page .os-tutorials-workflow a { flex-direction: row; text-align: left; font-size: 13px; }
+  .os-tutorials-workflow .fa { flex: 0 0 36px; width: 36px; height: 36px; font-size: 20px; }
+}
+@media (max-width: 450px) {
+  .os-tutorials-overview-grid { grid-template-columns: 1fr; }
 }
 
 .os-tutorials-case-body {

@@ -1,7 +1,7 @@
 {
-  "sha256": "9add04a243f0ce432e34f26224d3e09e7ab69b5b2600b3e96cef8dd2f1810891",
-  "bytes": 148104,
-  "sections": 182,
+  "sha256": "28d72092730d2fc9ea2f6d17675bf54094163390f5716640fefd5c71bd45b747",
+  "bytes": 150357,
+  "sections": 188,
   "pages": [
     {
       "title": "Overview",
@@ -24,7 +24,7 @@
     {
       "title": "Tutorials",
       "url": "https://optimalslope.github.io/manual/pages/tutorials/",
-      "sections": 13,
+      "sections": 19,
       "source": "pages/tutorials/index.html"
     },
     {

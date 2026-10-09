@@ -1,0 +1,23 @@
+<svg class="os-tutorials-case-diagram" viewBox="0 0 320 108" role="img" aria-label="{{ include.label | escape }}">
+  <defs>
+    <clipPath id="tutorial-slope-{{ include.kind }}">
+      <path d="M10 96V74H55V66H100V56H145V46H190V36H235V26H310V96Z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#tutorial-slope-{{ include.kind }})">
+    <rect x="10" y="26" width="300" height="70" fill="#adc8ca"/>
+    {% unless include.kind == 'homogeneous' %}
+    <rect x="10" y="26" width="300" height="24" fill="#c5dcda"/>
+    <rect x="10" y="50" width="300" height="24" fill="#83a9a7"/>
+    <rect x="10" y="74" width="300" height="22" fill="#d9c9a2"/>
+    <path d="M10 50H310M10 74H310" stroke="#ffffff" stroke-width="2"/>
+    {% endunless %}
+    {% if include.kind == 'groundwater' or include.kind == 'faults' %}
+    <path d="M10 89L310 48" fill="none" stroke="#0879a4" stroke-width="2" stroke-dasharray="8 5"/>
+    {% endif %}
+    {% if include.kind == 'faults' %}
+    <path d="M146 100L218 20M229 100L285 20" fill="none" stroke="#b94b1c" stroke-width="3"/>
+    {% endif %}
+  </g>
+  <path d="M10 96V74H55V66H100V56H145V46H190V36H235V26H310V96Z" fill="none" stroke="#0a4e76" stroke-width="2"/>
+</svg>

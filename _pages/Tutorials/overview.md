@@ -8,6 +8,8 @@ layout: post
 permalink: /pages/tutorials/
 nav_order: 35
 nav_sections:
+  - title: Case Study Overview
+    anchor: case-study-overview
   - title: Before You Begin
     anchor: before-you-begin
   - title: Download Tutorial Files
@@ -32,16 +34,76 @@ nav_sections:
 
 <section class="os-tutorials-section" markdown="1">
 <div class="os-tutorials-section-head" markdown="0">
+<h2 id="case-study-overview">Case Study Overview</h2>
+<p>Six exercises introduce four types of slope model, using the same workflow.</p>
+</div>
+<div class="os-tutorials-section-body" markdown="1">
+
+<nav class="os-tutorials-workflow" aria-label="Shared tutorial workflow" markdown="0">
+<div class="os-tutorials-workflow-label">The shared workflow</div>
+<ol>
+<li><a href="#activate-your-licence"><i class="fa fa-check-square-o" aria-hidden="true"></i><span>Activate licence</span></a></li>
+<li><a href="{{ '/pages/project/3-project-management/#creating-a-project' | relative_url }}"><i class="fa fa-folder-open-o" aria-hidden="true"></i><span>Create project</span></a></li>
+<li><a href="{{ '/pages/Tutorials/Workflow/#importing-sections' | relative_url }}"><i class="fa fa-download" aria-hidden="true"></i><span>Import models</span></a></li>
+<li><a href="{{ '/pages/Tutorials/Workflow/#defining-properties' | relative_url }}"><i class="fa fa-sliders" aria-hidden="true"></i><span>Define properties</span></a></li>
+<li><a href="{{ '/pages/Tutorials/Workflow/#running-simulations' | relative_url }}"><i class="fa fa-play-circle-o" aria-hidden="true"></i><span>Run simulation</span></a></li>
+<li><a href="{{ '/pages/Tutorials/Workflow/#results' | relative_url }}"><i class="fa fa-search" aria-hidden="true"></i><span>Review results</span></a></li>
+<li><a href="{{ '/pages/Tutorials/Workflow/#exporting-output-profile-to-dxf' | relative_url }}"><i class="fa fa-upload" aria-hidden="true"></i><span>Export</span></a></li>
+</ol>
+</nav>
+
+The case studies introduce the modelling and optimisation of open-pit slopes using homogeneous and layered materials, groundwater and geological faults. Cases **1a and 1b** introduce the Mohr-Coulomb and Generalised Hoek-Brown strength models. Cases **3a and 3b** compare crest and toe anchors using the same groundwater setup.
+
+<div class="os-tutorials-overview-grid" markdown="0">
+<article class="os-tutorials-card os-tutorials-overview-card">
+<div class="os-tutorials-case-label">Cases 1a / 1b</div>
+{% include tutorial-case-diagram.html kind="homogeneous" label="Schematic slope with one homogeneous material" %}
+<h3>Homogeneous</h3>
+<p>Mohr-Coulomb / Hoek-Brown</p>
+<div class="os-tutorials-overview-links"><a href="{{ '/pages/tutorials/case-1a/' | relative_url }}">Case 1a</a><a href="{{ '/pages/tutorials/case-1b/' | relative_url }}">Case 1b</a></div>
+</article>
+<article class="os-tutorials-card os-tutorials-overview-card">
+<div class="os-tutorials-case-label">Case 2</div>
+{% include tutorial-case-diagram.html kind="layered" label="Schematic slope with several material layers" %}
+<h3>Layered</h3>
+<p>Multiple materials</p>
+<div class="os-tutorials-overview-links"><a href="{{ '/pages/tutorials/case-2/' | relative_url }}">Case 2</a></div>
+</article>
+<article class="os-tutorials-card os-tutorials-overview-card">
+<div class="os-tutorials-case-label">Cases 3a / 3b</div>
+{% include tutorial-case-diagram.html kind="groundwater" label="Schematic layered slope with a dashed blue water table" %}
+<h3>Groundwater</h3>
+<p>Crest / toe anchor</p>
+<div class="os-tutorials-overview-links"><a href="{{ '/pages/tutorials/case-3a/' | relative_url }}">Case 3a</a><a href="{{ '/pages/tutorials/case-3b/' | relative_url }}">Case 3b</a></div>
+</article>
+<article class="os-tutorials-card os-tutorials-overview-card">
+<div class="os-tutorials-case-label">Case 4</div>
+{% include tutorial-case-diagram.html kind="faults" label="Schematic layered slope with groundwater and two faults" %}
+<h3>Faults</h3>
+<p>Water and faults</p>
+<div class="os-tutorials-overview-links"><a href="{{ '/pages/tutorials/case-4/' | relative_url }}">Case 4</a></div>
+</article>
+</div>
+
+</div>
+</section>
+
+<section class="os-tutorials-section" markdown="1">
+<div class="os-tutorials-section-head" markdown="0">
 <h2 id="before-you-begin">Before you begin</h2>
 <p>Set up the software and your account before starting the exercises.</p>
 </div>
 <div class="os-tutorials-section-body" markdown="1">
 
-1. Install Slope Optimiser from the [OptimalSlope website](https://optimalslope.com/).
-2. Have a valid software licence and the account credentials provided to you.
-3. Open **Tools > Settings > Account**, enter your **Username**, **Access Key ID**, and **Secret Access Key**, then click **Configure**.
-4. Click **Check profile** and confirm that the account is configured correctly.
-5. Download the tutorial models below and extract the ZIP into a working folder before opening or importing files. The workbook PDF is optional for printing or offline use.
+<h3 id="activate-your-licence">Activate Your Licence</h3>
+
+Download Slope Optimiser from the [OptimalSlope website](https://optimalslope.com/) and install it. Have a valid software licence and the account credentials provided to you, then:
+
+1. Open **Tools > Settings**.
+2. Select **Account** and enter your **Username**, **Access Key ID** and **Secret Access Key** in **New profile setup**.
+3. Click **Configure**, then **Check profile**. Confirm that the panel reports: “The user profile is configured correctly.”
+
+Download the tutorial models below and extract the ZIP into a working folder before opening or importing files. The workbook PDF is optional for printing or offline use.
 
 Each exercise follows the same sequence: create or open a project, import a section, define properties, set the slope geometry, run a simulation, review the results, and export the output. For the supplied DXF sections, select **Meters** when importing.
 
@@ -73,6 +135,8 @@ New to the interface? Read [Quick Start]({{ '/pages/quick-start/' | relative_url
 </div>
 
 Use the **starter** project when you want to begin with an existing project file, or import the DXF to follow an exercise from the beginning. The **final** project provides a reference for checking the completed setup. Each online case includes the workbook's example result plot.
+
+The supplied final projects use **Automatic** results storage rather than the author's folder. Before running a new simulation, use **Save As** to save your working copy; its results folder will be created beside that `.cbf` file.
 
 The workbook was prepared for the IOC 2026 OPTIMALMINE School on 7 October 2026. Its exercises can also be followed independently.
 
@@ -154,6 +218,7 @@ Compare the achieved Factor of Safety, slope height, bench geometry, and prescri
 Each online case ends with instructions for exporting a DXF and creating a project section from the output. Choose **Rocscience** when exporting for a Rocscience workflow; this option automatically generates the closed external boundary. The same shared instructions are on workbook pages 37-38.
 
 - [Export the output profile to DXF]({{ '/pages/Tutorials/Workflow/#exporting-output-profile-to-dxf' | relative_url }}).
+- [Export the section block model]({{ '/pages/Tutorials/Workflow/#exporting-the-section-block-model' | relative_url }}) as a CSV with optimised slope angles.
 - [Import the output into Rocscience RS2]({{ '/pages/Tutorials/Workflow/#importing-output-into-rockscience-rs2' | relative_url }}).
 - [Help and Solutions]({{ '/pages/troubleshooting/' | relative_url }}) for geometry warnings, simulation checks, or export issues.
 - [Glossary]({{ '/pages/glossary/' | relative_url }}) for definitions of the terms used in the exercises.

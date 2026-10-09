@@ -865,18 +865,80 @@ Practise the Slope Optimiser workflow with six worked cases. Begin with a homoge
 
 Start Case 1a to follow your first exercise online, or choose a case below. Each case includes its input values, illustrated steps, and example results.
 
+### Tutorials > Case Study Overview
+URL: https://optimalslope.github.io/manual/pages/tutorials/#case-study-overview
+
+Six exercises introduce four types of slope model, using the same workflow.
+
+The shared workflow
+
+Activate licence
+
+Create project
+
+Import models
+
+Define properties
+
+Run simulation
+
+Review results
+
+Export
+
+The case studies introduce the modelling and optimisation of open-pit slopes using homogeneous and layered materials, groundwater and geological faults. Cases 1a and 1b introduce the Mohr-Coulomb and Generalised Hoek-Brown strength models. Cases 3a and 3b compare crest and toe anchors using the same groundwater setup.
+
+Cases 1a / 1b
+
+### Tutorials > Homogeneous
+URL: https://optimalslope.github.io/manual/pages/tutorials/
+
+Mohr-Coulomb / Hoek-Brown
+
+Case 1aCase 1b
+
+Case 2
+
+### Tutorials > Layered
+URL: https://optimalslope.github.io/manual/pages/tutorials/
+
+Multiple materials
+
+Case 2
+
+Cases 3a / 3b
+
+### Tutorials > Groundwater
+URL: https://optimalslope.github.io/manual/pages/tutorials/
+
+Crest / toe anchor
+
+Case 3aCase 3b
+
+Case 4
+
+### Tutorials > Faults
+URL: https://optimalslope.github.io/manual/pages/tutorials/
+
+Water and faults
+
+Case 4
+
 ### Tutorials > Before you begin
 URL: https://optimalslope.github.io/manual/pages/tutorials/#before-you-begin
 
 Set up the software and your account before starting the exercises.
 
-Install Slope Optimiser from the OptimalSlope website.
+### Tutorials > Activate Your Licence
+URL: https://optimalslope.github.io/manual/pages/tutorials/#activate-your-licence
 
-Have a valid software licence and the account credentials provided to you.
+Download Slope Optimiser from the OptimalSlope website and install it. Have a valid software licence and the account credentials provided to you, then:
 
-Open Tools > Settings > Account, enter your Username, Access Key ID, and Secret Access Key, then click Configure.
+Open Tools > Settings.
 
-Click Check profile and confirm that the account is configured correctly.
+Select Account and enter your Username, Access Key ID and Secret Access Key in New profile setup.
+
+Click Configure, then Check profile. Confirm that the panel reports: “The user profile is configured correctly.”
 
 Download the tutorial models below and extract the ZIP into a working folder before opening or importing files. The workbook PDF is optional for printing or offline use.
 
@@ -902,6 +964,8 @@ All six exercises for printing or offline use, with numbered steps, material inp
 Download workbook PDF
 
 Use the starter project when you want to begin with an existing project file, or import the DXF to follow an exercise from the beginning. The final project provides a reference for checking the completed setup. Each online case includes the workbook’s example result plot.
+
+The supplied final projects use Automatic results storage rather than the author’s folder. Before running a new simulation, use Save As to save your working copy; its results folder will be created beside that .cbf file.
 
 The workbook was prepared for the IOC 2026 OPTIMALMINE School on 7 October 2026. Its exercises can also be followed independently.
 
@@ -987,6 +1051,8 @@ Each online case ends with instructions for exporting a DXF and creating a proje
 
 Export the output profile to DXF.
 
+Export the section block model as a CSV with optimised slope angles.
+
 Import the output into Rocscience RS2.
 
 Help and Solutions for geometry warnings, simulation checks, or export issues.
@@ -998,7 +1064,7 @@ URL: https://optimalslope.github.io/manual/pages/tutorials/case-1a/
 
 Case 1a
 
-Build Your First Slope Model
+Create and Optimise Your First Slope
 
 Create a homogeneous rock-mass section, assign Mohr-Coulomb properties, prescribe the crest, and optimise the slope to a target Factor of Safety.
 
@@ -1180,6 +1246,8 @@ The new section can be viewed in the Visualiser alongside the original model.
 
 For a Rocscience RS2 workflow, follow Importing Output into Rocscience RS2 and check the imported boundary assignments.
 
+To export optimised slope angles as a block model CSV, follow Exporting the Section Block Model.
+
 Viewing the Output Section
 
 Case 1a example after creating a project section from the optimised output.
@@ -1345,6 +1413,8 @@ The new section can be viewed in the Visualiser alongside the original model.
 
 For a Rocscience RS2 workflow, follow Importing Output into Rocscience RS2 and check the imported boundary assignments.
 
+To export optimised slope angles as a block model CSV, follow Exporting the Section Block Model.
+
 Previous Case 1a: Homogeneous Slope with Mohr-Coulomb Next Case 2: Layered Slope
 
 ### Case 2: Layered Slope > Case 2: Layered Slope
@@ -1499,6 +1569,8 @@ Creating a Project Section from Output
 The new section can be viewed in the Visualiser alongside the original model.
 
 For a Rocscience RS2 workflow, follow Importing Output into Rocscience RS2 and check the imported boundary assignments.
+
+To export optimised slope angles as a block model CSV, follow Exporting the Section Block Model.
 
 Previous Case 1b: Homogeneous Slope with Hoek-Brown Next Case 3a: Groundwater with a Crest Anchor
 
@@ -1678,6 +1750,8 @@ The new section can be viewed in the Visualiser alongside the original model.
 
 For a Rocscience RS2 workflow, follow Importing Output into Rocscience RS2 and check the imported boundary assignments.
 
+To export optimised slope angles as a block model CSV, follow Exporting the Section Block Model.
+
 Previous Case 2: Layered Slope Next Case 3b: Groundwater with a Toe Anchor
 
 ### Case 3b: Groundwater with a Toe Anchor > Case 3b: Groundwater with a Toe Anchor
@@ -1835,6 +1909,8 @@ Creating a Project Section from Output
 The new section can be viewed in the Visualiser alongside the original model.
 
 For a Rocscience RS2 workflow, follow Importing Output into Rocscience RS2 and check the imported boundary assignments.
+
+To export optimised slope angles as a block model CSV, follow Exporting the Section Block Model.
 
 Previous Case 3a: Groundwater with a Crest Anchor Next Case 4: Groundwater and Faults
 
@@ -2028,6 +2104,8 @@ Creating a Project Section from Output
 The new section can be viewed in the Visualiser alongside the original model.
 
 For a Rocscience RS2 workflow, follow Importing Output into Rocscience RS2 and check the imported boundary assignments.
+
+To export optimised slope angles as a block model CSV, follow Exporting the Section Block Model.
 
 ### Case 4: Groundwater and Faults > Continue with Your Own Scenarios
 URL: https://optimalslope.github.io/manual/pages/tutorials/case-4/#continue-with-your-own-scenarios

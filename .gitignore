@@ -1,3 +1,7 @@
 _site/
 _draft/
 .jekyll-cache/
+
+# Local helpers for preparing portable tutorial projects.
+/tools/prepare_tutorial_projects.ps1
+/tools/PrepareTutorialProject.cs
