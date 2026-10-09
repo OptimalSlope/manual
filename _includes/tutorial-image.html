@@ -1,4 +1,5 @@
-<figure class="os-expandable-media os-tutorial-image">
+{% assign tutorial_image = site.data.tutorial_images[include.file] %}
+<figure class="os-expandable-media os-tutorial-image" style="--preview-width: {{ tutorial_image.preview_width | default: 640 }}px">
   <div class="os-expandable-media-window" data-media-title="{{ include.title | escape }}" data-media-static="true">
     <div class="os-expandable-media-toolbar">
       <span class="os-expandable-media-title">{{ include.title | escape }}</span>
@@ -8,7 +9,7 @@
       </button>
     </div>
     <button class="os-expandable-media-stage" type="button" data-media-expand aria-label="Expand {{ include.title | escape }}">
-      <img src="{{ '/assets/tutorials/workshop/images/' | append: include.file | relative_url }}" alt="{{ include.alt | escape }}" loading="lazy">
+      <img src="{{ '/assets/tutorials/workshop/images/' | append: include.file | relative_url }}" alt="{{ include.alt | escape }}" width="{{ tutorial_image.width }}" height="{{ tutorial_image.height }}" loading="lazy">
     </button>
   </div>
   {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}

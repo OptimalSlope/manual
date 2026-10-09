@@ -400,7 +400,7 @@ nav_order: 40
 </a>
 </div>
 
-<section class="os-props-section" id="defining-bench-height" markdown="1">
+<section class="os-props-section" markdown="1">
 <div class="os-props-section-head" markdown="0">
 <div class="label">Bench geometry</div>
 <h2 id="defining-bench-height">Defining Bench Height</h2>
@@ -439,7 +439,7 @@ For example, slope height = 385 m and bench height = 10 m gives a bench-compatib
 </div>
 </section>
 
-<section class="os-props-section" id="bench-properties" markdown="1">
+<section class="os-props-section" markdown="1">
 <div class="os-props-section-head" markdown="0">
 <div class="label">Bench input table</div>
 <h2 id="bench-properties">Bench Properties</h2>
@@ -487,7 +487,7 @@ For example, slope height = 385 m and bench height = 10 m gives a bench-compatib
 </div>
 </section>
 
-<section class="os-props-section" id="rock-properties" markdown="1">
+<section class="os-props-section" markdown="1">
 <div class="os-props-section-head" markdown="0">
 <div class="label">Material strength</div>
 <h2 id="rock-properties">Rock Properties</h2>
@@ -567,7 +567,7 @@ Bench and rock properties can be set for individual 3D stratigraphic models. If 
 </div>
 </section>
 
-<section class="os-props-section" id="general-section-properties" markdown="1">
+<section class="os-props-section" markdown="1">
 <div class="os-props-section-head" markdown="0">
 <div class="label">Section-level inputs</div>
 <h2 id="general-section-properties">General Section Properties</h2>
@@ -741,7 +741,7 @@ Roads remain separate optional inputs and are defined using their width and vert
 </div>
 </section>
 
-<section class="os-props-section" id="transfer-section-properties" markdown="1">
+<section class="os-props-section" markdown="1">
 <div class="os-props-section-head" markdown="0">
 <div class="label">Reuse a section setup</div>
 <h2 id="transfer-section-properties">Transfer Section Properties</h2>
@@ -774,7 +774,7 @@ Properties cannot be transferred while the receiving section has an active or su
 </div>
 </section>
 
-<section class="os-props-section" id="faults" markdown="1">
+<section class="os-props-section" markdown="1">
 <div class="os-props-section-head" markdown="0">
 <div class="label">Discontinuities</div>
 <h2 id="faults">Faults</h2>
@@ -894,7 +894,7 @@ When testing fault sensitivity, duplicate the section and create separate scenar
 </div>
 </section>
 
-<section class="os-props-section" id="water-table" markdown="1">
+<section class="os-props-section" markdown="1">
 <div class="os-props-section-head" markdown="0">
 <div class="label">Groundwater</div>
 <h2 id="water-table">Water Table</h2>
@@ -975,7 +975,7 @@ The animation below shows the complete drawing workflow, from selecting the firs
 </section>
 
 
-<section class="os-props-section" id="related-help" markdown="1">
+<section class="os-props-section" markdown="1">
 <div class="os-props-section-head" markdown="0">
 <div class="label">Related help</div>
 <h2 id="related-help">Related help</h2>

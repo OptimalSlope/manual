@@ -296,7 +296,7 @@ nav_order: 10
 <a href="#review-export"><span class="icon">5</span><strong>Review and export</strong><span>Fetch results and export profiles or block models.</span></a>
 </div>
 
-<section class="os-guide-section" id="prepare-data" markdown="1">
+<section class="os-guide-section" markdown="1">
 <div class="os-guide-section-head" markdown="0">
 <div class="label">Step 1</div>
 <h2 id="prepare-data">Prepare input data</h2>
@@ -326,7 +326,7 @@ Review the Data Preparation page before working with new project data.
 </div>
 </section>
 
-<section class="os-guide-section" id="create-section" markdown="1">
+<section class="os-guide-section" markdown="1">
 <div class="os-guide-section-head" markdown="0">
 <div class="label">Step 2</div>
 <h2 id="create-section">Import or create a section</h2>
@@ -351,7 +351,7 @@ For slicing, open the tool, click **Select visible models**, choose the plane di
 </div>
 </section>
 
-<section class="os-guide-section" id="define-properties" markdown="1">
+<section class="os-guide-section" markdown="1">
 <div class="os-guide-section-head" markdown="0">
 <div class="label">Step 3</div>
 <h2 id="define-properties">Define properties</h2>
@@ -379,7 +379,7 @@ At minimum, check and define:
 </div>
 </section>
 
-<section class="os-guide-section" id="run-simulation" markdown="1">
+<section class="os-guide-section" markdown="1">
 <div class="os-guide-section-head" markdown="0">
 <div class="label">Step 4</div>
 <h2 id="run-simulation">Run the simulation</h2>
@@ -405,7 +405,7 @@ Before starting:
 </div>
 </section>
 
-<section class="os-guide-section" id="review-export" markdown="1">
+<section class="os-guide-section" markdown="1">
 <div class="os-guide-section-head" markdown="0">
 <div class="label">Step 5</div>
 <h2 id="review-export">Review and export results</h2>

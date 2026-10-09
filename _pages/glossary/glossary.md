@@ -299,7 +299,7 @@ nav_position: bottom
 <a href="#data"><span class="icon">4</span><strong>Data</strong><span>Geometry entities, file formats, model quality and downstream exports.</span></a>
 </div>
 
-<section class="os-guide-section" id="geometry" markdown="1">
+<section class="os-guide-section" markdown="1">
 <div class="os-guide-section-head" markdown="0">
 <div class="label">Geometry</div>
 <h2 id="geometry">Geometry terms</h2>
@@ -405,7 +405,7 @@ A geological discontinuity or fracture that may influence rock-mass behaviour an
 </div>
 </section>
 
-<section class="os-guide-section" id="materials" markdown="1">
+<section class="os-guide-section" markdown="1">
 <div class="os-guide-section-head" markdown="0">
 <div class="label">Material properties</div>
 <h2 id="materials">Material property terms</h2>
@@ -471,7 +471,7 @@ A Hoek-Brown parameter that accounts for rock-mass strength reduction caused by 
 </div>
 </section>
 
-<section class="os-guide-section" id="simulation" markdown="1">
+<section class="os-guide-section" markdown="1">
 <div class="os-guide-section-head" markdown="0">
 <div class="label">Simulation</div>
 <h2 id="simulation">Simulation terms</h2>
@@ -562,7 +562,7 @@ A static Output Plot opened in a separate window so that multiple cross-section 
 </div>
 </section>
 
-<section class="os-guide-section" id="data" markdown="1">
+<section class="os-guide-section" markdown="1">
 <div class="os-guide-section-head" markdown="0">
 <div class="label">Data and export</div>
 <h2 id="data">Data and export terms</h2>

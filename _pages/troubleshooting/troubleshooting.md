@@ -304,7 +304,7 @@ nav_sections:
 <a href="#results-fetch"><span class="icon">4</span><strong>Results and export</strong><span>Review missing results, DXF export, and block model output.</span></a>
 </div>
 
-<section class="os-guide-section" id="gaps-overlaps" markdown="1">
+<section class="os-guide-section" markdown="1">
 <div class="os-guide-section-head" markdown="0">
 <div class="label">Geometry warning</div>
 <h2 id="gaps-overlaps">Gaps and Overlaps</h2>
@@ -350,7 +350,7 @@ Open the Visualiser and inspect detected markers:
 </div>
 </section>
 
-<section class="os-guide-section" id="osa-search-region" markdown="1">
+<section class="os-guide-section" markdown="1">
 <div class="os-guide-section-head" markdown="0">
 <div class="label">Search region warning</div>
 <h2 id="osa-search-region">OSA Search Region Issues</h2>
@@ -402,7 +402,7 @@ Position the crest slightly further inside the section boundary than you think i
 </div>
 </section>
 
-<section class="os-guide-section" id="simulation-start" markdown="1">
+<section class="os-guide-section" markdown="1">
 <div class="os-guide-section-head" markdown="0">
 <div class="label">Simulation setup</div>
 <h2 id="simulation-start">Simulation Does Not Start</h2>
@@ -442,7 +442,7 @@ Slope Optimiser runs simulations in the cloud, so the user account profile must 
 </div>
 </section>
 
-<section class="os-guide-section" id="results-fetch" markdown="1">
+<section class="os-guide-section" markdown="1">
 <div class="os-guide-section-head" markdown="0">
 <div class="label">Results and exports</div>
 <h2 id="results-fetch">Results or Exports Do Not Look Correct</h2>

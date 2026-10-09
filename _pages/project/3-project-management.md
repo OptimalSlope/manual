@@ -421,7 +421,7 @@ nav_sections:
 </a>
 </div>
 
-<section class="os-pm-section" id="creating-a-project" markdown="1">
+<section class="os-pm-section" markdown="1">
 <div class="os-pm-section-head" markdown="0">
 <div class="label">Project creation</div>
 <h2 id="creating-a-project">Creating a Project</h2>
@@ -459,7 +459,7 @@ An empty project can be created using one of the following methods:
 </div>
 </section>
 
-<section class="os-pm-section" id="savingloading-projects" markdown="1">
+<section class="os-pm-section" markdown="1">
 <div class="os-pm-section-head" markdown="0">
 <div class="label">Project files</div>
 <h2 id="savingloading-projects">Saving and Loading Projects</h2>
@@ -485,7 +485,7 @@ OptimalSlope project data is stored in a binary format: `.cbf`.
 </div>
 </section>
 
-<section class="os-pm-section" id="importing-data" markdown="1">
+<section class="os-pm-section" markdown="1">
 <div class="os-pm-section-head" markdown="0">
 <div class="label">Import data</div>
 <h2 id="importing-data">Importing Data</h2>
@@ -543,7 +543,7 @@ Define layer names and colours when generating model files. Otherwise, layer nam
 </div>
 </section>
 
-<section class="os-pm-section" id="creating-sections" markdown="1">
+<section class="os-pm-section" markdown="1">
 <div class="os-pm-section-head" markdown="0">
 <div class="label">Cross-sections</div>
 <h2 id="creating-sections">Creating Sections</h2>
@@ -607,7 +607,7 @@ The animation below demonstrates selecting the visible models, rotating a vertic
 </div>
 </section>
 
-<section class="os-pm-section" id="trim-section-to-boundary-surface" markdown="1">
+<section class="os-pm-section" markdown="1">
 <div class="os-pm-section-head" markdown="0">
 <div class="label">Boundary trimming</div>
 <h2 id="trim-section-to-boundary-surface">Trim Section to Boundary Surface</h2>
@@ -663,7 +663,7 @@ The resulting section is updated using the boundary surface, so the section bett
 </div>
 </section>
 
-<section class="os-pm-section" id="exporting-project-data" markdown="1">
+<section class="os-pm-section" markdown="1">
 <div class="os-pm-section-head" markdown="0">
 <div class="label">Export data</div>
 <h2 id="exporting-project-data">Exporting Project Data</h2>

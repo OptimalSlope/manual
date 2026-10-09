@@ -458,7 +458,7 @@ permalink: /
 
 
 
-<section class="os-home-section" id="introduction" markdown="1">
+<section class="os-home-section" markdown="1">
 <div class="os-home-section-head" markdown="0">
 <div class="label">Introduction</div>
 <h2 id="introduction">Introduction</h2>
@@ -551,7 +551,7 @@ Start with the Data Preparation page if you are working with new 3D stratigraphy
 </div>
 
 
-<section class="os-home-section" id="common-support-tasks" markdown="1">
+<section class="os-home-section" markdown="1">
 <div class="os-home-section-head" markdown="0">
 <div class="label">Common support tasks</div>
 <h2 id="common-support-tasks">Common support tasks</h2>
@@ -589,7 +589,7 @@ Start with the Data Preparation page if you are working with new 3D stratigraphy
 </section>
 
 {% comment %}
-<section class="os-home-section" id="workflow" markdown="1">
+<section class="os-home-section" markdown="1">
 <div class="os-home-section-head" markdown="0">
 <div class="label">Typical workflow</div>
 <h2 id="workflow">Workflow</h2>

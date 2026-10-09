@@ -189,7 +189,19 @@ nav_order: 30
 
 .os-workflow-page video {
   background: #0f1720;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  object-fit: contain;
 }
+
+.os-workflow-page img { height: auto; }
+
+.os-workflow-block-model {
+  max-width: 600px;
+  margin: 22px auto;
+}
+
+.os-workflow-page img.os-workflow-export-button { max-width: min(100%, 420px); }
 
 .os-workflow-image-pair {
   display: grid;
@@ -347,7 +359,7 @@ nav_order: 30
 
 Follow these steps to configure a selected section in Slope Optimiser and run a simulation:
 
-<section class="os-workflow-step" id="importing-sections" markdown="1">
+<section class="os-workflow-step" markdown="1">
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 1</div>
 <h2 id="importing-sections">Importing Sections</h2>
@@ -381,7 +393,7 @@ Ensure your DXF model data meets general quality standards to obtain reliable si
 </div>
 </section>
 
-<section class="os-workflow-step" id="defining-properties" markdown="1">
+<section class="os-workflow-step" markdown="1">
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 2</div>
 <h2 id="defining-properties">Defining Properties</h2>
@@ -410,7 +422,7 @@ Choose between Hoek-Brown and Mohr-Coulomb models and set properties like:
 - **Friction parameters**.
 
 <p align="center">
-  <img src="https://OptimalSlope.github.io/manual/assets/tutorial/layer_properties.png" alt="Layer properties"/>
+  <img width="519" height="826" src="https://OptimalSlope.github.io/manual/assets/tutorial/layer_properties.png" alt="Layer properties"/>
 </p>
 
 Rock properties are set separately for each section layer. Alternatively, if 3D models are used to generate sections, properties can be defined initially at the 3D model level. Sections created using the slicing tool automatically inherit these properties from their parent 3D models.
@@ -425,11 +437,11 @@ Set general properties for the section:
 
 <div class="os-workflow-image-pair">
   <figure>
-    <img src="{{ '/assets/tutorial/general_properties.png' | relative_url }}" alt="Section properties and Crest slope-anchor settings"/>
+    <img width="494" height="794" src="{{ '/assets/tutorial/general_properties.png' | relative_url }}" alt="Section properties and Crest slope-anchor settings"/>
     <figcaption>Section properties and slope anchor</figcaption>
   </figure>
   <figure>
-    <img src="{{ '/assets/tutorial/general_properties_slope.png' | relative_url }}" alt="Failure direction and slope-geometry settings"/>
+    <img width="494" height="343" src="{{ '/assets/tutorial/general_properties_slope.png' | relative_url }}" alt="Failure direction and slope-geometry settings"/>
     <figcaption>Failure direction and slope geometry</figcaption>
   </figure>
 </div>
@@ -450,7 +462,7 @@ The bench, rock, and general properties described above must be provided before 
 - **Faults**: Geometry and material properties of faults, if applicable. For detailed information, refer to [Faults]({{ '/pages/properties/6-properties/#faults' | relative_url }}).
 
 <p align="center">
-  <img src="{{ '/assets/tutorial/optional_properties.png' | relative_url }}" alt="Optional Properties card with expandable Tension Crack, Faults, Loads, Roads, and Water sections"/>
+  <img width="518" height="341" src="{{ '/assets/tutorial/optional_properties.png' | relative_url }}" alt="Optional Properties card with expandable Tension Crack, Faults, Loads, Roads, and Water sections"/>
 </p>
 
 Ensure that all values accurately reflect the physical and mechanical characteristics of the materials and the specific cross-section.
@@ -462,7 +474,7 @@ For detailed guidance, refer to [Properties]({{ '/pages/properties/6-properties/
 </div>
 </section>
 
-<section class="os-workflow-step" id="running-simulations" markdown="1">
+<section class="os-workflow-step" markdown="1">
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 3</div>
 <h2 id="running-simulations">Running Simulations</h2>
@@ -504,7 +516,7 @@ After the input data is defined, simulations can be started in the simulation wi
 3. **Make sure the user profile is configured**. When running a simulation for the first time, go to `Tools -> Settings -> Account`, enter the provided credentials, and click **Configure**. This ensures that the simulation can run in the cloud.
 
 <p align="center">
-  <img src="https://OptimalSlope.github.io/manual/assets/tutorial/profile_setup.png" alt="Profile setup"/>
+  <img width="604" height="597" src="https://OptimalSlope.github.io/manual/assets/tutorial/profile_setup.png" alt="Profile setup"/>
 </p>
 
 
@@ -530,7 +542,7 @@ Geometry and groundwater checks that require native model processing or a user d
 Before running a simulation, Slope Optimiser analyses the input section geometry and checks for common geometry inconsistencies, including **gaps** and **overlaps**.
 
 <p align="center">
-  <img src="https://OptimalSlope.github.io/manual/assets/docs_images/gap_overlap_warning.png" alt="Invalid section geometry warning"/>
+  <img width="598" height="485" src="https://OptimalSlope.github.io/manual/assets/docs_images/gap_overlap_warning.png" alt="Invalid section geometry warning"/>
 </p>
 
 - **Gaps** are undefined regions between section boundaries or layer wires where material cannot be assigned clearly.
@@ -543,7 +555,7 @@ Overlaps should be reviewed carefully, especially when they are easily visible i
 To view detected gap and overlap markers, open the **Visualiser**. Gap markers are shown in red, while overlap markers are shown in blue.
 
 <p align="center">
-  <img src="https://OptimalSlope.github.io/manual/assets/docs_images/gap_overlap_visual.png" alt="Gaps and overlaps shown in the visualiser"/>
+  <img width="1742" height="903" src="https://OptimalSlope.github.io/manual/assets/docs_images/gap_overlap_visual.png" alt="Gaps and overlaps shown in the visualiser"/>
 </p>
 
 ##### Geometry Review Checklist
@@ -581,7 +593,7 @@ For reliable simulation results, review and repair significant gaps and visible 
 #### Slope Anchor and OSA Search Region
 
 <figure class="os-svg-figure">
-  <img src="{{ '/assets/docs_images/slope-anchor-modes.png' | relative_url }}"
+  <img width="1666" height="944" src="{{ '/assets/docs_images/slope-anchor-modes.png' | relative_url }}"
        alt="Crest anchor fixes the upper endpoint and uses a target slope height; toe anchor fixes the lower endpoint and calculates the slope height. In both, the minimum and maximum OSA bound a green search region the optimiser explores.">
   <figcaption>The active slope anchor decides which endpoint is fixed and how the slope height is obtained.</figcaption>
 </figure>
@@ -601,13 +613,13 @@ To avoid this, position the crest point **further inland**, so that:
 When the crest point is set correctly, the section preview shows the preliminary **minimum** and **maximum Overall Slope Angle (OSA)** limits. These are indicated by the **green triangular search region**. This triangle represents the area where the simulation will search for the optimal slope profile shape (see picture below).
 
 <p align="center">
-  <img src="https://OptimalSlope.github.io/manual/assets/docs_images/min_max_osa.png" alt="Profile setup"/>
+  <img width="1654" height="520" src="https://OptimalSlope.github.io/manual/assets/docs_images/min_max_osa.png" alt="Profile setup"/>
 </p>
 
 The preliminary OSA limits are calculated from the active slope anchor and the section properties. If the anchor and properties result in a very narrow difference between the minimum and maximum OSA, the simulation has only a limited search range. In this case, the optimiser will not be able to explore many possible slope profiles, which may reduce the quality or usefulness of the optimisation result.
 
 <p align="center">
-  <img src="https://OptimalSlope.github.io/manual/assets/docs_images/min_max_limited.png" alt="Profile setup"/>
+  <img width="1666" height="587" src="https://OptimalSlope.github.io/manual/assets/docs_images/min_max_limited.png" alt="Profile setup"/>
 </p>
 
 A wider, realistic OSA search range gives the optimiser more flexibility to investigate alternative slope shapes while remaining within the valid section geometry.
@@ -653,7 +665,7 @@ The **Simulation Output** area displays a **Node status** summary when node info
 To test different design or material scenarios for the same cross-section, right-click the section in the project tree and select **Duplicate**. This creates an independent copy of the selected section, allowing you to modify simulation inputs without changing the original section.
 
 <p align="center">
-  <img src="https://OptimalSlope.github.io/manual/assets/docs_images/dublicate_section.png" alt="Duplicate section"/>
+  <img width="500" height="184" src="https://OptimalSlope.github.io/manual/assets/docs_images/dublicate_section.png" alt="Duplicate section"/>
 </p>
 
 Typical scenario changes may include:
@@ -725,7 +737,7 @@ The estimated profile coordinates and angles are also displayed in the logs, and
 </div>
 </section>
 
-<section class="os-workflow-step" id="exporting-output-profile-to-dxf" markdown="1">
+<section class="os-workflow-step" markdown="1">
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 4</div>
 <h2 id="exporting-output-profile-to-dxf">Exporting Output Profile to DXF</h2>
@@ -737,7 +749,7 @@ Simulation results are shown in the 2D plot window and recorded in the logs. The
 
 
 <p align="center">
-  <img src="https://OptimalSlope.github.io/manual/assets/tutorial/export.png" alt="Export output"/>
+  <img width="415" height="66" src="https://OptimalSlope.github.io/manual/assets/tutorial/export.png" alt="Export output"/>
 </p>
 
 - Navigate to the tools section in the simulation window (`Export output profile to DXF`).
@@ -751,7 +763,7 @@ Simulation results are shown in the 2D plot window and recorded in the logs. The
 </div>
 </section>
 
-<section class="os-workflow-step" id="importing-output-into-rockscience-rs2" markdown="1">
+<section class="os-workflow-step" markdown="1">
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 5</div>
 <h2 id="importing-output-into-rockscience-rs2">Importing Output into Rocscience RS2</h2>
@@ -779,7 +791,7 @@ By following these steps, you can successfully prepare and import a DXF file int
 </div>
 </section>
 
-<section class="os-workflow-step" id="exporting-the-section-block-model" markdown="1">
+<section class="os-workflow-step" markdown="1">
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 6</div>
 <h2 id="exporting-the-section-block-model">Exporting the Section Block Model</h2>
@@ -790,10 +802,10 @@ By following these steps, you can successfully prepare and import a DXF file int
 After fetching the simulation results, open **Output Tools** in the simulation window and click **Export block model**. The export opens in a separate, resizable window for the selected section.
 
 <p align="center">
-  <img src="{{ '/assets/docs_images/block_model_export_button.png' | relative_url }}" alt="Export block model button in Output Tools" loading="lazy"/>
+  <img width="789" height="61" class="os-workflow-export-button" src="{{ '/assets/docs_images/block_model_export_button.png' | relative_url }}" alt="Export block model button in Output Tools" loading="lazy"/>
 </p>
 
-<figure class="os-expandable-media">
+<figure class="os-expandable-media os-workflow-block-model">
   <div class="os-expandable-media-window" data-media-title="Block Model Export" data-media-static="true">
     <div class="os-expandable-media-toolbar">
       <span class="os-expandable-media-title">Block Model Export</span>
@@ -802,7 +814,7 @@ After fetching the simulation results, open **Output Tools** in the simulation w
       </button>
     </div>
     <button class="os-expandable-media-stage" type="button" data-media-expand aria-label="Expand Block Model Export">
-      <img src="{{ '/assets/docs_images/block_model_export.png' | relative_url }}" alt="Block model export window showing 3D mode, block dimensions, origin and coordinate choices, and the coloured block preview" loading="lazy"/>
+      <img width="1333" height="889" src="{{ '/assets/docs_images/block_model_export.png' | relative_url }}" alt="Block model export window showing 3D mode, block dimensions, origin and coordinate choices, and the coloured block preview" loading="lazy"/>
     </button>
   </div>
   <figcaption>The 3D export window. Select 2D (X, Z) to export a section grid without 3D stratigraphy.</figcaption>
@@ -863,7 +875,7 @@ For a 3D Datamine workflow, continue with [Import Block Model into Datamine](#im
 </section>
 
 
-<section class="os-workflow-step" id="import-block-model-into-datamine" markdown="1">
+<section class="os-workflow-step" markdown="1">
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Step 7</div>
 <h2 id="import-block-model-into-datamine">Import Block Model into Datamine</h2>
@@ -885,7 +897,7 @@ The CSV should contain the block dimensions, block centre coordinates, and any e
 In Datamine, select the option to import an **External** file.
 
 <p align="center">
-  <img src="{{ '/assets/datamine-import/datamine-import-step-01.png' | relative_url }}" alt="Datamine external file import option">
+  <img width="827" height="172" src="{{ '/assets/datamine-import/datamine-import-step-01.png' | relative_url }}" alt="Datamine external file import option">
 </p>
 
 In the **Data Import** window:
@@ -895,7 +907,7 @@ In the **Data Import** window:
 3. Click **OK**.
 
 <p align="center">
-  <img src="{{ '/assets/datamine-import/datamine-import-step-02.png' | relative_url }}" alt="Datamine data import dialog for text block model">
+  <img width="631" height="395" src="{{ '/assets/datamine-import/datamine-import-step-02.png' | relative_url }}" alt="Datamine data import dialog for text block model">
 </p>
 
 #### 2. Specify model parameters
@@ -909,7 +921,7 @@ Specify the block model parameters:
 Use the same dimensions and coordinate frame as the export. With **Relative to Ground Model axes**, use the export's Ground Model origin. With **Relative to Block Model axes**, the grid origin is zero on each axis. The **First block centre** is not the model origin.
 
 <p align="center">
-  <img src="{{ '/assets/datamine-import/datamine-import-step-03.png' | relative_url }}" alt="Datamine specify model parameters dialog">
+  <img width="562" height="268" src="{{ '/assets/datamine-import/datamine-import-step-03.png' | relative_url }}" alt="Datamine specify model parameters dialog">
 </p>
 
 Click **OK** to start the import wizard.
@@ -924,7 +936,7 @@ In **Text Wizard 1 of 3**:
 4. Click **Next**.
 
 <p align="center">
-  <img src="{{ '/assets/datamine-import/datamine-import-step-04.png' | relative_url }}" alt="Datamine text wizard data type and header row settings">
+  <img width="571" height="610" src="{{ '/assets/datamine-import/datamine-import-step-04.png' | relative_url }}" alt="Datamine text wizard data type and header row settings">
 </p>
 
 In **Text Wizard 2 of 3**:
@@ -934,7 +946,7 @@ In **Text Wizard 2 of 3**:
 3. Click **Next**.
 
 <p align="center">
-  <img src="{{ '/assets/datamine-import/datamine-import-step-05.png' | relative_url }}" alt="Datamine text wizard CSV delimiter settings">
+  <img width="567" height="616" src="{{ '/assets/datamine-import/datamine-import-step-05.png' | relative_url }}" alt="Datamine text wizard CSV delimiter settings">
 </p>
 
 #### 4. Assign Datamine field types
@@ -966,13 +978,13 @@ Additional fields may include:
 - Other project-specific attributes
 
 <p align="center">
-  <img src="{{ '/assets/datamine-import/datamine-import-step-06.png' | relative_url }}" alt="Datamine text wizard field type assignment">
+  <img width="568" height="618" src="{{ '/assets/datamine-import/datamine-import-step-06.png' | relative_url }}" alt="Datamine text wizard field type assignment">
 </p>
 
 Click **Finish**. The block model should be displayed in Datamine.
 
 <p align="center">
-  <img src="{{ '/assets/datamine-import/datamine-import-step-07.png' | relative_url }}" alt="Imported block model displayed in Datamine">
+  <img width="747" height="646" src="{{ '/assets/datamine-import/datamine-import-step-07.png' | relative_url }}" alt="Imported block model displayed in Datamine">
 </p>
 
 Save the imported Datamine block model with a clear name. In this tutorial, the suggested example name is:
@@ -1037,7 +1049,7 @@ After combining the models, check that all relevant blocks have a slope-angle va
 
 
 
-<section class="os-workflow-step" id="related-pages" markdown="1">
+<section class="os-workflow-step" markdown="1">
 <div class="os-workflow-step-head" markdown="0">
 <div class="label">Related help</div>
 <h2 id="related-pages">Related pages</h2>

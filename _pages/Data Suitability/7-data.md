@@ -403,7 +403,7 @@ nav_parent: Help and Solutions
 </a>
 </div>
 
-<section class="os-data-section" id="preparing-model-files" markdown="1">
+<section class="os-data-section" markdown="1">
 <div class="os-data-section-head" markdown="0">
 <div class="label">Input data quality</div>
 <h2 id="preparing-model-files">Preparing Model Files</h2>
@@ -432,7 +432,7 @@ Before running simulations, visually inspect both the 3D model and any generated
 </div>
 </section>
 
-<section class="os-data-section" id="exporting-dxf-from-leapfrog" markdown="1">
+<section class="os-data-section" markdown="1">
 <div class="os-data-section-head" markdown="0">
 <div class="label">Leapfrog export</div>
 <h2 id="exporting-dxf-from-leapfrog">Exporting DXF from Leapfrog</h2>
@@ -465,7 +465,7 @@ Due to additional processing overhead and cleaner geometry requirements, exporti
 </div>
 </section>
 
-<section class="os-data-section" id="stratigraphy-preparation" markdown="1">
+<section class="os-data-section" markdown="1">
 <div class="os-data-section-head" markdown="0">
 <div class="label">3D stratigraphy</div>
 <h2 id="stratigraphy-preparation">Stratigraphy Preparation</h2>
@@ -532,7 +532,7 @@ Use simplifications where possible without compromising the required geological 
 </div>
 </section>
 
-<section class="os-data-section" id="section-preparation" markdown="1">
+<section class="os-data-section" markdown="1">
 <div class="os-data-section-head" markdown="0">
 <div class="label">Section quality</div>
 <h2 id="section-preparation">Section Preparation</h2>
@@ -603,7 +603,7 @@ Maintain strict quality control over the 3D model before generating sections. Cl
 </div>
 </section>
 
-<section class="os-data-section" id="model-organisation" markdown="1">
+<section class="os-data-section" markdown="1">
 <div class="os-data-section-head" markdown="0">
 <div class="label">Layer management</div>
 <h2 id="model-organisation">Model Organisation</h2>
@@ -630,7 +630,7 @@ Define names and colours of layers in the modelling software before exporting DX
 </section>
 
 
-<section class="os-data-section" id="related-help" markdown="1">
+<section class="os-data-section" markdown="1">
 <div class="os-data-section-head" markdown="0">
 <div class="label">Related help</div>
 <h2 id="related-help">Related help</h2>

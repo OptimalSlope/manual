@@ -1,0 +1,167 @@
+{
+  "case1a-anchor.png": {
+    "width": 1406,
+    "height": 1119,
+    "preview_width": 420
+  },
+  "case1a-import.jpg": {
+    "width": 1658,
+    "height": 839,
+    "preview_width": 640
+  },
+  "case1a-preview.png": {
+    "width": 1598,
+    "height": 984,
+    "preview_width": 420
+  },
+  "case1a-result.png": {
+    "width": 1362,
+    "height": 836,
+    "preview_width": 640
+  },
+  "case1a-simulation.png": {
+    "width": 1675,
+    "height": 939,
+    "preview_width": 640
+  },
+  "case1b-anchor.png": {
+    "width": 1407,
+    "height": 1118,
+    "preview_width": 420
+  },
+  "case1b-preview.png": {
+    "width": 1614,
+    "height": 975,
+    "preview_width": 420
+  },
+  "case1b-result.png": {
+    "width": 994,
+    "height": 525,
+    "preview_width": 640
+  },
+  "case2-anchor.png": {
+    "width": 1201,
+    "height": 1310,
+    "preview_width": 420
+  },
+  "case2-import.jpg": {
+    "width": 1671,
+    "height": 841,
+    "preview_width": 640
+  },
+  "case2-preview.png": {
+    "width": 1576,
+    "height": 998,
+    "preview_width": 420
+  },
+  "case2-result.png": {
+    "width": 1093,
+    "height": 719,
+    "preview_width": 640
+  },
+  "case3a-anchor.png": {
+    "width": 1359,
+    "height": 1158,
+    "preview_width": 420
+  },
+  "case3a-import.jpg": {
+    "width": 1539,
+    "height": 774,
+    "preview_width": 640
+  },
+  "case3a-preview.png": {
+    "width": 1562,
+    "height": 1007,
+    "preview_width": 420
+  },
+  "case3a-result.png": {
+    "width": 919,
+    "height": 489,
+    "preview_width": 640
+  },
+  "case3b-anchor.png": {
+    "width": 1366,
+    "height": 1151,
+    "preview_width": 420
+  },
+  "case3b-preview.png": {
+    "width": 2089,
+    "height": 1060,
+    "preview_width": 420
+  },
+  "case3b-result.png": {
+    "width": 1230,
+    "height": 732,
+    "preview_width": 640
+  },
+  "case4-import.jpg": {
+    "width": 1670,
+    "height": 840,
+    "preview_width": 640
+  },
+  "case4-result.png": {
+    "width": 919,
+    "height": 489,
+    "preview_width": 640
+  },
+  "create-output-section.png": {
+    "width": 1624,
+    "height": 969,
+    "preview_width": 640
+  },
+  "export-output.png": {
+    "width": 1971,
+    "height": 798,
+    "preview_width": 420
+  },
+  "fault-entity.png": {
+    "width": 1138,
+    "height": 1382,
+    "preview_width": 420
+  },
+  "hoek-brown-properties.png": {
+    "width": 890,
+    "height": 1767,
+    "preview_width": 420
+  },
+  "import-units.png": {
+    "width": 1296,
+    "height": 1213,
+    "preview_width": 420
+  },
+  "mohr-coulomb-properties.png": {
+    "width": 1006,
+    "height": 1564,
+    "preview_width": 420
+  },
+  "output-section.jpg": {
+    "width": 1669,
+    "height": 849,
+    "preview_width": 640
+  },
+  "section-navigation.png": {
+    "width": 2001,
+    "height": 839,
+    "preview_width": 420
+  },
+  "section-view-a.png": {
+    "width": 1919,
+    "height": 1031,
+    "preview_width": 640
+  },
+  "section-view-b.png": {
+    "width": 1919,
+    "height": 1030,
+    "preview_width": 640
+  },
+  "slope-settings.png": {
+    "width": 1939,
+    "height": 811,
+    "preview_width": 420
+  },
+  "water-entity.png": {
+    "width": 1334,
+    "height": 1179,
+    "preview_width": 420
+  }
+}
