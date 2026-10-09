@@ -71,6 +71,13 @@
                                 {% assign bottom_child_pages = child_pages | where: "nav_position", "bottom" %}
                                 {% if child_pages.size > 0 or post.nav_sections %}
                                 <ul class="articles os-nav-children{% if post.nav_sections %} os-nav-sections{% endif %}">
+                                    {% comment %}A parent can place its child pages after a named section; other groups keep their existing order.{% endcomment %}
+                                    {% assign nav_section_anchors = post.nav_sections | map: "anchor" %}
+                                    {% assign insert_children_after_section = false %}
+                                    {% if post.nav_children_after and nav_section_anchors contains post.nav_children_after %}
+                                        {% assign insert_children_after_section = true %}
+                                    {% endif %}
+                                    {% capture regular_child_links %}
                                     {% for child_page in child_pages %}
                                         {% unless child_page.nav_position == "bottom" %}
                                             {% if page.url == child_page.url %}
@@ -89,6 +96,10 @@
                                             </li>
                                         {% endunless %}
                                     {% endfor %}
+                                    {% endcapture %}
+                                    {% unless insert_children_after_section %}
+                                        {{ regular_child_links }}
+                                    {% endunless %}
                                     {% if post.nav_sections %}
                                         {% for nav_section in post.nav_sections %}
                                         <li>
@@ -96,6 +107,9 @@
                                                 {{ nav_section.title | escape }}
                                             </a>
                                         </li>
+                                        {% if insert_children_after_section and nav_section.anchor == post.nav_children_after %}
+                                            {{ regular_child_links }}
+                                        {% endif %}
                                         {% endfor %}
                                     {% endif %}
                                     {% for child_page in bottom_child_pages %}

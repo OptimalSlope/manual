@@ -7,6 +7,7 @@ category: Tutorials
 layout: post
 permalink: /pages/tutorials/
 nav_order: 35
+nav_children_after: choose-a-case
 nav_sections:
   - title: Case Study Overview
     anchor: case-study-overview
@@ -125,12 +126,12 @@ New to the interface? Read [Quick Start]({{ '/pages/quick-start/' | relative_url
 <div class="os-tutorials-card">
 <h3>Tutorial models</h3>
 <p>DXF sections, starter and final CBF projects, and example exported profiles, organised in the same case folders as the workbook.</p>
-<a class="os-tutorials-download" href="{{ '/assets/tutorials/workshop/tutorial-models.zip' | relative_url }}" download>Download tutorial models ZIP</a>
+<a class="os-tutorials-download" href="{{ '/assets/tutorials/workshop/tutorial-models.zip' | relative_url }}" target="_self" download="tutorial-models.zip">Download tutorial models ZIP</a>
 </div>
 <div class="os-tutorials-card">
 <h3>Optional Workbook PDF</h3>
 <p>All six exercises for printing or offline use, with numbered steps, material inputs, screenshots, and example results. PDF, approximately 28 MB.</p>
-<a class="os-tutorials-download" href="{{ '/assets/tutorials/workshop/Workshop_Instructions_EN.pdf' | relative_url }}" download>Download workbook PDF</a>
+<a class="os-tutorials-download" href="{{ '/assets/tutorials/workshop/Workshop_Instructions_EN.pdf' | relative_url }}" target="_self" download="Workshop_Instructions_EN.pdf">Download workbook PDF</a>
 </div>
 </div>
 
