@@ -435,6 +435,8 @@ Set general properties for the section:
 - **Target FoS (Factor of Safety)**.
 - **Failure Direction**: Select right-to-left or left-to-right slope generation.
 
+The **target slope height** and **bench-compatible slope height** may differ. **Use full benches** keeps benches at their specified height and can give a slope below the target; **Use target height** allows a shorter crest bench to reach it. See [Target and Bench-Compatible Slope Heights]({{ '/pages/properties/6-properties/#target-and-bench-compatible-slope-heights' | relative_url }}) for examples and guidance on choosing the height option.
+
 <div class="os-workflow-image-pair">
   <figure>
     <img width="494" height="794" src="{{ '/assets/tutorial/general_properties.png' | relative_url }}" alt="Section properties and Crest slope-anchor settings"/>
@@ -487,6 +489,8 @@ For detailed guidance, refer to [Properties]({{ '/pages/properties/6-properties/
 <p>Configure results storage, the user profile, input checks, and the cloud simulation process.</p>
 </div>
 <div class="os-workflow-step-body" markdown="1">
+
+{% include simulation-workspace.html %}
 
 **Overview**
 
@@ -640,14 +644,14 @@ The toe must remain inside the section, at or below the topography, and above th
 
 #### Starting Simulations 
 
-1. Switch to the **Simulation** tab at the bottom of the interface.
+1. Select the **Simulation** tab beside **Visualiser**, at the bottom of the main workspace.
 2. Under **Cross-sections**, select the desired cross-section.
 3. Select **Automatic** or **Custom** under **Simulation results location**. If using **Custom**, click **Select folder**.
 4. Click **Start**.
 5. Resolve any items listed under **Simulation Check**, then click **Check Again**.
 6. When the check passes, click **Start** again to begin submission.
 7. Continue through any geometry or groundwater warnings shown while the input is generated.
-8. Enter the configured username when requested.
+8. Select your configured account if prompted. If the results folder belongs to another account, review the warning before starting a new run; choose a separate **Custom** folder to keep the existing results.
 9. Use **Fetch results** to download completed results or view the progress of a running simulation.
 
 #### Monitoring Node Status and Output

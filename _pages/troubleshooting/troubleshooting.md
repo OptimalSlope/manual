@@ -434,6 +434,18 @@ If the **Simulation Check** panel is displayed:
 Slope Optimiser runs simulations in the cloud, so the user account profile must be configured before cloud runs can be submitted.
 </div>
 
+**Account selection and existing results folders**
+
+If an account-selection prompt appears, choose an account configured on this computer under **Tools > Settings > Account**. The prompt relates to cloud-account access; it does not by itself indicate a demo restriction.
+
+An existing simulation folder can record a different username. If **Simulation account mismatch** appears, select **Cancel** and choose a different folder under **Simulation results location > Custom** to preserve the existing results.
+
+<div class="os-callout os-callout--warning" markdown="1">
+Select **Overwrite and start** only if you intend to replace the existing run with a new simulation using your current account.
+</div>
+
+Fetching an existing cloud run requires its original account to be configured on this computer. Starting a new run with your account does not grant access to another account's cloud results.
+
 <a class="os-link-card" href="{{ '/pages/Tutorials/Workflow/#running-simulations' | relative_url }}">
 <strong>Related workflow section</strong>
 <span>Review the full simulation setup workflow.</span>

@@ -387,6 +387,8 @@ At minimum, check and define:
 </div>
 <div class="os-guide-section-body" markdown="1">
 
+{% include simulation-workspace.html %}
+
 Before starting:
 
 1. Select the section of interest.

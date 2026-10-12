@@ -85,7 +85,9 @@ Select **Case2_Layered_GroundModel1** and enter:
 
 {% include tutorial-image.html file="case2-anchor.png" title="Case 2 Slope Geometry" alt="Target slope height of 340 metres, bench-compatible height of 330 metres and Use target height button" %}
 
-The full-bench arrangement gives **22 benches × 15 m = 330 m**. For the workbook's example, keep this bench-compatible height rather than selecting **Use target height** to add a shorter crest bench. The target input remains **340 m**.
+The full-bench arrangement gives **22 benches × 15 m = 330 m**. For the workbook's example, keep this bench-compatible height rather than selecting **Use target height** to add a shorter crest bench. If **Use full benches** is shown, select it before running the simulation. The target input remains **340 m**.
+
+See [Target and Bench-Compatible Slope Heights]({{ '/pages/properties/6-properties/#target-and-bench-compatible-slope-heights' | relative_url }}) for the difference between full-height benches and a shorter crest bench.
 
 Review the estimated OSA range and ensure the green search region remains within the section's ground area.
 

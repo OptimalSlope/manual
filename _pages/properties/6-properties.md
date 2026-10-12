@@ -430,11 +430,13 @@ For example, if slope height = 120 m and number of benches = 12, then bench heig
 
 <div class="os-subtitle">Bench-compatible slope height</div>
 
-Bench-compatible slope height is the maximum slope height that allows a whole number of benches without exceeding the total slope height.
+Bench-compatible slope height is the greatest height that accommodates full benches at their specified heights without exceeding the target slope height.
 
 <div class="os-callout os-callout--important" markdown="1">
 For example, slope height = 385 m and bench height = 10 m gives a bench-compatible slope height of 380 m. Adding another full bench would exceed the defined slope height.
 </div>
+
+See [Target and Bench-Compatible Slope Heights](#target-and-bench-compatible-slope-heights) for the difference between retaining full-height benches and using a shorter crest bench to reach the target.
 
 </div>
 </section>
@@ -605,9 +607,14 @@ Bench and rock properties can be set for individual 3D stratigraphic models. If 
 <td>Vertical toe coordinate. It can be entered or selected in the visualiser after the toe position is defined.</td>
 </tr>
 <tr>
-<td>Slope Height</td>
+<td>Target Slope Height</td>
 <td>m</td>
 <td>Target slope height in crest-anchor mode. In toe-anchor mode, slope height is calculated from the selected toe and section geometry.</td>
+</tr>
+<tr>
+<td>Bench-Compatible Slope Height</td>
+<td>m</td>
+<td>Calculated height of the full-bench arrangement that fits within the target slope height. It may be lower than the target.</td>
 </tr>
 <tr>
 <td>Target FoS</td>
@@ -631,6 +638,53 @@ Bench and rock properties can be set for individual 3D stratigraphic models. If 
 </tr>
 </tbody>
 </table>
+
+<h3 id="target-and-bench-compatible-slope-heights" class="os-subtitle">Target and Bench-Compatible Slope Heights</h3>
+
+The two heights describe different aspects of the slope geometry:
+
+- **Target slope height** is the requested overall vertical height, not the height of an individual bench. In **Crest** anchor mode, enter it in the **Slope Geometry** panel.
+- **Bench-compatible slope height** is the height that can be formed using full benches at their specified heights without exceeding the target. It matches the target when the benches fit exactly; otherwise, it is lower because another full bench would exceed the target.
+
+For example, with a **330 m target** and a uniform bench height:
+
+<table class="os-props-table">
+<thead>
+<tr><th>Bench height</th><th>Height option</th><th>Bench arrangement</th><th>Resulting slope height</th></tr>
+</thead>
+<tbody>
+<tr><td>15 m</td><td>Use full benches</td><td>22 full benches × 15 m</td><td>330 m — exact fit</td></tr>
+<tr><td>20 m</td><td>Use full benches</td><td>16 full benches × 20 m</td><td>320 m — below the target</td></tr>
+<tr><td>20 m</td><td>Use target height</td><td>16 full benches × 20 m + one 10 m crest bench</td><td>330 m — reaches the target</td></tr>
+</tbody>
+</table>
+
+With 20 m benches, a seventeenth full bench would give **340 m**, exceeding the 330 m target. **Use target height** reaches the target slope height by shortening the top (crest) bench if needed. All other benches keep their specified height.
+
+{% include expandable-image.html
+   src="/assets/tutorial/use-target-height.png"
+   title="Use Target Height"
+   alt="Use target height button with the explanation that only the top crest bench is shortened if needed and all other benches keep their specified height"
+   width="354" height="118" preview_width="354"
+%}
+
+<div class="os-callout os-callout--recommendation" markdown="1">
+Select **Use full benches** when every bench must keep its specified height. Select **Use target height** when the requested overall height is needed and a shorter crest bench is acceptable.
+</div>
+
+The panel displays the button for changing the current height option. After using the target height, **Use full benches** returns to the full-bench arrangement. Target-height conversion applies in **Crest** anchor mode with **Bench definition** set to **Bench height** and the same positive bench height assigned to every rock layer.
+
+Hover over either height field to read its explanation. The tooltip appears beside the field and closes when the pointer moves onto either height-conversion button.
+
+{% include expandable-image.html
+   src="/assets/tutorial/slope-height-tooltip.png"
+   title="Slope-Height Field Help"
+   alt="Bench-compatible height tooltip beside the slope-geometry fields, leaving the height values and Use target height button visible"
+   width="771" height="295" preview_width="600"
+   caption="Field explanations appear beside the values and buttons."
+%}
+
+In **Toe** anchor mode, define the toe position and elevation instead of entering a crest-mode target height. The software calculates the slope height and bench-compatible height from the toe and section geometry.
 
 <div class="os-subtitle">Choosing the Slope Anchor</div>
 

@@ -269,6 +269,7 @@ nav_position: bottom
 </section>
 
 <nav class="os-controls-nav">
+<a href="#keyboard-and-mouse-navigation">Shortcuts</a>
 <a href="#slices-and-3d-models">Delete / Hide</a>
 <a href="#fit-zoom-pan-flip-and-rotate">Position</a>
 <a href="#wireframe-shading-colour-and-transparency">Style</a>
@@ -290,6 +291,29 @@ nav_position: bottom
 <p>Display selected objects as wireframe or shaded geometry, and adjust colour or transparency.</p>
 </div>
 </div>
+
+<section class="os-section" id="keyboard-and-mouse-navigation">
+<div class="os-section-head">
+<div class="label">Navigate the view</div>
+<h2 id="keyboard-and-mouse-navigation-heading">Keyboard and Mouse Navigation</h2>
+<p>Use these controls to move the camera without changing model geometry.</p>
+</div>
+<div class="os-section-body">
+<p>Click inside the visualiser before using the navigation keys. Property fields retain their normal arrow-key editing behaviour.</p>
+<table>
+<thead><tr><th>Action</th><th>Control</th><th>Behaviour</th></tr></thead>
+<tbody>
+<tr><td>Pan</td><td>Arrow keys</td><td>Move the view left, right, up, or down. Hold an arrow to continue panning.</td></tr>
+<tr><td>Change viewing direction</td><td><code>Ctrl</code> + arrow keys</td><td>Move to an adjacent view-cube face in 90° steps. From an oblique view, the first press snaps to a cube face. Each press makes one change; holding the keys does not repeat it.</td></tr>
+<tr><td>Free rotation</td><td>Hold the right mouse button briefly, then drag</td><td>Hold for about 350 ms before dragging to rotate the view freely.</td></tr>
+<tr><td>Immediate free rotation</td><td><code>Ctrl</code> + right-button drag</td><td>Rotate immediately, without the hold delay.</td></tr>
+<tr><td>Context menu</td><td>Quick right-click</td><td>Open the context menu when the button is released.</td></tr>
+</tbody>
+</table>
+<p class="os-callout os-callout--important">These controls change the view only, not the position or orientation of model geometry.</p>
+<p>Press <code>Esc</code> to cancel an active right-button gesture. Moving focus away from the visualiser also cancels it.</p>
+</div>
+</section>
 
 <section class="os-section" id="slices-and-3d-models">
 <div class="os-section-head">
@@ -343,7 +367,7 @@ nav_position: bottom
 <div>
 <div class="control-title">Dynamic Zooming</div>
 <p>Press the left mouse button, then move the pointer left or right to zoom in or out.</p>
-<p class="os-callout os-callout--tip">Alternatively, use the <code>Ctrl</code> key.</p>
+<p class="os-callout os-callout--tip">Alternatively, hold <code>Ctrl</code> and drag with the left mouse button.</p>
 </div>
 </div>
 
@@ -351,8 +375,8 @@ nav_position: bottom
 <img src="https://OptimalSlope.github.io/manual/assets/control-icons/pan-custom.png" alt="Dynamic panning">
 <div>
 <div class="control-title">Dynamic Panning</div>
-<p>Press the left mouse button, then move the pointer to pan around the visualiser.</p>
-<p class="os-callout os-callout--tip">Alternatively, use the middle mouse button.</p>
+<p>Select the Pan toolbar tool, then drag with the left mouse button to pan around the visualiser.</p>
+<p class="os-callout os-callout--tip">Alternatively, drag with the middle mouse button or use the arrow keys while the visualiser has focus. Hold an arrow to continue panning.</p>
 </div>
 </div>
 
@@ -408,8 +432,8 @@ nav_position: bottom
 <img src="https://OptimalSlope.github.io/manual/assets/control-icons/rotate-360-custom.png" alt="Dynamic rotation">
 <div>
 <div class="control-title">Dynamic Rotation</div>
-<p>Press the left mouse button, then move the pointer to rotate the view.</p>
-<p class="os-callout os-callout--tip">Alternatively, use the <code>Space</code> key.</p>
+<p>Select the Rotate toolbar tool, then drag with the left mouse button to rotate the view.</p>
+<p class="os-callout os-callout--tip">Alternatively, hold the right mouse button briefly, then drag for free rotation. Use <code>Ctrl</code> + right-button drag to rotate immediately, or <code>Ctrl</code> + arrows to move between cube faces.</p>
 </div>
 </div>
 

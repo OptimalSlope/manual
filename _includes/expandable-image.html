@@ -1,0 +1,15 @@
+<figure class="os-expandable-media" style="max-width: {{ include.preview_width | default: 640 }}px; margin: 22px auto;">
+  <div class="os-expandable-media-window" data-media-title="{{ include.title | escape }}" data-media-static="true">
+    <div class="os-expandable-media-toolbar">
+      <span class="os-expandable-media-title">{{ include.title | escape }}</span>
+      <button class="os-expandable-media-expand" type="button" data-media-expand aria-label="Expand {{ include.title | escape }}">
+        <i class="fa fa-expand" aria-hidden="true"></i>
+        <span>Expand</span>
+      </button>
+    </div>
+    <button class="os-expandable-media-stage" type="button" data-media-expand aria-label="Expand {{ include.title | escape }}">
+      <img src="{{ include.src | relative_url }}" alt="{{ include.alt | escape }}" width="{{ include.width }}" height="{{ include.height }}" style="width: auto; max-width: 100%; height: auto;" loading="lazy">
+    </button>
+  </div>
+  {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+</figure>

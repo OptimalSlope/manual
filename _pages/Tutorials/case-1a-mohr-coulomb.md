@@ -102,9 +102,11 @@ The following examples illustrate the difference; they do **not** replace the Ca
 | --- | --- | --- | --- |
 | 330 m | 15 m | 22 full benches | 330 m |
 | 330 m | 20 m | 16 full benches | 320 m |
-| 330 m | 20 m | Use target slope height: 16 full benches and a 10 m crest bench | 330 m |
+| 330 m | 20 m | Use target height: 16 full benches and a 10 m crest bench | 330 m |
 
-Selecting **Use target slope height** allows a shorter crest bench to reach the target; the other benches keep their specified height. In the second example, another full 20 m bench would give 340 m and exceed the target.
+Selecting **Use target height** allows a shorter crest bench to reach the target; the other benches keep their specified height. **Use full benches** returns to the full-height bench arrangement. In the second example, another full 20 m bench would give 340 m and exceed the target.
+
+For guidance on choosing the height option, see [Target and Bench-Compatible Slope Heights]({{ '/pages/properties/6-properties/#target-and-bench-compatible-slope-heights' | relative_url }}). Keep the Case 1a target at **230 m** and retain the full-height bench arrangement when reproducing the workbook result. If **Use full benches** is shown, select it before running the simulation.
 
 {% include tutorial-case-run.html %}
 

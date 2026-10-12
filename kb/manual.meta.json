@@ -1,7 +1,7 @@
 {
-  "sha256": "0d3e3e7ece577316f43ff4511a36007813246e59af654c7c2d84a90e71798b43",
-  "bytes": 150382,
-  "sections": 188,
+  "sha256": "4d1df245c7ce787b1b1f024546363adef24a0bdac3ec76a986f843b7d8536995",
+  "bytes": 159178,
+  "sections": 191,
   "pages": [
     {
       "title": "Overview",
@@ -66,7 +66,7 @@
     {
       "title": "Properties",
       "url": "https://optimalslope.github.io/manual/pages/properties/6-properties/",
-      "sections": 9,
+      "sections": 10,
       "source": "pages/properties/6-properties/index.html"
     },
     {
@@ -78,7 +78,7 @@
     {
       "title": "Controls",
       "url": "https://optimalslope.github.io/manual/pages/controls/1-interface/",
-      "sections": 4,
+      "sections": 5,
       "source": "pages/controls/1-interface/index.html"
     },
     {
@@ -96,7 +96,7 @@
     {
       "title": "Glossary",
       "url": "https://optimalslope.github.io/manual/pages/glossary/",
-      "sections": 68,
+      "sections": 69,
       "source": "pages/glossary/index.html"
     }
   ]

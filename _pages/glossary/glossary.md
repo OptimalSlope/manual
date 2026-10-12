@@ -363,6 +363,11 @@ The vertical height of the slope used when defining the section and bench arrang
 </div>
 
 <div class="os-glossary-term" markdown="1">
+<h3>Target slope height</h3>
+The requested overall vertical height entered in crest-anchor mode. It may be greater than the height achievable using only full benches. See [Target and Bench-Compatible Slope Heights]({{ '/pages/properties/6-properties/#target-and-bench-compatible-slope-heights' | relative_url }}) for the available height options.
+</div>
+
+<div class="os-glossary-term" markdown="1">
 <h3>Bench face angle</h3>
 The inclination of an individual bench face, measured in degrees.
 </div>
@@ -374,7 +379,7 @@ The smallest permitted width of the platform between adjacent bench faces.
 
 <div class="os-glossary-term" markdown="1">
 <h3>Bench-compatible slope height</h3>
-The greatest slope height that accommodates a whole number of benches without exceeding the defined total slope height.
+The greatest slope height that accommodates full benches at their specified heights without exceeding the target slope height. It can be lower than the target. Selecting **Use target height** allows a shorter crest bench to reach the target while the other benches keep their specified height; **Use full benches** returns to the full-bench arrangement.
 </div>
 
 <div class="os-glossary-term" markdown="1">
