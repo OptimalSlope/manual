@@ -662,10 +662,11 @@ For example, with a **330 m target** and a uniform bench height:
 With 20 m benches, a seventeenth full bench would give **340 m**, exceeding the 330 m target. **Use target height** reaches the target slope height by shortening the top (crest) bench if needed. All other benches keep their specified height.
 
 {% include expandable-image.html
-   src="/assets/tutorial/use-target-height.png"
+   src="/assets/tutorial/use-target-height-v2.png"
    title="Use Target Height"
-   alt="Use target height button with the explanation that only the top crest bench is shortened if needed and all other benches keep their specified height"
-   width="354" height="118" preview_width="354"
+   alt="Illustration of the Use target height button explaining that only the top crest bench is shortened if needed and all other benches keep their specified height"
+   width="2172" height="724" preview_width="354"
+   caption="Illustration of the Use target height control."
 %}
 
 <div class="os-callout os-callout--recommendation" markdown="1">

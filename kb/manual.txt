@@ -2290,6 +2290,8 @@ With 20 m benches, a seventeenth full bench would give 340 m, exceeding the 330 
 
 Use Target Height
 
+Illustration of the Use target height control.
+
 Select Use full benches when every bench must keep its specified height. Select Use target height when the requested overall height is needed and a shorter crest bench is acceptable.
 
 The panel displays the button for changing the current height option. After using the target height, Use full benches returns to the full-bench arrangement. Target-height conversion applies in Crest anchor mode with Bench definition set to Bench height and the same positive bench height assigned to every rock layer.
