@@ -865,7 +865,7 @@ Practise the Slope Optimiser workflow with six worked cases. Begin with a homoge
 
 Start Case 1a to follow your first exercise online, or choose a case below. Each case includes its input values, illustrated steps, and example results.
 
-### Tutorials > Case Study Overview
+### Tutorials > Tutorials Overview
 URL: https://optimalslope.github.io/manual/pages/tutorials/#case-study-overview
 
 Six exercises introduce four types of slope model, using the same workflow.

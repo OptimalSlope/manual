@@ -9,7 +9,7 @@ permalink: /pages/tutorials/
 nav_order: 35
 nav_children_after: choose-a-case
 nav_sections:
-  - title: Case Study Overview
+  - title: Tutorials Overview
     anchor: case-study-overview
   - title: Before You Begin
     anchor: before-you-begin
@@ -35,7 +35,7 @@ nav_sections:
 
 <section class="os-tutorials-section" markdown="1">
 <div class="os-tutorials-section-head" markdown="0">
-<h2 id="case-study-overview">Case Study Overview</h2>
+<h2 id="case-study-overview">Tutorials Overview</h2>
 <p>Six exercises introduce four types of slope model, using the same workflow.</p>
 </div>
 <div class="os-tutorials-section-body" markdown="1">
