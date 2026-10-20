@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img"><title>3D block model coordinate systems</title><desc>The same 5 by 3 by 2 grid of 20 m blocks expressed in local and Ground Model coordinates. Z is vertical. The grid does not move.</desc>
+<rect width="1600" height="1000" fill="#F5F8FA"/>
+<text x="800" y="28" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="42" font-weight="700" fill="#163D50">3D: one block model, two coordinate systems</text>
+<text x="800" y="91" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="26" font-weight="400" fill="#546B78">Changing the export coordinate system does not move the grid or its origin, or resize its blocks.</text>
+<rect x="30" y="150" width="755" height="670" rx="18" fill="#FFFFFF" stroke="#D4E3EA"/>
+<text x="60" y="174" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="30" font-weight="700" fill="#163D50">Block Model coordinates (local)</text>
+<text x="60" y="220" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="24" font-weight="400" fill="#546B78">Positions measured from the block model origin.</text>
+<polygon points="140,565 490,565 490,425 140,425" fill="#E5F0F5"/>
+<polygon points="490,565 595,481 595,341 490,425" fill="#D7E9F1"/>
+<polygon points="140,425 490,425 595,341 245,341" fill="#ECF5F8"/>
+<polyline points="140,565 245,481" fill="none" stroke="#9CBAC9" stroke-width="1" stroke-dasharray="6 6"/>
+<polyline points="245,481 595,481" fill="none" stroke="#9CBAC9" stroke-width="1" stroke-dasharray="6 6"/>
+<polyline points="245,481 245,341" fill="none" stroke="#9CBAC9" stroke-width="1" stroke-dasharray="6 6"/>
+<polyline points="140,565 140,425 245,341" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="210,565 210,425 315,341" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="280,565 280,425 385,341" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="350,565 350,425 455,341" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="420,565 420,425 525,341" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="490,565 490,425 595,341" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="140,425 490,425 490,565" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="175,397 525,397 525,537" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="210,369 560,369 560,509" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="245,341 595,341 595,481" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="140,565 490,565 595,481" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="140,495 490,495 595,411" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="140,425 490,425 595,341" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="140,565 490,565" fill="none" stroke="#4F8DA8" stroke-width="2"/>
+<polyline points="490,565 595,481" fill="none" stroke="#4F8DA8" stroke-width="2"/>
+<polyline points="595,481 595,341" fill="none" stroke="#4F8DA8" stroke-width="2"/>
+<polyline points="595,341 245,341" fill="none" stroke="#4F8DA8" stroke-width="2"/>
+<polyline points="245,341 140,425" fill="none" stroke="#4F8DA8" stroke-width="2"/>
+<polyline points="140,425 140,565" fill="none" stroke="#4F8DA8" stroke-width="2"/>
+<polyline points="140,425 490,425" fill="none" stroke="#4F8DA8" stroke-width="2"/>
+<polyline points="490,425 595,341" fill="none" stroke="#4F8DA8" stroke-width="2"/>
+<polyline points="490,425 490,565" fill="none" stroke="#4F8DA8" stroke-width="2"/>
+<polyline points="140,565 210,565" fill="none" stroke="#006AB8" stroke-width="2"/>
+<polyline points="210,565 210,495" fill="none" stroke="#006AB8" stroke-width="2"/>
+<polyline points="210,495 140,495" fill="none" stroke="#006AB8" stroke-width="2"/>
+<polyline points="140,495 140,565" fill="none" stroke="#006AB8" stroke-width="2"/>
+<polyline points="140,495 175,467" fill="none" stroke="#006AB8" stroke-width="2"/>
+<polyline points="175,467 245,467" fill="none" stroke="#006AB8" stroke-width="2"/>
+<polyline points="245,467 210,495" fill="none" stroke="#006AB8" stroke-width="2"/>
+<polyline points="245,467 245,537" fill="none" stroke="#006AB8" stroke-width="2"/>
+<polyline points="245,537 210,565" fill="none" stroke="#006AB8" stroke-width="2"/>
+<polyline points="140,565 231,565" fill="none" stroke="#D74632" stroke-width="3"/>
+<polygon points="231,565 221,561 221,569" fill="#D74632"/>
+<text x="236.0" y="531" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700" fill="#D74632">X</text>
+<polyline points="140,565 245,481" fill="none" stroke="#14864C" stroke-width="3"/>
+<polygon points="245,481 234.693,484.123 239.69,490.37" fill="#14864C"/>
+<text x="255" y="473" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700" fill="#14864C">Y</text>
+<polyline points="140,565 140,376" fill="none" stroke="#2861D8" stroke-width="3"/>
+<polygon points="140,376 136,386 144,386" fill="#2861D8"/>
+<text x="131" y="342.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700" fill="#2861D8">Z</text>
+<circle cx="140" cy="565" r="9" fill="#E76122" stroke="white" stroke-width="1.5"/>
+<circle cx="192.5" cy="516.0" r="8" fill="#006AB8" stroke="white" stroke-width="1.5"/>
+<text x="150" y="577" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#E76122">(0, 0, 0) m</text>
+<text x="250" y="275" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700" fill="#006AB8">First block centre</text>
+<text x="250" y="308" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700" fill="#006AB8">(10, 10, 10) m</text>
+<polyline points="192.5,516 225,300 240,300" fill="none" stroke="#006AB8" stroke-width="1.5" stroke-dasharray="6 6"/>
+<polyline points="140,565 140,615" fill="none" stroke="#92A8B3" stroke-width="1" stroke-dasharray="6 6"/>
+<polyline points="490,565 490,615" fill="none" stroke="#92A8B3" stroke-width="1" stroke-dasharray="6 6"/>
+<polyline points="140,610 490,610" fill="none" stroke="#163D50" stroke-width="2"/>
+<polygon points="490,610 480,606 480,614" fill="#163D50"/>
+<polygon points="140,610 150,614 150,606" fill="#163D50"/>
+<text x="315" y="626" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700" fill="#163D50">X: 5 blocks</text>
+<polyline points="525,590 630,506" fill="none" stroke="#163D50" stroke-width="2"/>
+<polygon points="630,506 619.693,509.123 624.69,515.37" fill="#163D50"/>
+<polygon points="525,590 535.307,586.877 530.31,580.63" fill="#163D50"/>
+<text x="630" y="557" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="400" fill="#163D50">Y: 3 blocks</text>
+<polyline points="595,481 650,481" fill="none" stroke="#92A8B3" stroke-width="1" stroke-dasharray="6 6"/>
+<polyline points="595,341 650,341" fill="none" stroke="#92A8B3" stroke-width="1" stroke-dasharray="6 6"/>
+<polyline points="645,481 645,341" fill="none" stroke="#163D50" stroke-width="2"/>
+<polygon points="645,341 641,351 649,351" fill="#163D50"/>
+<polygon points="645,481 649,471 641,471" fill="#163D50"/>
+<text x="662" y="386" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#163D50">Z: 2</text>
+<text x="662" y="418" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="22" font-weight="400" fill="#163D50">blocks</text>
+<rect x="50" y="682" width="715" height="116" rx="12" fill="#EDF4F7" stroke="#D4E3EA"/>
+<text x="72" y="699" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700" fill="#E76122">Grid origin: (0, 0, 0) m</text>
+<text x="72" y="738" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="24" font-weight="400" fill="#163D50">Extent (m): X 0–100   Y 0–60   Z 0–40</text>
+<rect x="815" y="150" width="755" height="670" rx="18" fill="#FFFFFF" stroke="#D4E3EA"/>
+<text x="845" y="174" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="30" font-weight="700" fill="#163D50">Ground Model coordinates</text>
+<text x="845" y="220" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="24" font-weight="400" fill="#546B78">Positions in the Ground Model coordinate system.</text>
+<polygon points="925,565 1275,565 1275,425 925,425" fill="#E5F0F5"/>
+<polygon points="1275,565 1380,481 1380,341 1275,425" fill="#D7E9F1"/>
+<polygon points="925,425 1275,425 1380,341 1030,341" fill="#ECF5F8"/>
+<polyline points="925,565 1030,481" fill="none" stroke="#9CBAC9" stroke-width="1" stroke-dasharray="6 6"/>
+<polyline points="1030,481 1380,481" fill="none" stroke="#9CBAC9" stroke-width="1" stroke-dasharray="6 6"/>
+<polyline points="1030,481 1030,341" fill="none" stroke="#9CBAC9" stroke-width="1" stroke-dasharray="6 6"/>
+<polyline points="925,565 925,425 1030,341" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="995,565 995,425 1100,341" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="1065,565 1065,425 1170,341" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="1135,565 1135,425 1240,341" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="1205,565 1205,425 1310,341" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="1275,565 1275,425 1380,341" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="925,425 1275,425 1275,565" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="960,397 1310,397 1310,537" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="995,369 1345,369 1345,509" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="1030,341 1380,341 1380,481" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="925,565 1275,565 1380,481" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="925,495 1275,495 1380,411" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="925,425 1275,425 1380,341" fill="none" stroke="#ACCBD9" stroke-width="1.4"/>
+<polyline points="925,565 1275,565" fill="none" stroke="#4F8DA8" stroke-width="2"/>
+<polyline points="1275,565 1380,481" fill="none" stroke="#4F8DA8" stroke-width="2"/>
+<polyline points="1380,481 1380,341" fill="none" stroke="#4F8DA8" stroke-width="2"/>
+<polyline points="1380,341 1030,341" fill="none" stroke="#4F8DA8" stroke-width="2"/>
+<polyline points="1030,341 925,425" fill="none" stroke="#4F8DA8" stroke-width="2"/>
+<polyline points="925,425 925,565" fill="none" stroke="#4F8DA8" stroke-width="2"/>
+<polyline points="925,425 1275,425" fill="none" stroke="#4F8DA8" stroke-width="2"/>
+<polyline points="1275,425 1380,341" fill="none" stroke="#4F8DA8" stroke-width="2"/>
+<polyline points="1275,425 1275,565" fill="none" stroke="#4F8DA8" stroke-width="2"/>
+<polyline points="925,565 995,565" fill="none" stroke="#006AB8" stroke-width="2"/>
+<polyline points="995,565 995,495" fill="none" stroke="#006AB8" stroke-width="2"/>
+<polyline points="995,495 925,495" fill="none" stroke="#006AB8" stroke-width="2"/>
+<polyline points="925,495 925,565" fill="none" stroke="#006AB8" stroke-width="2"/>
+<polyline points="925,495 960,467" fill="none" stroke="#006AB8" stroke-width="2"/>
+<polyline points="960,467 1030,467" fill="none" stroke="#006AB8" stroke-width="2"/>
+<polyline points="1030,467 995,495" fill="none" stroke="#006AB8" stroke-width="2"/>
+<polyline points="1030,467 1030,537" fill="none" stroke="#006AB8" stroke-width="2"/>
+<polyline points="1030,537 995,565" fill="none" stroke="#006AB8" stroke-width="2"/>
+<polyline points="925,565 1016,565" fill="none" stroke="#D74632" stroke-width="3"/>
+<polygon points="1016,565 1006,561 1006,569" fill="#D74632"/>
+<text x="1021.0" y="531" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700" fill="#D74632">X</text>
+<polyline points="925,565 1030,481" fill="none" stroke="#14864C" stroke-width="3"/>
+<polygon points="1030,481 1019.69,484.123 1024.69,490.37" fill="#14864C"/>
+<text x="1040" y="473" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700" fill="#14864C">Y</text>
+<polyline points="925,565 925,376" fill="none" stroke="#2861D8" stroke-width="3"/>
+<polygon points="925,376 921,386 929,386" fill="#2861D8"/>
+<text x="916" y="342.0" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700" fill="#2861D8">Z</text>
+<circle cx="925" cy="565" r="9" fill="#E76122" stroke="white" stroke-width="1.5"/>
+<circle cx="977.5" cy="516.0" r="8" fill="#006AB8" stroke="white" stroke-width="1.5"/>
+<text x="935" y="577" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#E76122">(100, 200, 50) m</text>
+<text x="1035" y="275" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700" fill="#006AB8">First block centre</text>
+<text x="1035" y="308" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700" fill="#006AB8">(110, 210, 60) m</text>
+<polyline points="977.5,516 1010,300 1025,300" fill="none" stroke="#006AB8" stroke-width="1.5" stroke-dasharray="6 6"/>
+<polyline points="925,565 925,615" fill="none" stroke="#92A8B3" stroke-width="1" stroke-dasharray="6 6"/>
+<polyline points="1275,565 1275,615" fill="none" stroke="#92A8B3" stroke-width="1" stroke-dasharray="6 6"/>
+<polyline points="925,610 1275,610" fill="none" stroke="#163D50" stroke-width="2"/>
+<polygon points="1275,610 1265,606 1265,614" fill="#163D50"/>
+<polygon points="925,610 935,614 935,606" fill="#163D50"/>
+<text x="1100" y="626" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700" fill="#163D50">X: 100 m</text>
+<polyline points="1310,590 1415,506" fill="none" stroke="#163D50" stroke-width="2"/>
+<polygon points="1415,506 1404.69,509.123 1409.69,515.37" fill="#163D50"/>
+<polygon points="1310,590 1320.31,586.877 1315.31,580.63" fill="#163D50"/>
+<text x="1415" y="557" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="400" fill="#163D50">Y: 60 m</text>
+<polyline points="1380,481 1435,481" fill="none" stroke="#92A8B3" stroke-width="1" stroke-dasharray="6 6"/>
+<polyline points="1380,341 1435,341" fill="none" stroke="#92A8B3" stroke-width="1" stroke-dasharray="6 6"/>
+<polyline points="1430,481 1430,341" fill="none" stroke="#163D50" stroke-width="2"/>
+<polygon points="1430,341 1426,351 1434,351" fill="#163D50"/>
+<polygon points="1430,481 1434,471 1426,471" fill="#163D50"/>
+<text x="1447" y="386" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#163D50">Z: 40</text>
+<text x="1447" y="418" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="22" font-weight="400" fill="#163D50">m</text>
+<rect x="835" y="682" width="715" height="116" rx="12" fill="#EDF4F7" stroke="#D4E3EA"/>
+<text x="857" y="699" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700" fill="#E76122">Grid origin: (100, 200, 50) m</text>
+<text x="857" y="738" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="24" font-weight="400" fill="#163D50">Extent (m): X 100–200   Y 200–260   Z 50–90</text>
+<rect x="30" y="842" width="1540" height="134" rx="14" fill="#E8EFF3" stroke="#D4E3EA"/>
+<text x="60" y="860" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700" fill="#163D50">Example: 20 × 20 × 20 m blocks. The blue outline marks the first block.</text>
+<text x="60" y="900" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="26" font-weight="400" fill="#163D50">Add the block model origin in Ground Model coordinates to each local block centre:</text>
+<text x="60" y="939" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="24" font-weight="400" fill="#546B78">(110, 210, 60) m = (100, 200, 50) m + (10, 10, 10) m. Both panels show the same physical grid.</text>
+</svg>

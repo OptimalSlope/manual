@@ -818,7 +818,7 @@ After fetching the simulation results, open **Output Tools** in the simulation w
       </button>
     </div>
     <button class="os-expandable-media-stage" type="button" data-media-expand aria-label="Expand Block Model Export">
-      <img width="1333" height="889" src="{{ '/assets/docs_images/block_model_export.png' | relative_url }}" alt="Block model export window showing 3D mode, block dimensions, origin and coordinate choices, and the coloured block preview" loading="lazy"/>
+      <img width="1698" height="1005" src="{{ '/assets/docs_images/block_model_export.png' | relative_url }}" alt="Block model export window showing 3D mode, X/Y/Z block sizes, Automatic and Custom position origin options, Explain origin and coordinates help, export coordinate system choices, and the coloured block preview" loading="lazy"/>
     </button>
   </div>
   <figcaption>The 3D export window. Select 2D (X, Z) to export a section grid without 3D stratigraphy.</figcaption>
@@ -828,31 +828,69 @@ After fetching the simulation results, open **Output Tools** in the simulation w
 
 | Mode | Block dimensions in metres | Model requirements |
 | --- | --- | --- |
-| **3D (X, Y, Z)** | Width **dX**, depth **dY**, height **dZ** | The section must be associated with 3D stratigraphy. |
-| **2D (X, Z)** | Width **dX**, height **dZ**; dY is hidden | Uses the cross-section and its simulation results. No 3D stratigraphy is required. |
+| **3D (X, Y, Z)** | **X**, **Y**, **Z** | The section must be associated with 3D stratigraphy. |
+| **2D (X, Z)** | **X**, **Z**; Y is hidden | Uses the cross-section and its simulation results. No 3D stratigraphy is required. |
 
 Smaller blocks provide more detail but produce larger CSV files. Choose dimensions appropriate for the model scale and check the total block count in the preview.
 
 #### 2. Set the block model origin
 
-Under **Block Model origin coordinates**, choose:
+Under **Block Model origin coordinates**, choose **Automatic** to use the model bounds, or **Custom position** to enter the grid origin. The origin fields are read-only in Automatic mode. The origin is a block corner, not its centroid, and does not have to be zero.
 
-- **Automatic** — uses the lower bounds of the Ground Model in 3D, or the cross-section in 2D. The origin fields are read-only.
-- **Custom position** — enter the origin in Ground Model axes: X, Y and Z for 3D, or X and Z for 2D. This sets the lower corner of the grid, not the centre of the first block. It does not move the model or the slope geometry.
+A custom origin below the model bounds extends the grid; an origin inside the bounds crops its lower part. This changes the grid extent without moving the model or slope geometry. Select **Automatic** to restore the original lower bounds.
 
-A custom origin below the model bounds extends the grid; an origin inside the bounds crops its lower part. Select **Automatic** to restore the original lower bounds.
+In the app, **Explain origin and coordinates** opens help for the selected export mode only. The resizable, offline window has tabs for **Origin and block size** and **Coordinate systems**.
 
 #### 3. Choose the exported coordinates
 
-Under **Block coordinates**, choose:
+Under **Export coordinate system**, select the reference used for exported block centres. The **First block centre** readout shows the values that will be written to the CSV. Switching coordinate systems changes how positions are expressed. It does not move the grid or its origin, or change block sizes or slope angles. The same physical grid origin is expressed as zero locally and by its position in Ground Model or cross-section coordinates.
 
-- **Relative to Block Model axes** — block centre coordinates are measured from the chosen grid origin. For example, with 20 m blocks, the first centre is 10 m along each axis.
-- **Relative to Ground Model axes** — preserves global X, Y and Z coordinates in 3D, or the section's X and Z coordinates in 2D. A rotated section's 2D coordinates are not global 3D coordinates.
+##### 3D: origin and Ground Model coordinates
 
-The **First block centre** readout shows the coordinates that will be written to the CSV. Changing this option changes the exported coordinate values, not the grid or its slope angles.
+- **Automatic origin:** the Ground Model’s lowest X, Y and Z coordinates.
+- **Custom origin:** enter X, Y and Z in the Ground Model coordinate system.
+- **Block Model coordinates (local):** the grid origin is treated as (0, 0, 0).
+- **Ground Model coordinates:** block centres retain their coordinates in the Ground Model coordinate system.
+
+<figure>
+  <a href="{{ '/assets/docs_images/block-model-origin-3d.png' | relative_url }}">
+    <img src="{{ '/assets/docs_images/block-model-origin-3d.png' | relative_url }}" width="1600" height="1000" style="max-width:100%;height:auto" alt="3D grid: origin (100, 200, 50) m and first block centre (110, 210, 60) m in Ground Model coordinates. Local origin (0, 0, 0) m and centre (10, 10, 10) m." loading="lazy"/>
+  </a>
+  <figcaption>With 20 m blocks, the first centre is (10, 10, 10) m locally, or (110, 210, 60) m in Ground Model coordinates. Select the image to view it at full size.</figcaption>
+</figure>
+
+<figure>
+  <a href="{{ '/assets/docs_images/block-model-coordinate-systems-3d.png' | relative_url }}">
+    <img src="{{ '/assets/docs_images/block-model-coordinate-systems-3d.png' | relative_url }}" width="1600" height="1000" style="max-width:100%;height:auto" alt="3D grid: origin (100, 200, 50) m and first block centre (110, 210, 60) m in Ground Model coordinates. Local origin (0, 0, 0) m and centre (10, 10, 10) m." loading="lazy"/>
+  </a>
+  <figcaption>With 20 m blocks, the first centre is (10, 10, 10) m locally, or (110, 210, 60) m in Ground Model coordinates. Select the image to view it at full size.</figcaption>
+</figure>
+
+##### 2D: origin and cross-section coordinates
+
+- **Automatic origin:** the cross-section’s lowest X and Z coordinates.
+- **Custom origin:** enter X and Z in the cross-section coordinate system.
+- **Block Model coordinates (local):** the grid origin is treated as (0, 0).
+- **Cross-section coordinates:** block centres retain their coordinates in the cross-section coordinate system.
+
+For a rotated section, its X and Z coordinates are not global 3D coordinates.
+
+<figure>
+  <a href="{{ '/assets/docs_images/block-model-origin-2d.png' | relative_url }}">
+    <img src="{{ '/assets/docs_images/block-model-origin-2d.png' | relative_url }}" width="1400" height="900" style="max-width:100%;height:auto" alt="2D grid: origin (100, 50) m and first block centre (110, 60) m in cross-section coordinates. Local origin (0, 0) m and centre (10, 10) m." loading="lazy"/>
+  </a>
+  <figcaption>With 20 m blocks, the first centre is (10, 10) m locally, or (110, 60) m in cross-section coordinates. Select the image to view it at full size.</figcaption>
+</figure>
+
+<figure>
+  <a href="{{ '/assets/docs_images/block-model-coordinate-systems-2d.png' | relative_url }}">
+    <img src="{{ '/assets/docs_images/block-model-coordinate-systems-2d.png' | relative_url }}" width="1600" height="1000" style="max-width:100%;height:auto" alt="2D grid: origin (100, 50) m and first block centre (110, 60) m in cross-section coordinates. Local origin (0, 0) m and centre (10, 10) m." loading="lazy"/>
+  </a>
+  <figcaption>With 20 m blocks, the first centre is (10, 10) m locally, or (110, 60) m in cross-section coordinates. Select the image to view it at full size.</figcaption>
+</figure>
 
 <div class="os-callout os-callout--important" markdown="1">
-The origin is a block corner; exported coordinates are block centres. When importing or combining models, match the coordinate system, origin and block dimensions. To align a 3D export with an existing global model, use **Relative to Ground Model axes**.
+The origin is a block corner; exported coordinates are block centres. When importing or combining models, match the coordinate system, origin and block dimensions.
 </div>
 
 #### 4. Check the preview
@@ -922,7 +960,7 @@ Specify the block model parameters:
 - **Block Size** — enter the X, Y, and Z block dimensions.
 - **Number of Blocks** — enter the number of blocks in X, Y, and Z.
 
-Use the same dimensions and coordinate frame as the export. With **Relative to Ground Model axes**, use the export's Ground Model origin. With **Relative to Block Model axes**, the grid origin is zero on each axis. The **First block centre** is not the model origin.
+Use the same dimensions and coordinate frame as the export. With **Ground Model coordinates**, use the export's Ground Model origin. With **Block Model coordinates (local)**, the grid origin is zero on each axis. The **First block centre** is not the model origin.
 
 <p align="center">
   <img width="562" height="268" src="{{ '/assets/datamine-import/datamine-import-step-03.png' | relative_url }}" alt="Datamine specify model parameters dialog">

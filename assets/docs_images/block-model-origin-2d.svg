@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900"><rect width="1400" height="900" fill="#F5F8FA"/>
+<text x="50" y="34" dominant-baseline="text-before-edge" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700" fill="#163D50">2D: where does the block model start?</text>
+<text x="50" y="91" dominant-baseline="text-before-edge" font-family="Segoe UI, sans-serif" font-size="24" font-weight="400" fill="#546B78">The origin is the lowest X and Z corner. Exported coordinates identify block centres.</text>
+<rect x="45" y="153" width="550" height="530" fill="white"/>
+<rect x="615" y="153" width="740" height="530" fill="white"/>
+<text x="72" y="174" dominant-baseline="text-before-edge" font-family="Segoe UI, sans-serif" font-size="19" font-weight="700" fill="#546B78">ONE BLOCK</text>
+<text x="645" y="174" dominant-baseline="text-before-edge" font-family="Segoe UI, sans-serif" font-size="19" font-weight="700" fill="#546B78">THE CROSS-SECTION GRID</text>
+<rect x="175" y="310" width="230" height="230" fill="#D9E9EF"/>
+<polyline points="175,310 405,310 405,540 175,540 175,310" fill="none" stroke="#163D50" stroke-width="2"/>
+<circle cx="290" cy="425" r="8" fill="#087CA7" stroke="white" stroke-width="1.5"/>
+<polyline points="290,425 470,282" fill="none" stroke="#087CA7" stroke-width="2"/>
+<text x="202" y="235" dominant-baseline="text-before-edge" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#087CA7">Block centre (centroid)</text>
+<text x="397" y="269" dominant-baseline="text-before-edge" font-family="Segoe UI, sans-serif" font-size="20" font-weight="400" fill="#087CA7">XC, ZC</text>
+<polyline points="175,572 405,572" fill="none" stroke="#163D50" stroke-width="2"/>
+<polyline points="405,572 394.8683290659683,567.7163982346049 394.8683290659683,576.2836017653951 405,572" fill="none" stroke="#163D50" stroke-width="1"/>
+<polygon points="405,572 394.8683290659683,567.7163982346049 394.8683290659683,576.2836017653951" fill="#163D50" stroke="#163D50" stroke-width="1"/>
+<polyline points="175,572 185.13167093403175,576.2836017653951 185.13167093403175,567.7163982346049 175,572" fill="none" stroke="#163D50" stroke-width="1"/>
+<polygon points="175,572 185.13167093403175,576.2836017653951 185.13167093403175,567.7163982346049" fill="#163D50" stroke="#163D50" stroke-width="1"/>
+<text x="240" y="591" dominant-baseline="text-before-edge" font-family="Segoe UI, sans-serif" font-size="21" font-weight="400" fill="#163D50">X = 20 m</text>
+<polyline points="133,540 133,310" fill="none" stroke="#163D50" stroke-width="2"/>
+<polyline points="133,310 128.71639823460484,320.1316709340317 137.28360176539516,320.1316709340317 133,310" fill="none" stroke="#163D50" stroke-width="1"/>
+<polygon points="133,310 128.71639823460484,320.1316709340317 137.28360176539516,320.1316709340317" fill="#163D50" stroke="#163D50" stroke-width="1"/>
+<polyline points="133,540 137.28360176539516,529.8683290659683 128.71639823460484,529.8683290659683 133,540" fill="none" stroke="#163D50" stroke-width="1"/>
+<polygon points="133,540 137.28360176539516,529.8683290659683 128.71639823460484,529.8683290659683" fill="#163D50" stroke="#163D50" stroke-width="1"/>
+<text x="72" y="270" dominant-baseline="text-before-edge" font-family="Segoe UI, sans-serif" font-size="21" font-weight="400" fill="#163D50">Z = 20 m</text>
+<circle cx="175" cy="540" r="9" fill="#EC6A26" stroke="white" stroke-width="1.5"/>
+<text x="73" y="637" dominant-baseline="text-before-edge" font-family="Segoe UI, sans-serif" font-size="20" font-weight="400" fill="#546B78">Block size is measured along X and Z.</text>
+<rect x="735" y="280" width="500" height="260" fill="#EDF4F7"/>
+<rect x="735" y="453.3333333333333" width="100" height="86.66666666666667" fill="#D9E9EF"/>
+<polyline points="735,280 735,540" fill="none" stroke="#8499A3" stroke-width="1"/>
+<polyline points="835,280 835,540" fill="none" stroke="#8499A3" stroke-width="1"/>
+<polyline points="935,280 935,540" fill="none" stroke="#8499A3" stroke-width="1"/>
+<polyline points="1035,280 1035,540" fill="none" stroke="#8499A3" stroke-width="1"/>
+<polyline points="1135,280 1135,540" fill="none" stroke="#8499A3" stroke-width="1"/>
+<polyline points="1235,280 1235,540" fill="none" stroke="#8499A3" stroke-width="1"/>
+<polyline points="735,280.0 1235,280.0" fill="none" stroke="#8499A3" stroke-width="1"/>
+<polyline points="735,366.6666666666667 1235,366.6666666666667" fill="none" stroke="#8499A3" stroke-width="1"/>
+<polyline points="735,453.33333333333337 1235,453.33333333333337" fill="none" stroke="#8499A3" stroke-width="1"/>
+<polyline points="735,540.0 1235,540.0" fill="none" stroke="#8499A3" stroke-width="1"/>
+<polyline points="735,540 1270,540" fill="none" stroke="#163D50" stroke-width="2"/>
+<polyline points="1270,540 1259.8683290659683,535.7163982346049 1259.8683290659683,544.2836017653951 1270,540" fill="none" stroke="#163D50" stroke-width="1"/>
+<polygon points="1270,540 1259.8683290659683,535.7163982346049 1259.8683290659683,544.2836017653951" fill="#163D50" stroke="#163D50" stroke-width="1"/>
+<text x="1282" y="530" dominant-baseline="text-before-edge" font-family="Segoe UI, sans-serif" font-size="22" font-weight="400" fill="#163D50">X</text>
+<polyline points="735,540 735,240" fill="none" stroke="#163D50" stroke-width="2"/>
+<polyline points="735,240 730.7163982346049,250.13167093403175 739.2836017653951,250.13167093403175 735,240" fill="none" stroke="#163D50" stroke-width="1"/>
+<polygon points="735,240 730.7163982346049,250.13167093403175 739.2836017653951,250.13167093403175" fill="#163D50" stroke="#163D50" stroke-width="1"/>
+<text x="707" y="233" dominant-baseline="text-before-edge" font-family="Segoe UI, sans-serif" font-size="22" font-weight="400" fill="#163D50">Z</text>
+<circle cx="735" cy="540" r="9" fill="#EC6A26" stroke="white" stroke-width="1.5"/>
+<polyline points="735,540 696,599 1000,599" fill="none" stroke="#EC6A26" stroke-width="2"/>
+<text x="758" y="616" dominant-baseline="text-before-edge" font-family="Segoe UI, sans-serif" font-size="25" font-weight="700" fill="#EC6A26">Block model origin</text>
+<text x="758" y="649" dominant-baseline="text-before-edge" font-family="Segoe UI, sans-serif" font-size="21" font-weight="400" fill="#546B78">Lowest X and Z corner</text>
+<rect x="45" y="710" width="1310" height="142" fill="#E8EFF3"/>
+<text x="69" y="730" dominant-baseline="text-before-edge" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700" fill="#163D50">Example: origin = (100, 50) m; X and Z block sizes = 20 m.</text>
+<text x="69" y="774" dominant-baseline="text-before-edge" font-family="Segoe UI, sans-serif" font-size="23" font-weight="400" fill="#163D50">First block centre = (110, 60) m — half a block from the origin along X and Z.</text>
+<text x="69" y="813" dominant-baseline="text-before-edge" font-family="Segoe UI, sans-serif" font-size="20" font-weight="400" fill="#546B78">Coordinates are shown as (X, Z). The origin does not have to be zero.</text></svg>
