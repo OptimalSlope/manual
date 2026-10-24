@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Explore Different Slope Profiles · OptimalSlope</title>
+  <link rel="stylesheet" href="search-viewer.css">
+</head>
+<body>
+  <main>
+    <div class="toolbar">
+      <span id="phase" role="status">Loading the search illustration…</span>
+      <div><button id="play" type="button">Pause</button><button id="replay" type="button">Replay</button></div>
+    </div>
+    <svg id="searchPlot" role="img" aria-label="Illustrative benched candidate profiles vary within the OSA search guides, then settle onto the found optimal profile from Case 3a."></svg>
+    <div class="legend">
+      <span><i class="region"></i>OSA search region</span>
+      <span><i class="candidate"></i>Current Candidate</span>
+      <span><i class="trail"></i>Previous candidates</span>
+      <strong id="finalResult"></strong>
+    </div>
+    <p class="note">Illustrative search—not an optimiser recording. Final benched profile: saved Case 3a. OSA rays guide the overall profile; bench corners are shown in full.</p>
+  </main>
+  <script type="module" src="search-viewer.js"></script>
+</body>
+</html>

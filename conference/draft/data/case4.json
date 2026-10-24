@@ -1,0 +1,3329 @@
+{
+  "coordinateSystem": "translated",
+  "translationOrigin": [
+    1150,
+    877.022
+  ],
+  "osaDegrees": 49.17357,
+  "regions": [
+    {
+      "isHole": false,
+      "layerId": 3,
+      "layerName": "Granite_1",
+      "plotSeries": "region_0_0",
+      "plotted": true,
+      "regionIndex": 0
+    },
+    {
+      "isHole": false,
+      "layerId": 4,
+      "layerName": "Granite_2",
+      "plotSeries": "region_1_0",
+      "plotted": true,
+      "regionIndex": 0
+    },
+    {
+      "isHole": false,
+      "layerId": 5,
+      "layerName": "Porfirite_1",
+      "plotSeries": "region_2_0",
+      "plotted": true,
+      "regionIndex": 0
+    },
+    {
+      "isHole": false,
+      "layerId": 6,
+      "layerName": "Porfirite_2",
+      "plotSeries": "region_3_0",
+      "plotted": true,
+      "regionIndex": 0
+    },
+    {
+      "isHole": false,
+      "layerId": 7,
+      "layerName": "Vulcanite",
+      "plotSeries": "region_4_0",
+      "plotted": true,
+      "regionIndex": 0
+    }
+  ],
+  "faults": [
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_0",
+      "plotted": true,
+      "regionIndex": 0
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_1",
+      "plotted": true,
+      "regionIndex": 1
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_2",
+      "plotted": true,
+      "regionIndex": 2
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_3",
+      "plotted": true,
+      "regionIndex": 3
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_4",
+      "plotted": true,
+      "regionIndex": 4
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_5",
+      "plotted": true,
+      "regionIndex": 5
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_6",
+      "plotted": true,
+      "regionIndex": 6
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_7",
+      "plotted": true,
+      "regionIndex": 7
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_8",
+      "plotted": true,
+      "regionIndex": 8
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_9",
+      "plotted": true,
+      "regionIndex": 9
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_10",
+      "plotted": true,
+      "regionIndex": 10
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_11",
+      "plotted": true,
+      "regionIndex": 11
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_12",
+      "plotted": true,
+      "regionIndex": 12
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_13",
+      "plotted": true,
+      "regionIndex": 13
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_14",
+      "plotted": true,
+      "regionIndex": 14
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_15",
+      "plotted": true,
+      "regionIndex": 15
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_16",
+      "plotted": true,
+      "regionIndex": 16
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_17",
+      "plotted": true,
+      "regionIndex": 17
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_18",
+      "plotted": true,
+      "regionIndex": 18
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_19",
+      "plotted": true,
+      "regionIndex": 19
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_20",
+      "plotted": true,
+      "regionIndex": 20
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_21",
+      "plotted": true,
+      "regionIndex": 21
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_22",
+      "plotted": true,
+      "regionIndex": 22
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_23",
+      "plotted": true,
+      "regionIndex": 23
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_24",
+      "plotted": true,
+      "regionIndex": 24
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_25",
+      "plotted": true,
+      "regionIndex": 25
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_26",
+      "plotted": true,
+      "regionIndex": 26
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_27",
+      "plotted": true,
+      "regionIndex": 27
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_28",
+      "plotted": true,
+      "regionIndex": 28
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_29",
+      "plotted": true,
+      "regionIndex": 29
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_30",
+      "plotted": true,
+      "regionIndex": 30
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_31",
+      "plotted": true,
+      "regionIndex": 31
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_32",
+      "plotted": true,
+      "regionIndex": 32
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_33",
+      "plotted": true,
+      "regionIndex": 33
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_34",
+      "plotted": true,
+      "regionIndex": 34
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_35",
+      "plotted": true,
+      "regionIndex": 35
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_36",
+      "plotted": true,
+      "regionIndex": 36
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_37",
+      "plotted": true,
+      "regionIndex": 37
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_38",
+      "plotted": true,
+      "regionIndex": 38
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_39",
+      "plotted": true,
+      "regionIndex": 39
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_40",
+      "plotted": true,
+      "regionIndex": 40
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_41",
+      "plotted": true,
+      "regionIndex": 41
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_42",
+      "plotted": true,
+      "regionIndex": 42
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_43",
+      "plotted": true,
+      "regionIndex": 43
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_44",
+      "plotted": true,
+      "regionIndex": 44
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_45",
+      "plotted": true,
+      "regionIndex": 45
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_46",
+      "plotted": true,
+      "regionIndex": 46
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_47",
+      "plotted": true,
+      "regionIndex": 47
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_48",
+      "plotted": true,
+      "regionIndex": 48
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_49",
+      "plotted": true,
+      "regionIndex": 49
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_50",
+      "plotted": true,
+      "regionIndex": 50
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_51",
+      "plotted": true,
+      "regionIndex": 51
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_52",
+      "plotted": true,
+      "regionIndex": 52
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_53",
+      "plotted": true,
+      "regionIndex": 53
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_54",
+      "plotted": true,
+      "regionIndex": 54
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_55",
+      "plotted": true,
+      "regionIndex": 55
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_56",
+      "plotted": true,
+      "regionIndex": 56
+    },
+    {
+      "faultId": 1,
+      "faultName": "F 32_1",
+      "plotSeries": "fault_0_57",
+      "plotted": true,
+      "regionIndex": 57
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_0",
+      "plotted": true,
+      "regionIndex": 0
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_1",
+      "plotted": true,
+      "regionIndex": 1
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_2",
+      "plotted": true,
+      "regionIndex": 2
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_3",
+      "plotted": true,
+      "regionIndex": 3
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_4",
+      "plotted": true,
+      "regionIndex": 4
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_5",
+      "plotted": true,
+      "regionIndex": 5
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_6",
+      "plotted": true,
+      "regionIndex": 6
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_7",
+      "plotted": true,
+      "regionIndex": 7
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_8",
+      "plotted": true,
+      "regionIndex": 8
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_9",
+      "plotted": true,
+      "regionIndex": 9
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_10",
+      "plotted": true,
+      "regionIndex": 10
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_11",
+      "plotted": true,
+      "regionIndex": 11
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_12",
+      "plotted": true,
+      "regionIndex": 12
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_13",
+      "plotted": true,
+      "regionIndex": 13
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_14",
+      "plotted": true,
+      "regionIndex": 14
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_15",
+      "plotted": true,
+      "regionIndex": 15
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_16",
+      "plotted": true,
+      "regionIndex": 16
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_17",
+      "plotted": true,
+      "regionIndex": 17
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_18",
+      "plotted": true,
+      "regionIndex": 18
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_19",
+      "plotted": true,
+      "regionIndex": 19
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_20",
+      "plotted": true,
+      "regionIndex": 20
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_21",
+      "plotted": true,
+      "regionIndex": 21
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_22",
+      "plotted": true,
+      "regionIndex": 22
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_23",
+      "plotted": true,
+      "regionIndex": 23
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_24",
+      "plotted": true,
+      "regionIndex": 24
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_25",
+      "plotted": true,
+      "regionIndex": 25
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_26",
+      "plotted": true,
+      "regionIndex": 26
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_27",
+      "plotted": true,
+      "regionIndex": 27
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_28",
+      "plotted": true,
+      "regionIndex": 28
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_29",
+      "plotted": true,
+      "regionIndex": 29
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_30",
+      "plotted": true,
+      "regionIndex": 30
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_31",
+      "plotted": true,
+      "regionIndex": 31
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_32",
+      "plotted": true,
+      "regionIndex": 32
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_33",
+      "plotted": true,
+      "regionIndex": 33
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_34",
+      "plotted": true,
+      "regionIndex": 34
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_35",
+      "plotted": true,
+      "regionIndex": 35
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_36",
+      "plotted": true,
+      "regionIndex": 36
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_37",
+      "plotted": true,
+      "regionIndex": 37
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_38",
+      "plotted": true,
+      "regionIndex": 38
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_39",
+      "plotted": true,
+      "regionIndex": 39
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_40",
+      "plotted": true,
+      "regionIndex": 40
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_41",
+      "plotted": true,
+      "regionIndex": 41
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_42",
+      "plotted": true,
+      "regionIndex": 42
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_43",
+      "plotted": true,
+      "regionIndex": 43
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_44",
+      "plotted": true,
+      "regionIndex": 44
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_45",
+      "plotted": true,
+      "regionIndex": 45
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_46",
+      "plotted": true,
+      "regionIndex": 46
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_47",
+      "plotted": true,
+      "regionIndex": 47
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_48",
+      "plotted": true,
+      "regionIndex": 48
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_49",
+      "plotted": true,
+      "regionIndex": 49
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_50",
+      "plotted": true,
+      "regionIndex": 50
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_51",
+      "plotted": true,
+      "regionIndex": 51
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_52",
+      "plotted": true,
+      "regionIndex": 52
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_53",
+      "plotted": true,
+      "regionIndex": 53
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_54",
+      "plotted": true,
+      "regionIndex": 54
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_55",
+      "plotted": true,
+      "regionIndex": 55
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_56",
+      "plotted": true,
+      "regionIndex": 56
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_57",
+      "plotted": true,
+      "regionIndex": 57
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_58",
+      "plotted": true,
+      "regionIndex": 58
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_59",
+      "plotted": true,
+      "regionIndex": 59
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_60",
+      "plotted": true,
+      "regionIndex": 60
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_61",
+      "plotted": true,
+      "regionIndex": 61
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_62",
+      "plotted": true,
+      "regionIndex": 62
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_63",
+      "plotted": true,
+      "regionIndex": 63
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_64",
+      "plotted": true,
+      "regionIndex": 64
+    },
+    {
+      "faultId": 2,
+      "faultName": "F 42_1",
+      "plotSeries": "fault_1_65",
+      "plotted": true,
+      "regionIndex": 65
+    }
+  ],
+  "plotData": [
+    {
+      "name": "X_topo_export",
+      "values": [
+        -1150,
+        -1011.178153659411,
+        -959.1397634964442,
+        -947.8260408972047,
+        -837.2776645531912,
+        -797.2402190495752,
+        -764.9440015345936,
+        -724.4649057126699,
+        -618.8830617253416,
+        -587.0016506870033,
+        -480.3188357762501,
+        -459.72520794708635,
+        -352.5849688049525,
+        -337.1933799096837,
+        -172.9774666447347,
+        424.946700847192
+      ]
+    },
+    {
+      "name": "Z_topo_export",
+      "values": [
+        -329.9994666447344,
+        -329.9994666447344,
+        -324.77887989646274,
+        -323.643866494045,
+        -312.5534506149768,
+        -308.5368206466735,
+        -295.39312591081,
+        -277.4025930907484,
+        -230.47778929046467,
+        -216.30841223327127,
+        -168.89429282132107,
+        -159.7416591020658,
+        -112.12424202547538,
+        -104.9994666447343,
+        0.0005333552657020846,
+        0.0005333552654747109
+      ]
+    },
+    {
+      "name": "X_region_0_0_export",
+      "values": [
+        -1150,
+        -1150,
+        -947.8260408972047,
+        -959.1397634964442,
+        -1011.178153659411
+      ]
+    },
+    {
+      "name": "Z_region_0_0_export",
+      "values": [
+        -329.9994666447344,
+        -577.0220000000006,
+        -577.0220000000007,
+        -427.3272620680585,
+        -329.9994666447344
+      ]
+    },
+    {
+      "name": "X_region_1_0_export",
+      "values": [
+        -797.2402190495751,
+        -764.9440015345936,
+        -618.8830617253416,
+        -587.0016506870033,
+        -837.2776645531912,
+        -724.4649057126699
+      ]
+    },
+    {
+      "name": "Z_region_1_0_export",
+      "values": [
+        -308.5368206466735,
+        -295.39312591081,
+        -437.55201950226785,
+        -577.022000000001,
+        -577.022000000002,
+        -400.52421612274026
+      ]
+    },
+    {
+      "name": "X_region_2_0_export",
+      "values": [
+        -1011.1781536594109,
+        -797.2402190495752,
+        -724.4649057126699,
+        -837.2776645531912,
+        -947.8260408972047,
+        -959.1397634964442
+      ]
+    },
+    {
+      "name": "Z_region_2_0_export",
+      "values": [
+        -329.9994666447345,
+        -308.5368206466735,
+        -400.52421612274026,
+        -577.022000000002,
+        -577.0220000000007,
+        -427.3272620680585
+      ]
+    },
+    {
+      "name": "X_region_3_0_export",
+      "values": [
+        -764.9440015345936,
+        -352.5849688049525,
+        -480.3188357762501,
+        -459.72520794708635,
+        -587.0016506870033,
+        -618.8830617253416
+      ]
+    },
+    {
+      "name": "Z_region_3_0_export",
+      "values": [
+        -295.39312591081,
+        -112.12424202547538,
+        -385.0525350772908,
+        -577.0220000000004,
+        -577.022000000001,
+        -437.55201950226785
+      ]
+    },
+    {
+      "name": "X_region_4_0_export",
+      "values": [
+        -459.72520794708635,
+        -480.3188357762501,
+        -352.5849688049525,
+        -337.1933799096837,
+        -172.9774666447347,
+        424.946700847192,
+        424.946700847192
+      ]
+    },
+    {
+      "name": "Z_region_4_0_export",
+      "values": [
+        -577.0220000000004,
+        -385.0525350772908,
+        -112.12424202547538,
+        -104.9994666447343,
+        0.0005333552657020846,
+        0.0005333552654747109,
+        -577.0220000000005
+      ]
+    },
+    {
+      "name": "X_fault_0_0_export",
+      "values": [
+        -108.39154867688103,
+        -125.68261061652788
+      ]
+    },
+    {
+      "name": "Z_fault_0_0_export",
+      "values": [
+        0.0005333552658157714,
+        -10.050296311945658
+      ]
+    },
+    {
+      "name": "X_fault_0_1_export",
+      "values": [
+        -125.68261061652788,
+        -142.97367255617462
+      ]
+    },
+    {
+      "name": "Z_fault_0_1_export",
+      "values": [
+        -10.050296311945658,
+        -20.101125979157132
+      ]
+    },
+    {
+      "name": "X_fault_0_2_export",
+      "values": [
+        -142.97367255617462,
+        -160.26473449582136
+      ]
+    },
+    {
+      "name": "Z_fault_0_2_export",
+      "values": [
+        -20.101125979157132,
+        -30.15195564636872
+      ]
+    },
+    {
+      "name": "X_fault_0_3_export",
+      "values": [
+        -160.26473449582136,
+        -177.5557964354681
+      ]
+    },
+    {
+      "name": "Z_fault_0_3_export",
+      "values": [
+        -30.15195564636872,
+        -40.20278531358019
+      ]
+    },
+    {
+      "name": "X_fault_0_4_export",
+      "values": [
+        -177.5557964354681,
+        -194.84685837511483
+      ]
+    },
+    {
+      "name": "Z_fault_0_4_export",
+      "values": [
+        -40.20278531358019,
+        -50.25361498079167
+      ]
+    },
+    {
+      "name": "X_fault_0_5_export",
+      "values": [
+        -194.84685837511483,
+        -212.1379203147617
+      ]
+    },
+    {
+      "name": "Z_fault_0_5_export",
+      "values": [
+        -50.25361498079167,
+        -60.30444464800314
+      ]
+    },
+    {
+      "name": "X_fault_0_6_export",
+      "values": [
+        -212.1379203147617,
+        -229.42898225440842
+      ]
+    },
+    {
+      "name": "Z_fault_0_6_export",
+      "values": [
+        -60.30444464800314,
+        -70.35527431521461
+      ]
+    },
+    {
+      "name": "X_fault_0_7_export",
+      "values": [
+        -229.42898225440842,
+        -246.72004419405528
+      ]
+    },
+    {
+      "name": "Z_fault_0_7_export",
+      "values": [
+        -70.35527431521461,
+        -80.40610398242609
+      ]
+    },
+    {
+      "name": "X_fault_0_8_export",
+      "values": [
+        -246.72004419405528,
+        -264.011106133702
+      ]
+    },
+    {
+      "name": "Z_fault_0_8_export",
+      "values": [
+        -80.40610398242609,
+        -90.45693364963756
+      ]
+    },
+    {
+      "name": "X_fault_0_9_export",
+      "values": [
+        -264.011106133702,
+        -281.30216807334887
+      ]
+    },
+    {
+      "name": "Z_fault_0_9_export",
+      "values": [
+        -90.45693364963756,
+        -100.50776331684904
+      ]
+    },
+    {
+      "name": "X_fault_0_10_export",
+      "values": [
+        -281.30216807334887,
+        -298.5932300129957
+      ]
+    },
+    {
+      "name": "Z_fault_0_10_export",
+      "values": [
+        -100.50776331684904,
+        -110.55859298406051
+      ]
+    },
+    {
+      "name": "X_fault_0_11_export",
+      "values": [
+        -298.5932300129957,
+        -315.88429195264246
+      ]
+    },
+    {
+      "name": "Z_fault_0_11_export",
+      "values": [
+        -110.55859298406051,
+        -120.60942265127198
+      ]
+    },
+    {
+      "name": "X_fault_0_12_export",
+      "values": [
+        -315.88429195264246,
+        -333.1753538922892
+      ]
+    },
+    {
+      "name": "Z_fault_0_12_export",
+      "values": [
+        -120.60942265127198,
+        -130.66025231848334
+      ]
+    },
+    {
+      "name": "X_fault_0_13_export",
+      "values": [
+        -333.1753538922892,
+        -350.46641583193605
+      ]
+    },
+    {
+      "name": "Z_fault_0_13_export",
+      "values": [
+        -130.66025231848334,
+        -140.71108198569482
+      ]
+    },
+    {
+      "name": "X_fault_0_14_export",
+      "values": [
+        -350.46641583193605,
+        -367.7574777715828
+      ]
+    },
+    {
+      "name": "Z_fault_0_14_export",
+      "values": [
+        -140.71108198569482,
+        -150.7619116529063
+      ]
+    },
+    {
+      "name": "X_fault_0_15_export",
+      "values": [
+        -367.7574777715828,
+        -385.04853971122964
+      ]
+    },
+    {
+      "name": "Z_fault_0_15_export",
+      "values": [
+        -150.7619116529063,
+        -160.81274132011777
+      ]
+    },
+    {
+      "name": "X_fault_0_16_export",
+      "values": [
+        -385.04853971122964,
+        -402.3396016508764
+      ]
+    },
+    {
+      "name": "Z_fault_0_16_export",
+      "values": [
+        -160.81274132011777,
+        -170.86357098732913
+      ]
+    },
+    {
+      "name": "X_fault_0_17_export",
+      "values": [
+        -402.3396016508764,
+        -419.6306635905232
+      ]
+    },
+    {
+      "name": "Z_fault_0_17_export",
+      "values": [
+        -170.86357098732913,
+        -180.9144006545406
+      ]
+    },
+    {
+      "name": "X_fault_0_18_export",
+      "values": [
+        -419.6306635905232,
+        -436.9217255301701
+      ]
+    },
+    {
+      "name": "Z_fault_0_18_export",
+      "values": [
+        -180.9144006545406,
+        -190.96523032175207
+      ]
+    },
+    {
+      "name": "X_fault_0_19_export",
+      "values": [
+        -436.9217255301701,
+        -454.21278746981693
+      ]
+    },
+    {
+      "name": "Z_fault_0_19_export",
+      "values": [
+        -190.96523032175207,
+        -201.01605998896355
+      ]
+    },
+    {
+      "name": "X_fault_0_20_export",
+      "values": [
+        -454.21278746981693,
+        -471.50384940946367
+      ]
+    },
+    {
+      "name": "Z_fault_0_20_export",
+      "values": [
+        -201.01605998896355,
+        -211.0668896561749
+      ]
+    },
+    {
+      "name": "X_fault_0_21_export",
+      "values": [
+        -471.50384940946367,
+        -488.7949113491105
+      ]
+    },
+    {
+      "name": "Z_fault_0_21_export",
+      "values": [
+        -211.0668896561749,
+        -221.11771932338638
+      ]
+    },
+    {
+      "name": "X_fault_0_22_export",
+      "values": [
+        -488.7949113491105,
+        -506.0859732887574
+      ]
+    },
+    {
+      "name": "Z_fault_0_22_export",
+      "values": [
+        -221.11771932338638,
+        -231.16854899059786
+      ]
+    },
+    {
+      "name": "X_fault_0_23_export",
+      "values": [
+        -506.0859732887574,
+        -523.3770352284041
+      ]
+    },
+    {
+      "name": "Z_fault_0_23_export",
+      "values": [
+        -231.16854899059786,
+        -241.21937865780933
+      ]
+    },
+    {
+      "name": "X_fault_0_24_export",
+      "values": [
+        -523.3770352284041,
+        -540.668097168051
+      ]
+    },
+    {
+      "name": "Z_fault_0_24_export",
+      "values": [
+        -241.21937865780933,
+        -251.2702083250207
+      ]
+    },
+    {
+      "name": "X_fault_0_25_export",
+      "values": [
+        -540.668097168051,
+        -557.9591591076976
+      ]
+    },
+    {
+      "name": "Z_fault_0_25_export",
+      "values": [
+        -251.2702083250207,
+        -261.32103799223205
+      ]
+    },
+    {
+      "name": "X_fault_0_26_export",
+      "values": [
+        -557.9591591076976,
+        -575.2502210473444
+      ]
+    },
+    {
+      "name": "Z_fault_0_26_export",
+      "values": [
+        -261.32103799223205,
+        -271.3718676594435
+      ]
+    },
+    {
+      "name": "X_fault_0_27_export",
+      "values": [
+        -575.2502210473444,
+        -592.5412829869913
+      ]
+    },
+    {
+      "name": "Z_fault_0_27_export",
+      "values": [
+        -271.3718676594435,
+        -281.422697326655
+      ]
+    },
+    {
+      "name": "X_fault_0_28_export",
+      "values": [
+        -592.5412829869913,
+        -609.8323449266381
+      ]
+    },
+    {
+      "name": "Z_fault_0_28_export",
+      "values": [
+        -281.422697326655,
+        -291.47352699386636
+      ]
+    },
+    {
+      "name": "X_fault_0_29_export",
+      "values": [
+        -609.8323449266381,
+        -627.1234068662849
+      ]
+    },
+    {
+      "name": "Z_fault_0_29_export",
+      "values": [
+        -291.47352699386636,
+        -301.52435666107783
+      ]
+    },
+    {
+      "name": "X_fault_0_30_export",
+      "values": [
+        -627.1234068662849,
+        -644.4144688059317
+      ]
+    },
+    {
+      "name": "Z_fault_0_30_export",
+      "values": [
+        -301.52435666107783,
+        -311.5751863282893
+      ]
+    },
+    {
+      "name": "X_fault_0_31_export",
+      "values": [
+        -644.4144688059317,
+        -661.7055307455785
+      ]
+    },
+    {
+      "name": "Z_fault_0_31_export",
+      "values": [
+        -311.5751863282893,
+        -321.6260159955008
+      ]
+    },
+    {
+      "name": "X_fault_0_32_export",
+      "values": [
+        -661.7055307455785,
+        -678.9965926852253
+      ]
+    },
+    {
+      "name": "Z_fault_0_32_export",
+      "values": [
+        -321.6260159955008,
+        -331.67684566271225
+      ]
+    },
+    {
+      "name": "X_fault_0_33_export",
+      "values": [
+        -678.9965926852253,
+        -696.2876546248722
+      ]
+    },
+    {
+      "name": "Z_fault_0_33_export",
+      "values": [
+        -331.67684566271225,
+        -341.7276753299236
+      ]
+    },
+    {
+      "name": "X_fault_0_34_export",
+      "values": [
+        -696.2876546248722,
+        -713.578716564519
+      ]
+    },
+    {
+      "name": "Z_fault_0_34_export",
+      "values": [
+        -341.7276753299236,
+        -351.7785049971351
+      ]
+    },
+    {
+      "name": "X_fault_0_35_export",
+      "values": [
+        -713.578716564519,
+        -730.8697785041659
+      ]
+    },
+    {
+      "name": "Z_fault_0_35_export",
+      "values": [
+        -351.7785049971351,
+        -361.82933466434656
+      ]
+    },
+    {
+      "name": "X_fault_0_36_export",
+      "values": [
+        -730.8697785041659,
+        -748.1608404438127
+      ]
+    },
+    {
+      "name": "Z_fault_0_36_export",
+      "values": [
+        -361.82933466434656,
+        -371.88016433155803
+      ]
+    },
+    {
+      "name": "X_fault_0_37_export",
+      "values": [
+        -748.1608404438127,
+        -765.4519023834595
+      ]
+    },
+    {
+      "name": "Z_fault_0_37_export",
+      "values": [
+        -371.88016433155803,
+        -381.9309939987694
+      ]
+    },
+    {
+      "name": "X_fault_0_38_export",
+      "values": [
+        -765.4519023834595,
+        -782.7429643231061
+      ]
+    },
+    {
+      "name": "Z_fault_0_38_export",
+      "values": [
+        -381.9309939987694,
+        -391.98182366598076
+      ]
+    },
+    {
+      "name": "X_fault_0_39_export",
+      "values": [
+        -782.7429643231061,
+        -800.0340262627531
+      ]
+    },
+    {
+      "name": "Z_fault_0_39_export",
+      "values": [
+        -391.98182366598076,
+        -402.0326533331923
+      ]
+    },
+    {
+      "name": "X_fault_0_40_export",
+      "values": [
+        -800.0340262627531,
+        -817.3250882023998
+      ]
+    },
+    {
+      "name": "Z_fault_0_40_export",
+      "values": [
+        -402.0326533331923,
+        -412.08348300040365
+      ]
+    },
+    {
+      "name": "X_fault_0_41_export",
+      "values": [
+        -817.3250882023998,
+        -834.6161501420465
+      ]
+    },
+    {
+      "name": "Z_fault_0_41_export",
+      "values": [
+        -412.08348300040365,
+        -422.13431266761506
+      ]
+    },
+    {
+      "name": "X_fault_0_42_export",
+      "values": [
+        -834.6161501420465,
+        -851.9072120816934
+      ]
+    },
+    {
+      "name": "Z_fault_0_42_export",
+      "values": [
+        -422.13431266761506,
+        -432.1851423348265
+      ]
+    },
+    {
+      "name": "X_fault_0_43_export",
+      "values": [
+        -851.9072120816934,
+        -869.1982740213402
+      ]
+    },
+    {
+      "name": "Z_fault_0_43_export",
+      "values": [
+        -432.1851423348265,
+        -442.2359720020379
+      ]
+    },
+    {
+      "name": "X_fault_0_44_export",
+      "values": [
+        -869.1982740213402,
+        -886.4893359609871
+      ]
+    },
+    {
+      "name": "Z_fault_0_44_export",
+      "values": [
+        -442.2359720020379,
+        -452.2868016692493
+      ]
+    },
+    {
+      "name": "X_fault_0_45_export",
+      "values": [
+        -886.4893359609871,
+        -903.7803979006338
+      ]
+    },
+    {
+      "name": "Z_fault_0_45_export",
+      "values": [
+        -452.2868016692493,
+        -462.33763133646073
+      ]
+    },
+    {
+      "name": "X_fault_0_46_export",
+      "values": [
+        -903.7803979006338,
+        -921.0714598402807
+      ]
+    },
+    {
+      "name": "Z_fault_0_46_export",
+      "values": [
+        -462.33763133646073,
+        -472.38846100367215
+      ]
+    },
+    {
+      "name": "X_fault_0_47_export",
+      "values": [
+        -921.0714598402807,
+        -938.3625217799275
+      ]
+    },
+    {
+      "name": "Z_fault_0_47_export",
+      "values": [
+        -472.38846100367215,
+        -482.43929067088357
+      ]
+    },
+    {
+      "name": "X_fault_0_48_export",
+      "values": [
+        -938.3625217799275,
+        -955.6535837195743
+      ]
+    },
+    {
+      "name": "Z_fault_0_48_export",
+      "values": [
+        -482.43929067088357,
+        -492.490120338095
+      ]
+    },
+    {
+      "name": "X_fault_0_49_export",
+      "values": [
+        -955.6535837195743,
+        -972.9446456592211
+      ]
+    },
+    {
+      "name": "Z_fault_0_49_export",
+      "values": [
+        -492.490120338095,
+        -502.54095000530646
+      ]
+    },
+    {
+      "name": "X_fault_0_50_export",
+      "values": [
+        -972.9446456592211,
+        -990.235707598868
+      ]
+    },
+    {
+      "name": "Z_fault_0_50_export",
+      "values": [
+        -502.54095000530646,
+        -512.5917796725179
+      ]
+    },
+    {
+      "name": "X_fault_0_51_export",
+      "values": [
+        -990.235707598868,
+        -1007.5267695385147
+      ]
+    },
+    {
+      "name": "Z_fault_0_51_export",
+      "values": [
+        -512.5917796725179,
+        -522.6426093397293
+      ]
+    },
+    {
+      "name": "X_fault_0_52_export",
+      "values": [
+        -1007.5267695385147,
+        -1024.8178314781615
+      ]
+    },
+    {
+      "name": "Z_fault_0_52_export",
+      "values": [
+        -522.6426093397293,
+        -532.6934390069407
+      ]
+    },
+    {
+      "name": "X_fault_0_53_export",
+      "values": [
+        -1024.8178314781615,
+        -1042.1088934178083
+      ]
+    },
+    {
+      "name": "Z_fault_0_53_export",
+      "values": [
+        -532.6934390069407,
+        -542.7442686741522
+      ]
+    },
+    {
+      "name": "X_fault_0_54_export",
+      "values": [
+        -1042.1088934178083,
+        -1059.3999553574552
+      ]
+    },
+    {
+      "name": "Z_fault_0_54_export",
+      "values": [
+        -542.7442686741522,
+        -552.7950983413637
+      ]
+    },
+    {
+      "name": "X_fault_0_55_export",
+      "values": [
+        -1059.3999553574552,
+        -1076.6910172971018
+      ]
+    },
+    {
+      "name": "Z_fault_0_55_export",
+      "values": [
+        -552.7950983413637,
+        -562.8459280085751
+      ]
+    },
+    {
+      "name": "X_fault_0_56_export",
+      "values": [
+        -1076.6910172971018,
+        -1093.9820792367486
+      ]
+    },
+    {
+      "name": "Z_fault_0_56_export",
+      "values": [
+        -562.8459280085751,
+        -572.8967576757866
+      ]
+    },
+    {
+      "name": "X_fault_0_57_export",
+      "values": [
+        -1093.9820792367486,
+        -1101.0789879403874
+      ]
+    },
+    {
+      "name": "Z_fault_0_57_export",
+      "values": [
+        -572.8967576757866,
+        -577.0219999999998
+      ]
+    },
+    {
+      "name": "X_fault_1_0_export",
+      "values": [
+        -1150,
+        -1130.5361126798598
+      ]
+    },
+    {
+      "name": "Z_fault_1_0_export",
+      "values": [
+        -457.7992746309491,
+        -453.1995909038997
+      ]
+    },
+    {
+      "name": "X_fault_1_1_export",
+      "values": [
+        -1130.5361126798598,
+        -1111.0722253597196
+      ]
+    },
+    {
+      "name": "Z_fault_1_1_export",
+      "values": [
+        -453.1995909038997,
+        -448.59990717685025
+      ]
+    },
+    {
+      "name": "X_fault_1_2_export",
+      "values": [
+        -1111.0722253597196,
+        -1091.6083380395792
+      ]
+    },
+    {
+      "name": "Z_fault_1_2_export",
+      "values": [
+        -448.59990717685025,
+        -444.00022344980084
+      ]
+    },
+    {
+      "name": "X_fault_1_3_export",
+      "values": [
+        -1091.6083380395792,
+        -1072.144450719439
+      ]
+    },
+    {
+      "name": "Z_fault_1_3_export",
+      "values": [
+        -444.00022344980084,
+        -439.40053972275143
+      ]
+    },
+    {
+      "name": "X_fault_1_4_export",
+      "values": [
+        -1072.144450719439,
+        -1052.6805633992988
+      ]
+    },
+    {
+      "name": "Z_fault_1_4_export",
+      "values": [
+        -439.40053972275143,
+        -434.800855995702
+      ]
+    },
+    {
+      "name": "X_fault_1_5_export",
+      "values": [
+        -1052.6805633992988,
+        -1033.2166760791586
+      ]
+    },
+    {
+      "name": "Z_fault_1_5_export",
+      "values": [
+        -434.800855995702,
+        -430.20117226865256
+      ]
+    },
+    {
+      "name": "X_fault_1_6_export",
+      "values": [
+        -1033.2166760791586,
+        -1013.7527887590182
+      ]
+    },
+    {
+      "name": "Z_fault_1_6_export",
+      "values": [
+        -430.20117226865256,
+        -425.60148854160315
+      ]
+    },
+    {
+      "name": "X_fault_1_7_export",
+      "values": [
+        -1013.7527887590182,
+        -994.2889014388779
+      ]
+    },
+    {
+      "name": "Z_fault_1_7_export",
+      "values": [
+        -425.60148854160315,
+        -421.00180481455374
+      ]
+    },
+    {
+      "name": "X_fault_1_8_export",
+      "values": [
+        -994.2889014388779,
+        -974.8250141187377
+      ]
+    },
+    {
+      "name": "Z_fault_1_8_export",
+      "values": [
+        -421.00180481455374,
+        -416.4021210875043
+      ]
+    },
+    {
+      "name": "X_fault_1_9_export",
+      "values": [
+        -974.8250141187377,
+        -955.3611267985974
+      ]
+    },
+    {
+      "name": "Z_fault_1_9_export",
+      "values": [
+        -416.4021210875043,
+        -411.80243736045486
+      ]
+    },
+    {
+      "name": "X_fault_1_10_export",
+      "values": [
+        -955.3611267985974,
+        -935.8972394784572
+      ]
+    },
+    {
+      "name": "Z_fault_1_10_export",
+      "values": [
+        -411.80243736045486,
+        -407.20275363340545
+      ]
+    },
+    {
+      "name": "X_fault_1_11_export",
+      "values": [
+        -935.8972394784572,
+        -916.4333521583169
+      ]
+    },
+    {
+      "name": "Z_fault_1_11_export",
+      "values": [
+        -407.20275363340545,
+        -402.60306990635604
+      ]
+    },
+    {
+      "name": "X_fault_1_12_export",
+      "values": [
+        -916.4333521583169,
+        -896.9694648381767
+      ]
+    },
+    {
+      "name": "Z_fault_1_12_export",
+      "values": [
+        -402.60306990635604,
+        -398.00338617930663
+      ]
+    },
+    {
+      "name": "X_fault_1_13_export",
+      "values": [
+        -896.9694648381767,
+        -877.5055775180365
+      ]
+    },
+    {
+      "name": "Z_fault_1_13_export",
+      "values": [
+        -398.00338617930663,
+        -393.40370245225716
+      ]
+    },
+    {
+      "name": "X_fault_1_14_export",
+      "values": [
+        -877.5055775180365,
+        -858.0416901978962
+      ]
+    },
+    {
+      "name": "Z_fault_1_14_export",
+      "values": [
+        -393.40370245225716,
+        -388.80401872520775
+      ]
+    },
+    {
+      "name": "X_fault_1_15_export",
+      "values": [
+        -858.0416901978962,
+        -838.5778028777559
+      ]
+    },
+    {
+      "name": "Z_fault_1_15_export",
+      "values": [
+        -388.80401872520775,
+        -384.20433499815834
+      ]
+    },
+    {
+      "name": "X_fault_1_16_export",
+      "values": [
+        -838.5778028777559,
+        -819.1139155576157
+      ]
+    },
+    {
+      "name": "Z_fault_1_16_export",
+      "values": [
+        -384.20433499815834,
+        -379.6046512711089
+      ]
+    },
+    {
+      "name": "X_fault_1_17_export",
+      "values": [
+        -819.1139155576157,
+        -799.710847250112
+      ]
+    },
+    {
+      "name": "Z_fault_1_17_export",
+      "values": [
+        -379.6046512711089,
+        -374.7844414668084
+      ]
+    },
+    {
+      "name": "X_fault_1_18_export",
+      "values": [
+        -799.710847250112,
+        -779.9362608118101
+      ]
+    },
+    {
+      "name": "Z_fault_1_18_export",
+      "values": [
+        -374.7844414668084,
+        -372.0741149074123
+      ]
+    },
+    {
+      "name": "X_fault_1_19_export",
+      "values": [
+        -779.9362608118101,
+        -760.006248525369
+      ]
+    },
+    {
+      "name": "Z_fault_1_19_export",
+      "values": [
+        -372.0741149074123,
+        -370.4024061222748
+      ]
+    },
+    {
+      "name": "X_fault_1_20_export",
+      "values": [
+        -760.006248525369,
+        -740.0762362389278
+      ]
+    },
+    {
+      "name": "Z_fault_1_20_export",
+      "values": [
+        -370.4024061222748,
+        -368.7306973371373
+      ]
+    },
+    {
+      "name": "X_fault_1_21_export",
+      "values": [
+        -740.0762362389278,
+        -720.1462239524868
+      ]
+    },
+    {
+      "name": "Z_fault_1_21_export",
+      "values": [
+        -368.7306973371373,
+        -367.05898855199985
+      ]
+    },
+    {
+      "name": "X_fault_1_22_export",
+      "values": [
+        -720.1462239524868,
+        -700.2162116660456
+      ]
+    },
+    {
+      "name": "Z_fault_1_22_export",
+      "values": [
+        -367.05898855199985,
+        -365.3872797668623
+      ]
+    },
+    {
+      "name": "X_fault_1_23_export",
+      "values": [
+        -700.2162116660456,
+        -680.2861993796045
+      ]
+    },
+    {
+      "name": "Z_fault_1_23_export",
+      "values": [
+        -365.3872797668623,
+        -363.7155709817248
+      ]
+    },
+    {
+      "name": "X_fault_1_24_export",
+      "values": [
+        -680.2861993796045,
+        -660.3561870931633
+      ]
+    },
+    {
+      "name": "Z_fault_1_24_export",
+      "values": [
+        -363.7155709817248,
+        -362.04386219658727
+      ]
+    },
+    {
+      "name": "X_fault_1_25_export",
+      "values": [
+        -660.3561870931633,
+        -640.4261748067222
+      ]
+    },
+    {
+      "name": "Z_fault_1_25_export",
+      "values": [
+        -362.04386219658727,
+        -360.37215341144986
+      ]
+    },
+    {
+      "name": "X_fault_1_26_export",
+      "values": [
+        -640.4261748067222,
+        -620.4961625202811
+      ]
+    },
+    {
+      "name": "Z_fault_1_26_export",
+      "values": [
+        -360.37215341144986,
+        -358.70044462631233
+      ]
+    },
+    {
+      "name": "X_fault_1_27_export",
+      "values": [
+        -620.4961625202811,
+        -600.56615023384
+      ]
+    },
+    {
+      "name": "Z_fault_1_27_export",
+      "values": [
+        -358.70044462631233,
+        -357.0287358411748
+      ]
+    },
+    {
+      "name": "X_fault_1_28_export",
+      "values": [
+        -600.56615023384,
+        -580.9184992022889
+      ]
+    },
+    {
+      "name": "Z_fault_1_28_export",
+      "values": [
+        -357.0287358411748,
+        -353.5082743272859
+      ]
+    },
+    {
+      "name": "X_fault_1_29_export",
+      "values": [
+        -580.9184992022889,
+        -561.3216839789176
+      ]
+    },
+    {
+      "name": "Z_fault_1_29_export",
+      "values": [
+        -353.5082743272859,
+        -349.6048649537074
+      ]
+    },
+    {
+      "name": "X_fault_1_30_export",
+      "values": [
+        -561.3216839789176,
+        -541.6062160607635
+      ]
+    },
+    {
+      "name": "Z_fault_1_30_export",
+      "values": [
+        -349.6048649537074,
+        -346.39130654478913
+      ]
+    },
+    {
+      "name": "X_fault_1_31_export",
+      "values": [
+        -541.6062160607635,
+        -521.9885187630146
+      ]
+    },
+    {
+      "name": "Z_fault_1_31_export",
+      "values": [
+        -346.39130654478913,
+        -342.49991520691924
+      ]
+    },
+    {
+      "name": "X_fault_1_32_export",
+      "values": [
+        -521.9885187630146,
+        -502.31934627996475
+      ]
+    },
+    {
+      "name": "Z_fault_1_32_export",
+      "values": [
+        -342.49991520691924,
+        -338.87847052403174
+      ]
+    },
+    {
+      "name": "X_fault_1_33_export",
+      "values": [
+        -502.31934627996475,
+        -482.7791195578126
+      ]
+    },
+    {
+      "name": "Z_fault_1_33_export",
+      "values": [
+        -338.87847052403174,
+        -334.8247213801036
+      ]
+    },
+    {
+      "name": "X_fault_1_34_export",
+      "values": [
+        -482.7791195578126,
+        -463.9371646616054
+      ]
+    },
+    {
+      "name": "Z_fault_1_34_export",
+      "values": [
+        -334.8247213801036,
+        -328.1290002756948
+      ]
+    },
+    {
+      "name": "X_fault_1_35_export",
+      "values": [
+        -463.9371646616054,
+        -446.12888984776964
+      ]
+    },
+    {
+      "name": "Z_fault_1_35_export",
+      "values": [
+        -328.1290002756948,
+        -319.34407776992293
+      ]
+    },
+    {
+      "name": "X_fault_1_36_export",
+      "values": [
+        -446.12888984776964,
+        -429.5656585645404
+      ]
+    },
+    {
+      "name": "Z_fault_1_36_export",
+      "values": [
+        -319.34407776992293,
+        -308.13428876841806
+      ]
+    },
+    {
+      "name": "X_fault_1_37_export",
+      "values": [
+        -429.5656585645404,
+        -413.16513758977385
+      ]
+    },
+    {
+      "name": "Z_fault_1_37_export",
+      "values": [
+        -308.13428876841806,
+        -296.70402548104437
+      ]
+    },
+    {
+      "name": "X_fault_1_38_export",
+      "values": [
+        -413.16513758977385,
+        -400.08323433252974
+      ]
+    },
+    {
+      "name": "Z_fault_1_38_export",
+      "values": [
+        -296.70402548104437,
+        -281.57578013771024
+      ]
+    },
+    {
+      "name": "X_fault_1_39_export",
+      "values": [
+        -400.08323433252974,
+        -387.00133107528586
+      ]
+    },
+    {
+      "name": "Z_fault_1_39_export",
+      "values": [
+        -281.57578013771024,
+        -266.44753479437634
+      ]
+    },
+    {
+      "name": "X_fault_1_40_export",
+      "values": [
+        -387.00133107528586,
+        -373.6623335712984
+      ]
+    },
+    {
+      "name": "Z_fault_1_40_export",
+      "values": [
+        -266.44753479437634,
+        -251.59243099119954
+      ]
+    },
+    {
+      "name": "X_fault_1_41_export",
+      "values": [
+        -373.6623335712984,
+        -358.15746639590054
+      ]
+    },
+    {
+      "name": "Z_fault_1_41_export",
+      "values": [
+        -251.59243099119954,
+        -238.96160662127159
+      ]
+    },
+    {
+      "name": "X_fault_1_42_export",
+      "values": [
+        -358.15746639590054,
+        -342.713860050756
+      ]
+    },
+    {
+      "name": "Z_fault_1_42_export",
+      "values": [
+        -238.96160662127159,
+        -226.25353741087577
+      ]
+    },
+    {
+      "name": "X_fault_1_43_export",
+      "values": [
+        -342.713860050756,
+        -327.2702537056116
+      ]
+    },
+    {
+      "name": "Z_fault_1_43_export",
+      "values": [
+        -226.25353741087577,
+        -213.54546820047983
+      ]
+    },
+    {
+      "name": "X_fault_1_44_export",
+      "values": [
+        -327.2702537056116,
+        -311.8266473604672
+      ]
+    },
+    {
+      "name": "Z_fault_1_44_export",
+      "values": [
+        -213.54546820047983,
+        -200.8373989900839
+      ]
+    },
+    {
+      "name": "X_fault_1_45_export",
+      "values": [
+        -311.8266473604672,
+        -296.38304101532276
+      ]
+    },
+    {
+      "name": "Z_fault_1_45_export",
+      "values": [
+        -200.8373989900839,
+        -188.12932977968808
+      ]
+    },
+    {
+      "name": "X_fault_1_46_export",
+      "values": [
+        -296.38304101532276,
+        -280.93943467017834
+      ]
+    },
+    {
+      "name": "Z_fault_1_46_export",
+      "values": [
+        -188.12932977968808,
+        -175.42126056929214
+      ]
+    },
+    {
+      "name": "X_fault_1_47_export",
+      "values": [
+        -280.93943467017834,
+        -265.4958283250338
+      ]
+    },
+    {
+      "name": "Z_fault_1_47_export",
+      "values": [
+        -175.42126056929214,
+        -162.71319135889632
+      ]
+    },
+    {
+      "name": "X_fault_1_48_export",
+      "values": [
+        -265.4958283250338,
+        -250.07801837440593
+      ]
+    },
+    {
+      "name": "Z_fault_1_48_export",
+      "values": [
+        -162.71319135889632,
+        -149.974285900003
+      ]
+    },
+    {
+      "name": "X_fault_1_49_export",
+      "values": [
+        -250.07801837440593,
+        -234.69303110815792
+      ]
+    },
+    {
+      "name": "Z_fault_1_49_export",
+      "values": [
+        -149.974285900003,
+        -137.19830481820952
+      ]
+    },
+    {
+      "name": "X_fault_1_50_export",
+      "values": [
+        -234.69303110815792,
+        -219.31909487317773
+      ]
+    },
+    {
+      "name": "Z_fault_1_50_export",
+      "values": [
+        -137.19830481820952,
+        -124.40609698732021
+      ]
+    },
+    {
+      "name": "X_fault_1_51_export",
+      "values": [
+        -219.31909487317773,
+        -204.02194582144818
+      ]
+    },
+    {
+      "name": "Z_fault_1_51_export",
+      "values": [
+        -124.40609698732021,
+        -111.52258092155387
+      ]
+    },
+    {
+      "name": "X_fault_1_52_export",
+      "values": [
+        -204.02194582144818,
+        -188.25803931950747
+      ]
+    },
+    {
+      "name": "Z_fault_1_52_export",
+      "values": [
+        -111.52258092155387,
+        -99.22153481760745
+      ]
+    },
+    {
+      "name": "X_fault_1_53_export",
+      "values": [
+        -188.25803931950747,
+        -171.95338891542747
+      ]
+    },
+    {
+      "name": "Z_fault_1_53_export",
+      "values": [
+        -99.22153481760745,
+        -87.64157301225475
+      ]
+    },
+    {
+      "name": "X_fault_1_54_export",
+      "values": [
+        -171.95338891542747,
+        -154.51771652054845
+      ]
+    },
+    {
+      "name": "Z_fault_1_54_export",
+      "values": [
+        -87.64157301225475,
+        -78.06717999875707
+      ]
+    },
+    {
+      "name": "X_fault_1_55_export",
+      "values": [
+        -154.51771652054845,
+        -135.72991902197168
+      ]
+    },
+    {
+      "name": "Z_fault_1_55_export",
+      "values": [
+        -78.06717999875707,
+        -71.21016423732874
+      ]
+    },
+    {
+      "name": "X_fault_1_56_export",
+      "values": [
+        -135.72991902197168,
+        -116.94212152339492
+      ]
+    },
+    {
+      "name": "Z_fault_1_56_export",
+      "values": [
+        -71.21016423732874,
+        -64.3531484759003
+      ]
+    },
+    {
+      "name": "X_fault_1_57_export",
+      "values": [
+        -116.94212152339492,
+        -98.15432402481815
+      ]
+    },
+    {
+      "name": "Z_fault_1_57_export",
+      "values": [
+        -64.3531484759003,
+        -57.496132714471855
+      ]
+    },
+    {
+      "name": "X_fault_1_58_export",
+      "values": [
+        -98.15432402481815,
+        -79.36652652624139
+      ]
+    },
+    {
+      "name": "Z_fault_1_58_export",
+      "values": [
+        -57.496132714471855,
+        -50.639116953043526
+      ]
+    },
+    {
+      "name": "X_fault_1_59_export",
+      "values": [
+        -79.36652652624139,
+        -60.57872902766553
+      ]
+    },
+    {
+      "name": "Z_fault_1_59_export",
+      "values": [
+        -50.639116953043526,
+        -43.782101191615425
+      ]
+    },
+    {
+      "name": "X_fault_1_60_export",
+      "values": [
+        -60.57872902766553,
+        -42.1975634903647
+      ]
+    },
+    {
+      "name": "Z_fault_1_60_export",
+      "values": [
+        -43.782101191615425,
+        -35.90330051474314
+      ]
+    },
+    {
+      "name": "X_fault_1_61_export",
+      "values": [
+        -42.1975634903647,
+        -23.83564813678049
+      ]
+    },
+    {
+      "name": "Z_fault_1_61_export",
+      "values": [
+        -35.90330051474314,
+        -27.97612797039892
+      ]
+    },
+    {
+      "name": "X_fault_1_62_export",
+      "values": [
+        -23.83564813678049,
+        -5.473732783196056
+      ]
+    },
+    {
+      "name": "Z_fault_1_62_export",
+      "values": [
+        -27.97612797039892,
+        -20.048955426054704
+      ]
+    },
+    {
+      "name": "X_fault_1_63_export",
+      "values": [
+        -5.473732783196056,
+        12.888182570388153
+      ]
+    },
+    {
+      "name": "Z_fault_1_63_export",
+      "values": [
+        -20.048955426054704,
+        -12.121782881710374
+      ]
+    },
+    {
+      "name": "X_fault_1_64_export",
+      "values": [
+        12.888182570388153,
+        31.331536369031483
+      ]
+    },
+    {
+      "name": "Z_fault_1_64_export",
+      "values": [
+        -12.121782881710374,
+        -4.390268863782126
+      ]
+    },
+    {
+      "name": "X_fault_1_65_export",
+      "values": [
+        31.331536369031483,
+        41.9234191605301
+      ]
+    },
+    {
+      "name": "Z_fault_1_65_export",
+      "values": [
+        -4.390268863782126,
+        0.0005333552658157714
+      ]
+    },
+    {
+      "name": "X_UB_export",
+      "values": [
+        -157.50000000000003,
+        -150.00000000000003,
+        -142.50000000000003,
+        -135.00000000000003,
+        -127.50000000000001,
+        -120.00000000000001,
+        -112.50000000000001,
+        -105.00000000000001,
+        -97.50000000000001,
+        -90.00000000000001,
+        -82.50000000000001,
+        -75.00000000000001,
+        -67.50000000000001,
+        -60.00000000000001,
+        -52.50000000000001,
+        -45.00000000000001,
+        -37.50000000000001,
+        -30.000000000000007,
+        -22.500000000000007,
+        -15.000000000000004,
+        -7.500000000000002
+      ]
+    },
+    {
+      "name": "Z_UB_export",
+      "values": [
+        -315,
+        -300,
+        -285,
+        -270,
+        -255,
+        -240,
+        -225,
+        -210,
+        -195,
+        -180,
+        -165,
+        -150,
+        -135,
+        -120,
+        -105,
+        -90,
+        -75,
+        -60,
+        -45,
+        -30,
+        -15
+      ]
+    },
+    {
+      "name": "X_LB_export",
+      "values": [
+        -277.61411021135694,
+        -270.11411021135694,
+        -262.61411021135694,
+        -255.11411021135694,
+        -247.61411021135694,
+        -240.11411021135694,
+        -232.61411021135694,
+        -225.11411021135694,
+        -217.61411021135694,
+        -210.11411021135694,
+        -202.61411021135694,
+        -195.11411021135694,
+        -187.61411021135694,
+        -180.11411021135694,
+        -172.61411021135694,
+        -165.11411021135694,
+        -157.61411021135694,
+        -150.11411021135694,
+        -142.61411021135694,
+        -135.11411021135694,
+        -127.61411021135694
+      ]
+    },
+    {
+      "name": "Z_LB_export",
+      "values": [
+        -315,
+        -300,
+        -285,
+        -270,
+        -255,
+        -240,
+        -225,
+        -210,
+        -195,
+        -180,
+        -165,
+        -150,
+        -135,
+        -120,
+        -105,
+        -90,
+        -75,
+        -60,
+        -45,
+        -30,
+        -15
+      ]
+    },
+    {
+      "name": "X_opt_export",
+      "values": [
+        -285.11411021135694,
+        -277.61411021135694,
+        -267.01319102113575,
+        -256.5130910211358,
+        -227.01299102113575,
+        -169.51289102113574,
+        -152.11279102113573,
+        -124.51269102113574,
+        -117.01259102113573,
+        -109.51249102113574,
+        -102.01239102113573,
+        -94.51229102113572,
+        -87.01219102113572,
+        -79.51209102113572,
+        -72.01199102113571,
+        -59.41189102113571,
+        -47.01179102113571,
+        -39.5116910211357,
+        -32.0115910211357,
+        -24.5114910211357,
+        -17.0113910211357,
+        -9.51129102113569,
+        0
+      ]
+    },
+    {
+      "name": "Z_opt_export",
+      "values": [
+        -330,
+        -315,
+        -300,
+        -285,
+        -270,
+        -255,
+        -240,
+        -225,
+        -210,
+        -195,
+        -180,
+        -165,
+        -150,
+        -135,
+        -120,
+        -105,
+        -90,
+        -75,
+        -60,
+        -45,
+        -30,
+        -15,
+        0
+      ]
+    },
+    {
+      "name": "bench_X_export",
+      "values": [
+        -285.11411021135694,
+        -281.36411021135694,
+        -281.36411021135694,
+        -273.86411021135694,
+        -273.86411021135694,
+        -263.26319102113575,
+        -263.26319102113575,
+        -252.76309102113578,
+        -252.76309102113578,
+        -223.26299102113575,
+        -223.26299102113575,
+        -165.76289102113574,
+        -165.76289102113574,
+        -148.36279102113573,
+        -148.36279102113573,
+        -120.76269102113574,
+        -120.76269102113574,
+        -113.26259102113573,
+        -113.26259102113573,
+        -105.76249102113574,
+        -105.76249102113574,
+        -98.26239102113573,
+        -98.26239102113573,
+        -90.76229102113572,
+        -90.76229102113572,
+        -83.26219102113572,
+        -83.26219102113572,
+        -75.76209102113572,
+        -75.76209102113572,
+        -68.26199102113571,
+        -68.26199102113571,
+        -55.66189102113571,
+        -55.66189102113571,
+        -43.26179102113571,
+        -43.26179102113571,
+        -35.7616910211357,
+        -35.7616910211357,
+        -28.2615910211357,
+        -28.2615910211357,
+        -20.7614910211357,
+        -20.7614910211357,
+        -13.261391021135701,
+        -13.2613910211357,
+        -5.7612910211356905,
+        -5.76129102113569,
+        0
+      ]
+    },
+    {
+      "name": "bench_Z_export",
+      "values": [
+        -330,
+        -330,
+        -315,
+        -315,
+        -300,
+        -300,
+        -285,
+        -285,
+        -270,
+        -270,
+        -255,
+        -255,
+        -240,
+        -240,
+        -225,
+        -225,
+        -210,
+        -210,
+        -195,
+        -195,
+        -180,
+        -180,
+        -165,
+        -165,
+        -150,
+        -150,
+        -135,
+        -135,
+        -120,
+        -120,
+        -105,
+        -105,
+        -90,
+        -90,
+        -75,
+        -75,
+        -60,
+        -60,
+        -45,
+        -45,
+        -30,
+        -30,
+        -15,
+        -15,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "X_fail_export",
+      "values": [
+        -285.11411021135694,
+        -270.4096488296864,
+        -255.95758060076662,
+        -241.76363010450996,
+        -227.83315078315601,
+        -214.1711301168993,
+        -200.78219497641982,
+        -187.67061714309455,
+        -174.84031898775999,
+        -162.2948792990073,
+        -150.03753925209327,
+        -138.07120850967192,
+        -126.39847144566278,
+        -115.02159348370051,
+        -103.94252754173516,
+        -93.16292057448103,
+        -82.6841202055522,
+        -72.50718144125193,
+        -62.6328734581366,
+        -53.06168645660412,
+        -43.79383857291805,
+        -34.829282842217594,
+        -26.167714205221785,
+        -17.80857655148867,
+        -9.751069792245119,
+        -1.9941569559640584,
+        5.463428699975907,
+        12.623176568053054,
+        19.486791566125873,
+        26.056187015897024,
+        32.333477530326434,
+        38.320971915842506,
+        44.021166095030765,
+        49.436736055312736,
+        54.57053082896175,
+        59.42556550963462,
+        64.00501431043057,
+        68.31220366832179,
+        72.35060539963314,
+        76.12382991108234,
+        79.63561947072395,
+        82.88984154297901,
+        85.89048219176209,
+        88.64163955556,
+        91.14751739814795,
+        93.41241873847122,
+        95.44073956305823,
+        97.23696262417332,
+        98.80565132675639,
+        100.1514437070469,
+        101.27904650562829
+      ]
+    },
+    {
+      "name": "Z_fail_export",
+      "values": [
+        -330,
+        -327.95784564400543,
+        -325.5625021995158,
+        -322.82529918993185,
+        -319.757560717541,
+        -316.3705959233544,
+        -312.6756897104413,
+        -308.6840937317678,
+        -304.40701764329475,
+        -299.8556206228439,
+        -295.0410031549993,
+        -289.9741990820762,
+        -284.66616792096517,
+        -279.1277874454308,
+        -273.3698465332333,
+        -267.4030382772299,
+        -261.2379533594085,
+        -254.88507368661033,
+        -248.35476628650508,
+        -241.65727746220097,
+        -234.80272720368896,
+        -227.8011038541511,
+        -220.6622590289963,
+        -213.39590278532648,
+        -206.01159903938225,
+        -198.5187612293692,
+        -190.92664822092684,
+        -183.2443604523624,
+        -175.48083631664645,
+        -167.6448487770421,
+        -159.7450022131203,
+        -151.78972949380596,
+        -143.78728927398987,
+        -135.74576351114325,
+        -127.67305519827778,
+        -119.57688630950298,
+        -111.46479595435119,
+        -103.34413873696329,
+        -95.22208331615212,
+        -87.10561116229891,
+        -79.00151550697046,
+        -70.91640048109275,
+        -62.85668043746159,
+        -54.828579453325915,
+        -46.83813100873704,
+        -38.89117783631957,
+        -30.993371938087535,
+        -23.150174764903454,
+        -15.366857554149135,
+        -7.64850182116578,
+        -2.2737367544323206e-13
+      ]
+    },
+    {
+      "name": "X_cir_export",
+      "values": [
+        -113.66609706978548
+      ]
+    },
+    {
+      "name": "Z_cir_export",
+      "values": [
+        147.87004479883444
+      ]
+    },
+    {
+      "name": "Fos_export",
+      "values": [
+        1.3191595200000001
+      ]
+    },
+    {
+      "name": "Theta_output_export",
+      "values": [
+        34.52576182238876,
+        109.73673738698432
+      ]
+    },
+    {
+      "name": "Slope_indices_export",
+      "values": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "X_water_export",
+      "values": [
+        -285.11411021135694,
+        -277.61411021135694,
+        -267.01319102113575,
+        -256.5130910211358,
+        -227.01299102113575,
+        -168.51289102113574,
+        -152.11279102113573,
+        -124.51269102113574,
+        -117.01259102113573,
+        -109.51249102113574,
+        -102.01239102113573,
+        -94.51229102113572,
+        -87.01219102113572,
+        -79.51209102113572,
+        -77.59565165234008,
+        424.946700847192
+      ]
+    },
+    {
+      "name": "Z_water_export",
+      "values": [
+        -330,
+        -315,
+        -300,
+        -285,
+        -270,
+        -255,
+        -240,
+        -225,
+        -210,
+        -195,
+        -180,
+        -165,
+        -150,
+        -135,
+        -131.16717236677718,
+        -111.9707896659761
+      ]
+    },
+    {
+      "name": "X_fail_seg1_export",
+      "values": [
+        -113.66609706978548,
+        -285.11411021135694
+      ]
+    },
+    {
+      "name": "X_fail_seg2_export",
+      "values": [
+        -113.66609706978548,
+        101.27904650562829
+      ]
+    },
+    {
+      "name": "Z_fail_seg1_export",
+      "values": [
+        147.87004479883444,
+        -330
+      ]
+    },
+    {
+      "name": "Z_fail_seg2_export",
+      "values": [
+        147.87004479883444,
+        -2.2737367544323206e-13
+      ]
+    },
+    {
+      "name": "optimal_face_angles_export",
+      "values": [
+        63.43494882292201,
+        54.75008333924683,
+        55.007723445288995,
+        26.952100461986475,
+        14.62084965064105,
+        40.76344235535618,
+        28.52303150972433,
+        63.43464324624614,
+        63.43464324624619,
+        63.4346432462461,
+        63.43464324624614,
+        63.43464324624614,
+        63.43464324624614,
+        63.43464324624614,
+        49.96951677723711,
+        50.42036837651792,
+        63.434643246246125,
+        63.43464324624616,
+        63.434643246246154,
+        63.434643246246154,
+        63.434643246246125,
+        57.62178531493695
+      ]
+    },
+    {
+      "name": "X_surcharge_export",
+      "values": []
+    },
+    {
+      "name": "Z_surcharge_export",
+      "values": []
+    },
+    {
+      "name": "X_load_export",
+      "values": []
+    },
+    {
+      "name": "Z_load_export",
+      "values": []
+    }
+  ]
+}

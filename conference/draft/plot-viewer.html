@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Tutorial Result Plot · OptimalSlope</title>
+  <link rel="stylesheet" href="plot-viewer.css">
+</head>
+<body>
+  <main>
+    <nav id="controls" aria-label="Plot controls">
+      <button data-action="reset">Fit data</button>
+      <button data-action="in">Zoom in</button>
+      <button data-action="out">Zoom out</button>
+      <button data-layer="layers" aria-pressed="true">Layers</button>
+      <button data-layer="bench" aria-pressed="true">Benched profile</button>
+      <button data-layer="optimal" aria-pressed="true">Mine-planning profile</button>
+      <button data-layer="bounds" aria-pressed="false">UB / LB</button>
+      <button data-layer="failure" aria-pressed="true">Failure mechanism</button>
+      <button data-layer="water" aria-pressed="true">Water</button>
+      <button data-layer="faults" aria-pressed="true">Faults</button>
+      <button data-layer="angles" aria-pressed="true">Face angles</button>
+    </nav>
+    <p id="status" role="status">Loading saved tutorial result…</p>
+    <div class="plot-stage">
+      <svg id="plot" role="img" aria-label="Interactive tutorial result plot" tabindex="0"></svg>
+      <div id="tooltip" hidden></div>
+    </div>
+    <footer>
+      <div id="legend" aria-label="Plot legend"></div>
+      <span id="hint">Drag to pan · Scroll to zoom · + / − to zoom · Home to fit data</span>
+    </footer>
+  </main>
+  <script type="module" src="plot-viewer.js"></script>
+</body>
+</html>

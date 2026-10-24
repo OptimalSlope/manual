@@ -1,0 +1,12 @@
+:root{font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:#15364a;background:#fff}
+*{box-sizing:border-box}html,body,main{height:100%;width:100%;margin:0;overflow:hidden}
+main{display:flex;flex-direction:column}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 20px;background:linear-gradient(105deg,#064761,#096482 75%,#bd704d);color:#fff;font-size:17px;font-weight:750;flex-shrink:0}
+.toolbar div{display:flex;gap:7px}button{font:700 13px Inter,system-ui,sans-serif;border:1px solid #ffffff99;border-radius:999px;background:#fff;color:#064761;padding:8px 16px;cursor:pointer}
+button:focus-visible{outline:3px solid #f16b21;outline-offset:2px}
+svg{display:block;flex:1;width:100%;min-height:100px}svg text{font-family:inherit}
+.legend{padding:8px 20px 3px;display:flex;align-items:center;flex-wrap:wrap;gap:9px 25px;font-size:13px;flex-shrink:0}
+.legend span{display:flex;align-items:center;gap:7px}.legend i{display:inline-block;width:25px;height:4px}
+.legend .region{height:12px;background:#25b86b45;border:1px solid #148747}.legend .candidate{background:#f16b21}.legend .trail{background:#3d80bf99}
+#finalResult{color:#086c3c;margin-left:auto}.note{margin:7px 20px 12px;color:#617180;font-size:12px;flex-shrink:0}
+@media(max-width:700px){.toolbar{padding:9px 12px;font-size:14px}.legend{gap:7px 12px;padding:7px 12px;font-size:11px}.note{margin:7px 12px;font-size:11px}#finalResult{margin-left:0}}

@@ -2127,5 +2127,18 @@
   start();
   setComparison(50);
 </script>
+<script type="module">
+  // Opt-in conference extension; normal/manual use of this demo is unchanged.
+  if (new URLSearchParams(location.search).get('conference') === '2026') {
+    const { extendConferenceDemo } = await import('../conference/draft/player.js');
+    extendConferenceDemo({
+      setStage, stopWorkflow: stop,
+      setComparison, startComparison: startCompare, stopComparison: stopCompare,
+      stopOriginalDemo: stopConferenceDemo, zoomResult: startResultPlotZoom,
+      resetResult: clearResultPlotZoom, startOsa: startOsaAutoSwitch,
+      stopOsa: stopOsaAutoSwitch,
+    });
+  }
+</script>
 </body>
 </html>
